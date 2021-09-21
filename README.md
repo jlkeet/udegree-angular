@@ -117,7 +117,7 @@ Doing these by hand takes an horrific amount of time but thankfully they are rea
 
 https://udegree-editor.firebaseapp.com/
 
-As of September 2021 it was still app and usable.
+As of September 2021 it was still up and usable.
 
 Doing these by hand inevitably leads to some errors, the best approach if a bug is found in one of the rules (or any part of the app) is to log it in the trello board at:
 
