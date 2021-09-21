@@ -34,11 +34,8 @@
       </ul>
     </li>
     <li><a href="#Development">Development</a></li>
+    <li><a href="#Rules">Rules Engine</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -99,68 +96,47 @@ All done!
 <!-- Development -->
 ## Development
 
-Getting started is rather trivial, but as of the current build there are problems with compiling the code, in order to be able to do any development though, Firebase and Git are
-required. 
+Getting started is rather trivial, but as of the current build there are problems with outdated dependencies, so compiling the code in order to put it up on Firebase will require a workaround for now.
 
-1. Go to the Firebsase website and follow the instructions there to create a new project.
+1. Go to the Firebsase website and follow the instructions there to create a new project and sign up with them.
+2. Initialize Firebase into the app:
+    <code>firebase init</code>
+3. Find and open the file named "index.d.ts" located in /node_modules/@types/node/
+4. On line 20 will be "/// <reference lib="es2015" />" make sure to delete one of the slashes at the front so only two are left (this will comment out the issue).
+5. Run <code>npm build</code>
+6. Assuming no errors in compiling the code, run <code>firebase deploy</code>
+7. Voila!
 
+
+<!-- RULES -->
+## Rules
+
+The backend of Udegree is constructed primarily through JSON files. The guts of it are located in /src/app/data/ and contain all the Courses, Degree Requirements and Major requirements.
+
+Doing these by hand takes an horrific amount of time but thankfully they are reasonably static requirements. We haven't found a way to automate this process, and its unlikely to be done easily. However Vaughan threw together a simple GUI tool to assist with the construction of the rules engine. It can be found at:
 
 https://udegree-editor.firebaseapp.com/
 
+As of September 2021 it was still app and usable.
 
-<code>
+Doing these by hand inevitably leads to some errors, the best approach if a bug is found in one of the rules (or any part of the app) is to log it in the trello board at:
+
+https://trello.com/b/KunPJO0W/udegreev2
+
+Also, make sure to use git!
+
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
+See the [open issues](https://trello.com/b/KunPJO0W/udegreev2) for a list of proposed features (and known issues).
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
+Jackson Keet - [@jlkeet](https://twitter.com/jlkeet) - jackson.keet@mac.com
+Harry Twyford = [@htwyford](https://twitter.com/htwyford) - htwyford@gmail.com
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
