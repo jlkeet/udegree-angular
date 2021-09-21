@@ -1,0 +1,8 @@
+<div class="course" (click)="toggleDetails()" (mouseover)="showDelete = true" (mouseleave)="showDelete = false" title="{{course.help}}"  
+    [style.background-color]="backgroundColor"
+    [class.course--error]="course.isError"    
+    [class.course--large]="largeCard">
+    <div class="course-title">{{course.name}}</div>
+    <course-delete-icon [showDelete]="showDelete && course.canDelete" (deleteCourseClicked)="deleteCourse()"></course-delete-icon>
+    <course-status-indicator [course]="course"></course-status-indicator>
+</div>

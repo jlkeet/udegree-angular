@@ -1,0 +1,54 @@
+<div class="add-course-container"> 
+
+  <left-panel></left-panel>
+
+  <div class="add-course">
+
+    <course-details
+       *ngIf="selected || custom"
+       [showSemesterFullMessage]="showSemesterFullMessage" 
+       [showAddCourse]="true"
+       [course]="selected"
+       [custom]="custom"
+       [messages]="checkRequirements(selected)"
+       [year]="year"
+       [period]="period"
+       (addClicked)="addCourse($event)"
+       (deleteClicked)="deleteCourse($event)"
+       (cancelClicked)="cancelCourse($event)">
+    </course-details>
+
+    <mat-toolbar class="plain">
+      <span>
+        Add Course - {{semesterText}}
+      </span>
+      <button class="plain-button" (click)="prevSemester()">
+        &lt;
+      </button> 
+      <button class="plain-button" (click)="nextSemester()">
+        &gt;
+      </button> 
+      <span class="spacer"></span>
+      <button class="btn btn--custom" (click)="addCustom()">
+        CUSTOM COURSE
+      </button> 
+      <button class="btn btn--next" routerLink="/planner">
+        DONE
+      </button> 
+    </mat-toolbar>
+
+    <course-filter 
+                                    [(filterParams)]="filterParams"
+                                    (toggleChange)="filterChanged($event)" 
+                                    [courses]="allCourses"
+                                    [planned]="planned">
+    </course-filter>
+
+    <add-course-panel
+                                    (addCourseClicked)="toggleCourse($event)"
+                                    (courseClicked)="courseSelected($event)"
+                                    [departmentCourses]="departmentCourses">
+    </add-course-panel>
+
+  </div>
+</div>

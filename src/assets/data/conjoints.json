@@ -1,0 +1,107 @@
+{
+	"degrees":
+	[
+  		{
+    		"degree": "Arts",
+		    "blurb": "Art is a dart that starts or parts the heart",
+		    "abbrv": "BA",
+		    "majors": [
+		      "Academic English Studies and Linguistics",
+		      "Ancient History",
+		      "Anthropology",
+		      "Art History",
+		      "Asian Studies",
+		      "Chinese",
+		      "Classical Studies",
+		      "Criminology",
+		      "Drama",
+		      "Economics",
+		      "Education",
+		      "Employment Relations and Organisation Studies",
+		      "English",
+		      "European Studies",
+		      "French",
+		      "Gender Studies",
+		      "German",
+		      "Geography",
+		      "Greek",
+		      "History",
+		      "Italian",
+		      "Japanese",
+		      "Korean",
+		      "Latin",
+		      "Linguistics",
+		      "Logic and Computation",
+		      "Maori Studies",
+		      "Mathematics",
+		      "Media Film and Television",
+		      "Music",
+		      "Pacific Studies",
+		      "Philosophy",
+		      "Politics and International Relations",
+		      "Psychology",
+		      "Screen Production",
+		      "Social Science for Public Health",
+		      "Sociology",
+		      "Spanish",
+		      "Statistics",
+		      "Teaching English to Speakers of Other Languages",
+		      "Theological and Religious Studies",
+		      "Writing Studies"
+		    ]
+		},
+		{
+    		"degree": "Laws",
+		    "blurb": "Laws",
+		    "abbrv": "LLB",
+		    "majors": ["None"],
+		    "flags": ["Prescribed"]
+		}
+	],
+	conjoints: [
+		"degrees": ["Arts", "Laws"],
+		"abbrv": "BArts/BLLB"
+		"requirements":
+		    "requirements": [
+	      {
+	        "type": 0,
+	        "required": 360
+	      },
+	      {
+	        "type": 0,
+	        "required": 300,
+	        "faculties": [
+	          "Arts"
+	        ]
+	      },
+	      {
+	        "type": 0,
+	        "required": 180,
+	        "faculties": [
+	          "Arts"
+	        ],
+	        "aboveStage": 1
+	      },
+	      {
+	        "type": 0,
+	        "required": 180,
+	        "faculties": [
+	          "Arts"
+	        ],
+	        "aboveStage": 2
+	      },
+	      {
+	        "type": 0,
+	        "required": 30,
+	        "faculties": [
+	          "Arts",
+	          "Open"
+	        ],
+	        "flags": [
+	          "general"
+	        ]
+	      }
+	    ],
+	    "flags": []
+    }
+]

@@ -1,0 +1,21 @@
+[
+	{
+		"name": "Coding and Logic",
+		"courses": [
+			"COMPSCI101",
+			"PHIL101",
+			"COMPSCI225",
+			"PHIL216",
+			"PHIL222",
+			"ACADENG100"
+		],
+		"compulsary": [
+			"COMPSCI101",
+			"ACADENG101",
+			"PHIL101"
+		],
+		"requirements": [
+			{"type":1, "required":3,"papers": ["COMPSCI101", "ACADENG101", "PHIL101"]}
+		]
+	}
+]

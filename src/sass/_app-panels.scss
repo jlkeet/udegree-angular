@@ -1,0 +1,5 @@
+/* for creating scrollable sections in a full height app like layout */
+/* you need to set heights and widths of app-scroll-row and app-scroll-col in component */
+.app-scroll-row, .app-scroll-col { overflow: hidden; position: absolute; }
+.app-scroll-x { overflow-x: auto; }
+.sapp-scroll-y { overflow-y: auto; }

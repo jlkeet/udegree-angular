@@ -1,0 +1,26 @@
+@import '../sass/_card.scss';
+
+.inline-block {
+  display: inline-grid;
+  margin: 5px;
+}
+
+.courses-panel {
+  max-height: calc(100vh - 285px);
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: none;
+  text-align:center;
+  padding-top:20px;
+  background:white;
+}
+
+.department-title {
+  padding-left:30px;
+  padding-top:15px;
+  padding-bottom:10px;
+  color: black;
+  text-align: left;
+  font-size: 20px;
+}
+

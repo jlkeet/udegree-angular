@@ -1,0 +1,10 @@
+@import "../assets/css/pink-bluegrey.css";
+
+html, body{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+span.active {
+  background-color: gray;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title><%= webpackConfig.metadata.title %></title>
+
+  <meta name="description" content="<%= webpackConfig.metadata.title %>">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--
+    <link rel="stylesheet" type="text/css" href="./assets/css/prime-omega-theme.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/primeng.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous"> -->
+  <!--<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">-->
+  <link rel="stylesheet" href="./assets/css/dragula.min.css">
+
+  <% if (webpackConfig.htmlElements.headTags) { %>
+  <!-- Configured Head Tags  -->
+  <%= webpackConfig.htmlElements.headTags %>
+  <% } %>
+
+  <!-- base url goes here     really-->
+  <base href="<%= webpackConfig.metadata.baseUrl %>">
+
+</head>
+
+<body>
+
+  <app>
+  Loading...
+  </app>
+
+  <!-- Start Bootstrap Splash Screen -->
+  <div id="pre-bootstrap-container">
+
+    <!--
+      In this approach, rather than putting the pre-bootstrap content inside
+      the <my-app> component content, we're leaving it external to the Angular 2
+      application entirely. This way, the content is not automatically removed when
+      the root component template is rendered. Instead, we'll leave this overlay in
+      place until the "appready" event bubbles up to the document, at which point,
+      we can gracefully fade it out of view.
+    -->
+
+    <script type="text/javascript">
+      // Listen for the "appready" event, which will be emitted by the application
+      // and bubble up (as far as we know) to the document root.
+      document.addEventListener( "appready", handleAppReady );
+// I handle the "appready" event and teardown the loading screen.
+function handleAppReady( event ) {
+  var preBootstrapContainer = document.getElementById( "pre-bootstrap-container" );
+  var preBootstrap = document.getElementById( "pre-bootstrap" );
+  // Add the class-name to initiate the transitions.
+  preBootstrap.className = "loaded";
+  // Remove the bootstrap container after the transition has
+  // completed (based on the known transition time).
+  setTimeout(
+    function removeLoadingScreen() {
+      preBootstrapContainer
+        .parentNode
+        .removeChild( preBootstrapContainer )
+      ;
+    },
+    300
+  );
+}
+    </script>
+
+    <style type="text/css">
+#pre-bootstrap {
+  background-color: #262626 ;
+  bottom: 0px ;
+  left: 0px ;
+  opacity: 1.0 ;
+  position: fixed ;
+  right: 0px ;
+  top: 0px ;
+  transition: all linear 300ms ;
+  -webkit-transition: all linear 300ms ;
+  z-index: 999999 ;
+}
+            #pre-bootstrap.loaded {
+              opacity: 0.0 ;
+            }
+            #pre-bootstrap div.messaging {
+              color: #FFFFFF ;
+              font-family: monospace ;
+              left: 0px ;
+              margin-top: -37px ;
+              position: absolute ;
+              right: 0px ;
+              text-align: center ;
+              top: 50% ;
+            }
+            #pre-bootstrap h1 {
+              font-size: 26px ;
+              line-height: 35px ;
+              margin: 0px 0px 20px 0px ;
+            }
+            #pre-bootstrap p {
+              font-size: 18px ;
+              line-height: 14px ;
+              margin: 0px 0px 0px 0px ;
+            }
+    </style>
+
+    <div id="pre-bootstrap">
+      <div class="messaging">
+
+        <h1>
+          UDegree is Loading
+        </h1>
+
+        <p>
+        Please stand by for simple degree planning!
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- End Bootstrap Splash Screen -->
+
+  <!-- Google Analytics: change UA-71073175-1 to be your site's ID 
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71073175-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    -->
+    <% if (webpackConfig.metadata.isDevServer && webpackConfig.metadata.HMR !== true) { %>
+    <!-- Webpack Dev Server reload -->
+    <script src="/webpack-dev-server.js"></script>
+    <% } %>
+
+    <!-- <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script> -->
+    <script src="./assets/papaParse.min.js"></script>
+    <script src="./assets/hammer.min.js"></script>
+</body>
+</html>

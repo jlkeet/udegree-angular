@@ -1,0 +1,20 @@
+{
+  "extends":"tslint:recommended",
+  "rulesDirectory": [
+    "node_modules/codelyzer"
+  ],
+  "rules": {
+    "trailing-comma": [
+      true,
+      {
+        "multiline": false,
+        "singleline": "never"
+      }
+    ],
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape"
+    ]
+  }
+}

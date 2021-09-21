@@ -1,0 +1,1 @@
+export { ICourse } from './course';

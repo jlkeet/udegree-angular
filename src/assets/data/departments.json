@@ -1,0 +1,178 @@
+  [
+  {
+    "name": "Ancient History",
+    "blurb": "Isn't all history ancient?",
+    "faculties": [
+      "Arts"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "ANCHIST100",
+          "ANCHIST102",
+          "ANCHIST103",
+          "ANCHIST110"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 75,
+        "papers": [
+          "ANCHIST100-379"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "ANCHIST300-379"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Asian Studies",
+    "faculties": [
+      "Arts"
+    ],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 2,
+        "papers": [
+          "ASIAN100",
+          "ASIAN303"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anthropology",
+    "faculties": [
+      "Arts"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "ANTHRO100-104",
+          "ANTHRO106"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "ANTHRO200-203"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Art History",
+    "blurb": "Let's study some art!",
+    "faculties": [
+      "Arts"
+    ],
+    "requirements": []
+  },
+  {
+    "name": "Biological Sciences",
+    "faculties": [
+      "Science"
+    ],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": [
+          "BIOSCI101"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "BIOSCI100",
+          "BIOSCI102-107"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": [
+          "BIOINF301",
+          "BIOSCI320-396"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 2,
+        "complex": [
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "BIOSCI201-203"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "BIOSCI204",
+              "BIOSCI205",
+              "BIOSCI208"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "BIOSCI206",
+              "BIOSCI207",
+              "BIOSCI210"
+            ]
+          }
+        ]
+      }
+    ],
+    "flags": [
+      "NoConjoint"
+    ]
+  },
+  {
+    "name": "Chemistry",
+    "faculties": [
+      "Science"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "CHEM110",
+          "CHEM120",
+          "MATHS110"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "CHEM210-240"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "CHEM310-340"
+        ]
+      }
+    ]
+  }
+  ]

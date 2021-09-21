@@ -1,0 +1,57 @@
+.courses-panel {
+  width:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+.plain {
+  border-radius:inherit;
+  background:white;
+  font-family: Open Sans, sans-serif;
+  padding-left:0px;
+  padding-right:0px;
+  height:100px;
+}
+
+.add-semester {
+  border-radius:5px;
+  border: 1px dashed;
+  background:white;
+  overflow:hidden;
+  margin-bottom:10px;
+}
+
+.new-semester {
+  font-size:15px;
+  font-weight:700;
+  cursor: pointer;
+  color:#607d8b;
+  width:100%;
+  padding-top:50px;
+  padding-bottom:50px;
+  padding-left:20px;
+}
+
+.pad-left {
+  padding-left:20px;
+}
+
+.nice-select{
+  border: 1px #ccc solid;
+  background:white;
+  border-radius:3px;
+}
+
+.year-input {
+  width: 90px;
+}
+
+.export-button {
+  float:right;
+  background-color:#ffcc00;
+  color:black;
+}
+
+.export-container {
+  width:100%;
+}
