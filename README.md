@@ -135,8 +135,8 @@ See the [open issues](https://trello.com/b/KunPJO0W/udegreev2) for a list of pro
 <!-- CONTACT -->
 ## Contact
 
-Jackson Keet - [@jlkeet](https://twitter.com/jlkeet) - jackson.keet@mac.com
-Harry Twyford = [@htwyford](https://twitter.com/htwyford) - htwyford@gmail.com
+<P>Jackson Keet - [@jlkeet](https://twitter.com/jlkeet) - jackson.keet@mac.com</P>
+<P>Harry Twyford - [@htwyford](https://twitter.com/htwyford) - htwyford@gmail.com</P>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
