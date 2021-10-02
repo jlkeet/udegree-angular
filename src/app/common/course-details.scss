@@ -1,0 +1,94 @@
+.contain {
+  position:absolute;
+  right:0px;
+  z-index: 5;
+}
+.course-details-panel {
+  height:100%;
+  width:400px;
+  background:#fcffff;
+  position: fixed;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top:25px;
+  z-index: 2;
+  overflow: hidden;
+  flex-grow: 1;
+  border:1px solid #eee;
+  right:0px;
+}
+.course-limit-message {
+  color: goldenRod;
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+.course-error-message {
+  color: white;
+  font-size: 15px;
+  background: red;
+  padding:2px;
+}
+.course-planned-message {
+  color: white;
+  font-size: 12px;
+  background:green;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.course-description {
+  color:gray;
+  font-size:15px;
+  text-align:justify;
+}
+
+.remove-pad {
+  margin-bottom: -18px;
+}
+
+.course-title {
+  color: black;
+  font-size:18px;
+}
+
+.course-name {
+  font: 20px/42px Open Sans, sans-serif;
+  font-weight:bold;
+  color: black;
+}
+
+.course-points {
+  position:absolute;
+  top:35px;
+  left:200px;
+  height:25px;
+  color: #2ab6fe;
+  background-color:#eef9fe;
+  font-size:13px;
+  padding-left:10px;
+  padding-right:10px;
+  border-radius:5px;
+  text-align:center;
+}
+
+.add-course-button {
+  width:150px;
+  color:white;
+  background-color:#37d8ae;
+}
+
+.close-dialog {
+  position:absolute;
+  top:10px;
+  right:20px;
+  color:#cdd;
+  font-size:35px;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.fullwidth {
+  width: 100%
+}

@@ -1,0 +1,24 @@
+  <span class="opensans">
+    <span class="circle" style="color: #0e899e;"> &#x25cb; </span>
+      <span class="user">
+        <div class="name">
+            <div *ngIf="isLoggedIn">
+                {{displayName}}
+            </div>
+        </div>
+      <div class="email">
+        <div *ngIf="isLoggedIn">
+        {{email}}
+        </div>
+      </div>
+     </span>
+     <mat-select class="dropdown_user_status"><mat-option (click)=authService.doLogout()>Log out</mat-option></mat-select>
+    <span class="light"> | </span>
+    &emsp;
+    <notification-container></notification-container> 
+    &emsp; &#x2699;
+  </span>
+
+
+
+

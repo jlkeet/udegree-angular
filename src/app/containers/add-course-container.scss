@@ -1,0 +1,73 @@
+@import '../../sass/_scroll-container.scss';
+@import '../../sass/_card.scss';
+
+.add-course-container {
+    display: flex;        
+    width: 99%;
+}
+
+.add-course {
+  position:relative;
+  width:100%;
+  height: calc(100vh - 105px);
+  border:1px solid #f2f2f2;
+  border-radius:5px;
+}
+
+.step-panel {
+  height: 80px;
+}
+
+.faculty-title {
+  font-size: 22px;
+  margin: 10px 0;
+  min-height: 30px;
+}
+.sub-title {
+  font-size: 18px;
+}
+// .scroll-container-position {
+// }
+.major-hint-message {
+  padding: 100px;
+  background: #fafafa;
+  color: #999;
+  font-size: 30px;
+  text-shadow: 2px #eee;
+  border-radius: 50px;
+  margin-top: 80px;
+  cursor:pointer;
+}
+.details-overlay {
+  background-color: rgba(0,0,0,0.4);
+}
+
+.plain {
+  background: white;
+  font-family: Open Sans, sans-serif;
+  padding-left:30px;
+  padding-right:30px;
+  border-radius:5px;
+}
+
+.plain-button {
+  background: white;
+  font-family: Open Sans, sans-serif;
+  border-radius:8px;
+  border: 1px solid #eee;
+  margin-left:15px;
+  color:gray;
+}
+
+.done-btn-container {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  z-index: 1;
+}
+
+.btn--custom {
+  background-color:yellow;
+  margin-right:10px;
+}

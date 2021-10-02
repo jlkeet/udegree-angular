@@ -1,0 +1,179 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Subject } from 'rxjs/Subject';
+import { Store } from '../app.store';
+import { ICourse } from '../interfaces';
+import {
+  CourseModel,
+  CourseStatus,
+  Message,
+  MessageStatus,
+  Period
+} from '../models';
+import { IRequirement, RequirementService } from './requirement.service';
+import { StoreHelper } from './store-helper';
+import { ErrorsChangedEvent } from './course.event';
+
+/*
+    Helper service for courses
+    Needs to be fixed for new course model
+*/
+@Injectable()
+export class CourseService {
+
+  private allCourses: ICourse[];
+  private planned: ICourse[];
+  private courseCounter = 0; // need to store this
+  private errors: Message[];
+
+  constructor(
+    private errorsChanged: ErrorsChangedEvent,
+    private requirementService: RequirementService,
+    private store: Store,
+    private storeHelper: StoreHelper
+    ) {
+    this.allCourses = require('../../assets/data/courses.json');
+    // By default, all courses are deletable
+    this.allCourses.map((course: ICourse) => course.canDelete = true);
+    this.store.changes.pluck('courses').subscribe((courses: ICourse[]) => this.planned = courses);
+  }
+
+  public addCustom(
+    year: number, period: Period, code: string, title: string, points: number, stage: number,
+    department: string, faculty: string, status: CourseStatus) {
+
+    const customCourse: ICourse = {
+      canDelete: true,
+      department,
+      desc: '',
+      faculties: [faculty],
+      id: -this.courseCounter,
+      name: code,
+      period,
+      points,
+      stage,
+      status,
+      title,
+      year,
+    };
+    this.courseCounter++;
+    this.storeHelper.add('courses', customCourse);
+    this.updateErrors();
+  }
+
+  public getAllCourses() {
+    return this.allCourses;
+  }
+
+  // rename this to coursesbyyear
+  public getCourses(year: number, period: Period): ICourse[] {
+    return this.planned.filter(
+      (course: ICourse) => course.year === year && (period === null || period === course.period));
+  }
+
+  public moveCourse(courseId: number, period: Period, year: number) {
+    const index = this.planned.findIndex((course: ICourse) => course.id === courseId);
+    const copy = Object.assign({}, this.planned[index]);
+    copy.period = period;
+    copy.year = year;
+    this.storeHelper.findAndUpdate('courses', copy);
+    this.updateErrors();
+  }
+
+  public selectCourse(courseId: number, period: Period, year: number, status?: CourseStatus) {
+    const index = this.allCourses.findIndex((course: ICourse) => course.id === courseId);
+    const copy = Object.assign({}, this.allCourses[index]);
+    copy.status = status ? status : CourseStatus.Planned;
+    copy.period = period;
+    copy.year = year;
+    copy.id = this.courseCounter++;
+    this.storeHelper.add('courses', copy);
+    this.updateErrors();
+  }
+
+  public deselectCourse(courseId: number) {
+    this.storeHelper.findAndDelete('courses', courseId);
+    this.updateErrors();
+  }
+
+  public deselectCourseByName(courseName: string) {
+    let course = this.findPlanned(courseName);
+    this.storeHelper.findAndDelete('courses', course.id);
+    this.updateErrors();
+  }
+
+  public changeStatus(courseToChange: ICourse, status: CourseStatus) {
+    const lookupCourse = this.planned.find((course: ICourse) => course.id === courseToChange.id);
+    const copy = Object.assign({}, lookupCourse);
+    copy.status = status;
+    this.storeHelper.findAndUpdate('courses', copy);
+    this.updateErrors();
+  }
+
+  public changeGrade(courseToChange: ICourse, grade: number) {
+    const lookupCourse = this.planned.find((course: ICourse) => course.id === courseToChange.id);
+    const copy = Object.assign({}, lookupCourse);
+    copy.grade = grade;
+    this.storeHelper.findAndUpdate('courses', copy);
+    this.updateErrors();
+  }
+
+  private updateErrors() {
+    this.errors = [];
+    this.planned.forEach((course: ICourse) => {
+      if (course.requirements !== undefined && course.requirements !== null) {
+        // To find which courses are ineligible, flag all courses that have at least one unfilled requirement
+        let courseErrors = course.requirements.filter((requirement: IRequirement) =>
+            !this.requirementService.requirementFilled(requirement,
+              this.beforeSemester(course)));
+        //this.errors.push({'course': course.title, 'errors': courseErrors});
+        this.errors = this.errors.concat(courseErrors
+          .map((unfilled: IRequirement) => this.requirementService.toString(unfilled, false))
+          .map((unfilled: string) => new Message(course.name, course.name + ": " + unfilled, MessageStatus.Error)));
+        course.isError = courseErrors.length > 0;
+      } else {
+        course.isError = false;
+      }
+    });
+    this.storeHelper.update('messages', this.errors); // needs to be changed if different sources for messages
+    //this.errorsChanged.raiseErrorsChanged(this.errors);
+  }
+
+  private beforeSemester(beforeCourse) {
+    return this.planned.filter((course: ICourse) =>
+      course.period < beforeCourse.period &&
+      course.year === beforeCourse.year ||
+      course.year < beforeCourse.year
+    );
+  }
+
+  public findPlanned(courseName: string): ICourse {
+    let generalToggle = this.generalToggle(courseName);
+    let completed = this.completed(courseName);
+    return completed ? completed : this.completed(generalToggle); //check general version as well
+  }
+
+  private completed(courseName: string): ICourse {
+    const courses = this.storeHelper.current('courses');
+    return courses.filter((course: ICourse) => course.status !== CourseStatus.Failed)
+      .find((course: ICourse) => course.name === courseName);
+  }
+
+  private generalToggle(courseName: string): string {
+    if (this.isGeneral(courseName)) {
+      return courseName.substring(0, courseName.length - 1);
+    } else {
+      return courseName + 'G';
+    }
+  }
+
+  public isGeneral(courseName: string): boolean {
+    return courseName.substr(-1) === 'G';
+  }
+
+  public stringToCourse(courseName: string) {
+    //console.log(this.allCourses);
+    return this.allCourses.find((course: ICourse) => course.name === courseName);
+  }
+
+}

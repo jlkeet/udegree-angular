@@ -1,0 +1,89 @@
+<mat-toolbar class="title">
+  <span>
+    Select Degree
+  </span>
+</mat-toolbar>
+
+<div class="form-field">
+  <mat-form-field>
+    <mat-select class="dropdown" [(value)]="degreeType" placeholder="Degree Type" (selectionChange)="changeDegree()" >
+      <mat-option *ngFor="let type of degreeTypes" [value]="type.value">
+        {{ type.view }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select class="dropdown" [(value)]="currentFaculties[0]" placeholder="Faculty" (selectionChange)="changeFaculty(0, $event)" >
+      <mat-option *ngFor="let faculty of faculties" [value]="faculty.value">
+        {{ faculty.view }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="degreeType==='conjoint'">
+    <mat-select
+       class="dropdown"
+       [(value)]="currentFaculties[1]"
+       placeholder="Second Faculty"
+       (selectionChange)="changeFaculty(1, $event)"
+       [disabled]="currentFaculties[0]==null"
+      >
+      <mat-option *ngFor="let faculty of faculties" [value]="faculty.value">
+        {{ faculty.view }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="currentFaculties[0]">
+    <mat-select
+       class="dropdown"
+       [(value)]="currentMajors[0]"
+       [placeholder]=
+       "degreeType === 'conjoint' && 
+       currentFaculties[0] !== null ?
+       currentFaculties[0].name + ' major' : 'Major'"
+       (selectionChange)="changeMajor(0, $event)"
+       [disabled]="currentFaculties[0]==null"
+      >
+      <mat-option *ngFor="let major of majors[0]" [value]="major.value">
+        {{ major.view }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="doubleMajorAllowed || currentFaculties[1]">
+    <mat-select
+       class="dropdown"
+       [(value)]="currentMajors[1]"
+       [placeholder]=
+       "(degreeType === 'conjoint' && currentFaculties[1] !== null ?
+       currentFaculties[1].name + ' major' :
+       degreeType === 'conjoint' ?
+       'Second major' : 'Second major (optional)')"
+       (selectionChange)="changeMajor(1, $event)"
+       [disabled]="currentMajors[0] == null && degreeType === 'regular'
+       || currentFaculties[1] == null && degreeType === 'conjoint'"
+      >
+      <mat-option>
+        None
+      </mat-option>
+      <mat-option *ngFor="let major of majors[1]" [value]="major.value">
+        {{ major.view }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<p *ngIf="blurb" class="blurb">
+  {{blurb}}
+</p>
+
+<div style="height:60px" >
+  <button class="btn btn--next right" [ngClass]="{'btn--next': currentMajors[0]}" (click)="changePage()">
+    NEXT
+  </button>
+  <button class="btn right">
+    ADD EXAMPLE PROGRAM
+  </button>
+</div>

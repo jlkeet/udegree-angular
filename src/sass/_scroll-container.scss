@@ -1,0 +1,32 @@
+//https://benfrain.com/independent-scrolling-panels-body-scroll-using-just-css/
+/* this container is made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
+.scroll-container {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    //overflow: hidden; -- because we want to see drop shadow
+    height: 100vh;
+   /* set the padding-top to position the scroll-container verticall.
+      set margin-top as -1 * padding-top; */
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+/* thi is the content that you want to scroll */
+.scroll-container-content {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;    
+   overflow: auto;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+.scroll-container--no-bars::-webkit-scrollbar{
+    display: none;
+}
+
+.scroll-container--horizontal {
+    height: 100%;
+    width: 100vh;
+}

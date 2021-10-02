@@ -1,0 +1,141 @@
+/* these styles will be included in the head */
+@import '../sass/_reset.scss';
+@import '../sass/_variables.scss';
+@import '../sass/_fonts.scss';
+@import '../sass/_flexHelpers.scss';
+@import '../sass/_buttons.scss';
+@import '../sass/_shared.scss';
+@import '../sass/_ngprime-overrides.scss';
+
+//@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/_theming.scss';
+
+
+/*$mat-metal: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #f44336,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);*/
+
+
+@include mat-core();
+$primary: mat-palette($mat-grey, 900, A100, A400);
+$accent:  mat-palette($mat-cyan, 700, A100, A400);
+$warn:    mat-palette($mat-orange);
+
+$dark-theme : mat-dark-theme($primary, $accent, $warn);
+$light-theme : mat-light-theme($primary, $accent, $warn);
+
+@include mat-core-theme($light-theme);
+@include mat-autocomplete-theme($light-theme);
+@include mat-button-theme($light-theme);
+//@include mat-button-toggle-theme($light-theme);
+@include mat-card-theme($light-theme);
+@include mat-checkbox-theme($light-theme);
+@include mat-chips-theme($light-theme);
+@include mat-dialog-theme($light-theme);
+@include mat-form-field-theme($light-theme);
+@include mat-grid-list-theme($light-theme);
+@include mat-icon-theme($light-theme);
+@include mat-input-theme($light-theme);
+@include mat-list-theme($light-theme);
+@include mat-menu-theme($light-theme);
+@include mat-option-theme($light-theme);
+@include mat-progress-bar-theme($light-theme);
+@include mat-progress-spinner-theme($light-theme);
+@include mat-radio-theme($light-theme);
+@include mat-select-theme($light-theme);
+@include mat-sidenav-theme($light-theme);
+@include mat-slide-toggle-theme($light-theme);
+@include mat-slider-theme($light-theme);
+@include mat-tabs-theme($light-theme);
+@include mat-toolbar-theme($light-theme);
+@include mat-tooltip-theme($light-theme);
+@include mat-datepicker-theme($light-theme);
+
+/* GLOBAL */
+
+body { 
+    font-family: $font-family;
+    font-size: $font-size;
+    margin: 0;
+    color: #607d8b;
+    background:#f9fbfc;
+}
+
+main {
+    padding: 30px;
+}
+
+.dropdown_user_status{
+    width: 17% !important;
+}
+
+.right-side .mat-select-arrow {
+
+    border-left: 8px solid transparent !important;
+    border-right: 8px solid transparent !important;
+    border-top: 8px solid !important;
+    color: #0e899e;
+}
+
+.bg-purple {
+    background-color: #915D85;
+}
+.bg-blue {
+    background-color: #2D4582;
+}
+.bg-red {
+    background-color: #ff0000;
+}
+.bg-green {
+    background-color: #00ff00;
+}
+.bg-grey {
+    background-color: #778899;
+}
+.bg-light-green {
+    background-color: #6c6;
+}
+.no-drag {
+    pointer-events: none;
+} 
+
+.spacer { 
+  flex: 1 1 auto;
+}
+
+.no-select {
+
+  user-select:none;
+  -moz-user-select:none;
+  -webkit-user-select:none;
+  -ms-user-select:none;
+}

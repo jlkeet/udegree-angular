@@ -1,0 +1,59 @@
+$blue: #46b7cc;
+$dark-blue: darken($blue, 20%);
+$light-blue: lighten($blue, 10%);
+
+$grey: #666;
+$dark-grey: darken($grey, 20%);
+$light-grey: lighten($grey, 10%);
+
+//uses BEM 
+//.block{} // the ‘thing’ like .list
+//.block__element{} // a child of the block like .list__item 
+//.block--modifier{} // a variation of the ‘thing’ like .list-—vertical 
+
+.btn {
+    cursor: pointer;
+    padding: 10px;
+
+    &--next {
+      background-color: #37d8ae;
+      padding-left:30px;
+      padding-right:30px;
+      color: white;
+      border-radius:5px;
+    }
+
+    &--blue {
+         background-color: $blue;
+        color: white;
+         &.active {
+            background-color: $dark-blue;
+         }
+          &:hover {
+                background-color: $light-blue; 
+            }         
+    }    
+    &--grey {
+            background-color: #666;
+                color: white;
+            &.active {
+            background-color: $dark-grey;;
+            }
+            &:hover {
+                background-color: $light-grey; 
+            }
+    }
+
+    &--slim {
+        height: 20px;
+        line-height: 20px;
+        padding: 0 10px;
+    }
+    &--add {
+        height: 20px;
+        line-height: 20px;
+        font-size: 24px;
+        padding: 2px 6px;
+        margin-top: 10px;
+    }
+}

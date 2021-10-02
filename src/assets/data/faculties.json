@@ -1,0 +1,865 @@
+[
+  {
+    "name": "Architectural Studies",
+    "abbrv": "BAS",
+    "majors": [
+      "None"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      },
+      {
+        "type": 0,
+        "required": 330,
+        "faculties": [
+          "Architectural Studies"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "faculties": [
+          "Law and Creative Arts and Industry",
+          "Open"
+        ],
+        "flags": [
+          "general"
+        ]
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  },
+  {
+    "name": "Arts",
+    "blurb": "Art is a dart that starts or parts the heart",
+    "abbrv": "BA",
+    "majors": [
+      "Academic English Studies and Linguistics",
+      "Ancient History",
+      "Anthropology",
+      "Art History",
+      "Asian Studies",
+      "Chinese",
+      "Classical Studies",
+      "Criminology",
+      "Drama",
+      "Economics",
+      "Education",
+      "Employment Relations and Organisation Studies",
+      "English",
+      "European Studies",
+      "French",
+      "Gender Studies",
+      "German",
+      "Geography",
+      "Greek",
+      "History",
+      "Italian",
+      "Japanese",
+      "Korean",
+      "Latin",
+      "Linguistics",
+      "Logic and Computation",
+      "Maori Studies",
+      "Mathematics",
+      "Media Film and Television",
+      "Music",
+      "Pacific Studies",
+      "Philosophy",
+      "Politics and International Relations",
+      "Psychology",
+      "Screen Production",
+      "Social Science for Public Health",
+      "Sociology",
+      "Spanish",
+      "Statistics",
+      "Teaching English to Speakers of Other Languages",
+      "Theological and Religious Studies",
+      "Writing Studies"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      },
+      {
+        "type": 0,
+        "required": 300,
+        "faculties": [
+          "Arts"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 180,
+        "faculties": [
+          "Arts"
+        ],
+        "aboveStage": 1
+      },
+      {
+        "type": 0,
+        "required": 180,
+        "faculties": [
+          "Arts"
+        ],
+        "aboveStage": 2
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "faculties": [
+          "Arts",
+          "Open"
+        ],
+        "flags": [
+          "general"
+        ]
+      }
+    ],
+    "doubleMajorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      },
+      {
+        "type": 0,
+        "required": 300,
+        "faculties": [
+          "Arts"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 180,
+        "faculties": [
+          "Arts"
+        ],
+        "aboveStage": 1
+      },
+      {
+        "type": 0,
+        "required": 180,
+        "faculties": [
+          "Arts"
+        ],
+        "aboveStage": 2
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "faculties": [
+          "Arts",
+          "Open"
+        ],
+        "flags": [
+          "general"
+        ]
+      }
+    ],
+    "flags": [
+      "Dbl Mjr"
+    ]
+  },
+  {
+    "name": "Business and Information Management",
+    "abbrv": "BBIM",
+    "majors": [
+      "Accounting",
+      "Business",
+      "Commercial Law",
+      "Economics",
+      "Information Management",
+      "Information Systems",
+      "Marketing",
+      "Operations Management",
+      "Statistics"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      },
+      {
+        "type": 0,
+        "required": 150,
+        "papers": [
+          "ACCTG101",
+          "BUSINESS101",
+          "BUSINESS102",
+          "BUSINESS291",
+          "COMLAW101",
+          "ECON151",
+          "ECON152",
+          "INFOMGMT192",
+          "INFOSYS110",
+          "OPSMGT357",
+          "STATS108"
+        ],
+        "flags": [
+          "Core"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "faculties": [
+          "Business and Economics",
+          "Open"
+        ],
+        "flags": [
+          "general"
+        ]
+      }
+    ],
+    "doubleMajorRequirements": [
+      {
+        "type": 0,
+        "required": 0
+      }
+    ],
+    "flags": []
+  },
+  {
+    "name": "Commerce",
+    "abbrv": "BCom",
+    "majors": [
+      "Accounting",
+      "Commercial Law",
+      "Economics",
+      "Finance",
+      "Information Management",
+      "Information Systems",
+      "Innovation and Entrepreneurship",
+      "International Business",
+      "Management",
+      "Marketing",
+      "Operations and Supply Chain Management",
+      "Taxation"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      },
+      {
+        "type": 0,
+        "required": 300,
+        "faculties": [
+          "Commerce"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 180,
+        "aboveStage": 1
+      },
+      {
+        "type": 0,
+        "required": 75,
+        "aboveStage": 2
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "stage": 3,
+        "flags": [
+          "major"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "faculties": [
+          "Business and Economics",
+          "Open"
+        ],
+        "flags": [
+          "general"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": [
+          "ACCTG101",
+          "BUSINESS101",
+          "BUSINESS102",
+          "COMLAW101",
+          "ECON151",
+          "ECON152",
+          "INFOSYS110",
+          "STATS108"
+        ]
+      }
+    ],
+    "doubleMajorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      },
+      {
+        "type": 0,
+        "required": 300,
+        "faculties": [
+          "Commerce"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "faculties": [
+          "Commerce"
+        ],
+        "flags": [
+          "core"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 180,
+        "aboveStage": 1
+      },
+      {
+        "type": 0,
+        "required": 75,
+        "aboveStage": 2
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "faculties": [
+          "Business and Economics",
+          "Open"
+        ],
+        "flags": [
+          "general"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": [
+          "ACCTG101",
+          "BUSINESS101",
+          "BUSINESS102",
+          "COMLAW101",
+          "ECON151",
+          "ECON152",
+          "INFOSYS110",
+          "STATS108"
+        ]
+      }
+    ],
+    "flags": [
+      "Dbl Mjr",
+      "Next"
+    ]
+  },
+  {
+    "name": "Dance Studies",
+    "abbrv": "BDanceSt",
+    "majors": [
+      "None"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      },
+      {
+        "type": 0,
+        "required": 300,
+        "faculties": [
+          "Dance Studies"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "faculties": [
+          "Law and Creative Arts and Industries",
+          "Open"
+        ],
+        "flags": [
+          "general"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 180,
+        "faculties": [
+          "Dance Studies"
+        ],
+        "aboveStage": 1
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "faculties": [
+          "Dance Studies"
+        ],
+        "aboveStage": 2
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": [
+          "DANCE107",
+          "DANCE110",
+          "DANCE112",
+          "DANCE120",
+          "DANCE131",
+          "MAORI190"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": [
+          "DANCE210",
+          "DANCE212",
+          "DANCE220",
+          "DANCE222",
+          "DANCE231",
+          "PACIFIC110"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": [
+          "DANCE 302",
+          "DANCE310",
+          "DANCE314",
+          "DANCE320",
+          "DANCE322",
+          "DANCE331"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "DANCE121",
+          "DANCE201",
+          "DANCE207",
+          "DANCE211",
+          "DANCE215",
+          "DANCE250",
+          "DANCE300",
+          "DANCE301",
+          "DANCE312",
+          "DANCE315",
+          "DANCE350",
+          "DANCE351"
+        ]
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  },
+  {
+    "name": "Education (TESOL)",
+    "abbrv": "BEd(TESOL)",
+    "majors": [
+      "None"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  },
+  {
+    "name": "Education (Teaching)",
+    "abbrv": "BEd(Tchg)",
+    "majors": [
+      "Early Childhood Education",
+      "Primary or Intermediate Teaching",
+      "Secondary Teaching",
+      "Teaching in Te Reo Maori"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Next"
+    ]
+  },
+  {
+    "name": "Engineering (Honours)",
+    "abbrv": "BE(Hons)",
+    "majors": [
+      "Biomedical Engineering",
+      "Chemical and Materials Engineering",
+      "Civil and Environmental Engineering",
+      "Computer Systems Engineering",
+      "Electrical and Electronic Engineering",
+      "Engineering Science",
+      "Mechanical Engineering",
+      "Mechatronics Engineering",
+      "Software Engineering"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Next"
+    ]
+  },
+  {
+    "name": "Fine Arts",
+    "abbrv": "BFA",
+    "majors": [
+      "None"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  },
+  {
+    "name": "Health Sciences",
+    "abbrv": "BHSc",
+    "majors": [
+      "Population Health",
+      "Path to Med"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  },
+  {
+    "name": "Laws",
+    "abbrv": "LLB",
+    "majors": [
+      "None"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  },
+  {
+    "name": "Medicine & Surgery",
+    "abbrv": "MBChB",
+    "majors": [
+      "BHSc",
+      "BSc"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Next"
+    ]
+  },
+  {
+    "name": "Music",
+    "abbrv": "BMus",
+    "majors": [
+      "Classical Performance",
+      "Composition",
+      "Jazz Performance",
+      "Musicology",
+      "Popular Music"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "doubleMajorRequirements": [
+      {
+        "type": 0,
+        "required": 0
+      }
+    ],
+    "flags": [
+      "Next"
+    ]
+  },
+  {
+    "name": "Nursing",
+    "abbrv": "BNurs",
+    "majors": [
+      "None"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  },
+  {
+    "name": "Optometry",
+    "abbrv": "BOptm",
+    "majors": [
+      "None"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  },
+  {
+    "name": "Pharmacy",
+    "abbrv": "BPharm",
+    "majors": [
+      "None"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  },
+  {
+    "name": "Property",
+    "abbrv": "BProp",
+    "majors": [
+      "None"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  },
+  {
+    "name": "Science",
+    "abbrv": "BSc",
+    "majors": [
+      "Applied Mathematics",
+      "Anthropological Science",
+      "Biological Sciences",
+      "Biomedical Sciences",
+      "Biotechnology",
+      "Chemistry",
+      "Computer Science",
+      "Data Science",
+      "Earth Science",
+      "Ecology",
+      "Environmental Science",
+      "Exercise Sciences",
+      "Food Science and Nutrition",
+      "Geography",
+      "Geophysics",
+      "Information Systems",
+      "Logic and Computation",
+      "Marine Science",
+      "Mathematics",
+      "Medicinal Chemistry",
+      "Pharmacolgy",
+      "Physics",
+      "Physiology",
+      "Psychology",
+      "Statistics",
+      "Path to Med"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      },
+      {
+        "type": 0,
+        "required": 180,
+        "faculties": [
+          "Science"
+        ],
+        "aboveStage": 1
+      },
+      {
+        "type": 0,
+        "required": 75,
+        "faculties": [
+          "Science"
+        ],
+        "aboveStage": 2
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "faculties": [
+          "Open",
+          "Science"
+        ],
+        "flags": [
+          "general"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 300,
+        "faculties": [
+          "Science"
+        ]
+      },
+      {
+        "type": 1,
+        "required": 3,
+        "faculties": [
+          "Science"
+        ],
+        "flags": [
+          "differentdepts"
+        ]
+      }
+    ],
+    "doubleMajorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      },
+      {
+        "type": 0,
+        "required": 180,
+        "aboveStage": 1
+      },
+      {
+        "type": 0,
+        "required": 75,
+        "aboveStage": 2
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "faculties": [
+          "Open",
+          "Science"
+        ],
+        "flags": [
+          "general"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 300,
+        "faculties": [
+          "Science"
+        ]
+      },
+      {
+        "type": 1,
+        "required": 3,
+        "flags": [
+          "DifferentDepts"
+        ]
+      }
+    ],
+    "flags": [
+      "Dbl Mjr",
+      "Next"
+    ]
+  },
+  {
+    "name": "Social Work",
+    "abbrv": "BSW",
+    "majors": [
+      "Child and Family Practice",
+      "General Social Work",
+      "Health Social Work Practice",
+      "Youth Services Practice"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Next"
+    ]
+  },
+  {
+    "name": "Sport, Health and Physical Education",
+    "abbrv": "BSportHPE",
+    "majors": [
+      "Custom",
+      "Health & Physical Education",
+      "Sport Coaching and Leadership",
+      "Sport Science",
+      "Health Education and Promotion",
+      "Dance"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Next"
+    ]
+  },
+  {
+    "name": "Urban Planning",
+    "abbrv": "BUrbPlan",
+    "majors": [
+      "None"
+    ],
+    "majorRequirements": [
+      {
+        "type": 0,
+        "required": 360
+      }
+    ],
+    "flags": [
+      "Prescribed"
+    ]
+  }
+]

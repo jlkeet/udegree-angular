@@ -1,0 +1,25 @@
+<div class="courses-panel">
+  <div class="courses-panel-content" >
+    <semester-panel *ngFor="let semester of semesters; let i=index" [semester]="semester" [courses]="filteredCourses[i]? filteredCourses[i]:[]">
+    </semester-panel>
+    <div class="add-semester">
+      <mat-toolbar class="plain">
+        <span class="new-semester" (click)="addingSemester=true" *ngIf="addingSemester === false">
+          + ADD SEMESTER
+        </span>
+        <span class="pad-left" *ngIf="addingSemester === true">
+          <select [(ngModel)]="selectedPeriod" class="nice-select">
+            <option value=0> Summer School </option>
+            <option value=1> Semester 1</option>
+            <option value=2> Semester 2</option>
+          </select>
+          <input type="number" [(ngModel)]="selectedYear" min="2000" max="2030" placeholder="year"  class="year-input">
+          <button class="btn btn--next" (click)="newSemester();addingSemesters=false;"> ADD </button>
+        </span>
+      </mat-toolbar>
+    </div>
+  </div>
+  <div class="export-container">
+    <button class="btn export-button">Export Plan</button>
+  </div>
+</div>

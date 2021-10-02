@@ -1,0 +1,8 @@
+<div class="course course--draggable" (click)="toggleDetails()" (mouseover)="showDelete = true" (mouseleave)="showDelete = false" title="{{course.help}}"  
+    [style.background-color]="backgroundColor"
+    [class.course--error]="course.isError" >
+    <!--[class.dragging]="isDragging"-->
+    <div class="course-name">{{course.name}}</div>
+    <div class="course-title">{{course.title}}</div>
+    <course-delete-icon class="cross" *ngIf="course.canDelete" (deleteCourseClicked)="deleteCourse()"></course-delete-icon>
+</div>

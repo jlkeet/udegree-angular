@@ -1,0 +1,60 @@
+@import './../../sass/_variables.scss';
+@import './../../sass/_flex.scss';
+@import './../../sass/_shared.scss';
+@import './../../sass/_buttons.scss';
+
+.course {
+  width: 190px;
+  border-radius:5px;
+  height: 100px;
+  padding-top:15px;
+  padding-left:15px;
+  padding-right:15px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction:column;
+  box-sizing: border-box;
+}
+
+.course:hover .cross {
+  display: block;
+}
+
+.cross {
+  display:none;
+}
+
+.course--draggable {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+.course--large {
+  width: 150px;
+  height: 100px;
+}
+.course--error {
+  border: 4px solid red;
+}
+.course-text {
+  font-weight: normal;
+  font-size: 15px;
+  z-index: 1;
+} 
+
+.course-name {
+  font-weight: bold; 
+  font-size: 15px;
+  z-index: 1;
+  color: black;
+}
+.course-title {
+  font-size: 10px;
+  z-index: 1;
+  color: black;
+}
+
+.dragging {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+}

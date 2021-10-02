@@ -1,0 +1,38 @@
+@import './../../sass/_mdl-switch.scss';
+
+.course-filter-search {
+  border-radius: 3px;
+  display: inline-block;
+  padding: 3px 26px 3px 5px;
+  width: 225px;
+}
+
+.filter-panel {
+  width: 100%;
+  background:white;
+}
+
+.pad {
+  padding:10px;
+}
+
+//this gets rid of the big space that mat-form uses 
+.remove-pad {
+  margin-bottom:0px
+}
+
+toggle-switch {
+  display: inline-block
+}
+
+.space{
+  margin-left:10px;
+}
+
+.flex-justify {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left:20px;
+  margin-right:20px;
+}
