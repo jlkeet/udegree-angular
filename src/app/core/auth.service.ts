@@ -4,14 +4,22 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { FirebaseUserModel } from './user.model';
 import { Router } from "@angular/router";
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class AuthService {
 
+  // userId: string;
+
   constructor(
    public afAuth: AngularFireAuth,
+   private db: AngularFirestore
 
- ) { }
+ ) { 
+  //  this.afAuth.authState.subscribe(user => {
+  //   if(user) this.userId = user.uid
+  //  })
+ }
 
 
   doFacebookLogin(){
@@ -60,12 +68,16 @@ export class AuthService {
 
   doRegister(value){
     return new Promise<any>((resolve, reject) => {
-      firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
+      firebase.auth().createUserWithEmailAndPassword(value.email, value.password),
+      this.db
+      .collection("users")
+      .add(value)
       .then(res => {
         resolve(res);
       }, err => reject(err))
     })
   }
+
 
   doLogin(value){
     return new Promise<any>((resolve, reject) => {
@@ -77,7 +89,7 @@ export class AuthService {
   }
 
   doLogout(){
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       if(firebase.auth().currentUser){
         this.afAuth.auth.signOut();
         resolve();

@@ -3,6 +3,9 @@ import { FirebaseUserModel } from '../core/user.model';
 import { UserService } from '../core/user.service';
 import { AuthService } from '../core/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as firebase from 'firebase';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { getNameOfDeclaration } from 'typescript';
 
 
 @Component({
@@ -41,29 +44,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UserContainer {
 
-  // Testing
 
   private isLoggedIn: Boolean;
-  private displayName: String;
+  private displayName: String = "";
   private email: String;
-
-
-  // End Testing
+  private id: String = "";
+  
 
   user: FirebaseUserModel = new FirebaseUserModel();
 
   constructor(
     public userService: UserService,
     public authService: AuthService,
-    private route: ActivatedRoute,
-
-    // Testing
+    public db: AngularFirestore,
     private router: Router
-    // End Testing
+
+
   ) {
 
     this.authService.afAuth.authState.subscribe(
-      (auth) => {
+      async (auth) => {
         if (auth == null) {
           console.log("Logged out");
           this.isLoggedIn = false;
@@ -76,7 +76,17 @@ export class UserContainer {
           }
         } else {
           this.isLoggedIn = true;
-          this.displayName = auth.displayName;
+
+          this.getDocumentId('users').then(
+            (docId) => this.id = docId)
+          
+
+          if (this.displayName.length > 0) {
+            console.log("null is firing")
+            this.displayName = auth.displayName;
+          } else {
+          this.getUserName('users', 'QaAUE6ODif6k78c4myiW').then(
+            (value) => this.displayName = value)}
           this.email = auth.email;
           console.log("Logged in");
           this.router.navigate(['planner']);
@@ -85,4 +95,18 @@ export class UserContainer {
     );
   }
 
+getDocumentId(collection) {
+  return new Promise<any>((resolve) => {
+    var doc_data = this.db.collection(collection).get().toPromise().then(result => {
+      result.docs.forEach(doc => {console.log(doc.id)})
+      resolve(result.docs);
+  })})
+} 
+
+getUserName(collection, document) {
+  return new Promise<any>((resolve) => {
+  var data = this.db.collection(collection).doc(document).get().toPromise().then(result => {
+    resolve(result.data().name);
+})})
+  }
 }
