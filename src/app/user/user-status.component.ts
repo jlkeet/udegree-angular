@@ -5,7 +5,6 @@ import { AuthService } from '../core/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { getNameOfDeclaration } from 'typescript';
 
 
 @Component({
@@ -47,18 +46,19 @@ export class UserContainer {
 
   private isLoggedIn: Boolean;
   private displayName: String = "";
-  private email: String;
-  private id: String = "";
-  
+  private email: String = "";
+  private uid: String;  
 
-  user: FirebaseUserModel = new FirebaseUserModel();
+  //user: FirebaseUserModel = new FirebaseUserModel();
 
   constructor(
+
+
     public userService: UserService,
     public authService: AuthService,
     public db: AngularFirestore,
-    private router: Router
-
+    private router: Router,
+    private user: FirebaseUserModel
 
   ) {
 
@@ -76,32 +76,20 @@ export class UserContainer {
           }
         } else {
           this.isLoggedIn = true;
+          console.log("Logged in");
+          this.email = auth.email;
 
-          this.getDocumentId('users').then(
-            (docId) => this.id = docId)
-          
-
-          if (this.displayName.length > 0) {
-            console.log("null is firing")
+          if (auth.displayName != null ) {
             this.displayName = auth.displayName;
           } else {
-          this.getUserName('users', 'QaAUE6ODif6k78c4myiW').then(
-            (value) => this.displayName = value)}
+            this.getUserName('users', auth.email).then(
+              (value) => this.displayName = value)
+            }
+          }
           this.email = auth.email;
-          console.log("Logged in");
           this.router.navigate(['planner']);
         }
-      }
-    );
-  }
-
-getDocumentId(collection) {
-  return new Promise<any>((resolve) => {
-    var doc_data = this.db.collection(collection).get().toPromise().then(result => {
-      result.docs.forEach(doc => {console.log(doc.id)})
-      resolve(result.docs);
-  })})
-} 
+    )}
 
 getUserName(collection, document) {
   return new Promise<any>((resolve) => {

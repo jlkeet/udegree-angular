@@ -7,6 +7,7 @@ import { AppReadyEvent } from './app.ready.event';
 import { AppState } from './app.service';
 import * as services from './services';
 
+
 const mapValuesToArray = obj => Object.keys(obj).map(key => obj[key]);
 
 //create providers for all services exported from ./services

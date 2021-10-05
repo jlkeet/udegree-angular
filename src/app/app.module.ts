@@ -31,6 +31,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FirebaseUserModel } from './core/user.model';
+
 
 /* Firebase Credenetials */
 
@@ -212,6 +214,7 @@ type StoreType = {
     AuthGuard,
     DragulaService,
     WindowRef,
+    FirebaseUserModel, // user data
     ...providers
   ]
 })

@@ -5,21 +5,20 @@ import * as firebase from 'firebase/app';
 import { FirebaseUserModel } from './user.model';
 import { Router } from "@angular/router";
 import { AngularFirestore } from '@angular/fire/firestore';
+import { userError } from "@angular/compiler-cli/src/transformers/util";
 
 @Injectable()
 export class AuthService {
 
-  // userId: string;
+  uid: string;
+  
 
   constructor(
    public afAuth: AngularFireAuth,
-   private db: AngularFirestore
-
- ) { 
-  //  this.afAuth.authState.subscribe(user => {
-  //   if(user) this.userId = user.uid
-  //  })
- }
+   private db: AngularFirestore,
+   public userdata: FirebaseUserModel,
+    
+ ) { }
 
 
   doFacebookLogin(){
@@ -68,10 +67,11 @@ export class AuthService {
 
   doRegister(value){
     return new Promise<any>((resolve, reject) => {
-      firebase.auth().createUserWithEmailAndPassword(value.email, value.password),
+      firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
       this.db
       .collection("users")
-      .add(value)
+      .doc(value.email)
+      .set(value)
       .then(res => {
         resolve(res);
       }, err => reject(err))
