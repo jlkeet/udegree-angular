@@ -3,9 +3,7 @@ import 'rxjs/add/operator/toPromise';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { FirebaseUserModel } from './user.model';
-import { Router } from "@angular/router";
 import { AngularFirestore } from '@angular/fire/firestore';
-import { userError } from "@angular/compiler-cli/src/transformers/util";
 
 @Injectable()
 export class AuthService {
@@ -24,7 +22,7 @@ export class AuthService {
   doFacebookLogin(){
     return new Promise<any>((resolve, reject) => {
       let provider = new firebase.auth.FacebookAuthProvider();
-      this.afAuth.auth
+      this.afAuth.auth // Need to add user data storage
       .signInWithPopup(provider)
       .then(res => {
         resolve(res);
@@ -53,7 +51,7 @@ export class AuthService {
     return new Promise<any>((resolve, reject) => {
       let provider = new firebase.auth.GoogleAuthProvider();
       provider.addScope('profile');
-      provider.addScope('email');
+      provider.addScope('email'); // Need to add user data storage
       this.afAuth.auth
       .signInWithPopup(provider)
       .then(res => {
@@ -69,7 +67,7 @@ export class AuthService {
     return new Promise<any>((resolve, reject) => {
       firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
       this.db
-      .collection("users")
+      .collection("users") // Here is where we set the docID to the email so its accessible in the database.
       .doc(value.email)
       .set(value)
       .then(res => {

@@ -61,35 +61,39 @@ export class UserContainer {
 
     this.authService.afAuth.authState.subscribe(
       async (auth) => {
-        if (auth == null) {
+        if (auth == null) {                   // Check to see if user is logged in
           console.log("Logged out");
           this.isLoggedIn = false;
           this.displayName = '';
           this.email = '';
-          if (this.router.url === "/register") {
-
+          if (this.router.url === "/register") {  // If user is on register page, do not re-route, otherwise go to login page
+            // Do not execute anything here
           } else {
             this.router.navigate(['/login']);
           }
         } else {
-          this.isLoggedIn = true;
-          console.log("Logged in");
+          this.isLoggedIn = true; // User is logged in
           if (auth.displayName != null ) {
-            this.displayName = auth.displayName;
+            this.displayName = auth.displayName; // If there is a useranme from authentication then its from third party and can pull it
           } else {
             this.getUserName('users', auth.email).then(
-              (value) => this.displayName = value)
+              (value) => this.displayName = value) // If there isn't then use getUserName to grab it from Firestore
             }
           }
-          this.email = auth.email;
+
+          this.email = auth.email; // This has to be included here and I don't know why
           this.router.navigate(['planner']);
         }
     )}
+
+// This function gets the users name from firestore collection. 
 
 getUserName(collection, document) {
   return new Promise<any>((resolve) => {
   var data = this.db.collection(collection).doc(document).get().toPromise().then(result => {
     resolve(result.data().name);
 })})
+
+
   }
 }

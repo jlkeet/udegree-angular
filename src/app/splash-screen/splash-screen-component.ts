@@ -18,6 +18,9 @@ export class SplashScreenComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       let transitionStyle = "";
+
+      // Determine the splashscreen style from the html and in that case execute one of the styles
+
       switch (this.animationType) {
         case SplashAnimationType.SlideLeft:
           this.windowWidth = "-" + window.innerWidth + "px";
@@ -35,6 +38,8 @@ export class SplashScreenComponent implements OnInit {
       this.splashTransition = transitionStyle;
 
       //this.windowWidth = "-" + window.innerWidth + "px";
+
+      // Timeout function for splash screen.  
       setTimeout(() => {
         this.showSplash = !this.showSplash;
       }, this.duration * 1000);

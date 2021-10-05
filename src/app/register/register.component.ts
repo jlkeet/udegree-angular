@@ -22,6 +22,9 @@ export class RegisterComponent {
     this.createForm();
    }
 
+
+   // This is where we set the registration form options, could add further fields if necessary
+
    createForm() {
      this.registerForm = this.fb.group({
        email: ['', Validators.required ],
