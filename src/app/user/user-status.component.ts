@@ -14,9 +14,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
   .light {
     color:#ddd;
   }
-  .circle {
-    font-size:40px
-  }
   .user{
     display:inline-block;
     color: #444;
@@ -77,8 +74,6 @@ export class UserContainer {
         } else {
           this.isLoggedIn = true;
           console.log("Logged in");
-          this.email = auth.email;
-
           if (auth.displayName != null ) {
             this.displayName = auth.displayName;
           } else {
