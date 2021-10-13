@@ -13,6 +13,9 @@ import {
 import { IRequirement, RequirementService } from './requirement.service';
 import { StoreHelper } from './store-helper';
 import { ErrorsChangedEvent } from './course.event';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { OrderList } from 'primeng/primeng';
 
 /*
     Helper service for courses
@@ -23,14 +26,16 @@ export class CourseService {
 
   private allCourses: ICourse[];
   private planned: ICourse[];
-  private courseCounter = 0; // need to store this
+  public courseCounter = 0; // need to store this
   private errors: Message[];
 
   constructor(
     private errorsChanged: ErrorsChangedEvent,
     private requirementService: RequirementService,
     private store: Store,
-    private storeHelper: StoreHelper
+    private storeHelper: StoreHelper,
+    private db_courses: AngularFireDatabase,
+    private db: AngularFirestore,
     ) {
     this.allCourses = require('../../assets/data/courses.json');
     // By default, all courses are deletable
@@ -86,12 +91,36 @@ export class CourseService {
     copy.status = status ? status : CourseStatus.Planned;
     copy.period = period;
     copy.year = year;
-    copy.id = this.courseCounter++;
+    copy.id = courseId;  //this.courseCounter++;     I'm not exactly sure why we were making the course id linked to the course counter but have commented this out for now so we can match the index to the db.
     this.storeHelper.add('courses', copy);
     this.updateErrors();
+    this.courseCounter++;
+    this.setCourseDb(courseId)
   }
 
-  public deselectCourse(courseId: number) {
+  private setCourseDb(courseId){
+    this.db_courses.list("0/" + (courseId - 1)).valueChanges().subscribe(result => { 
+    this.db
+    .collection("users") 
+    .doc("jackson.keet@mac.com") // Here is where we set the docID to the email so its accessible in the database.
+    .collection("courses")
+    .add(Object.assign({
+      department:result[0],
+      desc: result[1],
+      faculties: result[2],
+      id: result[3],
+      name: result[4],
+      points: result[5],
+      requirements: result[6],
+      stage: result[7],
+      title: result[8],
+      }))
+      .then((docRef) => {console.log("Here's the docId " + docRef.id)} )
+    }
+  )    
+ }
+
+  public deselectCourse(courseId: number) { // Is this redundant now?
     this.storeHelper.findAndDelete('courses', courseId);
     this.updateErrors();
   }
@@ -100,6 +129,22 @@ export class CourseService {
     let course = this.findPlanned(courseName);
     this.storeHelper.findAndDelete('courses', course.id);
     this.updateErrors();
+    this.courseCounter--;
+    this.db.collection("users").doc("jackson.keet@mac.com").collection("courses", ref => {
+      const query = ref.where('id', '==', course.id);
+      query.get().then( snapshot => {
+        snapshot.forEach(doc => {
+          this.db
+          .collection("users")
+          .doc("jackson.keet@mac.com")
+          .collection("courses")
+          .doc(doc.id)
+          .delete()
+         })
+        }
+      )
+      return query
+      })
   }
 
   public changeStatus(courseToChange: ICourse, status: CourseStatus) {
@@ -174,6 +219,10 @@ export class CourseService {
   public stringToCourse(courseName: string) {
     //console.log(this.allCourses);
     return this.allCourses.find((course: ICourse) => course.name === courseName);
+  }
+
+  public courseCounterOnDelete() {
+    this.courseCounter--;
   }
 
 }

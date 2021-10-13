@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { snapshotChanges } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { DragulaService } from 'ng2-dragula';
 import { DragulaModule } from 'ng2-dragula';
 import { ICourse } from '../interfaces';
@@ -121,13 +123,15 @@ export class SemesterPanel {
   private bagName;
   private atMaxPoints;
   private gpa;
+  private courseCounter: number;
 
   constructor(
     private courseService: CourseService,
     private courseEventService: CourseEventService,
     private dragulaService: DragulaService,
     private dragulaModule: DragulaModule,
-    private storeHelper: StoreHelper
+    private storeHelper: StoreHelper,
+    private db: AngularFirestore,
   ) { }
 
   private ngOnInit() {
@@ -176,6 +180,8 @@ export class SemesterPanel {
 
     const totalPoints = this.courses.reduce((points, course) => points + course.points, 0);
     this.atMaxPoints = totalPoints >= this.MAX_POINTS;
+
+    this.courseCounter = this.courseService.courseCounter;
   }
 
   private onDropModel(args) {
@@ -235,6 +241,7 @@ export class SemesterPanel {
   }
 
   private deleteCourse(course: ICourse) {
+    this.courseService.courseCounterOnDelete();
     if (this.sameTime(course)) {
       this.courseEventService.raiseCourseRemoved({
         courseId: course.id,
@@ -242,6 +249,21 @@ export class SemesterPanel {
         year: course.year
       });
     }
+    this.db.collection("users").doc("jackson.keet@mac.com").collection("courses", ref => {
+      const query = ref.where('id', '==', course.id);
+      query.get().then( snapshot => {
+        snapshot.forEach(doc => {
+          this.db
+          .collection("users")
+          .doc("jackson.keet@mac.com")
+          .collection("courses")
+          .doc(doc.id)
+          .delete()
+         })
+        }
+      )
+      return query
+      })
   }
 
   private deleteSemester() {
@@ -255,3 +277,4 @@ export class SemesterPanel {
   }
 
 }
+

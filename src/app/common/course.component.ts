@@ -8,6 +8,8 @@ import {
   Renderer,
   SimpleChange
 } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
 import { StoreHelper } from '../services';
@@ -42,14 +44,18 @@ export class Course {
   constructor(
     private el: ElementRef,
     private renderer: Renderer,
-    private storeHelper: StoreHelper
+    private storeHelper: StoreHelper,
+    private db_courses: AngularFireDatabase,
+    private db: AngularFirestore,
   ) {}
 
   public addCourse() {
     this.addCourseClicked.emit({
       value: this.course
-    });
+    })
+
   }
+
   public cancel(event) {
     this.cancelClicked.emit({
       value: this.course

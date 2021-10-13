@@ -2,6 +2,8 @@
  * Angular 2 decorators and services
  */
 import { Component, ViewEncapsulation } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AddCourseService } from './add-course';
 import { AppReadyEvent } from './app.ready.event';
 import { AppState } from './app.service';
@@ -20,7 +22,9 @@ require('./app.component.global.scss');
 /*
  * App Component
  * Root Level Component
+ * 
  */
+
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'app',
@@ -34,7 +38,21 @@ export class App {
   public name = 'Angular 2 Webpack Starter';
   public url = 'https://twitter.com/AngularClass';
 
+  data : any = [];
+
+  constructor(
+    private db_courses: AngularFireDatabase,
+    private db: AngularFirestore,
+    
+    
+    ) { }
+
+  ngOnInit(): void {
+  }
 }
+
+
+
 
 /*
  * Please review the https://github.com/AngularClass/angular2-examples/ repo for

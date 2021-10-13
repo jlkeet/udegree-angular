@@ -129,9 +129,10 @@ export class RequirementService {
       } else {
         console.log('ERROR REQUIREMENT HAS TYPE ' + requirement.type);
       }
-
+      if (mapped != undefined || null) { // Make sure not undefined before assigning
       const total = mapped.reduce((num1: number, num2: number) => num1 + num2, 0);
       return total > requirement.required ? requirement.required : total;
+      }
     }
   }
 

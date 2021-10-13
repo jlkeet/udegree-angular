@@ -1299,7 +1299,8 @@
   ],
   "department": "Ancient History",
   "points": 15,
-  "stage": 2
+  "stage": 2,
+  "requirements": null
 },
 {
   "id": 56,

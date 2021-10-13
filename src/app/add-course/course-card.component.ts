@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Injectable, Input, Output } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { ICourse } from '../interfaces';
 import { DepartmentCoursesModel } from '../models';
 import { CourseService, StoreHelper } from '../services';
@@ -50,10 +51,10 @@ export class CourseCard {
   @Input() public course;
   @Input() public id;
 
-  constructor(private addCourseService: AddCourseService) { }
+  constructor(private addCourseService: AddCourseService, private db_courses: AngularFireDatabase,) { }
 
   private toggleDetails(course) {
-    this.addCourseService.raiseDetailsToggled(course);
+    this.addCourseService.raiseDetailsToggled(course);    
   }
 
   private check(event, course) {

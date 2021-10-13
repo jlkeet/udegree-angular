@@ -62,7 +62,6 @@ export class UserContainer {
     this.authService.afAuth.authState.subscribe(
       async (auth) => {
         if (auth == null) {                   // Check to see if user is logged in
-          console.log("Logged out");
           this.isLoggedIn = false;
           this.displayName = '';
           this.email = '';
@@ -80,7 +79,6 @@ export class UserContainer {
               (value) => this.displayName = value) // If there isn't then use getUserName to grab it from Firestore
             }
           }
-
           this.email = auth.email; // This has to be included here and I don't know why
           this.router.navigate(['planner']);
         }

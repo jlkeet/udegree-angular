@@ -6,6 +6,8 @@ import {
   Output,
   SimpleChange
 } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
 import 'rxjs/Rx';
 import { Store } from '../app.store';
 import { ICourse } from '../interfaces';
@@ -23,7 +25,7 @@ import {
   CourseService,
   MovedEvent,
   RemovedEvent,
-  StoreHelper
+  StoreHelper,
 } from '../services';
 
 /*
@@ -47,6 +49,7 @@ export class CoursesPanel {
   private semesters = [];
   private filteredCourses;
   private newOpen;
+  private courseCounter: number;
 
   private selectedYear;
   private selectedPeriod;
@@ -56,7 +59,9 @@ export class CoursesPanel {
     private coursesService: CourseService,
     private courseEventService: CourseEventService,
     private store: Store,
-    private storeHelper: StoreHelper
+    private storeHelper: StoreHelper,
+    private db_courses: AngularFireDatabase,
+    private db: AngularFirestore,
   ) {
     this.courseMoved = new EventEmitter<MovedEvent>();
     this.courseRemoved = new EventEmitter<RemovedEvent>();
@@ -81,20 +86,20 @@ export class CoursesPanel {
     this.store.changes.pluck('semesters').
       subscribe((semesters: any[]) => this.semesters = semesters);
 
+    this.courseCounter = this.coursesService.courseCounter;
+
   }
 
   public ngOnChanges(): void {
     this.newOpen = false;
-    this.selectedYear = 2019;
+    this.selectedYear = 2021;
     this.selectedPeriod = Period.One;
 
     this.filteredCourses =
     this.semesters.map((semester) => this.filterCourses(semester.year, semester.period));
-    console.log(this.filteredCourses);
   }
 
   private filterCourses(year: number, period: Period) {
-    console.log(this.courses);
     return this.courses.filter((course: ICourse) =>
       course.year === year && course.period === period);
   }

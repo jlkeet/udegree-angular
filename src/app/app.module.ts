@@ -32,6 +32,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FirebaseUserModel } from './core/user.model';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 /* Firebase Credenetials */
@@ -199,6 +200,7 @@ type StoreType = {
     DropdownModule,
     // Firebase Authentication
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage

@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Injectable, Input, Output, SimpleChanges } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { ICourse } from '../interfaces';
 import { CourseStatus, DepartmentCoursesModel } from '../models';
 import { CourseService, StoreHelper } from '../services';
@@ -57,8 +59,9 @@ export class AddCoursePanel {
   private courseStatus;
   private curScroll;
   private scrollTo;
+  
 
-  constructor(private courseService: CourseService, private storeHelper: StoreHelper) { }
+  constructor(private courseService: CourseService, private storeHelper: StoreHelper, private db_courses: AngularFireDatabase, private db: AngularFirestore) { }
 
   ngOnChanges(changes: SimpleChanges){
     this.scrollTo = 2;
