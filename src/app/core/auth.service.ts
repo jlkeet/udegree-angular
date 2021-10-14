@@ -22,7 +22,7 @@ export class AuthService {
   doFacebookLogin(){
     return new Promise<any>((resolve, reject) => {
       let provider = new firebase.auth.FacebookAuthProvider();
-      this.afAuth.auth // Need to add user data storage
+      this.afAuth.auth
       .signInWithPopup(provider)
       .then(res => {
         resolve(res);

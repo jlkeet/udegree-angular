@@ -33,21 +33,6 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FirebaseUserModel } from './core/user.model';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-
-
-/* Firebase Credenetials */
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyB_-zvddGTVsnNhKj4rT10BSs6g_kU4PUE",
-//   authDomain: "udegree-angular.firebaseapp.com",
-//   databaseURL: "https://udegree-angular-default-rtdb.asia-southeast1.firebasedatabase.app",
-//   projectId: "udegree-angular",
-//   storageBucket: "udegree-angular.appspot.com",
-//   messagingSenderId: "708718176430",
-//   appId: "1:708718176430:web:71ebdd7e688bd5f060253f",
-//   measurementId: "G-MN927X4H5S"
-// };
-
 import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
@@ -108,6 +93,8 @@ import { NoContent } from './no-content';
 import * as progress from './progress-panel';
 import { DegreeSelection, DepartmentList, FacultyList } from './select-major';
 import { CourseService, WindowRef } from './services';
+
+import { UserContainer } from '../user/user-status.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -175,6 +162,7 @@ type StoreType = {
     RegisterComponent,
     SplashScreenComponent,
     
+    
   ],
   imports: [
     // import Angular's modules
@@ -204,7 +192,6 @@ type StoreType = {
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
-    
   ],
   providers: [
     // expose our Services and Providers into Angular's dependency injection

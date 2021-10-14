@@ -10,6 +10,7 @@ import {
 import { query } from '@angular/core/src/render3';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
+import * as firebase from 'firebase';
 import { auth } from 'firebase';
 import { subscribeToPromise } from 'rxjs/internal-compatibility';
 import 'rxjs/Rx';
@@ -70,7 +71,7 @@ export class CoursesPanel {
     private storeHelper: StoreHelper,
     private db_courses: AngularFireDatabase,
     private db: AngularFirestore,
-    public authService: AuthService
+    public authService: AuthService,
   ) {
 
     this.courseMoved = new EventEmitter<MovedEvent>();
@@ -98,40 +99,34 @@ export class CoursesPanel {
 
     this.courseCounter = this.coursesService.courseCounter;
 
+    this.authService.afAuth.authState.subscribe(
+      async (auth) => {
+        if (auth == null) {
+          this.email = '';
+          console.log("Not logged in")
+        } else {
+          console.log("Logged in")
+          this.email = auth.email;
+          this.loadPlanFromDb()
+          }
+    
+        }
+      )
+
   }
 
   public ngOnInit() {
-    this.authService.afAuth.authState.subscribe( async (auth) => { auth.email })
+    
   }
 
   public ngOnChanges(): void {
+
     this.newOpen = false;
     this.selectedYear = 2021;
     this.selectedPeriod = Period.One;
 
     this.filteredCourses =
     this.semesters.map((semester) => this.filterCourses(semester.year, semester.period));  
-
-
-  if(this.email !== undefined) {
-    this.db.collection('users').doc(this.email)
-    .get().toPromise().then(
-       doc => {
-          if (doc.exists) {
-             this.db.collection('users').doc("jackson.keet@mac.com").collection('courses').get().toPromise().
-             then(sub => {
-                if (sub.docs.length > 0) {
-                   console.log('subcollection exists');
-                   this.addSemesterFromDb();
-                }
-             });
-          } else {
-            console.log("No sems exist in db, free to add in now")
-          }
-       })
-      } else {
-        console.log("Still undefined")
-      }
   }
 
   private filterCourses(year: number, period: Period) {
@@ -156,7 +151,7 @@ export class CoursesPanel {
 
   private getSemesterFromDb() {
     return new Promise<any>((resolve) => {
-    const semesterFromDb = {year: (this.db.collection("users").doc("jackson.keet@mac.com").collection("courses").doc("AiBARdn21LKvANyQibPf").get().toPromise().then(
+    const semesterFromDb = {year: (this.db.collection("users").doc(this.email).collection("courses").doc("1pCXWbkcg5EUDdgZK4o1").get().toPromise().then(
       resultYear => { resolve(resultYear.data().year )}))
       }
     }
@@ -165,7 +160,7 @@ export class CoursesPanel {
 
   private getPeriodFromDb() {
     return new Promise<any>((resolve) => {
-      const periodFromDb = { period: Number(this.db.collection("users").doc("jackson.keet@mac.com").collection("courses").doc("AiBARdn21LKvANyQibPf").get().toPromise().then(
+      const periodFromDb = { period: Number(this.db.collection("users").doc(this.email).collection("courses").doc("1pCXWbkcg5EUDdgZK4o1").get().toPromise().then(
         resultPeriod => { resolve(resultPeriod.data().period)}))}
         })
   }
@@ -184,6 +179,29 @@ export class CoursesPanel {
     this.addingSemester = false;
    }
   }
+
+  private loadPlanFromDb() {
+      if(this.email !== undefined) {
+        this.db.collection('users').doc(this.email)
+        .get().toPromise().then(
+           doc => {
+              if (doc.exists) {
+                 this.db.collection('users').doc(this.email).collection('courses').get().toPromise().
+                 then(sub => {
+                    if (sub.docs.length > 0) {
+                       console.log('subcollection exists');
+                       this.addSemesterFromDb();
+                    }
+                 });
+              } else {
+                console.log("No sems exist in db, free to add in now")
+              }
+           })
+          } else {
+            console.log("Still undefined " + this.email)
+          }
+
+    }
 
   }
 

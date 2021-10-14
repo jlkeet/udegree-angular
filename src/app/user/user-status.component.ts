@@ -43,7 +43,7 @@ export class UserContainer {
 
   private isLoggedIn: Boolean;
   private displayName: String = "";
-  private email: String = "";
+  public email: String = "";
   private uid: String;  
 
   //user: FirebaseUserModel = new FirebaseUserModel();
