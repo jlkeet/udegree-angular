@@ -68,4 +68,5 @@ private slogan: string;
           this.slogan = slogan;
         });
     }
+
 }

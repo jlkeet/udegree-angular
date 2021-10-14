@@ -1,3 +1,4 @@
+import { ValueTransformer } from '@angular/compiler/src/util';
 import {
   Component,
   EventEmitter,
@@ -6,10 +7,15 @@ import {
   Output,
   SimpleChange
 } from '@angular/core';
+import { query } from '@angular/core/src/render3';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { auth } from 'firebase';
+import { subscribeToPromise } from 'rxjs/internal-compatibility';
 import 'rxjs/Rx';
+import { isUndefined } from 'util';
 import { Store } from '../app.store';
+import { AuthService } from '../core/auth.service';
 import { ICourse } from '../interfaces';
 import {
   CourseModel,
@@ -54,6 +60,8 @@ export class CoursesPanel {
   private selectedYear;
   private selectedPeriod;
   private addingSemester = false;
+  private semDbCount: number;
+  private email: string;
 
   constructor(
     private coursesService: CourseService,
@@ -62,7 +70,9 @@ export class CoursesPanel {
     private storeHelper: StoreHelper,
     private db_courses: AngularFireDatabase,
     private db: AngularFirestore,
+    public authService: AuthService
   ) {
+
     this.courseMoved = new EventEmitter<MovedEvent>();
     this.courseRemoved = new EventEmitter<RemovedEvent>();
     this.courseClicked = new EventEmitter<ClickedEvent>();
@@ -90,13 +100,38 @@ export class CoursesPanel {
 
   }
 
+  public ngOnInit() {
+    this.authService.afAuth.authState.subscribe( async (auth) => { auth.email })
+  }
+
   public ngOnChanges(): void {
     this.newOpen = false;
     this.selectedYear = 2021;
     this.selectedPeriod = Period.One;
 
     this.filteredCourses =
-    this.semesters.map((semester) => this.filterCourses(semester.year, semester.period));
+    this.semesters.map((semester) => this.filterCourses(semester.year, semester.period));  
+
+
+  if(this.email !== undefined) {
+    this.db.collection('users').doc(this.email)
+    .get().toPromise().then(
+       doc => {
+          if (doc.exists) {
+             this.db.collection('users').doc("jackson.keet@mac.com").collection('courses').get().toPromise().
+             then(sub => {
+                if (sub.docs.length > 0) {
+                   console.log('subcollection exists');
+                   this.addSemesterFromDb();
+                }
+             });
+          } else {
+            console.log("No sems exist in db, free to add in now")
+          }
+       })
+      } else {
+        console.log("Still undefined")
+      }
   }
 
   private filterCourses(year: number, period: Period) {
@@ -119,4 +154,37 @@ export class CoursesPanel {
     }
   }
 
-}
+  private getSemesterFromDb() {
+    return new Promise<any>((resolve) => {
+    const semesterFromDb = {year: (this.db.collection("users").doc("jackson.keet@mac.com").collection("courses").doc("AiBARdn21LKvANyQibPf").get().toPromise().then(
+      resultYear => { resolve(resultYear.data().year )}))
+      }
+    }
+    )
+  }
+
+  private getPeriodFromDb() {
+    return new Promise<any>((resolve) => {
+      const periodFromDb = { period: Number(this.db.collection("users").doc("jackson.keet@mac.com").collection("courses").doc("AiBARdn21LKvANyQibPf").get().toPromise().then(
+        resultPeriod => { resolve(resultPeriod.data().period)}))}
+        })
+  }
+
+  private addSemesterFromDb() {
+   const sem = this.getSemesterFromDb().then(
+      (theYear) => this.selectedYear = theYear)
+   const per = this.getPeriodFromDb().then(
+      (thePeriod) => this.selectedPeriod = thePeriod)
+   const newSemesterFromDb = {year: Number(this.selectedYear), period: Number(this.selectedPeriod) }   
+   if (this.canAddSemester(newSemesterFromDb)) {
+    this.semesters.push(newSemesterFromDb);
+    this.semesters.sort((s1, s2) =>
+    (s1.year === s2.year) ? s1.period - s2.period : s1.year - s2.year);
+    this.storeHelper.update('semesters', this.semesters);
+    this.addingSemester = false;
+   }
+  }
+
+  }
+
+

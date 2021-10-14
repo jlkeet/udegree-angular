@@ -16,6 +16,9 @@ import { ErrorsChangedEvent } from './course.event';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { OrderList } from 'primeng/primeng';
+import { yearsPerPage } from '@angular/material/datepicker/typings/multi-year-view';
+import { copyAnimationEvent } from '@angular/animations/browser/src/render/shared';
+import { AuthService } from '../core/auth.service';
 
 /*
     Helper service for courses
@@ -28,6 +31,7 @@ export class CourseService {
   private planned: ICourse[];
   public courseCounter = 0; // need to store this
   private errors: Message[];
+  private email: string = "";
 
   constructor(
     private errorsChanged: ErrorsChangedEvent,
@@ -36,11 +40,19 @@ export class CourseService {
     private storeHelper: StoreHelper,
     private db_courses: AngularFireDatabase,
     private db: AngularFirestore,
+    public authService: AuthService,
     ) {
+
+    this.authService.afAuth.authState.subscribe( async (auth) => { this.email = auth.email })
+
     this.allCourses = require('../../assets/data/courses.json');
+    
     // By default, all courses are deletable
     this.allCourses.map((course: ICourse) => course.canDelete = true);
     this.store.changes.pluck('courses').subscribe((courses: ICourse[]) => this.planned = courses);
+
+    
+
   }
 
   public addCustom(
@@ -95,14 +107,14 @@ export class CourseService {
     this.storeHelper.add('courses', copy);
     this.updateErrors();
     this.courseCounter++;
-    this.setCourseDb(courseId)
+    this.setCourseDb(courseId, period, year)
   }
 
-  private setCourseDb(courseId){
+  private setCourseDb(courseId, coursePeriod, courseYear){
     this.db_courses.list("0/" + (courseId - 1)).valueChanges().subscribe(result => { 
     this.db
     .collection("users") 
-    .doc("jackson.keet@mac.com") // Here is where we set the docID to the email so its accessible in the database.
+    .doc(this.email) // Here is where we set the docID to the email so its accessible in the database.
     .collection("courses")
     .add(Object.assign({
       department:result[0],
@@ -114,6 +126,8 @@ export class CourseService {
       requirements: result[6],
       stage: result[7],
       title: result[8],
+      period: coursePeriod,
+      year: courseYear
       }))
       .then((docRef) => {console.log("Here's the docId " + docRef.id)} )
     }
@@ -130,13 +144,13 @@ export class CourseService {
     this.storeHelper.findAndDelete('courses', course.id);
     this.updateErrors();
     this.courseCounter--;
-    this.db.collection("users").doc("jackson.keet@mac.com").collection("courses", ref => {
+    this.db.collection("users").doc(this.email).collection("courses", ref => {
       const query = ref.where('id', '==', course.id);
       query.get().then( snapshot => {
         snapshot.forEach(doc => {
           this.db
           .collection("users")
-          .doc("jackson.keet@mac.com")
+          .doc(this.email)
           .collection("courses")
           .doc(doc.id)
           .delete()

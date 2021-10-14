@@ -10,6 +10,7 @@ import { AppState } from './app.service';
 import * as services from './services';
 
 
+
 const mapValuesToArray = obj => Object.keys(obj).map(key => obj[key]);
 
 //create providers for all services exported from ./services
@@ -43,11 +44,14 @@ export class App {
   constructor(
     private db_courses: AngularFireDatabase,
     private db: AngularFirestore,
+
     
-    
-    ) { }
+    ) {
+
+     }
 
   ngOnInit(): void {
+
   }
 }
 

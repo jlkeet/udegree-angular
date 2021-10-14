@@ -58,7 +58,6 @@ export class UserContainer {
     private user: FirebaseUserModel
 
   ) {
-
     this.authService.afAuth.authState.subscribe(
       async (auth) => {
         if (auth == null) {                   // Check to see if user is logged in
