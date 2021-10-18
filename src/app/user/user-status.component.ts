@@ -45,6 +45,7 @@ export class UserContainer {
   private displayName: String = "";
   public email: String = "";
   private uid: String;  
+  public logInCounter = 0;
 
   //user: FirebaseUserModel = new FirebaseUserModel();
 
@@ -71,6 +72,8 @@ export class UserContainer {
           }
         } else {
           this.isLoggedIn = true; // User is logged in
+          console.log("Logged in")
+          this.logInCounter++;
           if (auth.displayName != null ) {
             this.displayName = auth.displayName; // If there is a useranme from authentication then its from third party and can pull it
           } else {

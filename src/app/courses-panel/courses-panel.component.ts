@@ -1,4 +1,5 @@
 import { ValueTransformer } from '@angular/compiler/src/util';
+import { UserContainer } from '../user/user-status.component';
 import {
   Component,
   EventEmitter,
@@ -14,6 +15,7 @@ import * as firebase from 'firebase';
 import { auth } from 'firebase';
 import { subscribeToPromise } from 'rxjs/internal-compatibility';
 import 'rxjs/Rx';
+import { resolve } from 'url';
 import { isUndefined } from 'util';
 import { Store } from '../app.store';
 import { AuthService } from '../core/auth.service';
@@ -34,6 +36,7 @@ import {
   RemovedEvent,
   StoreHelper,
 } from '../services';
+import { UserComponent } from '../user/user.component';
 
 /*
   Component for displaying a list of courses organised by year and semester
@@ -62,6 +65,7 @@ export class CoursesPanel {
   private selectedPeriod;
   private addingSemester = false;
   private semDbCount: number;
+  private logInCounter = 0;
   private email: string;
 
   constructor(
@@ -72,6 +76,7 @@ export class CoursesPanel {
     private db_courses: AngularFireDatabase,
     private db: AngularFirestore,
     public authService: AuthService,
+    private userContainer: UserContainer,
   ) {
 
     this.courseMoved = new EventEmitter<MovedEvent>();
@@ -98,6 +103,7 @@ export class CoursesPanel {
       subscribe((semesters: any[]) => this.semesters = semesters);
 
     this.courseCounter = this.coursesService.courseCounter;
+    this.logInCounter = this.userContainer.logInCounter;
 
     this.authService.afAuth.authState.subscribe(
       async (auth) => {
@@ -105,18 +111,25 @@ export class CoursesPanel {
           this.email = '';
           console.log("Not logged in")
         } else {
-          console.log("Logged in")
+          
+          //console.log("Logged in")
           this.email = auth.email;
-          this.loadPlanFromDb()
+          if (this.logInCounter > 0) {
+              console.log("Already logged in")
+          } else {
+            this.loadPlanFromDb()
           }
-    
+          
+          //this.logInCounter ++;
+          // this.loadCourseFromDb()
+          // this.getCourseFromDb()
+          }
         }
       )
-
   }
 
   public ngOnInit() {
-    
+
   }
 
   public ngOnChanges(): void {
@@ -149,26 +162,26 @@ export class CoursesPanel {
     }
   }
 
-  private getSemesterFromDb() {
+  private getSemesterFromDb(courseDbId) {
     return new Promise<any>((resolve) => {
-    const semesterFromDb = {year: (this.db.collection("users").doc(this.email).collection("courses").doc("1pCXWbkcg5EUDdgZK4o1").get().toPromise().then(
+    const semesterFromDb = {year: (this.db.collection("users").doc(this.email).collection("courses").doc(courseDbId).get().toPromise().then(
       resultYear => { resolve(resultYear.data().year )}))
       }
     }
     )
   }
 
-  private getPeriodFromDb() {
+  private getPeriodFromDb(courseDbId) {
     return new Promise<any>((resolve) => {
-      const periodFromDb = { period: Number(this.db.collection("users").doc(this.email).collection("courses").doc("1pCXWbkcg5EUDdgZK4o1").get().toPromise().then(
+      const periodFromDb = { period: Number(this.db.collection("users").doc(this.email).collection("courses").doc(courseDbId).get().toPromise().then(
         resultPeriod => { resolve(resultPeriod.data().period)}))}
         })
   }
 
-  private addSemesterFromDb() {
-   const sem = this.getSemesterFromDb().then(
+  private addSemesterFromDb(courseDbId: string) {
+   const sem = this.getSemesterFromDb(courseDbId).then(
       (theYear) => this.selectedYear = theYear)
-   const per = this.getPeriodFromDb().then(
+   const per = this.getPeriodFromDb(courseDbId).then(
       (thePeriod) => this.selectedPeriod = thePeriod)
    const newSemesterFromDb = {year: Number(this.selectedYear), period: Number(this.selectedPeriod) }   
    if (this.canAddSemester(newSemesterFromDb)) {
@@ -188,9 +201,15 @@ export class CoursesPanel {
               if (doc.exists) {
                  this.db.collection('users').doc(this.email).collection('courses').get().toPromise().
                  then(sub => {
-                    if (sub.docs.length > 0) {
+                    if (sub.docs.length > 0) { // Check to see if documents exist in the courses collection
                        console.log('subcollection exists');
-                       this.addSemesterFromDb();
+                       //this.addSemesterFromDb();
+                       sub.forEach(element => { // Loop to get all the ids of the docs
+                        this.addSemesterFromDb(element.id);
+                        console.log("I'm firing ")
+                        this.loadCourseFromDb(element.id) // Call to loading the courses on the screen, by id
+                        })
+                     // }  
                     }
                  });
               } else {
@@ -203,6 +222,40 @@ export class CoursesPanel {
 
     }
 
-  }
+    private getCourseFromDb(courseDbId: string) {
+      return new Promise<any>((resolve) => {
+      const semesterFromDb = {course: (this.db.collection("users").doc(this.email).collection("courses").doc(courseDbId).get().toPromise().then(
+        result => { resolve(result.data() )}))
+        }
+        courseDbId;
+      }
+      )
+    }
+
+    private loadCourseFromDb(courseDbId) {
+      var copy = Object.assign({});
+      const courseDb = this.getCourseFromDb(courseDbId).then(
+        (copy) => {
+          Object.assign({
+            department:copy[0],
+            desc: copy[1],
+            faculties: copy[2],
+            id: copy[3],
+            name: copy[4],
+            period: copy[5],
+            points: copy[6],
+            requirements: copy[7],
+            stage: copy[8],
+            status: copy[9],
+            title: copy[10],
+            year: copy[11],
+            canDelete: true,
+          })
+      this.getCourseFromDb(courseDbId).then(
+        res => {this.storeHelper.add('courses', res), console.log(res)}
+      ) 
+      })
+    }
+}
 
 

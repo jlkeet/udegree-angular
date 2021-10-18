@@ -94,7 +94,7 @@ import * as progress from './progress-panel';
 import { DegreeSelection, DepartmentList, FacultyList } from './select-major';
 import { CourseService, WindowRef } from './services';
 
-import { UserContainer } from '../user/user-status.component';
+import { UserContainer } from './user/user-status.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -123,7 +123,7 @@ type StoreType = {
     common.NotificationComponent,
     common.ToggleSwitchComponent,
     common.TitlePanel,
-    common.UserContainer,
+    //common.UserContainer,
 
     AddCourseContainer,
     CourseCard,
@@ -161,7 +161,8 @@ type StoreType = {
     UserComponent,
     RegisterComponent,
     SplashScreenComponent,
-    
+
+    UserContainer,
     
   ],
   imports: [
@@ -204,6 +205,8 @@ type StoreType = {
     DragulaService,
     WindowRef,
     FirebaseUserModel, // user data
+    UserContainer,
+
     ...providers
   ]
 })

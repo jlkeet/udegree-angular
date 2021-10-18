@@ -46,7 +46,7 @@ export class CourseService {
     this.authService.afAuth.authState.subscribe( async (auth) => { this.email = auth.email })
 
     this.allCourses = require('../../assets/data/courses.json');
-    
+
     // By default, all courses are deletable
     this.allCourses.map((course: ICourse) => course.canDelete = true);
     this.store.changes.pluck('courses').subscribe((courses: ICourse[]) => this.planned = courses);
@@ -107,10 +107,10 @@ export class CourseService {
     this.storeHelper.add('courses', copy);
     this.updateErrors();
     this.courseCounter++;
-    this.setCourseDb(courseId, period, year)
+    this.setCourseDb(courseId, period, year, status)
   }
 
-  private setCourseDb(courseId, coursePeriod, courseYear){
+  private setCourseDb(courseId, coursePeriod, courseYear, status?: CourseStatus){
     this.db_courses.list("0/" + (courseId - 1)).valueChanges().subscribe(result => { 
     this.db
     .collection("users") 
@@ -122,12 +122,14 @@ export class CourseService {
       faculties: result[2],
       id: result[3],
       name: result[4],
-      points: result[5],
-      requirements: result[6],
-      stage: result[7],
-      title: result[8],
       period: coursePeriod,
-      year: courseYear
+      points: result[6],
+      requirements: result[7],
+      stage: result[8],
+      title: result[9],
+      year: courseYear,
+      status: status ? status : CourseStatus.Planned,
+      canDelete: true
       }))
       .then((docRef) => {console.log("Here's the docId " + docRef.id)} )
     }
