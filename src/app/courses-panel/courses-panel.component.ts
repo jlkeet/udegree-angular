@@ -61,8 +61,8 @@ export class CoursesPanel {
   private newOpen;
   private courseCounter: number;
 
-  private selectedYear;
-  private selectedPeriod;
+  public selectedYear;
+  public selectedPeriod;
   private addingSemester = false;
   private semDbCount: number;
   private logInCounter = 0;
@@ -104,6 +104,8 @@ export class CoursesPanel {
 
     this.courseCounter = this.coursesService.courseCounter;
     this.logInCounter = this.userContainer.logInCounter;
+    this.selectedYear = 2021;
+    this.selectedPeriod = Period.One;
 
     this.authService.afAuth.authState.subscribe(
       async (auth) => {
@@ -111,18 +113,14 @@ export class CoursesPanel {
           this.email = '';
           console.log("Not logged in")
         } else {
-          
           //console.log("Logged in")
           this.email = auth.email;
           if (this.logInCounter > 0) {
               console.log("Already logged in")
           } else {
+            //console.log("In auth " + this.selectedYear)
             this.loadPlanFromDb()
-          }
-          
-          //this.logInCounter ++;
-          // this.loadCourseFromDb()
-          // this.getCourseFromDb()
+            }
           }
         }
       )
@@ -135,9 +133,6 @@ export class CoursesPanel {
   public ngOnChanges(): void {
 
     this.newOpen = false;
-    this.selectedYear = 2021;
-    this.selectedPeriod = Period.One;
-
     this.filteredCourses =
     this.semesters.map((semester) => this.filterCourses(semester.year, semester.period));  
   }
@@ -152,6 +147,7 @@ export class CoursesPanel {
   }
 
   private newSemester(): void {
+    //console.log("In NewSem " + this.selectedYear)
     const newSemester = { year: Number(this.selectedYear), period: Number(this.selectedPeriod)};
     if (this.canAddSemester(newSemester)) {
       this.semesters.push(newSemester);
@@ -162,7 +158,10 @@ export class CoursesPanel {
     }
   }
 
+  // This function gets the year from the course
+
   private getSemesterFromDb(courseDbId) {
+    //console.log("In getSemFromDb " + this.selectedYear)
     return new Promise<any>((resolve) => {
     const semesterFromDb = {year: (this.db.collection("users").doc(this.email).collection("courses").doc(courseDbId).get().toPromise().then(
       resultYear => { resolve(resultYear.data().year )}))
@@ -170,6 +169,8 @@ export class CoursesPanel {
     }
     )
   }
+
+    // This function gets the semester period from the course
 
   private getPeriodFromDb(courseDbId) {
     return new Promise<any>((resolve) => {
@@ -179,18 +180,30 @@ export class CoursesPanel {
   }
 
   private addSemesterFromDb(courseDbId: string) {
-   const sem = this.getSemesterFromDb(courseDbId).then(
-      (theYear) => this.selectedYear = theYear)
-   const per = this.getPeriodFromDb(courseDbId).then(
-      (thePeriod) => this.selectedPeriod = thePeriod)
-   const newSemesterFromDb = {year: Number(this.selectedYear), period: Number(this.selectedPeriod) }   
-   if (this.canAddSemester(newSemesterFromDb)) {
+
+  var newSemesterFromDb = {year: Number(), period: Number() }
+
+  // The following code is super gumby, because of the promised value not being returned before executing the next lines
+  // I put everything into the promise on line 194 by chaining then() functions. It works though.
+
+   this.getSemesterFromDb(courseDbId).then(
+     (theYear) => {this.selectedYear = theYear}).then(
+       () => newSemesterFromDb = {year: this.selectedYear, period: null}) // Updates the year value withing the newSemesterFromDb variable
+   this.getPeriodFromDb(courseDbId).then( // This call is the first chained then
+     (thePeriod) => this.selectedPeriod = thePeriod).then(
+      () => newSemesterFromDb = {year: this.selectedYear, period: this.selectedPeriod}).then( () => { // Updates the period value withing the newSemesterFromDb variable
+   if (this.canAddSemester(newSemesterFromDb)) { // Here is the rest of the code to execute within the chained then statements. So that it can occur within the promise
     this.semesters.push(newSemesterFromDb);
     this.semesters.sort((s1, s2) =>
     (s1.year === s2.year) ? s1.period - s2.period : s1.year - s2.year);
     this.storeHelper.update('semesters', this.semesters);
-    this.addingSemester = false;
+    this.addingSemester = false; // Reverts the semster panel back to neutral
+    this.selectedPeriod = Period.One; // Revert to the default value
+    this.selectedYear++; // Increment the selected year so that it defaults to the next one, this avoids confusion if accidentally trying to add the same period and year, probably worth putting in a catch on the error at some point
+   } else {
+     console.log("Semester add not happening")
    }
+  })
   }
 
   private loadPlanFromDb() {
@@ -203,10 +216,9 @@ export class CoursesPanel {
                  then(sub => {
                     if (sub.docs.length > 0) { // Check to see if documents exist in the courses collection
                        console.log('subcollection exists');
-                       //this.addSemesterFromDb();
                        sub.forEach(element => { // Loop to get all the ids of the docs
+                        console.log(element.id)
                         this.addSemesterFromDb(element.id);
-                        console.log("I'm firing ")
                         this.loadCourseFromDb(element.id) // Call to loading the courses on the screen, by id
                         })
                      // }  

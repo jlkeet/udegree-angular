@@ -47,8 +47,6 @@ export class UserContainer {
   private uid: String;  
   public logInCounter = 0;
 
-  //user: FirebaseUserModel = new FirebaseUserModel();
-
   constructor(
 
 
