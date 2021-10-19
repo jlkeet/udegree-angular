@@ -129,7 +129,7 @@ export class CourseService {
       title: result[9],
       year: courseYear,
       status: status ? status : CourseStatus.Planned,
-      canDelete: true
+      canDelete: true,
       }))
       .then((docRef) => {console.log("Here's the docId " + docRef.id)} )
     }
@@ -168,6 +168,28 @@ export class CourseService {
     const copy = Object.assign({}, lookupCourse);
     copy.status = status;
     this.storeHelper.findAndUpdate('courses', copy);
+
+
+    //this.db.collection("users").doc(this.email).collection("courses").doc(docId).update({status: copy.status})
+    let course = courseToChange;
+    console.log("Heres coursetochange " + courseToChange)
+    this.db.collection("users").doc(this.email).collection("courses", ref => {
+      const query = ref.where('id', '==', course.id);
+      query.get().then( snapshot => {
+        snapshot.forEach(doc => {
+          this.db
+          .collection("users")
+          .doc(this.email)
+          .collection("courses")
+          .doc(doc.id)
+          .update({status: copy.status})
+         })
+        }
+      )
+      return query
+      })
+
+    
     this.updateErrors();
   }
 
