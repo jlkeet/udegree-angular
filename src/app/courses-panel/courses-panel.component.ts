@@ -65,7 +65,7 @@ export class CoursesPanel {
   public selectedPeriod;
   private addingSemester = false;
   private semDbCount: number;
-  private logInCounter = 0;
+  private logInCounter;
   private email: string;
 
   constructor(
@@ -103,7 +103,6 @@ export class CoursesPanel {
       subscribe((semesters: any[]) => this.semesters = semesters);
 
     this.courseCounter = this.coursesService.courseCounter;
-    this.logInCounter = this.userContainer.logInCounter;
     this.selectedYear = 2021;
     this.selectedPeriod = Period.One;
 
@@ -113,12 +112,9 @@ export class CoursesPanel {
           this.email = '';
           console.log("Not logged in")
         } else {
-          //console.log("Logged in")
           this.email = auth.email;
-          if (this.logInCounter > 0) {
-              console.log("Already logged in")
+          if (this.userContainer.logInCounter > 1) {
           } else {
-            //console.log("In auth " + this.selectedYear)
             this.loadPlanFromDb()
             }
           }
@@ -227,7 +223,7 @@ export class CoursesPanel {
               } else {
                 console.log("No sems exist in db, free to add in now")
               }
-           })
+            })
           } else {
             console.log("Still undefined " + this.email)
           }

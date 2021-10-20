@@ -9,14 +9,14 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class AuthService {
 
   uid: string;
-  
 
   constructor(
    public afAuth: AngularFireAuth,
    private db: AngularFirestore,
    public userdata: FirebaseUserModel,
-    
- ) { }
+ ) {
+   
+ }
 
 
   doFacebookLogin(){
