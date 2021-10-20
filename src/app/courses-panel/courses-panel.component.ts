@@ -66,7 +66,10 @@ export class CoursesPanel {
   private addingSemester = false;
   private semDbCount: number;
   private logInCounter;
+  private courseDbCounter: number = 0;
   private email: string;
+
+  private dbCoursesSavedArrayById = [];
 
   constructor(
     private coursesService: CourseService,
@@ -102,6 +105,12 @@ export class CoursesPanel {
     this.store.changes.pluck('semesters').
       subscribe((semesters: any[]) => this.semesters = semesters);
 
+    // Testing a course checker to mimic the semester one  
+    this.store.changes.pluck('courses').
+      subscribe((dbCoursesSavedArrayById: any[]) => this.dbCoursesSavedArrayById = dbCoursesSavedArrayById)
+
+
+
     this.courseCounter = this.coursesService.courseCounter;
     this.selectedYear = 2021;
     this.selectedPeriod = Period.One;
@@ -113,9 +122,11 @@ export class CoursesPanel {
           console.log("Not logged in")
         } else {
           this.email = auth.email;
-          if (this.userContainer.logInCounter > 1) {
+          if (this.userContainer.logInCounter > 1) { // This is necessary to stop the duplicate course loading
+            console.log("login done, not getting more courses")
           } else {
             this.loadPlanFromDb()
+            this.userContainer.logInCounter++; // This is necessary to stop the duplicate course loading
             }
           }
         }
@@ -212,13 +223,14 @@ export class CoursesPanel {
                  then(sub => {
                     if (sub.docs.length > 0) { // Check to see if documents exist in the courses collection
                        console.log('subcollection exists');
+                       console.log(sub.docs.length);
                        sub.forEach(element => { // Loop to get all the ids of the docs
                         console.log(element.id)
                         this.addSemesterFromDb(element.id);
                         this.loadCourseFromDb(element.id) // Call to loading the courses on the screen, by id
+                        
                         })
-                     // }  
-                    }
+                    } 
                  });
               } else {
                 console.log("No sems exist in db, free to add in now")
@@ -236,12 +248,11 @@ export class CoursesPanel {
         result => { resolve(result.data() )}))
         }
         courseDbId;
-      }
+        }
       )
     }
 
     private loadCourseFromDb(courseDbId) {
-      var copy = Object.assign({});
       const courseDb = this.getCourseFromDb(courseDbId).then(
         (copy) => {
           Object.assign({
@@ -260,9 +271,10 @@ export class CoursesPanel {
             canDelete: true,
           })
       this.getCourseFromDb(courseDbId).then(
-        res => {this.storeHelper.add('courses', res), console.log(res)}
-      ) 
-      })
+        res => {this.storeHelper.add('courses', res), console.log("i'm executing from loadCourseFromDb")}
+          )
+        }
+      )
     }
 }
 

@@ -51,8 +51,6 @@ export class CourseService {
     this.allCourses.map((course: ICourse) => course.canDelete = true);
     this.store.changes.pluck('courses').subscribe((courses: ICourse[]) => this.planned = courses);
 
-    
-
   }
 
   public addCustom(
@@ -107,7 +105,9 @@ export class CourseService {
     this.storeHelper.add('courses', copy);
     this.updateErrors();
     this.courseCounter++;
+    console.log("i'm executing from selectCourse")
     this.setCourseDb(courseId, period, year, status)
+    
   }
 
   private setCourseDb(courseId, coursePeriod, courseYear, status?: CourseStatus){
