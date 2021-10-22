@@ -6,6 +6,7 @@ import {
   Output,
   SimpleChange
 } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute, NavigationExtras, Params, Router } from '@angular/router';
 import { Store } from '../app.store';
 import { ICourse } from '../interfaces';
@@ -56,7 +57,8 @@ export class ProgressPanel {
     private router: Router,
     private store: Store,
     private storeHelper: StoreHelper,
-    private requirementService: RequirementService
+    private requirementService: RequirementService,
+    private db: AngularFirestore,
   ) {
   }
 
@@ -138,6 +140,12 @@ export class ProgressPanel {
   }
 
   private pageChange() {
+    this.db
+    .collection("users") 
+    .doc("jackson.keet@mac.com")
+    .collection("degree")
+    .doc("1McxJw8If0tiG3cvVnlC")
+    .delete()
     this.onPageChange.emit();
   }
 

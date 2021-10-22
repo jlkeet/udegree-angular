@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import {
   ActivatedRoute,
   NavigationExtras,
@@ -9,6 +10,7 @@ import {
 import { LocalStorageService } from 'angular-2-local-storage';
 import 'rxjs/Rx';
 import { Store } from '../app.store';
+import { AuthService } from '../core/auth.service';
 import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
 import { FacultyService, StoreHelper } from '../services';
@@ -37,19 +39,21 @@ export class SelectDegreeContainer {
   private selected: ICourse = null;
   private departments: any[] = [];
   private sub;
+  private email: string = "";
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private storeHelper: StoreHelper,
     private store: Store,
-    private facultyService: FacultyService
-  ) {}
+    private facultyService: FacultyService,
+  ) { }
 
   public facultyClicked(event) {
     this.storeHelper.update('faculty', event.value);
     this.storeHelper.update('majors', [null, null]);
     this.storeHelper.update('minor', null);
+
 
     if (this.facultyService.isPrescribed(event.value)) {
       this.router.navigate(['/planner']);
@@ -66,4 +70,5 @@ export class SelectDegreeContainer {
   private ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
 }

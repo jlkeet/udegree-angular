@@ -27,9 +27,9 @@
   cursor: pointer;
   color:#607d8b;
   width:100%;
-  padding-top:50px;
-  padding-bottom:50px;
-  padding-left:20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 36px;
 }
 
 .pad-left {
@@ -40,10 +40,31 @@
   border: 1px #ccc solid;
   background:white;
   border-radius:3px;
+  color: #607d8b !important;
+  font-size: 18px;
+
+  // cursor: pointer;
+  // color: #607d8b;
+  // width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none !important;
 }
 
 .year-input {
-  width: 90px;
+  width: 97px;
+  border: 1px #ccc solid;
+  background:white;
+  border-radius:3px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  color: #607d8b !important;
+  font-size: 18px;
 }
 
 .export-button {
@@ -51,6 +72,7 @@
   background-color:#ffcc00;
   color:black;
 }
+
 
 .export-container {
   width:100%;

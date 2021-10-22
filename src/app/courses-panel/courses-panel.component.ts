@@ -123,7 +123,7 @@ export class CoursesPanel {
         } else {
           this.email = auth.email;
           if (this.userContainer.logInCounter > 1) { // This is necessary to stop the duplicate course loading
-            console.log("login done, not getting more courses")
+            //console.log("login done, not getting more courses")
           } else {
             this.loadPlanFromDb()
             this.userContainer.logInCounter++; // This is necessary to stop the duplicate course loading
@@ -208,7 +208,7 @@ export class CoursesPanel {
     this.selectedPeriod = Period.One; // Revert to the default value
     this.selectedYear++; // Increment the selected year so that it defaults to the next one, this avoids confusion if accidentally trying to add the same period and year, probably worth putting in a catch on the error at some point
    } else {
-     console.log("Semester add not happening")
+     // console.log("Semester add not happening")
    }
   })
   }
@@ -222,10 +222,9 @@ export class CoursesPanel {
                  this.db.collection('users').doc(this.email).collection('courses').get().toPromise().
                  then(sub => {
                     if (sub.docs.length > 0) { // Check to see if documents exist in the courses collection
-                       console.log('subcollection exists');
-                       console.log(sub.docs.length);
+                       //console.log('subcollection exists');
                        sub.forEach(element => { // Loop to get all the ids of the docs
-                        console.log(element.id)
+                       // console.log(element.id)
                         this.addSemesterFromDb(element.id);
                         this.loadCourseFromDb(element.id) // Call to loading the courses on the screen, by id
                         
@@ -271,7 +270,7 @@ export class CoursesPanel {
             canDelete: true,
           })
       this.getCourseFromDb(courseDbId).then(
-        res => {this.storeHelper.add('courses', res), console.log("i'm executing from loadCourseFromDb")}
+        res => {this.storeHelper.add('courses', res)}
           )
         }
       )

@@ -72,7 +72,7 @@ export class UserContainer {
           this.isLoggedIn = true; // User is logged in
           console.log("Logged in")
           this.logInCounter++;
-          console.log("the count is " + this.logInCounter)
+        //  console.log("the count is " + this.logInCounter)
           if (auth.displayName != null ) {
             this.displayName = auth.displayName; // If there is a useranme from authentication then its from third party and can pull it
           } else {

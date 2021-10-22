@@ -98,6 +98,46 @@ main {
     width: 17% !important;
 }
 
+.mat-pseudo-checkbox {
+    border-radius: 20px !important;
+    background-color: #eff2f4 !important;
+    border-color: #eff2f4 !important;
+    color: #fafafa;
+}
+
+.mat-pseudo-checkbox-checked {
+    background-color:#00a8ff !important;
+    border-color: #00a8ff !important;
+}
+
+.mat-pseudo-checkbox-checked::after {
+    top: 4.6px !important;
+    left: 3.7px !important;
+    width: 9px !important;
+
+}
+
+.mat-option.mat-selected {
+    background: #fff !important;
+    color: #00a8ff !important;
+}
+
+.cdk-overlay-pane {   transform: unset !important; }
+
+.cdk-overlay-pane  {
+    left: 459px !important; 
+    max-width: 150px !important; 
+}
+
+.mat-select-panel {
+max-height: 230px !important; 
+border-radius: 10px !important;
+}
+
+::-webkit-scrollbar {
+    width: 0px !important;
+}
+
 .right-side .mat-select-arrow {
 
     border-left: 8px solid transparent !important;

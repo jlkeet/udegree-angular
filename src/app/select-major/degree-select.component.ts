@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from '../core/auth.service';
 import { DepartmentService, FacultyService, StoreHelper } from '../services';
 
 @Component({
@@ -63,6 +65,7 @@ export class DegreeSelection {
   private degree = null;
   private currentMajors = [];
   private doubleMajorAllowed;
+  private email: string = "";
 
   private defaultBlurb =
     'An undergraduate degree (e.g. Bachelor) is the award you recieve once you have completed your course of study. It is where most first-time university students commence their tertiary studies. To obtain your degree you must complete a specified number and combination of units. Most undergraduate degrees can be completed in 3-5 years of full-time study or 6-10 years part-time.';
@@ -71,25 +74,57 @@ export class DegreeSelection {
   constructor(
     private facultyService: FacultyService,
     private storeHelper: StoreHelper,
-    private departmentService: DepartmentService) {
+    private db: AngularFirestore,
+    private authService: AuthService,
+    private departmentService: DepartmentService)
+  
+  {
+
+    this.authService.afAuth.authState.subscribe( async (auth) => { 
+    this.email = auth.email
+    this.getDegreeFromDb().then( isItSaved => { 
+      if (isItSaved !== undefined) {
+        console.log(isItSaved)
+        this.loadDegreeFromDb()
+        this.loadMajorFromDb()
+      } else {
+
+     }
+    }
+  )
+   })
+
     this.degreeType = storeHelper.current('degreeType');
     if (this.degreeType === undefined) {
       this.degreeType = 'regular';
     }
-    this.currentFaculties = [storeHelper.current('faculty'), null];
-    if (this.currentFaculties[0] === null) {
-      this.currentFaculties = [null, null];
-    }
+
+    //this.currentFaculties = [storeHelper.current('faculty'), null]
+
+    if (this.currentFaculties === null) {
+      console.log("its null ")
+      
+     // console.log(this.currentFaculties[0])
+    } else {
+      console.log(this.currentFaculties)
+      this.currentFaculties = [storeHelper.current("faculty"), null];
+      }
+    
+
     this.checkFlags();
     this.faculties = facultyService.getFaculties().
       map((faculty) => {
         return {value: faculty, view: faculty.name};
       });
     this.populateMajors();
+
+    if (this.currentMajors === null) {
+      console.log("its null 2")
+    } else {
+    console.log(this.currentMajors)  
     this.currentMajors = storeHelper.current('majors');
-    if (this.currentMajors === undefined) {
-      this.currentMajors = [null, null];
-    }
+  }
+
   }
 
   private checkFlags() {
@@ -140,7 +175,10 @@ export class DegreeSelection {
     } else {
       this.currentMajors[which] = null;
     }
-    this.storeHelper.update('faculty', this.currentFaculties[0]);
+    //this.storeHelper.update('faculty', this.currentFaculties[0]);
+
+    this.setDegree(this.email, this.currentFaculties[0])
+
     this.checkFlags();
     this.populateMajors();
   }
@@ -148,6 +186,8 @@ export class DegreeSelection {
   private changeMajor(which, event) {
     this.changeBlurb(this.currentMajors[which].blurb);
     this.storeHelper.update('majors', this.currentMajors);
+
+    this.setMajor(this.email, this.currentMajors)
 
   }
 
@@ -165,5 +205,90 @@ export class DegreeSelection {
       this.onPageChange.emit();
     }
   }
+
+  private setDegree(email, faculty) {
+    this.db
+    .collection("users") 
+    .doc(this.email)
+    .collection("degree")
+    .add(faculty)
+    }   
+
+  private setMajor(email, major) {
+    this.db
+    .collection("users") 
+    .doc(this.email)
+    .collection("major")
+    .add(Object.assign({
+      majorOne: major[0],
+      majorTwo: major[1],
+       })
+      ) 
+    }
+
+    // Testing displaying faculty 
+    
+    // TO DO:
+
+    // Get Auth and DocId to be passed into function
+
+    private getDegreeFromDb() {
+      console.log("I'm exectuting faculty")
+        return new Promise<any>((resolve) => {
+          (this.db.collection("users").doc(this.email).collection("degree").doc("1McxJw8If0tiG3cvVnlC").get().toPromise().then(
+            resultDegree => { resolve(resultDegree.data())}  
+            ))
+        }
+      )
+    }
+
+    private getMajorFromDb() {
+      console.log("I'm exectuting major")
+        return new Promise<any>((resolve) => {
+          (this.db.collection("users").doc(this.email).collection("major").doc("qIHhnUVzC9eKbWE5hOWI").get().toPromise().then(
+            resultMajor => { resolve(resultMajor.data())}  
+            ))
+        }
+      )
+    }
+
+
+    private loadDegreeFromDb() {
+
+      const degreeDb = this.getDegreeFromDb().then(
+      async (copy) => {
+          Object.assign({
+            abbrv:copy[0],
+            blurb: copy[1],
+            doubleMajorRequirements: copy[2],
+            flags: copy[3],
+            majorRequirements: copy[4],
+            majors: copy[5],
+            name: copy[6],
+          })
+     await this.getDegreeFromDb().then(
+        res => { this.storeHelper.update("faculty", res) }
+          )
+        }
+      )
+    
+    }
+
+    private loadMajorFromDb() {
+      const majorDb = this.getMajorFromDb().then(
+        async (copy) => {
+            Object.assign({
+              blurb:copy[0],
+              faculties: copy[1],
+              name: copy[2],
+              requirements: copy[3],
+              majorTwo: copy[4] ? copy : null,
+            })
+       await this.getMajorFromDb().then(
+          res => { this.storeHelper.update("majors", res), console.log(res), this.onPageChange.emit() }
+            )
+          }
+        )
+    }
 
 }
