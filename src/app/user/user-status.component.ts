@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { FirebaseUserModel } from '../core/user.model';
 import { UserService } from '../core/user.service';
 import { AuthService } from '../core/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { MatMenuTrigger } from '@angular/material';
 
 
 @Component({
@@ -39,7 +40,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
     `]
 })
 export class UserContainer {
-
 
   private isLoggedIn: Boolean;
   private displayName: String = "";
@@ -95,4 +95,5 @@ getUserName(collection, document) {
 
 
   }
+
 }

@@ -20,6 +20,8 @@ import {
   StoreHelper
 } from '../services';
 import { IBarState } from './progress-bar-multi.component';
+import { CoursesPanel } from '../courses-panel';
+import { DegreeSelection } from '../select-major';
 
 /*
   Component for displaying a group of progress bars
@@ -45,11 +47,14 @@ export class ProgressPanel {
   private gpa;
 
   private faculty;
-  private majors = [null, null];
+  private majors;
   private minor: any;
   private subs;
 
   private firstSemester = null;
+
+  private degreeId;
+  private email;
 
   constructor(
     private location: LocationRef,
@@ -59,6 +64,7 @@ export class ProgressPanel {
     private storeHelper: StoreHelper,
     private requirementService: RequirementService,
     private db: AngularFirestore,
+    private degreeSelect: DegreeSelection,
   ) {
   }
 
@@ -74,6 +80,7 @@ export class ProgressPanel {
     this.store.changes.pluck('majors')
       .subscribe((majors: any[]) => {
         this.majors = majors;
+        console.log(this.majors)
         this.updateRequirementList();
       }),
 
@@ -108,12 +115,17 @@ export class ProgressPanel {
     this.subs.forEach((sub) => sub.unsubscribe());
   }
 
+  //TESTING: Am only attempting single Major at this time as array not working in degree select.
+  // Have commented out the major[0] for now will but will come back for it later.
+
   private updateRequirementList() {
     this.requirements = []
-      .concat(this.faculty ? (this.majors[0] && this.majors[1] ?
+      //.concat(this.faculty ? (this.majors[0] && this.majors[1] ?
+        .concat(this.faculty ? (this.majors ?
         this.faculty.doubleMajorRequirements : this.faculty.majorRequirements) : []);
     this.majorRequirements = []
-      .concat(this.majors[0] ? this.majors[0].requirements : []);
+    // .concat(this.majors[0] ? this.majors[0].requirements : []);
+      .concat(this.majors ? this.majors.requirements : []);
     this.secondMajorRequirements = []
       .concat(this.majors[1] ? this.majors[1].requirements : []);
     //  .concat(this.minor ? this.minor.requirements : []);
@@ -140,13 +152,17 @@ export class ProgressPanel {
   }
 
   private pageChange() {
+    this.email = this.degreeSelect.email;
+    this.degreeId = this.degreeSelect.degreeId;
+    console.log(this.email, " ", this.degreeId)
     this.db
     .collection("users") 
-    .doc("jackson.keet@mac.com")
+    .doc(this.email)
     .collection("degree")
-    .doc("1McxJw8If0tiG3cvVnlC")
+    .doc(this.degreeId)
     .delete()
     this.onPageChange.emit();
+    this.storeHelper.update("faculty", null)
   }
 
   private yearAndPeriod(): any {

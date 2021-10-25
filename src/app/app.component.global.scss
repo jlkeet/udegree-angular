@@ -96,6 +96,15 @@ main {
 
 .dropdown_user_status{
     width: 17% !important;
+    left: 4px !important; 
+}
+
+// .mat-option.mat-active{
+//     left: 1675.6px !important
+// }
+
+.cdk-overlay-0#cdk-overlay-pane {
+    left: 2675.6px !important
 }
 
 .mat-pseudo-checkbox {
@@ -122,12 +131,12 @@ main {
     color: #00a8ff !important;
 }
 
-.cdk-overlay-pane {   transform: unset !important; }
-
 .cdk-overlay-pane  {
-    left: 459px !important; 
     max-width: 150px !important; 
+    transform: unset !important;
 }
+
+// Semester Dropdown
 
 .mat-select-panel {
 max-height: 230px !important; 

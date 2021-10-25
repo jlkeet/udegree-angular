@@ -37,6 +37,7 @@ import {
   StoreHelper,
 } from '../services';
 import { UserComponent } from '../user/user.component';
+import { MatFormFieldControl } from '@angular/material';
 
 /*
   Component for displaying a list of courses organised by year and semester
@@ -67,7 +68,7 @@ export class CoursesPanel {
   private semDbCount: number;
   private logInCounter;
   private courseDbCounter: number = 0;
-  private email: string;
+  public email: string;
 
   private dbCoursesSavedArrayById = [];
 
@@ -246,7 +247,7 @@ export class CoursesPanel {
       const semesterFromDb = {course: (this.db.collection("users").doc(this.email).collection("courses").doc(courseDbId).get().toPromise().then(
         result => { resolve(result.data() )}))
         }
-        courseDbId;
+        //courseDbId;
         }
       )
     }

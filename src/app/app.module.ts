@@ -10,7 +10,8 @@ import {
   MatSelectModule,
   MatSidenavModule,
   MatSlideToggleModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatFormFieldModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -180,6 +181,7 @@ type StoreType = {
     MatToolbarModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatFormFieldModule,
     NgxInfiniteScrollerModule,
     RouterModule.forRoot(ROUTES),
     DragulaModule,
@@ -206,6 +208,7 @@ type StoreType = {
     WindowRef,
     FirebaseUserModel, // user data
     UserContainer,
+    DegreeSelection,
 
     ...providers
   ]
