@@ -70,7 +70,7 @@ export class UserContainer {
           }
         } else {
           this.isLoggedIn = true; // User is logged in
-          console.log("Logged in")
+          console.log("Wet your beak :P")
           this.logInCounter++;
         //  console.log("the count is " + this.logInCounter)
           if (auth.displayName != null ) {

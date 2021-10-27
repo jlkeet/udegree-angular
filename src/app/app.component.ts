@@ -46,13 +46,7 @@ export class App {
     private db: AngularFirestore,
 
     
-    ) {
-
-     }
-
-  ngOnInit(): void {
-
-  }
+    ) {}
 }
 
 

@@ -54,6 +54,7 @@ export class ProgressPanel {
   private firstSemester = null;
 
   private degreeId;
+  private majorId;
   private email;
 
   constructor(
@@ -74,6 +75,7 @@ export class ProgressPanel {
     this.store.changes.pluck('faculty')
       .subscribe((faculty) => {
         this.faculty = faculty;
+        console.log(this.faculty)
         this.updateRequirementList();
       }),
 
@@ -152,17 +154,16 @@ export class ProgressPanel {
   }
 
   private pageChange() {
+    console.log("I'm happening in prog")
     this.email = this.degreeSelect.email;
-    this.degreeId = this.degreeSelect.degreeId;
     console.log(this.email, " ", this.degreeId)
-    this.db
-    .collection("users") 
-    .doc(this.email)
-    .collection("degree")
-    .doc(this.degreeId)
-    .delete()
+    console.log(this.email, " ", this.majorId)
+
+    this.getDegIDforDel();
+    this.getMajIDforDel();
+
+
     this.onPageChange.emit();
-    this.storeHelper.update("faculty", null)
   }
 
   private yearAndPeriod(): any {
@@ -220,6 +221,54 @@ export class ProgressPanel {
     const failed = this.courses.filter((course: ICourse) => course.status === CourseStatus.Failed).length;
     this.gpa = courseGrades.reduce((gradeTotal, grade) => gradeTotal + grade, 0) / (courseGrades.length + failed);
     console.log('GPA ' + this.gpa);
+  }
+
+  private getDegIDforDel() {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("degree")
+      .get()
+      .toPromise()
+      .then((sub) => {
+        if (sub.docs.length > 0) {
+          // Check to see if documents exist in the courses collection
+          sub.forEach((element) => {
+            // Loop to get all the ids of the docs
+            this.degreeId = element.id;
+            this.db
+            .collection("users") 
+            .doc(this.email)
+            .collection("degree")
+            .doc(this.degreeId)
+            .delete()
+          });
+        }
+      });
+  }
+
+  private getMajIDforDel() {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("major")
+      .get()
+      .toPromise()
+      .then((sub) => {
+        if (sub.docs.length > 0) {
+          // Check to see if documents exist in the courses collection
+          sub.forEach((element) => {
+            // Loop to get all the ids of the docs
+            this.majorId = element.id;
+            this.db
+            .collection("users") 
+            .doc(this.email)
+            .collection("major")
+            .doc(this.majorId)
+            .delete()
+          });
+        }
+      });
   }
 
 }

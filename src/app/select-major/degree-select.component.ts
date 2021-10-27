@@ -62,10 +62,10 @@ export class DegreeSelection {
   private degreeType;
   private faculties = [];
   private currentFaculties;
-  private majors = [[], []];
+  private majors = [];
   private degree = null;
-  //private currentMajors = [];
-  private currentMajors;
+  private currentMajors = [];
+  // private currentMajors;
   private doubleMajorAllowed;
   public email: string = "";
   public degreeId: string = "";
@@ -129,6 +129,14 @@ export class DegreeSelection {
       this.faculties = facultyService.getFaculties().map((faculty) => {
         return { value: faculty, view: faculty.name };
       });
+
+      this.majors = departmentService.getDepartments().map((majors) => {
+        return { value: majors, view: majors.name };
+      });
+
+
+
+
       this.populateMajors();
 
       if (this.currentMajors === null) {
@@ -165,8 +173,8 @@ export class DegreeSelection {
         : this.currentFaculties[0];
     // console.log(this.currentFaculties);
     if (this.currentFaculties[0] !== null) {
-      //this.majors[0] = this.departmentService // Testing for single major. Will come back for doubles
-      this.majors = this.departmentService
+     this.majors[0] = this.departmentService
+      //this.majors = this.departmentService
         .departmentsInFaculty(this.currentFaculties[0])
         .map((department) => {
           return { value: department, view: department.name };
@@ -192,15 +200,19 @@ export class DegreeSelection {
     } else {
       this.currentMajors[which] = null;
     }
-    //this.storeHelper.update('faculty', this.currentFaculties[0]);
+    this.storeHelper.update('faculty', this.currentFaculties[0]);
     this.setDegree(this.email, this.currentFaculties[0]);
     this.checkFlags();
     this.populateMajors();
   }
 
   private changeMajor(which, event) {
+    const majorNames = this.currentMajors.map((major) =>
+      major ? major.name : null
+    );
+
     this.changeBlurb(this.currentMajors[which].blurb);
-    // this.storeHelper.update('majors', this.currentMajors);
+    this.storeHelper.update('majors', this.currentMajors[0]);
     this.setMajor(this.email, this.currentMajors[0]);
   }
 
@@ -214,6 +226,7 @@ export class DegreeSelection {
 
   // this is repeated in the html, should consolidate
   private changePage() {
+    console.log("I'm happening in deg")
     if (
       this.currentMajors[0] &&
       (this.degreeType === "regular" || this.currentMajors[1])

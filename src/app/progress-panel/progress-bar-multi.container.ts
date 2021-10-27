@@ -83,6 +83,7 @@ export class ProgressBarMultiContainer {
     if (courses === undefined || courses.length === 0) {
       return Object.assign({}, currentState, { value: 0 });
     }
+    //console.log(this.requirement)
     const value = this.requirementService.fulfilledByStatus(this.requirement, courses, status);
     return Object.assign({}, currentState, { value });
   }
