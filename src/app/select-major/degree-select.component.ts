@@ -61,7 +61,7 @@ export class DegreeSelection {
 
   private degreeType;
   private faculties = [];
-  private currentFaculties;
+  private currentFaculties =[];
   private majors = [];
   private secondMajors = [];
   private degree = null;
@@ -270,8 +270,7 @@ export class DegreeSelection {
       .collection("users")
       .doc(this.email)
       .collection("major")
-      .doc()
-      .set(major);
+      .add(major);
   }
 
   private setSecondMajor(email, secondMajor) {
@@ -279,8 +278,7 @@ export class DegreeSelection {
       .collection("users")
       .doc(this.email)
       .collection("secondMajor")
-      .doc()
-      .set(secondMajor);
+      .add(secondMajor);
   }
 
   // Testing displaying faculty
