@@ -14,7 +14,6 @@ export class ModuleService {
 				.map((course: string) => courseService.stringToCourse(course)
 				)};
 			});
-		// console.log(this.allModules);
 	}
 
 	public getModules() {

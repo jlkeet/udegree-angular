@@ -1,7 +1,19 @@
-import { Component, EventEmitter, HostListener, Injectable, Input, Output } from '@angular/core';
-import { ICourse } from '../interfaces';
-import { CourseStatus, Period } from '../models';
-import { CourseService, DepartmentService, FacultyService, StatusEvent } from '../services';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Injectable,
+  Input,
+  Output,
+} from "@angular/core";
+import { ICourse } from "../interfaces";
+import { CourseStatus, Period } from "../models";
+import {
+  CourseService,
+  DepartmentService,
+  FacultyService,
+  StatusEvent,
+} from "../services";
 
 /*
     A component for a displaying the details or adding course
@@ -10,11 +22,10 @@ import { CourseService, DepartmentService, FacultyService, StatusEvent } from '.
  */
 
 @Component({
-  selector: 'course-details',
-  styles: [require('./course-details.scss')],
-  templateUrl: './course-details.template.html'
+  selector: "course-details",
+  styles: [require("./course-details.scss")],
+  templateUrl: "./course-details.template.html",
 })
-
 @Injectable()
 export class CourseDetails {
   @Output() private addClicked = new EventEmitter();
@@ -47,56 +58,67 @@ export class CourseDetails {
   private customFaculty;
   private customDepartment;
 
-  private statuses =
-    [
-      {label: 'Planned', value: CourseStatus.Planned},
-      {label: 'In Progress', value: CourseStatus.Enrolled},
-      {label: 'Completed', value: CourseStatus.Completed},
-      {label: 'Failed', value: CourseStatus.Failed}
-    ];
-  private grades =
-    [
-      {label: 'A+', value: 9},
-      {label: 'A', value: 8},
-      {label: 'A-', value: 7},
-      {label: 'B+', value: 6},
-      {label: 'B', value: 5},
-      {label: 'B-', value: 4},
-      {label: 'C+', value: 3},
-      {label: 'C', value: 2},
-      {label: 'C-', value: 1},
-      {label: 'D+', value: 0},
-      {label: 'D', value: -1},
-      {label: 'D-', value: -2},
-      {label: 'Fail', value: -3}
-    ];
+  private statuses = [
+    { label: "Planned", value: CourseStatus.Planned },
+    { label: "In Progress", value: CourseStatus.Enrolled },
+    { label: "Completed", value: CourseStatus.Completed },
+    { label: "Failed", value: CourseStatus.Failed },
+  ];
+  private grades = [
+    { label: "A+", value: 9 },
+    { label: "A", value: 8 },
+    { label: "A-", value: 7 },
+    { label: "B+", value: 6 },
+    { label: "B", value: 5 },
+    { label: "B-", value: 4 },
+    { label: "C+", value: 3 },
+    { label: "C", value: 2 },
+    { label: "C-", value: 1 },
+    { label: "D+", value: 0 },
+    { label: "D", value: -1 },
+    { label: "D-", value: -2 },
+    { label: "Fail", value: -3 },
+  ];
 
   constructor(
     private courseService: CourseService,
     private departmentService: DepartmentService,
-    private facultyService: FacultyService) {
+    private facultyService: FacultyService
+  ) {
     this.departments = this.departmentService.getDepartments();
     this.faculties = this.facultyService.getFaculties();
 
     this.departmentOptions = this.departments.map((department) => {
-      return {label: department.name, value: department.name};
+      return { label: department.name, value: department.name };
     });
 
     this.facultyOptions = this.faculties.map((faculty) => {
-      return {label: faculty.name, value: faculty.name};
+      return { label: faculty.name, value: faculty.name };
     });
   }
 
   public addCourse() {
     if (this.custom) {
-      if (this.year && this.period && this.customCode &&
-        this.customTitle && this.customPoints &&
-        this.customDepartment && this.customFaculty) {
+      if (
+        this.year &&
+        this.period &&
+        this.customCode &&
+        this.customTitle &&
+        this.customPoints &&
+        this.customDepartment &&
+        this.customFaculty
+      ) {
         this.courseService.addCustom(
-          this.year, this.period, this.customCode, this.customTitle,
+          this.year,
+          this.period,
+          this.customCode,
+          this.customTitle,
           Number(this.customPoints),
-          Number(this.customCode.replace( /^\D+/g, '')[0]),
-          this.customDepartment, this.customFaculty, this.courseStatus);
+          Number(this.customCode.replace(/^\D+/g, "")[0]),
+          this.customDepartment,
+          this.customFaculty,
+          this.courseStatus
+        );
         this.closeDetails();
       }
     } else {
@@ -123,7 +145,7 @@ export class CourseDetails {
     if (!this.showAddCourse) {
       this.changeStatus.emit({
         course: this.course,
-        status: this.courseStatus
+        status: this.courseStatus,
       });
     }
   }
@@ -132,7 +154,7 @@ export class CourseDetails {
     this.courseGrade = Number(event.value);
     this.changeGrade.emit({
       course: this.course,
-      grade: this.courseGrade
+      grade: this.courseGrade,
     });
   }
 
@@ -140,7 +162,7 @@ export class CourseDetails {
     event.stopPropagation();
     // this.course.selected = false;
     this.cancelClicked.emit({
-      value: this.course
+      value: this.course,
     });
   }
 
@@ -148,7 +170,7 @@ export class CourseDetails {
     // this.course.selected = false;
     this.opened = false;
     this.cancelClicked.emit({
-      value: this.course
+      value: this.course,
     });
   }
 
@@ -169,7 +191,7 @@ export class CourseDetails {
       }
       if (this.course.status === CourseStatus.None) {
         // check to see if we can add this course based on prerequisites - are they already planned?
-        const msg = '';
+        const msg = "";
         if (msg) {
           this.showAddCourse = false;
           this.prerequisitesRequiredMessage = msg;
@@ -188,7 +210,7 @@ export class CourseDetails {
    * So this uses that to set 'opened'.
    * But this might mess up if we opened the dialog without clicking
    */
-  @HostListener('document:click', ['$event']) private clickedOutside($event) {
+  @HostListener("document:click", ["$event"]) private clickedOutside($event) {
     if (this.opened) {
       this.closeDetails();
     } else {
@@ -212,5 +234,4 @@ export class CourseDetails {
       }
     }
   }
-
 }

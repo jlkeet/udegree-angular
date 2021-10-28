@@ -1,33 +1,33 @@
-import { ValueTransformer } from '@angular/compiler/src/util';
-import { UserContainer } from '../user/user-status.component';
+import { ValueTransformer } from "@angular/compiler/src/util";
+import { UserContainer } from "../user/user-status.component";
 import {
   Component,
   EventEmitter,
   Input,
   OnChanges,
   Output,
-  SimpleChange
-} from '@angular/core';
-import { query } from '@angular/core/src/render3';
-import { AngularFireDatabase } from '@angular/fire/database';
-import { AngularFirestore } from '@angular/fire/firestore';
-import * as firebase from 'firebase';
-import { auth } from 'firebase';
-import { subscribeToPromise } from 'rxjs/internal-compatibility';
-import 'rxjs/Rx';
-import { resolve } from 'url';
-import { isUndefined } from 'util';
-import { Store } from '../app.store';
-import { AuthService } from '../core/auth.service';
-import { ICourse } from '../interfaces';
+  SimpleChange,
+} from "@angular/core";
+import { query } from "@angular/core/src/render3";
+import { AngularFireDatabase } from "@angular/fire/database";
+import { AngularFirestore } from "@angular/fire/firestore";
+import * as firebase from "firebase";
+import { auth } from "firebase";
+import { subscribeToPromise } from "rxjs/internal-compatibility";
+import "rxjs/Rx";
+import { resolve } from "url";
+import { isUndefined } from "util";
+import { Store } from "../app.store";
+import { AuthService } from "../core/auth.service";
+import { ICourse } from "../interfaces";
 import {
   CourseModel,
   CourseStatus,
   Message,
   MessageStatus,
   Period,
-  SemesterModel
-} from '../models';
+  SemesterModel,
+} from "../models";
 import {
   ClickedEvent,
   CourseEventService,
@@ -35,20 +35,20 @@ import {
   MovedEvent,
   RemovedEvent,
   StoreHelper,
-} from '../services';
-import { UserComponent } from '../user/user.component';
-import { MatFormFieldControl } from '@angular/material';
+} from "../services";
+import { UserComponent } from "../user/user.component";
+import { MatFormFieldControl } from "@angular/material";
 
 /*
   Component for displaying a list of courses organised by year and semester
 */
 @Component({
   host: {
-    style: 'flex: 3 0 auto;'
+    style: "flex: 3 0 auto;",
   },
-  selector: 'courses-panel',
-  styles: [require('./courses-panel.component.scss')],
-  templateUrl: './courses-panel.template.html'
+  selector: "courses-panel",
+  styles: [require("./courses-panel.component.scss")],
+  templateUrl: "./courses-panel.template.html",
 })
 export class CoursesPanel {
   @Output() public courseMoved: EventEmitter<MovedEvent>;
@@ -80,9 +80,8 @@ export class CoursesPanel {
     private db_courses: AngularFireDatabase,
     private db: AngularFirestore,
     public authService: AuthService,
-    private userContainer: UserContainer,
+    private userContainer: UserContainer
   ) {
-
     this.courseMoved = new EventEmitter<MovedEvent>();
     this.courseRemoved = new EventEmitter<RemovedEvent>();
     this.courseClicked = new EventEmitter<ClickedEvent>();
@@ -103,65 +102,71 @@ export class CoursesPanel {
     });
 
     // this.semesters = this.storeHelper.current('semesters');
-    this.store.changes.pluck('semesters').
-      subscribe((semesters: any[]) => this.semesters = semesters);
+    this.store.changes
+      .pluck("semesters")
+      .subscribe((semesters: any[]) => (this.semesters = semesters));
 
-    // Testing a course checker to mimic the semester one  
-    this.store.changes.pluck('courses').
-      subscribe((dbCoursesSavedArrayById: any[]) => this.dbCoursesSavedArrayById = dbCoursesSavedArrayById)
-
-
+    // Testing a course checker to mimic the semester one
+    this.store.changes
+      .pluck("courses")
+      .subscribe(
+        (dbCoursesSavedArrayById: any[]) =>
+          (this.dbCoursesSavedArrayById = dbCoursesSavedArrayById)
+      );
 
     this.courseCounter = this.coursesService.courseCounter;
     this.selectedYear = 2021;
     this.selectedPeriod = Period.One;
 
-    this.authService.afAuth.authState.subscribe(
-      async (auth) => {
-        if (auth == null) {
-          this.email = '';
-          console.log("Not logged in")
+    this.authService.afAuth.authState.subscribe(async (auth) => {
+      if (auth == null) {
+        this.email = "";
+      } else {
+        this.email = auth.email;
+        if (this.userContainer.logInCounter > 1) {
+          // This is necessary to stop the duplicate course loading
         } else {
-          this.email = auth.email;
-          if (this.userContainer.logInCounter > 1) { // This is necessary to stop the duplicate course loading
-            //console.log("login done, not getting more courses")
-          } else {
-            this.loadPlanFromDb()
-            this.userContainer.logInCounter++; // This is necessary to stop the duplicate course loading
-            }
-          }
+          this.loadPlanFromDb();
+          this.userContainer.logInCounter++; // This is necessary to stop the duplicate course loading
         }
-      )
+      }
+    });
   }
 
-  public ngOnInit() {
-
-  }
+  public ngOnInit() {}
 
   public ngOnChanges(): void {
-
     this.newOpen = false;
-    this.filteredCourses =
-    this.semesters.map((semester) => this.filterCourses(semester.year, semester.period));  
+    this.filteredCourses = this.semesters.map((semester) =>
+      this.filterCourses(semester.year, semester.period)
+    );
   }
 
   private filterCourses(year: number, period: Period) {
-    return this.courses.filter((course: ICourse) =>
-      course.year === year && course.period === period);
+    return this.courses.filter(
+      (course: ICourse) => course.year === year && course.period === period
+    );
   }
 
   private canAddSemester(semester): boolean {
-    return this.semesters.filter((s) => s.year === semester.year && s.period === semester.period).length === 0;
+    return (
+      this.semesters.filter(
+        (s) => s.year === semester.year && s.period === semester.period
+      ).length === 0
+    );
   }
 
   private newSemester(): void {
-    //console.log("In NewSem " + this.selectedYear)
-    const newSemester = { year: Number(this.selectedYear), period: Number(this.selectedPeriod)};
+    const newSemester = {
+      year: Number(this.selectedYear),
+      period: Number(this.selectedPeriod),
+    };
     if (this.canAddSemester(newSemester)) {
       this.semesters.push(newSemester);
       this.semesters.sort((s1, s2) =>
-        (s1.year === s2.year) ? s1.period - s2.period : s1.year - s2.year);
-      this.storeHelper.update('semesters', this.semesters);
+        s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
+      );
+      this.storeHelper.update("semesters", this.semesters);
       this.addingSemester = false;
     }
   }
@@ -169,113 +174,153 @@ export class CoursesPanel {
   // This function gets the year from the course
 
   private getSemesterFromDb(courseDbId) {
-    //console.log("In getSemFromDb " + this.selectedYear)
     return new Promise<any>((resolve) => {
-    const semesterFromDb = {year: (this.db.collection("users").doc(this.email).collection("courses").doc(courseDbId).get().toPromise().then(
-      resultYear => { resolve(resultYear.data().year )}))
-      }
-    }
-    )
+      const semesterFromDb = {
+        year: this.db
+          .collection("users")
+          .doc(this.email)
+          .collection("courses")
+          .doc(courseDbId)
+          .get()
+          .toPromise()
+          .then((resultYear) => {
+            resolve(resultYear.data().year);
+          }),
+      };
+    });
   }
 
-    // This function gets the semester period from the course
+  // This function gets the semester period from the course
 
   private getPeriodFromDb(courseDbId) {
     return new Promise<any>((resolve) => {
-      const periodFromDb = { period: Number(this.db.collection("users").doc(this.email).collection("courses").doc(courseDbId).get().toPromise().then(
-        resultPeriod => { resolve(resultPeriod.data().period)}))}
-        })
+      const periodFromDb = {
+        period: Number(
+          this.db
+            .collection("users")
+            .doc(this.email)
+            .collection("courses")
+            .doc(courseDbId)
+            .get()
+            .toPromise()
+            .then((resultPeriod) => {
+              resolve(resultPeriod.data().period);
+            })
+        ),
+      };
+    });
   }
 
   private addSemesterFromDb(courseDbId: string) {
+    var newSemesterFromDb = { year: Number(), period: Number() };
 
-  var newSemesterFromDb = {year: Number(), period: Number() }
+    // The following code is super gumby, because of the promised value not being returned before executing the next lines
+    // I put everything into the promise on line 194 by chaining then() functions. It works though.
 
-  // The following code is super gumby, because of the promised value not being returned before executing the next lines
-  // I put everything into the promise on line 194 by chaining then() functions. It works though.
-
-   this.getSemesterFromDb(courseDbId).then(
-     (theYear) => {this.selectedYear = theYear}).then(
-       () => newSemesterFromDb = {year: this.selectedYear, period: null}) // Updates the year value withing the newSemesterFromDb variable
-   this.getPeriodFromDb(courseDbId).then( // This call is the first chained then
-     (thePeriod) => this.selectedPeriod = thePeriod).then(
-      () => newSemesterFromDb = {year: this.selectedYear, period: this.selectedPeriod}).then( () => { // Updates the period value withing the newSemesterFromDb variable
-   if (this.canAddSemester(newSemesterFromDb)) { // Here is the rest of the code to execute within the chained then statements. So that it can occur within the promise
-    this.semesters.push(newSemesterFromDb);
-    this.semesters.sort((s1, s2) =>
-    (s1.year === s2.year) ? s1.period - s2.period : s1.year - s2.year);
-    this.storeHelper.update('semesters', this.semesters);
-    this.addingSemester = false; // Reverts the semster panel back to neutral
-    this.selectedPeriod = Period.One; // Revert to the default value
-    this.selectedYear++; // Increment the selected year so that it defaults to the next one, this avoids confusion if accidentally trying to add the same period and year, probably worth putting in a catch on the error at some point
-   } else {
-     // console.log("Semester add not happening")
-   }
-  })
+    this.getSemesterFromDb(courseDbId)
+      .then((theYear) => {
+        this.selectedYear = theYear;
+      })
+      .then(
+        () => (newSemesterFromDb = { year: this.selectedYear, period: null })
+      ); // Updates the year value withing the newSemesterFromDb variable
+    this.getPeriodFromDb(courseDbId)
+      .then(
+        // This call is the first chained then
+        (thePeriod) => (this.selectedPeriod = thePeriod)
+      )
+      .then(
+        () =>
+          (newSemesterFromDb = {
+            year: this.selectedYear,
+            period: this.selectedPeriod,
+          })
+      )
+      .then(() => {
+        // Updates the period value withing the newSemesterFromDb variable
+        if (this.canAddSemester(newSemesterFromDb)) {
+          // Here is the rest of the code to execute within the chained then statements. So that it can occur within the promise
+          this.semesters.push(newSemesterFromDb);
+          this.semesters.sort((s1, s2) =>
+            s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
+          );
+          this.storeHelper.update("semesters", this.semesters);
+          this.addingSemester = false; // Reverts the semster panel back to neutral
+          this.selectedPeriod = Period.One; // Revert to the default value
+          this.selectedYear++; // Increment the selected year so that it defaults to the next one, this avoids confusion if accidentally trying to add the same period and year, probably worth putting in a catch on the error at some point
+        } else {
+        }
+      });
   }
 
   private loadPlanFromDb() {
-      if(this.email !== undefined) {
-        this.db.collection('users').doc(this.email)
-        .get().toPromise().then(
-           doc => {
-              if (doc.exists) {
-                 this.db.collection('users').doc(this.email).collection('courses').get().toPromise().
-                 then(sub => {
-                    if (sub.docs.length > 0) { // Check to see if documents exist in the courses collection
-                       //console.log('subcollection exists');
-                       sub.forEach(element => { // Loop to get all the ids of the docs
-                       // console.log(element.id)
-                        this.addSemesterFromDb(element.id);
-                        this.loadCourseFromDb(element.id) // Call to loading the courses on the screen, by id
-                        
-                        })
-                    } 
-                 });
-              } else {
-                console.log("No sems exist in db, free to add in now")
-              }
-            })
-          } else {
-            console.log("Still undefined " + this.email)
-          }
-
+    if (this.email !== undefined) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .get()
+        .toPromise()
+        .then((doc) => {
+          if (doc.exists) {
+            this.db
+              .collection("users")
+              .doc(this.email)
+              .collection("courses")
+              .get()
+              .toPromise()
+              .then((sub) => {
+                if (sub.docs.length > 0) {
+                  // Check to see if documents exist in the courses collection
+                  sub.forEach((element) => {
+                    // Loop to get all the ids of the docs
+  
+                    this.addSemesterFromDb(element.id);
+                    this.loadCourseFromDb(element.id); // Call to loading the courses on the screen, by id
+                  });
+                }
+              });
+            }
+        });
     }
+  }
 
-    private getCourseFromDb(courseDbId: string) {
-      return new Promise<any>((resolve) => {
-      const semesterFromDb = {course: (this.db.collection("users").doc(this.email).collection("courses").doc(courseDbId).get().toPromise().then(
-        result => { resolve(result.data() )}))
-        }
-        //courseDbId;
-        }
-      )
-    }
+  private getCourseFromDb(courseDbId: string) {
+    return new Promise<any>((resolve) => {
+      const semesterFromDb = {
+        course: this.db
+          .collection("users")
+          .doc(this.email)
+          .collection("courses")
+          .doc(courseDbId)
+          .get()
+          .toPromise()
+          .then((result) => {
+            resolve(result.data());
+          }),
+      };
+    });
+  }
 
-    private loadCourseFromDb(courseDbId) {
-      const courseDb = this.getCourseFromDb(courseDbId).then(
-        (copy) => {
-          Object.assign({
-            department:copy[0],
-            desc: copy[1],
-            faculties: copy[2],
-            id: copy[3],
-            name: copy[4],
-            period: copy[5],
-            points: copy[6],
-            requirements: copy[7],
-            stage: copy[8],
-            status: copy[9],
-            title: copy[10],
-            year: copy[11],
-            canDelete: true,
-          })
-      this.getCourseFromDb(courseDbId).then(
-        res => {this.storeHelper.add('courses', res)}
-          )
-        }
-      )
-    }
+  private loadCourseFromDb(courseDbId) {
+    const courseDb = this.getCourseFromDb(courseDbId).then((copy) => {
+      Object.assign({
+        department: copy[0],
+        desc: copy[1],
+        faculties: copy[2],
+        id: copy[3],
+        name: copy[4],
+        period: copy[5],
+        points: copy[6],
+        requirements: copy[7],
+        stage: copy[8],
+        status: copy[9],
+        title: copy[10],
+        year: copy[11],
+        canDelete: true,
+      });
+      this.getCourseFromDb(courseDbId).then((res) => {
+        this.storeHelper.add("courses", res);
+      });
+    });
+  }
 }
-
-

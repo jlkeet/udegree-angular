@@ -52,23 +52,23 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field *ngIf="doubleMajorAllowed || currentFaculties[1]">
+  <mat-form-field *ngIf="doubleMajorAllowed || currentFaculties[0]">
     <mat-select
        class="dropdown"
-       [(value)]="currentMajors[1]"
+       [(value)]="currentSecondMajors[0]"
        [placeholder]=
-       "(degreeType === 'conjoint' && currentFaculties[1] !== null ?
-       currentFaculties[1].name + ' major' :
+       "(degreeType === 'regular' && currentFaculties[0] !== null ?
+       currentFaculties[0].name + ' Double Major (optional)' :
        degreeType === 'conjoint' ?
        'Second major' : 'Second major (optional)')"
-       (selectionChange)="changeMajor(1, $event)"
+       (selectionChange)="changeSecondMajor(0, $event)"
        [disabled]="currentMajors[0] == null && degreeType === 'regular'
        || currentFaculties[1] == null && degreeType === 'conjoint'"
       >
       <mat-option>
         None
       </mat-option>
-      <mat-option *ngFor="let major of majors[1]" [value]="major.value">
+      <mat-option *ngFor="let major of secondMajors[0]" [value]="major.value">
         {{ major.view }}
       </mat-option>
     </mat-select>

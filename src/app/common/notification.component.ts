@@ -23,7 +23,6 @@ export class NotificationComponent {
     @Input() message: Message;
 
     ngOnInit() {
-        //console.log(this.message);
     }
     constructor() { }
 }

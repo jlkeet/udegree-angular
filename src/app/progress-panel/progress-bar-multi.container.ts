@@ -1,22 +1,22 @@
-import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
-import { Store } from '../app.store';
-import { ICourse } from '../interfaces';
-import { CourseStatus } from '../models';
-import { RequirementService } from '../services';
-import { IBarState } from './progress-bar-multi.component';
+import { Component, Input, OnChanges, SimpleChange } from "@angular/core";
+import { Store } from "../app.store";
+import { ICourse } from "../interfaces";
+import { CourseStatus } from "../models";
+import { RequirementService } from "../services";
+import { IBarState } from "./progress-bar-multi.component";
 
 @Component({
-  selector: 'progress-bar-multi-container',
+  selector: "progress-bar-multi-container",
   styles: [``],
   template: `<progress-bar-multi
-            [title]='title'
-            [max]='max'
-            [barOne]='barOneState'
-            [barTwo]='barTwoState'
-            [barThree]='barThreeState'
-            [isTotal]='isTotal'
-            [hoverText]='hoverText'
-        ></progress-bar-multi>`
+    [title]="title"
+    [max]="max"
+    [barOne]="barOneState"
+    [barTwo]="barTwoState"
+    [barThree]="barThreeState"
+    [isTotal]="isTotal"
+    [hoverText]="hoverText"
+  ></progress-bar-multi>`,
 })
 
 /*
@@ -37,11 +37,14 @@ export class ProgressBarMultiContainer {
   private max: number;
   private title;
   private inactive: boolean = false;
-  private barOneState: IBarState = { value: 0, color: '#66cc00' };
-  private barTwoState: IBarState = { value: 0, color: '#f2d600' };
-  private barThreeState: IBarState = { value: 0, color: '#66bbff' };
+  private barOneState: IBarState = { value: 0, color: "#66cc00" };
+  private barTwoState: IBarState = { value: 0, color: "#f2d600" };
+  private barThreeState: IBarState = { value: 0, color: "#66bbff" };
 
-  constructor(private store: Store, private requirementService: RequirementService) {}
+  constructor(
+    private store: Store,
+    private requirementService: RequirementService
+  ) {}
 
   public ngOnChanges() {
     this.updateState(this.courses);
@@ -83,8 +86,11 @@ export class ProgressBarMultiContainer {
     if (courses === undefined || courses.length === 0) {
       return Object.assign({}, currentState, { value: 0 });
     }
-    //console.log(this.requirement)
-    const value = this.requirementService.fulfilledByStatus(this.requirement, courses, status);
+    const value = this.requirementService.fulfilledByStatus(
+      this.requirement,
+      courses,
+      status
+    );
     return Object.assign({}, currentState, { value });
   }
 }

@@ -63,13 +63,16 @@ export class DegreeSelection {
   private faculties = [];
   private currentFaculties;
   private majors = [];
+  private secondMajors = [];
   private degree = null;
   private currentMajors = [];
+  private currentSecondMajors = [];
   // private currentMajors;
   private doubleMajorAllowed;
   public email: string = "";
   public degreeId: string = "";
   public majorId: string = "";
+  public secondMajorId: string = "";
 
   private defaultBlurb =
     "An undergraduate degree (e.g. Bachelor) is the award you recieve once you have completed your course of study. It is where most first-time university students commence their tertiary studies. To obtain your degree you must complete a specified number and combination of units. Most undergraduate degrees can be completed in 3-5 years of full-time study or 6-10 years part-time.";
@@ -108,21 +111,27 @@ export class DegreeSelection {
           } else {
           }
         });
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("secondMajor")
+        .get()
+        .toPromise()
+        .then((isItSaved) => {
+          if (isItSaved !== undefined) {
+            this.getSecondMajID();
+          } else {
+          }
+        });
 
       this.degreeType = storeHelper.current("degreeType");
       if (this.degreeType === undefined) {
         this.degreeType = "regular";
       }
 
-      //this.currentFaculties = [storeHelper.current('faculty'), null]
-
       if (this.currentFaculties === null) {
-        console.log("its null ");
-
-        // console.log(this.currentFaculties[0])
       } else {
         this.currentFaculties = [storeHelper.current("faculty"), null];
-        // console.log(this.currentFaculties[0]);
       }
 
       this.checkFlags();
@@ -134,16 +143,21 @@ export class DegreeSelection {
         return { value: majors, view: majors.name };
       });
 
-
-
+      this.secondMajors = departmentService
+        .getDepartments()
+        .map((secondMajors) => {
+          return { value: secondMajors, view: secondMajors.name };
+        });
 
       this.populateMajors();
 
       if (this.currentMajors === null) {
-        console.log("its null 2");
       } else {
         this.currentMajors = [storeHelper.current("majors"), null];
-        // console.log(this.currentMajors[0]);
+      }
+      if (this.currentSecondMajors === null) {
+      } else {
+        this.currentSecondMajors = [storeHelper.current("secondMajors"), null];
       }
     });
   }
@@ -161,7 +175,7 @@ export class DegreeSelection {
       this.currentFaculties[1] = null;
       this.majors[1] = this.majors[0];
     } else {
-      this.currentMajors[1] = null;
+      this.currentSecondMajors[0] = null;
     }
     this.blurb = "";
   }
@@ -171,10 +185,8 @@ export class DegreeSelection {
       this.degreeType === "conjoint"
         ? this.currentFaculties[1]
         : this.currentFaculties[0];
-    // console.log(this.currentFaculties);
     if (this.currentFaculties[0] !== null) {
-     this.majors[0] = this.departmentService
-      //this.majors = this.departmentService
+      this.majors[0] = this.departmentService
         .departmentsInFaculty(this.currentFaculties[0])
         .map((department) => {
           return { value: department, view: department.name };
@@ -182,7 +194,7 @@ export class DegreeSelection {
     }
 
     if (secondFaculty !== null) {
-      this.majors[1] = this.departmentService
+      this.secondMajors[0] = this.departmentService
         .departmentsInFaculty(secondFaculty)
         .map((department) => {
           return { value: department, view: department.name };
@@ -200,7 +212,7 @@ export class DegreeSelection {
     } else {
       this.currentMajors[which] = null;
     }
-    this.storeHelper.update('faculty', this.currentFaculties[0]);
+    this.storeHelper.update("faculty", this.currentFaculties[0]);
     this.setDegree(this.email, this.currentFaculties[0]);
     this.checkFlags();
     this.populateMajors();
@@ -212,8 +224,19 @@ export class DegreeSelection {
     );
 
     this.changeBlurb(this.currentMajors[which].blurb);
-    this.storeHelper.update('majors', this.currentMajors[0]);
+    this.storeHelper.update("majors", this.currentMajors[0]);
     this.setMajor(this.email, this.currentMajors[0]);
+  }
+
+  // Testing for second major purposes
+
+  private changeSecondMajor(which, event) {
+    const majorNames = this.currentSecondMajors.map((secondMajor) =>
+      secondMajor ? secondMajor.name : null
+    );
+    this.changeBlurb(this.currentSecondMajors[which].blurb);
+    this.storeHelper.update("secondMajors", this.currentSecondMajors[0]);
+    this.setSecondMajor(this.email, this.currentSecondMajors[0]);
   }
 
   private changeBlurb(blurb: string) {
@@ -226,10 +249,9 @@ export class DegreeSelection {
 
   // this is repeated in the html, should consolidate
   private changePage() {
-    console.log("I'm happening in deg")
     if (
       this.currentMajors[0] &&
-      (this.degreeType === "regular" || this.currentMajors[1])
+      (this.degreeType === "regular" || this.currentSecondMajors[0])
     ) {
       this.onPageChange.emit();
     }
@@ -243,20 +265,22 @@ export class DegreeSelection {
       .add(faculty);
   }
 
-  // private setMajor(email, major) {
-  //   this.db
-  //   .collection("users")
-  //   .doc(this.email)
-  //   .collection("major")
-  //   .add(Object.assign({
-  //     majorOne: major[0],
-  //     majorTwo: major[1],
-  //      })
-  //     )
-  //   }
-
   private setMajor(email, major) {
-    this.db.collection("users").doc(this.email).collection("major").add(major);
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("major")
+      .doc()
+      .set(major);
+  }
+
+  private setSecondMajor(email, secondMajor) {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("secondMajor")
+      .doc()
+      .set(secondMajor);
   }
 
   // Testing displaying faculty
@@ -299,6 +323,25 @@ export class DegreeSelection {
       });
   }
 
+  private getSecondMajID() {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("secondMajor")
+      .get()
+      .toPromise()
+      .then((sub) => {
+        if (sub.docs.length > 0) {
+          // Check to see if documents exist in the courses collection
+          sub.forEach((element) => {
+            // Loop to get all the ids of the docs
+            this.secondMajorId = element.id;
+            this.loadSecondMajorFromDb(element.id);
+          });
+        }
+      });
+  }
+
   private getDegreeFromDb(degId) {
     return new Promise<any>(async (resolve) => {
       this.db
@@ -321,6 +364,21 @@ export class DegreeSelection {
         .doc(this.email)
         .collection("major")
         .doc(majId)
+        .get()
+        .toPromise()
+        .then((resultMajor) => {
+          resolve(resultMajor.data());
+        });
+    });
+  }
+
+  private getSecondMajorFromDb(majSecId) {
+    return new Promise<any>((resolve) => {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("secondMajor")
+        .doc(majSecId)
         .get()
         .toPromise()
         .then((resultMajor) => {
@@ -353,10 +411,24 @@ export class DegreeSelection {
         faculties: copy[1],
         name: copy[2],
         requirements: copy[3],
-        majorTwo: copy[4] ? copy : null,
       });
       await this.getMajorFromDb(majId).then((res) => {
         this.storeHelper.update("majors", res), this.onPageChange.emit();
+      });
+    });
+  }
+
+  private loadSecondMajorFromDb(majSecId) {
+    this.getSecondMajorFromDb(majSecId).then(async (copy) => {
+      Object.assign({
+        blurb: copy[0],
+        faculties: copy[1],
+        name: copy[2],
+        requirements: copy[3],
+      });
+      await this.getSecondMajorFromDb(majSecId).then((res) => {
+        this.storeHelper.update("secondMajors", res),
+          this.onPageChange.emit();
       });
     });
   }

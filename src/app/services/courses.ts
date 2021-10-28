@@ -105,7 +105,6 @@ export class CourseService {
     this.storeHelper.add('courses', copy);
     this.updateErrors();
     this.courseCounter++;
-    console.log("i'm executing from selectCourse")
     this.setCourseDb(courseId, period, year, status)
     
   }
@@ -172,7 +171,6 @@ export class CourseService {
 
     //this.db.collection("users").doc(this.email).collection("courses").doc(docId).update({status: copy.status})
     let course = courseToChange;
-    console.log("Heres coursetochange " + courseToChange)
     this.db.collection("users").doc(this.email).collection("courses", ref => {
       const query = ref.where('id', '==', course.id);
       query.get().then( snapshot => {
@@ -255,7 +253,6 @@ export class CourseService {
   }
 
   public stringToCourse(courseName: string) {
-    //console.log(this.allCourses);
     return this.allCourses.find((course: ICourse) => course.name === courseName);
   }
 
