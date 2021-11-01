@@ -168,11 +168,7 @@ export class CourseService {
     const lookupCourse = this.planned.find((course: ICourse) => course.id === courseToChange.id);
     const copy = Object.assign({}, lookupCourse);
     copy.status = status;
-    this.storeHelper.findAndUpdate('courses', copy);
-
-
-    //this.db.collection("users").doc(this.email).collection("courses").doc(docId).update({status: copy.status})
-    let course = courseToChange;
+    this.storeHelper.findAndUpdate('courses', copy);    let course = courseToChange;
     this.db.collection("users").doc(this.email).collection("courses", ref => {
       const query = ref.where('id', '==', course.id);
       query.get().then( snapshot => {

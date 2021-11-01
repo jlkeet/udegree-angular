@@ -174,7 +174,7 @@ export class ProgressPanel {
     this.getDegIDforDel();
     this.getMajIDforDel();
     this.getMajSecIDforDel();
-    this.onPageChange.emit();
+   // this.onPageChange.emit();
   }
 
   private yearAndPeriod(): any {
@@ -272,6 +272,8 @@ export class ProgressPanel {
           sub.forEach((element) => {
             // Loop to get all the ids of the docs
             this.degreeId = element.id;
+            this.storeHelper.update("faculty", null)
+            this.onPageChange.emit();
             this.db
               .collection("users")
               .doc(this.email)
