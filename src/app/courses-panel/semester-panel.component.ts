@@ -282,7 +282,7 @@ export class SemesterPanel {
 
   private deleteSemester() {
     this.courses.forEach((course: ICourse) =>
-      this.courseService.deselectCourse(course.id)
+      this.courseService.deselectCourseByName(course.name),
     );
     let semesters = this.storeHelper.current("semesters");
     semesters = semesters.filter(

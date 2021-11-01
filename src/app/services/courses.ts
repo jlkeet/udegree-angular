@@ -140,6 +140,8 @@ export class CourseService {
     this.updateErrors();
   }
 
+  // Note that this is also linked to semester-panel.component, called there to remove all courses when exiting semester.
+
   public deselectCourseByName(courseName: string) {
     let course = this.findPlanned(courseName);
     this.storeHelper.findAndDelete('courses', course.id);

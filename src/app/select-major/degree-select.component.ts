@@ -67,7 +67,6 @@ export class DegreeSelection {
   private degree = null;
   private currentMajors = [];
   private currentSecondMajors = [];
-  // private currentMajors;
   private doubleMajorAllowed;
   public email: string = "";
   public degreeId: string = "";
@@ -130,7 +129,9 @@ export class DegreeSelection {
       }
 
       if (this.currentFaculties === null) {
+        console.log("Now its null ", this.currentFaculties)
       } else {
+        console.log("Now its no null ", this.currentFaculties)
         this.currentFaculties = [storeHelper.current("faculty"), null];
       }
 
