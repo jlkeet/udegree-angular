@@ -298,6 +298,8 @@ export class ProgressPanel {
           sub.forEach((element) => {
             // Loop to get all the ids of the docs
             this.majorId = element.id;
+            this.storeHelper.update("major", null)
+            this.onPageChange.emit();
             this.db
               .collection("users")
               .doc(this.email)
@@ -322,6 +324,8 @@ export class ProgressPanel {
           sub.forEach((element) => {
             // Loop to get all the ids of the docs
             this.majorSecId = element.id;
+            this.storeHelper.update("secondMajors", null)
+            this.onPageChange.emit();
             this.db
               .collection("users")
               .doc(this.email)

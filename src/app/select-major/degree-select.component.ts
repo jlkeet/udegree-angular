@@ -257,11 +257,12 @@ export class DegreeSelection {
   }
 
   private setDegree(email, faculty) {
-    this.db
+      this.db
       .collection("users")
       .doc(this.email)
       .collection("degree")
-      .add(faculty);
+      .doc("faculty")
+      .set(faculty);
   }
 
   private setMajor(email, major) {
@@ -269,15 +270,17 @@ export class DegreeSelection {
       .collection("users")
       .doc(this.email)
       .collection("major")
-      .add(major);
+      .doc("firstMajor")
+      .set(major);
   }
 
   private setSecondMajor(email, secondMajor) {
-    this.db
+      this.db
       .collection("users")
       .doc(this.email)
       .collection("secondMajor")
-      .add(secondMajor);
+      .doc("secondMajor")
+      .set(secondMajor);
   }
 
   // Testing displaying faculty
