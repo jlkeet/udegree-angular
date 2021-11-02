@@ -17,7 +17,6 @@ export class StoreHelper {
   public update(prop, state) {
     const currentState = this.store.getState();
     this.store.setState(Object.assign({}, currentState, { [prop]: state }));
-    console.log("Getting called ", prop, " ", state)
   }
 
   public current(prop) {

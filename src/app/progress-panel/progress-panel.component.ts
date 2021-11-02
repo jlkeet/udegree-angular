@@ -256,7 +256,7 @@ export class ProgressPanel {
     this.gpa =
       courseGrades.reduce((gradeTotal, grade) => gradeTotal + grade, 0) /
       (courseGrades.length + failed);
-    console.log("GPA " + this.gpa);
+    // console.log("GPA " + this.gpa);
   }
 
   private getDegIDforDel() {

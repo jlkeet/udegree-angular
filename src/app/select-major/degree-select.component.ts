@@ -129,9 +129,7 @@ export class DegreeSelection {
       }
 
       if (this.currentFaculties === null) {
-        console.log("Now its null ", this.currentFaculties)
       } else {
-        console.log("Now its no null ", this.currentFaculties)
         this.currentFaculties = [storeHelper.current("faculty"), null];
       }
 

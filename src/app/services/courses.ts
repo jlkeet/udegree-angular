@@ -31,7 +31,7 @@ export class CourseService {
   private planned: ICourse[];
   public courseCounter = 0; // need to store this
   private errors: Message[];
-  private email: string = "";
+  public email: string = "";
 
   constructor(
     private errorsChanged: ErrorsChangedEvent,
@@ -106,7 +106,6 @@ export class CourseService {
     this.updateErrors();
     this.courseCounter++;
     this.setCourseDb(courseId, period, year, status)
-    
   }
 
   private setCourseDb(courseId, coursePeriod, courseYear, status?: CourseStatus){

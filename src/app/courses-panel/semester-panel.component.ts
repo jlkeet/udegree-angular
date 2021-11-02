@@ -3,6 +3,8 @@ import { snapshotChanges } from "@angular/fire/database";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { DragulaService } from "ng2-dragula";
 import { DragulaModule } from "ng2-dragula";
+import { type } from "os";
+import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 import { ICourse } from "../interfaces";
 import { CourseStatus } from "../models";
 import { CourseEventService, CourseService, StoreHelper } from "../services";
@@ -135,6 +137,7 @@ export class SemesterPanel {
   private atMaxPoints;
   private gpa;
   private courseCounter: number;
+  private email: string;
 
   constructor(
     private courseService: CourseService,
@@ -143,9 +146,13 @@ export class SemesterPanel {
     private dragulaModule: DragulaModule,
     private storeHelper: StoreHelper,
     private db: AngularFirestore
-  ) {}
+  ) {
+
+    this.email = this.courseService.email;
+  }
 
   private ngOnInit() {
+
     this.bagName = "courses";
     const bag = this.dragulaService.find(this.bagName);
 
@@ -158,15 +165,17 @@ export class SemesterPanel {
       });
     }
 
+
     this.dragulaService.drop().subscribe((value: any) => {
       // need to handle event for this bag only! TODO and semester too?
-      if (value[0] === this.bagName) {
-        this.onDropModel(value.slice(1));
+      if (value.name === this.bagName) {
+        console.log(value)
+        this.onDropModel(value);
       }
     });
 
     this.dragulaService.remove().subscribe((value: any) => {
-      this.onRemoveModel(value.slice(1));
+      this.onRemoveModel(value.slice(1))
     });
 
     const totalPoints = this.courses.reduce(
@@ -180,28 +189,37 @@ export class SemesterPanel {
 
   private onDropModel(args) {
     const [el, target, source] = args;
+
+    // Extract all the info form the course and set it. The newPeriod and newYear are set from the target destination of the bag
     const droppedCourse = {
-      id: Number(el.dataset.id),
-      period: Number(el.dataset.period),
-      year: Number(el.dataset.year),
+      id: Number(args.el.dataset.id),
+      period: Number(args.el.dataset.period),
+      year: Number(args.el.dataset.year),
+      newPeriod: Number(args.target.attributes.period.value),
+      newYear: Number(args.target.attributes.year.value)
     };
     // this logic is essentially saying only handle this for the semester that is not the same
     // as the semester the course started in.
     if (!this.sameTime(droppedCourse)) {
-      // this index will by greater than one when a semester contains this course - this is waiting on model sync?
-      const moveHere =
-        this.courses.filter((course: ICourse) => course.id === droppedCourse.id)
+      // this index will be greater than one when a semester contains this course - this is waiting on model sync?
+      let moveHere =
+        this.courses.filter((course: ICourse) => {(course.id === droppedCourse.id)})
           .length !== 0;
+      moveHere = true;
       if (!moveHere) {
-        // console.error(`could not move course id: ${droppedCourse.id} to semester ${this.semester.id} `);
+        console.error(`could not move course id: ${droppedCourse.id} to semester ${this.semester.id} `);
       } else {
-        // console.log(`onDropModel: moving to semester ${this.semester.id}`);
+       // this.semester.id = 
+        console.log(`onDropModel: moving to semester ${this.semester.period}`);
+        this.droppedCourseSaveDB(droppedCourse)
         this.courseEventService.raiseCourseMoved({
           courseId: droppedCourse.id,
-          period: this.semester.period,
-          year: this.semester.year,
-        });
+          period: droppedCourse.newPeriod,
+          year: droppedCourse.newYear
+        }
+        );
       }
+    } else {
     }
   }
 
@@ -252,6 +270,33 @@ export class SemesterPanel {
     this.courseEventService.raiseCourseClicked({ course });
   }
 
+  private droppedCourseSaveDB(course) {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("courses", (ref) => {
+        const query = ref.where("id", "==", String(course.id));
+        query.get().then((snapshot) => {
+          snapshot.forEach((doc) => {
+            this.db
+              .collection("users")
+              .doc(this.email)
+              .collection("courses")
+              .doc(doc.id)
+              .update({
+                year: course.newYear,
+                period: course.newPeriod
+              }
+              )
+            });
+          });
+          return query;
+        });
+        
+    }
+
+
+
   private deleteCourse(course: ICourse) {
     this.courseService.courseCounterOnDelete();
     if (this.sameTime(course)) {
@@ -263,14 +308,14 @@ export class SemesterPanel {
     }
     this.db
       .collection("users")
-      .doc("jackson.keet@mac.com")
+      .doc(this.email)
       .collection("courses", (ref) => {
         const query = ref.where("id", "==", course.id);
         query.get().then((snapshot) => {
           snapshot.forEach((doc) => {
             this.db
               .collection("users")
-              .doc("jackson.keet@mac.com")
+              .doc(this.email)
               .collection("courses")
               .doc(doc.id)
               .delete();
