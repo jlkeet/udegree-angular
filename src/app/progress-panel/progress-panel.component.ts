@@ -57,6 +57,7 @@ export class ProgressPanel {
   private gpa;
 
   private faculty;
+  private conjoint;
   private majors;
   private secondMajors;
   private minor: any;
@@ -65,6 +66,7 @@ export class ProgressPanel {
   private firstSemester = null;
 
   private degreeId;
+  private conjointId;
   private majorId;
   private majorSecId;
   private email;
@@ -84,6 +86,11 @@ export class ProgressPanel {
     this.subs = [
       this.store.changes.pluck("faculty").subscribe((faculty) => {
         this.faculty = faculty;
+        this.updateRequirementList();
+      }),
+
+      this.store.changes.pluck("conjoint").subscribe((conjoint: any[]) => {
+        this.conjoint = conjoint;
         this.updateRequirementList();
       }),
 
@@ -172,6 +179,7 @@ export class ProgressPanel {
   private pageChange() {
     this.email = this.degreeSelect.email;
     this.getDegIDforDel();
+    this.getConIDforDel();
     this.getMajIDforDel();
     this.getMajSecIDforDel();
    // this.onPageChange.emit();
@@ -279,6 +287,31 @@ export class ProgressPanel {
               .doc(this.email)
               .collection("degree")
               .doc(this.degreeId)
+              .delete();
+          });
+        }
+      });
+  }
+
+  private getConIDforDel() {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("conjoint")
+      .get()
+      .toPromise()
+      .then((sub) => {
+        if (sub.docs.length > 0) {
+          // Check to see if documents exist in the courses collection
+          sub.forEach((element) => {
+            // Loop to get all the ids of the docs
+            this.storeHelper.update("conjoint", null)
+            this.onPageChange.emit();
+            this.db
+              .collection("users")
+              .doc(this.email)
+              .collection("conjoint")
+              .doc(element.id)
               .delete();
           });
         }

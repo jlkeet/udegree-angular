@@ -24,9 +24,9 @@
   <mat-form-field *ngIf="degreeType==='conjoint'">
     <mat-select
        class="dropdown"
-       [(value)]="currentFaculties[1]"
+       [(value)]="currentConjoint[0]"
        placeholder="Second Faculty"
-       (selectionChange)="changeFaculty(1, $event)"
+       (selectionChange)="changeConjoint(0, $event)"
        [disabled]="currentFaculties[0]==null"
       >
       <mat-option *ngFor="let faculty of faculties" [value]="faculty.value">
@@ -63,7 +63,7 @@
        'Second major' : 'Second major (optional)')"
        (selectionChange)="changeSecondMajor(0, $event)"
        [disabled]="currentMajors[0] == null && degreeType === 'regular'
-       || currentFaculties[1] == null && degreeType === 'conjoint'"
+       || currentConjoint[0] == null && degreeType === 'conjoint'"
       >
       <mat-option>
         None

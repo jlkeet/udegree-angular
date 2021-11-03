@@ -42,6 +42,23 @@
     </div>
   </div>
 
+  <mat-toolbar *ngIf="conjoint" class="plain">
+    <span>
+      Bachelor of {{conjoint.name}}
+    </span>
+  </mat-toolbar>
+
+  <div class="progress-panel-bar-container flex flex-col flex-start">
+    <div class="progress-bar-group">
+      <progress-bar-multi-container
+         *ngFor="let requirement of requirements"
+         [requirement]="requirement"
+         (click)="selectRequirements(requirement)"
+         [courses]="courses">
+      </progress-bar-multi-container>
+    </div>
+  </div>
+
   <mat-toolbar *ngIf="secondMajors" class="plain">
     <span>
       {{secondMajors.name}}

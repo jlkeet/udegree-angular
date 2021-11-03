@@ -61,7 +61,8 @@ export class DegreeSelection {
 
   private degreeType;
   private faculties = [];
-  private currentFaculties =[];
+  private currentFaculties = [];
+  private currentConjoint = [];
   private majors = [];
   private secondMajors = [];
   private degree = null;
@@ -72,6 +73,7 @@ export class DegreeSelection {
   public degreeId: string = "";
   public majorId: string = "";
   public secondMajorId: string = "";
+  public conjointId: string = "";
 
   private defaultBlurb =
     "An undergraduate degree (e.g. Bachelor) is the award you recieve once you have completed your course of study. It is where most first-time university students commence their tertiary studies. To obtain your degree you must complete a specified number and combination of units. Most undergraduate degrees can be completed in 3-5 years of full-time study or 6-10 years part-time.";
@@ -95,6 +97,18 @@ export class DegreeSelection {
         .then((isItSaved) => {
           if (isItSaved !== undefined) {
             this.getDegID();
+          } else {
+          }
+        });
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("conjoint")
+        .get()
+        .toPromise()
+        .then((isItSaved) => {
+          if (isItSaved !== undefined) {
+            this.getConID();
           } else {
           }
         });
@@ -131,6 +145,11 @@ export class DegreeSelection {
       if (this.currentFaculties === null) {
       } else {
         this.currentFaculties = [storeHelper.current("faculty"), null];
+      }
+
+      if (this.currentConjoint === null) {
+      } else {
+        this.currentConjoint = [storeHelper.current("conjoint"), null];
       }
 
       this.checkFlags();
@@ -171,7 +190,7 @@ export class DegreeSelection {
   // some degrees can't be double majors or conjoint
   private changeDegree() {
     if (this.degreeType === "regular") {
-      this.currentFaculties[1] = null;
+      this.currentConjoint[0] = null;
       this.majors[1] = this.majors[0];
     } else {
       this.currentSecondMajors[0] = null;
@@ -180,10 +199,9 @@ export class DegreeSelection {
   }
 
   private populateMajors() {
-    const secondFaculty =
-      this.degreeType === "conjoint"
-        ? this.currentFaculties[1]
-        : this.currentFaculties[0];
+  if (this.currentConjoint[0] === undefined) {  
+    this.currentConjoint[0] = null;
+  }
     if (this.currentFaculties[0] !== null) {
       this.majors[0] = this.departmentService
         .departmentsInFaculty(this.currentFaculties[0])
@@ -192,9 +210,11 @@ export class DegreeSelection {
         });
     }
 
-    if (secondFaculty !== null) {
+    if (this.currentConjoint[0] !== null) {
+      console.log(this.currentConjoint)
+      console.log(this.secondMajors)
       this.secondMajors[0] = this.departmentService
-        .departmentsInFaculty(secondFaculty)
+        .departmentsInFaculty(this.currentConjoint[0])
         .map((department) => {
           return { value: department, view: department.name };
         });
@@ -213,6 +233,17 @@ export class DegreeSelection {
     }
     this.storeHelper.update("faculty", this.currentFaculties[0]);
     this.setDegree(this.email, this.currentFaculties[0]);
+    this.checkFlags();
+    this.populateMajors();
+  }
+
+  private changeConjoint(which, event) {
+    const conjointNames = this.currentConjoint.map((conjoint) =>
+      conjoint ? conjoint.name : null
+    );
+    //this.changeBlurb(this.currentConjoint[which].blurb);
+    this.storeHelper.update("conjoint", this.currentConjoint[0]);
+    this.setConjoint(this.email, this.currentConjoint[0]);
     this.checkFlags();
     this.populateMajors();
   }
@@ -265,6 +296,15 @@ export class DegreeSelection {
       .set(faculty);
   }
 
+  private setConjoint(email, conjoint) {
+    this.db
+    .collection("users")
+    .doc(this.email)
+    .collection("conjoint")
+    .doc("secondFaculty")
+    .set(conjoint);
+}
+
   private setMajor(email, major) {
     this.db
       .collection("users")
@@ -299,6 +339,25 @@ export class DegreeSelection {
             // Loop to get all the ids of the docs
             this.degreeId = element.id;
             this.loadDegreeFromDb(element.id);
+          });
+        }
+      });
+  }
+
+  private getConID() {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("conjoint")
+      .get()
+      .toPromise()
+      .then((sub) => {
+        if (sub.docs.length > 0) {
+          // Check to see if documents exist in the courses collection
+          sub.forEach((element) => {
+            // Loop to get all the ids of the docs
+            this.conjointId = element.id;
+            this.loadConjointFromDb(element.id);
           });
         }
       });
@@ -357,6 +416,21 @@ export class DegreeSelection {
     });
   }
 
+  private getConjointFromDb(conId) {
+    return new Promise<any>(async (resolve) => {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("conjoint")
+        .doc(conId)
+        .get()
+        .toPromise()
+        .then((resultDegree) => {
+          resolve(resultDegree.data());
+        });
+    });
+  }
+
   private getMajorFromDb(majId) {
     return new Promise<any>((resolve) => {
       this.db
@@ -400,6 +474,23 @@ export class DegreeSelection {
       });
       await this.getDegreeFromDb(degId).then((res) => {
         this.storeHelper.update("faculty", res), this.onPageChange.emit();
+      });
+    });
+  }
+
+  private loadConjointFromDb(conId) {
+    this.getConjointFromDb(conId).then(async (copy) => {
+      Object.assign({
+        abbrv: copy[0],
+        blurb: copy[1],
+        doubleMajorRequirements: copy[2],
+        flags: copy[3],
+        majorRequirements: copy[4],
+        majors: copy[5],
+        name: copy[6],
+      });
+      await this.getConjointFromDb(conId).then((res) => {
+        this.storeHelper.update("conjoint", res), this.onPageChange.emit();
       });
     });
   }
