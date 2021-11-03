@@ -48,7 +48,9 @@ export class NotificationIconComponent {
     private messageCount: number = 0;
 
     onClicked() {
+    if (this.messageCount > 0) {
         this.clicked.emit({ });  
+        }
     }
 
     ngOnInit() {}
