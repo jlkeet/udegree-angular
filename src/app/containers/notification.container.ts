@@ -12,12 +12,20 @@ import { Message } from '../models';
         .notification-container {
           display: inline-block;
           position: relative;
+          top: 10px;
           z-index:99;
+        }
+
+        .light {
+          color: #ddd;
+          top: 10px;
+          float: left;
         }
   `
   ],
   template: `
         <div class='notification-container'>
+        <span class="light"> | &nbsp;</span> 
             <notification-icon [messages]='messages' (clicked)='onIconClicked($event)'></notification-icon>
             <notification-list [messages]='messages' [show]='showMessages'></notification-list>
         </div>

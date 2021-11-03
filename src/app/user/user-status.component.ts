@@ -14,6 +14,7 @@ import { MatMenuTrigger } from "@angular/material";
     `
       .light {
         color: #ddd;
+
       }
       .user {
         display: inline-block;
@@ -37,6 +38,104 @@ import { MatMenuTrigger } from "@angular/material";
       .opensans {
         font-family: "Open Sans", sans-serif;
       }
+
+      #name {
+        color: #444;
+        font-size: 15px;
+        height: 25px;
+        margin: 0px;
+        font-family: Open Sans, sans-serif;
+      }
+
+      .email {
+        color: #444;
+        font-size: 10px;
+        height: 15px;
+        margin-top: -10px;
+        font-family: Open Sans, sans-serif;
+      }
+
+      .user-status-button {
+        padding-bottom: 12px; 
+        background-color: transparent !important;
+        border-width: 1px;
+        border-color: transparent;
+        text-align: left;
+        min-width: 160px;
+        padding-right: 70px;
+        padding-left: 20px;
+      }
+
+    .user-status-button:hover {  
+      border-width: 1px;
+      border-style: solid;
+      border-color: #e6eaed;
+      border-image: initial;
+      border-radius: 5px;
+      padding-bottom: 12px;     
+    }
+    .user-status-button:active {  
+      border-width: 1px;
+      border-style: solid;
+      border-color: #e6eaed;
+      border-image: initial;
+      border-radius: 5px;
+      padding-bottom: 12px;     
+    }
+
+    .user-status-button:after {  
+      border-width: 1px;
+      border-style: solid;
+      border-color: #e6eaed;
+      border-image: initial;
+      border-radius: 5px;
+      padding-bottom: 12px;     
+    }
+
+    .dropdown-menu {
+      min-width: 202px !important;
+      margin-top: -15px;
+      border-top-color: #fff !important;
+      border-color: #e6eaed;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      box-shadow: 0 5px 10px -2px rgba(0,0,0,.16) !important;
+      -webkit-box-shadow: 0 5px 10px -2px rgba(0,0,0,.16) !important;
+
+    }
+
+    .chevron {
+      border-style: solid;
+      border-width: 0.25px 0.25px 0 0;
+      content: '';
+      height: 0.6em;
+      right: -7.5em;
+      position: relative;
+      top: -0.9em;
+      transform: rotate(-45deg);
+      vertical-align: top;
+      width: 0.6em;
+      transform: rotate(135deg);
+      text-align: right !important;
+      
+    }
+
+    .logout_icon {
+      height: 24px;
+      width: 24px;
+      cursor: pointer;
+    }
+
+    .dropDownMenuCustom {
+      padding-top: 20px;
+    }
+
+    .dropDownMenuItem:hover {
+      background-color: #0179d3;
+      color: #fff;
+      cursor: pointer;
+    }
+
     `,
   ],
 })

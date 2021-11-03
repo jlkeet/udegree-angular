@@ -19,7 +19,7 @@ import { Store } from './app.store';
     .mat-toolbar{
       height:75px;
       border-bottom: 1px solid #eee;
-      background: #f9fbfc;
+      background: #fff;
       -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
       -khtml-user-select: none; /* Konqueror HTML */

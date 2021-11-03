@@ -1,4 +1,4 @@
-  <span class="opensans">
+  <!-- <span class="opensans">
       <span class="user">
         <div class="name">
             <div *ngIf="isLoggedIn">
@@ -10,13 +10,29 @@
         {{email}}
         </div>
       </div>
-     </span>
+     </span> -->
+
+
+<div class="col">
+  <div ngbDropdown>
+    <button class="user-status-button" ngbDropdownToggle> 
+      <div class="user" id="name">{{displayName}}</div>
+      <div class="email">{{email}}</div>
+      <div class="chevron"></div>
+    </button>
+    <div ngbDropdownMenu class="dropDownMenuCustom">
+      <div ngbDropdownItem class="dropDownMenuItem" (click)=authService.doLogout()><img src="../../assets/img/logout.svg" class="logout_icon" alt="logout"/>Log Out</div>
+    </div>
+    <notification-container></notification-container> 
+    &emsp;
+  </div>
+</div>
     
-     <mat-select [(ngModel)]="displayName" class="dropdown_user_status"><mat-option (click)=authService.doLogout()>Log out</mat-option></mat-select>
+     <!-- <mat-select [(ngModel)]="displayName" class="dropdown_user_status"><mat-option (click)=authService.doLogout()>Log out</mat-option></mat-select>
      <span class="light"> | </span>
     &emsp;
     <notification-container></notification-container> 
-    &emsp;
+    &emsp; -->
 
 
 

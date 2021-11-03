@@ -49,6 +49,7 @@ import { DragulaModule } from 'ng2-dragula';
 import { DragulaService } from 'ng2-dragula';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxInfiniteScrollerModule } from 'ngx-infinite-scroller';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {
   DropdownModule,
   InputSwitchModule,
@@ -182,6 +183,7 @@ type StoreType = {
     MatToolbarModule,
     MatSidenavModule,
     MatFormFieldModule,
+    NgbModule,
     NgxInfiniteScrollerModule,
     RouterModule.forRoot(ROUTES),
     DragulaModule,
