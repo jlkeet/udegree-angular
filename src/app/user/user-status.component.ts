@@ -66,6 +66,24 @@ import { MatMenuTrigger } from "@angular/material";
         padding-left: 20px;
       }
 
+      .user-status-button:active {  
+        border-width: 1px;
+        border-style: solid;
+        border-color: #e6eaed;
+        border-image: initial;
+        border-radius: 5px;
+        padding-bottom: 12px;     
+      }
+  
+      .user-status-button:focus {  
+        border-width: 1px;
+        border-style: solid;
+        border-color: #e6eaed;
+        border-image: initial;
+        border-radius: 5px;
+        padding-bottom: 12px;     
+      }
+
     .user-status-button:hover {  
       border-width: 1px;
       border-style: solid;
@@ -74,17 +92,10 @@ import { MatMenuTrigger } from "@angular/material";
       border-radius: 5px;
       padding-bottom: 12px;     
     }
-    .user-status-button:active {  
-      border-width: 1px;
-      border-style: solid;
-      border-color: #e6eaed;
-      border-image: initial;
-      border-radius: 5px;
-      padding-bottom: 12px;     
-    }
 
-    .user-status-button:after {  
-      border-width: 1px;
+
+    .user-status-button:visited {  
+      border-width: 0px;
       border-style: solid;
       border-color: #e6eaed;
       border-image: initial;
@@ -124,16 +135,52 @@ import { MatMenuTrigger } from "@angular/material";
       height: 24px;
       width: 24px;
       cursor: pointer;
+      margin-left: 15px;
+      padding-left: 30px;
+
+    }
+
+    .logout_icon:hover{
+      height: 24px;
+      width: 24px;
+      cursor: pointer;
     }
 
     .dropDownMenuCustom {
       padding-top: 20px;
+      font-size: 16px !important;
+      font-weight: 500 !important;
     }
 
-    .dropDownMenuItem:hover {
+    .dropDownMenuItem:hover{
       background-color: #0179d3;
       color: #fff;
       cursor: pointer;
+    }
+
+    .dropDownMenuItem:hover #Capa_1{
+      background-color: #0179d3;
+      color: #fff;
+      cursor: pointer;
+      fill: #fff !important;
+    }
+
+    .dropDownMenuItemText {
+    margin-bottom: 1px;
+    margin-top: 1px;
+    margin-left: 10px;
+    display: inline-block;
+    }
+
+    #Capa_1 {
+      margin-left: 15px;
+      transform: translateY(5.5px);
+    }
+
+    ngx-avatar {
+      display: inline-block !important;
+      float: left !important;
+      padding-top: 5px !important;
     }
 
     `,

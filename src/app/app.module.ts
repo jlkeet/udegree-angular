@@ -57,6 +57,7 @@ import {
 } from 'primeng/primeng';
 
 import { SplashScreenComponent } from './splash-screen/splash-screen-component';
+import { AvatarModule } from 'ngx-avatar';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -197,6 +198,7 @@ type StoreType = {
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
+    AvatarModule, // Avatar or Profile Pic
   ],
   providers: [
     // expose our Services and Providers into Angular's dependency injection
