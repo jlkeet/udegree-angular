@@ -14,8 +14,9 @@
 
 
 <div class="col">
+  <div *ngIf="isLoggedIn">
   <div ngbDropdown>
-    <ngx-avatar facebookId="426328811093278"></ngx-avatar>
+    <ngx-avatar [size]="40" facebookId={{photoURL}} googleId={{photoURL}} name={{displayName}}></ngx-avatar>
     <button class="user-status-button" ngbDropdownToggle>
       <div *ngIf="isLoggedIn" class="user" id="name">{{displayName}}</div>
       <div *ngIf="isLoggedIn" class="email">{{email}}</div>
@@ -45,6 +46,7 @@
     <notification-container></notification-container> 
     &emsp;
   </div>
+</div>  
 </div>
     
      <!-- <mat-select [(ngModel)]="displayName" class="dropdown_user_status"><mat-option (click)=authService.doLogout()>Log out</mat-option></mat-select>

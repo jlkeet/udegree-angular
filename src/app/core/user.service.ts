@@ -30,7 +30,7 @@ export class UserService {
       var user = firebase.auth().currentUser;
       user.updateProfile({
         displayName: value.name, // This is for future application having a profile if necessary
-        photoURL: user.photoURL,
+        photoURL: value.photoURL,
       }).then(res => {
         resolve(res);
       }, err => reject(err))

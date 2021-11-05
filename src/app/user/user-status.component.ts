@@ -180,7 +180,7 @@ import { MatMenuTrigger } from "@angular/material";
     ngx-avatar {
       display: inline-block !important;
       float: left !important;
-      padding-top: 5px !important;
+      padding-top: 10px !important;
     }
 
     `,
@@ -189,6 +189,7 @@ import { MatMenuTrigger } from "@angular/material";
 export class UserContainer {
   private isLoggedIn: Boolean;
   private displayName: String = "";
+  private photoURL: String = "";
   public email: String = "";
   private uid: String;
   public logInCounter = 0;
@@ -204,6 +205,7 @@ export class UserContainer {
       if (auth == null) {
         // Check to see if user is logged in
         this.isLoggedIn = false;
+        this.photoURL= "";
         this.displayName = "";
         this.email = "";
         if (this.router.url === "/register") {
@@ -224,6 +226,7 @@ export class UserContainer {
         }
       }
       this.email = auth.email; // This has to be included here and I don't know why
+      this.photoURL = auth.photoURL.split("/", 4)[3];
       this.router.navigate(["planner"]);
     });
   }

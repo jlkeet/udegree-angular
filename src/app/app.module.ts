@@ -57,7 +57,7 @@ import {
 } from 'primeng/primeng';
 
 import { SplashScreenComponent } from './splash-screen/splash-screen-component';
-import { AvatarModule } from 'ngx-avatar';
+import { AvatarModule, AvatarSource } from 'ngx-avatar';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -112,6 +112,8 @@ type StoreType = {
   restoreInputValues: () => void;
   disposeOldHosts: () => void;
 };
+
+const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSource.CUSTOM, AvatarSource.INITIALS];
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
@@ -198,7 +200,9 @@ type StoreType = {
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
-    AvatarModule, // Avatar or Profile Pic
+    AvatarModule.forRoot({
+      sourcePriorityOrder: avatarSourcesOrder
+    }), // Avatar or Profile Pic
   ],
   providers: [
     // expose our Services and Providers into Angular's dependency injection
