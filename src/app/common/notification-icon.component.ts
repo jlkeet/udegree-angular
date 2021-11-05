@@ -15,7 +15,14 @@ import { Store } from '../app.store';
         width: 24px;
         cursor: pointer;
     }  
+
     .notification-icon-badge-container {
+        position: absolute;
+        top: -16px;
+        right: -5px;
+    }
+
+    .notification-icon-badge-container:hover {
         position: absolute;
         top: -16px;
         right: -5px;
@@ -23,17 +30,28 @@ import { Store } from '../app.store';
 
     .notification-icon-badge {
         border-radius: 100%;
-        padding: 1px 6px;
+        padding: 2px 6px;
         background: red;
         border: 1px solid red;
         color: #fff;
         text-align: center;
         font-size: 12px;
-     }    
+     }
+
+     .imgWrap {
+        display: inline-block;
+    }
+    
+    .imgWrap:hover {
+        background-color: #e6eaed;
+    }
+     
   `],  
   template: ` 
             <div (click)="onClicked()" class="notification-icon">
+            <span class="imgWrap">
                 <img src="../../assets/img/file.svg" class="icon" alt="errors"/>
+            </span>    
                 <span class="notification-icon-badge-container">
                     <span *ngIf="messageCount > 0" class="notification-icon-badge">{{messageCount}}</span>
                 </span>

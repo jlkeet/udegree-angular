@@ -25,6 +25,10 @@ import { StoreHelper } from '../services';
       cursor:pointer;
     }
 
+    .expand:hover {
+      background: #dedede;
+    }
+
     .margin-auto {
       margin: auto;
     }
