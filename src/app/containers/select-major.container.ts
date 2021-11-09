@@ -11,7 +11,7 @@ import 'rxjs/Rx';
 import { Store } from '../app.store';
 import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
-import { DepartmentService, FacultyService, StoreHelper } from '../services';
+import { DepartmentService, FacultyService, ConjointService, StoreHelper } from '../services';
 
 /*
   Container for select major page.
@@ -40,6 +40,7 @@ export class SelectMajorContainer {
   private selected: ICourse = null;
   private departments: any[] = [];
   private faculty;
+  private conjoint;
   private majors;
   private allowsMinor: boolean = false;
   private allowsDoubleMajor: boolean = false;
@@ -47,6 +48,7 @@ export class SelectMajorContainer {
 
   constructor(
     private facultyService: FacultyService,
+    private conjointService: ConjointService,
     private router: Router,
     private route: ActivatedRoute,
     private storeHelper: StoreHelper,
@@ -58,6 +60,7 @@ export class SelectMajorContainer {
     this.allowsMinor = this.facultyService.allowsMinor(this.faculty);
     this.departments = this.departmentService.departmentsInFaculty(this.faculty);
     this.majors = this.storeHelper.current('majors');
+    this.conjoint = this.storeHelper.current('conjoint');
   }
 
   public deptClicked(event) {

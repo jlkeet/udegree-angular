@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { AuthService } from "../core/auth.service";
-import { DepartmentService, FacultyService, StoreHelper } from "../services";
+import { DepartmentService, FacultyService, ConjointService, StoreHelper } from "../services";
 
 @Component({
   selector: "degree-select",
@@ -61,6 +61,7 @@ export class DegreeSelection {
 
   private degreeType;
   private faculties = [];
+  private conjoints = [];
   private currentFaculties = [];
   private currentConjoint = [];
   private majors = [];
@@ -81,6 +82,7 @@ export class DegreeSelection {
 
   constructor(
     private facultyService: FacultyService,
+    private conjointService: ConjointService,
     private storeHelper: StoreHelper,
     private db: AngularFirestore,
     private authService: AuthService,
@@ -150,15 +152,21 @@ export class DegreeSelection {
       if (this.currentConjoint === null) {
       } else {
         this.currentConjoint = [storeHelper.current("conjoint"), null];
+        console.log(this.currentConjoint)
       }
 
       this.checkFlags();
+
       this.faculties = facultyService.getFaculties().map((faculty) => {
         return { value: faculty, view: faculty.name };
       });
 
       this.majors = departmentService.getDepartments().map((majors) => {
         return { value: majors, view: majors.name };
+      });
+
+      this.conjoints = conjointService.getConjoints().map((conjoint) => {
+        return { value: conjoint, view: conjoint.name };
       });
 
       this.secondMajors = departmentService
@@ -211,7 +219,7 @@ export class DegreeSelection {
     }
 
     if (this.currentConjoint[0] !== null) {
-      console.log(this.currentConjoint)
+      console.log(this.currentConjoint[0])
       console.log(this.secondMajors)
       this.secondMajors[0] = this.departmentService
         .departmentsInFaculty(this.currentConjoint[0])
@@ -482,12 +490,11 @@ export class DegreeSelection {
     this.getConjointFromDb(conId).then(async (copy) => {
       Object.assign({
         abbrv: copy[0],
-        blurb: copy[1],
-        doubleMajorRequirements: copy[2],
-        flags: copy[3],
-        majorRequirements: copy[4],
-        majors: copy[5],
-        name: copy[6],
+        doubleMajorRequirements: copy[1],
+        flags: copy[2],
+        majorRequirements: copy[3],
+        majors: copy[4],
+        name: copy[5],
       });
       await this.getConjointFromDb(conId).then((res) => {
         this.storeHelper.update("conjoint", res), this.onPageChange.emit();

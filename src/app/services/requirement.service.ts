@@ -10,6 +10,7 @@ export interface IRequirement {
   papers?: string[];
   departments?: string[];
   faculties?: string[];
+  conjoints?: string[];
   stage?: number;
   stages?: number[]; // combine with stage or abovestage?
   papersExcluded?: string[];

@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
-import { DepartmentService, FacultyService, RequirementService } from '../services';
+import { DepartmentService, FacultyService, RequirementService, ConjointService } from '../services';
 
 /*
     Component for filtering a list of courses by eligibility / search term
@@ -31,6 +31,7 @@ export class CourseFilter {
   @Input() private filterParams: any;
 
   private facultyChoices;
+  private conjointChoices;
   private departmentChoices;
   private campusChoices = [
     {value: 'City', label: 'City'},
@@ -51,7 +52,8 @@ export class CourseFilter {
   constructor(
     private departmentService: DepartmentService,
     private facultyService: FacultyService,
-    private requirementService: RequirementService
+    private requirementService: RequirementService,
+    private conjointService: ConjointService
   ) { }
 
   public ngOnInit() {
@@ -64,7 +66,14 @@ export class CourseFilter {
       .map((faculty) => {
         return { value: faculty.name, label: faculty.name };
       });
-  }
+  
+
+  this.conjointChoices = this.conjointService.getConjoints()
+  .map((conjoint) => {
+    return { value: conjoint.name, label: conjoint.name };
+  });
+
+}
 
   public ngOnChanges() {
     this.plannedNames = this.planned.filter((course: ICourse) => course.status !== CourseStatus.Failed)

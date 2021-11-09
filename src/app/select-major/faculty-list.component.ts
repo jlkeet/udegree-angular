@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { FacultyService, StoreHelper } from '../services';
+import { FacultyService, ConjointService, StoreHelper } from '../services';
 
 /*
     Simply displays a list of faculty tiles.
@@ -142,6 +142,7 @@ export class FacultyList {
   ) { }
 
   public clicked(faculty) {
+    console.log("faculty list firing")
     this.facultyClicked.emit({
       value: faculty
     });
@@ -153,6 +154,7 @@ export class FacultyList {
 
   public ngOnInit() {
     this.faculties = this.facultyService.getFaculties();
+    console.log("List is firing")
   }
 
 }

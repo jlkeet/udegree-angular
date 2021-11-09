@@ -29,8 +29,8 @@
        (selectionChange)="changeConjoint(0, $event)"
        [disabled]="currentFaculties[0]==null"
       >
-      <mat-option *ngFor="let faculty of faculties" [value]="faculty.value">
-        {{ faculty.view }}
+      <mat-option *ngFor="let conjoint of conjoints" [value]="conjoint.value">
+        {{ conjoint.view }}
       </mat-option>
     </mat-select>
   </mat-form-field>

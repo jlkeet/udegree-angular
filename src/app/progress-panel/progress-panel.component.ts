@@ -52,6 +52,7 @@ export class ProgressPanel {
   private majorIsSelected: boolean = false;
   private secondMajorIsSelected: boolean = false;
   private requirements: IRequirement[];
+  private conjointRequirements: IRequirement[];
   private majorRequirements: IRequirement[];
   private secondMajorRequirements: IRequirement[];
   private gpa;
@@ -89,7 +90,7 @@ export class ProgressPanel {
         this.updateRequirementList();
       }),
 
-      this.store.changes.pluck("conjoint").subscribe((conjoint: any[]) => {
+      this.store.changes.pluck("conjoint").subscribe((conjoint) => {
         this.conjoint = conjoint;
         this.updateRequirementList();
       }),
@@ -147,6 +148,16 @@ export class ProgressPanel {
             : this.faculty.majorRequirements
           : []
       );
+    //console.log(this.requirements)  
+    this.conjointRequirements = []
+    .concat(
+      this.conjoint
+        ? this.majors
+          ? this.conjoint.majorRequirements
+          : this.conjoint.doubleMajorRequirements
+        : []
+    );
+
     this.majorRequirements = []
       // .concat(this.majors[0] ? this.majors[0].requirements : []);
       .concat(this.majors ? this.majors.requirements : []);
@@ -203,6 +214,7 @@ export class ProgressPanel {
   }
 
   private selectRequirements(requirement: IRequirement): void {
+    console.log(requirement)
     const stages = requirement.stage
       ? [requirement.stage]
       : requirement.aboveStage
@@ -226,6 +238,11 @@ export class ProgressPanel {
           ? requirement.faculties.toString()
           : null
         : null,
+      conjoints: requirement.conjoints
+        ? requirement.conjoints.length !== 0
+          ? requirement.conjoints.toString()
+          : null
+        : null,  
       general:
         requirement.flags && requirement.flags.includes("general")
           ? true

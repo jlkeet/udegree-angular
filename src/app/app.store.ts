@@ -14,6 +14,7 @@ import { IRequirement } from './services';
 export interface State {
   courses: ICourse[];
   faculty: any;
+  conjoint: any;
   majors: any[];
   majorSelected: boolean;
   minor: any;
@@ -25,6 +26,7 @@ export interface State {
 const defaultState = {
   courses: [],
   faculty: null,
+  conjoint: null,
   majorSelected: false,
   majors: [null, null],
   messages: [],

@@ -12,6 +12,7 @@ import {
   CourseService,
   DepartmentService,
   FacultyService,
+  ConjointService,
   StatusEvent,
 } from "../services";
 
@@ -51,6 +52,8 @@ export class CourseDetails {
   private departmentOptions;
   private faculties;
   private facultyOptions;
+  private conjoints;
+  private conjointOptions;
 
   private customTitle;
   private customPoints;
@@ -83,10 +86,12 @@ export class CourseDetails {
   constructor(
     private courseService: CourseService,
     private departmentService: DepartmentService,
-    private facultyService: FacultyService
+    private facultyService: FacultyService,
+    private conjointService: ConjointService
   ) {
     this.departments = this.departmentService.getDepartments();
     this.faculties = this.facultyService.getFaculties();
+    this.conjoints = this.conjointService.getConjoints();
 
     this.departmentOptions = this.departments.map((department) => {
       return { label: department.name, value: department.name };
@@ -94,6 +99,10 @@ export class CourseDetails {
 
     this.facultyOptions = this.faculties.map((faculty) => {
       return { label: faculty.name, value: faculty.name };
+    });
+
+    this.conjointOptions = this.conjoints.map((conjoint) => {
+      return { label: conjoint.name, value: conjoint.name };
     });
   }
 

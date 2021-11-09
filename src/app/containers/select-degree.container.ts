@@ -13,7 +13,7 @@ import { Store } from '../app.store';
 import { AuthService } from '../core/auth.service';
 import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
-import { FacultyService, StoreHelper } from '../services';
+import { FacultyService, ConjointService, StoreHelper } from '../services';
 
 /*
   Container for select major page.
@@ -47,10 +47,12 @@ export class SelectDegreeContainer {
     private storeHelper: StoreHelper,
     private store: Store,
     private facultyService: FacultyService,
+    private conjointService: ConjointService
   ) { }
 
   public facultyClicked(event) {
     this.storeHelper.update('faculty', event.value);
+    this.storeHelper.update('conjoint', null);
     this.storeHelper.update('majors', [null, null]);
     this.storeHelper.update('minor', null);
 

@@ -48,12 +48,12 @@
     </span>
   </mat-toolbar>
 
-  <div class="progress-panel-bar-container flex flex-col flex-start">
+  <div class="progress-panel-bar-container flex flex-col flex-start" *ngIf="conjoint"> 
     <div class="progress-bar-group">
       <progress-bar-multi-container
-         *ngFor="let requirement of requirements"
-         [requirement]="requirement"
-         (click)="selectRequirements(requirement)"
+         *ngFor="let i of conjointRequirements"
+         [requirement]="i"
+         (click)="selectRequirements(i)"
          [courses]="courses">
       </progress-bar-multi-container>
     </div>
