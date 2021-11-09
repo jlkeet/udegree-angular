@@ -124,18 +124,11 @@
     "doubleMajorRequirements": [
       {
         "type": 0,
-        "required": 360
+        "required": 255
       },
       {
         "type": 0,
-        "required": 300,
-        "faculties": [
-          "Arts"
-        ]
-      },
-      {
-        "type": 0,
-        "required": 180,
+        "required": 165,
         "faculties": [
           "Arts"
         ],
@@ -143,22 +136,11 @@
       },
       {
         "type": 0,
-        "required": 180,
+        "required": 75,
         "faculties": [
           "Arts"
         ],
         "aboveStage": 2
-      },
-      {
-        "type": 0,
-        "required": 30,
-        "faculties": [
-          "Arts",
-          "Open"
-        ],
-        "flags": [
-          "general"
-        ]
       }
     ],
     "flags": [

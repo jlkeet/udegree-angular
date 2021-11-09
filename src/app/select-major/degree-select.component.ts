@@ -198,6 +198,7 @@ export class DegreeSelection {
   // some degrees can't be double majors or conjoint
   private changeDegree() {
     if (this.degreeType === "regular") {
+      this.currentFaculties[0] = null; // Gotta keep this in here for conjoint reasons.
       this.currentConjoint[0] = null;
       this.majors[1] = this.majors[0];
     } else {

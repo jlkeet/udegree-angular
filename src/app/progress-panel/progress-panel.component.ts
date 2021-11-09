@@ -144,8 +144,8 @@ export class ProgressPanel {
       .concat(
         this.faculty
           ? this.majors
-            ? this.faculty.doubleMajorRequirements
-            : this.faculty.majorRequirements
+            ? this.faculty.majorRequirements
+            : this.faculty.doubleMajorRequirements 
           : []
       );
     //console.log(this.requirements)  
@@ -158,6 +158,13 @@ export class ProgressPanel {
         : []
     );
 
+  if (this.conjointRequirements.length > 0) {
+    this.requirements = []
+    .concat(
+      this.faculty ? this.majors && this.faculty.doubleMajorRequirements : []
+    );
+  }  
+
     this.majorRequirements = []
       // .concat(this.majors[0] ? this.majors[0].requirements : []);
       .concat(this.majors ? this.majors.requirements : []);
@@ -165,6 +172,14 @@ export class ProgressPanel {
       this.secondMajors ? this.secondMajors.requirements : []
     );
     //  .concat(this.minor ? this.minor.requirements : []);
+
+    if (this.conjointRequirements.length > 0) {
+      this.majorRequirements = [...this.majorRequirements, this.majors.conjointRequirements[0]]
+      console.log(this.secondMajorRequirements)
+      this.secondMajorRequirements = [...this.secondMajorRequirements, this.secondMajors.conjointRequirements[0]]
+      console.log(this.secondMajorRequirements)
+    }  
+
   }
 
   private navigateToSelectMajor() {

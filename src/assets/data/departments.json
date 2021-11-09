@@ -30,6 +30,16 @@
           "ANCHIST300-379"
         ]
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": [
+          "Ancient History"
+        ],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -140,6 +150,16 @@
         ]
       }
     ],
+      "conjointRequirements": [
+        {
+          "type": 0,
+          "required": 45,
+          "departments": [
+            "Biological Sciences"
+          ],
+          "aboveStage": 2
+        }
+      ],
     "flags": [
       "NoConjoint"
     ]
