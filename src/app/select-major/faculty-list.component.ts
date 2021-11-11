@@ -154,7 +154,6 @@ export class FacultyList {
 
   public ngOnInit() {
     this.faculties = this.facultyService.getFaculties();
-    console.log("List is firing")
   }
 
 }

@@ -42,6 +42,7 @@ export class SelectMajorContainer {
   private faculty;
   private conjoint;
   private majors;
+  private secondMajors;
   private allowsMinor: boolean = false;
   private allowsDoubleMajor: boolean = false;
   private sub;
@@ -56,16 +57,19 @@ export class SelectMajorContainer {
     private departmentService: DepartmentService
   ) {
     this.faculty = this.storeHelper.current('faculty');
+    this.majors = this.storeHelper.current('majors');
+    this.conjoint = this.storeHelper.current('conjoint');
+    this.secondMajors = this.storeHelper.current('secondMajors')
     this.allowsDoubleMajor = this.facultyService.allowsDoubleMajor(this.faculty);
     this.allowsMinor = this.facultyService.allowsMinor(this.faculty);
     this.departments = this.departmentService.departmentsInFaculty(this.faculty);
-    this.majors = this.storeHelper.current('majors');
-    this.conjoint = this.storeHelper.current('conjoint');
+
   }
 
   public deptClicked(event) {
     this.storeHelper.update('majorSelected', true);
     this.storeHelper.update('majors', event.majors);
+    // this.storeHelper.update('secondMajors', event.secondMajors);
     this.storeHelper.update('minor', event.minor);
   }
 

@@ -38,6 +38,7 @@ import {
 } from "../services";
 import { UserComponent } from "../user/user.component";
 import { MatFormFieldControl } from "@angular/material";
+import { DegreeSelection } from "../select-major";
 
 /*
   Component for displaying a list of courses organised by year and semester
@@ -69,6 +70,7 @@ export class CoursesPanel {
   private logInCounter;
   private courseDbCounter: number = 0;
   public email: string;
+  private facultyEmail: string;
 
   private dbCoursesSavedArrayById = [];
 
@@ -80,8 +82,12 @@ export class CoursesPanel {
     private db_courses: AngularFireDatabase,
     private db: AngularFirestore,
     public authService: AuthService,
-    private userContainer: UserContainer
+    private userContainer: UserContainer,
+    private degreeSelection: DegreeSelection
   ) {
+
+    this.facultyEmail = degreeSelection.facultyForEmail;
+
     this.courseMoved = new EventEmitter<MovedEvent>();
     this.courseRemoved = new EventEmitter<RemovedEvent>();
     this.courseClicked = new EventEmitter<ClickedEvent>();
@@ -323,4 +329,12 @@ export class CoursesPanel {
       });
     });
   }
+
+  private exportButton() {
+    console.log(this.facultyEmail)
+
+    //this.facultyEmail = "mailto:jackson.keet@mac.com"
+    
+  }
+
 }

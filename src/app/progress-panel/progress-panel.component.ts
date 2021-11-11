@@ -95,14 +95,12 @@ export class ProgressPanel {
         this.updateRequirementList();
       }),
 
-      this.store.changes.pluck("majors").subscribe((majors: any[]) => {
+      this.store.changes.pluck("majors").subscribe((majors) => {
         this.majors = majors;
         this.updateRequirementList();
       }),
 
-      this.store.changes
-        .pluck("secondMajors")
-        .subscribe((secondMajors: any[]) => {
+      this.store.changes.pluck("secondMajors").subscribe((secondMajors) => {
           this.secondMajors = secondMajors;
           this.updateRequirementList();
         }),
@@ -166,18 +164,17 @@ export class ProgressPanel {
   }  
 
     this.majorRequirements = []
-      // .concat(this.majors[0] ? this.majors[0].requirements : []);
       .concat(this.majors ? this.majors.requirements : []);
+
+
     this.secondMajorRequirements = [].concat(
       this.secondMajors ? this.secondMajors.requirements : []
     );
     //  .concat(this.minor ? this.minor.requirements : []);
 
-    if (this.conjointRequirements.length > 0) {
+    if (this.conjointRequirements.length > 0 && this.majors !== undefined && this.secondMajors !== undefined) {
       this.majorRequirements = [...this.majorRequirements, this.majors.conjointRequirements[0]]
-      console.log(this.secondMajorRequirements)
       this.secondMajorRequirements = [...this.secondMajorRequirements, this.secondMajors.conjointRequirements[0]]
-      console.log(this.secondMajorRequirements)
     }  
 
   }
@@ -363,7 +360,7 @@ export class ProgressPanel {
           sub.forEach((element) => {
             // Loop to get all the ids of the docs
             this.majorId = element.id;
-            this.storeHelper.update("major", null)
+            this.storeHelper.update("majors", null)
             this.onPageChange.emit();
             this.db
               .collection("users")

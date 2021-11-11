@@ -1,3 +1,4 @@
+import { AnimationStyleMetadata } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
@@ -16,6 +17,7 @@ export interface State {
   faculty: any;
   conjoint: any;
   majors: any[];
+  secondMajors: any[];
   majorSelected: boolean;
   minor: any;
   messages: Message[];
@@ -29,6 +31,7 @@ const defaultState = {
   conjoint: null,
   majorSelected: false,
   majors: [null, null],
+  secondMajors: [null, null],
   messages: [],
   minor: null,
   page: false,

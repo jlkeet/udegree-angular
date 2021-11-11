@@ -75,6 +75,7 @@ export class DegreeSelection {
   public majorId: string = "";
   public secondMajorId: string = "";
   public conjointId: string = "";
+  public facultyForEmail: string = "";
 
   private defaultBlurb =
     "An undergraduate degree (e.g. Bachelor) is the award you recieve once you have completed your course of study. It is where most first-time university students commence their tertiary studies. To obtain your degree you must complete a specified number and combination of units. Most undergraduate degrees can be completed in 3-5 years of full-time study or 6-10 years part-time.";
@@ -102,19 +103,7 @@ export class DegreeSelection {
           } else {
           }
         });
-      this.db
-        .collection("users")
-        .doc(this.email)
-        .collection("conjoint")
-        .get()
-        .toPromise()
-        .then((isItSaved) => {
-          if (isItSaved !== undefined) {
-            this.getConID();
-          } else {
-          }
-        });
-      this.db
+        this.db
         .collection("users")
         .doc(this.email)
         .collection("major")
@@ -125,8 +114,7 @@ export class DegreeSelection {
             this.getMajID();
           } else {
           }
-        });
-      this.db
+        this.db
         .collection("users")
         .doc(this.email)
         .collection("secondMajor")
@@ -135,6 +123,19 @@ export class DegreeSelection {
         .then((isItSaved) => {
           if (isItSaved !== undefined) {
             this.getSecondMajID();
+          } else {
+          }
+        });
+      });  
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("conjoint")
+        .get()
+        .toPromise()
+        .then((isItSaved) => {
+          if (isItSaved !== undefined) {
+            this.getConID();
           } else {
           }
         });
@@ -152,7 +153,15 @@ export class DegreeSelection {
       if (this.currentConjoint === null) {
       } else {
         this.currentConjoint = [storeHelper.current("conjoint"), null];
-        console.log(this.currentConjoint)
+      }
+
+      if (this.currentMajors === null) {
+      } else {
+        this.currentMajors = [storeHelper.current("majors"), null];
+      }
+      if (this.currentSecondMajors === null) {
+      } else {
+        this.currentSecondMajors = [storeHelper.current("secondMajors"), null];
       }
 
       this.checkFlags();
@@ -176,15 +185,6 @@ export class DegreeSelection {
         });
 
       this.populateMajors();
-
-      if (this.currentMajors === null) {
-      } else {
-        this.currentMajors = [storeHelper.current("majors"), null];
-      }
-      if (this.currentSecondMajors === null) {
-      } else {
-        this.currentSecondMajors = [storeHelper.current("secondMajors"), null];
-      }
     });
   }
   private checkFlags() {
@@ -482,7 +482,22 @@ export class DegreeSelection {
         name: copy[6],
       });
       await this.getDegreeFromDb(degId).then((res) => {
-        this.storeHelper.update("faculty", res), this.onPageChange.emit();
+        this.storeHelper.update("faculty", res)
+      });
+    });
+  }
+
+  private loadMajorFromDb(majId) {
+    this.getMajorFromDb(majId).then(async (copy) => {
+      Object.assign({
+        blurb: copy[0],
+        conjointRequirements: [1],
+        faculties: copy[2],
+        name: copy[3],
+        requirements: copy[4],
+      });
+      await this.getMajorFromDb(majId).then((res) => {
+        this.storeHelper.update("majors", res)
       });
     });
   }
@@ -498,21 +513,7 @@ export class DegreeSelection {
         name: copy[5],
       });
       await this.getConjointFromDb(conId).then((res) => {
-        this.storeHelper.update("conjoint", res), this.onPageChange.emit();
-      });
-    });
-  }
-
-  private loadMajorFromDb(majId) {
-    this.getMajorFromDb(majId).then(async (copy) => {
-      Object.assign({
-        blurb: copy[0],
-        faculties: copy[1],
-        name: copy[2],
-        requirements: copy[3],
-      });
-      await this.getMajorFromDb(majId).then((res) => {
-        this.storeHelper.update("majors", res), this.onPageChange.emit();
+        this.storeHelper.update("conjoint", res)
       });
     });
   }
@@ -521,9 +522,10 @@ export class DegreeSelection {
     this.getSecondMajorFromDb(majSecId).then(async (copy) => {
       Object.assign({
         blurb: copy[0],
-        faculties: copy[1],
-        name: copy[2],
-        requirements: copy[3],
+        conjointRequirements: [1],
+        faculties: copy[2],
+        name: copy[3],
+        requirements: copy[4],
       });
       await this.getSecondMajorFromDb(majSecId).then((res) => {
         this.storeHelper.update("secondMajors", res),
