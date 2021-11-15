@@ -11,7 +11,8 @@ import {
   MatSidenavModule,
   MatSlideToggleModule,
   MatToolbarModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatTooltipModule,
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -55,9 +56,11 @@ import {
   InputSwitchModule,
   MultiSelectModule
 } from 'primeng/primeng';
+import Html2canvas from 'html2canvas';
 
 import { SplashScreenComponent } from './splash-screen/splash-screen-component';
 import { AvatarModule, AvatarSource } from 'ngx-avatar';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -98,6 +101,7 @@ import { DegreeSelection, DepartmentList, FacultyList } from './select-major';
 import { CourseService, WindowRef } from './services';
 
 import { UserContainer } from './user/user-status.component';
+
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -161,12 +165,10 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     NoContent,
 
     // Authentication
-
     LoginComponent,
     UserComponent,
     RegisterComponent,
     SplashScreenComponent,
-
     UserContainer,
     
   ],
@@ -186,6 +188,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     MatToolbarModule,
     MatSidenavModule,
     MatFormFieldModule,
+    MatTooltipModule,
     NgbModule,
     NgxInfiniteScrollerModule,
     RouterModule.forRoot(ROUTES),
@@ -203,6 +206,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     AvatarModule.forRoot({
       sourcePriorityOrder: avatarSourcesOrder
     }), // Avatar or Profile Pic
+    MatExpansionModule,
   ],
   providers: [
     // expose our Services and Providers into Angular's dependency injection

@@ -1,0 +1,119 @@
+.title {
+    background: white;
+    font-size: 19px;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 5px;
+    padding-top: 3px;
+  }
+  .semester-panel {
+    background: white;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding-left: 0px;
+  }
+  .delete {
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: bold;
+    color: #e1e7e9;
+    width: 31px;
+    height: 31px;
+  }
+
+  .cross {
+    display: none;
+  }
+
+  .circle {
+    width: 37px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 4px;
+    position: relative;
+    left: 30px;
+    top: 8px;
+  }
+
+  .mat-expansion-panel-header-title:hover .cross {
+    display: block;
+  }
+
+  .semester-courses {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    width: 100%;
+  }
+  .courses {
+    height: 120px;
+  }
+  .fakecourse {
+    order: 99;
+    width: 190px;
+    height: 100px;
+    border: 1px dashed;
+    border-radius: 5px;
+    display: flex;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .position-text {
+    margin: auto;
+  }
+  .expand-semester {
+    background: #eee;
+    height: 100px;
+    color: black;
+    display: flex;
+    border-radius: 0px 10px 10px 0px;
+    width: 12px;
+    position: absolute;
+    top: 18.5%;
+    left: 50%;
+    cursor: pointer;
+    transform: rotate(90deg);
+  }
+  .margin-auto {
+    margin: auto;
+  }
+
+  .mat-expansion-panel-body {
+    background-color: #fff;
+  }
+
+  .mat-expansion-panel-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px !important;
+    height: 85px !important;
+    margin-top: 10px;
+  }
+
+  .mat-expansion-panel-header-title {
+    display: flex;
+    min-width: 100%;
+    padding: 19px;
+  }
+
+  .title-text {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    padding-left: 28px;
+  }
+
+  .minimised-courses {
+    display: flex;
+    justify-content: space-between !important;
+    margin: 0 auto;
+    column-gap: 15px;
+    padding: 10px 0px;
+  }
+
+  .mat-tooltip {
+      font-size: 15px !important;
+  }

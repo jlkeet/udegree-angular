@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <mat-toolbar *ngIf="conjoint" class="plain">
+  <mat-toolbar *ngIf="conjoint !== null" class="plain">
     <span>
       Bachelor of {{conjoint.name}}
     </span>
@@ -59,20 +59,19 @@
     </div>
   </div>
 
-  <mat-toolbar *ngIf="secondMajors" class="plain">
+  <mat-toolbar *ngIf="secondMajors !== null" class="plain">
     <span>
       {{secondMajors.name}}
     </span>
   </mat-toolbar>
 
-  <div class="progress-panel-bar-container flex flex-col flex-start">
+  <div *ngIf="secondMajors[0] !== null" class="progress-panel-bar-container flex flex-col flex-start">
     <div class="progress-bar-group">
       <progress-bar-multi-container
          *ngFor="let requirement of secondMajorRequirements"
          [requirement]="requirement"
          [courses]="courses"
-         (click)="selectRequirements(requirement)"
-         >
+         (click)="selectRequirements(requirement)">
       </progress-bar-multi-container>
     </div>
   </div>

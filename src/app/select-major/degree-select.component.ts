@@ -242,6 +242,7 @@ export class DegreeSelection {
     }
     this.storeHelper.update("faculty", this.currentFaculties[0]);
     this.setDegree(this.email, this.currentFaculties[0]);
+    this.facultyForEmail = this.storeHelper.current("faculty");
     this.checkFlags();
     this.populateMajors();
   }
@@ -288,6 +289,8 @@ export class DegreeSelection {
 
   // this is repeated in the html, should consolidate
   private changePage() {
+    this.facultyForEmail = this.storeHelper.current("faculty").name
+    console.log(this.storeHelper.current("faculty").name)
     if (
       this.currentMajors[0] &&
       (this.degreeType === "regular" || this.currentSecondMajors[0])
@@ -420,7 +423,7 @@ export class DegreeSelection {
         .get()
         .toPromise()
         .then((resultDegree) => {
-          resolve(resultDegree.data());
+          resolve(resultDegree.data()), this.facultyForEmail = resultDegree.data().name;
         });
     });
   }
@@ -481,8 +484,8 @@ export class DegreeSelection {
         majors: copy[5],
         name: copy[6],
       });
-      await this.getDegreeFromDb(degId).then((res) => {
-        this.storeHelper.update("faculty", res)
+      this.getDegreeFromDb(degId).then((res) => {
+        this.storeHelper.update("faculty", res), this.pageEmitterForDegLoad()
       });
     });
   }
@@ -496,8 +499,8 @@ export class DegreeSelection {
         name: copy[3],
         requirements: copy[4],
       });
-      await this.getMajorFromDb(majId).then((res) => {
-        this.storeHelper.update("majors", res)
+      this.getMajorFromDb(majId).then((res) => {
+        this.storeHelper.update("majors", res), this.pageEmitterForDegLoad()
       });
     });
   }
@@ -512,8 +515,8 @@ export class DegreeSelection {
         majors: copy[4],
         name: copy[5],
       });
-      await this.getConjointFromDb(conId).then((res) => {
-        this.storeHelper.update("conjoint", res)
+      this.getConjointFromDb(conId).then((res) => {
+        this.storeHelper.update("conjoint", res), this.pageEmitterForDegLoad()
       });
     });
   }
@@ -527,10 +530,14 @@ export class DegreeSelection {
         name: copy[3],
         requirements: copy[4],
       });
-      await this.getSecondMajorFromDb(majSecId).then((res) => {
-        this.storeHelper.update("secondMajors", res),
-          this.onPageChange.emit();
+      this.getSecondMajorFromDb(majSecId).then((res) => {
+        this.storeHelper.update("secondMajors", res), this.pageEmitterForDegLoad()
       });
     });
+  }
+
+  private pageEmitterForDegLoad() {
+    setTimeout(()=>{
+      this.onPageChange.emit()}, 400);
   }
 }

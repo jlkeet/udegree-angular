@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ViewEncapsulation } from "@angular/core";
 import { snapshotChanges } from "@angular/fire/database";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { DragulaService } from "ng2-dragula";
@@ -8,124 +8,15 @@ import { connectableObservableDescriptor } from "rxjs/internal/observable/Connec
 import { ICourse } from "../interfaces";
 import { CourseStatus } from "../models";
 import { CourseEventService, CourseService, StoreHelper } from "../services";
+import { MatExpansionModule } from '@angular/material/expansion';
+import { forEach } from "@angular/router/src/utils/collection";
+import { NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: "semester-panel",
-  styles: [
-    `
-      .title {
-        background: white;
-        font-size: 20px;
-        font-family: "Open Sans", sans-serif;
-        border-radius: 5px;
-        height: 80px;
-        padding-right: 0px;
-        padding-left: 30px;
-      }
-      .semester-panel {
-        background: white;
-        margin-bottom: 10px;
-        border: 1px solid #eee;
-        border-radius: 5px;
-        padding-left: 0px;
-      }
-      .delete {
-        margin-right: 20px;
-        cursor: pointer;
-        font-size: 50px;
-        font-weight: bold;
-        color: #e1e7e9;
-        width: 31px;
-        height: 31px;
-      }
-
-      .cross {
-        display: none;
-      }
-
-      .semester-panel:hover .cross {
-        display: block;
-      }
-
-      .semester-courses {
-        display: flex;
-        align-items: center;
-        padding-left: 30px;
-        width: 100%;
-      }
-      .courses {
-        height: 120px;
-      }
-      .fakecourse {
-        order: 99;
-        width: 190px;
-        height: 100px;
-        border: 1px dashed;
-        border-radius: 5px;
-        display: flex;
-        cursor: pointer;
-        font-size: 15px;
-        font-weight: bold;
-      }
-      .position-text {
-        margin: auto;
-      }
-    `,
-  ],
-  template: `
-    <div class="semester-panel">
-      <mat-toolbar class="title">
-        {{ semester.year }}
-        {{
-          semester.period === 0
-            ? "Summer School"
-            : "Semester " + semester.period
-        }}
-        <span *ngIf="gpa"> &nbsp; &mdash; GPA {{ gpa.toFixed(2) }} </span>
-        <span class="spacer"> </span>
-
-        <span class="delete no-select" (click)="deleteSemester()">
-          <span class="cross"> &times; </span>
-        </span>
-        <!--
-      <span class="toggle" (click)="toggle()">
-        {{ toggled ? '&ndash;' : '+' }}
-      </span>
-      -->
-      </mat-toolbar>
-
-      <div *ngIf="toggled" class="courses">
-        <div class="flex dragula-container">
-          <div
-            class="semester-courses"
-            [dragula]="bagName"
-            [dragulaModel]="courses"
-            [attr.period]="semester.period"
-            [attr.year]="semester.year"
-          >
-            <course-draggable
-              *ngFor="let course of courses; let i = index"
-              (deleteCourseClicked)="deleteCourse(course)"
-              (courseClicked)="courseClicked(course)"
-              [course]="course"
-              [attr.data-id]="course.id"
-              [attr.data-period]="semester.period"
-              [attr.data-year]="semester.year"
-            ></course-draggable>
-            <div
-              fake
-              *ngIf="!atMaxPoints"
-              class="fakecourse"
-              [routerLink]="['/add']"
-              [queryParams]="{ period: semester.period, year: semester.year }"
-            >
-              <div class="position-text">+ ADD COURSE</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `,
+  styles: [require("./semester-panel.component.scss")],
+  encapsulation: ViewEncapsulation.None,
+  templateUrl: 'semester-panel.template.html'
 })
 export class SemesterPanel {
   @Input() private semester;
@@ -138,6 +29,7 @@ export class SemesterPanel {
   private gpa;
   private courseCounter: number;
   private email: string;
+  private collapsed = false;
 
   constructor(
     private courseService: CourseService,
@@ -147,12 +39,10 @@ export class SemesterPanel {
     private storeHelper: StoreHelper,
     private db: AngularFirestore
   ) {
-
     this.email = this.courseService.email;
   }
 
   private ngOnInit() {
-
     this.bagName = "courses";
     const bag = this.dragulaService.find(this.bagName);
 
@@ -165,17 +55,16 @@ export class SemesterPanel {
       });
     }
 
-
     this.dragulaService.drop().subscribe((value: any) => {
       // need to handle event for this bag only! TODO and semester too?
       if (value.name === this.bagName) {
-        console.log(value)
+        console.log(value);
         this.onDropModel(value);
       }
     });
 
     this.dragulaService.remove().subscribe((value: any) => {
-      this.onRemoveModel(value.slice(1))
+      this.onRemoveModel(value.slice(1));
     });
 
     const totalPoints = this.courses.reduce(
@@ -196,28 +85,30 @@ export class SemesterPanel {
       period: Number(args.el.dataset.period),
       year: Number(args.el.dataset.year),
       newPeriod: Number(args.target.attributes.period.value),
-      newYear: Number(args.target.attributes.year.value)
+      newYear: Number(args.target.attributes.year.value),
     };
     // this logic is essentially saying only handle this for the semester that is not the same
     // as the semester the course started in.
     if (!this.sameTime(droppedCourse)) {
       // this index will be greater than one when a semester contains this course - this is waiting on model sync?
       let moveHere =
-        this.courses.filter((course: ICourse) => {(course.id === droppedCourse.id)})
-          .length !== 0;
+        this.courses.filter((course: ICourse) => {
+          course.id === droppedCourse.id;
+        }).length !== 0;
       moveHere = true;
       if (!moveHere) {
-        console.error(`could not move course id: ${droppedCourse.id} to semester ${this.semester.id} `);
+        console.error(
+          `could not move course id: ${droppedCourse.id} to semester ${this.semester.id} `
+        );
       } else {
-       // this.semester.id = 
+        // this.semester.id =
         console.log(`onDropModel: moving to semester ${this.semester.period}`);
-        this.droppedCourseSaveDB(droppedCourse)
+        this.droppedCourseSaveDB(droppedCourse);
         this.courseEventService.raiseCourseMoved({
           courseId: droppedCourse.id,
           period: droppedCourse.newPeriod,
-          year: droppedCourse.newYear
-        }
-        );
+          year: droppedCourse.newYear,
+        });
       }
     } else {
     }
@@ -262,6 +153,11 @@ export class SemesterPanel {
     }
   }
 
+  private collapse() {
+    const collapsed = this.storeHelper.update("collapsed", !this.collapsed);
+    this.collapsed = !this.collapsed;
+  }
+
   private toggle() {
     this.toggled = !this.toggled;
   }
@@ -285,17 +181,13 @@ export class SemesterPanel {
               .doc(doc.id)
               .update({
                 year: course.newYear,
-                period: course.newPeriod
-              }
-              )
-            });
+                period: course.newPeriod,
+              });
           });
-          return query;
         });
-        
-    }
-
-
+        return query;
+      });
+  }
 
   private deleteCourse(course: ICourse) {
     this.courseService.courseCounterOnDelete();
@@ -327,7 +219,7 @@ export class SemesterPanel {
 
   private deleteSemester() {
     this.courses.forEach((course: ICourse) =>
-      this.courseService.deselectCourseByName(course.name),
+      this.courseService.deselectCourseByName(course.name)
     );
     let semesters = this.storeHelper.current("semesters");
     semesters = semesters.filter(
@@ -337,4 +229,23 @@ export class SemesterPanel {
     );
     this.storeHelper.update("semesters", semesters);
   }
+
+  private smallCourseStatusBar(course) {
+    switch(course.status) {
+      case 0: 
+        return '#66bbff';
+      case 1:
+        return '#f3d602';
+      case 2:
+        return '#65cc01';
+      case 3:
+        return '#ff8087';
+    }
+  }
+
+ private smallCourseStatusBarHover(course) {
+   console.log(course.name)
+   return course.name;
+  }
+
 }

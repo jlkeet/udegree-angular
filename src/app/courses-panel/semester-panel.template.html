@@ -1,0 +1,55 @@
+<mat-expansion-panel #thisPanel [expanded]=true hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title class="title">
+        <div class="title-text">
+          {{ semester.year }}
+          {{
+            semester.period === 0
+              ? "Summer School"
+              : "Semester " + semester.period
+          }}
+        </div>
+        <div class="minimised-courses">
+        <span *ngFor="let course of courses">
+          <span matTooltip={{course.name}} class="circle" [ngStyle]="{'background-color': smallCourseStatusBar(course)}"></span>
+        </span>  
+        </div>
+        <span *ngIf="gpa"> &nbsp; &mdash; GPA {{ gpa.toFixed(2) }} </span>
+        <span class="spacer"> </span>
+
+        <span class="delete no-select" (click)="deleteSemester()">
+          <span class="cross"> &times; </span>
+        </span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div *ngIf="toggled" class="courses">
+      <div class="flex dragula-container">
+        <div
+          class="semester-courses"
+          [dragula]="bagName"
+          [dragulaModel]="courses"
+          [attr.period]="semester.period"
+          [attr.year]="semester.year"
+        >
+          <course-draggable
+            *ngFor="let course of courses; let i = index"
+            (deleteCourseClicked)="deleteCourse(course)"
+            (courseClicked)="courseClicked(course)"
+            [course]="course"
+            [attr.data-id]="course.id"
+            [attr.data-period]="semester.period"
+            [attr.data-year]="semester.year"
+          ></course-draggable>
+          <div
+            fake
+            *ngIf="!atMaxPoints"
+            class="fakecourse"
+            [routerLink]="['/add']"
+            [queryParams]="{ period: semester.period, year: semester.year }"
+          >
+            <div class="position-text">+ ADD COURSE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>

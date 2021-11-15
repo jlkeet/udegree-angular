@@ -69,14 +69,12 @@
         None
       </mat-option>
     <div *ngIf="degreeType==='regular'; else secondMajor">
-
       <mat-option *ngFor="let major of majors[0]" [value]="major.value">
-        {{ major.view }}
+        {{ major.view}}
       </mat-option>
     </div>
-
       <mat-option #secondMajor *ngFor="let major of secondMajors[0]" [value]="major.value">
-        {{ major.view }}
+        {{ major.view}}
       </mat-option>
     </mat-select>
   </mat-form-field>

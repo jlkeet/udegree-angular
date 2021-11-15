@@ -37,8 +37,9 @@ import {
   StoreHelper,
 } from "../services";
 import { UserComponent } from "../user/user.component";
-import { MatFormFieldControl } from "@angular/material";
+import { MatFormFieldControl, MatListOption } from "@angular/material";
 import { DegreeSelection } from "../select-major";
+import html2canvas from 'html2canvas';
 
 /*
   Component for displaying a list of courses organised by year and semester
@@ -85,8 +86,6 @@ export class CoursesPanel {
     private userContainer: UserContainer,
     private degreeSelection: DegreeSelection
   ) {
-
-    this.facultyEmail = degreeSelection.facultyForEmail;
 
     this.courseMoved = new EventEmitter<MovedEvent>();
     this.courseRemoved = new EventEmitter<RemovedEvent>();
@@ -139,7 +138,8 @@ export class CoursesPanel {
     });
   }
 
-  public ngOnInit() {}
+  public ngOnInit() {
+  }
 
   public ngOnChanges(): void {
     this.newOpen = false;
@@ -331,10 +331,20 @@ export class CoursesPanel {
   }
 
   private exportButton() {
-    console.log(this.facultyEmail)
-
-    //this.facultyEmail = "mailto:jackson.keet@mac.com"
-    
+  //   html2canvas(document.body).then(function(canvas) {
+  //     let generatedImage = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+  //     window.location.href = generatedImage;
+  // });
+    this.facultyEmail = this.storeHelper.current("faculty").name  
+  switch(this.facultyEmail) {
+    case "Arts":
+      console.log("Arts Faculty Email");
+      this.facultyEmail = "asc@auckland.ac.nz"
+      break;
+    case "Science":
+      console.log("Science Faculty Email");
+      this.facultyEmail = "scifac@auckland.ac.nz"
+      break;
+    }
   }
-
 }
