@@ -74,6 +74,7 @@ export class CoursesPanel {
   private facultyEmail: string;
 
   private dbCoursesSavedArrayById = [];
+  private onPageChange = new EventEmitter<null>();
 
   constructor(
     private coursesService: CourseService,
@@ -120,8 +121,8 @@ export class CoursesPanel {
       );
 
     this.courseCounter = this.coursesService.courseCounter;
-    this.selectedYear = 2021;
-    this.selectedPeriod = Period.One;
+    // this.selectedYear = 2021;
+    // this.selectedPeriod = Period.One;
 
     this.authService.afAuth.authState.subscribe(async (auth) => {
       if (auth == null) {
@@ -139,9 +140,13 @@ export class CoursesPanel {
   }
 
   public ngOnInit() {
+
   }
 
   public ngOnChanges(): void {
+
+    this.nextSemesterCheck();
+
     this.newOpen = false;
     this.filteredCourses = this.semesters.map((semester) =>
       this.filterCourses(semester.year, semester.period)
@@ -174,6 +179,7 @@ export class CoursesPanel {
       );
       this.storeHelper.update("semesters", this.semesters);
       this.addingSemester = false;
+      this.nextSemesterCheck();
     }
   }
 
@@ -240,7 +246,8 @@ export class CoursesPanel {
           (newSemesterFromDb = {
             year: this.selectedYear,
             period: this.selectedPeriod,
-          })
+          }
+        )
       )
       .then(() => {
         // Updates the period value withing the newSemesterFromDb variable
@@ -279,7 +286,6 @@ export class CoursesPanel {
                   // Check to see if documents exist in the courses collection
                   sub.forEach((element) => {
                     // Loop to get all the ids of the docs
-  
                     this.addSemesterFromDb(element.id);
                     this.loadCourseFromDb(element.id); // Call to loading the courses on the screen, by id
                   });
@@ -331,10 +337,6 @@ export class CoursesPanel {
   }
 
   private exportButton() {
-  //   html2canvas(document.body).then(function(canvas) {
-  //     let generatedImage = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-  //     window.location.href = generatedImage;
-  // });
     this.facultyEmail = this.storeHelper.current("faculty").name  
   switch(this.facultyEmail) {
     case "Arts":
@@ -347,4 +349,60 @@ export class CoursesPanel {
       break;
     }
   }
+
+  // Function that updates to the correct year and period when selecting to add a new semester
+
+  private nextSemesterCheck() {
+
+    if (this.semesters.length > 0) {
+      let latestYear = this.semesters[this.semesters.length-1]['year']
+      let latestPeriod = this.semesters[this.semesters.length-1]['period']
+      console.log(latestYear, latestPeriod)
+
+      switch (latestPeriod) {
+        case 0:
+          this.selectedPeriod = 1;
+          this.selectedYear = latestYear;
+          break
+        case 1:
+          this.selectedPeriod = 2;
+          this.selectedYear = latestYear;
+          break
+        case 2:
+          this.selectedPeriod = 0;
+          this.selectedYear = latestYear + 1;
+          break
+      }
+      console.log(this.selectedPeriod)
+    }
+  }
+
+// Function that updates the correct year and period when deleting a semester
+
+public updateSemesterCheck() {
+
+  if (this.semesters.length > 0) {
+    let latestYear = this.semesters[this.semesters.length-1]['year']
+    let latestPeriod = this.semesters[this.semesters.length-1]['period']
+    console.log(latestYear, latestPeriod)
+
+    switch (latestPeriod) {
+      case 0:
+        this.selectedPeriod = 0;
+        this.selectedYear = latestYear;
+        break
+      case 1:
+        this.selectedPeriod = 1;
+        this.selectedYear = latestYear;
+        break
+      case 2:
+        this.selectedPeriod = 2;
+        this.selectedYear = latestYear;
+        break
+    }
+    console.log(this.selectedPeriod)
+  }
+
+}
+
 }

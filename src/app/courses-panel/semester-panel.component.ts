@@ -11,6 +11,7 @@ import { CourseEventService, CourseService, StoreHelper } from "../services";
 import { MatExpansionModule } from '@angular/material/expansion';
 import { forEach } from "@angular/router/src/utils/collection";
 import { NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
+import { CoursesPanel } from "./courses-panel.component";
 
 @Component({
   selector: "semester-panel",
@@ -37,7 +38,8 @@ export class SemesterPanel {
     private dragulaService: DragulaService,
     private dragulaModule: DragulaModule,
     private storeHelper: StoreHelper,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private coursePanelService: CoursesPanel,
   ) {
     this.email = this.courseService.email;
   }
@@ -218,6 +220,7 @@ export class SemesterPanel {
   }
 
   private deleteSemester() {
+    this.coursePanelService.updateSemesterCheck();
     this.courses.forEach((course: ICourse) =>
       this.courseService.deselectCourseByName(course.name)
     );
