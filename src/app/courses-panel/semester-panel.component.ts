@@ -12,6 +12,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { forEach } from "@angular/router/src/utils/collection";
 import { NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
 import { CoursesPanel } from "./courses-panel.component";
+import { HighlightSpanKind } from "typescript";
 
 @Component({
   selector: "semester-panel",
@@ -23,6 +24,8 @@ export class SemesterPanel {
   @Input() private semester;
   @Input() private courses: ICourse[];
 
+
+  private addingSemester = false;
   private MAX_POINTS = 80;
   private toggled = true;
   private bagName;
@@ -31,6 +34,13 @@ export class SemesterPanel {
   private courseCounter: number;
   private email: string;
   private collapsed = false;
+  private yearListArray = [];
+  private periodListArray = [];
+  private isDisabled = false;
+  private savedNewSem;
+  private savedNewYear;
+  private previousYear;
+  private previousPeriod;
 
   constructor(
     private courseService: CourseService,
@@ -60,7 +70,6 @@ export class SemesterPanel {
     this.dragulaService.drop().subscribe((value: any) => {
       // need to handle event for this bag only! TODO and semester too?
       if (value.name === this.bagName) {
-        console.log(value);
         this.onDropModel(value);
       }
     });
@@ -247,8 +256,139 @@ export class SemesterPanel {
   }
 
  private smallCourseStatusBarHover(course) {
-   console.log(course.name)
    return course.name;
   }
+
+  private newSemesterDD() {
+    this.addingSemester = true;
+    //this.coursePanelService.newSemester();
+  }
+
+  private expansionOnClick() {
+    this.isDisabled = false;
+    return this.isDisabled
+  } 
+
+  private noExpansionOnClick() {
+    this.isDisabled = true;
+    return this.isDisabled
+  } 
+
+  private yearList() {
+    this.yearListArray = [];
+    let i = new Date().getFullYear();
+    while (i < 2030 ) {
+      this.yearListArray.push(i)
+      i++;
+    }
+    return this.yearListArray[0-9];
+
+  }
+
+  private periodList() {
+    this.periodListArray = [];
+    let i = 0;
+    while (i < 3 ) {
+      if ( i === 0) {
+        this.periodListArray.push( "Summer School");
+        i++;
+      } else {
+      this.periodListArray.push( "Semester " + i)
+      i++;
+      }
+    }
+    return this.periodListArray[0-2];
+  }
+
+  private getSelectedYear(i) {
+    this.previousYear = this.semester.year;
+    this.semester.year = i;
+    //console.log(this.semester.year)
+
+    this.saveChangedSemCourse(i)
+
+  }
+
+  private getSelectedSem(j) {
+    this.previousPeriod = this.semester.period;
+    let k;
+    switch (j){
+      case "Summer School":
+        this.semester.period = 0;
+        k = 0;
+        break;
+      case "Semester 1":
+        this.semester.period = 1;
+        k = 1;
+        break;
+      case "Semester 2":
+        this.semester.period = 2;
+        k = 2;
+        break;
+    }
+    console.log(k)
+    this.saveChangedSemCourse(k)
+
+  }
+
+  private updatePeriodsInCourse(period) {
+    console.log("Updating course period " + period)
+    return period;
+  }
+
+  private updateYearsInCourse(year) {
+    console.log("Updating course year " + year)
+    return year;
+
+  }
+
+  private saveChangedSemCourse(i) {
+    let courses = this.storeHelper.current('courses')
+   
+  if (i < 10) {
+    console.log(i)  
+    this.savedNewSem = this.updatePeriodsInCourse(i)
+  } else {
+    console.log("not working period")
+    this.savedNewSem = this.semester.period;
+    this.previousPeriod = this.semester.period;
+  }
+  if (i > 10) {  
+    this.savedNewYear = this.updateYearsInCourse(i)
+  } else {
+    console.log("not working year")
+    this.savedNewYear = this.semester.year;
+    this.previousYear = this.semester.year;
+  }
+  
+  for (let j = 0; j < courses.length; j++) {  
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("courses", (ref) => {
+        const query = ref.where("id", "==", String(courses[j].id));
+        query.get().then((snapshot) => {
+          snapshot.forEach((doc) => {
+           console.log("coursesJYear: ", courses[j].year, " Previous Year: ", this.previousYear)
+           console.log("coursesJperiod: ", courses[j].period, " Previous Period: ", this.previousPeriod)  
+           if (courses[j].year === this.previousYear && courses[j].period === this.previousPeriod){ 
+           console.log("Is Firing")  
+            this.db
+              .collection("users")
+              .doc(this.email)
+              .collection("courses")
+              .doc(doc.id)
+              .update({
+                year: this.savedNewYear,
+                period: this.savedNewSem,
+              });
+            }
+          });
+        });
+        return query;
+      });
+    }
+  }
+
 
 }

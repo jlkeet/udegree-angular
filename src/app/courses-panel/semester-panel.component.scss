@@ -32,11 +32,16 @@
     display: inline-block;
     border-radius: 4px;
     position: relative;
-    left: 30px;
-    top: 8px;
+    left: 170px;
+    top: -42px;
+
   }
 
-  .mat-expansion-panel-header-title:hover .cross {
+  .dropdown {
+    position: static !important;
+  }
+
+  .mat-expansion-panel-header:hover .cross {
     display: block;
   }
 
@@ -84,36 +89,84 @@
     background-color: #fff;
   }
 
+  .mat-expansion-panel-header:hover {
+    background-color: #fff !important;
+  }
+
   .mat-expansion-panel-header {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0px !important;
-    height: 85px !important;
+    height: 115px !important;
     margin-top: 10px;
+    background-color: #fff !important;
+
   }
 
   .mat-expansion-panel-header-title {
     display: flex;
     min-width: 100%;
-    padding: 19px;
+    padding: 33px;
+    height: 15px;
+    pointer-events: visiblefill !important; 
+    min-width: 1px !important;
   }
 
   .title-text {
-    position: relative;
-    padding-top: 20px;
+    position: static;
     padding-bottom: 0px;
     padding-left: 28px;
+    display: inline-flex;
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+    color: rgba(0, 0, 0, 0.87);
+    transition: none !important;
   }
 
   .minimised-courses {
     display: flex;
-    justify-content: space-between !important;
     margin: 0 auto;
-    column-gap: 15px;
+    column-gap: 20px;
     padding: 10px 0px;
   }
 
   .mat-tooltip {
       font-size: 15px !important;
+  }
+
+  .semester-select-button {
+    background-color: transparent !important;
+    border-width: 1px;
+    border-color: transparent;
+    text-align: left;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .semester-select-button:hover {  
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e6eaed;
+    border-image: initial;
+    border-radius: 5px;
+  }
+
+  .semester-select-button:active {  
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e6eaed;
+    border-image: initial;
+    border-radius: 5px;
+  }
+
+  .dropDownMenuSem {
+    min-width: 110px;
+
+  }
+
+  .dropDownMenuItemSem:hover{
+    background-color: #0179d3;
+    color: #fff;
+    cursor: pointer;
   }

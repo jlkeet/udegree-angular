@@ -1,55 +1,75 @@
-<mat-expansion-panel #thisPanel [expanded]=true hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title class="title">
-        <div class="title-text">
-          {{ semester.year }}
+<mat-expansion-panel [disabled]="isDisabled" [expanded]=true hideToggle>
+  <mat-expansion-panel-header (click)="expansionOnClick()">
+    <mat-panel-title class="title">
+      <div class="title-text" (click)="newSemesterDD();addingSemesters=true;noExpansionOnClick()">
+        <div ngbDropdown>
+          <button class="semester-select-button" ngbDropdownToggle (click)="yearList()">
+            {{ semester.year }}
+          </button>
+          <div ngbDropdownMenu class="dropDownMenuSem">
+            <div ngbDropdownItem class="dropDownMenuItemSem" *ngFor="let i of yearListArray">
+              <P (click)="getSelectedYear(i)">{{i}}</P>
+            </div>
+          </div>
+        </div>
+    <div ngbDropdown>
+      <button class="semester-select-button" ngbDropdownToggle (click)="periodList()">
           {{
-            semester.period === 0
-              ? "Summer School"
-              : "Semester " + semester.period
+          semester.period === 0
+          ? "Summer School"
+          : "Semester " + semester.period
           }}
+        </button>
+        <span class="pad-left" *ngIf="addingSemester === true">
+          <div ngbDropdownMenu class="dropDownMenuSem">
+            <div ngbDropdownItem class="dropDownMenuItemSem" *ngFor="let j of periodListArray"> 
+              <P (click)="getSelectedSem(j)">{{j}}</P>
+            </div>
+
+          <!-- <mat-form-field class="space" style="padding-left: 33px !important; width: 16.4% !important"
+            *ngIf="addingSemester === true">
+            <mat-select disableOptionCentering [(ngModel)]="selectedPeriod" panelClass="myPanelClass"
+              class="nice-select">
+              <mat-option style="font-size: 18px !important;" [value]=0>Summer School </mat-option>
+              <mat-option style="font-size: 18px !important;" [value]=1> Semester 1</mat-option>
+              <mat-option style="font-size: 18px !important;" [value]=2> Semester 2</mat-option>
+            </mat-select>
+          </mat-form-field> -->
         </div>
+        </span>
+
         <div class="minimised-courses">
-        <span *ngFor="let course of courses">
-          <span matTooltip={{course.name}} class="circle" [ngStyle]="{'background-color': smallCourseStatusBar(course)}"></span>
-        </span>  
+          <span *ngFor="let course of courses">
+            <span matTooltip={{course.name}} class="circle"
+              [ngStyle]="{'background-color': smallCourseStatusBar(course)}"></span>
+          </span>
         </div>
+
         <span *ngIf="gpa"> &nbsp; &mdash; GPA {{ gpa.toFixed(2) }} </span>
         <span class="spacer"> </span>
 
-        <span class="delete no-select" (click)="deleteSemester()">
-          <span class="cross"> &times; </span>
-        </span>
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div *ngIf="toggled" class="courses">
-      <div class="flex dragula-container">
-        <div
-          class="semester-courses"
-          [dragula]="bagName"
-          [dragulaModel]="courses"
-          [attr.period]="semester.period"
-          [attr.year]="semester.year"
-        >
-          <course-draggable
-            *ngFor="let course of courses; let i = index"
-            (deleteCourseClicked)="deleteCourse(course)"
-            (courseClicked)="courseClicked(course)"
-            [course]="course"
-            [attr.data-id]="course.id"
-            [attr.data-period]="semester.period"
-            [attr.data-year]="semester.year"
-          ></course-draggable>
-          <div
-            fake
-            *ngIf="!atMaxPoints"
-            class="fakecourse"
-            [routerLink]="['/add']"
-            [queryParams]="{ period: semester.period, year: semester.year }"
-          >
-            <div class="position-text">+ ADD COURSE</div>
-          </div>
+      </div>
+      </div>
+
+    </mat-panel-title>
+
+    <span class="delete no-select" (click)="deleteSemester()">
+      <span class="cross"> &times; </span>
+    </span>
+
+  </mat-expansion-panel-header>
+  <div *ngIf="toggled" class="courses">
+    <div class="flex dragula-container">
+      <div class="semester-courses" [dragula]="bagName" [dragulaModel]="courses" [attr.period]="semester.period"
+        [attr.year]="semester.year">
+        <course-draggable *ngFor="let course of courses; let i = index" (deleteCourseClicked)="deleteCourse(course)"
+          (courseClicked)="courseClicked(course)" [course]="course" [attr.data-id]="course.id"
+          [attr.data-period]="semester.period" [attr.data-year]="semester.year"></course-draggable>
+        <div fake *ngIf="!atMaxPoints" class="fakecourse" [routerLink]="['/add']"
+          [queryParams]="{ period: semester.period, year: semester.year }">
+          <div class="position-text">+ ADD COURSE</div>
         </div>
       </div>
     </div>
-  </mat-expansion-panel>
+  </div>
+</mat-expansion-panel>

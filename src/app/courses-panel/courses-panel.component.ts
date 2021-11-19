@@ -66,7 +66,7 @@ export class CoursesPanel {
 
   public selectedYear;
   public selectedPeriod;
-  private addingSemester = false;
+  public addingSemester = false;
   private semDbCount: number;
   private logInCounter;
   private courseDbCounter: number = 0;
@@ -167,7 +167,7 @@ export class CoursesPanel {
     );
   }
 
-  private newSemester(): void {
+  public newSemester(): void {
     const newSemester = {
       year: Number(this.selectedYear),
       period: Number(this.selectedPeriod),
@@ -357,8 +357,6 @@ export class CoursesPanel {
     if (this.semesters.length > 0) {
       let latestYear = this.semesters[this.semesters.length-1]['year']
       let latestPeriod = this.semesters[this.semesters.length-1]['period']
-      console.log(latestYear, latestPeriod)
-
       switch (latestPeriod) {
         case 0:
           this.selectedPeriod = 1;
@@ -373,7 +371,6 @@ export class CoursesPanel {
           this.selectedYear = latestYear + 1;
           break
       }
-      console.log(this.selectedPeriod)
     }
   }
 
@@ -384,7 +381,6 @@ public updateSemesterCheck() {
   if (this.semesters.length > 0) {
     let latestYear = this.semesters[this.semesters.length-1]['year']
     let latestPeriod = this.semesters[this.semesters.length-1]['period']
-    console.log(latestYear, latestPeriod)
 
     switch (latestPeriod) {
       case 0:
@@ -400,7 +396,6 @@ public updateSemesterCheck() {
         this.selectedYear = latestYear;
         break
     }
-    console.log(this.selectedPeriod)
   }
 
 }
