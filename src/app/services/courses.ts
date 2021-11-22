@@ -8,7 +8,7 @@ import {
   CourseStatus,
   Message,
   MessageStatus,
-  Period
+  Period,
 } from '../models';
 import { IRequirement, RequirementService } from './requirement.service';
 import { StoreHelper } from './store-helper';
@@ -127,6 +127,7 @@ export class CourseService {
       title: result[9],
       year: courseYear,
       status: status ? status : CourseStatus.Planned,
+     // grade: grade ? grade: null,
       canDelete: true,
       }))
       .then((docRef) => {console.log("Here's the docId " + docRef.id)} )
