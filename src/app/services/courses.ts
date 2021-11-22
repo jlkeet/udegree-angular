@@ -108,7 +108,7 @@ export class CourseService {
     this.setCourseDb(courseId, period, year, status)
   }
 
-  private setCourseDb(courseId, coursePeriod, courseYear, status?: CourseStatus){
+  private setCourseDb(courseId, coursePeriod, courseYear, status?: CourseStatus, grade?: null){
     this.db_courses.list("0/" + (courseId - 1)).valueChanges().subscribe(result => { 
     this.db
     .collection("users") 
@@ -127,7 +127,7 @@ export class CourseService {
       title: result[9],
       year: courseYear,
       status: status ? status : CourseStatus.Planned,
-     // grade: grade ? grade: null,
+      grade: grade ? grade : null,
       canDelete: true,
       }))
       .then((docRef) => {console.log("Here's the docId " + docRef.id)} )
@@ -168,7 +168,8 @@ export class CourseService {
     const lookupCourse = this.planned.find((course: ICourse) => course.id === courseToChange.id);
     const copy = Object.assign({}, lookupCourse);
     copy.status = status;
-    this.storeHelper.findAndUpdate('courses', copy);    let course = courseToChange;
+    this.storeHelper.findAndUpdate('courses', copy);
+    let course = courseToChange;
     this.db.collection("users").doc(this.email).collection("courses", ref => {
       const query = ref.where('id', '==', course.id);
       query.get().then( snapshot => {
@@ -194,6 +195,26 @@ export class CourseService {
     const copy = Object.assign({}, lookupCourse);
     copy.grade = grade;
     this.storeHelper.findAndUpdate('courses', copy);
+    let course = courseToChange;
+    this.db.collection("users").doc(this.email).collection("courses", ref => {
+      const query = ref.where('id', '==', course.id);
+      query.get().then( snapshot => {
+        snapshot.forEach(doc => {
+          this.db
+          .collection("users")
+          .doc(this.email)
+          .collection("courses")
+          .doc(doc.id)
+          .update({grade: copy.grade})
+         })
+        }
+      )
+      return query
+      })
+
+
+
+
     this.updateErrors();
   }
 

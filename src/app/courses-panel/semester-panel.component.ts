@@ -369,8 +369,6 @@ export class SemesterPanel {
         const query = ref.where("id", "==", String(courses[j].id));
         query.get().then((snapshot) => {
           snapshot.forEach((doc) => {
-           console.log("coursesJYear: ", courses[j].year, " Previous Year: ", this.previousYear)
-           console.log("coursesJperiod: ", courses[j].period, " Previous Period: ", this.previousPeriod)  
            if (courses[j].year === this.previousYear && courses[j].period === this.previousPeriod){ 
            console.log("Is Firing")  
             this.db

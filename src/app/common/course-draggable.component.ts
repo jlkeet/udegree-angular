@@ -35,6 +35,7 @@ export class CourseDraggable {
 
   private showDelete: boolean;
   private backgroundColor: string;
+  private displayGrade: string;
   // private isDragging: boolean = false;
 
   constructor(
@@ -80,9 +81,12 @@ export class CourseDraggable {
     this.setBackgroundColour();
     this.initialiseDrag(this.course.status);
     this.course.help = CourseStatus[this.course.status];
+    this.displayGradeConvert()
+    
   }
 
   private setBackgroundColour() {
+    console.log(this.course.status)
     switch (this.course.status) {
       case CourseStatus.Completed:
         this.backgroundColor = '#66cc00';
@@ -90,14 +94,20 @@ export class CourseDraggable {
 
       case CourseStatus.Enrolled:
         this.backgroundColor = '#f2d600';
+        this.displayGrade = null;
+        this.course.grade = null;
         return;
 
       case CourseStatus.Planned:
         this.backgroundColor = '#66bbff';
+        this.displayGrade = null;
+        this.course.grade = null;
         return;
 
       case CourseStatus.Failed:
         this.backgroundColor = '#ff8087';
+        this.displayGrade = "D";
+        this.course.grade = 0;
         return;
 
       default:
@@ -120,5 +130,41 @@ export class CourseDraggable {
       'no-drag',
       !enableDrag
     );
+  }
+
+  private displayGradeConvert() {
+    switch (this.course.grade) {
+      case 9:
+        this.displayGrade = "A+";
+        break;
+      case 8:
+        this.displayGrade = "A";
+        break;
+      case 7:
+        this.displayGrade = "A-";
+        break;
+      case 6:
+        this.displayGrade = "B+";
+        break;
+      case 5:
+        this.displayGrade = "B";
+        break;
+      case 4:
+        this.displayGrade = "B-";
+        break;
+      case 3:
+        this.displayGrade = "C+";
+        break;
+      case 2:
+        this.displayGrade = "C";
+        break;
+      case 1:
+        this.displayGrade = "C-";
+        break;
+      case 0:
+        this.displayGrade = "D";
+        break;
+    }
+    
   }
 }

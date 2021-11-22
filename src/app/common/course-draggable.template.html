@@ -3,6 +3,7 @@
     [class.course--error]="course.isError" >
     <!--[class.dragging]="isDragging"-->
     <div class="course-name">{{course.name}}</div>
+    <div *ngIf="course.status == 2" class="display-grade">{{displayGrade}}</div>
     <div class="course-title">{{course.title}}</div>
     <course-delete-icon class="cross" *ngIf="course.canDelete" (deleteCourseClicked)="deleteCourse()"></course-delete-icon>
 </div>

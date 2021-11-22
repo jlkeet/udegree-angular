@@ -12,7 +12,7 @@
   padding-right:15px;
   position: relative;
   cursor: pointer;
-  display: flex;
+  display: inline-block;
   flex-direction:column;
   box-sizing: border-box;
 }
@@ -47,6 +47,8 @@
   font-size: 15px;
   z-index: 1;
   color: black;
+  width: 75%;
+  display: inline-block;
 }
 .course-title {
   font-size: 10px;
@@ -57,4 +59,11 @@
 .dragging {
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
+}
+
+.display-grade {
+  z-index: 1;
+  color: black;
+  width: 25%;
+  display: inline-block;
 }

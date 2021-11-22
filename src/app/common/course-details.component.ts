@@ -150,6 +150,7 @@ export class CourseDetails {
   }
 
   public newStatus(event) {
+    this.courseGrade = null;
     this.courseStatus = Number(event.value);
     if (!this.showAddCourse) {
       this.changeStatus.emit({
@@ -188,6 +189,7 @@ export class CourseDetails {
   }
 
   public ngOnInit() {
+
     if (!this.custom && !this.showAddCourse) {
       this.courseGrade = this.course.grade;
     }
