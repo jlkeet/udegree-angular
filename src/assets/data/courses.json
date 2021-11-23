@@ -170,6 +170,11 @@
   "department": "Academic English Studies",
   "points": 15,
   "stage": 2,
+  "periods": [
+    0,
+    1,
+    2
+  ],
   "requirements": [{
       "type": 1,
       "required": 1,

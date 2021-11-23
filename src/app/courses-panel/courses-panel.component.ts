@@ -72,6 +72,7 @@ export class CoursesPanel {
   private courseDbCounter: number = 0;
   public email: string;
   private facultyEmail: string;
+  private delCount = 0;
 
   private dbCoursesSavedArrayById = [];
   private onPageChange = new EventEmitter<null>();
@@ -140,7 +141,6 @@ export class CoursesPanel {
   }
 
   public ngOnInit() {
-
   }
 
   public ngOnChanges(): void {
@@ -223,7 +223,7 @@ export class CoursesPanel {
     });
   }
 
-  private addSemesterFromDb(courseDbId: string) {
+  public addSemesterFromDb(courseDbId: string) {
     var newSemesterFromDb = { year: Number(), period: Number() };
 
     // The following code is super gumby, because of the promised value not being returned before executing the next lines
@@ -266,7 +266,7 @@ export class CoursesPanel {
       });
   }
 
-  private loadPlanFromDb() {
+  public loadPlanFromDb() {
     if (this.email !== undefined) {
       this.db
         .collection("users")
@@ -288,6 +288,36 @@ export class CoursesPanel {
                     // Loop to get all the ids of the docs
                     this.addSemesterFromDb(element.id);
                     this.loadCourseFromDb(element.id); // Call to loading the courses on the screen, by id
+                  });
+                }
+              });
+            }
+        });
+    }
+  }
+
+  public loadPlanFromDbAfterDel() {
+    if (this.email !== undefined) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .get()
+        .toPromise()
+        .then((doc) => {
+          if (doc.exists) {
+            this.db
+              .collection("users")
+              .doc(this.email)
+              .collection("courses")
+              .get()
+              .toPromise()
+              .then((sub) => {
+                if (sub.docs.length > 0) {
+                  // Check to see if documents exist in the courses collection
+                  sub.forEach((element) => {
+                    // Loop to get all the ids of the docs
+                    this.addSemesterFromDb(element.id);
+                    this.loadCourseFromDbAfterDel(element.id); // Call to loading the courses on the screen, by id
                   });
                 }
               });
@@ -331,9 +361,34 @@ export class CoursesPanel {
         canDelete: true,
       });
       this.getCourseFromDb(courseDbId).then((res) => {
-        this.storeHelper.add("courses", res);
+          this.storeHelper.add("courses", res);
       });
     });
+  }
+
+  private loadCourseFromDbAfterDel(courseDbId) {
+    const courseDb = this.getCourseFromDb(courseDbId).then((copy) => {
+      Object.assign({
+        department: copy[0],
+        desc: copy[1],
+        faculties: copy[2],
+        id: copy[3],
+        name: copy[4],
+        period: copy[5],
+        points: copy[6],
+        requirements: copy[7],
+        stage: copy[8],
+        status: copy[9],
+        title: copy[10],
+        year: copy[11],
+        canDelete: true,
+      });
+      this.getCourseFromDb(courseDbId).then((res) => {
+          this.courses = this.storeHelper.current("courses")
+      });
+    });
+    const uniqueSet = [...new Set(this.courses)]
+    this.storeHelper.update("courses", uniqueSet)
   }
 
   private exportButton() {

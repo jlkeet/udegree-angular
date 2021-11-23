@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from "@angular/core";
+import { Component, Input, EventEmitter, Output, ViewEncapsulation } from "@angular/core";
 import { snapshotChanges } from "@angular/fire/database";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { DragulaService } from "ng2-dragula";
@@ -13,6 +13,7 @@ import { forEach } from "@angular/router/src/utils/collection";
 import { NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
 import { CoursesPanel } from "./courses-panel.component";
 import { HighlightSpanKind } from "typescript";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "semester-panel",
@@ -50,11 +51,13 @@ export class SemesterPanel {
     private storeHelper: StoreHelper,
     private db: AngularFirestore,
     private coursePanelService: CoursesPanel,
+    private router: Router,
   ) {
     this.email = this.courseService.email;
   }
 
   private ngOnInit() {
+
     this.bagName = "courses";
     const bag = this.dragulaService.find(this.bagName);
 
@@ -230,8 +233,9 @@ export class SemesterPanel {
 
   private deleteSemester() {
     this.coursePanelService.updateSemesterCheck();
+    console.log(this.courses)
     this.courses.forEach((course: ICourse) =>
-      this.courseService.deselectCourseByName(course.name)
+    this.courseService.deselectCourseByName(course.name)
     );
     let semesters = this.storeHelper.current("semesters");
     semesters = semesters.filter(
@@ -240,6 +244,7 @@ export class SemesterPanel {
         semester.period !== this.semester.period
     );
     this.storeHelper.update("semesters", semesters);
+    this.semesterSort();
   }
 
   private smallCourseStatusBar(course) {
@@ -306,7 +311,6 @@ export class SemesterPanel {
     //console.log(this.semester.year)
 
     this.saveChangedSemCourse(i)
-
   }
 
   private getSelectedSem(j) {
@@ -328,16 +332,14 @@ export class SemesterPanel {
     }
     console.log(k)
     this.saveChangedSemCourse(k)
-
+    //console.log(this.storeHelper.update("semesters", t))
   }
 
   private updatePeriodsInCourse(period) {
-    console.log("Updating course period " + period)
     return period;
   }
 
   private updateYearsInCourse(year) {
-    console.log("Updating course year " + year)
     return year;
 
   }
@@ -370,7 +372,6 @@ export class SemesterPanel {
         query.get().then((snapshot) => {
           snapshot.forEach((doc) => {
            if (courses[j].year === this.previousYear && courses[j].period === this.previousPeriod){ 
-           console.log("Is Firing")  
             this.db
               .collection("users")
               .doc(this.email)
@@ -386,7 +387,16 @@ export class SemesterPanel {
         return query;
       });
     }
+    this.semesterSort();
   }
+
+  private semesterSort() {
+    this.storeHelper.current('semesters').sort((s1, s2) =>
+    s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
+   );
+   this.coursePanelService.loadPlanFromDbAfterDel();
+}
+
 
 
 }

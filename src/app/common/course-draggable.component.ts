@@ -86,7 +86,6 @@ export class CourseDraggable {
   }
 
   private setBackgroundColour() {
-    console.log(this.course.status)
     switch (this.course.status) {
       case CourseStatus.Completed:
         this.backgroundColor = '#66cc00';
