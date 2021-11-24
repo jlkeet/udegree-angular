@@ -211,10 +211,6 @@ export class CourseService {
       )
       return query
       })
-
-
-
-
     this.updateErrors();
   }
 

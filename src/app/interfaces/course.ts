@@ -34,6 +34,7 @@ export interface ICourse {
   stage?: number;
   requirements?: IRequirement[];
   grade?: number; // grade in GPA format
+  isActive?: boolean; // Remove inactive courses from course list
 }
 
 // an idea - not used yet

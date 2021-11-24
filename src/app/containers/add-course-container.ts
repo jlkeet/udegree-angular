@@ -185,6 +185,9 @@ export class AddCourseContainer {
     this.allCourses = this.coursesService.getAllCourses()
     .filter((course: ICourse) =>
       course.periods ? course.periods.includes(this.period) : true);
+      this.allCourses = this.allCourses.filter((course: ICourse) => 
+      course.isActive !== false // Remove inactive courses from the course selection
+    );    
     this.shown = this.allCourses;
     this.modules = this.moduleService.getModules();
     this.departmentCourses = this.mapToDeptModel(
@@ -238,6 +241,16 @@ export class AddCourseContainer {
     return this.planned.map((course: ICourse) => course.id).includes(courseToCheck.id);
   }
 
+  private removeInactive(course): void {
+        if (course.isActive !== undefined) {
+          if (course.isActive !== false) {
+          course.canAdd = true;
+          } else {
+            course.canAdd = false;
+          }
+        }
+  }
+
   private flagIneligible(): void {
     this.allCourses.forEach(
       (course: ICourse) => {
@@ -249,6 +262,7 @@ export class AddCourseContainer {
         } else {
           course.canAdd = true;
         }
+        //this.removeInactive(course)
       });
   }
 
