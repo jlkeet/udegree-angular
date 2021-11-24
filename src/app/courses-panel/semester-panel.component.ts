@@ -233,7 +233,6 @@ export class SemesterPanel {
 
   private deleteSemester() {
     this.coursePanelService.updateSemesterCheck();
-    console.log(this.courses)
     this.courses.forEach((course: ICourse) =>
     this.courseService.deselectCourseByName(course.name)
     );

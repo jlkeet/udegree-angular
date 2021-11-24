@@ -172,6 +172,7 @@ export class CoursesPanel {
       year: Number(this.selectedYear),
       period: Number(this.selectedPeriod),
     };
+    console.log(newSemester)
     if (this.canAddSemester(newSemester)) {
       this.semesters.push(newSemester);
       this.semesters.sort((s1, s2) =>
@@ -316,7 +317,7 @@ export class CoursesPanel {
                   // Check to see if documents exist in the courses collection
                   sub.forEach((element) => {
                     // Loop to get all the ids of the docs
-                    this.addSemesterFromDb(element.id);
+                    //this.addSemesterFromDb(element.id);
                     this.loadCourseFromDbAfterDel(element.id); // Call to loading the courses on the screen, by id
                   });
                 }
@@ -412,6 +413,7 @@ export class CoursesPanel {
     if (this.semesters.length > 0) {
       let latestYear = this.semesters[this.semesters.length-1]['year']
       let latestPeriod = this.semesters[this.semesters.length-1]['period']
+
       switch (latestPeriod) {
         case 0:
           this.selectedPeriod = 1;
@@ -451,8 +453,7 @@ public updateSemesterCheck() {
         this.selectedYear = latestYear;
         break
     }
-  }
-
+    }
 }
 
 }
