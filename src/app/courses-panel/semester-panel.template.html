@@ -5,7 +5,7 @@
       <div class="title-text" (click)="newSemesterDD();addingSemesters=true;noExpansionOnClick()">
         <div ngbDropdown>
           <button class="semester-select-button" ngbDropdownToggle (click)="yearList()">
-            {{ semester.year }}
+            {{ semester.year}}
           </button>
           <div ngbDropdownMenu class="dropDownMenuSem">
             <div ngbDropdownItem class="dropDownMenuItemSem" *ngFor="let i of yearListArray">
@@ -26,16 +26,6 @@
             <div ngbDropdownItem class="dropDownMenuItemSem" *ngFor="let j of periodListArray"> 
               <P (click)="getSelectedSem(j)">{{j}}</P>
             </div>
-
-          <!-- <mat-form-field class="space" style="padding-left: 33px !important; width: 16.4% !important"
-            *ngIf="addingSemester === true">
-            <mat-select disableOptionCentering [(ngModel)]="selectedPeriod" panelClass="myPanelClass"
-              class="nice-select">
-              <mat-option style="font-size: 18px !important;" [value]=0>Summer School </mat-option>
-              <mat-option style="font-size: 18px !important;" [value]=1> Semester 1</mat-option>
-              <mat-option style="font-size: 18px !important;" [value]=2> Semester 2</mat-option>
-            </mat-select>
-          </mat-form-field> -->
         </div>
         </span>
 

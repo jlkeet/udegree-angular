@@ -267,6 +267,7 @@ export class SemesterPanel {
   private newSemesterDD() {
     this.addingSemester = true;
     //this.coursePanelService.newSemester();
+
   }
 
   private expansionOnClick() {
@@ -396,7 +397,5 @@ export class SemesterPanel {
    );
    this.coursePanelService.loadPlanFromDbAfterDel();
 }
-
-
 
 }

@@ -7,23 +7,6 @@
         <span class="new-semester" (click)="newSemester()" *ngIf="addingSemester === false">
           + ADD SEMESTER
         </span>
-        <!-- <span class="pad-left" *ngIf="addingSemester === true"> -->
-          <!-- <mat-form-field class="space" style="padding-left: 33px !important; width: 16.4% !important" *ngIf="addingSemester === true">
-            <mat-select disableOptionCentering 
-             [(ngModel)]="selectedPeriod"
-             panelClass="myPanelClass"
-             class="nice-select">
-              <mat-option style="font-size: 18px !important;" [value] = 0 >Summer School </mat-option>
-              <mat-option style="font-size: 18px !important;" [value] = 1> Semester 1</mat-option>
-              <mat-option style="font-size: 18px !important;" [value] = 2> Semester 2</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <span class="space" style="width: 16.4% !important" *ngIf="addingSemester === true">
-          <input type="number" [(ngModel)]="selectedYear" min="2000" max="2030" placeholder="year"  class="year-input" style="margin: 5px 2.5px; margin-bottom: 0.65em !important">
-          <button class="btn btn--next" style="height: 2.4em !important; margin-top: -2px !important; padding-top: 5px !important;" (click)="newSemester();addingSemesters=false;"> ADD </button> -->
-        <!-- </span> -->
-          <!-- </span> -->
       </mat-toolbar>
     </div>
   </div>
@@ -31,43 +14,3 @@
     <a class="btn export-button" (click)="exportButton()" href="mailto:{{facultyEmail}}?subject=Testing out mailto!">Export Plan</a>
   </div>
 </div>
-
-
-
-
-
-
-
-<!-- <div class="courses-panel">
-  <div class="courses-panel-content" >
-    <semester-panel *ngFor="let semester of semesters; let i=index" [semester]="semester" [courses]="filteredCourses[i]? filteredCourses[i]:[]">
-    </semester-panel>
-    <div class="add-semester">
-      <mat-toolbar class="plain">
-        <span class="new-semester" (click)="addingSemester=true" *ngIf="addingSemester === false">
-          + ADD SEMESTER
-        </span>
-        <span class="pad-left" *ngIf="addingSemester === true">
-          <mat-form-field class="space" style="padding-left: 33px !important; width: 16.4% !important" *ngIf="addingSemester === true">
-            <mat-select disableOptionCentering 
-             [(ngModel)]="selectedPeriod"
-             panelClass="myPanelClass"
-             class="nice-select">
-              <mat-option style="font-size: 18px !important;" [value] = 0 >Summer School </mat-option>
-              <mat-option style="font-size: 18px !important;" [value] = 1> Semester 1</mat-option>
-              <mat-option style="font-size: 18px !important;" [value] = 2> Semester 2</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <span class="space" style="width: 16.4% !important" *ngIf="addingSemester === true">
-          <input type="number" [(ngModel)]="selectedYear" min="2000" max="2030" placeholder="year"  class="year-input" style="margin: 5px 2.5px; margin-bottom: 0.65em !important">
-          <button class="btn btn--next" style="height: 2.4em !important; margin-top: -2px !important; padding-top: 5px !important;" (click)="newSemester();addingSemesters=false;"> ADD </button>
-        </span>
-          </span>
-      </mat-toolbar>
-    </div>
-  </div>
-  <div class="export-container">
-    <a class="btn export-button" (click)="exportButton()" href="mailto:{{facultyEmail}}?subject=Testing out mailto!">Export Plan</a>
-  </div>
-</div> -->
