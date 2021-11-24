@@ -172,7 +172,6 @@ export class CoursesPanel {
       year: Number(this.selectedYear),
       period: Number(this.selectedPeriod),
     };
-    console.log(newSemester)
     if (this.canAddSemester(newSemester)) {
       this.semesters.push(newSemester);
       this.semesters.sort((s1, s2) =>

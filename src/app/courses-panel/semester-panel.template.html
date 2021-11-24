@@ -51,11 +51,16 @@
         <course-draggable *ngFor="let course of courses; let i = index" (deleteCourseClicked)="deleteCourse(course)"
           (courseClicked)="courseClicked(course)" [course]="course" [attr.data-id]="course.id"
           [attr.data-period]="semester.period" [attr.data-year]="semester.year"></course-draggable>
-        <div fake *ngIf="!atMaxPoints" class="fakecourse" [routerLink]="['/add']"
+        <div fake *ngIf="!atMaxPoints && boolCheck" class="fakecourse" [routerLink]="['/add']"
           [queryParams]="{ period: semester.period, year: semester.year }">
           <div class="position-text">+ ADD COURSE</div>
         </div>
       </div>
     </div>
+    <div *ngIf="boolCheck === false; else semCheckPass">
+      <P class="semCheckFail">Selected Semester already in plan!</P>
+    </div>
+    <ng-template #semCheckPass>
+    </ng-template>
   </div>
 </mat-expansion-panel>

@@ -42,6 +42,8 @@ export class SemesterPanel {
   private savedNewYear;
   private previousYear;
   private previousPeriod;
+  private semcheck = {};
+  private boolCheck = true;
 
   constructor(
     private courseService: CourseService,
@@ -332,7 +334,6 @@ export class SemesterPanel {
     }
     console.log(k)
     this.saveChangedSemCourse(k)
-    //console.log(this.storeHelper.update("semesters", t))
   }
 
   private updatePeriodsInCourse(period) {
@@ -345,8 +346,8 @@ export class SemesterPanel {
   }
 
   private saveChangedSemCourse(i) {
+    this.boolCheck = true;
     let courses = this.storeHelper.current('courses')
-   
   if (i < 10) {
     console.log(i)  
     this.savedNewSem = this.updatePeriodsInCourse(i)
@@ -363,6 +364,24 @@ export class SemesterPanel {
     this.previousYear = this.semester.year;
   }
   
+  this.semcheck = {
+    year: Number(this.savedNewYear),
+    period: Number(this.savedNewSem),
+  };
+
+ for (let x = 0; x < this.storeHelper.current('semesters').length -1; x++) {
+    if (this.semcheck['year'] === this.storeHelper.current('semesters')[x].year && this.semcheck['period'] === this.storeHelper.current('semesters')[x].period) {
+      console.log("Sem Check Firing ", this.semcheck, ' ', this.storeHelper.current('semesters')[x] );
+      this.boolCheck = false;
+      break;
+    } else {
+      console.log("SemCheck not firing ", this.semcheck, ' ', this.storeHelper.current('semesters')[x])
+      this.boolCheck = true;
+      }
+    }
+
+console.log(this.boolCheck)
+if (this.boolCheck) {  
   for (let j = 0; j < courses.length; j++) {  
     this.db
       .collection("users")
@@ -389,6 +408,7 @@ export class SemesterPanel {
     }
     this.semesterSort();
   }
+}
 
   private semesterSort() {
     this.storeHelper.current('semesters').sort((s1, s2) =>
