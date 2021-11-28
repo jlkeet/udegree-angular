@@ -40,6 +40,7 @@ import { UserComponent } from "../user/user.component";
 import { MatFormFieldControl, MatListOption } from "@angular/material";
 import { DegreeSelection } from "../select-major";
 import html2canvas from 'html2canvas';
+import request from 'request';
 
 /*
   Component for displaying a list of courses organised by year and semester
@@ -71,8 +72,10 @@ export class CoursesPanel {
   private logInCounter;
   private courseDbCounter: number = 0;
   public email: string;
+  private name: string;
   private facultyEmail: string;
   private delCount = 0;
+  private url;
 
   private dbCoursesSavedArrayById = [];
   private onPageChange = new EventEmitter<null>();
@@ -130,6 +133,7 @@ export class CoursesPanel {
         this.email = "";
       } else {
         this.email = auth.email;
+        this.name = auth.displayName;
         if (this.userContainer.logInCounter > 1) {
           // This is necessary to stop the duplicate course loading
         } else {
@@ -141,6 +145,7 @@ export class CoursesPanel {
   }
 
   public ngOnInit() {
+
   }
 
   public ngOnChanges(): void {
@@ -392,23 +397,76 @@ export class CoursesPanel {
   }
 
   private exportButton() {
-    this.facultyEmail = this.storeHelper.current("faculty").name  
-  switch(this.facultyEmail) {
-    case "Arts":
-      console.log("Arts Faculty Email");
-      this.facultyEmail = "asc@auckland.ac.nz"
-      break;
-    case "Science":
-      console.log("Science Faculty Email");
-      this.facultyEmail = "scifac@auckland.ac.nz"
-      break;
-    }
+  //   this.facultyEmail = this.storeHelper.current("faculty").name  
+  // switch(this.facultyEmail) {
+  //   case "Arts":
+  //     console.log("Arts Faculty Email");
+  //     this.facultyEmail = "asc@auckland.ac.nz"
+  //     break;
+  //   case "Science":
+  //     console.log("Science Faculty Email");
+  //     this.facultyEmail = "scifac@auckland.ac.nz"
+  //     break;
+  //   }
+  
+  html2canvas(document.body).then((canvas) =>  {
+    this.authService.afAuth.authState.subscribe((auth) => {    
+    canvas.toBlob(function(blob) {
+      var newImg = document.createElement('img'),
+          url = URL.createObjectURL(blob);
+          let dataURL = canvas.toDataURL("image/png");
+    firebase.storage().ref("/users/" + auth.email + "/images/").child("plan").put(blob).then(() => {}
+      )})})})
+
+      setTimeout(()=>{
+        this.getImage()}, 5000);
   }
 
+  private getImage() {
+    var storageRef = firebase.storage().ref("/users/" + this.email + "/images/").child("plan")
+    .getDownloadURL()
+    .then(url => { console.log(url)
+      var xhr = new XMLHttpRequest();
+      xhr.responseType = 'blob';
+      xhr.onload = (event) => {
+        var blob = xhr.response;
+      };
+      xhr.open('GET', url);
+      xhr.send();
+      this.sendImage(url)
+    })
+    .catch((error) => {
+      console.log(error)
+    });
+  }
+
+  private sendImage(url) {
+    const email = "jackson@udegree.co"
+    const subject = this.name + "'s Plan"
+    
+
+   this.db
+  .collection("mail")
+  .add({
+    from:email,
+    to: this.email,
+    // cc: "jackson.keet@knowledge-basket.co.nz",
+    message: {
+        subject: subject,
+        html: '<p>Here’s an attachment for you!</p>',
+        attachments: [{
+          filename: "plan.png",
+          path: url,
+          type: 'image/png',
+          }],
+    },
+  })
+  }
+
+
+
   // Function that updates to the correct year and period when selecting to add a new semester
-
   private nextSemesterCheck() {
-
     if (this.semesters.length > 0) {
       let latestYear = this.semesters[this.semesters.length-1]['year']
       let latestPeriod = this.semesters[this.semesters.length-1]['period']
@@ -433,7 +491,6 @@ export class CoursesPanel {
 // Function that updates the correct year and period when deleting a semester
 
 public updateSemesterCheck() {
-
   if (this.semesters.length > 0) {
     let latestYear = this.semesters[this.semesters.length-1]['year']
     let latestPeriod = this.semesters[this.semesters.length-1]['period']
