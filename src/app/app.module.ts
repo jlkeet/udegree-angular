@@ -99,8 +99,9 @@ import { NoContent } from './no-content';
 import * as progress from './progress-panel';
 import { DegreeSelection, DepartmentList, FacultyList } from './select-major';
 import { CourseService, WindowRef } from './services';
-
 import { UserContainer } from './user/user-status.component';
+import { ExportButton } from './courses-panel/export-button.component';
+import { FirebaseDbService } from './core/firebase.db.service';
 
 
 // Application wide providers
@@ -163,6 +164,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     FacultyList,
     DepartmentList,
     NoContent,
+    ExportButton,
 
     // Authentication
     LoginComponent,
@@ -216,6 +218,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     UserService,
     UserResolver,
     AuthGuard,
+    FirebaseDbService,
     DragulaService,
     WindowRef,
     FirebaseUserModel, // user data

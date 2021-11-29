@@ -414,7 +414,7 @@ if (this.boolCheck) {
     this.storeHelper.current('semesters').sort((s1, s2) =>
     s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
    );
-   this.coursePanelService.loadPlanFromDbAfterDel();
+   this.coursePanelService.loadPlanFromDbAfterDel()
 }
 
 }

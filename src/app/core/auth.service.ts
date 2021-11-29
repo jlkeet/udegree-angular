@@ -14,10 +14,7 @@ export class AuthService {
    public afAuth: AngularFireAuth,
    private db: AngularFirestore,
    public userdata: FirebaseUserModel,
- ) {
-   
- }
-
+ ) { }
 
   doFacebookLogin(){
     return new Promise<any>((resolve, reject) => {
