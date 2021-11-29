@@ -415,6 +415,7 @@ if (this.boolCheck) {
     s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
    );
    this.coursePanelService.loadPlanFromDbAfterDel()
+   return this.storeHelper.update("courses", this.coursePanelService.courses)
 }
 
 }

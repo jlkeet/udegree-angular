@@ -63,6 +63,7 @@ export class CoursesPanel {
   private filteredCourses;
   private newOpen;
   private courseCounter: number;
+  public newCourses: ICourse[] = [];
 
   public selectedYear;
   public selectedPeriod;
@@ -189,17 +190,17 @@ export class CoursesPanel {
     return new Promise<any>((resolve) => {
       const semesterFromDb = {
         year: 
-          this.db
-          .collection("users")
-          .doc(this.email)
-          .collection("courses")
-          .doc(courseDbId)
-          .get()
-          .toPromise()
-          .then((resultYear) => {
-            resolve(resultYear.data().year);
-          }),
-          //this.dbCourses.getCollection("users", "courses", courseDbId).then( (res) => {resolve((res.year))} )
+          // this.db
+          // .collection("users")
+          // .doc(this.email)
+          // .collection("courses")
+          // .doc(courseDbId)
+          // .get()
+          // .toPromise()
+          // .then((resultYear) => {
+          //   resolve(resultYear.data().year);
+          // }),
+          this.dbCourses.getCollection("users", "courses", courseDbId).then( (res) => {resolve((res.year))} )
       };
     });
   }
@@ -210,18 +211,18 @@ export class CoursesPanel {
     return new Promise<any>((resolve) => {
       const periodFromDb = {
         period: Number(
-          this.db
-            .collection("users")
-            .doc(this.email)
-            .collection("courses")
-            .doc(courseDbId)
-            .get()
-            .toPromise()
-            .then((resultPeriod) => {
-              resolve(resultPeriod.data().period);
-            })
+          // this.db
+          //   .collection("users")
+          //   .doc(this.email)
+          //   .collection("courses")
+          //   .doc(courseDbId)
+          //   .get()
+          //   .toPromise()
+          //   .then((resultPeriod) => {
+          //     resolve(resultPeriod.data().period);
+          //   })
 
-          // this.dbCourses.getCollection("users", "courses", courseDbId).then( (res) => {resolve((res.period))} )
+          this.dbCourses.getCollection("users", "courses", courseDbId).then( (res) => {resolve((res.period))} )
         ),
       };
     });
@@ -335,18 +336,17 @@ export class CoursesPanel {
     return new Promise<any>((resolve) => {
       const semesterFromDb = {
         course: 
-          this.db
-          .collection("users")
-          .doc(this.email)
-          .collection("courses")
-          .doc(courseDbId)
-          .get()
-          .toPromise()
-          .then((result) => {
-            resolve(result.data());
-          }),
-
-          //this.dbCourses.getCollection("users", "courses", courseDbId).then( (res) => {resolve((res))} )
+          // this.db
+          // .collection("users")
+          // .doc(this.email)
+          // .collection("courses")
+          // .doc(courseDbId)
+          // .get()
+          // .toPromise()
+          // .then((result) => {
+          //   resolve(result.data());
+          // }),
+          this.dbCourses.getCollection("users", "courses", courseDbId).then( (res) => {resolve((res))} )
       };
     });
   }
@@ -390,14 +390,23 @@ export class CoursesPanel {
         title: copy[10],
         year: copy[11],
         canDelete: true,
-      });
+      })
       this.getCourseFromDb(courseDbId).then((res) => {
-          this.courses = this.storeHelper.current("courses")
-      });
-    });
-    const uniqueSet = [...new Set(this.courses)]
-    this.storeHelper.update("courses", uniqueSet)
+        this.courses = this.storeHelper.current("courses")
+    for (let i = 0; i < this.courses.length; i++) {    
+      if (res.id === this.courses[i].id) {
+        if (res.year !== this.courses[i].year || res.period !== this.courses[i].period) {
+      this.storeHelper.findAndDelete("courses", this.courses[i].id)  
+      this.storeHelper.add("courses", res)
+        
+      // Will change this code when I eventually understand the findAndUpdate part of the storehelper.
+    
+      }
+    }
   }
+    })
+  })
+}
 
   // Function that updates to the correct year and period when selecting to add a new semester
   private nextSemesterCheck() {
