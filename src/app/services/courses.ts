@@ -122,7 +122,7 @@ export class CourseService {
       name: result[4],
       period: coursePeriod,
       points: result[6],
-      requirements: result[7],
+      requirements: result[7] || null,
       stage: result[8],
       title: result[9],
       year: courseYear,
@@ -242,6 +242,7 @@ export class CourseService {
       course.year < beforeCourse.year
     );
   }
+  
 
   public findPlanned(courseName: string): ICourse {
     let generalToggle = this.generalToggle(courseName);

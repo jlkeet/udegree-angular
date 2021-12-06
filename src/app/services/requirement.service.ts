@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { exit } from 'process';
+import { Course } from '../common';
 import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
 import { RequirementType } from '../models/requirement.enum';
@@ -16,6 +18,7 @@ export interface IRequirement {
   papersExcluded?: string[];
   departmentsExcluded?: string[];
   facultiesExcluded?: string[];
+  isCorequesite?: boolean,
   aboveStage?: number;
   general?: boolean;
   flags?: string[];
@@ -36,6 +39,8 @@ export interface IRequirement {
 
 @Injectable()
 export class RequirementService {
+
+  private i = 0;
 
   constructor(private departmentService: DepartmentService) { }
 
@@ -97,13 +102,13 @@ export class RequirementService {
       {check: requirement.stages,
         filter: (course: ICourse) => requirement.stages.includes(course.stage)},
       {check: requirement.aboveStage,
-        filter: (course: ICourse) => requirement.aboveStage < course.stage}
+        filter: (course: ICourse) => requirement.aboveStage < course.stage},
     ].filter((filter) =>
       !(filter.check === undefined || filter.check === false ||
         filter.check === null));
 
     // apply each of the filters in 'filters'
-    filters.forEach((filter) => { filtered = filtered.filter(filter.filter); });
+    filters.forEach((filter) => { filtered = filtered.filter(filter.filter)});
     return filtered;
   }
 
@@ -126,7 +131,12 @@ export class RequirementService {
       if (requirement.type === RequirementType.Points) {
         mapped = filtered.map((course: ICourse) => course.points);
       } else if (requirement.type === RequirementType.Papers) {
+        if (this.checkFlag(requirement, 'isCorequesite')) {
+          console.log("Firing Check Flag")
+          mapped = filtered.map((course: ICourse) => 1);
+        } else {
         mapped = filtered.map((course: ICourse) => 1);
+        }
       } else {
         console.log('ERROR REQUIREMENT HAS TYPE ' + requirement.type);
       }
@@ -139,7 +149,7 @@ export class RequirementService {
 
   public requirementFilled(requirement: IRequirement, planned: ICourse[]): boolean {
     if (this.isComplex(requirement)) {
-      let filled = requirement.complex.map((subRequirement: IRequirement) =>this.requirementFilled(subRequirement, planned))
+      let filled = requirement.complex.map((subRequirement: IRequirement) => this.requirementFilled(subRequirement, planned))
         .filter((tested: boolean) => tested).length;
       // console.log(requirement);
       // console.log(filled + ' of ' + requirement.required);
@@ -181,6 +191,7 @@ export class RequirementService {
       (this.checkFlag(requirement, 'Major') ? ' from major' : '') +
       (this.checkFlag(requirement, 'MajorOne') ? ' from first major' : '') +
       (this.checkFlag(requirement, 'MajorTwo') ? ' from second major' : '') +
+      (this.checkFlag(requirement, 'isCorequesite') ? ' as a co-requesite' : '') +
       (requirement.faculties !== undefined ? ' from ' + requirement.faculties.join(', ') : '') +
       (requirement.facultiesExcluded !== undefined ? ' outside ' + requirement.facultiesExcluded.join(', ') : '') +
       '';
@@ -209,10 +220,24 @@ export class RequirementService {
       return complexString;
     }
 
-    if (requirement.type === RequirementType.Papers && requirement.papers !== undefined
-      && requirement.papers.length === requirement.required) {
-      return (omitRequires ? '' : 'Requires ') + requirement.papers.join(', ');
+    if (
+      requirement.type === RequirementType.Papers &&
+      requirement.papers !== undefined &&
+      requirement.papers.length === requirement.required
+    ) {
+      if (this.checkFlag(requirement, "isCorequesite")) {
+        return (
+          (omitRequires ? "" : "Requires ") +
+          requirement.papers.join(", ") +
+          " as a co-requesite"
+        );
+      } else {
+        return (
+          (omitRequires ? "" : "Requires ") + requirement.papers.join(", ")
+        );
+      }
     }
+    
 
     const str = (omitRequires ? '' : 'Requires ') + requirement.required +
       (requirement.type === RequirementType.Points ? ' points' : ' papers') +
@@ -228,9 +253,7 @@ export class RequirementService {
       (this.checkFlag(requirement, 'MajorTwo') ? ' from second major' : '') +
       (requirement.faculties !== undefined ? ' from ' + requirement.faculties.join(', ') : '') +
       (requirement.facultiesExcluded !== undefined ? ' outside ' + requirement.facultiesExcluded.join(', ') : '') +
-      (this.checkFlag(requirement, 'General') ? ' General schedule' : '') +
-      '';
-
+      (this.checkFlag(requirement, 'General') ? ' General schedule' : '') + '';
     return str;
   }
 

@@ -166,7 +166,18 @@
     "papersExcluded": ["ESOL210"],
     "flags":
     {}
-  }],
+  },
+  {
+    "type": 1,
+    "required": 1,
+    "papers": ["ACADENG100"],
+    "flags":
+    {
+      "isCorequesite": true
+    }
+  }
+
+],
   "isActive": true
 },
 {
@@ -489,7 +500,7 @@
   "requirements": [
   {
     "type": 1,
-    "required": 1,
+    "required": 2,
     "papers": ["ACCTG221", "ACCTG291"],
     "flags":
     {}
@@ -1243,7 +1254,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Ancient History, Classical Studies",
+      "faculties": ["Ancient History, Classical Studies"],
       "stage": 2
     },
     {
@@ -1252,7 +1263,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Greek, Art History"
+      "faculties": ["Greek, Art History"]
     }]
   },
   {
@@ -1616,7 +1627,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     },
     {
       "type": 0,
@@ -1659,7 +1670,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     },
     {
       "type": 0,
@@ -1718,7 +1729,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   }],
   "isActive": false
@@ -1751,14 +1762,14 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology, Maori Studies, Pacific Studies"
+      "faculties": ["Anthropology, Maori Studies, Pacific Studies"]
     },
     {
       "type": 0,
       "required": 45,
       "flags":
       {},
-      "faculties": "BGlobalSt"
+      "faculties": ["BGlobalSt"]
     }]
   }],
   "isActive": false
@@ -1784,7 +1795,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     },
     {
       "type": 0,
@@ -1823,7 +1834,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     },
     {
       "type": 0,
@@ -1844,8 +1855,8 @@
 {
   "id": 102,
   "name": "ANTHRO207",
-  "title": "Coming of the M\u0101ori: Archaeology of Aotearoa New Zealand",
-  "desc": "Examines the first 600-700 years of human settlement in Aotearoa New Zealand from an archaeological perspective, from Polynesian arrival through the early historic period. Themes include M\u0101ori origins in East Polynesia, adaptations to Aotearoa\u2019s temperate environment, changing patterns of resource use, M\u0101ori material culture and arts, the development of fortified sites or p\u0101, and the emergence of classic M\u0101ori society.",
+  "title": "Coming of the Maori: Archaeology of Aotearoa New Zealand",
+  "desc": "Examines the first 600-700 years of human settlement in Aotearoa New Zealand from an archaeological perspective, from Polynesian arrival through the early historic period. Themes include Maori origins in East Polynesia, adaptations to Aotearoa\u2019s temperate environment, changing patterns of resource use, Maori material culture and arts, the development of fortified sites or p\u0101, and the emergence of classic Maori society.",
   "faculties": ["Arts"],
   "department": "Anthropology",
   "points": 15,
@@ -1869,8 +1880,8 @@
 {
   "id": 103,
   "name": "ANTHRO210",
-  "title": "Ethnographies of Contemporary M\u0101ori",
-  "desc": "The history of ethnographic and other accounts of contemporary M\u0101ori society, examining the derivation of various social theories and their application to the M\u0101ori under changing political and economic circumstances in New Zealand since industrialisation.",
+  "title": "Ethnographies of Contemporary Maori",
+  "desc": "The history of ethnographic and other accounts of contemporary Maori society, examining the derivation of various social theories and their application to the Maori under changing political and economic circumstances in New Zealand since industrialisation.",
   "faculties": ["Arts"],
   "department": "Anthropology",
   "points": 15,
@@ -1894,7 +1905,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology, Maori Studies, Pacific Studies"
+      "faculties": ["Anthropology, Maori Studies, Pacific Studies"]
     }]
   },
   {
@@ -2029,7 +2040,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Social Science for Public Health"
+      "faculties": ["Social Science for Public Health"]
     },
     {
       "type": 0,
@@ -2097,7 +2108,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     },
     {
       "type": 0,
@@ -2129,14 +2140,14 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     },
     {
       "type": 0,
       "required": 30,
       "flags":
       {},
-      "faculties": "Social Science for Public Health"
+      "faculties": ["Social Science for Public Health"]
     },
     {
       "type": 0,
@@ -2175,7 +2186,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology, Art History, Transnational Cultures and Creative Practice"
+      "faculties": ["Anthropology, Art History, Transnational Cultures and Creative Practice"]
     }]
   },
   {
@@ -2226,7 +2237,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     },
     {
       "type": 0,
@@ -2294,7 +2305,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   },
   {
@@ -2334,7 +2345,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology, Internaional Relations and Business"
+      "faculties": ["Anthropology, Internaional Relations and Business"]
     }]
   },
   {
@@ -2374,7 +2385,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology, Sociology"
+      "faculties": ["Anthropology, Sociology"]
     }]
   }],
   "isActive": false
@@ -2407,7 +2418,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology, Political and International Relations"
+      "faculties": ["Anthropology, Political and International Relations"]
     }]
   },
   {
@@ -2447,7 +2458,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     },
     {
       "type": 0,
@@ -2462,7 +2473,7 @@
   "id": 120,
   "name": "ANTHRO246",
   "title": "Tradition and History in New Zealand Archaeology",
-  "desc": "Examines M\u0101ori traditions and history as a guide to processes in the New Zealand archaeology. Case studies will include M\u0101ori canoe traditions, the expeditions of Hongi Hika and Te Rauparaha, and the Ng\u0101i Tahu settlement of the South island.",
+  "desc": "Examines Maori traditions and history as a guide to processes in the New Zealand archaeology. Case studies will include Maori canoe traditions, the expeditions of Hongi Hika and Te Rauparaha, and the Ng\u0101i Tahu settlement of the South island.",
   "faculties": ["Arts"],
   "department": "Anthropology",
   "points": 15,
@@ -2553,7 +2564,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   },
   {
@@ -2664,7 +2675,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology, Theological and Religious Studies, Sociology"
+      "faculties": ["Anthropology, Theological and Religious Studies, Sociology"]
     }]
   },
   {
@@ -2704,7 +2715,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   }],
   "isActive": true
@@ -2797,7 +2808,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     },
     {
       "type": 0,
@@ -2859,7 +2870,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Transnational Cultures and Creative Practice"
+      "faculties": ["Transnational Cultures and Creative Practice"]
     }]
   },
   {
@@ -3080,7 +3091,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   }],
   "isActive": false
@@ -3114,7 +3125,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Anthropology, Art History, Transnational Cultures and Creative Practice"
+      "faculties": ["Anthropology, Art History, Transnational Cultures and Creative Practice"]
     }]
   },
   {
@@ -3516,7 +3527,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Anthropology, Global Politics and Human Rights, Political Studies, Politics and International Relations, Sociology"
+      "faculties": ["Anthropology, Global Politics and Human Rights, Political Studies, Politics and International Relations, Sociology"]
     }]
   }],
   "isActive": false
@@ -3549,7 +3560,7 @@
       "required": 60,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   }],
   "isActive": true
@@ -3640,7 +3651,7 @@
   "id": 159,
   "name": "ANTHRO346",
   "title": "Tradition and History in New Zealand Archaeology",
-  "desc": "Examines M\u0101ori traditions and history as a guide to processes in the New Zealand archaeology. Case studies will include M\u0101ori canoe traditions, the expeditions of Hongi Hika and Te Rauparaha, and the Ng\u0101i Tahu settlement of the South island.",
+  "desc": "Examines Maori traditions and history as a guide to processes in the New Zealand archaeology. Case studies will include Maori canoe traditions, the expeditions of Hongi Hika and Te Rauparaha, and the Ng\u0101i Tahu settlement of the South island.",
   "faculties": ["Arts"],
   "department": "Anthropology",
   "points": 15,
@@ -3723,7 +3734,7 @@
       "required": 60,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   }],
   "isActive": true
@@ -3756,7 +3767,7 @@
       "required": 60,
       "flags":
       {},
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   },
   {
@@ -3808,7 +3819,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   }],
   "isActive": true
@@ -3871,7 +3882,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology",
+      "faculties": ["Anthropology"],
       "stage": 2
     }]
   },
@@ -3913,7 +3924,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Anthropology, Political Studies, Politics and International Relations, Sociology"
+      "faculties": ["Anthropology, Political Studies, Politics and International Relations, Sociology"]
     }]
   },
   {
@@ -4063,7 +4074,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   }],
   "isActive": false
@@ -4126,8 +4137,8 @@
 {
   "id": 177,
   "name": "ANTHRO365",
-  "title": "Coming of the M\u0101ori: Archaeology of Aotearoa",
-  "desc": "Examines the first 600-700 years of human settlement in Aotearoa/New Zealand from an archaeological perspective, from Polynesian arrival through the early historic period. Themes include M\u0101ori origins in East Polynesia, adaptations to Aotearoa\u2019s temperate environment, changing patterns of resource use, M\u0101ori material culture and arts, the development of fortified sites or p\u0101, and the emergence of classic M\u0101ori society.",
+  "title": "Coming of the Maori: Archaeology of Aotearoa",
+  "desc": "Examines the first 600-700 years of human settlement in Aotearoa/New Zealand from an archaeological perspective, from Polynesian arrival through the early historic period. Themes include Maori origins in East Polynesia, adaptations to Aotearoa\u2019s temperate environment, changing patterns of resource use, Maori material culture and arts, the development of fortified sites or p\u0101, and the emergence of classic Maori society.",
   "faculties": ["Arts"],
   "department": "Anthropology",
   "points": 15,
@@ -4222,7 +4233,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Anthropology"
+      "faculties": ["Anthropology"]
     }]
   }],
   "isActive": false
@@ -5212,7 +5223,7 @@
   "id": 240,
   "name": "ARTHIST113",
   "title": "Art Matters: Ancient to Digital",
-  "desc": "An introduction to Art History examining how art has played a crucial role in key periods of world history in social, cultural, political and religious contexts. Students will develop skills focused on different media through important examples of architecture, sculpture and painting from ancient Greece and Rome, through Medieval and Renaissance, to Pacific and M\u0101ori cultural traditions and onto the contemporary world of digital and multi-media technology.",
+  "desc": "An introduction to Art History examining how art has played a crucial role in key periods of world history in social, cultural, political and religious contexts. Students will develop skills focused on different media through important examples of architecture, sculpture and painting from ancient Greece and Rome, through Medieval and Renaissance, to Pacific and Maori cultural traditions and onto the contemporary world of digital and multi-media technology.",
   "faculties": ["Arts"],
   "department": "Art History",
   "points": 15,
@@ -5261,7 +5272,7 @@
   "id": 243,
   "name": "ARTHIST115",
   "title": "Global Art Histories",
-  "desc": "A broad survey of visual art spanning from the early modern period to the contemporary. Students will be introduced to a range of art practices situated within a global context and will consider art works produced in M\u0101ori and Pacific cultures alongside Indian, Asian, Middle Eastern, European and American traditions.",
+  "desc": "A broad survey of visual art spanning from the early modern period to the contemporary. Students will be introduced to a range of art practices situated within a global context and will consider art works produced in Maori and Pacific cultures alongside Indian, Asian, Middle Eastern, European and American traditions.",
   "faculties": ["Arts"],
   "department": "Art History",
   "points": 15,
@@ -5272,7 +5283,7 @@
   "id": 244,
   "name": "ARTHIST115G",
   "title": "Global Art Histories",
-  "desc": "A broad survey of visual art spanning from the early modern period to the contemporary. Students will be introduced to a range of art practices situated within a global context and will consider art works produced in M\u0101ori and Pacific cultures alongside Indian, South Asian, Middle Eastern, European and American traditions.",
+  "desc": "A broad survey of visual art spanning from the early modern period to the contemporary. Students will be introduced to a range of art practices situated within a global context and will consider art works produced in Maori and Pacific cultures alongside Indian, South Asian, Middle Eastern, European and American traditions.",
   "faculties": ["Arts"],
   "department": "Art History",
   "points": 15,
@@ -5740,7 +5751,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Art History",
+        "faculties": ["Art History"],
         "stage": 1
       },
       {
@@ -5755,7 +5766,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Transnational Cultures and Creative Practice"
+      "faculties": ["Transnational Cultures and Creative Practice"]
     }]
   },
   {
@@ -5836,8 +5847,8 @@
 {
   "id": 262,
   "name": "ARTHIST238",
-  "title": "Mana Taonga: Tradition and Innovation in M\u0101ori Art",
-  "desc": "Considers M\u0101ori visual art from arrival from the Pacific to the present day. Examines how artists critically negotiated current notions of identity in their work. Forms including moko, carving, weaving, architecture, film and contemporary art are explored through key ideas such as gender politics, patronage, and repatriation. Artists examined include Raharuhi Rukupo, Te Kooti, Pine Taiapa, Lisa Reihana and Ralph Hotere.",
+  "title": "Mana Taonga: Tradition and Innovation in Maori Art",
+  "desc": "Considers Maori visual art from arrival from the Pacific to the present day. Examines how artists critically negotiated current notions of identity in their work. Forms including moko, carving, weaving, architecture, film and contemporary art are explored through key ideas such as gender politics, patronage, and repatriation. Artists examined include Raharuhi Rukupo, Te Kooti, Pine Taiapa, Lisa Reihana and Ralph Hotere.",
   "faculties": ["Arts"],
   "department": "Art History",
   "points": 15,
@@ -5861,7 +5872,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "Art History"
+        "faculties": ["Art History"]
       },
       {
         "type": 0,
@@ -6163,7 +6174,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Art History",
+        "faculties": ["Art History"],
         "stage": 1
       }]
     },
@@ -6172,7 +6183,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Art History",
+      "faculties": ["Art History"],
       "stage": 2
     }]
   },
@@ -6292,7 +6303,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "Art History"
+        "faculties": ["Art History"]
       }]
     },
     {
@@ -6300,7 +6311,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Art History",
+      "faculties": ["Art History"],
       "stage": 2
     }]
   },
@@ -6341,7 +6352,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Art History"
+      "faculties": ["Art History"]
     },
     {
       "type": 0,
@@ -6362,7 +6373,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "Art History"
+        "faculties": ["Art History"]
       }]
     }]
   },
@@ -6416,7 +6427,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "Art History"
+        "faculties": ["Art History"]
       }]
     },
     {
@@ -6424,7 +6435,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Art History",
+      "faculties": ["Art History"],
       "stage": 2
     }]
   },
@@ -6548,7 +6559,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "Art History"
+        "faculties": ["Art History"]
       }]
     },
     {
@@ -6557,7 +6568,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Art History"
+      "faculties": ["Art History"]
     }]
   },
   {
@@ -6642,7 +6653,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Art History",
+        "faculties": ["Art History"],
         "stage": 1
       },
       {
@@ -6650,7 +6661,7 @@
         "required": 30,
         "flags":
         {},
-        "faculties": "Transnational Cultures and Creative Practice"
+        "faculties": ["Transnational Cultures and Creative Practice"]
       }]
     },
     {
@@ -6665,7 +6676,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "Art History"
+        "faculties": ["Art History"]
       },
       {
         "type": 0,
@@ -6719,7 +6730,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "Art History"
+        "faculties": ["Art History"]
       }]
     },
     {
@@ -6727,7 +6738,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Art History",
+      "faculties": ["Art History"],
       "stage": 2
     }]
   },
@@ -6815,8 +6826,8 @@
 {
   "id": 286,
   "name": "ARTHIST338",
-  "title": "Mana Taonga: Tradition and Innovation in M\u0101ori Art",
-  "desc": "Considers M\u0101ori visual art from arrival from the Pacific to the present day. Examines how artists critically negotiated current notions of identity in their work. Forms including moko, carving, weaving, architecture, film and contemporary art are explored through key ideas such as gender politics, patronage, and repatriation. Artists examined include Raharuhi Rukupo, Te Kooti, Pine Taiapa, Lisa Reihana and Ralph Hotere.",
+  "title": "Mana Taonga: Tradition and Innovation in Maori Art",
+  "desc": "Considers Maori visual art from arrival from the Pacific to the present day. Examines how artists critically negotiated current notions of identity in their work. Forms including moko, carving, weaving, architecture, film and contemporary art are explored through key ideas such as gender politics, patronage, and repatriation. Artists examined include Raharuhi Rukupo, Te Kooti, Pine Taiapa, Lisa Reihana and Ralph Hotere.",
   "faculties": ["Arts"],
   "department": "Art History",
   "points": 15,
@@ -6846,7 +6857,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Art History",
+        "faculties": ["Art History"],
         "stage": 1
       }]
     },
@@ -6861,7 +6872,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Art History",
+        "faculties": ["Art History"],
         "stage": 2
       },
       {
@@ -6876,7 +6887,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "BGlobalSt",
+      "faculties": ["BGlobalSt"],
       "stage": 2
     }]
   },
@@ -7182,14 +7193,14 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Gender Studies"
+      "faculties": ["Gender Studies"]
     },
     {
       "type": 0,
       "required": 45,
       "flags":
       {},
-      "faculties": "BGlobalSt"
+      "faculties": ["BGlobalSt"]
     }]
   },
   {
@@ -7273,7 +7284,7 @@
       "required": 45,
       "flags":
       {},
-      "faculties": "Arts",
+      "faculties": ["Arts"],
       "stage": 1
     },
     {
@@ -7281,7 +7292,7 @@
       "required": 45,
       "flags":
       {},
-      "faculties": "BGlobalSt"
+      "faculties": ["BGlobalSt"]
     }]
   },
   {
@@ -7347,7 +7358,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Arts",
+      "faculties": ["Arts"],
       "stage": 2
     },
     {
@@ -7355,7 +7366,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "BGlobalSt"
+      "faculties": ["BGlobalSt"]
     }]
   },
   {
@@ -7402,7 +7413,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "Arts"
+        "faculties": ["Arts"]
       }]
     },
     {
@@ -7423,7 +7434,7 @@
         "required": 30,
         "flags":
         {},
-        "faculties": "Arts",
+        "faculties": ["Arts"],
         "stage": 2
       }]
     },
@@ -7433,7 +7444,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "BGlobalSt"
+      "faculties": ["BGlobalSt"]
     }]
   },
   {
@@ -7480,7 +7491,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "BGlobalSt"
+        "faculties": ["BGlobalSt"]
       }]
     },
     {
@@ -7488,7 +7499,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "BGlobalSt",
+      "faculties": ["BGlobalSt"],
       "stage": 2
     }]
   }],
@@ -7733,7 +7744,7 @@
   "id": 329,
   "name": "BIOSCI104",
   "title": "New Zealand Ecology and Conservation",
-  "desc": "An introduction to the diversity of animals and plants in New Zealand including endemic, native and introduced species, biogeographical and evolutionary relationships, community structure and interrelationships, behaviour and ecology, M\u0101ori perspectives in biology, and current conservation, environmental, social, animal welfare and economic issues relevant to New Zealand biology.",
+  "desc": "An introduction to the diversity of animals and plants in New Zealand including endemic, native and introduced species, biogeographical and evolutionary relationships, community structure and interrelationships, behaviour and ecology, Maori perspectives in biology, and current conservation, environmental, social, animal welfare and economic issues relevant to New Zealand biology.",
   "faculties": ["Science"],
   "department": "Biological Sciences",
   "points": 15,
@@ -7744,7 +7755,7 @@
   "id": 330,
   "name": "BIOSCI104G",
   "title": "New Zealand Ecology and Conservation",
-  "desc": "An introduction to the diversity of animals and plants in New Zealand including endemic, native and introduced species, biogeographical and evolutionary relationships, community structure and interrelationships, behaviour and ecology, M\u0101ori perspectives in biology, and current conservation, environmental, social, animal welfare, and economic issues relevant to New Zealand biology.",
+  "desc": "An introduction to the diversity of animals and plants in New Zealand including endemic, native and introduced species, biogeographical and evolutionary relationships, community structure and interrelationships, behaviour and ecology, Maori perspectives in biology, and current conservation, environmental, social, animal welfare, and economic issues relevant to New Zealand biology.",
   "faculties": ["Science"],
   "department": "Biological Sciences",
   "points": 15,
@@ -9856,7 +9867,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Arts"
+      "faculties": ["Arts"]
     }]
   },
   {
@@ -9999,7 +10010,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Asian Studies, Media Film and Television"
+      "faculties": ["Asian Studies, Media Film and Television"]
     },
     {
       "type": 0,
@@ -10020,7 +10031,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "Asian Studies"
+        "faculties": ["Asian Studies"]
       }]
     }]
   },
@@ -10488,7 +10499,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Ancient History, Classical Studies"
+      "faculties": ["Ancient History, Classical Studies"]
     },
     {
       "type": 1,
@@ -10541,7 +10552,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Ancient History, Classical Studies",
+      "faculties": ["Ancient History, Classical Studies"],
       "stage": 1
     },
     {
@@ -10596,7 +10607,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Ancient History, Classical Studies"
+      "faculties": ["Ancient History, Classical Studies"]
     },
     {
       "type": 1,
@@ -10649,7 +10660,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Ancient History, Classical Studies, Gender Studies",
+      "faculties": ["Ancient History, Classical Studies, Gender Studies"],
       "stage": 1
     },
     {
@@ -10703,7 +10714,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Ancient History, Classical Studies",
+      "faculties": ["Ancient History, Classical Studies"],
       "stage": 1
     },
     {
@@ -10758,7 +10769,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Ancient History, Classical Studies"
+      "faculties": ["Ancient History, Classical Studies"]
     },
     {
       "type": 1,
@@ -10812,7 +10823,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Ancient History, Classical Studies"
+      "faculties": ["Ancient History, Classical Studies"]
     },
     {
       "type": 1,
@@ -10879,7 +10890,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Classical Studies, Ancient History, Philosophy"
+      "faculties": ["Classical Studies, Ancient History, Philosophy"]
     },
     {
       "type": 1,
@@ -10926,7 +10937,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Classical Studies, Ancient History, Philosophy",
+      "faculties": ["Classical Studies, Ancient History, Philosophy"],
       "aboveStage": 1
     },
     {
@@ -10988,7 +10999,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Classical Studies, Ancient History, Philosophy"
+      "faculties": ["Classical Studies, Ancient History, Philosophy"]
     },
     {
       "type": 1,
@@ -11049,7 +11060,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Ancient History, Classical Studies, Art History"
+      "faculties": ["Ancient History, Classical Studies, Art History"]
     },
     {
       "type": 1,
@@ -11102,7 +11113,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Ancient History, Classical Studies, Art History",
+      "faculties": ["Ancient History, Classical Studies, Art History"],
       "stage": 1
     },
     {
@@ -11156,7 +11167,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Ancient History, Classical Studies, Drama",
+      "faculties": ["Ancient History, Classical Studies, Drama"],
       "stage": 1
     },
     {
@@ -11222,7 +11233,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Classical Studies"
+      "faculties": ["Classical Studies"]
     },
     {
       "type": 1,
@@ -11251,7 +11262,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Classical Studies, Ancient History"
+      "faculties": ["Classical Studies, Ancient History"]
     },
     {
       "type": 0,
@@ -11259,7 +11270,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Greek"
+      "faculties": ["Greek"]
     },
     {
       "type": 0,
@@ -11267,7 +11278,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Latin"
+      "faculties": ["Latin"]
     }]
   },
   {
@@ -11301,7 +11312,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Classical Studies, Ancient History"
+      "faculties": ["Classical Studies, Ancient History"]
     },
     {
       "type": 0,
@@ -11309,14 +11320,14 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Greek"
+      "faculties": ["Greek"]
     },
     {
       "type": 0,
       "required": 30,
       "flags":
       {},
-      "faculties": "Latin",
+      "faculties": ["Latin"],
       "stage": 2
     }]
   },
@@ -11351,7 +11362,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Classical Studies"
+      "faculties": ["Classical Studies"]
     },
     {
       "type": 1,
@@ -11441,7 +11452,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Classical Studies",
+      "faculties": ["Classical Studies"],
       "stage": 1
     },
     {
@@ -11498,7 +11509,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Classical Studies"
+      "faculties": ["Classical Studies"]
     },
     {
       "type": 1,
@@ -11527,7 +11538,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Classical Studies, Ancient History"
+      "faculties": ["Classical Studies, Ancient History"]
     },
     {
       "type": 0,
@@ -11535,14 +11546,14 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Greek"
+      "faculties": ["Greek"]
     },
     {
       "type": 0,
       "required": 30,
       "flags":
       {},
-      "faculties": "Latin",
+      "faculties": ["Latin"],
       "stage": 2
     }]
   },
@@ -11576,7 +11587,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Classical Studies",
+      "faculties": ["Classical Studies"],
       "stage": 1
     },
     {
@@ -11606,7 +11617,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Classical Studies, Ancient History"
+      "faculties": ["Classical Studies, Ancient History"]
     },
     {
       "type": 0,
@@ -11614,7 +11625,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Latin"
+      "faculties": ["Latin"]
     },
     {
       "type": 0,
@@ -11622,7 +11633,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Greek"
+      "faculties": ["Greek"]
     }]
   },
   {
@@ -11656,7 +11667,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Classical Studies"
+      "faculties": ["Classical Studies"]
     },
     {
       "type": 1,
@@ -11685,7 +11696,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Classical Studies, Ancient History"
+      "faculties": ["Classical Studies, Ancient History"]
     },
     {
       "type": 0,
@@ -11693,7 +11704,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Greek"
+      "faculties": ["Greek"]
     }]
   },
   {
@@ -11727,7 +11738,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Classical Studies"
+      "faculties": ["Classical Studies"]
     },
     {
       "type": 1,
@@ -11756,7 +11767,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Classical Studies, Ancient History"
+      "faculties": ["Classical Studies, Ancient History"]
     },
     {
       "type": 0,
@@ -11764,7 +11775,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Greek"
+      "faculties": ["Greek"]
     }]
   },
   {
@@ -11798,7 +11809,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Classical Studies"
+      "faculties": ["Classical Studies"]
     },
     {
       "type": 1,
@@ -11827,7 +11838,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Classical Studies, Ancient History"
+      "faculties": ["Classical Studies, Ancient History"]
     },
     {
       "type": 0,
@@ -11835,7 +11846,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Greek"
+      "faculties": ["Greek"]
     },
     {
       "type": 0,
@@ -11843,7 +11854,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Latin"
+      "faculties": ["Latin"]
     }]
   },
   {
@@ -11877,7 +11888,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Classical Studies, Ancient History"
+      "faculties": ["Classical Studies, Ancient History"]
     },
     {
       "type": 0,
@@ -11885,7 +11896,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Greek, Art History"
+      "faculties": ["Greek, Art History"]
     }]
   },
   {
@@ -11941,7 +11952,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Classical Studies, Ancient History"
+      "faculties": ["Classical Studies, Ancient History"]
     },
     {
       "type": 0,
@@ -11949,14 +11960,14 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Latin"
+      "faculties": ["Latin"]
     },
     {
       "type": 0,
       "required": 30,
       "flags":
       {},
-      "faculties": "Art History",
+      "faculties": ["Art History"],
       "stage": 2
     }]
   },
@@ -11991,7 +12002,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Classical Studies, Ancient History"
+      "faculties": ["Classical Studies, Ancient History"]
     },
     {
       "type": 0,
@@ -11999,7 +12010,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Greek, Latin, Drama"
+      "faculties": ["Greek, Latin, Drama"]
     }]
   },
   {
@@ -13487,8 +13498,8 @@
 {
   "id": 600,
   "name": "COOKIS101",
-  "title": "Introduction to Cook Islands M\u0101ori",
-  "desc": "Gives students an introduction to the structure of Cook Islands M\u0101ori as well as allowing them to develop basic skills in listening, speaking, reading and writing. Designed for students with little or no knowledge of the language, and for those with some fluency wishing to understand simple sentence structure and composition.",
+  "title": "Introduction to Cook Islands Maori",
+  "desc": "Gives students an introduction to the structure of Cook Islands Maori as well as allowing them to develop basic skills in listening, speaking, reading and writing. Designed for students with little or no knowledge of the language, and for those with some fluency wishing to understand simple sentence structure and composition.",
   "faculties": ["Arts"],
   "department": "Cook Islands Maori",
   "points": 15,
@@ -13506,8 +13517,8 @@
 {
   "id": 601,
   "name": "COOKIS101G",
-  "title": "Introduction to Cook Islands M\u0101ori",
-  "desc": "Gives students an introduction to the structure of Cook Islands M\u0101ori as well as allowing them to develop basic skills in listening, speaking, reading and writing. Designed for students with little or no knowledge of the language, and for those with some fluency wishing to understand simple sentence structure and composition.",
+  "title": "Introduction to Cook Islands Maori",
+  "desc": "Gives students an introduction to the structure of Cook Islands Maori as well as allowing them to develop basic skills in listening, speaking, reading and writing. Designed for students with little or no knowledge of the language, and for those with some fluency wishing to understand simple sentence structure and composition.",
   "faculties": ["Arts"],
   "department": "Cook Islands Maori",
   "points": 15,
@@ -13536,8 +13547,8 @@
 {
   "id": 603,
   "name": "COOKIS201",
-  "title": "Cook Islands M\u0101ori Language 2",
-  "desc": "Further consolidates skills in listening, speaking, reading and writing in Cook Islands M\u0101ori. Students will also deepen their experience and knowledge of Cook Islands M\u0101ori culture through their participation in a dramatised re-enactment of a Cook Islands myth or legend, with its accompanying chants and songs.",
+  "title": "Cook Islands Maori Language 2",
+  "desc": "Further consolidates skills in listening, speaking, reading and writing in Cook Islands Maori. Students will also deepen their experience and knowledge of Cook Islands Maori culture through their participation in a dramatised re-enactment of a Cook Islands myth or legend, with its accompanying chants and songs.",
   "faculties": ["Arts"],
   "department": "Cook Islands Maori",
   "points": 15,
@@ -13562,8 +13573,8 @@
 {
   "id": 604,
   "name": "COOKIS204",
-  "title": "Special Topic: Reo M\u0101ori Kuki Airani 2",
-  "desc": "Consolidates skills in listening, speaking, reading and writing in Cook Islands M\u0101ori. Students will also deepen their experience and knowledge of Cook Islands M\u0101ori culture through studying selected historical and contemporary M\u0101ori language texts.",
+  "title": "Special Topic: Reo Maori Kuki Airani 2",
+  "desc": "Consolidates skills in listening, speaking, reading and writing in Cook Islands Maori. Students will also deepen their experience and knowledge of Cook Islands Maori culture through studying selected historical and contemporary Maori language texts.",
   "faculties": ["Arts"],
   "department": "Cook Islands Maori",
   "points": 15,
@@ -13592,8 +13603,8 @@
 {
   "id": 606,
   "name": "COOKIS301",
-  "title": "Cook Islands M\u0101ori Language 3",
-  "desc": "Students will develop their language skills to an advanced level, through examining, discussing and analysing, in Cook Islands M\u0101ori, selected oral and written texts in various genres, as a model for their own compositions. They will also study traditional oratory as a means of further expressing the richness of Cook Islands culture and history.",
+  "title": "Cook Islands Maori Language 3",
+  "desc": "Students will develop their language skills to an advanced level, through examining, discussing and analysing, in Cook Islands Maori, selected oral and written texts in various genres, as a model for their own compositions. They will also study traditional oratory as a means of further expressing the richness of Cook Islands culture and history.",
   "faculties": ["Arts"],
   "department": "Cook Islands Maori",
   "points": 15,
@@ -14342,7 +14353,7 @@
   "id": 652,
   "name": "DANCE302",
   "title": "Dance in Aotearoa New Zealand",
-  "desc": "An examination of dance in New Zealand including M\u0101ori, Pacific Island, European, and Asian influences. Emphasis will be on developments during the twentieth century of traditional form into contemporary practice, indigenous forms in NZ society, the developments in ballet, contemporary and popular dance.",
+  "desc": "An examination of dance in New Zealand including Maori, Pacific Island, European, and Asian influences. Emphasis will be on developments during the twentieth century of traditional form into contemporary practice, indigenous forms in NZ society, the developments in ballet, contemporary and popular dance.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Dance Studies",
   "points": 15,
@@ -14653,7 +14664,7 @@
   "id": 671,
   "name": "DRAMA203",
   "title": "New Zealand and Pacific Drama",
-  "desc": "An overview of the development of modern and contemporary drama, theatre and playwriting in New Zealand. Topics include: experimental theatre, feminist drama and M\u0101ori drama. Some plays by Pacific writers will be considered.",
+  "desc": "An overview of the development of modern and contemporary drama, theatre and playwriting in New Zealand. Topics include: experimental theatre, feminist drama and Maori drama. Some plays by Pacific writers will be considered.",
   "faculties": ["Arts"],
   "department": "Drama",
   "points": 15,
@@ -14781,7 +14792,7 @@
   "id": 678,
   "name": "DRAMA303",
   "title": "New Zealand and Pacific Drama",
-  "desc": "An overview of the development of modern and contemporary drama, theatre and playwriting in New Zealand. Topics include: experimental theatre, feminist drama and M\u0101ori drama. Some plays by Pacific writers will be considered.",
+  "desc": "An overview of the development of modern and contemporary drama, theatre and playwriting in New Zealand. Topics include: experimental theatre, feminist drama and Maori drama. Some plays by Pacific writers will be considered.",
   "faculties": ["Arts"],
   "department": "Drama",
   "points": 15,
@@ -16554,7 +16565,7 @@
   "id": 767,
   "name": "EDCURRIC230",
   "title": "Physical Education Ng\u0101 K\u0101kano",
-  "desc": "Examines ng\u0101 tikanga M\u0101ori in the physical education context. Addresses such questions as: How can teachers understand what it is to be M\u0101ori? What is the cultural significance of M\u0101ori movement forms and ng\u0101 mahi a r\u0113hia (games and pastimes)? What is a culturally responsive pedagogy? Includes marae based experiences where M\u0101ori values, traditions and beliefs are practised.",
+  "desc": "Examines ng\u0101 tikanga Maori in the physical education context. Addresses such questions as: How can teachers understand what it is to be Maori? What is the cultural significance of Maori movement forms and ng\u0101 mahi a r\u0113hia (games and pastimes)? What is a culturally responsive pedagogy? Includes marae based experiences where Maori values, traditions and beliefs are practised.",
   "faculties": ["Education and Social Work"],
   "department": "Education Curriculum Studies",
   "points": 15,
@@ -17356,7 +17367,7 @@
   "id": 821,
   "name": "EDCURRM102",
   "title": "Te Reo Matatini Te Pihinga",
-  "desc": "Develops the knowledge, skills and attitudes associated with planning, teaching and assessing for students' literacy learning across ng\u0101 Marautanga M\u0101ori. Addresses questions such as: What do teachers need to know to teach literacy effectively? How do teachers' literacy competencies affect student learning? How do teachers balance the needs of the curriculum and the needs of learners?",
+  "desc": "Develops the knowledge, skills and attitudes associated with planning, teaching and assessing for students' literacy learning across ng\u0101 Marautanga Maori. Addresses questions such as: What do teachers need to know to teach literacy effectively? How do teachers' literacy competencies affect student learning? How do teachers balance the needs of the curriculum and the needs of learners?",
   "faculties": ["Education and Social Work"],
   "department": "Education Curriculum Maori",
   "points": 15,
@@ -17470,7 +17481,7 @@
   "id": 827,
   "name": "EDCURRM202",
   "title": "Te Reo Matatini Te Puanga",
-  "desc": "Deepens the knowledge, skills and attitudes associated with planning, teaching and assessing for individual students' learning in the Marautanga Reo M\u0101ori. Addresses questions such as: What are effective literacy practices for working with individual learners? How are wider concepts of literacy including bilingualism and biliteracy developed? How is learning monitored and assessed?",
+  "desc": "Deepens the knowledge, skills and attitudes associated with planning, teaching and assessing for individual students' learning in the Marautanga Reo Maori. Addresses questions such as: What are effective literacy practices for working with individual learners? How are wider concepts of literacy including bilingualism and biliteracy developed? How is learning monitored and assessed?",
   "faculties": ["Education and Social Work"],
   "department": "Education Curriculum Maori",
   "points": 15,
@@ -17508,7 +17519,7 @@
   "id": 829,
   "name": "EDCURRM220",
   "title": "Special Topic: Te Whakarite Mahere Ako m\u014d te Tikanga \u0101 Iwi",
-  "desc": "Students examine developing tikanga-\u0101-iwi programmes that are relevant to M\u0101ori medium contexts. Students also examine issues relevant to the planning of tikanga-\u0101-iwi.",
+  "desc": "Students examine developing tikanga-\u0101-iwi programmes that are relevant to Maori medium contexts. Students also examine issues relevant to the planning of tikanga-\u0101-iwi.",
   "faculties": ["Education and Social Work"],
   "department": "Education Curriculum Maori",
   "points": 15,
@@ -17519,8 +17530,8 @@
 {
   "id": 830,
   "name": "EDCURRM301",
-  "title": "Teaching and Te Reo M\u0101ori",
-  "desc": "Integrates curriculum content with approaches to planning, teaching and assessing Te Reo M\u0101ori up to Year 10. Addresses such questions as: Why is it important to learn Te Reo M\u0101ori? What do teachers need to know to teach Te Reo M\u0101ori effectively? What strategies, approaches and resources maximise student motivation and language acquisition in Te Reo M\u0101ori?",
+  "title": "Teaching and Te Reo Maori",
+  "desc": "Integrates curriculum content with approaches to planning, teaching and assessing Te Reo Maori up to Year 10. Addresses such questions as: Why is it important to learn Te Reo Maori? What do teachers need to know to teach Te Reo Maori effectively? What strategies, approaches and resources maximise student motivation and language acquisition in Te Reo Maori?",
   "faculties": ["Education and Social Work"],
   "department": "Education Curriculum Maori",
   "points": 15,
@@ -17546,7 +17557,7 @@
   "id": 831,
   "name": "EDCURRM304",
   "title": "T\u016b Tangata",
-  "desc": "Critically examines subjective positions from which groups and individuals make sense of the world and act in it. Asks questions such as: What is social and critical literacy? How can critical literacies be used to challenge our subjectivities and assumptions? How do these literacies intersect with underlying notions and philosophies embedded in Kaupapa M\u0101ori education initiatives? What are the issues and tensions in applying a Kaupapa M\u0101ori philosophy in education?",
+  "desc": "Critically examines subjective positions from which groups and individuals make sense of the world and act in it. Asks questions such as: What is social and critical literacy? How can critical literacies be used to challenge our subjectivities and assumptions? How do these literacies intersect with underlying notions and philosophies embedded in Kaupapa Maori education initiatives? What are the issues and tensions in applying a Kaupapa Maori philosophy in education?",
   "faculties": ["Education and Social Work"],
   "department": "Education Curriculum Maori",
   "points": 15,
@@ -18211,8 +18222,8 @@
 {
   "id": 870,
   "name": "EDPROFM109",
-  "title": "Te Pou T\u0101wharau Tikanga M\u0101ori",
-  "desc": "Develops Te Reo M\u0101ori knowledge, skills and attitudes for learning and teaching across Marautanga. Addresses questions such as: What is bilingual education? How are languages acquired? What are optimal conditions for acquisition? What factors assist or impede personal Reo M\u0101ori acquisition? What key linguistic features underpin Marautanga M\u0101ori? What historical factors influenced the development of Te Reo M\u0101ori in education?",
+  "title": "Te Pou T\u0101wharau Tikanga Maori",
+  "desc": "Develops Te Reo Maori knowledge, skills and attitudes for learning and teaching across Marautanga. Addresses questions such as: What is bilingual education? How are languages acquired? What are optimal conditions for acquisition? What factors assist or impede personal Reo Maori acquisition? What key linguistic features underpin Marautanga Maori? What historical factors influenced the development of Te Reo Maori in education?",
   "faculties": ["Education and Social Work"],
   "department": "Education Professional Studies Maori",
   "points": 15,
@@ -18270,7 +18281,7 @@
   "id": 872,
   "name": "EDPROFM209",
   "title": "Te Whiringa P\u016bmau o Te Reo",
-  "desc": "Further investigates Te Reo M\u0101ori knowledge, skills and attitudes for learning and teaching across Marautanga. Addresses questions such as: What key theories and approaches underpin the development of bilingualism and biliteracy in M\u0101ori medium educational contexts? What are the pedagogical implications of these when planning for learning and teaching? How can personal M\u0101ori language development be planned for effectively?",
+  "desc": "Further investigates Te Reo Maori knowledge, skills and attitudes for learning and teaching across Marautanga. Addresses questions such as: What key theories and approaches underpin the development of bilingualism and biliteracy in Maori medium educational contexts? What are the pedagogical implications of these when planning for learning and teaching? How can personal Maori language development be planned for effectively?",
   "faculties": ["Education and Social Work"],
   "department": "Education Professional Studies Maori",
   "points": 15,
@@ -18319,7 +18330,7 @@
   "id": 875,
   "name": "EDPROFM309",
   "title": "Te Pae Tawhiti kia Tata",
-  "desc": "Synthesises Te Reo M\u0101ori knowledge, skills and attitudes for teaching and learning across Marautanga. Addresses questions such as: How is Te Reo M\u0101ori revitalisation supported at micro, meso and macro levels? What are the socio-political implications of language change, shift, loss and revitalisation? How can long term personal M\u0101ori language development be planned for in a school context?",
+  "desc": "Synthesises Te Reo Maori knowledge, skills and attitudes for teaching and learning across Marautanga. Addresses questions such as: How is Te Reo Maori revitalisation supported at micro, meso and macro levels? What are the socio-political implications of language change, shift, loss and revitalisation? How can long term personal Maori language development be planned for in a school context?",
   "faculties": ["Education and Social Work"],
   "department": "Education Professional Studies Maori",
   "points": 15,
@@ -18337,8 +18348,8 @@
 {
   "id": 876,
   "name": "EDPROFM310",
-  "title": "M\u0101ori Student Achievement",
-  "desc": "Investigates the effect of imperatives to raise M\u0101ori educational achievement over the last decade. What have been the main developments in assessment over the last decade? What are some of the imperatives for those changes? What are community expectations in relation to assessment information and how learners are achieving? What is the community's role in assessment? What have been the impact and outcomes of these developments to date on M\u0101ori achievement?",
+  "title": "Maori Student Achievement",
+  "desc": "Investigates the effect of imperatives to raise Maori educational achievement over the last decade. What have been the main developments in assessment over the last decade? What are some of the imperatives for those changes? What are community expectations in relation to assessment information and how learners are achieving? What is the community's role in assessment? What have been the impact and outcomes of these developments to date on Maori achievement?",
   "faculties": ["Education and Social Work"],
   "department": "Education Professional Studies Maori",
   "points": 15,
@@ -18348,8 +18359,8 @@
 {
   "id": 877,
   "name": "EDPROFM311",
-  "title": "Te Reo M\u0101ori me ng\u0101 Tikanga for Learning and Teaching",
-  "desc": "Integrates content knowledge with the planning, teaching and assessing of Te Reo M\u0101ori and tikanga. Addresses such questions as: What language and content knowledge do teachers need to teach Te Reo M\u0101ori effectively? How does a teacher maximise learner motivation, engagement and language acquisition? What resources support the teaching and learning of Te Reo M\u0101ori? How can a teacher's Te Reo M\u0101ori proficiency be sustained?",
+  "title": "Te Reo Maori me ng\u0101 Tikanga for Learning and Teaching",
+  "desc": "Integrates content knowledge with the planning, teaching and assessing of Te Reo Maori and tikanga. Addresses such questions as: What language and content knowledge do teachers need to teach Te Reo Maori effectively? How does a teacher maximise learner motivation, engagement and language acquisition? What resources support the teaching and learning of Te Reo Maori? How can a teacher's Te Reo Maori proficiency be sustained?",
   "faculties": ["Education and Social Work"],
   "department": "Education Professional Studies Maori",
   "points": 15,
@@ -18423,7 +18434,7 @@
   "id": 883,
   "name": "EDPROFST100",
   "title": "H\u0101pai \u0100konga",
-  "desc": "Critically examines the importance of M\u0101ori language and culture in New Zealand Education. Develops ability in Te Reo and M\u0101tauranga M\u0101ori. Addresses questions such as: How can M\u0101ori culture and language be incorporated in pedagogical practices to be productive for M\u0101ori educational aspirations as well as the education of all students?",
+  "desc": "Critically examines the importance of Maori language and culture in New Zealand Education. Develops ability in Te Reo and M\u0101tauranga Maori. Addresses questions such as: How can Maori culture and language be incorporated in pedagogical practices to be productive for Maori educational aspirations as well as the education of all students?",
   "faculties": ["Education and Social Work"],
   "department": "Education Professional Studies",
   "points": 15,
@@ -18936,7 +18947,7 @@
   "id": 915,
   "name": "EDPROFST353",
   "title": "Whakapuaki i Te Reo",
-  "desc": "An investigation of socio-political issues that have impacted on M\u0101ori language. In particular the issues of language loss, language revitalisation and teaching Te Reo M\u0101ori as a second language will be examined.",
+  "desc": "An investigation of socio-political issues that have impacted on Maori language. In particular the issues of language loss, language revitalisation and teaching Te Reo Maori as a second language will be examined.",
   "faculties": ["Education and Social Work"],
   "department": "Education Professional Studies",
   "points": 15,
@@ -19467,8 +19478,8 @@
 {
   "id": 954,
   "name": "EDUC114",
-  "title": "Introduction to M\u0101ori Education",
-  "desc": "An introduction to M\u0101ori education and to the education of M\u0101ori in Aotearoa. A range of critical issues related to M\u0101ori experiences both in and as a result of schooling and education in Aotearoa, and M\u0101ori educational interventions that have emerged, are examined.",
+  "title": "Introduction to Maori Education",
+  "desc": "An introduction to Maori education and to the education of Maori in Aotearoa. A range of critical issues related to Maori experiences both in and as a result of schooling and education in Aotearoa, and Maori educational interventions that have emerged, are examined.",
   "faculties": ["Education and Social Work"],
   "department": "Education",
   "points": 15,
@@ -19528,7 +19539,7 @@
   "id": 958,
   "name": "EDUC118",
   "title": "History and Society in New Zealand Education",
-  "desc": "Examines the wider context of New Zealand education through a historical and contemporary overview. Draws on a critical sociological analysis of selected issues in society. Some emphasis is given to learners and their communities, including M\u0101ori, Pasifika, new migrants, and people with disabilities.",
+  "desc": "Examines the wider context of New Zealand education through a historical and contemporary overview. Draws on a critical sociological analysis of selected issues in society. Some emphasis is given to learners and their communities, including Maori, Pasifika, new migrants, and people with disabilities.",
   "faculties": ["Education and Social Work"],
   "department": "Education",
   "points": 15,
@@ -19717,7 +19728,7 @@
   "id": 969,
   "name": "EDUC207",
   "title": "Decolonising Education",
-  "desc": "An examination of the interaction of the state and indigenous peoples in the contested area of education and schooling; a focus on de/colonisation develops an understanding of the origins and philosophies of contemporary educational structures such as k\u014dhanga reo, kura kaupapa M\u0101ori and w\u0101nanga in Aotearoa New Zealand, together with examples of other indigenous educational issues and initiatives.",
+  "desc": "An examination of the interaction of the state and indigenous peoples in the contested area of education and schooling; a focus on de/colonisation develops an understanding of the origins and philosophies of contemporary educational structures such as k\u014dhanga reo, kura kaupapa Maori and w\u0101nanga in Aotearoa New Zealand, together with examples of other indigenous educational issues and initiatives.",
   "faculties": ["Education and Social Work"],
   "department": "Education",
   "points": 15,
@@ -19850,7 +19861,7 @@
   "id": 976,
   "name": "EDUC283",
   "title": "Pedagogy \u2013 Beyond Skills and Methods",
-  "desc": "Examines personal experiences and views of teaching and learning and the impact of theories of learning on classroom practices. The course also includes discussion of the relationship between pedagogy and race, class and gender; M\u0101ori pedagogy; pedagogy and student achievement; and New Zealand and international examples.",
+  "desc": "Examines personal experiences and views of teaching and learning and the impact of theories of learning on classroom practices. The course also includes discussion of the relationship between pedagogy and race, class and gender; Maori pedagogy; pedagogy and student achievement; and New Zealand and international examples.",
   "faculties": ["Education and Social Work"],
   "department": "Education",
   "points": 15,
@@ -20237,7 +20248,7 @@
   "id": 995,
   "name": "EDUC360",
   "title": "Treaty Politics in Education",
-  "desc": "A critical examination of the emergence of the Treaty of Waitangi in education, and the tensions and convergences that exist between M\u0101ori aspirations and state policies. Key themes, initiatives, relationships and policies in education are considered within the broader question of the place of the Treaty in Aotearoa New Zealand.",
+  "desc": "A critical examination of the emergence of the Treaty of Waitangi in education, and the tensions and convergences that exist between Maori aspirations and state policies. Key themes, initiatives, relationships and policies in education are considered within the broader question of the place of the Treaty in Aotearoa New Zealand.",
   "faculties": ["Education and Social Work"],
   "department": "Education",
   "points": 15,
@@ -20335,7 +20346,7 @@
   "id": 1001,
   "name": "EDUCM118",
   "title": "He Tirohanga ki te M\u0101tauranga i Aotearoa",
-  "desc": "Examines the wider context of New Zealand education through a historical and contemporary overview. Draws on a critical sociological analysis of selected issues in society. Some emphasis is given to learners and their communities, including M\u0101ori, Pasifika, new migrants, and people with disabilities.",
+  "desc": "Examines the wider context of New Zealand education through a historical and contemporary overview. Draws on a critical sociological analysis of selected issues in society. Some emphasis is given to learners and their communities, including Maori, Pasifika, new migrants, and people with disabilities.",
   "faculties": ["Education and Social Work"],
   "department": "Education Maori",
   "points": 15,
@@ -21134,7 +21145,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "English"
+      "faculties": ["English"]
     },
     {
       "type": 0,
@@ -21148,7 +21159,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "English"
+        "faculties": ["English"]
       },
       {
         "type": 1,
@@ -21163,7 +21174,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Transnational Cultures and Creative Practice"
+      "faculties": ["Transnational Cultures and Creative Practice"]
     }]
   }],
   "isActive": true
@@ -21381,7 +21392,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "English"
+      "faculties": ["English"]
     },
     {
       "type": 0,
@@ -21389,7 +21400,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Drama"
+      "faculties": ["Drama"]
     },
     {
       "type": 0,
@@ -21397,7 +21408,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Writing Studies"
+      "faculties": ["Writing Studies"]
     },
     {
       "type": 0,
@@ -21405,7 +21416,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Media, Film, Television"
+      "faculties": ["Media, Film, Television"]
     }]
   }],
   "isActive": false
@@ -21541,7 +21552,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "English"
+      "faculties": ["English"]
     },
     {
       "type": 0,
@@ -21646,14 +21657,14 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "English, Drama"
+      "faculties": ["English, Drama"]
     },
     {
       "type": 0,
       "required": 30,
       "flags":
       {},
-      "faculties": "Media, Film and Television",
+      "faculties": ["Media, Film and Television"],
       "stage": 2
     }]
   }],
@@ -21956,7 +21967,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "English"
+      "faculties": ["English"]
     },
     {
       "type": 1,
@@ -23873,7 +23884,7 @@
   "id": 1193,
   "name": "FINEARTS104",
   "title": "Introduction to Critical Studies",
-  "desc": "An introduction to contemporary art from a practice-led perspective. Themes, ideas and movements relevant to the field of contemporary art will be introduced, alongside key theoretical and philosophical terms. Students study the ways these contextual and conceptual frameworks inform art production. Emphasises the multiple ways in which art-practice engages with these frameworks. Aspects of tikanga M\u0101ori and its relationship to art-making will also be introduced.",
+  "desc": "An introduction to contemporary art from a practice-led perspective. Themes, ideas and movements relevant to the field of contemporary art will be introduced, alongside key theoretical and philosophical terms. Students study the ways these contextual and conceptual frameworks inform art production. Emphasises the multiple ways in which art-practice engages with these frameworks. Aspects of tikanga Maori and its relationship to art-making will also be introduced.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Dance Studies",
   "points": 15,
@@ -24006,7 +24017,7 @@
   "id": 1203,
   "name": "FINEARTS208",
   "title": "Studio Practice 2",
-  "desc": "Focuses on the conditions of reception relevant to students' work including ways meaning is created; how art works are read; and the significance of presentation strategies. Consists of a range of supervised briefs embracing media specific, interdisciplinary, M\u0101ori, local and global approaches to creating art works. Students will also engage in focused contextual study in an area relevant to their studio interests.",
+  "desc": "Focuses on the conditions of reception relevant to students' work including ways meaning is created; how art works are read; and the significance of presentation strategies. Consists of a range of supervised briefs embracing media specific, interdisciplinary, Maori, local and global approaches to creating art works. Students will also engage in focused contextual study in an area relevant to their studio interests.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Dance Studies",
   "points": 30,
@@ -24094,7 +24105,7 @@
   "id": 1207,
   "name": "FINEARTS212",
   "title": "Studio Practice 2",
-  "desc": "Focuses on the conditions of reception relevant to students' work including ways meaning is created; how art works are read; and the significance of presentation strategies. Consists of a range of supervised briefs embracing media specific, interdisciplinary, M\u0101ori, local and global approaches to creating art works.",
+  "desc": "Focuses on the conditions of reception relevant to students' work including ways meaning is created; how art works are read; and the significance of presentation strategies. Consists of a range of supervised briefs embracing media specific, interdisciplinary, Maori, local and global approaches to creating art works.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Dance Studies",
   "points": 60,
@@ -24172,7 +24183,7 @@
   "id": 1212,
   "name": "FINEARTS305",
   "title": "Critical Practices",
-  "desc": "Presents selected forms of contemporary art practices and their related concepts. Considers these practices to enable a critical understanding of a broad range of contemporary art production and its relevance to students' own emerging practice. Provides a critical introduction to a range of artists' writing. Complements FINEARTS 308 and 309 by critically exploring the value of certain frameworks, including: philosophy, theory, art history, writing, tikanga M\u0101ori and the socio-cultural for a self-directed practice.",
+  "desc": "Presents selected forms of contemporary art practices and their related concepts. Considers these practices to enable a critical understanding of a broad range of contemporary art production and its relevance to students' own emerging practice. Provides a critical introduction to a range of artists' writing. Complements FINEARTS 308 and 309 by critically exploring the value of certain frameworks, including: philosophy, theory, art history, writing, tikanga Maori and the socio-cultural for a self-directed practice.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Dance Studies",
   "points": 15,
@@ -24205,7 +24216,7 @@
   "id": 1215,
   "name": "FINEARTS308",
   "title": "Studio Practice 3",
-  "desc": "Builds upon the conceptual, material, technical and contextual work undertaken in Studio Practice 2. Students will explore and develop a range of methodologies that will enable them to understand the principle of a self-directed practice. Students are required to pursue open-ended exploration and critical analysis within their studio work, with an emphasis on experimentation and reflexivity. Consists of a range of supervised briefs embracing media specific, interdisciplinary, M\u0101ori, local and global approaches to creating art works. Students will also engage in focused contextual study in an area relevant to their interests.",
+  "desc": "Builds upon the conceptual, material, technical and contextual work undertaken in Studio Practice 2. Students will explore and develop a range of methodologies that will enable them to understand the principle of a self-directed practice. Students are required to pursue open-ended exploration and critical analysis within their studio work, with an emphasis on experimentation and reflexivity. Consists of a range of supervised briefs embracing media specific, interdisciplinary, Maori, local and global approaches to creating art works. Students will also engage in focused contextual study in an area relevant to their interests.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Dance Studies",
   "points": 15,
@@ -24257,7 +24268,7 @@
   "id": 1217,
   "name": "FINEARTS310",
   "title": "Studio Practice 3",
-  "desc": "Builds upon the conceptual, material, technical and contextual work undertaken in Studio Practice 2. Students will explore and develop a range of methodologies that will enable them to understand the principle of a self-directed practice. Students are required to pursue open-ended exploration and critical analysis within their studio work, with an emphasis on experimentation and reflexivity. Consists of a range of supervised briefs embracing media specific, interdisciplinary, M\u0101ori, local and global approaches to creating art works.",
+  "desc": "Builds upon the conceptual, material, technical and contextual work undertaken in Studio Practice 2. Students will explore and develop a range of methodologies that will enable them to understand the principle of a self-directed practice. Students are required to pursue open-ended exploration and critical analysis within their studio work, with an emphasis on experimentation and reflexivity. Consists of a range of supervised briefs embracing media specific, interdisciplinary, Maori, local and global approaches to creating art works.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Dance Studies",
   "points": 15,
@@ -24283,7 +24294,7 @@
   "id": 1218,
   "name": "FINEARTS311",
   "title": "Studio Practice 4",
-  "desc": "Extends the self-directed aspect of FINEARTS 308 through work on one or two long-term personal projects. A key focus is the identification of, and response to, a contextual issue or mode of practice relevant to contemporary art. Students will begin to develop an understanding of their own practice within the context of a wider field of local and global contemporary art, and contemporary M\u0101ori Art practices.",
+  "desc": "Extends the self-directed aspect of FINEARTS 308 through work on one or two long-term personal projects. A key focus is the identification of, and response to, a contextual issue or mode of practice relevant to contemporary art. Students will begin to develop an understanding of their own practice within the context of a wider field of local and global contemporary art, and contemporary Maori Art practices.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Dance Studies",
   "points": 15,
@@ -25113,7 +25124,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Media, Film and Television"
+      "faculties": ["Media, Film and Television"]
     }]
   },
   {
@@ -25206,7 +25217,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Media, Film and Television"
+      "faculties": ["Media, Film and Television"]
     }]
   },
   {
@@ -25402,7 +25413,7 @@
   "id": 1281,
   "name": "FTVMS210",
   "title": "Race, Indigeneity and the Media",
-  "desc": "Considers the media in relation to racial and ethnic identities. The course examines how dominant media represent minority cultural groups in terms of their perceived difference. Discusses postcolonialism and indigeneity in international contexts, with a focus on M\u0101ori engagement with media, and 'P\u0101keh\u0101ness' as an ethnic identity. The course draws on critical race theory and whiteness studies.",
+  "desc": "Considers the media in relation to racial and ethnic identities. The course examines how dominant media represent minority cultural groups in terms of their perceived difference. Discusses postcolonialism and indigeneity in international contexts, with a focus on Maori engagement with media, and 'P\u0101keh\u0101ness' as an ethnic identity. The course draws on critical race theory and whiteness studies.",
   "faculties": ["Arts"],
   "department": "Media, Film and Television",
   "points": 15,
@@ -25853,7 +25864,7 @@
   "id": 1322,
   "name": "FTVMS325",
   "title": "Race, Indigeneity and the Media",
-  "desc": "Considers the media in relation to racial and ethnic identities. The course examines how dominant media represent minority cultural groups in terms of their perceived difference. Discusses postcolonialism and indigeneity in international contexts, with a focus on M\u0101ori engagement with media, and 'P\u0101keh\u0101ness' as an ethnic identity. The course draws on critical race theory and whiteness studies.",
+  "desc": "Considers the media in relation to racial and ethnic identities. The course examines how dominant media represent minority cultural groups in terms of their perceived difference. Discusses postcolonialism and indigeneity in international contexts, with a focus on Maori engagement with media, and 'P\u0101keh\u0101ness' as an ethnic identity. The course draws on critical race theory and whiteness studies.",
   "faculties": ["Arts"],
   "department": "Media, Film and Television",
   "points": 15,
@@ -26115,7 +26126,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Gender Studies"
+      "faculties": ["Gender Studies"]
     },
     {
       "type": 0,
@@ -26129,7 +26140,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "Gender Studies"
+        "faculties": ["Gender Studies"]
       },
       {
         "type": 0,
@@ -26137,7 +26148,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "Arts"
+        "faculties": ["Arts"]
       }]
     }]
   },
@@ -26325,7 +26336,7 @@
   "id": 1353,
   "name": "GEOG207",
   "title": "Field Studies in Environment and Community",
-  "desc": "Connections between environment and community in New Zealand are explored on the ground through consideration of topics from among the following themes: biodiversity and vegetation change; land transformation; heritage values; environmental management; M\u0101ori resource management; coastal and fluvial geomorphology; regional economics; community development and planning; tourism development; and government policy. The course involves a one week field trip.",
+  "desc": "Connections between environment and community in New Zealand are explored on the ground through consideration of topics from among the following themes: biodiversity and vegetation change; land transformation; heritage values; environmental management; Maori resource management; coastal and fluvial geomorphology; regional economics; community development and planning; tourism development; and government policy. The course involves a one week field trip.",
   "faculties": ["Science"],
   "department": "Geography",
   "points": 15,
@@ -28118,7 +28129,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "History"
+        "faculties": ["History"]
       },
       {
         "type": 0,
@@ -28145,7 +28156,7 @@
         "required": 30,
         "flags":
         {},
-        "faculties": "Global Politics and Human Rights"
+        "faculties": ["Global Politics and Human Rights"]
       }]
     }]
   },
@@ -28186,7 +28197,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "History"
+        "faculties": ["History"]
       },
       {
         "type": 0,
@@ -28254,7 +28265,7 @@
   "id": 1457,
   "name": "HISTORY216",
   "title": "New Zealand Social History: Wh\u0101nau, Famil, Sex",
-  "desc": "An introduction to the social history of M\u0101ori and P\u0101keh\u0101 New Zealanders focussing on family relations and sexuality. Topics include M\u0101ori and P\u0101keh\u0101 families in the colonial era, changing nineteenth and twentieth century courtship practices and family structures, state interventions in family life, attitudes to contraception, abortion, pornography and pleasure.",
+  "desc": "An introduction to the social history of Maori and P\u0101keh\u0101 New Zealanders focussing on family relations and sexuality. Topics include Maori and P\u0101keh\u0101 families in the colonial era, changing nineteenth and twentieth century courtship practices and family structures, state interventions in family life, attitudes to contraception, abortion, pornography and pleasure.",
   "faculties": ["Arts"],
   "department": "History",
   "points": 15,
@@ -28440,7 +28451,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "History or Politics and International Relations"
+      "faculties": ["History or Politics and International Relations"]
     },
     {
       "type": 0,
@@ -28544,7 +28555,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "History"
+        "faculties": ["History"]
       },
       {
         "type": 0,
@@ -28571,7 +28582,7 @@
         "required": 30,
         "flags":
         {},
-        "faculties": "BGlobalSt"
+        "faculties": ["BGlobalSt"]
       }]
     }]
   },
@@ -28832,8 +28843,8 @@
 {
   "id": 1476,
   "name": "HISTORY260",
-  "title": "The M\u0101ori 20th Century",
-  "desc": "Wide ranging study of M\u0101ori in the twentieth century exploring a variety of topics and themes including: studies and sources of M\u0101ori history; M\u0101ori and the state; war, work, church and leisure; resistance, protest and advocacy; rural and urban communities; organisations and leadership; mana wahine; and race relations in New Zealand.",
+  "title": "The Maori 20th Century",
+  "desc": "Wide ranging study of Maori in the twentieth century exploring a variety of topics and themes including: studies and sources of Maori history; Maori and the state; war, work, church and leisure; resistance, protest and advocacy; rural and urban communities; organisations and leadership; mana wahine; and race relations in New Zealand.",
   "faculties": ["Arts"],
   "department": "History",
   "points": 15,
@@ -28866,7 +28877,7 @@
   "id": 1477,
   "name": "HISTORY262",
   "title": "Social Welfare in New Zealand, 1840-2000",
-  "desc": "Investigates the changing nature of social welfare, both state and voluntary, in New Zealand society from 1840 to 2000. It addresses reasons why certain concerns were at the forefront of public and political attention at different times. The course examines assumptions about women, M\u0101ori, as well as unemployed, poor and sick people that underlay welfare provision through time.",
+  "desc": "Investigates the changing nature of social welfare, both state and voluntary, in New Zealand society from 1840 to 2000. It addresses reasons why certain concerns were at the forefront of public and political attention at different times. The course examines assumptions about women, Maori, as well as unemployed, poor and sick people that underlay welfare provision through time.",
   "faculties": ["Arts"],
   "department": "History",
   "points": 15,
@@ -28890,7 +28901,7 @@
         "flags":
         {},
         "stage": 1,
-        "faculties": "History"
+        "faculties": ["History"]
       },
       {
         "type": 0,
@@ -29137,7 +29148,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "History"
+        "faculties": ["History"]
       },
       {
         "type": 0,
@@ -29164,7 +29175,7 @@
         "required": 30,
         "flags":
         {},
-        "faculties": "Global Politics and Human Rights",
+        "faculties": ["Global Politics and Human Rights"],
         "stage": 2
       }]
     }]
@@ -29207,7 +29218,7 @@
   "id": 1489,
   "name": "HISTORY316",
   "title": "New Zealand Social History: Wh\u0101nau, Family, Sex",
-  "desc": "An in-depth examination of the social history of M\u0101ori and P\u0101keh\u0101 New Zealanders through the lens of family relations and sexuality. Topics include M\u0101ori and P\u0101keh\u0101 families in the colonial era, changing nineteenth and twentieth century courtship practices and family structures, state interventions in family life, attitudes to contraception, abortion, pornography and pleasure.",
+  "desc": "An in-depth examination of the social history of Maori and P\u0101keh\u0101 New Zealanders through the lens of family relations and sexuality. Topics include Maori and P\u0101keh\u0101 families in the colonial era, changing nineteenth and twentieth century courtship practices and family structures, state interventions in family life, attitudes to contraception, abortion, pornography and pleasure.",
   "faculties": ["Arts"],
   "department": "History",
   "points": 15,
@@ -29399,7 +29410,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "History"
+        "faculties": ["History"]
       },
       {
         "type": 0,
@@ -29427,7 +29438,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "BGlobalSt"
+        "faculties": ["BGlobalSt"]
       }]
     }]
   },
@@ -29512,7 +29523,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "History"
+        "faculties": ["History"]
       },
       {
         "type": 0,
@@ -29540,7 +29551,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "BGlobalSt"
+        "faculties": ["BGlobalSt"]
       }]
     }]
   },
@@ -29689,7 +29700,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "History",
+      "faculties": ["History"],
       "stage": 2
     },
     {
@@ -29705,7 +29716,7 @@
         {},
         "papers": "ARTHIST225"
       }],
-      "faculties": "History",
+      "faculties": ["History"],
       "stage": 2
     }]
   }],
@@ -29858,7 +29869,7 @@
   "id": 1509,
   "name": "HISTORY362",
   "title": "Social Welfare in New Zealand, 1840-2000",
-  "desc": "Investigates the changing nature of social welfare, both state and voluntary, in New Zealand society from 1840 to 2000. It addresses reasons why certain concerns were at the forefront of public and political attention at different times. The course examines assumptions about women, M\u0101ori, as well as unemployed, poor and sick people that underlay welfare provision through time.",
+  "desc": "Investigates the changing nature of social welfare, both state and voluntary, in New Zealand society from 1840 to 2000. It addresses reasons why certain concerns were at the forefront of public and political attention at different times. The course examines assumptions about women, Maori, as well as unemployed, poor and sick people that underlay welfare provision through time.",
   "faculties": ["Arts"],
   "department": "History",
   "points": 15,
@@ -29913,8 +29924,8 @@
 {
   "id": 1508,
   "name": "HISTORY360",
-  "title": "The M\u0101ori 20th Century",
-  "desc": "Wide ranging study of M\u0101ori in the twentieth century exploring a variety of topics and themes including: studies and sources of M\u0101ori history; M\u0101ori and the state; war, work, church and leisure; resistance, protest and advocacy; rural and urban communities; organisations and leadership; mana wahine; and race relations in New Zealand.",
+  "title": "The Maori 20th Century",
+  "desc": "Wide ranging study of Maori in the twentieth century exploring a variety of topics and themes including: studies and sources of Maori history; Maori and the state; war, work, church and leisure; resistance, protest and advocacy; rural and urban communities; organisations and leadership; mana wahine; and race relations in New Zealand.",
   "faculties": ["Arts"],
   "department": "History",
   "points": 15,
@@ -29986,7 +29997,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "History",
+      "faculties": ["History"],
       "stage": 2
     },
     {
@@ -29994,7 +30005,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "History",
+      "faculties": ["History"],
       "stage": 2,
       "complex": [
       {
@@ -30043,7 +30054,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "History",
+      "faculties": ["History"],
       "stage": 2
     },
     {
@@ -30051,7 +30062,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "History",
+      "faculties": ["History"],
       "complex": [
       {
         "type": 1,
@@ -30098,7 +30109,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "History",
+      "faculties": ["History"],
       "stage": 2
     },
     {
@@ -30132,7 +30143,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "History",
+      "faculties": ["History"],
       "stage": 2
     },
     {
@@ -30140,7 +30151,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "History",
+      "faculties": ["History"],
       "stage": 2,
       "complex": [
       {
@@ -30259,7 +30270,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Information Management",
+      "faculties": ["Information Management"],
       "stage": 2
     },
     {
@@ -30267,7 +30278,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Information Systems",
+      "faculties": ["Information Systems"],
       "stage": 2
     }]
   }],
@@ -30395,7 +30406,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Human Services"
+      "faculties": ["Human Services"]
     }]
   }],
   "isActive": true
@@ -30428,7 +30439,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Human Services"
+      "faculties": ["Human Services"]
     }]
   }],
   "isActive": true
@@ -32482,7 +32493,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Japanese",
+      "faculties": ["Japanese"],
       "complex": [
       {
         "type": 0,
@@ -32498,7 +32509,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Asian Studies"
+      "faculties": ["Asian Studies"]
     }]
   },
   {
@@ -32660,7 +32671,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "Asian Studies"
+        "faculties": ["Asian Studies"]
       }]
     },
     {
@@ -32669,7 +32680,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Arts",
+      "faculties": ["Arts"],
       "complex": [
       {
         "type": 1,
@@ -32737,7 +32748,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Japanese",
+      "faculties": ["Japanese"],
       "stage": 2,
       "complex": [
       {
@@ -32754,7 +32765,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Asian Studies"
+      "faculties": ["Asian Studies"]
     }]
   },
   {
@@ -32943,7 +32954,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Asian Studies",
+      "faculties": ["Asian Studies"],
       "stage": 2
     },
     {
@@ -32951,7 +32962,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "History",
+      "faculties": ["History"],
       "stage": 2
     }]
   },
@@ -33345,7 +33356,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Education (TESOL)"
+      "faculties": ["Education (TESOL)"]
     }]
   }],
   "isActive": true
@@ -33551,7 +33562,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Education (TESOL)"
+      "faculties": ["Education (TESOL)"]
     }]
   }],
   "isActive": true
@@ -33596,7 +33607,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Education (TESOL)"
+      "faculties": ["Education (TESOL)"]
     }]
   }],
   "isActive": false
@@ -33649,7 +33660,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Education"
+      "faculties": ["Education"]
     }]
   }],
   "isActive": true
@@ -34331,7 +34342,7 @@
   "id": 1736,
   "name": "LAW211B",
   "title": "Public Law",
-  "desc": "The principles and workings of the New Zealand constitution; the powers, privileges and immunities of the three branches of government; the exercise and control of public power; and the relationship between the individual and the State (including the position of M\u0101ori under the Treaty of Waitangi).",
+  "desc": "The principles and workings of the New Zealand constitution; the powers, privileges and immunities of the three branches of government; the exercise and control of public power; and the relationship between the individual and the State (including the position of Maori under the Treaty of Waitangi).",
   "faculties": ["Law"],
   "department": "Law",
   "points": 10,
@@ -34416,7 +34427,7 @@
   "id": 1735,
   "name": "LAW211A",
   "title": "Public Law",
-  "desc": "The principles and workings of the New Zealand constitution; the powers, privileges and immunities of the three branches of government; the exercise and control of public power; and the relationship between the individual and the State (including the position of M\u0101ori under the Treaty of Waitangi).",
+  "desc": "The principles and workings of the New Zealand constitution; the powers, privileges and immunities of the three branches of government; the exercise and control of public power; and the relationship between the individual and the State (including the position of Maori under the Treaty of Waitangi).",
   "faculties": ["Law"],
   "department": "Law",
   "points": 10,
@@ -34701,7 +34712,7 @@
   "id": 1752,
   "name": "LAW316",
   "title": "Jurisprudence",
-  "desc": "A study of the nature of law, including the nature of legal reasoning, its sources, its methodology, the extent to which legal questions are indeterminate, fundamental legal concepts, and the structure of a legal system; ng\u0101 tikanga M\u0101ori and its relation to wider M\u0101ori views of the world and contemporary issues faced by M\u0101ori in their relation to contemporary law.",
+  "desc": "A study of the nature of law, including the nature of legal reasoning, its sources, its methodology, the extent to which legal questions are indeterminate, fundamental legal concepts, and the structure of a legal system; ng\u0101 tikanga Maori and its relation to wider Maori views of the world and contemporary issues faced by Maori in their relation to contemporary law.",
   "faculties": ["Law"],
   "department": "Law",
   "points": 15,
@@ -35061,7 +35072,7 @@
   "id": 1785,
   "name": "LAWCOMM437",
   "title": "Iwi Corporate Governance",
-  "desc": "An examination of the common governance structures employed by iwi, why those structures are chosen and the legal and practical issues that arise as a result. Aspects of the law related to trusts, limited partnerships, charities and M\u0101ori Authorities, and how they may be interwoven within one overarching structure.",
+  "desc": "An examination of the common governance structures employed by iwi, why those structures are chosen and the legal and practical issues that arise as a result. Aspects of the law related to trusts, limited partnerships, charities and Maori Authorities, and how they may be interwoven within one overarching structure.",
   "faculties": ["Law"],
   "department": "Law Commercial",
   "points": 20,
@@ -35669,7 +35680,7 @@
   "id": 1806,
   "name": "LAWENVIR422",
   "title": "Environmental Law for Non-lawyers",
-  "desc": "Contemporary international and New Zealand environmental issues, policy and law; obligations of central and local governments under the Resource Management Act 1991; law and M\u0101ori; legal issues concerning sustainable management, national and coastal policy statements, regional and district plans preparation and content, resource consents, enforcement; heritage protection; the law concerning other activities affecting the environment, including hazardous and toxic substances; mining.",
+  "desc": "Contemporary international and New Zealand environmental issues, policy and law; obligations of central and local governments under the Resource Management Act 1991; law and Maori; legal issues concerning sustainable management, national and coastal policy statements, regional and district plans preparation and content, resource consents, enforcement; heritage protection; the law concerning other activities affecting the environment, including hazardous and toxic substances; mining.",
   "faculties": ["Law"],
   "department": "Law Enviromental",
   "points": 15,
@@ -36558,7 +36569,7 @@
   "id": 1838,
   "name": "LAWGENRL440",
   "title": "Youth Justice",
-  "desc": "An examination of why children and young people may be treated differently by criminal justice systems; comparison of the unique New Zealand youth justice system with international developments; consideration of particular topics, including the response to M\u0101ori young people and issues arising from the gender of young offenders.",
+  "desc": "An examination of why children and young people may be treated differently by criminal justice systems; comparison of the unique New Zealand youth justice system with international developments; consideration of particular topics, including the response to Maori young people and issues arising from the gender of young offenders.",
   "faculties": ["Law"],
   "department": "Law General",
   "points": 10,
@@ -36763,8 +36774,8 @@
 {
   "id": 1861,
   "name": "LAWPUBL427",
-  "title": "M\u0101ori Land Law",
-  "desc": "Customary M\u0101ori land tenure and legal issues arising under Te Ture Whenua M\u0101ori Act 1993.",
+  "title": "Maori Land Law",
+  "desc": "Customary Maori land tenure and legal issues arising under Te Ture Whenua Maori Act 1993.",
   "faculties": ["Law"],
   "department": "Law Public",
   "points": 10,
@@ -37295,8 +37306,8 @@
 {
   "id": 1874,
   "name": "LAWPUBL441",
-  "title": "Nga Tikanga M\u0101ori",
-  "desc": "A study of M\u0101ori customary law. Topics that may be covered include: the content of Customary Law as it relates to M\u0101ori social and political organisation and land tenure; Customary Law\u2019s interaction with the general (eg through statute or the common law); Customary Law and legal pluralism and culture theory; and the role of Customary Law in contemporary Crown-iwi relations.",
+  "title": "Nga Tikanga Maori",
+  "desc": "A study of Maori customary law. Topics that may be covered include: the content of Customary Law as it relates to Maori social and political organisation and land tenure; Customary Law\u2019s interaction with the general (eg through statute or the common law); Customary Law and legal pluralism and culture theory; and the role of Customary Law in contemporary Crown-iwi relations.",
   "faculties": ["Law"],
   "department": "Law Public",
   "points": 15,
@@ -37658,8 +37669,8 @@
 {
   "id": 1944,
   "name": "MAORI320",
-  "title": "M\u0101tauranga: M\u0101ori Knowledge",
-  "desc": "Explores the various facets of knowledge. This includes genealogy - cosmic, theogenic and anthropogenic (whakapapa), traditional songs (m\u014dteatea), proverbs (whakatauk\u012b). The aim is to help develop an understanding of a M\u0101ori world view and a te ao m\u0101rama paradigm through studying M\u0101ori epistemology.",
+  "title": "M\u0101tauranga: Maori Knowledge",
+  "desc": "Explores the various facets of knowledge. This includes genealogy - cosmic, theogenic and anthropogenic (whakapapa), traditional songs (m\u014dteatea), proverbs (whakatauk\u012b). The aim is to help develop an understanding of a Maori world view and a te ao m\u0101rama paradigm through studying Maori epistemology.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -37678,7 +37689,7 @@
   "id": 1951,
   "name": "MAORI396",
   "title": "Tikanga: Ancestral Ways",
-  "desc": "Examines tikanga (ancestral ways of living) and how these have changed since the first arrival of the ancestors of M\u0101ori in Aotearoa. Beginning with topics of contemporary interest such as land use, the sea, kinship, gender relations, justice, health and economics, this course will trace the patterns of ancestral life, explore historical debates and reflect upon possible futures.",
+  "desc": "Examines tikanga (ancestral ways of living) and how these have changed since the first arrival of the ancestors of Maori in Aotearoa. Beginning with topics of contemporary interest such as land use, the sea, kinship, gender relations, justice, health and economics, this course will trace the patterns of ancestral life, explore historical debates and reflect upon possible futures.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -37733,14 +37744,14 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "English"
+      "faculties": ["English"]
     },
     {
       "type": 0,
       "required": 30,
       "flags":
       {},
-      "faculties": "Linguistics"
+      "faculties": ["Linguistics"]
     }]
   },
   {
@@ -37781,8 +37792,8 @@
 {
   "id": 1948,
   "name": "MAORI370",
-  "title": "M\u0101ori and the Media / Te Ao P\u0101ho",
-  "desc": "Examines the interrelationship between M\u0101ori and media. The course falls into two main strands: the representation of M\u0101ori and te ao M\u0101ori across a range of mainstream media, both historic and contemporary, and media made by M\u0101ori, for both a general audience and for a M\u0101ori audience. The course will draw on theories of political economy, postcolonialism and Kaupapa M\u0101ori.",
+  "title": "Maori and the Media / Te Ao P\u0101ho",
+  "desc": "Examines the interrelationship between Maori and media. The course falls into two main strands: the representation of Maori and te ao Maori across a range of mainstream media, both historic and contemporary, and media made by Maori, for both a general audience and for a Maori audience. The course will draw on theories of political economy, postcolonialism and Kaupapa Maori.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -37857,7 +37868,7 @@
   "id": 1947,
   "name": "MAORI342",
   "title": "Te Ao K\u014dhatu",
-  "desc": "Develops skills and research methods introduced in Te Kete Aronui with an emphasis on recovery of knowledge relating to traditions of stone, bone, wood, shell and fibre use by M\u0101ori.",
+  "desc": "Develops skills and research methods introduced in Te Kete Aronui with an emphasis on recovery of knowledge relating to traditions of stone, bone, wood, shell and fibre use by Maori.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -37889,7 +37900,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Museums and Cultural Heritage"
+      "faculties": ["Museums and Cultural Heritage"]
     }]
   }],
   "isActive": false
@@ -38202,8 +38213,8 @@
 {
   "id": 1928,
   "name": "MAORI130",
-  "title": "Te Ao M\u0101ori: The M\u0101ori World",
-  "desc": "An introduction to M\u0101ori analyses of topics that are often discussed and sometimes controversial, and that continue to shape contemporary life in New Zealand. Topics include aspects of world view, philosophy and social organisation; the Declaration of Independence, the Treaty of Waitangi and European immigration; and contemporary issues including Treaty claims, ownership of the foreshore and seabed and constitutional issues.",
+  "title": "Te Ao Maori: The Maori World",
+  "desc": "An introduction to Maori analyses of topics that are often discussed and sometimes controversial, and that continue to shape contemporary life in New Zealand. Topics include aspects of world view, philosophy and social organisation; the Declaration of Independence, the Treaty of Waitangi and European immigration; and contemporary issues including Treaty claims, ownership of the foreshore and seabed and constitutional issues.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38235,8 +38246,8 @@
 {
   "id": 1924,
   "name": "MAORI101",
-  "title": "Introduction to Written M\u0101ori",
-  "desc": "An introduction to listening, reading, writing and translation techniques used in the composition, reading and understanding of basic M\u0101ori. Designed for students with little or no knowledge of the language, and for those with some fluency wishing to understand simple sentence structure and composition.",
+  "title": "Introduction to Written Maori",
+  "desc": "An introduction to listening, reading, writing and translation techniques used in the composition, reading and understanding of basic Maori. Designed for students with little or no knowledge of the language, and for those with some fluency wishing to understand simple sentence structure and composition.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38246,8 +38257,8 @@
 {
   "id": 1925,
   "name": "MAORI101G",
-  "title": "Introduction to Written M\u0101ori",
-  "desc": "An introduction to listening, reading, writing and translation techniques used in the composition, reading and understanding of basic M\u0101ori. Designed for students with little or no knowledge of the language, and for those with some fluency wishing to understand simple sentence structure and composition.",
+  "title": "Introduction to Written Maori",
+  "desc": "An introduction to listening, reading, writing and translation techniques used in the composition, reading and understanding of basic Maori. Designed for students with little or no knowledge of the language, and for those with some fluency wishing to understand simple sentence structure and composition.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38257,8 +38268,8 @@
 {
   "id": 1926,
   "name": "MAORI103",
-  "title": "Introduction to Spoken M\u0101ori",
-  "desc": "An introduction to spoken M\u0101ori for those with no previous knowledge of the language. Concentrates on the acquisition of aural and oral skills, developing the ability to understand and speak M\u0101ori. It is recommended that students also enrol in M\u0100ORI 101.",
+  "title": "Introduction to Spoken Maori",
+  "desc": "An introduction to spoken Maori for those with no previous knowledge of the language. Concentrates on the acquisition of aural and oral skills, developing the ability to understand and speak Maori. It is recommended that students also enrol in M\u0100ORI 101.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38277,7 +38288,7 @@
   "id": 1927,
   "name": "MAORI104",
   "title": "Reo Tuatahi K\u014drero 1",
-  "desc": "The development of skills in speaking, writing and hearing language. This course is intended for students with a good command of M\u0101ori.",
+  "desc": "The development of skills in speaking, writing and hearing language. This course is intended for students with a good command of Maori.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38295,8 +38306,8 @@
 {
   "id": 1942,
   "name": "MAORI301",
-  "title": "Reo M\u0101ori Tuhituhi",
-  "desc": "Follows on from M\u0100ORI 201. Includes a survey of the theoretical orientations to the study of M\u0101ori language, the effects of colonisation on the language and efforts to revitalise it once it became endangered. Also includes practical exercises in transcription and translation of selected recordings and texts, and grammatical analysis.",
+  "title": "Reo Maori Tuhituhi",
+  "desc": "Follows on from M\u0100ORI 201. Includes a survey of the theoretical orientations to the study of Maori language, the effects of colonisation on the language and efforts to revitalise it once it became endangered. Also includes practical exercises in transcription and translation of selected recordings and texts, and grammatical analysis.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38315,7 +38326,7 @@
   "id": 1936,
   "name": "MAORI240",
   "title": "Te Kete Aronui",
-  "desc": "Knowledge recovery of past traditions and practices relating to M\u0101ori material culture with a strong emphasis on developing practical skills and research that involves focus on the use of stone, bone, wood, shell and some fibre.",
+  "desc": "Knowledge recovery of past traditions and practices relating to Maori material culture with a strong emphasis on developing practical skills and research that involves focus on the use of stone, bone, wood, shell and some fibre.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38347,7 +38358,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Museums and Cultural Heritage"
+      "faculties": ["Museums and Cultural Heritage"]
     }]
   }],
   "isActive": false
@@ -38355,8 +38366,8 @@
 {
   "id": 1929,
   "name": "MAORI130G",
-  "title": "Te Ao M\u0101ori: The M\u0101ori World",
-  "desc": "An introduction to M\u0101ori analyses of topics that are often discussed and sometimes controversial, and that continue to shape contemporary life in New Zealand. Topics include aspects of world view, philosophy and social organisation; the Declaration of Independence, the Treaty of Waitangi and European immigration; and contemporary issues including Treaty claims, ownership of the foreshore and seabed and constitutional issues.",
+  "title": "Te Ao Maori: The Maori World",
+  "desc": "An introduction to Maori analyses of topics that are often discussed and sometimes controversial, and that continue to shape contemporary life in New Zealand. Topics include aspects of world view, philosophy and social organisation; the Declaration of Independence, the Treaty of Waitangi and European immigration; and contemporary issues including Treaty claims, ownership of the foreshore and seabed and constitutional issues.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38367,7 +38378,7 @@
   "id": 1930,
   "name": "MAORI190",
   "title": "Kapa Haka 1",
-  "desc": "An introductory course for beginners or others who have only a minimal knowledge of traditional and contemporary M\u0101ori performing arts. The course is strongly practical. It will stress the fundamentals of performance and the various social, cultural and political settings that give it meaning.",
+  "desc": "An introductory course for beginners or others who have only a minimal knowledge of traditional and contemporary Maori performing arts. The course is strongly practical. It will stress the fundamentals of performance and the various social, cultural and political settings that give it meaning.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38388,7 +38399,7 @@
 {
   "id": 1932,
   "name": "MAORI201",
-  "title": "Whakatakoto Reo Tuarua / Intermediate Written M\u0101ori",
+  "title": "Whakatakoto Reo Tuarua / Intermediate Written Maori",
   "desc": "Follows on from M\u0100ORI 101. Techniques in listening, reading, writing and translation are further developed.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
@@ -38407,7 +38418,7 @@
 {
   "id": 1933,
   "name": "MAORI203",
-  "title": "Intermediate Spoken M\u0101ori",
+  "title": "Intermediate Spoken Maori",
   "desc": "Continuing the development of language skills that will facilitate students' own communicative ability.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
@@ -38460,7 +38471,7 @@
   "id": 1935,
   "name": "MAORI230",
   "title": "Te Ao Hurihuri / Te Tiriti o Waitangi",
-  "desc": "Follows on from M\u0100ORI 130, examining aspects of traditional M\u0101ori society that continue to challenge and mould contemporary life in New Zealand. Topics are covered from a M\u0101ori perspective and include the Treaty of Waitangi, the role of the churches in colonisation, language loss and revitalisation, the modern protest movements and the influence of the issues raised on M\u0101ori-P\u0101keh\u0101 relations.",
+  "desc": "Follows on from M\u0100ORI 130, examining aspects of traditional Maori society that continue to challenge and mould contemporary life in New Zealand. Topics are covered from a Maori perspective and include the Treaty of Waitangi, the role of the churches in colonisation, language loss and revitalisation, the modern protest movements and the influence of the issues raised on Maori-P\u0101keh\u0101 relations.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38491,8 +38502,8 @@
 {
   "id": 1943,
   "name": "MAORI302",
-  "title": "Reo M\u0101ori K\u014drero",
-  "desc": "Ko t\u0113nei te pepa whakaohooho ake i ng\u0101 tau ka taha. Ko te whainga, ko te whanake i ng\u0101 ture whakatakotoranga o te Reo M\u0101ori, mai i ng\u0101 tuhinga me ng\u0101 k\u014drero M\u0101ori kia pai ai te puta mai o te k\u014drero. Mai an\u014d hoki i ng\u0101 tuhinga M\u0101ori, ka at\u0101 tirohia te ao o te M\u0101ori, te \u0101taahuatanga o te whakaahuatanga mai o te k\u014drero i roto i te Reo M\u0101ori.",
+  "title": "Reo Maori K\u014drero",
+  "desc": "Ko t\u0113nei te pepa whakaohooho ake i ng\u0101 tau ka taha. Ko te whainga, ko te whanake i ng\u0101 ture whakatakotoranga o te Reo Maori, mai i ng\u0101 tuhinga me ng\u0101 k\u014drero Maori kia pai ai te puta mai o te k\u014drero. Mai an\u014d hoki i ng\u0101 tuhinga Maori, ka at\u0101 tirohia te ao o te Maori, te \u0101taahuatanga o te whakaahuatanga mai o te k\u014drero i roto i te Reo Maori.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38510,8 +38521,8 @@
 {
   "id": 1945,
   "name": "MAORI330",
-  "title": "Te Ao H\u014du / Contemporary M\u0101ori Issues",
-  "desc": "An examination of contemporary issues and debates around M\u0101ori identity as indigenous peoples in the twenty-first century. Various aspects of M\u0101ori political, cultural, social and economic development in the twenty-first century will be discussed.",
+  "title": "Te Ao H\u014du / Contemporary Maori Issues",
+  "desc": "An examination of contemporary issues and debates around Maori identity as indigenous peoples in the twenty-first century. Various aspects of Maori political, cultural, social and economic development in the twenty-first century will be discussed.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38530,7 +38541,7 @@
   "id": 1937,
   "name": "MAORI241",
   "title": "Te Aho T\u0101huhu",
-  "desc": "M\u0101ori fibre arts as a continuum from pre-European times with reference to the materials, practices and traditions of artefact manufacture. Includes individual research and practical projects.",
+  "desc": "Maori fibre arts as a continuum from pre-European times with reference to the materials, practices and traditions of artefact manufacture. Includes individual research and practical projects.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38558,8 +38569,8 @@
 {
   "id": 1939,
   "name": "MAORI271",
-  "title": "M\u0101ori and the Media / Te Ao P\u0101ho",
-  "desc": "Examines the interrelationship between M\u0101ori and media. The course falls into two main strands: the representation of M\u0101ori and te ao M\u0101ori across a range of mainstream media, both historic and contemporary, and media made by M\u0101ori, for both a general audience and for a M\u0101ori audience. The course will draw on theories of political economy, postcolonialism and Kaupapa M\u0101ori.",
+  "title": "Maori and the Media / Te Ao P\u0101ho",
+  "desc": "Examines the interrelationship between Maori and media. The course falls into two main strands: the representation of Maori and te ao Maori across a range of mainstream media, both historic and contemporary, and media made by Maori, for both a general audience and for a Maori audience. The course will draw on theories of political economy, postcolonialism and Kaupapa Maori.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38577,7 +38588,7 @@
   "id": 1940,
   "name": "MAORI292",
   "title": "Kapa Haka 2",
-  "desc": "Examines traditional and contemporary M\u0101ori performing arts and covers all aspects of M\u0101ori performance including whakaeke (entry), waiata m\u014dteatea, waiata-\u0101-ringa (action song), poi, haka, whakaw\u0101tea (exit). There is a strong practical element to the course as well as an analysis of social, cultural and political contexts of the songs and performance.",
+  "desc": "Examines traditional and contemporary Maori performing arts and covers all aspects of Maori performance including whakaeke (entry), waiata m\u014dteatea, waiata-\u0101-ringa (action song), poi, haka, whakaw\u0101tea (exit). There is a strong practical element to the course as well as an analysis of social, cultural and political contexts of the songs and performance.",
   "faculties": ["Arts"],
   "department": "Maori Studies",
   "points": 15,
@@ -38719,8 +38730,8 @@
 {
   "id": 1953,
   "name": "MAORIHTH301",
-  "title": "M\u0101ori Health and Practice",
-  "desc": "M\u0101ori health knowledge is used to develop effective public heath practice for M\u0101ori contexts. Areas of focus include critical thinking, reflective practice, advocacy and the application of Kaupapa M\u0101ori principles.",
+  "title": "Maori Health and Practice",
+  "desc": "Maori health knowledge is used to develop effective public heath practice for Maori contexts. Areas of focus include critical thinking, reflective practice, advocacy and the application of Kaupapa Maori principles.",
   "faculties": ["Medical and Health Sciences"],
   "department": "Maori Health",
   "points": 15,
@@ -38745,8 +38756,8 @@
 {
   "id": 1952,
   "name": "MAORIHTH201",
-  "title": "Introduction to M\u0101ori Health",
-  "desc": "M\u0101ori society, culture and values are explored. Historical processes are reviewed within the context of the Treaty of Waitangi. The course will examine how these factors underpin the basic determinants of health and shape contemporary M\u0101ori health status in Aotearoa. Different approaches to improving M\u0101ori health and reducing inequalities will be critically examined.",
+  "title": "Introduction to Maori Health",
+  "desc": "Maori society, culture and values are explored. Historical processes are reviewed within the context of the Treaty of Waitangi. The course will examine how these factors underpin the basic determinants of health and shape contemporary Maori health status in Aotearoa. Different approaches to improving Maori health and reducing inequalities will be critically examined.",
   "faculties": ["Medical and Health Sciences"],
   "department": "Maori Health",
   "points": 15,
@@ -39623,7 +39634,7 @@
   "id": 2018,
   "name": "MBCHB401A",
   "title": "MBChB Part IV",
-  "desc": "During Part IV, students spend 33 weeks in eight clinical attachments: emergency medicine, anaesthesiology, musculoskeletal, surgery, general and specialty medicine, geriatrics and general practice. These attachments are complemented by four weeks of topic teaching on campus. There is also a compulsory M\u0101ori and Pacific Health module.",
+  "desc": "During Part IV, students spend 33 weeks in eight clinical attachments: emergency medicine, anaesthesiology, musculoskeletal, surgery, general and specialty medicine, geriatrics and general practice. These attachments are complemented by four weeks of topic teaching on campus. There is also a compulsory Maori and Pacific Health module.",
   "faculties": ["Medical and Health Sciences"],
   "department": "MBChB",
   "points": 15,
@@ -39634,7 +39645,7 @@
   "id": 2019,
   "name": "MBCHB401B",
   "title": "MBChB Part IV",
-  "desc": "During Part IV, students spend 33 weeks in eight clinical attachments: emergency medicine, anaesthesiology, musculoskeletal, surgery, general and specialty medicine, geriatrics and general practice. These attachments are complemented by four weeks of topic teaching on campus. There is also a compulsory M\u0101ori and Pacific Health module.",
+  "desc": "During Part IV, students spend 33 weeks in eight clinical attachments: emergency medicine, anaesthesiology, musculoskeletal, surgery, general and specialty medicine, geriatrics and general practice. These attachments are complemented by four weeks of topic teaching on campus. There is also a compulsory Maori and Pacific Health module.",
   "faculties": ["Medical and Health Sciences"],
   "department": "MBChB",
   "points": 15,
@@ -40602,7 +40613,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology, Sociology"
+      "faculties": ["Anthropology, Sociology"]
     }]
   }],
   "isActive": true
@@ -40661,7 +40672,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Anthropology, Sociology"
+      "faculties": ["Anthropology, Sociology"]
     }]
   }],
   "isActive": true
@@ -40743,7 +40754,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Ethics"
+      "faculties": ["Ethics"]
     }]
   },
   {
@@ -42426,7 +42437,7 @@
   "id": 2189,
   "name": "MUS343",
   "title": "Contemporary Art Music from Aotearoa New Zealand",
-  "desc": "An examination of contemporary art music from Aotearoa New Zealand, focusing on select composers and their works. Topics include the issue of cultural identity, the development of supporting organisations for the dissemination and performance of new music, the influence of New Zealand literature and art, of music from the Western classical canon, traditional M\u0101ori music (taonga p\u016boro), and music from Asia and the Pacific region.",
+  "desc": "An examination of contemporary art music from Aotearoa New Zealand, focusing on select composers and their works. Topics include the issue of cultural identity, the development of supporting organisations for the dissemination and performance of new music, the influence of New Zealand literature and art, of music from the Western classical canon, traditional Maori music (taonga p\u016boro), and music from Asia and the Pacific region.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Music",
   "points": 15,
@@ -42835,7 +42846,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Music",
+      "faculties": ["Music"],
       "stage": 2
     },
     {
@@ -44182,7 +44193,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Education",
+      "faculties": ["Education"],
       "stage": 1
     }]
   },
@@ -44293,7 +44304,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Education",
+      "faculties": ["Education"],
       "stage": 1
     }]
   },
@@ -44338,7 +44349,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 1,
@@ -44352,7 +44363,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy"
+        "faculties": ["Philosophy"]
       }]
     }]
   }],
@@ -44382,7 +44393,7 @@
   {
     "type": 0,
     "required": 30,
-    "faculties": ["Pacific Studies", "Anthropology", "M\u0101ori Studies", "Political Studies", "Politics and International Relations", "Sociology"],
+    "faculties": ["Pacific Studies", "Anthropology", "Maori Studies", "Political Studies", "Politics and International Relations", "Sociology"],
     "stage": 2,
     "flags":
     {}
@@ -44393,7 +44404,7 @@
   "id": 2302,
   "name": "PACIFIC302",
   "title": "Pacific Language Structures",
-  "desc": "An introduction to comparative analysis of the sound systems and grammatical structures of Cook Islands M\u0101ori, Samoan and Tongan. The course will focus on basic concepts in sound and spelling systems, morphology and syntax of the three Pacific languages.",
+  "desc": "An introduction to comparative analysis of the sound systems and grammatical structures of Cook Islands Maori, Samoan and Tongan. The course will focus on basic concepts in sound and spelling systems, morphology and syntax of the three Pacific languages.",
   "faculties": ["Arts"],
   "department": "Pacific Studies",
   "points": 30,
@@ -44436,7 +44447,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -44542,7 +44553,7 @@
   "id": 2310,
   "name": "PHARMACY105",
   "title": "Epidemiology for Pharmacy",
-  "desc": "Provides an overview of the determinants of health in a population and ways of improving and evaluating strategies for improving population health as well as developing an understanding of screening programmes, health promotion and immunisation. Models of the determinants of health will be discussed as will why M\u0101ori health is an important public health issue in New Zealand and how the Treaty of Waitangi can contribute to M\u0101ori health development.",
+  "desc": "Provides an overview of the determinants of health in a population and ways of improving and evaluating strategies for improving population health as well as developing an understanding of screening programmes, health promotion and immunisation. Models of the determinants of health will be discussed as will why Maori health is an important public health issue in New Zealand and how the Treaty of Waitangi can contribute to Maori health development.",
   "faculties": ["Medical and Health Services"],
   "department": "Pharmacy",
   "points": 15,
@@ -45172,7 +45183,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -45211,7 +45222,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 1,
@@ -45225,7 +45236,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy"
+        "faculties": ["Philosophy"]
       }]
     }]
   }],
@@ -45263,7 +45274,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 1,
@@ -45277,7 +45288,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy"
+        "faculties": ["Philosophy"]
       }]
     }]
   },
@@ -45311,7 +45322,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -45350,7 +45361,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -45397,7 +45408,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -45405,7 +45416,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Social Science for Public Health"
+      "faculties": ["Social Science for Public Health"]
     }]
   },
   {
@@ -45558,7 +45569,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -45590,7 +45601,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 1,
@@ -45606,7 +45617,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy"
+        "faculties": ["Philosophy"]
       }]
     }]
   }],
@@ -45731,7 +45742,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -45771,7 +45782,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -45810,7 +45821,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -45825,7 +45836,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     }]
@@ -45880,7 +45891,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     },
@@ -45897,7 +45908,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "Philosophy"
+        "faculties": ["Philosophy"]
       }]
     }]
   }],
@@ -45955,7 +45966,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 1,
@@ -45968,7 +45979,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy"
+        "faculties": ["Philosophy"]
       }],
       "papers": "EUROPEAN100"
     }]
@@ -46003,7 +46014,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -46042,7 +46053,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 1,
@@ -46075,7 +46086,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -46114,7 +46125,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -46129,7 +46140,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     }]
@@ -46295,7 +46306,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -46304,7 +46315,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Linguistics"
+      "faculties": ["Linguistics"]
     }]
   },
   {
@@ -46363,7 +46374,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     },
@@ -46379,7 +46390,7 @@
         "required": 30,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     }]
@@ -46408,7 +46419,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 0,
@@ -46469,7 +46480,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Philosophy"
+      "faculties": ["Philosophy"]
     },
     {
       "type": 1,
@@ -46484,7 +46495,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "Philosophy"
+        "faculties": ["Philosophy"]
       }]
     }]
   },
@@ -46538,7 +46549,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -46553,7 +46564,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     }]
@@ -46588,7 +46599,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -46603,7 +46614,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     }]
@@ -46638,7 +46649,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -46654,7 +46665,7 @@
         "flags":
         {},
         "stage": 2,
-        "faculties": "Philosophy"
+        "faculties": ["Philosophy"]
       }]
     }]
   },
@@ -46764,7 +46775,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -46779,7 +46790,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     }]
@@ -46814,7 +46825,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -46829,7 +46840,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     }]
@@ -46967,7 +46978,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -47039,8 +47050,8 @@
 {
   "id": 2446,
   "name": "PLANNING300",
-  "title": "M\u0101ori and Resource Management",
-  "desc": "Traditional and contemporary relationships between tangata whenua and their environment. M\u0101ori perspectives and roles on public policy, planning and development.",
+  "title": "Maori and Resource Management",
+  "desc": "Traditional and contemporary relationships between tangata whenua and their environment. Maori perspectives and roles on public policy, planning and development.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Planning",
   "points": 15,
@@ -47087,7 +47098,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -47128,7 +47139,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -47658,7 +47669,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Philosophy",
+      "faculties": ["Philosophy"],
       "stage": 2
     },
     {
@@ -47673,7 +47684,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     }]
@@ -47990,7 +48001,7 @@
   "id": 2481,
   "name": "POLITICS107G",
   "title": "New Zealand Politics",
-  "desc": "An introduction to understanding who governs New Zealand and in whose interests. Topics include national identity, institutions of government, leadership, voting and elections, the place of M\u0101ori within the political system, parties and political participation. The course draws on current research in NZ politics and provides knowledge that can be applied to a variety of careers, including law, business and public service.",
+  "desc": "An introduction to understanding who governs New Zealand and in whose interests. Topics include national identity, institutions of government, leadership, voting and elections, the place of Maori within the political system, parties and political participation. The course draws on current research in NZ politics and provides knowledge that can be applied to a variety of careers, including law, business and public service.",
   "faculties": ["Arts"],
   "department": "Politics and International Relations",
   "points": 15,
@@ -48086,7 +48097,7 @@
   "id": 2483,
   "name": "POLITICS113",
   "title": "Politics and the Media",
-  "desc": "Explores the political role of media in democratic theory and practice. Topics include: modern 'mediatisation', media freedom, news media and power, media history and the public sphere, the press and television, the online revolution, political economy of media, journalism and international conflict, New Zealand and M\u0101ori media, spin and PR, election campaign coverage, entertainment and politics.",
+  "desc": "Explores the political role of media in democratic theory and practice. Topics include: modern 'mediatisation', media freedom, news media and power, media history and the public sphere, the press and television, the online revolution, political economy of media, journalism and international conflict, New Zealand and Maori media, spin and PR, election campaign coverage, entertainment and politics.",
   "faculties": ["Arts"],
   "department": "Politics and International Relations",
   "points": 15,
@@ -48136,7 +48147,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -48170,7 +48181,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -48306,7 +48317,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -48314,7 +48325,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1,
       "complex": [
       {
@@ -48322,7 +48333,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy, Sociology, Media, Film and Television, History",
+        "faculties": ["Philosophy, Sociology, Media, Film and Television, History"],
         "stage": 1
       }]
     },
@@ -48338,7 +48349,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Political Studies, Politics and International Relations",
+        "faculties": ["Political Studies, Politics and International Relations"],
         "stage": 1
       }]
     }]
@@ -48373,7 +48384,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -48388,7 +48399,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Political Studies, Politics and International Relations",
+        "faculties": ["Political Studies, Politics and International Relations"],
         "stage": 1
       }]
     },
@@ -48397,7 +48408,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1,
       "complex": [
       {
@@ -48405,7 +48416,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy, Sociology",
+        "faculties": ["Philosophy, Sociology"],
         "stage": 1
       }]
     }]
@@ -48479,7 +48490,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -48487,7 +48498,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1,
       "complex": [
       {
@@ -48495,7 +48506,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "History",
+        "faculties": ["History"],
         "stage": 1
       }]
     },
@@ -48511,7 +48522,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Political Studies, Politics and International Relations",
+        "faculties": ["Political Studies, Politics and International Relations"],
         "stage": 1
       }]
     }]
@@ -48557,7 +48568,7 @@
   {
     "type": 0,
     "required": 30,
-    "faculties": ["Political Studies", "Politics and International Relations", "M\u0101ori StudiesSocial Science for Public Health"],
+    "faculties": ["Political Studies", "Politics and International Relations", "Maori StudiesSocial Science for Public Health"],
     "stage": 1,
     "flags":
     {}
@@ -48634,7 +48645,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -48715,8 +48726,8 @@
 {
   "id": 2503,
   "name": "POLITICS229",
-  "title": "Mana M\u0101ori Motuhake / M\u0101ori Politics and Public Policy",
-  "desc": "An introduction to M\u0101ori politics. Topics include the Treaty of Waitangi, the politicisation of identity, sovereignty and self-determination, representation, globalisation and the M\u0101ori economy, M\u0101ori development and M\u0101ori media. Some contemporary and comparative indigenous policy issues will be discussed.",
+  "title": "Mana Maori Motuhake / Maori Politics and Public Policy",
+  "desc": "An introduction to Maori politics. Topics include the Treaty of Waitangi, the politicisation of identity, sovereignty and self-determination, representation, globalisation and the Maori economy, Maori development and Maori media. Some contemporary and comparative indigenous policy issues will be discussed.",
   "faculties": ["Arts"],
   "department": "Politics and International Relations",
   "points": 15,
@@ -48733,7 +48744,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations, M\u0101ori Studies"
+      "faculties": ["Political Studies, Politics and International Relations, Maori Studies"]
     },
     {
       "type": 0,
@@ -48765,7 +48776,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations"
+      "faculties": ["Political Studies, Politics and International Relations"]
     },
     {
       "type": 1,
@@ -48810,14 +48821,14 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Political Studies, Politics and International Relations"
+      "faculties": ["Political Studies, Politics and International Relations"]
     },
     {
       "type": 0,
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1,
       "complex": [
       {
@@ -48825,7 +48836,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy, Sociology, Media, Film and Television, History",
+        "faculties": ["Philosophy, Sociology, Media, Film and Television, History"],
         "stage": 1
       }]
     },
@@ -48841,7 +48852,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Political Studies, Politics and International Relations",
+        "faculties": ["Political Studies, Politics and International Relations"],
         "stage": 1
       }]
     }]
@@ -48876,7 +48887,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -48911,7 +48922,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Political Studies, Politics and International Relations"
+      "faculties": ["Political Studies, Politics and International Relations"]
     },
     {
       "type": 1,
@@ -48998,7 +49009,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -49006,7 +49017,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1,
       "complex": [
       {
@@ -49014,7 +49025,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 1
       }]
     }]
@@ -49107,7 +49118,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -49122,7 +49133,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Political Studies, Politics and International Relations",
+        "faculties": ["Political Studies, Politics and International Relations"],
         "stage": 1
       }]
     }]
@@ -49168,7 +49179,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2
     },
     {
@@ -49176,7 +49187,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2,
       "complex": [
       {
@@ -49184,7 +49195,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "History, Philosophy",
+        "faculties": ["History, Philosophy"],
         "stage": 2
       }]
     }]
@@ -49219,7 +49230,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations, Asian Studies, History",
+      "faculties": ["Political Studies, Politics and International Relations, Asian Studies, History"],
       "stage": 1
     },
     {
@@ -49280,7 +49291,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -49288,7 +49299,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1,
       "complex": [
       {
@@ -49296,7 +49307,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Asian Studies",
+        "faculties": ["Asian Studies"],
         "stage": 1
       }]
     }]
@@ -49409,7 +49420,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2
     },
     {
@@ -49424,7 +49435,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Political Studies, Politics and International Relations",
+        "faculties": ["Political Studies, Politics and International Relations"],
         "stage": 2
       }]
     }]
@@ -49486,7 +49497,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2
     },
     {
@@ -49494,7 +49505,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2,
       "complex": [
       {
@@ -49502,7 +49513,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Economics, History, Philosophy, M\u0101ori Studies, Sociology",
+        "faculties": ["Economics, History, Philosophy, Maori Studies, Sociology"],
         "stage": 2
       }]
     }]
@@ -49564,7 +49575,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2
     },
     {
@@ -49572,7 +49583,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2,
       "complex": [
       {
@@ -49580,7 +49591,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "Philosophy",
+        "faculties": ["Philosophy"],
         "stage": 2
       }]
     }]
@@ -49664,7 +49675,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2
     },
     {
@@ -49672,7 +49683,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2,
       "complex": [
       {
@@ -49734,7 +49745,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2
     },
     {
@@ -49768,7 +49779,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2
     },
     {
@@ -49876,7 +49887,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2
     },
     {
@@ -49884,7 +49895,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 2,
       "complex": [
       {
@@ -49892,7 +49903,7 @@
         "required": 15,
         "flags":
         {},
-        "faculties": "History, Philosophy",
+        "faculties": ["History, Philosophy"],
         "stage": 2
       }]
     }]
@@ -50054,7 +50065,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Political Studies, Politics and International Relations",
+      "faculties": ["Political Studies, Politics and International Relations"],
       "stage": 1
     },
     {
@@ -50062,7 +50073,7 @@
       "required": 60,
       "flags":
       {},
-      "faculties": "Arts"
+      "faculties": ["Arts"]
     }]
   }],
   "isActive": false
@@ -50632,7 +50643,7 @@
   "id": 2573,
   "name": "POPLHLTH305",
   "title": "Community Nutrition",
-  "desc": "Provides students with an understanding of the nutritional practices and requirements in different sectors of the New Zealand population. Includes: socio-economic factors related to dietary habits; the health impacts of M\u0101ori and Pacific dietary habits; the relationship between diet, health, malnutrition and nutrition-related diseases; and the importance of nutrition education programmes.",
+  "desc": "Provides students with an understanding of the nutritional practices and requirements in different sectors of the New Zealand population. Includes: socio-economic factors related to dietary habits; the health impacts of Maori and Pacific dietary habits; the relationship between diet, health, malnutrition and nutrition-related diseases; and the importance of nutrition education programmes.",
   "faculties": ["Medical and Health Services"],
   "department": "Population Health",
   "points": 15,
@@ -51042,7 +51053,7 @@
 {
   "id": 2605,
   "name": "PROPERTY382",
-  "title": "M\u0101ori Land Issues",
+  "title": "Maori Land Issues",
   "desc": "History of land conflicts in New Zealand, Waitangi Tribunal process, and development of portfolio management strategies.",
   "faculties": ["Business and Economics"],
   "department": "Property",
@@ -51221,7 +51232,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Psychology"
+      "faculties": ["Psychology"]
     },
     {
       "type": 1,
@@ -51254,7 +51265,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Psychology",
+      "faculties": ["Psychology"],
       "stage": 1
     },
     {
@@ -51477,7 +51488,7 @@
       "required": 45,
       "flags":
       {},
-      "faculties": "Psychology",
+      "faculties": ["Psychology"],
       "stage": 2,
       "complex": [
       {
@@ -51493,7 +51504,7 @@
       "required": 45,
       "flags":
       {},
-      "faculties": "Biological Sciences",
+      "faculties": ["Biological Sciences"],
       "stage": 2
     }]
   }],
@@ -51536,7 +51547,7 @@
   "id": 2625,
   "name": "PSYCH310",
   "title": "Introduction to Clinical Psychology",
-  "desc": "Describes and evaluates psychological approaches to the assessment and treatment of those mental health problems, in adults and children, most commonly encountered by clinical psychologists. Consideration is given to work in mental health, corrections, child protection and neuropsychology rehabilitation. Issues relevant to M\u0101ori mental health, gender, cross-cultural work and prevention are included.",
+  "desc": "Describes and evaluates psychological approaches to the assessment and treatment of those mental health problems, in adults and children, most commonly encountered by clinical psychologists. Consideration is given to work in mental health, corrections, child protection and neuropsychology rehabilitation. Issues relevant to Maori mental health, gender, cross-cultural work and prevention are included.",
   "faculties": ["Science"],
   "department": "Psychology",
   "points": 15,
@@ -51654,7 +51665,7 @@
       "required": 45,
       "flags":
       {},
-      "faculties": "Psychology",
+      "faculties": ["Psychology"],
       "stage": 2,
       "complex": [
       {
@@ -51670,7 +51681,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Gender Studies",
+      "faculties": ["Gender Studies"],
       "stage": 2
     }]
   }],
@@ -51708,7 +51719,7 @@
       "required": 45,
       "flags":
       {},
-      "faculties": "Psychology",
+      "faculties": ["Psychology"],
       "stage": 2
     },
     {
@@ -52544,7 +52555,7 @@
   "id": 2688,
   "name": "SOCHLTH313",
   "title": "Mental Health in Social Practice",
-  "desc": "An exploration of the dynamics of social practice with service users and their wh\u0101nau/family with mental health issues. This course includes an examination of mental health policy and broad approaches to care and recovery. An overview knowledge of the major mental health illnesses and associated recovery strategies will be provided. The impact of mental health issues in M\u0101ori, Pasifika, people with disabilities, young people and refugee and migrant communities will be examined.",
+  "desc": "An exploration of the dynamics of social practice with service users and their wh\u0101nau/family with mental health issues. This course includes an examination of mental health policy and broad approaches to care and recovery. An overview knowledge of the major mental health illnesses and associated recovery strategies will be provided. The impact of mental health issues in Maori, Pasifika, people with disabilities, young people and refugee and migrant communities will be examined.",
   "faculties": ["Education and Social Work"],
   "department": "Social Work Health Practice",
   "points": 15,
@@ -52638,7 +52649,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2
     },
     {
@@ -52646,7 +52657,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2,
       "complex": [
       {
@@ -52682,7 +52693,7 @@
       "flags":
       {},
       "stage": 2,
-      "faculties": "Sociology"
+      "faculties": ["Sociology"]
     },
     {
       "type": 1,
@@ -52837,7 +52848,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2
     },
     {
@@ -52845,7 +52856,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2,
       "complex": [
       {
@@ -52900,7 +52911,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 1
     },
     {
@@ -52934,7 +52945,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 1
     },
     {
@@ -52942,7 +52953,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Comparative Literature"
+      "faculties": ["Comparative Literature"]
     },
     {
       "type": 1,
@@ -52995,7 +53006,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2
     },
     {
@@ -53029,7 +53040,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 1
     },
     {
@@ -53038,7 +53049,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Social Science for Public Health"
+      "faculties": ["Social Science for Public Health"]
     },
     {
       "type": 0,
@@ -53070,7 +53081,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 1
     },
     {
@@ -53078,7 +53089,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Gender Studies",
+      "faculties": ["Gender Studies"],
       "stage": 1
     }]
   }],
@@ -53105,7 +53116,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 1
     },
     {
@@ -53114,7 +53125,7 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "complex": [
       {
         "type": 1,
@@ -53150,7 +53161,7 @@
       {
         "noMore": false
       },
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 1
     },
     {
@@ -53158,7 +53169,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 1,
       "complex": [
       {
@@ -53194,14 +53205,14 @@
       "flags":
       {},
       "stage": 1,
-      "faculties": "Sociology"
+      "faculties": ["Sociology"]
     },
     {
       "type": 0,
       "required": 30,
       "flags":
       {},
-      "faculties": "Social Science for Public Health",
+      "faculties": ["Social Science for Public Health"],
       "stage": 1
     },
     {
@@ -53294,7 +53305,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 1
     },
     {
@@ -53302,7 +53313,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Gender Studies",
+      "faculties": ["Gender Studies"],
       "stage": 1
     }]
   }],
@@ -53349,7 +53360,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 1
     },
     {
@@ -53446,7 +53457,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 1
     },
     {
@@ -53599,7 +53610,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2
     },
     {
@@ -53700,7 +53711,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology, Law",
+      "faculties": ["Sociology, Law"],
       "stage": 2
     },
     {
@@ -53708,7 +53719,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2,
       "complex": [
       {
@@ -53743,7 +53754,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2
     },
     {
@@ -53857,7 +53868,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2
     },
     {
@@ -53891,7 +53902,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2
     },
     {
@@ -53925,7 +53936,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Sociology",
+      "faculties": ["Sociology"],
       "stage": 2
     },
     {
@@ -53995,7 +54006,7 @@
   "id": 2764,
   "name": "SOCWORK114",
   "title": "Treaty of Waitangi in Human Services",
-  "desc": "Examines the Treaty of Waitangi and its significance in regard to historical events, trends and theories of social, economic and political change in Aotearoa New Zealand society. Explores the implications of the Treaty of Waitangi in social service delivery practice and past, present and future significance in M\u0101ori development.",
+  "desc": "Examines the Treaty of Waitangi and its significance in regard to historical events, trends and theories of social, economic and political change in Aotearoa New Zealand society. Explores the implications of the Treaty of Waitangi in social service delivery practice and past, present and future significance in Maori development.",
   "faculties": ["Education and Social Work"],
   "department": "Social Work",
   "points": 15,
@@ -54201,7 +54212,7 @@
       "required": 30,
       "flags":
       {},
-      "faculties": "Health Social Sciences, Social Science for Public Health",
+      "faculties": ["Health Social Sciences, Social Science for Public Health"],
       "stage": 1
     },
     {
@@ -56653,7 +56664,7 @@
       "required": 15,
       "flags":
       {},
-      "faculties": "Statistics",
+      "faculties": ["Statistics"],
       "stage": 2
     },
     {
@@ -58101,8 +58112,8 @@
 {
   "id": 3009,
   "name": "URBPLAN305",
-  "title": "M\u0101ori Urban Planning Issues",
-  "desc": "M\u0101ori attitudes, values and aspirations in urban planning with an understanding of the Treaty of Waitangi; post Treaty settlements.",
+  "title": "Maori Urban Planning Issues",
+  "desc": "Maori attitudes, values and aspirations in urban planning with an understanding of the Treaty of Waitangi; post Treaty settlements.",
   "faculties": ["Creative Arts and Industries"],
   "department": "Urban Planning",
   "points": 15,

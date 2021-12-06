@@ -48,6 +48,7 @@ export class AddCourseContainer {
   private searchTerm: string = '';
   private planned: ICourse[] = [];
   private beforeSemester: ICourse[];
+  private currentSemester: ICourse[];
   private shown: ICourse[] = [];
   private filterParams;
   private modules;
@@ -90,6 +91,7 @@ export class AddCourseContainer {
       departments: this.mapToArray(this.route.snapshot.queryParams.departments),
       faculties: facultyFilter,
       general: this.orNull(this.route.snapshot.queryParams.general),
+      corequesite: this.orNull(this.route.snapshot.queryParams.corequesite),
       hidePlanned: this.orNull(this.route.snapshot.queryParams.hidePlanned),
       ineligible: this.orNull(this.route.snapshot.queryParams.ineligible),
       searchTerm: this.orNull(this.route.snapshot.queryParams.searchTerm),
@@ -208,9 +210,13 @@ export class AddCourseContainer {
           course.period < this.period && course.year === this.year ||
           course.year < this.year
         );
+        this.currentSemester = this.planned.filter((course: ICourse) =>
+          course.period === this.period && course.year === this.year
+        );
+      // console.log("before: ", this.beforeSemester);
+      // console.log("current: ", this.currentSemester);
         this.updateView();
-      }
-      ),
+      }),
       this.store.changes.pluck('messages').subscribe((messages: Message[]) => { this.messages = messages; }),
       this.courseEventService.courseRemoved
       .subscribe((event) => this.coursesService.deselectCourse(event.courseId)),
@@ -228,10 +234,19 @@ export class AddCourseContainer {
   }
 
   private checkRequirements(course: ICourse): string[] {
+    console.log("I'm firing -1 ", this.currentSemester.length)
     if (course && course.requirements !== undefined) {
+      if (this.currentSemester.length > 0) {
+        console.log("I'm firing ", this.currentSemester.length)
+        return course.requirements.filter((requirement: IRequirement) =>
+        !this.requirementService.requirementFilled(requirement, this.currentSemester))
+          .map((requirement: IRequirement) => this.requirementService.toString(requirement, false));
+      } else {
+        console.log("I'm firing 2 ", this.currentSemester.length)
       return course.requirements.filter((requirement: IRequirement) =>
         !this.requirementService.requirementFilled(requirement, this.beforeSemester))
           .map((requirement: IRequirement) => this.requirementService.toString(requirement, false));
+      }
     } else {
       return [];
     }
@@ -362,6 +377,7 @@ export class AddCourseContainer {
       departments: this.filterParams.departments.length !== 0 ? this.filterParams.departments.toString() : null,
       faculties: this.filterParams.faculties.length !== 0 ? this.filterParams.faculties.toString() : null,
       general: this.orNull(this.filterParams.general),
+      corequesite: this.orNull(this.filterParams.isCorequesite),
       hidePlanned: this.orNull(this.filterParams.hidePlanned),
       ineligible: this.orNull(this.filterParams.ineligible),
       period: this.period,
