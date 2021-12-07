@@ -48,7 +48,9 @@
     "required": 0,
     "papersExcluded": ["ACADENG93F", "ACADENG201", "ACADENG210", "ENGWRIT101", "ESOL201", "ESOL210"],
     "flags":
-    {}
+    {
+      "general": false
+    }
   }],
   "isActive": true
 },
@@ -62,6 +64,12 @@
   "points": 15,
   "stage": 1,
   "periods": [1, 2],
+  "requirements": [
+    {
+      "flags":
+      {}
+    }
+  ],
   "isActive": false
 },
 {
@@ -176,7 +184,6 @@
       "isCorequesite": true
     }
   }
-
 ],
   "isActive": true
 },
