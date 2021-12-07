@@ -97,7 +97,7 @@ export class RequirementService {
         filter: (course: ICourse) => !requirement.departmentsExcluded.includes(course.department)},
       {check: this.checkFlag(requirement, 'general'),
         filter: (course: ICourse) => course.name.toUpperCase().substr(-1) === 'G'}, // -1 takes the last character
-      {check: requirement.stage,
+       {check: requirement.stage,
         filter: (course: ICourse) => requirement.stage === course.stage},
       {check: requirement.stages,
         filter: (course: ICourse) => requirement.stages.includes(course.stage)},
@@ -109,6 +109,7 @@ export class RequirementService {
 
     // apply each of the filters in 'filters'
     filters.forEach((filter) => { filtered = filtered.filter(filter.filter)});
+    // console.log(filtered)
     return filtered;
   }
 
@@ -131,15 +132,18 @@ export class RequirementService {
       if (requirement.type === RequirementType.Points) {
         mapped = filtered.map((course: ICourse) => course.points);
       } else if (requirement.type === RequirementType.Papers) {
-        if (this.checkFlag(requirement, 'isCorequesite')) {
-          console.log("Firing Check Flag")
-          mapped = filtered.map((course: ICourse) => 1);
-        } else {
         mapped = filtered.map((course: ICourse) => 1);
-        }
       } else {
-        console.log('ERROR REQUIREMENT HAS TYPE ' + requirement.type);
+        //console.log('ERROR REQUIREMENT HAS TYPE ' + requirement.type);
       }
+
+      if (this.checkFlag(requirement, 'isCorequesite')) {
+        
+        // console.log("Found: ", requirement.required)
+         mapped = filtered.map((course: ICourse) => 1);
+         //console.log("Found: ", mapped)
+       }
+
       if (mapped != undefined || null) { // Make sure not undefined before assigning
       const total = mapped.reduce((num1: number, num2: number) => num1 + num2, 0);
       return total > requirement.required ? requirement.required : total;
@@ -257,7 +261,7 @@ export class RequirementService {
     return str;
   }
 
-  private checkFlag(requirement: IRequirement, flag: string) {
+  public checkFlag(requirement: IRequirement, flag: string) {
     return requirement.flags !== undefined && requirement.flags[flag];
     // .map((str: string) => str.toLowerCase())
     // .includes(flag.toLowerCase());

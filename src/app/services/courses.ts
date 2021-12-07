@@ -32,6 +32,7 @@ export class CourseService {
   public courseCounter = 0; // need to store this
   private errors: Message[];
   public email: string = "";
+  private findIfCorequesite = false;
 
   constructor(
     private errorsChanged: ErrorsChangedEvent,
@@ -216,17 +217,26 @@ export class CourseService {
 
   private updateErrors() {
     this.errors = [];
+    let courseErrors;
+    let courseErrorsCoreq;
+
     this.planned.forEach((course: ICourse) => {
       if (course.requirements !== undefined && course.requirements !== null) {
-        // To find which courses are ineligible, flag all courses that have at least one unfilled requirement
-        let courseErrors = course.requirements.filter((requirement: IRequirement) =>
-            !this.requirementService.requirementFilled(requirement,
-              this.beforeSemester(course)));
-        //this.errors.push({'course': course.title, 'errors': courseErrors});
-        this.errors = this.errors.concat(courseErrors
-          .map((unfilled: IRequirement) => this.requirementService.toString(unfilled, false))
-          .map((unfilled: string) => new Message(course.name, course.name + ": " + unfilled, MessageStatus.Error)));
+      courseErrors = course.requirements.filter((requirement: IRequirement) =>
+      {
+        if (this.requirementService.checkFlag(requirement, "isCorequesite")) {
+          return !this.requirementService.requirementFilled(requirement,this.currentSemester(course))
+        } else {
+          return !this.requirementService.requirementFilled(requirement,this.beforeSemester(course))
+        }
+      });
+      this.errors = this.errors.concat(courseErrors
+        .map((unfilled: IRequirement) => this.requirementService.toString(unfilled, false))
+        .map((unfilled: string) => new Message(course.name, course.name + ": " + unfilled, MessageStatus.Error)));
         course.isError = courseErrors.length > 0;
+  
+
+        //this.errors.push({'course': course.title, 'errors': courseErrors});
       } else {
         course.isError = false;
       }
@@ -240,6 +250,13 @@ export class CourseService {
       course.period < beforeCourse.period &&
       course.year === beforeCourse.year ||
       course.year < beforeCourse.year
+    );
+  }
+
+  private currentSemester(currentCourse) {
+    return this.planned.filter((course: ICourse) =>
+      course.period === currentCourse.period &&
+      course.year === currentCourse.year
     );
   }
   
