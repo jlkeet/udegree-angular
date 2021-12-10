@@ -25,16 +25,33 @@
     </div>
   </div>
 
-  <mat-toolbar *ngIf="majors" class="plain">
+  <mat-toolbar *ngIf="majors && !pathways; else pathwaySelected" class="plain">
     <span>
       {{majors.name}}
+    </span>
+  </mat-toolbar>
+
+  <div *ngIf="majors && !pathways" class="progress-panel-bar-container flex flex-col flex-start">
+    <div class="progress-bar-group">
+      <progress-bar-multi-container
+         *ngFor="let requirement of majorRequirements"
+         [requirement]="requirement"
+         (click)="selectRequirements(requirement)"
+         [courses]="courses">
+      </progress-bar-multi-container>
+    </div>
+  </div>
+
+  <mat-toolbar *ngIf="pathways" #pathwaySelected class="plain">
+    <span>
+      {{majors.name}}: {{pathways.name}} Pathway
     </span>
   </mat-toolbar>
 
   <div class="progress-panel-bar-container flex flex-col flex-start">
     <div class="progress-bar-group">
       <progress-bar-multi-container
-         *ngFor="let requirement of majorRequirements"
+         *ngFor="let requirement of pathwayRequirements"
          [requirement]="requirement"
          (click)="selectRequirements(requirement)"
          [courses]="courses">

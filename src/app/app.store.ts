@@ -18,6 +18,7 @@ export interface State {
   conjoint: any;
   majors: any[];
   secondMajors: any[];
+  pathways: any[];
   majorSelected: boolean;
   minor: any;
   messages: Message[];
@@ -32,6 +33,7 @@ const defaultState = {
   majorSelected: false,
   majors: [null, null],
   secondMajors: [null, null],
+  pathways: [null, null],
   messages: [],
   minor: null,
   page: false,

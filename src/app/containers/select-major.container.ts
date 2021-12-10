@@ -43,6 +43,7 @@ export class SelectMajorContainer {
   private conjoint;
   private majors;
   private secondMajors;
+  private pathways;
   private allowsMinor: boolean = false;
   private allowsDoubleMajor: boolean = false;
   private sub;
@@ -60,6 +61,7 @@ export class SelectMajorContainer {
     this.majors = this.storeHelper.current('majors');
     this.conjoint = this.storeHelper.current('conjoint');
     this.secondMajors = this.storeHelper.current('secondMajors')
+    this.pathways = this.storeHelper.current('pathways')
     this.allowsDoubleMajor = this.facultyService.allowsDoubleMajor(this.faculty);
     this.allowsMinor = this.facultyService.allowsMinor(this.faculty);
     this.departments = this.departmentService.departmentsInFaculty(this.faculty);

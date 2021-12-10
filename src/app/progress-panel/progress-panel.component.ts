@@ -55,12 +55,14 @@ export class ProgressPanel {
   private conjointRequirements: IRequirement[];
   private majorRequirements: IRequirement[];
   private secondMajorRequirements: IRequirement[];
+  private pathwayRequirements: IRequirement[];
   private gpa;
 
   private faculty;
   private conjoint;
   private majors;
   private secondMajors;
+  private pathways;
   private minor: any;
   private subs;
 
@@ -70,6 +72,7 @@ export class ProgressPanel {
   private conjointId;
   private majorId;
   private majorSecId;
+  private pathwayId;
   private email;
 
   constructor(
@@ -97,6 +100,11 @@ export class ProgressPanel {
 
       this.store.changes.pluck("majors").subscribe((majors) => {
         this.majors = majors;
+        this.updateRequirementList();
+      }),
+
+      this.store.changes.pluck("pathways").subscribe((pathways) => {
+        this.pathways = pathways;
         this.updateRequirementList();
       }),
 
@@ -166,6 +174,10 @@ export class ProgressPanel {
     this.majorRequirements = []
       .concat(this.majors ? this.majors.requirements : []);
 
+    this.pathwayRequirements = []
+      .concat(this.pathways ? this.pathways.requirements : []);
+      // console.log(this.pathways)
+
 
     this.secondMajorRequirements = [].concat(
       this.secondMajors ? this.secondMajors.requirements : []
@@ -204,6 +216,7 @@ export class ProgressPanel {
     this.getDegIDforDel();
     this.getConIDforDel();
     this.getMajIDforDel();
+    this.getPathIDforDel();
     this.getMajSecIDforDel();
    // this.onPageChange.emit();
   }
@@ -254,7 +267,12 @@ export class ProgressPanel {
         ? requirement.conjoints.length !== 0
           ? requirement.conjoints.toString()
           : null
-        : null,  
+        : null,
+      pathways: requirement.pathways
+      ? requirement.pathways.length !== 0
+       ? requirement.pathways.toString()
+        : null
+          : null,
       general:
         requirement.flags && requirement.flags.includes("general")
           ? true
@@ -347,7 +365,7 @@ export class ProgressPanel {
       });
   }
 
-  private getMajIDforDel() {
+  public getMajIDforDel() {
     this.db
       .collection("users")
       .doc(this.email)
@@ -367,6 +385,32 @@ export class ProgressPanel {
               .doc(this.email)
               .collection("major")
               .doc(this.majorId)
+              .delete();
+          });
+        }
+      });
+  }
+
+  public getPathIDforDel() {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("pathway")
+      .get()
+      .toPromise()
+      .then((sub) => {
+        if (sub.docs.length > 0) {
+          // Check to see if documents exist in the courses collection
+          sub.forEach((element) => {
+            // Loop to get all the ids of the docs
+            this.pathwayId = element.id;
+            this.storeHelper.update("pathways", null)
+            this.onPageChange.emit();
+            this.db
+              .collection("users")
+              .doc(this.email)
+              .collection("pathway")
+              .doc(this.pathwayId)
               .delete();
           });
         }
