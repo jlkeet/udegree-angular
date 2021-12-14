@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { ICourse } from '../interfaces';
 
 @Injectable()
 export class AddCourseService {

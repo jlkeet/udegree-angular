@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { AuthService } from "../core/auth.service";
-import { DepartmentService, FacultyService, ConjointService, PathwayService, StoreHelper } from "../services";
+import { DepartmentService, FacultyService, ConjointService, PathwayService, StoreHelper, ModuleService } from "../services";
 import { MatFormFieldControl, MatListOption } from "@angular/material";
 import { ProgressPanel } from "../progress-panel";
-
 
 @Component({
   selector: "degree-select",
@@ -70,9 +69,13 @@ export class DegreeSelection {
   private majors = [];
   private pathways = [];
   private secondMajors = [];
+  public modules = [];
+  public secondModules = [];
   private degree = null;
-  private currentMajors = [];
+  public currentMajors = [];
   private currentPathways = [];
+  public currentModules = [];
+  public currentSecondModules = [];
   private currentSecondMajors = [];
   private doubleMajorAllowed;
   public email: string = "";
@@ -81,6 +84,7 @@ export class DegreeSelection {
   public secondMajorId: string = "";
   public conjointId: string = "";
   public pathwayId: string = "";
+  public moduleId: string = "";
   public facultyForEmail: string = "";
 
 
@@ -96,6 +100,8 @@ export class DegreeSelection {
     private authService: AuthService,
     private departmentService: DepartmentService,
     private pathwayService: PathwayService,
+    private moduleService: ModuleService,
+
     //private progressPanelComponent: ProgressPanel,
   ) {
     this.authService.afAuth.authState.subscribe(async (auth) => {
@@ -160,6 +166,18 @@ export class DegreeSelection {
           } else {
           }
         });
+        this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("modules")
+        .get()
+        .toPromise()
+        .then((isItSaved) => {
+          if (isItSaved !== undefined) {
+            this.getModID();
+          } else {
+          }
+        });
 
       this.degreeType = storeHelper.current("degreeType");
       if (this.degreeType === undefined) {
@@ -190,7 +208,15 @@ export class DegreeSelection {
         this.currentPathways = [storeHelper.current("pathways"), null];
       }
 
+      if (this.currentModules === null) {
+      } else {
+        this.currentModules = [storeHelper.current("modules"), null];
+      }
       
+      if (this.currentSecondModules === null) {
+      } else {
+        this.currentSecondModules = [storeHelper.current("secondModules"), null];
+      }
 
       this.faculties = facultyService.getFaculties().map((faculty) => {
         return { value: faculty, view: faculty.name };
@@ -206,6 +232,10 @@ export class DegreeSelection {
 
       this.conjoints = conjointService.getConjoints().map((conjoint) => {
         return { value: conjoint, view: conjoint.name };
+      });
+
+      this.modules = moduleService.getModules().map((modules) => {
+        return { value: modules, view: modules.name };
       });
 
       // this.secondMajors = departmentService
@@ -238,7 +268,7 @@ export class DegreeSelection {
     this.blurb = "";
   }
 
-  private populateMajors() {
+  public populateMajors() {
   if (this.currentConjoint[0] === undefined) {  
     this.currentConjoint[0] = null;
   }
@@ -266,6 +296,14 @@ export class DegreeSelection {
         .getPathways()
         .map((path) => {
           return { value: path, view: path.name };
+        });
+    }
+
+    if (this.currentModules[0] !== null) {
+      this.modules[0] = this.moduleService
+        .getModules()
+        .map((module) => {
+          return { value: module, view: module.name };
         });
     }
   }
@@ -319,6 +357,16 @@ export class DegreeSelection {
     this.changeBlurb(this.currentPathways[which].blurb);
     this.storeHelper.update("pathways", this.currentPathways[0]);
     this.setPathway(this.email, this.currentPathways[0]);
+  }
+
+  private changeModule(which, event) {
+    const moduleNames = this.currentModules.map((module) =>
+      module ? module.name : null
+    );
+
+    this.changeBlurb(this.currentModules[which].blurb);
+    this.storeHelper.update("modules", this.currentModules[0]);
+    this.setModule(this.email, this.currentModules[0]);
    // this.progressPanelComponent.getMajIDforDel();
   }
 
@@ -331,7 +379,7 @@ export class DegreeSelection {
     this.setSecondMajor(this.email, this.currentSecondMajors[0]);
   }
 
-  private changeBlurb(blurb: string) {
+  public changeBlurb(blurb: string) {
     if (blurb) {
       this.blurb = blurb;
     } else {
@@ -385,6 +433,15 @@ export class DegreeSelection {
       .collection("pathway")
       .doc("pathway")
       .set(pathway);
+  }
+
+  public setModule(email, module) {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("module")
+      .doc("module")
+      .set(module);
   }
 
   private setSecondMajor(email, secondMajor) {
@@ -472,6 +529,25 @@ export class DegreeSelection {
       });
   }
 
+  private getModID() {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("module")
+      .get()
+      .toPromise()
+      .then((sub) => {
+        if (sub.docs.length > 0) {
+          // Check to see if documents exist in the courses collection
+          sub.forEach((element) => {
+            // Loop to get all the ids of the docs
+            this.moduleId = element.id;
+            this.loadModuleFromDb(element.id);
+          });
+        }
+      });
+  }
+
   private getSecondMajID() {
     this.db
       .collection("users")
@@ -552,6 +628,21 @@ export class DegreeSelection {
     });
   }
 
+  private getModuleFromDb(moduleId) {
+    return new Promise<any>((resolve) => {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("module")
+        .doc(moduleId)
+        .get()
+        .toPromise()
+        .then((resultModule) => {
+          resolve(resultModule.data());
+        });
+    });
+  }
+
   private getSecondMajorFromDb(majSecId) {
     return new Promise<any>((resolve) => {
       this.db
@@ -609,6 +700,20 @@ export class DegreeSelection {
       });
       this.getPathwayFromDb(pathId).then((res) => {
         this.storeHelper.update("pathways", res), this.pageEmitterForDegLoad()
+      });
+    });
+  }
+
+  private loadModuleFromDb(moduleId) {
+    this.getModuleFromDb(moduleId).then(async (copy) => {
+      Object.assign({
+        blurb: copy[0],
+        courses: copy[1],
+        name: copy[2],
+        requirements: copy[3],
+      });
+      this.getModuleFromDb(moduleId).then((res) => {
+        this.storeHelper.update("modules", res), this.pageEmitterForDegLoad()
       });
     });
   }

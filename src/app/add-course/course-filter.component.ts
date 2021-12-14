@@ -3,9 +3,7 @@ import {
   EventEmitter,
   Injectable,
   Input,
-  OnChanges,
   Output,
-  SimpleChange
 } from '@angular/core';
 import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';

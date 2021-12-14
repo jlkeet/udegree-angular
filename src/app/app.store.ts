@@ -19,6 +19,8 @@ export interface State {
   majors: any[];
   secondMajors: any[];
   pathways: any[];
+  modules: any[];
+  secondModules: any[];
   majorSelected: boolean;
   minor: any;
   messages: Message[];
@@ -34,6 +36,8 @@ const defaultState = {
   majors: [null, null],
   secondMajors: [null, null],
   pathways: [null, null],
+  modules: [null, null],
+  secondModules: [null, null],
   messages: [],
   minor: null,
   page: false,

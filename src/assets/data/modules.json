@@ -1,21 +1,61 @@
 [
-	{
-		"name": "Coding and Logic",
-		"courses": [
-			"COMPSCI101",
-			"PHIL101",
-			"COMPSCI225",
-			"PHIL216",
-			"PHIL222",
-			"ACADENG100"
-		],
-		"compulsary": [
-			"COMPSCI101",
-			"ACADENG101",
-			"PHIL101"
-		],
-		"requirements": [
-			{"type":1, "required":3,"papers": ["COMPSCI101", "ACADENG101", "PHIL101"]}
-		]
-	}
+  { 
+  "name": "Science in Society",
+  "blurb": "Communicate Science ideas to the masses", 
+  "courses": [
+      "SCIGEN101",
+      "SCIGEN201",
+      "SCIGEN301"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "SCIGEN101",
+          "SCIGEN201",
+          "SCIGEN301"
+        ]
+      }
+    ]
+  },
+  { 
+    "name": "Data Analysis",
+    "blurb": "Practical use of statistics with data", 
+    "courses": [
+        "STATS101",
+        "STATS108",
+        "STATS201",
+        "STATS208",
+        "STATS301",
+        "STATS330",
+        "STATS340"
+      ],
+      "requirements": [
+        {
+          "type": 0,
+          "required": 15,
+          "papers": [
+            "STATS101",
+            "STATS108"
+          ]
+        },        {
+          "type": 0,
+          "required": 15,
+          "papers": [
+            "STATS201",
+            "STATS208"
+          ]
+        },
+        {
+          "type": 0,
+          "required": 15,
+          "papers": [
+            "STATS301",
+            "STATS330",
+            "STATS340"
+          ]
+        }
+      ]
+    }
 ]
