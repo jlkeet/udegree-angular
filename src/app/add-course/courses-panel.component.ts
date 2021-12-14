@@ -2,9 +2,7 @@ import { Component, EventEmitter, Injectable, Input, Output, SimpleChanges } fro
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ICourse } from '../interfaces';
-import { CourseStatus, DepartmentCoursesModel } from '../models';
 import { CourseService, StoreHelper } from '../services';
-import { CourseCard } from './course-card.component';
 
 @Component({
   selector: 'add-course-panel',

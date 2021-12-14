@@ -12,6 +12,8 @@ export interface IRequirement {
   papers?: string[];
   departments?: string[];
   faculties?: string[];
+  pathways?: string[];
+  modules?: string[];
   conjoints?: string[];
   stage?: number;
   stages?: number[]; // combine with stage or abovestage?
@@ -109,11 +111,11 @@ export class RequirementService {
 
     // apply each of the filters in 'filters'
     filters.forEach((filter) => { filtered = filtered.filter(filter.filter)});
-    // console.log(filtered)
     return filtered;
   }
 
   public requirementCheck(requirement: IRequirement, planned: ICourse[]): number {
+   //console.log(requirement)
     if (this.isComplex(requirement)) {
       let filled = requirement.complex.map((subRequirement: IRequirement) => this.requirementFilled(subRequirement, planned))
         .filter((tested: boolean) => tested).length;

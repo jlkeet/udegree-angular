@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Subject } from 'rxjs/Subject';
 import { Store } from '../app.store';
 import { ICourse } from '../interfaces';
 import {
@@ -15,9 +13,6 @@ import { StoreHelper } from './store-helper';
 import { ErrorsChangedEvent } from './course.event';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { OrderList } from 'primeng/primeng';
-import { yearsPerPage } from '@angular/material/datepicker/typings/multi-year-view';
-import { copyAnimationEvent } from '@angular/animations/browser/src/render/shared';
 import { AuthService } from '../core/auth.service';
 
 /*
@@ -46,7 +41,7 @@ export class CourseService {
 
     this.authService.afAuth.authState.subscribe( async (auth) => { this.email = auth.email })
 
-    this.allCourses = require('../../assets/data/courses.json');
+    this.allCourses = require('../../assets/data/newCourses.json');
 
     // By default, all courses are deletable
     this.allCourses.map((course: ICourse) => course.canDelete = true);

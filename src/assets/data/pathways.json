@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Ecology",
+    "blurb": "Tree Huggers",
+    "faculties": ["Biological Sciences"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 4,
+        "papers": ["BIOSCI101", "BIOSCI108", "BIOSCI109", "STATS101"]
+      },
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["BIOSCI206", "BIOSCI220"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["BIOSCI204-208"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENVSCI201", "MARINE202", "STATS201"]
+      },
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["BIOSCI333", "BIOSCI394"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "BIOSCI325",
+          "BIOSCI334",
+          "BIOSCI338",
+          "BIOSCI347",
+          "MARINE303"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Biological Sciences",
+    "faculties": ["Science"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["BIOSCI101"]
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": ["BIOSCI100", "BIOSCI102-107"]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": ["BIOINF301", "BIOSCI320-396"]
+      },
+      {
+        "type": 0,
+        "required": 2,
+        "complex": [
+          {
+            "type": 0,
+            "required": 15,
+            "papers": ["BIOSCI201-203"]
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": ["BIOSCI204", "BIOSCI205", "BIOSCI208"]
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": ["BIOSCI206", "BIOSCI207", "BIOSCI210"]
+          }
+        ]
+      }
+    ]
+  }
+]

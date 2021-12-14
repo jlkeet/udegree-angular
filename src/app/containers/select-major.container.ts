@@ -6,12 +6,11 @@ import {
   Router,
   RouterModule
 } from '@angular/router';
-import { LocalStorageService } from 'angular-2-local-storage';
 import 'rxjs/Rx';
 import { Store } from '../app.store';
 import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
-import { DepartmentService, FacultyService, ConjointService, StoreHelper } from '../services';
+import { DepartmentService, FacultyService, ConjointService, PathwayService, ModuleService, StoreHelper } from '../services';
 
 /*
   Container for select major page.
@@ -43,6 +42,9 @@ export class SelectMajorContainer {
   private conjoint;
   private majors;
   private secondMajors;
+  private pathways;
+  private modules;
+  private secondModules;
   private allowsMinor: boolean = false;
   private allowsDoubleMajor: boolean = false;
   private sub;
@@ -60,6 +62,9 @@ export class SelectMajorContainer {
     this.majors = this.storeHelper.current('majors');
     this.conjoint = this.storeHelper.current('conjoint');
     this.secondMajors = this.storeHelper.current('secondMajors')
+    this.pathways = this.storeHelper.current('pathways')
+    this.modules = this.storeHelper.current('modules')
+    this.secondModules = this.storeHelper.current('secondModules')
     this.allowsDoubleMajor = this.facultyService.allowsDoubleMajor(this.faculty);
     this.allowsMinor = this.facultyService.allowsMinor(this.faculty);
     this.departments = this.departmentService.departmentsInFaculty(this.faculty);

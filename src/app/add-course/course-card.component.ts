@@ -1,8 +1,5 @@
-import { Component, EventEmitter, Injectable, Input, Output } from '@angular/core';
+import { Component, Injectable, Input } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { ICourse } from '../interfaces';
-import { DepartmentCoursesModel } from '../models';
-import { CourseService, StoreHelper } from '../services';
 import { AddCourseService } from './add-course.service';
 
 @Component({

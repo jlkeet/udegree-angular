@@ -5,8 +5,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AddCourseService } from './add-course';
-import { AppReadyEvent } from './app.ready.event';
-import { AppState } from './app.service';
 import * as services from './services';
 
 

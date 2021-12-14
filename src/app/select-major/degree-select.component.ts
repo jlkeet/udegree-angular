@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { AuthService } from "../core/auth.service";
-import { DepartmentService, FacultyService, ConjointService, StoreHelper } from "../services";
+import { DepartmentService, FacultyService, ConjointService, PathwayService, StoreHelper, ModuleService } from "../services";
+import { MatFormFieldControl, MatListOption } from "@angular/material";
+import { ProgressPanel } from "../progress-panel";
 
 @Component({
   selector: "degree-select",
@@ -65,9 +67,15 @@ export class DegreeSelection {
   private currentFaculties = [];
   private currentConjoint = [];
   private majors = [];
+  private pathways = [];
   private secondMajors = [];
+  public modules = [];
+  public secondModules = [];
   private degree = null;
-  private currentMajors = [];
+  public currentMajors = [];
+  private currentPathways = [];
+  public currentModules = [];
+  public currentSecondModules = [];
   private currentSecondMajors = [];
   private doubleMajorAllowed;
   public email: string = "";
@@ -75,7 +83,10 @@ export class DegreeSelection {
   public majorId: string = "";
   public secondMajorId: string = "";
   public conjointId: string = "";
+  public pathwayId: string = "";
+  public moduleId: string = "";
   public facultyForEmail: string = "";
+
 
   private defaultBlurb =
     "An undergraduate degree (e.g. Bachelor) is the award you recieve once you have completed your course of study. It is where most first-time university students commence their tertiary studies. To obtain your degree you must complete a specified number and combination of units. Most undergraduate degrees can be completed in 3-5 years of full-time study or 6-10 years part-time.";
@@ -87,7 +98,11 @@ export class DegreeSelection {
     private storeHelper: StoreHelper,
     private db: AngularFirestore,
     private authService: AuthService,
-    private departmentService: DepartmentService
+    private departmentService: DepartmentService,
+    private pathwayService: PathwayService,
+    private moduleService: ModuleService,
+
+    //private progressPanelComponent: ProgressPanel,
   ) {
     this.authService.afAuth.authState.subscribe(async (auth) => {
       this.email = auth.email;
@@ -126,6 +141,18 @@ export class DegreeSelection {
           } else {
           }
         });
+        this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("pathway")
+        .get()
+        .toPromise()
+        .then((isItSaved) => {
+          if (isItSaved !== undefined) {
+            this.getPathID();
+          } else {
+          }
+        });
       });  
       this.db
         .collection("users")
@@ -136,6 +163,18 @@ export class DegreeSelection {
         .then((isItSaved) => {
           if (isItSaved !== undefined) {
             this.getConID();
+          } else {
+          }
+        });
+        this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("modules")
+        .get()
+        .toPromise()
+        .then((isItSaved) => {
+          if (isItSaved !== undefined) {
+            this.getModID();
           } else {
           }
         });
@@ -164,7 +203,20 @@ export class DegreeSelection {
         this.currentSecondMajors = [storeHelper.current("secondMajors"), null];
       }
 
-      this.checkFlags();
+      if (this.currentPathways === null) {
+      } else {
+        this.currentPathways = [storeHelper.current("pathways"), null];
+      }
+
+      if (this.currentModules === null) {
+      } else {
+        this.currentModules = [storeHelper.current("modules"), null];
+      }
+      
+      if (this.currentSecondModules === null) {
+      } else {
+        this.currentSecondModules = [storeHelper.current("secondModules"), null];
+      }
 
       this.faculties = facultyService.getFaculties().map((faculty) => {
         return { value: faculty, view: faculty.name };
@@ -174,16 +226,25 @@ export class DegreeSelection {
         return { value: majors, view: majors.name };
       });
 
+      this.pathways = pathwayService.getPathways().map((pathways) => {
+        return { value: pathways, view: pathways.name };
+      });
+
       this.conjoints = conjointService.getConjoints().map((conjoint) => {
         return { value: conjoint, view: conjoint.name };
       });
 
-      this.secondMajors = departmentService
-        .getDepartments()
-        .map((secondMajors) => {
-          return { value: secondMajors, view: secondMajors.name };
-        });
+      this.modules = moduleService.getModules().map((modules) => {
+        return { value: modules, view: modules.name };
+      });
 
+      // this.secondMajors = departmentService
+      //   .getDepartments()
+      //   .map((secondMajors) => {
+      //     return { value: secondMajors, view: secondMajors.name };
+      //   })
+
+      this.checkFlags();
       this.populateMajors();
     });
   }
@@ -207,7 +268,7 @@ export class DegreeSelection {
     this.blurb = "";
   }
 
-  private populateMajors() {
+  public populateMajors() {
   if (this.currentConjoint[0] === undefined) {  
     this.currentConjoint[0] = null;
   }
@@ -228,7 +289,26 @@ export class DegreeSelection {
           return { value: department, view: department.name };
         });
     }
+
+    if (this.currentMajors[0] !== null) {
+      console.log(this.pathways)
+      this.pathways[0] = this.pathwayService
+        .getPathways()
+        .map((path) => {
+          return { value: path, view: path.name };
+        });
+    }
+
+    if (this.currentModules[0] !== null) {
+      this.modules[0] = this.moduleService
+        .getModules()
+        .map((module) => {
+          return { value: module, view: module.name };
+        });
+    }
   }
+
+  
 
   private changeFaculty(which, event) {
     const facultyNames = this.currentFaculties.map((faculty) =>
@@ -266,9 +346,29 @@ export class DegreeSelection {
     this.changeBlurb(this.currentMajors[which].blurb);
     this.storeHelper.update("majors", this.currentMajors[0]);
     this.setMajor(this.email, this.currentMajors[0]);
+    console.log(this.currentMajors[0])
   }
 
-  // Testing for second major purposes
+  private changePathway(which, event) {
+    const pathwayNames = this.currentPathways.map((pathway) =>
+      pathway ? pathway.name : null
+    );
+
+    this.changeBlurb(this.currentPathways[which].blurb);
+    this.storeHelper.update("pathways", this.currentPathways[0]);
+    this.setPathway(this.email, this.currentPathways[0]);
+  }
+
+  private changeModule(which, event) {
+    const moduleNames = this.currentModules.map((module) =>
+      module ? module.name : null
+    );
+
+    this.changeBlurb(this.currentModules[which].blurb);
+    this.storeHelper.update("modules", this.currentModules[0]);
+    this.setModule(this.email, this.currentModules[0]);
+   // this.progressPanelComponent.getMajIDforDel();
+  }
 
   private changeSecondMajor(which, event) {
     const majorNames = this.currentSecondMajors.map((secondMajor) =>
@@ -279,7 +379,7 @@ export class DegreeSelection {
     this.setSecondMajor(this.email, this.currentSecondMajors[0]);
   }
 
-  private changeBlurb(blurb: string) {
+  public changeBlurb(blurb: string) {
     if (blurb) {
       this.blurb = blurb;
     } else {
@@ -293,7 +393,7 @@ export class DegreeSelection {
     console.log(this.storeHelper.current("faculty").name)
     if (
       this.currentMajors[0] &&
-      (this.degreeType === "regular" || this.currentSecondMajors[0])
+      (this.degreeType === "regular" || this.currentSecondMajors[0] || this.currentPathways[0])
     ) {
       this.onPageChange.emit();
     }
@@ -326,6 +426,24 @@ export class DegreeSelection {
       .set(major);
   }
 
+  private setPathway(email, pathway) {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("pathway")
+      .doc("pathway")
+      .set(pathway);
+  }
+
+  public setModule(email, module) {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("module")
+      .doc("module")
+      .set(module);
+  }
+
   private setSecondMajor(email, secondMajor) {
       this.db
       .collection("users")
@@ -334,8 +452,6 @@ export class DegreeSelection {
       .doc("secondMajor")
       .set(secondMajor);
   }
-
-  // Testing displaying faculty
 
   private getDegID() {
     this.db
@@ -389,6 +505,44 @@ export class DegreeSelection {
             // Loop to get all the ids of the docs
             this.majorId = element.id;
             this.loadMajorFromDb(element.id);
+          });
+        }
+      });
+  }
+
+  private getPathID() {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("pathway")
+      .get()
+      .toPromise()
+      .then((sub) => {
+        if (sub.docs.length > 0) {
+          // Check to see if documents exist in the courses collection
+          sub.forEach((element) => {
+            // Loop to get all the ids of the docs
+            this.pathwayId = element.id;
+            this.loadPathwayFromDb(element.id);
+          });
+        }
+      });
+  }
+
+  private getModID() {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("module")
+      .get()
+      .toPromise()
+      .then((sub) => {
+        if (sub.docs.length > 0) {
+          // Check to see if documents exist in the courses collection
+          sub.forEach((element) => {
+            // Loop to get all the ids of the docs
+            this.moduleId = element.id;
+            this.loadModuleFromDb(element.id);
           });
         }
       });
@@ -458,6 +612,37 @@ export class DegreeSelection {
     });
   }
 
+
+  private getPathwayFromDb(pathId) {
+    return new Promise<any>((resolve) => {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("pathway")
+        .doc(pathId)
+        .get()
+        .toPromise()
+        .then((resultPathway) => {
+          resolve(resultPathway.data());
+        });
+    });
+  }
+
+  private getModuleFromDb(moduleId) {
+    return new Promise<any>((resolve) => {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("module")
+        .doc(moduleId)
+        .get()
+        .toPromise()
+        .then((resultModule) => {
+          resolve(resultModule.data());
+        });
+    });
+  }
+
   private getSecondMajorFromDb(majSecId) {
     return new Promise<any>((resolve) => {
       this.db
@@ -501,6 +686,34 @@ export class DegreeSelection {
       });
       this.getMajorFromDb(majId).then((res) => {
         this.storeHelper.update("majors", res), this.pageEmitterForDegLoad()
+      });
+    });
+  }
+
+  private loadPathwayFromDb(pathId) {
+    this.getPathwayFromDb(pathId).then(async (copy) => {
+      Object.assign({
+        blurb: copy[0],
+        faculties: copy[1],
+        name: copy[2],
+        requirements: copy[3],
+      });
+      this.getPathwayFromDb(pathId).then((res) => {
+        this.storeHelper.update("pathways", res), this.pageEmitterForDegLoad()
+      });
+    });
+  }
+
+  private loadModuleFromDb(moduleId) {
+    this.getModuleFromDb(moduleId).then(async (copy) => {
+      Object.assign({
+        blurb: copy[0],
+        courses: copy[1],
+        name: copy[2],
+        requirements: copy[3],
+      });
+      this.getModuleFromDb(moduleId).then((res) => {
+        this.storeHelper.update("modules", res), this.pageEmitterForDegLoad()
       });
     });
   }

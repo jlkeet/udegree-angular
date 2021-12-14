@@ -25,16 +25,33 @@
     </div>
   </div>
 
-  <mat-toolbar *ngIf="majors" class="plain">
+  <mat-toolbar *ngIf="majors && !pathways; else pathwaySelected" class="plain">
     <span>
       {{majors.name}}
+    </span>
+  </mat-toolbar>
+
+  <div *ngIf="majors && !pathways" class="progress-panel-bar-container flex flex-col flex-start">
+    <div class="progress-bar-group">
+      <progress-bar-multi-container
+         *ngFor="let requirement of majorRequirements"
+         [requirement]="requirement"
+         (click)="selectRequirements(requirement)"
+         [courses]="courses">
+      </progress-bar-multi-container>
+    </div>
+  </div>
+
+  <mat-toolbar *ngIf="pathways" #pathwaySelected class="plain">
+    <span>
+      {{majors.name}}: {{pathways.name}} Pathway
     </span>
   </mat-toolbar>
 
   <div class="progress-panel-bar-container flex flex-col flex-start">
     <div class="progress-bar-group">
       <progress-bar-multi-container
-         *ngFor="let requirement of majorRequirements"
+         *ngFor="let requirement of pathwayRequirements"
          [requirement]="requirement"
          (click)="selectRequirements(requirement)"
          [courses]="courses">
@@ -75,5 +92,97 @@
       </progress-bar-multi-container>
     </div>
   </div>
+
+
+  <!-- <mat-toolbar *ngIf="modules !== null; else panelAddModule" class="plain">
+    <span>
+      {{modules.name}}
+    </span>
+  </mat-toolbar>
+
+  <div *ngIf="addedModule === true" class="progress-panel-bar-container flex flex-col flex-start">
+    <div class="progress-bar-group">
+      <progress-bar-multi-container
+         *ngFor="let requirement of moduleRequirements"
+         [requirement]="requirement"
+         [courses]="courses"
+         (click)="selectRequirements(requirement)">
+      </progress-bar-multi-container>
+    </div>
+  </div> -->
+
+  <!-- <ng-template #panelAddModule>
+  <button class="addmodule" (click)="addingModule=true;moduleClicked();" *ngIf="addingModule === false">
+    Add Module
+  </button>
+  <span class="select-module" *ngIf="addingModule === true && addedModule===false">
+    <mat-form-field>
+    <mat-select
+    panelClass="my-panel-class"
+    [(value)]="currentModules[0]"
+    [placeholder]= "currentModules[0] ? currentModules[0] : 'Module (optional)'"
+    (selectionChange)="changeModule(0, $event)"
+    [disabled]="addingModule===false"
+   >
+   
+   <mat-option *ngFor="let module of modules[0]" [value]="module.value" (click)="addedModule=true">
+    {{ module.view }}
+  </mat-option>
+  </mat-select>
+</mat-form-field>
+</span>
+</ng-template> -->
+
+
+<!-- <div *ngIf="currentSecondModules[0] !== undefined; else panelAddModuleTwo ">
+<mat-toolbar *ngIf="secondModules !== undefined" class="plain">
+  <span>
+    {{secondModules.name}}
+  </span>
+</mat-toolbar>
+
+<div *ngIf="addedModule === true" class="progress-panel-bar-container flex flex-col flex-start">
+  <div class="progress-bar-group">
+    <progress-bar-multi-container
+       *ngFor="let requirement of secondModuleRequirements"
+       [requirement]="requirement"
+       [courses]="courses"
+       (click)="selectRequirements(requirement)">
+    </progress-bar-multi-container>
+  </div>
+</div>
+
+
+
+<ng-template #panelAddModuleTwo>
+  <button class="addmodule" (click)="addingSecondModule=true;moduleClicked();" *ngIf="addingSecondModule === false">
+    Add Module
+  </button>
+  <span class="select-module" *ngIf="addingSecondModule === true && addedSecondModule===false">
+    <mat-form-field>
+    <mat-select
+    panelClass="my-panel-class"
+    [(value)]="currentSecondModules[0]"
+    [placeholder]= "currentSecondModules[0] ? currentSecondModules[0] : 'Module (optional)'"
+    (selectionChange)="changeSecondModule(0, $event)"
+    [disabled]="addingSecondModule===false"
+   >
+   
+   <mat-option *ngFor="let module of secondModules[0]" [value]="module.value" (click)="addedSecondModule=true">
+    {{ module.view }}
+  </mat-option>
+  </mat-select>
+</mat-form-field>
+</span>
+</ng-template>
+</div> -->
+
+
+    <!-- <select class="nice-select" placeholder="Add Module" style="padding-left: 15px">
+      <option>Add Module</option>
+      <option (click)="addedModule=true"> Science in Society </option>
+    </select>
+  </span> -->
+
 
 </div>

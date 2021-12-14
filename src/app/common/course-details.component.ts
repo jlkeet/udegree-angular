@@ -13,7 +13,9 @@ import {
   DepartmentService,
   FacultyService,
   ConjointService,
+  PathwayService,
   StatusEvent,
+  ModuleService,
 } from "../services";
 
 /*
@@ -54,6 +56,10 @@ export class CourseDetails {
   private facultyOptions;
   private conjoints;
   private conjointOptions;
+  private pathways;
+  private pathwayOptions;
+  private modules;
+  private moduleOptions;
 
   private customTitle;
   private customPoints;
@@ -87,11 +93,15 @@ export class CourseDetails {
     private courseService: CourseService,
     private departmentService: DepartmentService,
     private facultyService: FacultyService,
-    private conjointService: ConjointService
+    private conjointService: ConjointService,
+    private pathwayService: PathwayService,
+    private moduleService: ModuleService
   ) {
     this.departments = this.departmentService.getDepartments();
     this.faculties = this.facultyService.getFaculties();
     this.conjoints = this.conjointService.getConjoints();
+    this.pathways = this.pathwayService.getPathways();
+    this.modules = this.moduleService.getModules();
 
     this.departmentOptions = this.departments.map((department) => {
       return { label: department.name, value: department.name };
@@ -103,6 +113,14 @@ export class CourseDetails {
 
     this.conjointOptions = this.conjoints.map((conjoint) => {
       return { label: conjoint.name, value: conjoint.name };
+    });
+
+    this.pathwayOptions = this.pathways.map((pathway) => {
+      return { label: pathway.name, value: pathway.name };
+    });
+
+    this.moduleOptions = this.modules.map((module) => {
+      return { label: module.name, value: module.name };
     });
   }
 
@@ -189,7 +207,6 @@ export class CourseDetails {
   }
 
   public ngOnInit() {
-
     if (!this.custom && !this.showAddCourse) {
       this.courseGrade = this.course.grade;
     }

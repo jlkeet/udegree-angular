@@ -55,6 +55,7 @@ export class SelectDegreeContainer {
     this.storeHelper.update('conjoint', null);
     this.storeHelper.update('majors', [null, null]);
     this.storeHelper.update('secondMajors', [null, null]);
+    this.storeHelper.update('pathways', [null, null]);
     this.storeHelper.update('minor', null);
 
 

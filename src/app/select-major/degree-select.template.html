@@ -52,6 +52,23 @@
     </mat-select>
   </mat-form-field>
 
+  <mat-form-field *ngIf="currentFaculties[0] && currentMajors[0]">
+    <mat-select
+       class="dropdown"
+       [(value)]="currentPathways[0]"
+       [placeholder]=
+       "degreeType === 'regular' && 
+       currentMajors[0] !== null ?
+       currentMajors[0].name + ' pathway' : 'Pathway (Optional)'"
+       (selectionChange)="changePathway(0, $event)"
+       [disabled]="currentMajors[0]==null"
+      >
+      <mat-option *ngFor="let path of pathways[0]" [value]="path.value">
+        {{ path.view }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <mat-form-field *ngIf="doubleMajorAllowed || currentFaculties[0]">
     <mat-select
        class="dropdown"
