@@ -85,6 +85,7 @@ export class DegreeSelection {
   public conjointId: string = "";
   public pathwayId: string = "";
   public moduleId: string = "";
+  public secondModuleId: string = "";
   public facultyForEmail: string = "";
 
 
@@ -175,6 +176,18 @@ export class DegreeSelection {
         .then((isItSaved) => {
           if (isItSaved !== undefined) {
             this.getModID();
+          } else {
+          }
+        });
+        this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("secondModules")
+        .get()
+        .toPromise()
+        .then((isItSaved) => {
+          if (isItSaved !== undefined) {
+            this.getSecondModID();
           } else {
           }
         });
@@ -444,6 +457,15 @@ export class DegreeSelection {
       .set(module);
   }
 
+  public setSecondModule(email, secondModule) {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("secondModule")
+      .doc("secondModule")
+      .set(secondModule);
+  }
+
   private setSecondMajor(email, secondMajor) {
       this.db
       .collection("users")
@@ -548,6 +570,25 @@ export class DegreeSelection {
       });
   }
 
+  private getSecondModID() {
+    this.db
+      .collection("users")
+      .doc(this.email)
+      .collection("secondModule")
+      .get()
+      .toPromise()
+      .then((sub) => {
+        if (sub.docs.length > 0) {
+          // Check to see if documents exist in the courses collection
+          sub.forEach((element) => {
+            // Loop to get all the ids of the docs
+            this.secondModuleId = element.id;
+            this.loadSecondModuleFromDb(element.id);
+          });
+        }
+      });
+  }
+
   private getSecondMajID() {
     this.db
       .collection("users")
@@ -643,6 +684,21 @@ export class DegreeSelection {
     });
   }
 
+  private getSecondModuleFromDb(secondModuleId) {
+    return new Promise<any>((resolve) => {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection("secondModule")
+        .doc(secondModuleId)
+        .get()
+        .toPromise()
+        .then((resultSecondModule) => {
+          resolve(resultSecondModule.data());
+        });
+    });
+  }
+
   private getSecondMajorFromDb(majSecId) {
     return new Promise<any>((resolve) => {
       this.db
@@ -714,6 +770,20 @@ export class DegreeSelection {
       });
       this.getModuleFromDb(moduleId).then((res) => {
         this.storeHelper.update("modules", res), this.pageEmitterForDegLoad()
+      });
+    });
+  }
+
+  private loadSecondModuleFromDb(secondModuleId) {
+    this.getSecondModuleFromDb(secondModuleId).then(async (copy) => {
+      Object.assign({
+        blurb: copy[0],
+        courses: copy[1],
+        name: copy[2],
+        requirements: copy[3],
+      });
+      this.getSecondModuleFromDb(secondModuleId).then((res) => {
+        this.storeHelper.update("secondModule", res), this.pageEmitterForDegLoad()
       });
     });
   }

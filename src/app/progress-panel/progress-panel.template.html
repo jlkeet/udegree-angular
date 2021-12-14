@@ -94,7 +94,7 @@
   </div>
 
 
-  <!-- <mat-toolbar *ngIf="modules !== null; else panelAddModule" class="plain">
+  <mat-toolbar *ngIf="modules !== null" class="plain">
     <span>
       {{modules.name}}
     </span>
@@ -109,9 +109,9 @@
          (click)="selectRequirements(requirement)">
       </progress-bar-multi-container>
     </div>
-  </div> -->
+  </div>
 
-  <!-- <ng-template #panelAddModule>
+
   <button class="addmodule" (click)="addingModule=true;moduleClicked();" *ngIf="addingModule === false">
     Add Module
   </button>
@@ -131,10 +131,10 @@
   </mat-select>
 </mat-form-field>
 </span>
-</ng-template> -->
 
+<!-- 
 
-<!-- <div *ngIf="currentSecondModules[0] !== undefined; else panelAddModuleTwo ">
+<div *ngIf="currentSecondModules[0] !== undefined; else panelAddModuleTwo ">
 <mat-toolbar *ngIf="secondModules !== undefined" class="plain">
   <span>
     {{secondModules.name}}
@@ -176,13 +176,5 @@
 </span>
 </ng-template>
 </div> -->
-
-
-    <!-- <select class="nice-select" placeholder="Add Module" style="padding-left: 15px">
-      <option>Add Module</option>
-      <option (click)="addedModule=true"> Science in Society </option>
-    </select>
-  </span> -->
-
 
 </div>

@@ -95,6 +95,7 @@ export class ProgressPanel {
 
     this.currentModules = degreeSelect.currentModules;
     this.modules = degreeSelect.modules;
+    this.currentSecondModules = degreeSelect.currentSecondModules;
     this.secondModules = degreeSelect.secondModules;
   }
 
@@ -128,10 +129,10 @@ export class ProgressPanel {
         this.updateRequirementList();
       }),
 
-      this.store.changes.pluck("modules").subscribe((modules) => {
-       this.modules = modules;
-        this.updateRequirementList();
-      }),
+      // this.store.changes.pluck("modules").subscribe((modules) => {
+      //  this.modules = modules;
+      //   this.updateRequirementList();
+      // }),
 
       this.store.changes.pluck("secondModules").subscribe((secondModules) => {
         this.secondModules = secondModules;
@@ -351,6 +352,22 @@ export class ProgressPanel {
     this.degreeSelect.changeBlurb(this.currentModules[which].blurb);
     this.storeHelper.update("modules", this.currentModules[0]);
     this.degreeSelect.setModule(this.email, this.currentModules[0]);
+    this.degreeSelect.populateMajors();
+  }
+
+  private changeSecondModule(which, event) {
+
+    this.store.changes.pluck("secondModules").subscribe((secondModules) => {
+      this.secondModules = secondModules;
+      this.updateRequirementList();
+    })
+
+    const secondModuleNames = this.degreeSelect.currentSecondModules.map((secondModule) =>
+    secondModule ? secondModule.name : null
+    );
+    this.degreeSelect.changeBlurb(this.currentSecondModules[which].blurb);
+    this.storeHelper.update("secondModules", this.currentSecondModules[0]);
+    this.degreeSelect.setSecondModule(this.email, this.currentSecondModules[0]);
     this.degreeSelect.populateMajors();
   }
 
