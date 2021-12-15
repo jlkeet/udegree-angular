@@ -1,0 +1,19 @@
+<div class="faculty-list">
+    <mat-toolbar class="light-gray">
+      <span>
+        Select Degree
+      </span>
+      <span class="spacer"></span>
+      <button mat-raised-button color="accent" routerLink="/planner">
+        Back to planner
+      </button>
+    </mat-toolbar>
+    <div class="faculties-container">
+      <div *ngFor="let faculty of faculties; let i = index">
+        <div class="faculty" (click)="clicked(faculty)">
+          <div class="faculty-text"> <span>{{faculty.name}}</span></div>
+          <div class="website"> <a href="http://www.auckland.ac.nz/"> details </a></div>
+        </div>
+      </div>
+    </div>
+  </div>

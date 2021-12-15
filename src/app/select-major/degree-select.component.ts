@@ -8,51 +8,8 @@ import { ProgressPanel } from "../progress-panel";
 
 @Component({
   selector: "degree-select",
-  styles: [
-    `
-      .content {
-      }
-
-      .title {
-        background: white;
-        font-family: "Open Sans", sans-serif;
-        margin-bottom: 5px;
-      }
-
-      .degree-select {
-      }
-      .form-field {
-        display: flex;
-        flex-direction: column;
-        margin-left: 20px;
-        margin-right: 20px;
-        font-family: "Open Sans", sans-serif;
-      }
-
-      .edit-button {
-        cursor: pointer;
-        width: 25px;
-        height: 25px;
-        border-radius: 5px;
-        border: 1px solid;
-        text-align: center;
-        color: #bbf;
-        font-size: 24px;
-      }
-
-      .right {
-        float: right;
-        margin-right: 20px;
-      }
-
-      .blurb {
-        padding-left: 20px;
-        padding-right: 20px;
-        color: #666;
-      }
-    `,
-  ],
   templateUrl: "./degree-select.template.html",
+  styleUrls: ["degree-select.component.scss"],
 })
 export class DegreeSelection {
   @Output() private onPageChange = new EventEmitter<null>();

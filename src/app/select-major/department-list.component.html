@@ -1,0 +1,48 @@
+<div class='dept-list'>
+    <mat-toolbar class="light-grey">
+      <span>
+        Select Major
+      </span>
+      <span class="spacer"></span>
+      <button mat-raised-button color="accent" routerLink="/planner">
+        Back to planner
+      </button>
+    </mat-toolbar>
+
+    <div>
+      <a class='btn' [ngClass] ="{'btn--blue': cur===0}" (click)="cur = 0">
+        {{faculty.name}} Major {{majors[0]? " -- " + majors[0].name: ''}}
+        <span width="100%">
+        </span>
+      </a>
+      <a *ngIf="majors[0]" class="btn" (click)="deleteDept(0)">
+        X
+      </a>
+    </div>
+
+    <div *ngIf="allowsDoubleMajor && majors[0]">
+      <a class="btn" [ngClass] ="{'btn--blue': cur===1}" (click)="cur = 1">
+        {{faculty.name}} Second Major {{majors[1]? " -- " + majors[1].name: ''}}
+      </a>
+      <a *ngIf="majors[1]" class="btn" (click)="deleteDept(1)">
+        X
+      </a>
+    </div>
+
+    <div>
+      <a *ngIf="allowsMinor && majors[0]" class="btn" [ngClass] ="{'btn--blue': cur===2}" (click)="cur=2">
+        {{faculty.name}} Minor {{minor? " -- " + minor.name: ''}}
+      </a>
+      <a *ngIf="minor" class="btn" (click)="deleteDept(2)">
+        X
+      </a>
+    </div>
+
+    <div class='departments-container'>
+      <div *ngFor='let dept of departments; let i = index'>
+        <div class='dept' (click)='clicked(dept)'>
+          <span class='dept-text'>{{dept.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>

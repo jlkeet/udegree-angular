@@ -1,0 +1,36 @@
+<div
+    ngxInfiniteScroller
+    (onScrollDown)="onScroll()"
+    class="courses-panel" [class.details-overlay]="selected">
+      
+      <div *ngIf="curScroll.length !== 0">
+        <div *ngFor="let department of curScroll; let i = index">
+
+          <div class="department-title">
+            {{department.title}}
+          </div>
+          
+          <div *ngFor="let course of department.courses; let i = index" class="inline-block">
+            <course-card [course]="mapCourse(course)" [id]="department.title + '_' + i"> </course-card>
+          </div>
+
+          <div *ngIf="department.compulsary">
+            <h3>
+              Compulsary:
+            </h3>
+            <div *ngFor="let course of department.compulsary; let i = index" class="inline-block">
+              <course-card [course]="mapCourse(course)" [id]="department.title + '_comp_' + i"> </course-card>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+
+      <div *ngIf="curScroll.length === 0">
+        <h2>
+          No results
+        </h2>
+      </div>
+
+    </div>
