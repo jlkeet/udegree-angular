@@ -63,6 +63,8 @@ export class ProgressPanel {
   private gpa;
   public addingModule = false;
   public addedModule = false;
+  public addingSecondModule = false;
+  public addedSecondModule = false;
 
   private faculty;
   private conjoint;
@@ -101,8 +103,6 @@ export class ProgressPanel {
 
   public ngOnInit() {
 
-
-
     this.subs = [
       this.store.changes.pluck("faculty").subscribe((faculty) => {
         this.faculty = faculty;
@@ -129,15 +129,18 @@ export class ProgressPanel {
         this.updateRequirementList();
       }),
 
-      // this.store.changes.pluck("modules").subscribe((modules) => {
-      //  this.modules = modules;
-      //   this.updateRequirementList();
-      // }),
+      this.store.changes.pluck("modules").subscribe((modules) => {
+       this.modules = modules;
+        this.updateRequirementList();
+      }),
 
       this.store.changes.pluck("secondModules").subscribe((secondModules) => {
         this.secondModules = secondModules;
          this.updateRequirementList();
        }),
+
+      console.log(this.modules),
+      console.log(this.secondModules),
 
       this.store.changes.pluck("minor").subscribe((minor) => {
         this.minor = minor;
@@ -216,6 +219,9 @@ export class ProgressPanel {
     this.secondModuleRequirements = [].concat(
       this.secondModules ? this.secondModules.requirements : []
     );
+
+    // console.log(this.secondModules[0])
+    console.log("SecondMod from Prog Pan ", this.secondModules)
 
     if (
       this.conjointRequirements.length > 0 &&
@@ -316,6 +322,11 @@ export class ProgressPanel {
           ? requirement.modules.toString()
           : null
         : null,
+      secondModules: requirement.secondModules
+        ? requirement.secondModules.length !== 0
+          ? requirement.secondModules.toString()
+          : null
+        : null,
       general:
         requirement.flags && requirement.flags.includes("general")
           ? true
@@ -365,7 +376,7 @@ export class ProgressPanel {
     const secondModuleNames = this.degreeSelect.currentSecondModules.map((secondModule) =>
     secondModule ? secondModule.name : null
     );
-    this.degreeSelect.changeBlurb(this.currentSecondModules[which].blurb);
+    // this.degreeSelect.changeBlurb(this.currentSecondModules[which].blurb);
     this.storeHelper.update("secondModules", this.currentSecondModules[0]);
     this.degreeSelect.setSecondModule(this.email, this.currentSecondModules[0]);
     this.degreeSelect.populateMajors();
@@ -423,6 +434,7 @@ export class ProgressPanel {
 
   private moduleClicked() {
     console.log(this.modules)
+    console.log(this.currentSecondModules)
   }
 
     // private getDegIDforDel() {

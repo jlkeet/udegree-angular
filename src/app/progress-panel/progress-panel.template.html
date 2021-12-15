@@ -100,7 +100,7 @@
     </span>
   </mat-toolbar>
 
-  <div *ngIf="addedModule === true" class="progress-panel-bar-container flex flex-col flex-start">
+  <div *ngIf="modules !== undefined" class="progress-panel-bar-container flex flex-col flex-start">
     <div class="progress-bar-group">
       <progress-bar-multi-container
          *ngFor="let requirement of moduleRequirements"
@@ -111,7 +111,7 @@
     </div>
   </div>
 
-
+  <div *ngIf="modules === undefined">
   <button class="addmodule" (click)="addingModule=true;moduleClicked();" *ngIf="addingModule === false">
     Add Module
   </button>
@@ -131,17 +131,17 @@
   </mat-select>
 </mat-form-field>
 </span>
+</div>
 
-<!-- 
 
-<div *ngIf="currentSecondModules[0] !== undefined; else panelAddModuleTwo ">
-<mat-toolbar *ngIf="secondModules !== undefined" class="plain">
+
+<mat-toolbar *ngIf="secondModules !== null" class="plain">
   <span>
     {{secondModules.name}}
   </span>
 </mat-toolbar>
 
-<div *ngIf="addedModule === true" class="progress-panel-bar-container flex flex-col flex-start">
+<div *ngIf="secondModules !== undefined" class="progress-panel-bar-container flex flex-col flex-start">
   <div class="progress-bar-group">
     <progress-bar-multi-container
        *ngFor="let requirement of secondModuleRequirements"
@@ -154,8 +154,8 @@
 
 
 
-<ng-template #panelAddModuleTwo>
-  <button class="addmodule" (click)="addingSecondModule=true;moduleClicked();" *ngIf="addingSecondModule === false">
+<!-- <div *ngIf="secondModules === undefined"> -->
+  <button class="addmodule" (click)="addingSecondModule=true;moduleClicked()" *ngIf="addingSecondModule === false">
     Add Module
   </button>
   <span class="select-module" *ngIf="addingSecondModule === true && addedSecondModule===false">
@@ -174,7 +174,7 @@
   </mat-select>
 </mat-form-field>
 </span>
-</ng-template>
-</div> -->
+<!-- </div>  -->
+
 
 </div>

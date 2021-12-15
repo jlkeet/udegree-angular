@@ -251,6 +251,10 @@ export class DegreeSelection {
         return { value: modules, view: modules.name };
       });
 
+      this.secondModules = moduleService.getModules().map((secondModules) => {
+        return { value: secondModules, view: secondModules.name };
+      });
+
       // this.secondMajors = departmentService
       //   .getDepartments()
       //   .map((secondMajors) => {
@@ -319,7 +323,16 @@ export class DegreeSelection {
           return { value: module, view: module.name };
         });
     }
+  
+
+  if (this.currentSecondModules[0] !== null) {
+    this.secondModules[0] = this.moduleService
+      .getModules()
+      .map((secondModule) => {
+        return { value: secondModule, view: secondModule.name };
+      });
   }
+}
 
   
 
@@ -381,6 +394,16 @@ export class DegreeSelection {
     this.storeHelper.update("modules", this.currentModules[0]);
     this.setModule(this.email, this.currentModules[0]);
    // this.progressPanelComponent.getMajIDforDel();
+  }
+
+  private changeSecondModule(which, event) {
+
+    const secondModuleNames = this.currentSecondModules.map((secondModule) =>
+    secondModule ? secondModule.name : null
+    );
+    // this.degreeSelect.changeBlurb(this.currentSecondModules[which].blurb);
+    this.storeHelper.update("secondModules", this.currentSecondModules[0]);
+    this.setSecondModule(this.email, this.currentSecondModules[0]);
   }
 
   private changeSecondMajor(which, event) {
@@ -783,7 +806,7 @@ export class DegreeSelection {
         requirements: copy[3],
       });
       this.getSecondModuleFromDb(secondModuleId).then((res) => {
-        this.storeHelper.update("secondModule", res), this.pageEmitterForDegLoad()
+        this.storeHelper.update("secondModules", res), this.pageEmitterForDegLoad()
       });
     });
   }

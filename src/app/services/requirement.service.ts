@@ -14,6 +14,7 @@ export interface IRequirement {
   faculties?: string[];
   pathways?: string[];
   modules?: string[];
+  secondModules?: string[];
   conjoints?: string[];
   stage?: number;
   stages?: number[]; // combine with stage or abovestage?
