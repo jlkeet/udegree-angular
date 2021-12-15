@@ -129,19 +129,6 @@ export class ProgressPanel {
         this.updateRequirementList();
       }),
 
-      this.store.changes.pluck("modules").subscribe((modules) => {
-       this.modules = modules;
-        this.updateRequirementList();
-      }),
-
-      this.store.changes.pluck("secondModules").subscribe((secondModules) => {
-        this.secondModules = secondModules;
-         this.updateRequirementList();
-       }),
-
-      console.log(this.modules),
-      console.log(this.secondModules),
-
       this.store.changes.pluck("minor").subscribe((minor) => {
         this.minor = minor;
         this.updateRequirementList();
@@ -151,6 +138,7 @@ export class ProgressPanel {
         this.courses = courses;
         this.calculateGPA();
       }),
+
       this.store.changes.pluck("semesters").subscribe((semesters: any[]) => {
         const allSemesters = semesters;
         if (allSemesters.length > 0) {
@@ -159,12 +147,30 @@ export class ProgressPanel {
           this.firstSemester = null;
         }
       }),
+
     ];
+
+    if (this.degreeSelect.currentModules[0][0] !== null) {
+
+    this.modules = this.degreeSelect.currentModules[0],
+    this.updateRequirementList()
+  } else {
+     this.modules = this.degreeSelect.modules;
+  }
+
+  if (this.degreeSelect.currentSecondModules[0][0] !== null) {
+
+    this.secondModules = this.degreeSelect.currentSecondModules[0],
+    this.updateRequirementList()
+  } else {
+
+     this.secondModules = this.degreeSelect.secondModules;
+
+  }
   }
 
   public ngOnChanges() {
     this.calculateGPA();
-
   }
 
   private ngOnDestroy() {
@@ -212,6 +218,7 @@ export class ProgressPanel {
     );
     //  .concat(this.minor ? this.minor.requirements : []);
 
+
     this.moduleRequirements = [].concat(
       this.modules ? this.modules.requirements : []
     );
@@ -219,9 +226,6 @@ export class ProgressPanel {
     this.secondModuleRequirements = [].concat(
       this.secondModules ? this.secondModules.requirements : []
     );
-
-    // console.log(this.secondModules[0])
-    console.log("SecondMod from Prog Pan ", this.secondModules)
 
     if (
       this.conjointRequirements.length > 0 &&
@@ -402,8 +406,8 @@ export class ProgressPanel {
 
   private deleteWholePlan() {
 
-    let collectionList = ["degree", "conjoint", "major", "pathway", "secondMajor", "module"]
-    let storeList = ["faculty", "conjoint", "majors", "pathways", "secondMajors", "modules"]
+    let collectionList = ["degree", "conjoint", "major", "pathway", "secondMajor", "module", "secondModule"]
+    let storeList = ["faculty", "conjoint", "majors", "pathways", "secondMajors", "modules", "secondModules"]
 
     for (let i = 0; i < collectionList.length; i++) {
     this.db
@@ -433,8 +437,13 @@ export class ProgressPanel {
   }
 
   private moduleClicked() {
-    console.log(this.modules)
-    console.log(this.currentSecondModules)
+    // console.log("One: ", this.currentModules[0])
+    // console.log(this.modules)
+  }
+
+  private moduleClickedTwo() {
+    //console.log("Two: ", this.currentModules[0][0])
+    // console.log(this.modules)
   }
 
     // private getDegIDforDel() {
