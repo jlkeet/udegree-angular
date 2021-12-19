@@ -75,6 +75,8 @@ export class ProgressPanel {
   private secondModules;
   private minor: any;
   private subs;
+  private currentMajors;
+  private currentPathways;
   private currentModules;
   private currentSecondModules;
 
@@ -99,6 +101,9 @@ export class ProgressPanel {
     this.modules = degreeSelect.modules;
     this.currentSecondModules = degreeSelect.currentSecondModules;
     this.secondModules = degreeSelect.secondModules;
+    this.pathways = degreeSelect.pathways
+    this.currentPathways = degreeSelect.currentPathways
+    this.currentMajors = degreeSelect.currentMajors;
   }
 
   public ngOnInit() {
@@ -435,143 +440,4 @@ export class ProgressPanel {
     });
   }
   }
-
-  private moduleClicked() {
-    // console.log("One: ", this.currentModules[0])
-    // console.log(this.modules)
-  }
-
-  private moduleClickedTwo() {
-    //console.log("Two: ", this.currentModules[0][0])
-    // console.log(this.modules)
-  }
-
-    // private getDegIDforDel() {
-  //   this.db
-  //     .collection("users")
-  //     .doc(this.email)
-  //     .collection("degree")
-  //     .get()
-  //     .toPromise()
-  //     .then((sub) => {
-  //       if (sub.docs.length > 0) {
-  //         // Check to see if documents exist in the courses collection
-  //         sub.forEach((element) => {
-  //           // Loop to get all the ids of the docs
-  //           this.degreeId = element.id;
-  //           this.storeHelper.update("faculty", null);
-  //           this.onPageChange.emit();
-  //           this.db
-  //             .collection("users")
-  //             .doc(this.email)
-  //             .collection("degree")
-  //             .doc(this.degreeId)
-  //             .delete();
-  //         });
-  //       }
-  //     });
-  // }
-
-  // private getConIDforDel() {
-  //   this.db
-  //     .collection("users")
-  //     .doc(this.email)
-  //     .collection("conjoint")
-  //     .get()
-  //     .toPromise()
-  //     .then((sub) => {
-  //       if (sub.docs.length > 0) {
-  //         // Check to see if documents exist in the courses collection
-  //         sub.forEach((element) => {
-  //           // Loop to get all the ids of the docs
-  //           this.storeHelper.update("conjoint", null);
-  //           this.onPageChange.emit();
-  //           this.db
-  //             .collection("users")
-  //             .doc(this.email)
-  //             .collection("conjoint")
-  //             .doc(element.id)
-  //             .delete();
-  //         });
-  //       }
-  //     });
-  // }
-
-  // public getMajIDforDel() {
-  //   this.db
-  //     .collection("users")
-  //     .doc(this.email)
-  //     .collection("major")
-  //     .get()
-  //     .toPromise()
-  //     .then((sub) => {
-  //       if (sub.docs.length > 0) {
-  //         // Check to see if documents exist in the courses collection
-  //         sub.forEach((element) => {
-  //           // Loop to get all the ids of the docs
-  //           this.majorId = element.id;
-  //           this.storeHelper.update("majors", null);
-  //           this.onPageChange.emit();
-  //           this.db
-  //             .collection("users")
-  //             .doc(this.email)
-  //             .collection("major")
-  //             .doc(this.majorId)
-  //             .delete();
-  //         });
-  //       }
-  //     });
-  // }
-
-  // public getPathIDforDel() {
-  //   this.db
-  //     .collection("users")
-  //     .doc(this.email)
-  //     .collection("pathway")
-  //     .get()
-  //     .toPromise()
-  //     .then((sub) => {
-  //       if (sub.docs.length > 0) {
-  //         // Check to see if documents exist in the courses collection
-  //         sub.forEach((element) => {
-  //           // Loop to get all the ids of the docs
-  //           this.pathwayId = element.id;
-  //           this.storeHelper.update("pathways", null);
-  //           this.onPageChange.emit();
-  //           this.db
-  //             .collection("users")
-  //             .doc(this.email)
-  //             .collection("pathway")
-  //             .doc(this.pathwayId)
-  //             .delete();
-  //         });
-  //       }
-  //     });
-  // }
-
-  // private getMajSecIDforDel() {
-  //   this.db
-  //     .collection("users")
-  //     .doc(this.email)
-  //     .collection("secondMajor")
-  //     .get()
-  //     .toPromise()
-  //     .then((sub) => {
-  //       if (sub.docs.length > 0) {
-  //         // Check to see if documents exist in the courses collection
-  //         sub.forEach((element) => {
-  //           // Loop to get all the ids of the docs
-  //           this.majorSecId = element.id;
-  //           this.storeHelper.update("secondMajors", null);
-  //           this.onPageChange.emit();
-  //           this.db
-  //             .collection("users")
-  //             .doc(this.email)
-  //             .collection("secondMajor")
-  //             .doc(this.majorSecId)
-  //             .delete();
-  //         });
-  //       }
-  //     });
-  // }
 }

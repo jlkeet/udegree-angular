@@ -25,13 +25,13 @@ export class DegreeSelection {
   private currentFaculties = [];
   private currentConjoint = [];
   private majors = [];
-  private pathways = [];
+  public pathways = [];
   private secondMajors = [];
   public modules = [];
   public secondModules = [];
   private degree = null;
   public currentMajors = [];
-  private currentPathways = [];
+  public currentPathways = [];
   public currentModules = [];
   public currentSecondModules = [];
   private currentSecondMajors = [];
@@ -188,13 +188,13 @@ export class DegreeSelection {
       if (this.currentPathways === null) {
       } else {
         this.currentPathways = [this.storeHelper.current("pathways"), null];
-        console.log(this.currentPathways)
+      //  console.log(this.currentPathways)
       }
 
       if (this.currentModules === null) {
       } else {
         this.currentModules = [this.storeHelper.current("modules"), null];
-        console.log("Deg Sel Assign: ", this.currentModules)
+      //  console.log("Deg Sel Assign: ", this.currentModules)
       }
       
       if (this.currentSecondModules === null) {
@@ -285,6 +285,7 @@ export class DegreeSelection {
         .map((path) => {
           return { value: path, view: path.name };
         });
+
     }
 
     if (this.currentModules[0] !== null) {
@@ -318,7 +319,8 @@ export class DegreeSelection {
       this.currentMajors[which] = null;
     }
     this.storeHelper.update("faculty", this.currentFaculties[0]);
-    this.setDegree(this.email, this.currentFaculties[0]);
+    // this.setDegree(this.email, this.currentFaculties[0]);
+    this.setSelection(this.email, "faculty", this.currentFaculties[0], 'degree')
     this.facultyForEmail = this.storeHelper.current("faculty");
     this.checkFlags();
     this.populateMajors();
@@ -342,11 +344,15 @@ export class DegreeSelection {
 
     this.changeBlurb(this.currentMajors[which].blurb);
     this.storeHelper.update("majors", this.currentMajors[0]);
-    this.setMajor(this.email, this.currentMajors[0]);
-    console.log(this.currentMajors[0])
+    // this.setMajor(this.email, this.currentMajors[0]);
+    this.setSelection(this.email, "firstMajor", this.currentMajors[0], 'major')
+    this.checkFlags();
+    this.populateMajors();
+    console.log(this.pathways)
   }
 
   private changePathway(which, event) {
+    console.log(this.currentPathways[0])
     const pathwayNames = this.currentPathways.map((pathway) =>
       pathway ? pathway.name : null
     );
@@ -397,13 +403,21 @@ export class DegreeSelection {
   // this is repeated in the html, should consolidate
   private changePage() {
     this.facultyForEmail = this.storeHelper.current("faculty").name
-    console.log(this.storeHelper.current("faculty").name)
     if (
       this.currentMajors[0] &&
       (this.degreeType === "regular" || this.currentSecondMajors[0] || this.currentPathways[0])
     ) {
       this.onPageChange.emit();
     }
+  }
+
+  private setSelection(email, collectionName, collection, document) {
+    this.db
+    .collection("users")
+    .doc(email)
+    .collection(document)
+    .doc(collectionName)
+    .set(collection)
   }
 
   private setDegree(email, faculty) {

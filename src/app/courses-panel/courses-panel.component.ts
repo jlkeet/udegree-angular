@@ -189,17 +189,7 @@ export class CoursesPanel {
   private getSemesterFromDb(courseDbId) {
     return new Promise<any>((resolve) => {
       const semesterFromDb = {
-        year: 
-          // this.db
-          // .collection("users")
-          // .doc(this.email)
-          // .collection("courses")
-          // .doc(courseDbId)
-          // .get()
-          // .toPromise()
-          // .then((resultYear) => {
-          //   resolve(resultYear.data().year);
-          // }),
+        year:
           this.dbCourses.getCollection("users", "courses", courseDbId).then( (res) => {resolve((res.year))} )
       };
     });
@@ -211,17 +201,6 @@ export class CoursesPanel {
     return new Promise<any>((resolve) => {
       const periodFromDb = {
         period: Number(
-          // this.db
-          //   .collection("users")
-          //   .doc(this.email)
-          //   .collection("courses")
-          //   .doc(courseDbId)
-          //   .get()
-          //   .toPromise()
-          //   .then((resultPeriod) => {
-          //     resolve(resultPeriod.data().period);
-          //   })
-
           this.dbCourses.getCollection("users", "courses", courseDbId).then( (res) => {resolve((res.period))} )
         ),
       };
@@ -336,16 +315,6 @@ export class CoursesPanel {
     return new Promise<any>((resolve) => {
       const semesterFromDb = {
         course: 
-          // this.db
-          // .collection("users")
-          // .doc(this.email)
-          // .collection("courses")
-          // .doc(courseDbId)
-          // .get()
-          // .toPromise()
-          // .then((result) => {
-          //   resolve(result.data());
-          // }),
           this.dbCourses.getCollection("users", "courses", courseDbId).then( (res) => {resolve((res))} )
       };
     });

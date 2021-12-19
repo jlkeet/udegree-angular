@@ -182,6 +182,7 @@ export class RequirementService {
         requirement.papers.filter((paper: string) => paper.includes('-')).length === 0) {
         return requirement.papers.join(', ');
       } else {
+        // Change this to reflect the hyphenated rule
         return 'Compulsory papers';
       }
     }

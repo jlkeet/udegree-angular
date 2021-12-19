@@ -25,13 +25,13 @@
     </div>
   </div>
 
-  <mat-toolbar *ngIf="majors && !pathways; else pathwaySelected" class="plain">
+  <mat-toolbar *ngIf="majors[0] !== null && pathways[0] === null" class="plain">
     <span>
       {{majors.name}}
     </span>
   </mat-toolbar>
 
-  <div *ngIf="majors && !pathways" class="progress-panel-bar-container flex flex-col flex-start">
+  <div *ngIf="majors[0] !== null && pathways[0] === null" class="progress-panel-bar-container flex flex-col flex-start">
     <div class="progress-bar-group">
       <progress-bar-multi-container
          *ngFor="let requirement of majorRequirements"
@@ -42,13 +42,13 @@
     </div>
   </div>
 
-  <mat-toolbar *ngIf="pathways" #pathwaySelected class="plain">
+  <mat-toolbar *ngIf="pathways[0] !== null" class="plain">
     <span>
       {{majors.name}}: {{pathways.name}} Pathway
     </span>
   </mat-toolbar>
 
-  <div class="progress-panel-bar-container flex flex-col flex-start">
+  <div *ngIf="pathways[0] !== null" class="progress-panel-bar-container flex flex-col flex-start">
     <div class="progress-bar-group">
       <progress-bar-multi-container
          *ngFor="let requirement of pathwayRequirements"
@@ -101,7 +101,6 @@
   </mat-toolbar>
 
   <div *ngIf="currentModules[0][0] !== null" class="progress-panel-bar-container flex flex-col flex-start">
-    {{moduleClicked()}}
     <div class="progress-bar-group">
       <progress-bar-multi-container
          *ngFor="let requirement of moduleRequirements"
@@ -113,8 +112,7 @@
   </div>
 
   <div *ngIf="currentModules[0][0] === null">
-    {{moduleClickedTwo()}}
-  <button class="addmodule" (click)="addingModule=true;moduleClicked();" *ngIf="addingModule === false">
+  <button class="addmodule" (click)="addingModule=true" *ngIf="addingModule === false">
     Add Module
   </button>
   <span class="select-module" *ngIf="addingModule === true && addedModule===false">
@@ -157,7 +155,7 @@
 
 
 <div *ngIf="currentSecondModules[0][0] === null">
-  <button class="addmodule" (click)="addingSecondModule=true;moduleClicked()" *ngIf="addingSecondModule === false">
+  <button class="addmodule" (click)="addingSecondModule=true" *ngIf="addingSecondModule === false">
     Add Module
   </button>
   <span class="select-module" *ngIf="addingSecondModule === true && addedSecondModule===false">
