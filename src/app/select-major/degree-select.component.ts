@@ -4,6 +4,7 @@ import { AuthService } from "../core/auth.service";
 import { DepartmentService, FacultyService, ConjointService, PathwayService, StoreHelper, ModuleService } from "../services";
 import { MatFormFieldControl, MatListOption } from "@angular/material";
 import { ProgressPanel } from "../progress-panel";
+import { FirebaseDbService } from "../core/firebase.db.service";
 
 
 @Component({
@@ -60,8 +61,7 @@ export class DegreeSelection {
     private departmentService: DepartmentService,
     private pathwayService: PathwayService,
     private moduleService: ModuleService,
-
-    //private progressPanelComponent: ProgressPanel,
+    private dbCourses: FirebaseDbService,
   ) {
     this.authService.afAuth.authState.subscribe(async (auth) => {
       this.email = auth.email;
@@ -188,13 +188,11 @@ export class DegreeSelection {
       if (this.currentPathways === null) {
       } else {
         this.currentPathways = [this.storeHelper.current("pathways"), null];
-      //  console.log(this.currentPathways)
       }
 
       if (this.currentModules === null) {
       } else {
         this.currentModules = [this.storeHelper.current("modules"), null];
-      //  console.log("Deg Sel Assign: ", this.currentModules)
       }
       
       if (this.currentSecondModules === null) {
@@ -269,8 +267,6 @@ export class DegreeSelection {
     }
 
     if (this.currentConjoint[0] !== null) {
-      console.log(this.currentConjoint[0])
-      console.log(this.secondMajors)
       this.secondMajors[0] = this.departmentService
         .departmentsInFaculty(this.currentConjoint[0])
         .map((department) => {
@@ -279,7 +275,6 @@ export class DegreeSelection {
     }
 
     if (this.currentMajors[0] !== null) {
-      console.log(this.pathways)
       this.pathways[0] = this.pathwayService
         .getPathways()
         .map((path) => {
@@ -319,8 +314,7 @@ export class DegreeSelection {
       this.currentMajors[which] = null;
     }
     this.storeHelper.update("faculty", this.currentFaculties[0]);
-    // this.setDegree(this.email, this.currentFaculties[0]);
-    this.setSelection(this.email, "faculty", this.currentFaculties[0], 'degree')
+    this.dbCourses.setSelection(this.email, "faculty", this.currentFaculties[0], 'degree')
     this.facultyForEmail = this.storeHelper.current("faculty");
     this.checkFlags();
     this.populateMajors();
@@ -330,10 +324,8 @@ export class DegreeSelection {
     const conjointNames = this.currentConjoint.map((conjoint) =>
       conjoint ? conjoint.name : null
     );
-    //this.changeBlurb(this.currentConjoint[which].blurb);
     this.storeHelper.update("conjoint", this.currentConjoint[0]);
-   //this.setConjoint(this.email, this.currentConjoint[0]);
-    this.setSelection(this.email, "conjoint", this.currentConjoint[0], 'conjoint')
+    this.dbCourses.setSelection(this.email, "conjoint", this.currentConjoint[0], 'conjoint')
     this.checkFlags();
     this.populateMajors();
   }
@@ -345,23 +337,19 @@ export class DegreeSelection {
 
     this.changeBlurb(this.currentMajors[which].blurb);
     this.storeHelper.update("majors", this.currentMajors[0]);
-    // this.setMajor(this.email, this.currentMajors[0]);
-    this.setSelection(this.email, "firstMajor", this.currentMajors[0], 'major')
+    this.dbCourses.setSelection(this.email, "firstMajor", this.currentMajors[0], 'major')
     this.checkFlags();
     this.populateMajors();
-    console.log(this.pathways)
   }
 
   private changePathway(which, event) {
-    console.log(this.currentPathways[0])
     const pathwayNames = this.currentPathways.map((pathway) =>
       pathway ? pathway.name : null
     );
 
     this.changeBlurb(this.currentPathways[which].blurb);
     this.storeHelper.update("pathways", this.currentPathways[0]);
-    // this.setPathway(this.email, this.currentPathways[0]);
-    this.setSelection(this.email, "pathway", this.currentPathways[0], 'pathway')
+    this.dbCourses.setSelection(this.email, "pathway", this.currentPathways[0], 'pathway')
   }
 
   private changeModule(which, event) {
@@ -371,9 +359,7 @@ export class DegreeSelection {
 
     this.changeBlurb(this.currentModules[which].blurb);
     this.storeHelper.update("modules", this.currentModules[0]);
-   // this.setModule(this.email, this.currentModules[0]);
-    this.setSelection(this.email, "modules", this.currentModules[0], 'module')
-   // this.progressPanelComponent.getMajIDforDel();
+    this.dbCourses.setSelection(this.email, "modules", this.currentModules[0], 'module')
   }
 
   private changeSecondModule(which, event) {
@@ -381,10 +367,8 @@ export class DegreeSelection {
     const secondModuleNames = this.currentSecondModules.map((secondModule) =>
     secondModule ? secondModule.name : null
     );
-    // this.degreeSelect.changeBlurb(this.currentSecondModules[which].blurb);
     this.storeHelper.update("secondModules", this.currentSecondModules[0]);
-   // this.setSecondModule(this.email, this.currentSecondModules[0]);
-    this.setSelection(this.email, "secondModule", this.currentSecondModules[0], 'secondModule')
+    this.dbCourses.setSelection(this.email, "secondModule", this.currentSecondModules[0], 'secondModule')
   }
 
   private changeSecondMajor(which, event) {
@@ -393,8 +377,7 @@ export class DegreeSelection {
     );
     this.changeBlurb(this.currentSecondMajors[which].blurb);
     this.storeHelper.update("secondMajors", this.currentSecondMajors[0]);
-   // this.setSecondMajor(this.email, this.currentSecondMajors[0]);
-    this.setSelection(this.email, "secondMajor", this.currentSecondMajors[0], 'secondMajor')
+    this.dbCourses.setSelection(this.email, "secondMajor", this.currentSecondMajors[0], 'secondMajor')
   }
 
   public changeBlurb(blurb: string) {
@@ -414,60 +397,6 @@ export class DegreeSelection {
     ) {
       this.onPageChange.emit();
     }
-  }
-
-  private setSelection(email, collectionName, collection, document) {
-    this.db
-    .collection("users")
-    .doc(email)
-    .collection(document)
-    .doc(collectionName)
-    .set(collection)
-  }
-
-  private setDegree(email, faculty) {
-      this.db
-      .collection("users")
-      .doc(this.email)
-      .collection("degree")
-      .doc("faculty")
-      .set(faculty);
-  }
-
-  private setConjoint(email, conjoint) {
-    this.db
-    .collection("users")
-    .doc(this.email)
-    .collection("conjoint")
-    .doc("secondFaculty")
-    .set(conjoint);
-}
-
-  private setMajor(email, major) {
-    this.db
-      .collection("users")
-      .doc(this.email)
-      .collection("major")
-      .doc("firstMajor")
-      .set(major);
-  }
-
-  private setPathway(email, pathway) {
-    this.db
-      .collection("users")
-      .doc(this.email)
-      .collection("pathway")
-      .doc("pathway")
-      .set(pathway);
-  }
-
-  private setSecondMajor(email, secondMajor) {
-      this.db
-      .collection("users")
-      .doc(this.email)
-      .collection("secondMajor")
-      .doc("secondMajor")
-      .set(secondMajor);
   }
 
   private getDegID() {

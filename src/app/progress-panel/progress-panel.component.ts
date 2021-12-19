@@ -111,13 +111,11 @@ export class ProgressPanel {
     this.subs = [
       this.store.changes.pluck("faculty").subscribe((faculty) => {
         this.faculty = faculty;
-        console.log(this.faculty)
         this.updateRequirementList();
       }),
 
       this.store.changes.pluck("conjoint").subscribe((conjoint) => {
         this.conjoint = conjoint;
-      //  console.log(this.conjoint)
         this.updateRequirementList();
       }),
 
@@ -128,13 +126,11 @@ export class ProgressPanel {
 
       this.store.changes.pluck("pathways").subscribe((pathways) => {
         this.pathways = pathways;
-        // this.pathways[0] = this.degreeSelect.pathways[0];
         this.updateRequirementList();
       }),
 
       this.store.changes.pluck("secondMajors").subscribe((secondMajors) => {
         this.secondMajors = secondMajors;
-       // console.log(this.secondMajors)
         this.updateRequirementList();
       }),
 
@@ -199,7 +195,6 @@ export class ProgressPanel {
             : this.faculty.doubleMajorRequirements
           : []
       );
-    //console.log(this.requirements)
     this.conjointRequirements = [].concat(
       this.conjoint
         ? this.majors
@@ -296,7 +291,6 @@ export class ProgressPanel {
   }
 
   private selectRequirements(requirement: IRequirement): void {
-    console.log(requirement);
     const stages = requirement.stage
       ? [requirement.stage]
       : requirement.aboveStage
@@ -410,7 +404,6 @@ export class ProgressPanel {
     this.gpa =
       courseGrades.reduce((gradeTotal, grade) => gradeTotal + grade, 0) /
       (courseGrades.length + failed);
-    // console.log("GPA " + this.gpa);
   }
 
   private deleteWholePlan() {
@@ -431,7 +424,6 @@ export class ProgressPanel {
           // Loop to get all the ids of the docs
           this.deleteId = element.id;
           this.storeHelper.update(storeList[i], null);
-          console.log(this.storeHelper.current(storeList[i]))
           this.onPageChange.emit();
           this.db
             .collection("users")
@@ -440,13 +432,7 @@ export class ProgressPanel {
             .doc(this.deleteId)
             .delete()
         },
-        
-        // this.store.changes.pluck(storeList[i]).subscribe((secondMajors) => {
-        //   this.secondMajors = secondMajors;
-        //   console.log(this.secondMajors)
-        //   this.updateRequirementList();
-          
-        // })
+
         );
     
       }
