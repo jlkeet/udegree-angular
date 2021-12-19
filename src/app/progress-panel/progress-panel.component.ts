@@ -111,11 +111,13 @@ export class ProgressPanel {
     this.subs = [
       this.store.changes.pluck("faculty").subscribe((faculty) => {
         this.faculty = faculty;
+        console.log(this.faculty)
         this.updateRequirementList();
       }),
 
       this.store.changes.pluck("conjoint").subscribe((conjoint) => {
         this.conjoint = conjoint;
+      //  console.log(this.conjoint)
         this.updateRequirementList();
       }),
 
@@ -126,11 +128,13 @@ export class ProgressPanel {
 
       this.store.changes.pluck("pathways").subscribe((pathways) => {
         this.pathways = pathways;
+        // this.pathways[0] = this.degreeSelect.pathways[0];
         this.updateRequirementList();
       }),
 
       this.store.changes.pluck("secondMajors").subscribe((secondMajors) => {
         this.secondMajors = secondMajors;
+       // console.log(this.secondMajors)
         this.updateRequirementList();
       }),
 
@@ -413,7 +417,6 @@ export class ProgressPanel {
 
     let collectionList = ["degree", "conjoint", "major", "pathway", "secondMajor", "module", "secondModule"]
     let storeList = ["faculty", "conjoint", "majors", "pathways", "secondMajors", "modules", "secondModules"]
-
     for (let i = 0; i < collectionList.length; i++) {
     this.db
     .collection("users")
@@ -428,16 +431,28 @@ export class ProgressPanel {
           // Loop to get all the ids of the docs
           this.deleteId = element.id;
           this.storeHelper.update(storeList[i], null);
+          console.log(this.storeHelper.current(storeList[i]))
           this.onPageChange.emit();
           this.db
             .collection("users")
             .doc(this.email)
             .collection(collectionList[i])
             .doc(this.deleteId)
-            .delete();
-        });
+            .delete()
+        },
+        
+        // this.store.changes.pluck(storeList[i]).subscribe((secondMajors) => {
+        //   this.secondMajors = secondMajors;
+        //   console.log(this.secondMajors)
+        //   this.updateRequirementList();
+          
+        // })
+        );
+    
       }
-    });
+    })
   }
   }
+
+
 }

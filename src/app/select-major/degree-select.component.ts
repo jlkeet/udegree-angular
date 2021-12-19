@@ -21,7 +21,7 @@ export class DegreeSelection {
 
   private degreeType;
   private faculties = [];
-  private conjoints = [];
+  public conjoints = [];
   private currentFaculties = [];
   private currentConjoint = [];
   private majors = [];
@@ -332,7 +332,8 @@ export class DegreeSelection {
     );
     //this.changeBlurb(this.currentConjoint[which].blurb);
     this.storeHelper.update("conjoint", this.currentConjoint[0]);
-    this.setConjoint(this.email, this.currentConjoint[0]);
+   //this.setConjoint(this.email, this.currentConjoint[0]);
+    this.setSelection(this.email, "conjoint", this.currentConjoint[0], 'conjoint')
     this.checkFlags();
     this.populateMajors();
   }
@@ -359,7 +360,8 @@ export class DegreeSelection {
 
     this.changeBlurb(this.currentPathways[which].blurb);
     this.storeHelper.update("pathways", this.currentPathways[0]);
-    this.setPathway(this.email, this.currentPathways[0]);
+    // this.setPathway(this.email, this.currentPathways[0]);
+    this.setSelection(this.email, "pathway", this.currentPathways[0], 'pathway')
   }
 
   private changeModule(which, event) {
@@ -369,7 +371,8 @@ export class DegreeSelection {
 
     this.changeBlurb(this.currentModules[which].blurb);
     this.storeHelper.update("modules", this.currentModules[0]);
-    this.setModule(this.email, this.currentModules[0]);
+   // this.setModule(this.email, this.currentModules[0]);
+    this.setSelection(this.email, "modules", this.currentModules[0], 'module')
    // this.progressPanelComponent.getMajIDforDel();
   }
 
@@ -380,7 +383,8 @@ export class DegreeSelection {
     );
     // this.degreeSelect.changeBlurb(this.currentSecondModules[which].blurb);
     this.storeHelper.update("secondModules", this.currentSecondModules[0]);
-    this.setSecondModule(this.email, this.currentSecondModules[0]);
+   // this.setSecondModule(this.email, this.currentSecondModules[0]);
+    this.setSelection(this.email, "secondModule", this.currentSecondModules[0], 'secondModule')
   }
 
   private changeSecondMajor(which, event) {
@@ -389,7 +393,8 @@ export class DegreeSelection {
     );
     this.changeBlurb(this.currentSecondMajors[which].blurb);
     this.storeHelper.update("secondMajors", this.currentSecondMajors[0]);
-    this.setSecondMajor(this.email, this.currentSecondMajors[0]);
+   // this.setSecondMajor(this.email, this.currentSecondMajors[0]);
+    this.setSelection(this.email, "secondMajor", this.currentSecondMajors[0], 'secondMajor')
   }
 
   public changeBlurb(blurb: string) {
