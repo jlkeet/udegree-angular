@@ -131,7 +131,6 @@ export class CoursesPanel {
       } else {
         //this.email = auth.email;
         this.email = userContainer.email
-        console.log("courses Panel", this.email)
         if (this.userContainer.logInCounter > 1) {
           // This is necessary to stop the duplicate course loading
         } else {

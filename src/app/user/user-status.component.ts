@@ -51,7 +51,6 @@ export class UserContainer {
         }
       }
       this.email = auth.email; // This has to be included here and I don't know why
-      console.log("user-status", this.email)
       this.photoURL = auth.photoURL.split("/", 4)[3];
       this.router.navigate(["planner"]);
     });

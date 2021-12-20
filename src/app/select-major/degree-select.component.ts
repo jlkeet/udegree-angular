@@ -73,7 +73,6 @@ export class DegreeSelection {
     this.authService.afAuth.authState.subscribe(async (auth) => {
       this.email = auth.email;
       this.email = userContainer.email
-      console.log("Degree sel", this.email)
       this.initiateCurrentPlanFromDb().then(() => {
       this.initiateCurrentPlan()
     }
@@ -111,36 +110,35 @@ export class DegreeSelection {
           .toPromise()
           .then((isItSaved) => {
             if (isItSaved.size > 0) {
-              console.log(isItSaved.size)
               this.onPageChange.emit() // Loads the progress bars if there is something in the user database
               this.dbCourses.getID(this.email, collectionList[i], storeList[i]);
             } else {
             }
           });
-        this.db
-          .collection("users")
-          .doc(this.email)
-          .collection("modules")
-          .get()
-          .toPromise()
-          .then((isItSaved) => {
-            if (isItSaved !== undefined) {
-              this.getModID();
-            } else {
-            }
-          });
-        this.db
-          .collection("users")
-          .doc(this.email)
-          .collection("secondModules")
-          .get()
-          .toPromise()
-          .then((isItSaved) => {
-            if (isItSaved !== undefined) {
-              this.getSecondModID();
-            } else {
-            }
-          });
+        // this.db
+        //   .collection("users")
+        //   .doc(this.email)
+        //   .collection("modules")
+        //   .get()
+        //   .toPromise()
+        //   .then((isItSaved) => {
+        //     if (isItSaved !== undefined) {
+        //       this.getModID();
+        //     } else {
+        //     }
+        //   });
+        // this.db
+        //   .collection("users")
+        //   .doc(this.email)
+        //   .collection("secondModules")
+        //   .get()
+        //   .toPromise()
+        //   .then((isItSaved) => {
+        //     if (isItSaved !== undefined) {
+        //       this.getSecondModID();
+        //     } else {
+        //     }
+        //   });
         resolve();
       }
     });

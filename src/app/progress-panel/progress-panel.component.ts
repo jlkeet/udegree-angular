@@ -32,6 +32,9 @@ import {
   StoreHelper,
 } from "../services";
 import { DegreeSelection } from "../select-major";
+import { FirebaseDbService } from "../core/firebase.db.service";
+import { UserService } from "../core/user.service";
+import { UserContainer } from "../common";
 
 
 /*
@@ -95,6 +98,8 @@ export class ProgressPanel {
     private db: AngularFirestore,
     private degreeSelect: DegreeSelection,
     private moduleService: ModuleService,
+    private dbCourses: FirebaseDbService,
+    private userService: UserContainer,
   ) {
 
     this.currentModules = degreeSelect.currentModules;
@@ -107,6 +112,7 @@ export class ProgressPanel {
   }
 
   public ngOnInit() {
+    this.email = this.userService.email;
 
     this.subs = [
       this.store.changes.pluck("faculty").subscribe((faculty) => {
@@ -142,6 +148,16 @@ export class ProgressPanel {
       this.store.changes.pluck("courses").subscribe((courses: ICourse[]) => {
         this.courses = courses;
         this.calculateGPA();
+      }),
+
+      this.store.changes.pluck("modules").subscribe((modules) => {
+        this.modules = modules;
+        this.updateRequirementList();
+      }),
+
+      this.store.changes.pluck("secondModules").subscribe((secondModules) => {
+        this.secondModules = secondModules;
+        this.updateRequirementList();
       }),
 
       this.store.changes.pluck("semesters").subscribe((semesters: any[]) => {
@@ -369,7 +385,15 @@ export class ProgressPanel {
     );
     this.degreeSelect.changeBlurb(this.currentModules[which].blurb);
     this.storeHelper.update("modules", this.currentModules[0]);
-    this.degreeSelect.setModule(this.email, this.currentModules[0]);
+   // this.degreeSelect.setModule(this.email, this.currentModules[0]);
+
+    this.dbCourses.setSelection(
+      this.email,
+      "modules",
+      this.currentModules[0],
+      "module"
+    );
+
     this.degreeSelect.populateMajors();
   }
 
@@ -385,7 +409,15 @@ export class ProgressPanel {
     );
     // this.degreeSelect.changeBlurb(this.currentSecondModules[which].blurb);
     this.storeHelper.update("secondModules", this.currentSecondModules[0]);
-    this.degreeSelect.setSecondModule(this.email, this.currentSecondModules[0]);
+   // this.degreeSelect.setSecondModule(this.email, this.currentSecondModules[0]);
+
+   this.dbCourses.setSelection(
+    this.email,
+    "secondModule",
+    this.currentSecondModules[0],
+    "secondModule"
+  );
+
     this.degreeSelect.populateMajors();
   }
 

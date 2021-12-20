@@ -41,7 +41,7 @@ export class CourseService {
     //private userContainer: UserContainer,
     ) {
 
-    this.authService.afAuth.authState.subscribe( async (auth) => { this.email = auth.email, console.log("courses Service", this.email) })
+    this.authService.afAuth.authState.subscribe( async (auth) => { this.email = auth.email })
 
     //this.email = userContainer.email
     this.allCourses = require('../../assets/data/newCourses.json');
