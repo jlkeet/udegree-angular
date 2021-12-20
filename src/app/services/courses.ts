@@ -101,35 +101,37 @@ export class CourseService {
     this.storeHelper.add('courses', copy);
     this.updateErrors();
     this.courseCounter++;
-    this.setCourseDb(courseId, period, year, status)
+    this.setCourseDb(copy ,courseId, period, year, status)
+    console.log(courseId)
   }
 
-  private setCourseDb(courseId, coursePeriod, courseYear, status?: CourseStatus, grade?: null){
-    this.db_courses.list("0/" + (courseId - 1)).valueChanges().subscribe(result => { 
-    this.db
-    .collection("users") 
-    .doc(this.email) // Here is where we set the docID to the email so its accessible in the database.
-    .collection("courses")
-    .add(Object.assign({
-      department:result[0],
-      desc: result[1],
-      faculties: result[2],
-      id: result[3],
-      name: result[4],
-      period: coursePeriod,
-      points: result[6],
-      requirements: result[7] || null,
-      stage: result[8],
-      title: result[9],
-      year: courseYear,
-      status: status ? status : CourseStatus.Planned,
-      grade: grade ? grade : null,
-      canDelete: true,
-      }))
-      .then((docRef) => {console.log("Here's the docId " + docRef.id)} )
-    }
-  )    
- }
+private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseStatus, grade?: null){
+  let result = course;
+  console.log(result)
+  this.db
+  .collection("users") 
+  .doc(this.email) // Here is where we set the docID to the email so its accessible in the database.
+  .collection("courses")
+  .add(Object.assign({
+    department:result['department'] || null,
+    desc: result['desc'] || null,
+    faculties: result['faculties'] || null,
+    id: result['id'] || null,
+    name: result['name'] || null,
+    period: coursePeriod,
+    points: result['points'] || null,
+    requirements: result['requirements'] || null,
+    stage: result['stage'] || null,
+    title: result['title'] || null,
+    year: courseYear,
+    status: status ? status : CourseStatus.Planned,
+    grade: grade ? grade : null,
+    canDelete: true,
+    }))
+    .then((docRef) => {console.log("Here's the docId " + docRef.id)} )
+  }
+
+
 
   public deselectCourse(courseId: number) { // Is this redundant now?
     this.storeHelper.findAndDelete('courses', courseId);
