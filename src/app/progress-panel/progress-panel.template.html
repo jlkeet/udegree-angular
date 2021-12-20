@@ -112,7 +112,7 @@
     </div>
   </div>
 
-  <div *ngIf="!modules.name">
+  <div *ngIf="!modules.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
   <button class="addmodule" (click)="addingModule=true" *ngIf="addingModule === false">
     Add Module
   </button>
@@ -155,7 +155,7 @@
 
 
 
-<div *ngIf="!secondModules.name">
+<div *ngIf="!secondModules.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
   <button class="addmodule" (click)="addingSecondModule=true" *ngIf="addingSecondModule === false">
     Add Module
   </button>
