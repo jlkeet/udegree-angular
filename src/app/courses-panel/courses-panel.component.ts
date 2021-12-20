@@ -339,6 +339,7 @@ export class CoursesPanel {
       });
       this.getCourseFromDb(courseDbId).then((res) => {
           this.storeHelper.add("courses", res);
+          this.coursesService.updateErrors();
       });
     });
   }

@@ -212,7 +212,7 @@ private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseS
     this.updateErrors();
   }
 
-  private updateErrors() {
+  public updateErrors() {
     this.errors = [];
     let courseErrors;
     let courseErrorsCoreq;

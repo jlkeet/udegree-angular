@@ -380,7 +380,6 @@ export class SemesterPanel {
       }
     }
 
-console.log(this.boolCheck)
 if (this.boolCheck) {  
   for (let j = 0; j < courses.length; j++) {  
     this.db
