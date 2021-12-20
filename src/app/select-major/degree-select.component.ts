@@ -73,7 +73,7 @@ export class DegreeSelection {
       this.initiateCurrentPlanFromDb().then(() => {
       this.initiateCurrentPlan()
     }
-      ).then( () => {if (this.currentFaculties[0] !== null) { this.onPageChange.emit()}}); // This is required to fire the progress panel, if it doesn't have a conditional check then it will automatically do it and cause bugs.
+      )
     });
   }
 
@@ -106,9 +106,9 @@ export class DegreeSelection {
           .get()
           .toPromise()
           .then((isItSaved) => {
-            if (isItSaved !== undefined) {
+            if (isItSaved.size > 0) {
+              this.onPageChange.emit() // Loads the progress bars if there is something in the user database
               this.dbCourses.getID(this.email, collectionList[i], storeList[i]);
-              //this.onPageChange.emit();
             } else {
             }
           });
