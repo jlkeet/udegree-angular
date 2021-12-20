@@ -14,7 +14,7 @@ export class UserContainer {
   private isLoggedIn: Boolean;
   private displayName: String = "";
   private photoURL: String = "";
-  public email: String = "";
+  public email: string = "";
   private uid: String;
   public logInCounter = 0;
 
@@ -51,6 +51,7 @@ export class UserContainer {
         }
       }
       this.email = auth.email; // This has to be included here and I don't know why
+      console.log("user-status", this.email)
       this.photoURL = auth.photoURL.split("/", 4)[3];
       this.router.navigate(["planner"]);
     });

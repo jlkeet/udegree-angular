@@ -14,6 +14,7 @@ import { ErrorsChangedEvent } from './course.event';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from '../core/auth.service';
+//import { UserContainer } from '../user/user-status.component';
 
 /*
     Helper service for courses
@@ -37,10 +38,12 @@ export class CourseService {
     private db_courses: AngularFireDatabase,
     private db: AngularFirestore,
     public authService: AuthService,
+    //private userContainer: UserContainer,
     ) {
 
-    this.authService.afAuth.authState.subscribe( async (auth) => { this.email = auth.email })
+    this.authService.afAuth.authState.subscribe( async (auth) => { this.email = auth.email, console.log("courses Service", this.email) })
 
+    //this.email = userContainer.email
     this.allCourses = require('../../assets/data/newCourses.json');
 
     // By default, all courses are deletable

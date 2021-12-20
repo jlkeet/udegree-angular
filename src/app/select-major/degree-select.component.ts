@@ -12,6 +12,7 @@ import {
 import { MatFormFieldControl, MatListOption } from "@angular/material";
 import { ProgressPanel } from "../progress-panel";
 import { FirebaseDbService } from "../core/firebase.db.service";
+import { UserContainer } from "../common";
 
 @Component({
   selector: "degree-select",
@@ -66,10 +67,13 @@ export class DegreeSelection {
     private departmentService: DepartmentService,
     private pathwayService: PathwayService,
     private moduleService: ModuleService,
-    private dbCourses: FirebaseDbService
+    private dbCourses: FirebaseDbService,
+    private userContainer: UserContainer,
   ) {
     this.authService.afAuth.authState.subscribe(async (auth) => {
       this.email = auth.email;
+      this.email = userContainer.email
+      console.log("Degree sel", this.email)
       this.initiateCurrentPlanFromDb().then(() => {
       this.initiateCurrentPlan()
     }
@@ -107,6 +111,7 @@ export class DegreeSelection {
           .toPromise()
           .then((isItSaved) => {
             if (isItSaved.size > 0) {
+              console.log(isItSaved.size)
               this.onPageChange.emit() // Loads the progress bars if there is something in the user database
               this.dbCourses.getID(this.email, collectionList[i], storeList[i]);
             } else {
