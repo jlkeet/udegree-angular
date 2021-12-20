@@ -45,6 +45,7 @@ export class CourseService {
 
     //this.email = userContainer.email
     this.allCourses = require('../../assets/data/newCourses.json');
+    this.allCourses.sort((a,b) => a.name.localeCompare(b.name))
 
     // By default, all courses are deletable
     this.allCourses.map((course: ICourse) => course.canDelete = true);
