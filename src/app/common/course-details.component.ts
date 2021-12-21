@@ -16,6 +16,7 @@ import {
   PathwayService,
   StatusEvent,
   ModuleService,
+  StoreHelper,
 } from "../services";
 
 /*
@@ -95,7 +96,8 @@ export class CourseDetails {
     private facultyService: FacultyService,
     private conjointService: ConjointService,
     private pathwayService: PathwayService,
-    private moduleService: ModuleService
+    private moduleService: ModuleService,
+    private storeHelper: StoreHelper,
   ) {
     this.departments = this.departmentService.getDepartments();
     this.faculties = this.facultyService.getFaculties();
@@ -225,7 +227,6 @@ export class CourseDetails {
           this.prerequisitesRequiredMessage = msg;
         }
       }
-
       if (this.showAddCourse) {
         this.alreadyPlannedMessage = this.setAlreadyPlannedMessage();
       }
@@ -246,8 +247,19 @@ export class CourseDetails {
     }
   }
 
+  private alreadyPlanned() {
+
+    for (let i = 0; i < this.storeHelper.current("courses").length; i++) {
+      if (this.course.name === this.storeHelper.current("courses")[i].name) {
+        // this.course === this.storeHelper.current("courses")[i]
+      }
+  }
+  return true;
+}
+
   private setAlreadyPlannedMessage() {
     if (!this.custom) {
+
       const year = this.course.year;
       const period = this.course.period;
       switch (this.course.status) {

@@ -233,15 +233,15 @@ export class AddCourseContainer {
   }
 
   private checkRequirements(course: ICourse): string[] {
-    console.log("I'm firing -1 ", this.currentSemester.length)
+   // console.log("I'm firing -1 ", this.currentSemester.length)
     if (course && course.requirements !== undefined) {
       if (this.currentSemester.length > 0) {
-        console.log("I'm firing ", this.currentSemester.length)
+     //   console.log("I'm firing ", this.currentSemester.length)
         return course.requirements.filter((requirement: IRequirement) =>
         !this.requirementService.requirementFilled(requirement, this.currentSemester))
           .map((requirement: IRequirement) => this.requirementService.toString(requirement, false));
       } else {
-        console.log("I'm firing 2 ", this.currentSemester.length)
+     //   console.log("I'm firing 2 ", this.currentSemester.length)
       return course.requirements.filter((requirement: IRequirement) =>
         !this.requirementService.requirementFilled(requirement, this.beforeSemester))
           .map((requirement: IRequirement) => this.requirementService.toString(requirement, false));
