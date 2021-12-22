@@ -36,6 +36,7 @@ import { FirebaseDbService } from "../core/firebase.db.service";
 import { UserService } from "../core/user.service";
 import { UserContainer } from "../common";
 import { DebugRenderer2 } from "@angular/core/src/view/services";
+import { ValueConverter } from "@angular/compiler/src/render3/view/template";
 
 
 /*
@@ -461,10 +462,17 @@ export class ProgressPanel {
   }
   }
 
-
 private moduleClicked() {
   // console.log(this.modules)
-  console.log(this.secondModules)
+  for (let i = 0; i < this.secondModulesList[0].length; i++) {
+  if (!this.secondModulesList[0][i].value.faculties.includes(this.faculty.name))  {
+  this.secondModulesList[0].splice([i], 1)
+    }
+    if (this.secondModulesList[0][i].value.name === this.modules.name) {
+      this.secondModulesList[0].splice([i], 2)
+    }
+  }
+ 
 }
 
 }
