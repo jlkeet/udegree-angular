@@ -1,7 +1,11 @@
 [
   { 
   "name": "Science in Society",
-  "blurb": "Communicate Science ideas to the masses", 
+  "blurb": "Communicate Science ideas to the masses",
+  "faculties": [
+    "Science",
+    "Arts"
+  ], 
   "courses": [
       "SCIGEN101",
       "SCIGEN201",
@@ -22,6 +26,9 @@
   { 
     "name": "Data Analysis",
     "blurb": "Practical use of statistics with data", 
+    "faculties": [
+      "Science"
+    ], 
     "courses": [
         "STATS101",
         "STATS108",
@@ -60,7 +67,10 @@
     },
   { 
     "name": "Coding and Logic",
-    "blurb": "Learn basic skills in logical reasoning as well as simple computer programming", 
+    "blurb": "Learn basic skills in logical reasoning as well as simple computer programming",
+    "faculties": [
+      "Arts"
+    ],  
     "courses": [
         "COMPSCI101",
         "PHIL101",
