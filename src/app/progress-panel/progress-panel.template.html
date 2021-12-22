@@ -95,13 +95,13 @@
 
 
   <!-- <mat-toolbar *ngIf="currentModules[0][0] !== null" class="plain"> -->
-    <mat-toolbar *ngIf="modules.name" class="plain">
+    <mat-toolbar *ngIf="modules?.name" class="plain">
     <span>
       {{modules.name}}
     </span>
   </mat-toolbar>
 
-  <div *ngIf="modules.name" class="progress-panel-bar-container flex flex-col flex-start">
+  <div *ngIf="modules?.name" class="progress-panel-bar-container flex flex-col flex-start">
     <div class="progress-bar-group">
       <progress-bar-multi-container
          *ngFor="let requirement of moduleRequirements"
@@ -112,7 +112,7 @@
     </div>
   </div>
 
-  <div *ngIf="!modules.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
+  <div *ngIf="!modules?.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
   <button class="addmodule" (click)="addingModule=true" *ngIf="addingModule === false">
     Add Module
   </button>
@@ -121,12 +121,12 @@
     <mat-select
     panelClass="my-panel-class"
     [(value)]="currentModules[0]"
-    [placeholder]= "currentModules[0] ? currentModules[0] : 'Module (optional)'"
+    [placeholder]= "'Module (optional)'"
     (selectionChange)="changeModule(0, $event)"
     [disabled]="addingModule===false"
    >
    
-   <mat-option *ngFor="let module of modules[0]" [value]="module.value" (click)="addedModule=true">
+   <mat-option *ngFor="let module of modulesList[0]" [value]="module.value" (click)="addedModule=true">
     {{ module.view }}
   </mat-option>
   </mat-select>
@@ -136,13 +136,13 @@
 
 
 
-<mat-toolbar *ngIf="secondModules.name" class="plain">
+<mat-toolbar *ngIf="secondModules?.name" class="plain">
   <span>
     {{secondModules.name}}
   </span>
 </mat-toolbar>
 
-<div *ngIf="secondModules.name" class="progress-panel-bar-container flex flex-col flex-start">
+<div *ngIf="secondModules?.name" class="progress-panel-bar-container flex flex-col flex-start">
   <div class="progress-bar-group">
     <progress-bar-multi-container
        *ngFor="let requirement of secondModuleRequirements"
@@ -155,8 +155,8 @@
 
 
 
-<div *ngIf="!secondModules.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
-  <button class="addmodule" (click)="addingSecondModule=true" *ngIf="addingSecondModule === false">
+<div *ngIf="!secondModules?.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
+  <button class="addmodule" (click)="addingSecondModule=true;moduleClicked()" *ngIf="addingSecondModule === false">
     Add Module
   </button>
   <span class="select-module" *ngIf="addingSecondModule === true && addedSecondModule===false">
@@ -164,12 +164,12 @@
     <mat-select
     panelClass="my-panel-class"
     [(value)]="currentSecondModules[0]"
-    [placeholder]= "currentSecondModules[0] ? currentSecondModules[0] : 'Module (optional)'"
+    [placeholder]= "'Module Two (optional)'"
     (selectionChange)="changeSecondModule(0, $event)"
     [disabled]="addingSecondModule===false"
    >
    
-   <mat-option *ngFor="let module of secondModules[0]" [value]="module.value" (click)="addedSecondModule=true">
+   <mat-option *ngFor="let module of secondModulesList[0]" [value]="module.value" (click)="addedSecondModule=true">
     {{ module.view }}
   </mat-option>
   </mat-select>

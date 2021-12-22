@@ -35,6 +35,7 @@ import { DegreeSelection } from "../select-major";
 import { FirebaseDbService } from "../core/firebase.db.service";
 import { UserService } from "../core/user.service";
 import { UserContainer } from "../common";
+import { DebugRenderer2 } from "@angular/core/src/view/services";
 
 
 /*
@@ -75,7 +76,9 @@ export class ProgressPanel {
   private secondMajors;
   private pathways;
   private modules;
+  private modulesList;
   private secondModules;
+  private secondModulesList;
   private minor: any;
   private subs;
   private currentMajors;
@@ -87,6 +90,9 @@ export class ProgressPanel {
 
   private deleteId;
   private email;
+
+  private collectionList = ["module", "secondModule"];
+  private storeList = ["modules", "secondModules"];
 
   constructor(
     private location: LocationRef,
@@ -103,9 +109,9 @@ export class ProgressPanel {
   ) {
 
     this.currentModules = degreeSelect.currentModules;
-    this.modules = degreeSelect.modules;
+    this.modulesList = degreeSelect.modules;
     this.currentSecondModules = degreeSelect.currentSecondModules;
-    this.secondModules = degreeSelect.secondModules;
+    this.secondModulesList = degreeSelect.secondModules;
     this.pathways = degreeSelect.pathways
     this.currentPathways = degreeSelect.currentPathways
     this.currentMajors = degreeSelect.currentMajors;
@@ -156,7 +162,7 @@ export class ProgressPanel {
       }),
 
       this.store.changes.pluck("secondModules").subscribe((secondModules) => {
-        this.secondModules = secondModules;
+          this.secondModules = secondModules;
         this.updateRequirementList();
       }),
 
@@ -170,24 +176,6 @@ export class ProgressPanel {
       }),
 
     ];
-
-    if (this.degreeSelect.currentModules[0][0] !== null) {
-
-    this.modules = this.degreeSelect.currentModules[0],
-    this.updateRequirementList()
-  } else {
-     this.modules = this.degreeSelect.modules;
-  }
-
-  if (this.degreeSelect.currentSecondModules[0][0] !== null) {
-
-    this.secondModules = this.degreeSelect.currentSecondModules[0],
-    this.updateRequirementList()
-  } else {
-
-     this.secondModules = this.degreeSelect.secondModules;
-
-  }
   }
 
   public ngOnChanges() {
@@ -202,6 +190,7 @@ export class ProgressPanel {
   // Have commented out the major[0] for now will but will come back for it later.
 
   private updateRequirementList() {
+
     this.requirements = []
       //.concat(this.faculty ? (this.majors[0] && this.majors[1] ?
       .concat(
@@ -472,5 +461,10 @@ export class ProgressPanel {
   }
   }
 
+
+private moduleClicked() {
+  // console.log(this.modules)
+  console.log(this.secondModules)
+}
 
 }

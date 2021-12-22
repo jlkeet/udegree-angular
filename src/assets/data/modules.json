@@ -57,5 +57,40 @@
           ]
         }
       ]
+    },
+  { 
+    "name": "Coding and Logic",
+    "blurb": "Learn basic skills in logical reasoning as well as simple computer programming", 
+    "courses": [
+        "COMPSCI101",
+        "PHIL101",
+        "COMPSCI225",
+        "PHIL216",
+        "PHIL222"
+      ],
+      "requirements": [
+        {
+          "type": 1,
+          "required": 1,
+          "papers": [
+            "COMPSCI101"
+          ]
+        },        {
+          "type": 1,
+          "required": 1,
+          "papers": [
+            "PHIL101"
+          ]
+        },
+        {
+          "type": 1,
+          "required": 1,
+          "papers": [
+            "COMPSCI225",
+            "PHIL216",
+            "PHIL222"
+          ]
+        }
+      ]
     }
 ]

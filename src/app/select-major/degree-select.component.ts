@@ -207,9 +207,9 @@ export class DegreeSelection {
       return { value: conjoint, view: conjoint.name };
     });
 
-    // this.modules = this.moduleService.getModules().map((modules) => {
-    //   return { value: modules, view: modules.name };
-    // });
+    this.modules = this.moduleService.getModules().map((modules) => {
+      return { value: modules, view: modules.name };
+    });
 
     // this.secondModules = this.moduleService.getModules().map((secondModules) => {
     //   return { value: secondModules, view: secondModules.name };
