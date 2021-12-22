@@ -40,6 +40,9 @@ export class UserContainer {
           this.router.navigate(["/login"]);
         }
       } else {
+        this.email = auth.email; // This has to be included here and I don't know why
+        this.photoURL = auth.photoURL.split("/", 4)[3];
+        this.router.navigate(["planner"]);
         this.isLoggedIn = true; // User is logged in
         this.logInCounter++;
         if (auth.displayName != null) {
@@ -50,9 +53,6 @@ export class UserContainer {
           ); // If there isn't then use getUserName to grab it from Firestore
         }
       }
-      this.email = auth.email; // This has to be included here and I don't know why
-      this.photoURL = auth.photoURL.split("/", 4)[3];
-      this.router.navigate(["planner"]);
     });
   }
 

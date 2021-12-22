@@ -70,14 +70,14 @@ export class DegreeSelection {
     private dbCourses: FirebaseDbService,
     private userContainer: UserContainer,
   ) {
-    this.authService.afAuth.authState.subscribe(async (auth) => {
+    this.authService.afAuth.authState.subscribe(async (auth) => { if (auth) {
       this.email = auth.email;
       this.email = userContainer.email
       this.initiateCurrentPlanFromDb().then(() => {
       this.initiateCurrentPlan()
     }
       )
-    });
+    }});
   }
 
   private initiateCurrentPlanFromDb() {
