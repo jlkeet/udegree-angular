@@ -38,7 +38,6 @@ import { UserContainer } from "../common";
 import { DebugRenderer2 } from "@angular/core/src/view/services";
 import { ValueConverter } from "@angular/compiler/src/render3/view/template";
 
-
 /*
   Component for displaying a group of progress bars
 */
@@ -106,15 +105,14 @@ export class ProgressPanel {
     private degreeSelect: DegreeSelection,
     private moduleService: ModuleService,
     private dbCourses: FirebaseDbService,
-    private userService: UserContainer,
+    private userService: UserContainer
   ) {
-
     this.currentModules = degreeSelect.currentModules;
     this.modulesList = degreeSelect.modules;
     this.currentSecondModules = degreeSelect.currentSecondModules;
     this.secondModulesList = degreeSelect.secondModules;
-    this.pathways = degreeSelect.pathways
-    this.currentPathways = degreeSelect.currentPathways
+    this.pathways = degreeSelect.pathways;
+    this.currentPathways = degreeSelect.currentPathways;
     this.currentMajors = degreeSelect.currentMajors;
   }
 
@@ -163,7 +161,7 @@ export class ProgressPanel {
       }),
 
       this.store.changes.pluck("secondModules").subscribe((secondModules) => {
-          this.secondModules = secondModules;
+        this.secondModules = secondModules;
         this.updateRequirementList();
       }),
 
@@ -175,7 +173,6 @@ export class ProgressPanel {
           this.firstSemester = null;
         }
       }),
-
     ];
   }
 
@@ -191,7 +188,6 @@ export class ProgressPanel {
   // Have commented out the major[0] for now will but will come back for it later.
 
   private updateRequirementList() {
-
     this.requirements = []
       //.concat(this.faculty ? (this.majors[0] && this.majors[1] ?
       .concat(
@@ -227,7 +223,6 @@ export class ProgressPanel {
       this.secondMajors ? this.secondMajors.requirements : []
     );
     //  .concat(this.minor ? this.minor.requirements : []);
-
 
     this.moduleRequirements = [].concat(
       this.modules ? this.modules.requirements : []
@@ -274,7 +269,6 @@ export class ProgressPanel {
   }
 
   private pageChange() {
-
     this.email = this.degreeSelect.email;
     this.deleteWholePlan();
   }
@@ -364,18 +358,17 @@ export class ProgressPanel {
   }
 
   private changeModule(which, event) {
-
     this.store.changes.pluck("modules").subscribe((modules) => {
       this.modules = modules;
       this.updateRequirementList();
-    })
+    });
 
     const moduleNames = this.degreeSelect.currentModules.map((module) =>
       module ? module.name : null
     );
     this.degreeSelect.changeBlurb(this.currentModules[which].blurb);
     this.storeHelper.update("modules", this.currentModules[0]);
-   // this.degreeSelect.setModule(this.email, this.currentModules[0]);
+    // this.degreeSelect.setModule(this.email, this.currentModules[0]);
 
     this.dbCourses.setSelection(
       this.email,
@@ -388,25 +381,24 @@ export class ProgressPanel {
   }
 
   private changeSecondModule(which, event) {
-
     this.store.changes.pluck("secondModules").subscribe((secondModules) => {
       this.secondModules = secondModules;
       this.updateRequirementList();
-    })
+    });
 
-    const secondModuleNames = this.degreeSelect.currentSecondModules.map((secondModule) =>
-    secondModule ? secondModule.name : null
+    const secondModuleNames = this.degreeSelect.currentSecondModules.map(
+      (secondModule) => (secondModule ? secondModule.name : null)
     );
     // this.degreeSelect.changeBlurb(this.currentSecondModules[which].blurb);
     this.storeHelper.update("secondModules", this.currentSecondModules[0]);
-   // this.degreeSelect.setSecondModule(this.email, this.currentSecondModules[0]);
+    // this.degreeSelect.setSecondModule(this.email, this.currentSecondModules[0]);
 
-   this.dbCourses.setSelection(
-    this.email,
-    "secondModule",
-    this.currentSecondModules[0],
-    "secondModule"
-  );
+    this.dbCourses.setSelection(
+      this.email,
+      "secondModule",
+      this.currentSecondModules[0],
+      "secondModule"
+    );
 
     this.degreeSelect.populateMajors();
   }
@@ -429,63 +421,82 @@ export class ProgressPanel {
   }
 
   private deleteWholePlan() {
-
-    let collectionList = ["degree", "conjoint", "major", "pathway", "secondMajor", "module", "secondModule"]
-    let storeList = ["faculty", "conjoint", "majors", "pathways", "secondMajors", "modules", "secondModules"]
+    let collectionList = [
+      "degree",
+      "conjoint",
+      "major",
+      "pathway",
+      "secondMajor",
+      "module",
+      "secondModule",
+    ];
+    let storeList = [
+      "faculty",
+      "conjoint",
+      "majors",
+      "pathways",
+      "secondMajors",
+      "modules",
+      "secondModules",
+    ];
     for (let i = 0; i < collectionList.length; i++) {
-    this.db
-    .collection("users")
-    .doc(this.email)
-    .collection(collectionList[i])
-    .get()
-    .toPromise()
-    .then((sub) => {
-      if (sub.docs.length > 0) {
-        // Check to see if documents exist in the courses collection
-        sub.forEach((element) => {
-          // Loop to get all the ids of the docs
-          this.deleteId = element.id;
-          this.storeHelper.update(storeList[i], null);
-          this.onPageChange.emit();
-          this.db
-            .collection("users")
-            .doc(this.email)
-            .collection(collectionList[i])
-            .doc(this.deleteId)
-            .delete()
-        },
-
-        );
-    
-      }
-    })
-  }
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection(collectionList[i])
+        .get()
+        .toPromise()
+        .then((sub) => {
+          if (sub.docs.length > 0) {
+            // Check to see if documents exist in the courses collection
+            sub.forEach((element) => {
+              // Loop to get all the ids of the docs
+              this.deleteId = element.id;
+              this.storeHelper.update(storeList[i], null);
+              this.onPageChange.emit();
+              this.db
+                .collection("users")
+                .doc(this.email)
+                .collection(collectionList[i])
+                .doc(this.deleteId)
+                .delete();
+            });
+          }
+        });
+    }
   }
 
   private moduleClicked() {
     // console.log(this.modules)
+    for (let i = 0; i < this.modulesList[0].length; i++) {
+      if (!this.modulesList[0][i].value.faculties.includes(this.faculty.name)) {
+        this.modulesList[0].splice([i], 1);
+      }
+      if (
+        this.modulesList[0][i].value.name === this.modules.name ||
+        this.modulesList[0][i].value.name === this.secondModules.name
+      ) {
+        this.modulesList[0].splice([i], 2);
+      }
+    }
+  }
+
+  private secondModuleClicked() {
+    // console.log(this.modules)
     for (let i = 0; i < this.secondModulesList[0].length; i++) {
-    if (!this.secondModulesList[0][i].value.faculties.includes(this.faculty.name))  {
-    this.secondModulesList[0].splice([i], 1)
+      if (
+        !this.secondModulesList[0][i].value.faculties.includes(
+          this.faculty.name
+        )
+      ) {
+        this.secondModulesList[0].splice([i], 1);
       }
-      if (this.secondModulesList[0][i].value.name === this.modules.name || this.secondModules.name) {
-        this.secondModulesList[0].splice([i], 2)
+      if (
+        this.secondModulesList[0][i].value.name === this.modules.name ||
+        this.secondModulesList[0][i].value.name === this.secondModules.name
+      ) {
+        this.secondModulesList[0].splice([i], 2);
       }
-    }
-   
-  }
-
-private secondModuleClicked() {
-  // console.log(this.modules)
-  for (let i = 0; i < this.modulesList[0].length; i++) {
-  if (!this.modulesList[0][i].value.faculties.includes(this.faculty.name))  {
-  this.modulesList[0].splice([i], 1)
-    }
-    if (this.modulesList[0][i].value.name === this.modules.name || this.secondModules.name) {
-      this.modulesList[0].splice([i], 2)
     }
   }
- 
-}
-
 }
