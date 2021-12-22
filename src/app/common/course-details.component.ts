@@ -249,12 +249,12 @@ export class CourseDetails {
 
   private alreadyPlanned() {
 
-    for (let i = 0; i < this.storeHelper.current("courses").length; i++) {
-      if (this.course.name === this.storeHelper.current("courses")[i].name) {
-        // this.course === this.storeHelper.current("courses")[i]
-      }
+  for (let i = 0; i < this.storeHelper.current("courses").length; i++) {  
+    if (this.storeHelper.current("courses")[i].name === this.course.name) {
+      return true
+    }
   }
-  return true;
+  
 }
 
   private setAlreadyPlannedMessage() {

@@ -77,7 +77,7 @@
     </div>
 
 
-    <div *ngIf="alreadyPlanned() !== true"> 
+    <!-- <div *ngIf="alreadyPlanned() !== true">  -->
       <mat-form-field>
         <mat-select [value]="courseStatus" (selectionChange)="newStatus($event)">
           <mat-option
@@ -88,7 +88,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
+    <!-- </div> -->
 
     <div *ngIf="!custom && !showAddCourse && courseStatus === 2"> 
       <mat-form-field>
@@ -105,7 +105,7 @@
       </mat-form-field>
     </div>
 
-    <div> 
+    <div>
       <a *ngIf='custom || showAddCourse && !course.disabled && alreadyPlanned() !== true'
            class='btn add-course-button' (click)='addCourse()'> ADD COURSE</a>
       <a class='close-dialog' (click)='cancel($event)'> &times;</a>
