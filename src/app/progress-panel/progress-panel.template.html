@@ -94,7 +94,6 @@
   </div>
 
 
-  <!-- <mat-toolbar *ngIf="currentModules[0][0] !== null" class="plain"> -->
     <mat-toolbar *ngIf="modules?.name" class="plain">
     <span>
       {{modules.name}}
@@ -113,7 +112,7 @@
   </div>
 
   <div *ngIf="!modules?.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
-  <button class="addmodule" (click)="addingModule=true" *ngIf="addingModule === false">
+  <button class="addmodule" (click)="addingModule=true;moduleClicked()" *ngIf="addingModule === false">
     Add Module
   </button>
   <span class="select-module" *ngIf="addingModule === true && addedModule===false">
@@ -133,54 +132,6 @@
 </mat-form-field>
 </span>
 </div>
-
-<!-- <div *ngIf="!modules?.name && faculty?.name === 'Arts">
-
-  <button class="addmodule" (click)="addingModule=true" *ngIf="addingModule === false">
-    Add Module
-  </button>
-  <span class="select-module" *ngIf="addingModule === true && addedModule===false">
-    <mat-form-field>
-    <mat-select
-    panelClass="my-panel-class"
-    [(value)]="currentModules[0]"
-    [placeholder]= "'Module (optional)'"
-    (selectionChange)="changeModule(0, $event)"
-    [disabled]="addingModule===false"
-   >
-   
-   <mat-option *ngFor="let module of modulesList[0]" [value]="module.value" (click)="addedModule=true">
-    {{ module.view }}
-  </mat-option>
-  </mat-select>
-</mat-form-field>
-</span>
-</div>
-
-
-<div *ngIf="!modules?.name && faculty?.name === 'Science'">
-  <button class="addmodule" (click)="addingModule=true" *ngIf="addingModule === false">
-    Add Module
-  </button>
-  <span class="select-module" *ngIf="addingModule === true && addedModule===false">
-    <mat-form-field>
-    <mat-select
-    panelClass="my-panel-class"
-    [(value)]="currentModules[0]"
-    [placeholder]= "'Module (optional)'"
-    (selectionChange)="changeModule(0, $event)"
-    [disabled]="addingModule===false"
-   >
-   
-   <mat-option *ngFor="let module of modulesList[0]" [value]="module.value" (click)="addedModule=true">
-    {{ module.view }}
-  </mat-option>
-  </mat-select>
-</mat-form-field>
-</span>
-</div> -->
-
-
 
 <mat-toolbar *ngIf="secondModules?.name" class="plain">
   <span>
@@ -202,7 +153,7 @@
 
 
 <div *ngIf="!secondModules?.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
-  <button class="addmodule" (click)="addingSecondModule=true;moduleClicked()" *ngIf="addingSecondModule === false">
+  <button class="addmodule" (click)="addingSecondModule=true;secondModuleClicked()" *ngIf="addingSecondModule === false">
     Add Module
   </button>
   <span class="select-module" *ngIf="addingSecondModule === true && addedSecondModule===false">

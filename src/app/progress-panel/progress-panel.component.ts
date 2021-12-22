@@ -462,14 +462,27 @@ export class ProgressPanel {
   }
   }
 
-private moduleClicked() {
-  // console.log(this.modules)
-  for (let i = 0; i < this.secondModulesList[0].length; i++) {
-  if (!this.secondModulesList[0][i].value.faculties.includes(this.faculty.name))  {
-  this.secondModulesList[0].splice([i], 1)
+  private moduleClicked() {
+    // console.log(this.modules)
+    for (let i = 0; i < this.secondModulesList[0].length; i++) {
+    if (!this.secondModulesList[0][i].value.faculties.includes(this.faculty.name))  {
+    this.secondModulesList[0].splice([i], 1)
+      }
+      if (this.secondModulesList[0][i].value.name === this.modules.name || this.secondModules.name) {
+        this.secondModulesList[0].splice([i], 2)
+      }
     }
-    if (this.secondModulesList[0][i].value.name === this.modules.name) {
-      this.secondModulesList[0].splice([i], 2)
+   
+  }
+
+private secondModuleClicked() {
+  // console.log(this.modules)
+  for (let i = 0; i < this.modulesList[0].length; i++) {
+  if (!this.modulesList[0][i].value.faculties.includes(this.faculty.name))  {
+  this.modulesList[0].splice([i], 1)
+    }
+    if (this.modulesList[0][i].value.name === this.modules.name || this.secondModules.name) {
+      this.modulesList[0].splice([i], 2)
     }
   }
  
