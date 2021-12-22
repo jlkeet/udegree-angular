@@ -20,7 +20,7 @@ const AssetsPlugin = require('assets-webpack-plugin');
  */
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
-  title: 'Udegree - Plan for success',
+  title: 'Udegree | Degree planning made easy',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };

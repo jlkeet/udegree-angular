@@ -42,7 +42,7 @@ const defaultState = {
   minor: null,
   page: false,
   semesters: [],
-  slogan: 'Plan for Success',
+  slogan: 'Degree planning made easy',
   summerSchools: [false, false, false, false]
 };
 
