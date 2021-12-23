@@ -125,7 +125,7 @@
     [disabled]="addingModule===false"
    >
    
-   <mat-option *ngFor="let module of modulesList[0]" [value]="module.value" (click)="addedModule=true">
+   <mat-option *ngFor="let module of modulesList" [value]="module.value" (click)="addedModule=true">
     {{ module.view }}
   </mat-option>
   </mat-select>

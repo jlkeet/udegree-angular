@@ -72,10 +72,17 @@
 
 .export-button {
   float:right;
-  background-color:#ffcc00;
   color:black;
 }
 
+.default {
+  background-color:#ffcc00;
+}
+
+.sent {
+  background-color:#65cc01;
+  transition: 0.3s ease-in 0.2s;
+}
 
 .export-container {
   width:100%;

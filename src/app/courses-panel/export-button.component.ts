@@ -33,6 +33,8 @@ import html2canvas from 'html2canvas';
     private name: string;
     private facultyEmail: string;
     private url;
+    private toggle = false;
+    private status = "Export Plan"
     private onPageChange = new EventEmitter<null>();
   
     constructor(
@@ -109,5 +111,10 @@ public exportButton() {
             }],
       },
     })
+    }
+
+    private changeColor() {
+      this.toggle = !this.toggle;
+      this.status = this.toggle ? 'Plan Sent ✓' : 'Export Plan';
     }
 }

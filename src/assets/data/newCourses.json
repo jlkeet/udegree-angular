@@ -1646,7 +1646,7 @@
   },
   {
     "id": 103,
-    "name": "ANTHRO 208",
+    "name": "ANTHRO208",
     "title": "Biosocial Medical Anthropology",
     "desc": "Medical Anthropology draws on biological and social/cultural anthropology to address issues of human health and disease. A distinct subfield, it includes studies of the co-evolution of humans and diseases, human ecology, cultural constructions of health and illness, medical knowledge and healing practices, and the political economy of health. Students are asked to research, think and write analytically about these topics.",
     "faculties": ["Arts"],
@@ -1700,7 +1700,7 @@
   },
   {
     "id": 105,
-    "name": "ANTHRO 212",
+    "name": "ANTHRO212",
     "title": "Ethnographic Film and Photography",
     "desc": "Explores uses of photography and film in the production and dissemination of anthropological knowledge. Emphasises the choices in subject matter, imagined audience, composition, construction of narrative (or not), and mode of representation that are made at all stages in the production of ethnographic images. Uses ethnographic images to reflect on construction of ethnographic texts.",
     "faculties": ["Arts"],
@@ -1740,7 +1740,7 @@
   },
   {
     "id": 106,
-    "name": "ANTHRO 213",
+    "name": "ANTHRO213",
     "title": "Questioning Race and Racism",
     "desc": "Multiple anthropological frameworks explore the scholarly and popular understandings of race and racism, and question contemporary perspectives. Why do these concepts have such social and political potency? What are the impacts of concepts of race and practices of racism and anti-racism on individuals, families, communities, nation-states and empires, in Aotearoa New Zealand, the Pacific, and elsewhere?",
     "faculties": ["Arts"],
@@ -1777,7 +1777,7 @@
   },
   {
     "id": 108,
-    "name": "ANTHRO 220",
+    "name": "ANTHRO220",
     "title": "Kaum\u0101tuatanga: Ageing in Aotearoa",
     "desc": "Examines contemporary and historical understandings of kaum\u0101tuatanga and kaum\u0101tua roles in M\u0101ori society. Topics include: leadership within M\u0101ori society; tuakana-teina, gendered roles and complementarity; whanaungatanga and important relationships; health inequities and policies; emerging health partnership models; and the diversity of kaum\u0101tua groups.",
     "faculties": ["Arts"],
@@ -1908,7 +1908,7 @@
   },
   {
     "id": 114,
-    "name": "ANTHRO 237",
+    "name": "ANTHRO237",
     "title": "Economy and Culture",
     "desc": "Explores economic systems cross-culturally, including modes of production, forms of exchange, and ideas about property and consumption. Questions and critiques Euro-American assumptions about human nature, social persons, and the ubiquity and morality of markets and market exchange.",
     "faculties": ["Arts"],

@@ -108,7 +108,7 @@ export class ProgressPanel {
     private userService: UserContainer
   ) {
     this.currentModules = degreeSelect.currentModules;
-    this.modulesList = degreeSelect.modules;
+    this.modulesList = degreeSelect.modules[0];
     this.currentSecondModules = degreeSelect.currentSecondModules;
     this.secondModulesList = degreeSelect.secondModules;
     this.pathways = degreeSelect.pathways;
@@ -467,16 +467,16 @@ export class ProgressPanel {
   }
 
   private moduleClicked() {
-    // console.log(this.modules)
-    for (let i = 0; i < this.modulesList[0].length; i++) {
-      if (!this.modulesList[0][i].value.faculties.includes(this.faculty.name)) {
-        this.modulesList[0].splice([i], 1);
+    for (let i = 0; i < this.modulesList.length; i++) {
+      if (!this.modulesList[i].value.faculties.includes(this.faculty.name)) {
+        //console.log(this.modulesList[0][i].value)
+        this.modulesList.splice([i], 1);
       }
       if (
-        this.modulesList[0][i].value.name === this.modules.name ||
-        this.modulesList[0][i].value.name === this.secondModules.name
+        this.modulesList[i].value.name === this.modules.name ||
+        this.modulesList[i].value.name === this.secondModules.name
       ) {
-        this.modulesList[0].splice([i], 2);
+        this.modulesList.splice([i], 2);
       }
     }
   }
