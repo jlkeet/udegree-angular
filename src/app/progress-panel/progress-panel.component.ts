@@ -466,8 +466,23 @@ export class ProgressPanel {
     }
   }
 
+  // private moduleClicked() {
+  //   for (let i = 0; i < this.modulesList.length; i++) {
+  //     if (!this.modulesList[i].value.faculties.includes(this.faculty.name)) {
+  //       //console.log(this.modulesList[0][i].value)
+  //       this.modulesList.splice([i], 1);
+  //     }
+  //     if (
+  //       this.modulesList[i].value.name === this.modules.name ||
+  //       this.modulesList[i].value.name === this.secondModules.name
+  //     ) {
+  //       this.modulesList.splice([i], 2);
+  //     }
+  //   }
+  // }
+
   private moduleClicked() {
-    for (let i = 0; i < this.modulesList.length; i++) {
+    for (let i = this.modulesList.length -1; i >= 0; i--) {
       if (!this.modulesList[i].value.faculties.includes(this.faculty.name)) {
         //console.log(this.modulesList[0][i].value)
         this.modulesList.splice([i], 1);
@@ -482,13 +497,9 @@ export class ProgressPanel {
   }
 
   private secondModuleClicked() {
-    // console.log(this.modules)
-    for (let i = 0; i < this.secondModulesList[0].length; i++) {
-      if (
-        !this.secondModulesList[0][i].value.faculties.includes(
-          this.faculty.name
-        )
-      ) {
+    for (let i = this.secondModulesList[0].length -1; i >= 0; i--) {
+      if (!this.secondModulesList[0][i].value.faculties.includes(this.faculty.name)) {
+        //console.log(this.modulesList[0][i].value)
         this.secondModulesList[0].splice([i], 1);
       }
       if (
@@ -499,4 +510,23 @@ export class ProgressPanel {
       }
     }
   }
+
+  // private secondModuleClicked() {
+  //   // console.log(this.modules)
+  //   for (let i = 0; i < this.secondModulesList[0].length; i++) {
+  //     if (
+  //       !this.secondModulesList[0][i].value.faculties.includes(
+  //         this.faculty.name
+  //       )
+  //     ) {
+  //       this.secondModulesList[0].splice([i], 1);
+  //     }
+  //     if (
+  //       this.secondModulesList[0][i].value.name === this.modules.name ||
+  //       this.secondModulesList[0][i].value.name === this.secondModules.name
+  //     ) {
+  //       this.secondModulesList[0].splice([i], 2);
+  //     }
+  //   }
+  // }
 }
