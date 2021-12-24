@@ -53,6 +53,7 @@
   </mat-form-field>
 
   <mat-form-field *ngIf="currentFaculties[0] && currentMajors[0]">
+    {{pathwayFilter()}}
     <mat-select
        class="dropdown"
        [(value)]="currentPathways[0]"

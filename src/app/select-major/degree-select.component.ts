@@ -418,4 +418,15 @@ export class DegreeSelection {
       this.onPageChange.emit();
     }
   }
+
+  private pathwayFilter() {
+    for (let i = this.pathways[0].length -1; i >= 0; i--) {
+      if (!this.pathways[0][i].value.faculties.includes(this.currentMajors[0].name)) {
+        this.pathways[0].splice([i], 1);
+      }
+    }
+
+
+
+  }
 }
