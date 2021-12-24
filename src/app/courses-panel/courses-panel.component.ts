@@ -77,6 +77,8 @@ export class CoursesPanel {
   private dbCoursesSavedArrayById = [];
   private onPageChange = new EventEmitter<null>();
 
+  private canLoad;
+
   constructor(
     private coursesService: CourseService,
     private courseEventService: CourseEventService,
@@ -142,11 +144,14 @@ export class CoursesPanel {
   }
 
   public ngOnInit() {
-
+    
   }
 
   public ngOnChanges(): void {
-
+    this.dbCourses.hasDegreeCheck();
+    if (this.dbCourses.canLoad === true) {
+      setTimeout(() => { this.ngOnInit() }, 1000 * 10)
+    }
     this.nextSemesterCheck();
 
     this.newOpen = false;
@@ -274,6 +279,7 @@ export class CoursesPanel {
                     // Loop to get all the ids of the docs
                     this.addSemesterFromDb(element.id);
                     this.loadCourseFromDb(element.id); // Call to loading the courses on the screen, by id
+                    this.dbCourses.hasDegreeCheck();
                   });
                 }
               });
@@ -425,5 +431,16 @@ public updateSemesterCheck() {
     }
     }
 }
+
+// private hasDegreeCheck() {
+//   console.log(this.storeHelper.current("faculty"))
+
+//   if (this.storeHelper.current("faculty")) {
+//     this.canLoad = true;
+//     console.log(this.canLoad)
+    
+//   }
+  
+// }
 
 }

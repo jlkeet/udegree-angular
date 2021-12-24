@@ -1,4 +1,4 @@
-<div class="courses-panel">
+<div *ngIf="dbCourses.canLoad; else cantLoad" class="courses-panel">
   <div class="courses-panel-content" >
     <semester-panel *ngFor="let semester of semesters; let i=index" [semester]="semester" [courses]="filteredCourses[i]? filteredCourses[i]:[]">
     </semester-panel>
@@ -13,3 +13,8 @@
   <export-button>
   </export-button>
 </div>
+
+<ng-template #cantLoad class="courses-panel">
+
+    <P>Please Select Degree</P>
+</ng-template>

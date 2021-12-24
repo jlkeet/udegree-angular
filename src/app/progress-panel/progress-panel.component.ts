@@ -37,6 +37,7 @@ import { UserService } from "../core/user.service";
 import { UserContainer } from "../common";
 import { DebugRenderer2 } from "@angular/core/src/view/services";
 import { ValueConverter } from "@angular/compiler/src/render3/view/template";
+import { CoursesPanel } from "../courses-panel";
 
 /*
   Component for displaying a group of progress bars
@@ -105,7 +106,8 @@ export class ProgressPanel {
     private degreeSelect: DegreeSelection,
     private moduleService: ModuleService,
     private dbCourses: FirebaseDbService,
-    private userService: UserContainer
+    private userService: UserContainer,
+    private coursesPanel: CoursesPanel
   ) {
     this.currentModules = degreeSelect.currentModules;
     this.modulesList = degreeSelect.modules[0];
@@ -421,6 +423,10 @@ export class ProgressPanel {
   }
 
   private deleteWholePlan() {
+    this.dbCourses.canLoad = false
+    // if (this.dbCourses.canLoad === false) {
+    setTimeout(() => { this.coursesPanel.ngOnInit() }, 1.5 * 1000)
+    // }
     let collectionList = [
       "degree",
       "conjoint",

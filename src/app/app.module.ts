@@ -226,6 +226,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     UserContainer,
     DegreeSelection,
     ProgressPanel,
+    CoursesPanel,
 
     ...providers
   ]

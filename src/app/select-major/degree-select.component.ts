@@ -13,6 +13,7 @@ import { MatFormFieldControl, MatListOption } from "@angular/material";
 import { ProgressPanel } from "../progress-panel";
 import { FirebaseDbService } from "../core/firebase.db.service";
 import { UserContainer } from "../common";
+import { CoursesPanel } from "../courses-panel";
 
 @Component({
   selector: "degree-select",
@@ -339,6 +340,8 @@ export class DegreeSelection {
     );
     this.checkFlags();
     this.populateMajors();
+    this.dbCourses.hasDegreeCheck();
+    
   }
 
   private changePathway(which, event) {

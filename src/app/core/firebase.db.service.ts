@@ -13,6 +13,7 @@ export class FirebaseDbService {
   @Output() private onPageChange = new EventEmitter<null>();
   uid: string;
   public email;
+  public canLoad;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -105,5 +106,13 @@ export class FirebaseDbService {
         this.storeHelper.update(storeHelperName, res)
       });
     });
+  }
+
+  public hasDegreeCheck() {
+    if (this.storeHelper.current("faculty")) {
+      this.canLoad = true;
+      
+    }
+    
   }
 }
