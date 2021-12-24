@@ -511,22 +511,4 @@ export class ProgressPanel {
     }
   }
 
-  // private secondModuleClicked() {
-  //   // console.log(this.modules)
-  //   for (let i = 0; i < this.secondModulesList[0].length; i++) {
-  //     if (
-  //       !this.secondModulesList[0][i].value.faculties.includes(
-  //         this.faculty.name
-  //       )
-  //     ) {
-  //       this.secondModulesList[0].splice([i], 1);
-  //     }
-  //     if (
-  //       this.secondModulesList[0][i].value.name === this.modules.name ||
-  //       this.secondModulesList[0][i].value.name === this.secondModules.name
-  //     ) {
-  //       this.secondModulesList[0].splice([i], 2);
-  //     }
-  //   }
-  // }
 }
