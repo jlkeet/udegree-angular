@@ -60,7 +60,7 @@
 
     <div class="remove-pad flex-justify">
       <mat-slide-toggle [(ngModel)]="filterParams.ineligible" labelPosition="before" (change)="onChange()">
-        Show ineligible
+        Only show eligible
       </mat-slide-toggle>
 
       <mat-slide-toggle [(ngModel)]="filterParams.general" labelPosition="before" (change)="onChange($event, 'general')">

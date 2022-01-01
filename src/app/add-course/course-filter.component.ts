@@ -83,7 +83,7 @@ export class CourseFilter {
     let shown = this.courses;
     const flags = [];
     const modules = this.filterParams.modules;
-    if (!this.filterParams.ineligible) {
+    if (this.filterParams.ineligible) {
       shown = shown.filter((course: ICourse) => course.canAdd);
     }
     if (this.filterParams.general) {
