@@ -59951,12 +59951,14 @@
   "title": "Mind, Brain and Behaviour",
   "desc": "Topics covered may include: the nature of sensory and perceptual processes, the cause of perceptual illusions, the structure and function of the human brain, approaches to animal and human learning, models of human language and memory, and the design of psychological experiments. A laboratory component, in which students are required to participate as subjects, forms part of the course.",
   "faculties": [
-    "Science"
+    "Science",
+    "Arts"
   ],
   "department": "Psychology",
   "points": 15,
   "stage": 1,
-  "requirements": []
+  "requirements": [],
+  "isActive": true
 },
 {
   "id": 2607,
@@ -59980,7 +59982,9 @@
   ],
   "department": "Psychology",
   "points": 15,
-  "stage": 1
+  "stage": 1,
+  "requirements": [],
+  "isActive": true
 },
 {
   "id": 2609,
@@ -59993,7 +59997,8 @@
   "department": "Psychology",
   "points": 15,
   "stage": 1,
-  "requirements": []
+  "requirements": [],
+  "isActive": true
 },
 {
   "id": 2650,
