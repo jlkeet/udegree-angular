@@ -164,9 +164,11 @@ export class CourseDetails {
   }
 
   public deleteCourse() {
-    this.deleteClicked.emit({
-      course: this.course,
-    });
+    console.log("firing ", this.course.id)
+    this.courseService.deselectCourseByName(this.course.name);
+    // this.deleteClicked.emit({
+    //   course: this.course,
+    // });
   }
 
   public newStatus(event) {

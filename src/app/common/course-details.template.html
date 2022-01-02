@@ -107,7 +107,9 @@
 
     <div>
       <a *ngIf='custom || showAddCourse && !course.disabled && alreadyPlanned() !== true'
-           class='btn add-course-button' (click)='addCourse()'> ADD COURSE</a>
+           class='btn add-course-button' (click)='addCourse()'> Add Course</a>
+      <a *ngIf='custom || showAddCourse && !course.disabled && alreadyPlanned() === true'
+           class='btn remove-course-button' (click)='deleteCourse()'> Remove Course</a>
       <a class='close-dialog' (click)='cancel($event)'> &times;</a>
     </div>
   </div>
