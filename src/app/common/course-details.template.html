@@ -90,7 +90,7 @@
       </mat-form-field> -->
     <!-- </div> -->
 
- <div class="status-card-container">
+ <div class="status-card-container" (click)="newStatus(0)">
   <div class="topline"> 
     <span class="round-planned">
       <label for="id"></label>
@@ -99,7 +99,7 @@
   </div>
 </div> 
 
-<div class="status-card-container">
+<div class="status-card-container" (click)="newStatus(1)">
   <div class="topline">    
     <span class="round-enrolled">
       <label for="id"></label>
@@ -108,7 +108,7 @@
   </div>
 </div>
 
-<div class="status-card-container">
+<div class="status-card-container" (click)="newStatus(2)">
   <div class="topline">    
     <span class="round-completed">
       <label for="id"></label>
@@ -117,7 +117,7 @@
   </div>
 </div>
 
-<div class="status-card-container">
+<div class="status-card-container" (click)="newStatus(3)">
   <div class="topline">    
     <span class="round-failed">
       <label for="id"></label>

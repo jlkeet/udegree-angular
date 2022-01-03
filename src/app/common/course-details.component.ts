@@ -170,9 +170,20 @@ export class CourseDetails {
     // });
   }
 
-  public newStatus(event) {
+  // public newStatus(event) {
+  //   this.courseGrade = null;
+  //   this.courseStatus = Number(event.value);
+  //   if (!this.showAddCourse) {
+  //     this.changeStatus.emit({
+  //       course: this.course,
+  //       status: this.courseStatus,
+  //     });
+  //   }
+  // }
+
+  public newStatus(number) {
     this.courseGrade = null;
-    this.courseStatus = Number(event.value);
+    this.courseStatus = number;
     if (!this.showAddCourse) {
       this.changeStatus.emit({
         course: this.course,
