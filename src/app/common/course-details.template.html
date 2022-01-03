@@ -78,7 +78,7 @@
 
 
     <!-- <div *ngIf="alreadyPlanned() !== true">  -->
-      <mat-form-field>
+      <!-- <mat-form-field>
         <mat-select [value]="courseStatus" (selectionChange)="newStatus($event)">
           <mat-option
            *ngFor="let status of statuses"
@@ -87,8 +87,45 @@
             {{status.label}}
           </mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
     <!-- </div> -->
+
+ <div class="status-card-container">
+  <div class="topline"> 
+    <span class="round-planned">
+      <label for="id"></label>
+    </span>
+    Planned
+  </div>
+</div> 
+
+<div class="status-card-container">
+  <div class="topline">    
+    <span class="round-enrolled">
+      <label for="id"></label>
+    </span>
+    Enrolled
+  </div>
+</div>
+
+<div class="status-card-container">
+  <div class="topline">    
+    <span class="round-completed">
+      <label for="id"></label>
+    </span>
+    Completed
+  </div>
+</div>
+
+<div class="status-card-container">
+  <div class="topline">    
+    <span class="round-failed">
+      <label for="id"></label>
+    </span>
+    Failed
+  </div>
+</div>
+
 
     <div *ngIf="!custom && !showAddCourse && courseStatus === 2"> 
       <mat-form-field>

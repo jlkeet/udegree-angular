@@ -164,7 +164,6 @@ export class CourseDetails {
   }
 
   public deleteCourse() {
-    console.log("firing ", this.course.id)
     this.courseService.deselectCourseByName(this.course.name);
     // this.deleteClicked.emit({
     //   course: this.course,
