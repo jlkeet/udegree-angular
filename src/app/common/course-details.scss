@@ -81,6 +81,15 @@
   margin-left: 5px;
 }
 
+.disable-add-course-button {
+  width:150px;
+  color:#9a9a9a;
+  background-color: #d8d8d8;
+  margin-top: 30px;
+  margin-left: 5px;
+  cursor: not-allowed;
+}
+
 .remove-course-button {
   width:150px;
   color:white;

@@ -48,7 +48,7 @@ export class CourseDetails {
   private prerequisitesRequiredMessage: string = null;
   private alreadyPlannedMessage: string = null;
   private opened = false;
-  private courseStatus = 0;
+  private courseStatus;
   private courseGrade;
 
   private departments;
@@ -124,6 +124,8 @@ export class CourseDetails {
     this.moduleOptions = this.modules.map((module) => {
       return { label: module.name, value: module.name };
     });
+
+    console.log(this.courseStatus)
   }
 
   public addCourse() {
@@ -153,7 +155,7 @@ export class CourseDetails {
     } else {
       this.course.selected = false;
       if (this.courseStatus === CourseStatus.None) {
-        this.courseStatus = CourseStatus.Planned;
+       // this.courseStatus = CourseStatus.Planned;
       }
       this.addClicked.emit({
         course: this.course,
@@ -227,7 +229,7 @@ export class CourseDetails {
 
     if (!this.custom) {
       if (this.course.status === undefined) {
-        this.courseStatus = CourseStatus.Planned;
+       // this.courseStatus = CourseStatus.Planned;
       } else {
         this.courseStatus = this.course.status;
       }
