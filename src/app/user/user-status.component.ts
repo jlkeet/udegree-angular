@@ -41,7 +41,9 @@ export class UserContainer {
         }
       } else {
         this.email = auth.email; // This has to be included here and I don't know why
+        if (auth.photoURL) {
         this.photoURL = auth.photoURL.split("/", 4)[3];
+        }
         this.router.navigate(["planner"]);
         this.isLoggedIn = true; // User is logged in
         this.logInCounter++;
