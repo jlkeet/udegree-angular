@@ -228,3 +228,13 @@
   border: 2px solid #37d8ae;
   cursor: pointer;
 }
+
+.status-card-container:focus {
+
+  border: 2px solid #37d8ae;
+  cursor: pointer;
+}
+
+.status-selected {
+  border: 2px solid #37d8ae;
+}
