@@ -51,6 +51,15 @@ export class FirebaseDbService {
     .set(collection)
   }
 
+  public addSelection(email, collectionName, collection, document) {
+    console.log(document)
+    this.db
+    .collection("users")
+    .doc(email)
+    .collection(document)
+    .add(collection)
+  }
+
   public getID(email, collectionName, storeHelperName) {
     this.db
       .collection("users")

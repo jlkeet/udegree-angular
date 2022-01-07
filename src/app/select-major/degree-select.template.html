@@ -52,7 +52,7 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field *ngIf="currentFaculties[0] === 'Science' && currentMajors[0]">
+  <mat-form-field *ngIf="currentFaculties[0]?.name === 'Science' && currentMajors[0]">
     {{pathwayFilter()}}
     <mat-select
        class="dropdown"

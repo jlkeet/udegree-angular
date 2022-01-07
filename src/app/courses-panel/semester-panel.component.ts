@@ -19,12 +19,11 @@ import { Router } from "@angular/router";
   selector: "semester-panel",
   styles: [require("./semester-panel.component.scss")],
   encapsulation: ViewEncapsulation.None,
-  templateUrl: 'semester-panel.template.html'
+  templateUrl: "semester-panel.template.html",
 })
 export class SemesterPanel {
   @Input() private semester;
   @Input() private courses: ICourse[];
-
 
   private addingSemester = false;
   private MAX_POINTS = 80;
@@ -53,13 +52,12 @@ export class SemesterPanel {
     private storeHelper: StoreHelper,
     private db: AngularFirestore,
     private coursePanelService: CoursesPanel,
-    private router: Router,
+    private router: Router
   ) {
     this.email = this.courseService.email;
   }
 
   private ngOnInit() {
-
     this.bagName = "courses";
     const bag = this.dragulaService.find(this.bagName);
 
@@ -236,7 +234,7 @@ export class SemesterPanel {
   private deleteSemester() {
     this.coursePanelService.updateSemesterCheck();
     this.courses.forEach((course: ICourse) =>
-    this.courseService.deselectCourseByName(course.name)
+      this.courseService.deselectCourseByName(course.name)
     );
     let semesters = this.storeHelper.current("semesters");
     semesters = semesters.filter(
@@ -245,66 +243,65 @@ export class SemesterPanel {
         semester.period !== this.semester.period
     );
     this.storeHelper.update("semesters", semesters);
+    this.delSemDB();
     this.semesterSort();
   }
 
   private smallCourseStatusBar(course) {
-    switch(course.status) {
-      case 0: 
-        return '#66bbff';
+    switch (course.status) {
+      case 0:
+        return "#66bbff";
       case 1:
-        return '#f3d602';
+        return "#f3d602";
       case 2:
-        return '#65cc01';
+        return "#65cc01";
       case 3:
-        return '#ff8087';
+        return "#ff8087";
     }
   }
 
- private smallCourseStatusBarHover(course) {
-   return course.name;
+  private smallCourseStatusBarHover(course) {
+    return course.name;
   }
 
   private newSemesterDD() {
     this.addingSemester = true;
     //this.coursePanelService.newSemester();
-
   }
 
   private expansionOnClick() {
     this.isDisabled = false;
-    return this.isDisabled
-  } 
+    return this.isDisabled;
+  }
 
   private noExpansionOnClick() {
     this.isDisabled = true;
-    return this.isDisabled
-  } 
+    return this.isDisabled;
+  }
 
   private yearList() {
     this.yearListArray = [];
     let i = new Date().getFullYear();
-    while (i < 2030 ) {
-      this.yearListArray.push(i)
+    while (i < 2030) {
+      this.yearListArray.push(i);
       i++;
     }
-    return this.yearListArray[0-9];
-
+    return this.yearListArray[0 - 9];
   }
 
   private periodList() {
     this.periodListArray = [];
     let i = 0;
-    while (i < 3 ) {
-      if ( i === 0) {
-        this.periodListArray.push( "Summer School");
+    while (i < 3) {
+      if (i === 0) {
+        this.periodListArray.push("Summer School");
         i++;
       } else {
-      this.periodListArray.push( "Semester " + i)
-      i++;
+        this.periodListArray.push("Semester " + i);
+        i++;
       }
     }
-    return this.periodListArray[0-2];
+    return this.periodListArray[0 - 2];
   }
 
   private getSelectedYear(i) {
@@ -312,13 +309,13 @@ export class SemesterPanel {
     this.semester.year = i;
     //console.log(this.semester.year)
 
-    this.saveChangedSemCourse(i)
+    this.saveChangedSemCourse(i);
   }
 
   private getSelectedSem(j) {
     this.previousPeriod = this.semester.period;
     let k;
-    switch (j){
+    switch (j) {
       case "Summer School":
         this.semester.period = 0;
         k = 0;
@@ -332,8 +329,8 @@ export class SemesterPanel {
         k = 2;
         break;
     }
-    console.log(k)
-    this.saveChangedSemCourse(k)
+    console.log(k);
+    this.saveChangedSemCourse(k);
   }
 
   private updatePeriodsInCourse(period) {
@@ -342,79 +339,144 @@ export class SemesterPanel {
 
   private updateYearsInCourse(year) {
     return year;
-
   }
 
   private saveChangedSemCourse(i) {
     this.boolCheck = true;
-    let courses = this.storeHelper.current('courses')
-  if (i < 10) {
-    console.log(i)  
-    this.savedNewSem = this.updatePeriodsInCourse(i)
-  } else {
-    console.log("not working period")
-    this.savedNewSem = this.semester.period;
-    this.previousPeriod = this.semester.period;
-  }
-  if (i > 10) {  
-    this.savedNewYear = this.updateYearsInCourse(i)
-  } else {
-    console.log("not working year")
-    this.savedNewYear = this.semester.year;
-    this.previousYear = this.semester.year;
-  }
-  
-  this.semcheck = {
-    year: Number(this.savedNewYear),
-    period: Number(this.savedNewSem),
-  };
-
- for (let x = 0; x < this.storeHelper.current('semesters').length -1; x++) {
-    if (this.semcheck['year'] === this.storeHelper.current('semesters')[x].year && this.semcheck['period'] === this.storeHelper.current('semesters')[x].period) {
-      console.log("Sem Check Firing ", this.semcheck, ' ', this.storeHelper.current('semesters')[x] );
-      this.boolCheck = false;
-      break;
+    let courses = this.storeHelper.current("courses");
+    if (i < 10) {
+      console.log(i);
+      this.savedNewSem = this.updatePeriodsInCourse(i);
     } else {
-      console.log("SemCheck not firing ", this.semcheck, ' ', this.storeHelper.current('semesters')[x])
-      this.boolCheck = true;
+      console.log("not working period");
+      this.savedNewSem = this.semester.period;
+      this.previousPeriod = this.semester.period;
+    }
+    if (i > 10) {
+      this.savedNewYear = this.updateYearsInCourse(i);
+    } else {
+      console.log("not working year");
+      this.savedNewYear = this.semester.year;
+      this.previousYear = this.semester.year;
+    }
+
+    this.semcheck = {
+      year: Number(this.savedNewYear),
+      period: Number(this.savedNewSem),
+    };
+
+    for (let x = 0; x < this.storeHelper.current("semesters").length - 1; x++) {
+      if (
+        this.semcheck["year"] ===
+          this.storeHelper.current("semesters")[x].year &&
+        this.semcheck["period"] ===
+          this.storeHelper.current("semesters")[x].period
+      ) {
+        console.log(
+          "Sem Check Firing ",
+          this.semcheck,
+          " ",
+          this.storeHelper.current("semesters")[x]
+        );
+        this.boolCheck = false;
+        break;
+      } else {
+        console.log(
+          "SemCheck not firing ",
+          this.semcheck,
+          " ",
+          this.storeHelper.current("semesters")[x]
+        );
+        this.boolCheck = true;
       }
     }
 
-if (this.boolCheck) {  
-  for (let j = 0; j < courses.length; j++) {  
-    this.db
-      .collection("users")
-      .doc(this.email)
-      .collection("courses", (ref) => {
-        const query = ref.where("id", "==", String(courses[j].id));
-        query.get().then((snapshot) => {
-          snapshot.forEach((doc) => {
-           if (courses[j].year === this.previousYear && courses[j].period === this.previousPeriod){ 
-            this.db
-              .collection("users")
-              .doc(this.email)
-              .collection("courses")
-              .doc(doc.id)
-              .update({
-                year: this.savedNewYear,
-                period: this.savedNewSem,
+    if (this.boolCheck) {
+      for (let j = 0; j < courses.length; j++) {
+        this.db
+          .collection("users")
+          .doc(this.email)
+          .collection("courses", (ref) => {
+            const query = ref.where("id", "==", String(courses[j].id));
+            query.get().then((snapshot) => {
+              snapshot.forEach((doc) => {
+                if (
+                  courses[j].year === this.previousYear &&
+                  courses[j].period === this.previousPeriod
+                ) { // move this to the changesemdb function
+                  this.db
+                    .collection("users")
+                    .doc(this.email)
+                    .collection("courses")
+                    .doc(doc.id)
+                    .update({
+                      year: this.savedNewYear,
+                      period: this.savedNewSem,
+                    });
+                }
               });
-            }
+            });
+            return query;
           });
-        });
-        return query;
-      });
+      }
+      this.changeSemDB()
+      this.semesterSort();
     }
-    this.semesterSort();
   }
-}
 
   private semesterSort() {
-    this.storeHelper.current('semesters').sort((s1, s2) =>
-    s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
-   );
-   this.coursePanelService.loadPlanFromDbAfterDel()
-   return this.storeHelper.update("courses", this.coursePanelService.courses)
-}
+    this.storeHelper
+      .current("semesters")
+      .sort((s1, s2) =>
+        s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
+      );
+    this.coursePanelService.loadPlanFromDbAfterDel();
+    return this.storeHelper.update("courses", this.coursePanelService.courses);
+  }
+
+  private delSemDB() {
+    this.db.collection("users").doc(this.email).collection("semesters", ref => {
+      const query = ref.where('both', '==', this.semester.year + " " + this.semester.period);
+      query.get().then( snapshot => {
+        snapshot.forEach(sem => {
+          console.log(sem)
+          this.db
+          .collection("users")
+          .doc(this.email)
+          .collection("semesters")
+          .doc(sem.id)
+          .delete()
+         })
+        }
+      )
+    return query
+    })
+  }
+
+  private changeSemDB() {
+
+    this.db.collection("users").doc(this.email).collection("semesters", ref => {
+      const query = ref.where('both', '==', this.previousYear + " " + this.previousPeriod);
+      query.get().then( snapshot => {
+        snapshot.forEach(sem => {
+          console.log(sem)
+          console.log("firing 3: ", this.savedNewYear, " ", this.savedNewSem,)
+          this.db
+          .collection("users")
+          .doc(this.email)
+          .collection("semesters")
+          .doc(sem.id)
+          .update({
+            year: this.savedNewYear,
+            period: this.savedNewSem,
+            both: this.savedNewYear + " " + this.savedNewSem
+          });
+         })
+        }
+      )
+    return query
+    })
+
+  }
 
 }
