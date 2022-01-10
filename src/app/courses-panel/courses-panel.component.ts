@@ -40,6 +40,8 @@ import { MatFormFieldControl, MatListOption } from "@angular/material";
 import { DegreeSelection } from "../select-major";
 import request from 'request';
 import { FirebaseDbService } from "../core/firebase.db.service";
+import { analyzeAndValidateNgModules } from "@angular/compiler";
+
 
 /*
   Component for displaying a list of courses organised by year and semester
@@ -135,6 +137,7 @@ export class CoursesPanel {
           // This is necessary to stop the duplicate course loading
         } else {
           this.loadPlanFromDb();
+          //this.findSemsFromDb();
           this.userContainer.logInCounter++; // This is necessary to stop the duplicate course loading
         }
       }
@@ -184,6 +187,20 @@ export class CoursesPanel {
       this.dbCourses.addSelection(this.email, "semester", newSemester, "semesters")
       this.addingSemester = false;
       this.nextSemesterCheck();
+    } else {
+      this.nextSemesterCheck();
+      const newSemester = {
+        year: Number(this.selectedYear),
+        period: Number(this.selectedPeriod),
+        both: this.selectedYear + " " + this.selectedPeriod
+      };
+      this.semesters.push(newSemester);
+      this.semesters.sort((s1, s2) =>
+        s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
+      );
+      this.storeHelper.update("semesters", this.semesters);
+      this.dbCourses.addSelection(this.email, "semester", newSemester, "semesters")
+      this.addingSemester = false;
     }
   }
 
@@ -212,7 +229,7 @@ export class CoursesPanel {
 
   public addSemesterFromDb(courseDbId: string) {
     
-    var newSemesterFromDb = { year: Number(), period: Number() };
+    var newSemesterFromDb = { year: Number(), period: Number(), both: String() };
 
     // The following code is super gumby, because of the promised value not being returned before executing the next lines
     // I put everything into the promise on line 194 by chaining then() functions. It works though.
@@ -222,7 +239,7 @@ export class CoursesPanel {
         this.selectedYear = theYear;
       })
       .then(
-        () => (newSemesterFromDb = { year: this.selectedYear, period: null })
+        () => (newSemesterFromDb = { year: this.selectedYear, period: null, both: null })
       ); // Updates the year value withing the newSemesterFromDb variable
     this.getPeriodFromDb(courseDbId)
       .then(
@@ -234,6 +251,7 @@ export class CoursesPanel {
           (newSemesterFromDb = {
             year: this.selectedYear,
             period: this.selectedPeriod,
+            both: this.selectedYear + " " + this.selectedPeriod
           }
         )
       )
@@ -245,6 +263,7 @@ export class CoursesPanel {
           this.semesters.sort((s1, s2) =>
             s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
           );
+         // this.dbCourses.addSelection(this.email, "semester", newSemesterFromDb, "semesters")
           this.storeHelper.update("semesters", this.semesters);
           this.addingSemester = false; // Reverts the semster panel back to neutral
           this.selectedPeriod = Period.One; // Revert to the default value
@@ -253,6 +272,9 @@ export class CoursesPanel {
         }
       });
   }
+
+
+
 
   public loadPlanFromDb() {
     if (this.email !== undefined) {
@@ -283,6 +305,61 @@ export class CoursesPanel {
         });
     }
   }
+
+
+  public findSemsFromDb() {
+    if (this.email !== undefined) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .get()
+        .toPromise()
+        .then((doc) => {
+          if (doc.exists) {
+            this.db
+              .collection("users")
+              .doc(this.email)
+              .collection("semesters")
+              .get()
+              .toPromise()
+              .then((sub) => {
+                if (sub.docs.length > 0) {
+                  // Check to see if documents exist in the courses collection
+                  sub.forEach((element) => {
+                    // Loop to get all the ids of the docs
+                    this.loadSemsFromDb(element.id); // Call to loading the courses on the screen, by id
+                  });
+                }
+              });
+            }
+        });
+    }
+  }
+
+
+
+  private getSemsFromDb(semsDbId: string) {
+    return new Promise<any>((resolve) => {
+      const semesterFromDb = {
+        course: 
+          this.dbCourses.getCollection("users", "semesters", semsDbId).then( (res) => {resolve((res))} )
+      };
+    });
+  }
+
+  private loadSemsFromDb(semsDbId) {
+    const courseDb = this.getSemsFromDb(semsDbId).then((copy) => {
+      Object.assign({
+        period: copy[0],
+        year: copy[1],
+        both: copy[2],
+      });
+      this.getSemsFromDb(semsDbId).then((res) => {
+          this.storeHelper.add("semesters", res);
+      });
+    });
+  }
+
 
   public loadPlanFromDbAfterDel() {
     if (this.email !== undefined) {
@@ -383,10 +460,10 @@ export class CoursesPanel {
 
   // Function that updates to the correct year and period when selecting to add a new semester
   private nextSemesterCheck() {
+
     if (this.semesters.length > 0) {
       let latestYear = this.semesters[this.semesters.length-1]['year']
       let latestPeriod = this.semesters[this.semesters.length-1]['period']
-
       switch (latestPeriod) {
         case 0:
           this.selectedPeriod = 1;
