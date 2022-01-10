@@ -14,6 +14,7 @@ import { NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
 import { CoursesPanel } from "./courses-panel.component";
 import { HighlightSpanKind } from "typescript";
 import { Router } from "@angular/router";
+import { BoundPlayerFactory } from "@angular/core/src/render3/styling/player_factory";
 
 @Component({
   selector: "semester-panel",
@@ -43,6 +44,7 @@ export class SemesterPanel {
   private previousPeriod;
   private semcheck = {};
   private boolCheck = true;
+  private onPageChange = new EventEmitter<null>();
 
   constructor(
     private courseService: CourseService,
@@ -52,7 +54,7 @@ export class SemesterPanel {
     private storeHelper: StoreHelper,
     private db: AngularFirestore,
     private coursePanelService: CoursesPanel,
-    private router: Router
+    private router: Router,
   ) {
     this.email = this.courseService.email;
   }
@@ -301,18 +303,24 @@ export class SemesterPanel {
         i++;
       }
     }
+    //this.periodListArray.splice(this.semester.period)
+    this.periodListArray.forEach( (item, index) => {
+      if(item === "Semester " + this.semester.period || item === "Summer School" && this.semester.period === 0)  this.periodListArray.splice(index,1);
+    });
+    //console.log(this.periodListArray)
     return this.periodListArray[0 - 2];
   }
 
   private getSelectedYear(i) {
+    
     this.previousYear = this.semester.year;
     this.semester.year = i;
-    //console.log(this.semester.year)
-
     this.saveChangedSemCourse(i);
   }
 
   private getSelectedSem(j) {
+   // console.log("previous period: ", this.previousYear)
+    // console.log("this period: ", this.semester.period)
     this.previousPeriod = this.semester.period;
     let k;
     switch (j) {
@@ -329,7 +337,7 @@ export class SemesterPanel {
         k = 2;
         break;
     }
-    console.log(k);
+ //   console.log(k);
     this.saveChangedSemCourse(k);
   }
 
@@ -342,10 +350,13 @@ export class SemesterPanel {
   }
 
   private saveChangedSemCourse(i) {
+   // console.log(this.storeHelper.current("semesters"))
+
+
     this.boolCheck = true;
     let courses = this.storeHelper.current("courses");
     if (i < 10) {
-      console.log(i);
+  //    console.log(i);
       this.savedNewSem = this.updatePeriodsInCourse(i);
     } else {
       console.log("not working period");
@@ -355,9 +366,9 @@ export class SemesterPanel {
     if (i > 10) {
       this.savedNewYear = this.updateYearsInCourse(i);
     } else {
-      console.log("not working year");
+   //   console.log("not working year");
       this.savedNewYear = this.semester.year;
-      this.previousYear = this.semester.year;
+      // this.previousYear = this.semester.year;
     }
 
     this.semcheck = {
@@ -365,33 +376,10 @@ export class SemesterPanel {
       period: Number(this.savedNewSem),
     };
 
-    for (let x = 0; x < this.storeHelper.current("semesters").length - 1; x++) {
-      if (
-        this.semcheck["year"] ===
-          this.storeHelper.current("semesters")[x].year &&
-        this.semcheck["period"] ===
-          this.storeHelper.current("semesters")[x].period
-      ) {
-        console.log(
-          "Sem Check Firing ",
-          this.semcheck,
-          " ",
-          this.storeHelper.current("semesters")[x]
-        );
-        this.boolCheck = false;
-        break;
-      } else {
-        console.log(
-          "SemCheck not firing ",
-          this.semcheck,
-          " ",
-          this.storeHelper.current("semesters")[x]
-        );
-        this.boolCheck = true;
-      }
-    }
+    this.checkIfArrayIsUnique(this.storeHelper.current("semesters"))
 
     if (this.boolCheck) {
+      console.log("firing")
       for (let j = 0; j < courses.length; j++) {
         this.db
           .collection("users")
@@ -419,6 +407,7 @@ export class SemesterPanel {
             return query;
           });
       }
+  
       this.changeSemDB()
       this.semesterSort();
     }
@@ -459,8 +448,7 @@ export class SemesterPanel {
       const query = ref.where('both', '==', this.previousYear + " " + this.previousPeriod);
       query.get().then( snapshot => {
         snapshot.forEach(sem => {
-          console.log(sem)
-          console.log("firing 3: ", this.savedNewYear, " ", this.savedNewSem,)
+          console.log("firing 3: ", this.savedNewYear, " ", this.savedNewSem)
           this.db
           .collection("users")
           .doc(this.email)
@@ -477,6 +465,24 @@ export class SemesterPanel {
     return query
     })
 
+  }
+
+  private checkIfArrayIsUnique(myArray) 
+  {
+      for (var i = 0; i < myArray.length; i++) 
+      {
+          for (var j = 0; j < myArray.length; j++) 
+          {
+              if (i != j) 
+              {
+                  if (myArray[i].period === myArray[j].period && myArray[i].year === myArray[j].year) 
+                  {
+                      return this.boolCheck = false; // means there are duplicate values
+                  }
+              }
+          }
+      }
+      return this.boolCheck = true; // means there are no duplicate values.
   }
 
 }
