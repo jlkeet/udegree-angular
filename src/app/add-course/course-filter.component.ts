@@ -64,7 +64,6 @@ export class CourseFilter {
       .map((faculty) => {
         return { value: faculty.name, label: faculty.name };
       });
-  
 
   this.conjointChoices = this.conjointService.getConjoints()
   .map((conjoint) => {

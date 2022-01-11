@@ -89,6 +89,7 @@ export class AddCourseContainer {
     this.filterParams = {
       departments: this.mapToArray(this.route.snapshot.queryParams.departments),
       faculties: facultyFilter,
+      // faculties: this.mapToArray(this.route.snapshot.queryParams.faculties),
       general: this.orNull(this.route.snapshot.queryParams.general),
       corequesite: this.orNull(this.route.snapshot.queryParams.corequesite),
       hidePlanned: this.orNull(this.route.snapshot.queryParams.hidePlanned),
