@@ -199,7 +199,7 @@ export class CoursesPanel {
         s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
       );
       this.storeHelper.update("semesters", this.semesters);
-      this.dbCourses.addSelection(this.email, "semester", newSemester, "semesters")
+      // this.dbCourses.addSelection(this.email, "semester", newSemester, "semesters")
       this.addingSemester = false;
     }
   }

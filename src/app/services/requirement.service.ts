@@ -174,23 +174,24 @@ export class RequirementService {
 
   public shortTitle(requirement: IRequirement) {
     if (this.isComplex(requirement)) {
-      return 'Complex rule';
+      // return 'Complex rule';
+      return this.toString(requirement, null)
     }
 
-    if (requirement.papers !== undefined) {
-      if (requirement.papers.length <= 4 &&
-        requirement.papers.filter((paper: string) => paper.includes('-')).length === 0) {
-        return requirement.papers.join(', ');
-      } else {
-        // Change this to reflect the hyphenated rule
-        return 'Compulsory papers';
-      }
-    }
+    // if (requirement.papers !== undefined) {
+    //   if (requirement.papers.length <= 4 &&
+    //     requirement.papers.filter((paper: string) => paper.includes('-')).length === 0) {
+    //     return requirement.papers.join(', ');
+    //   } else {
+    //     // Change this to reflect the hyphenated rule
+    //     return 'Compulsory papers';
+    //   }
+    // }
 
     // This kind of looks insane, but it's a reasonably obvious pattern
     const str = requirement.required +
       (this.checkFlag(requirement, 'General') ? ' General' : '') +
-      (requirement.type === RequirementType.Points ? ' points' : ' papers') +
+      (requirement.type === RequirementType.Points ? ' Points' : ' Papers') +
       (requirement.stage !== undefined ? ' ' + requirement.stage + '00-level' : '') +
       (requirement.aboveStage !== undefined ? ' above ' + requirement.aboveStage + '00-level' : '') +
       (requirement.departments !== undefined ? ' from ' + requirement.departments.join(', ') : '') +
@@ -203,6 +204,14 @@ export class RequirementService {
       (requirement.faculties !== undefined ? ' from ' + requirement.faculties.join(', ') : '') +
       (requirement.facultiesExcluded !== undefined ? ' outside ' + requirement.facultiesExcluded.join(', ') : '') +
       '';
+
+      if (requirement.papers !== undefined) {
+        if (requirement.papers.length === requirement.required) {
+          return requirement.papers.join(', ')
+        } else {
+          return str + " from: " + requirement.papers.join(', ');
+          }
+        } 
     return str;
   }
 
@@ -218,12 +227,13 @@ export class RequirementService {
     if (this.isComplex(requirement)) {
       let complexString = omitRequires ? '' : 'Requires ';
       if (requirement.required === requirement.complex.length) {
-        complexString = requirement.complex.map((req: IRequirement) => this.toString(req, true)).join(' and ');
+        complexString = requirement.complex.map((req: IRequirement) => this.toString(req, true)).join(' AND ');
       } else {
         if (requirement.required !== 1) {
           complexString += requirement.required + ' of: ';
         }
-        complexString += requirement.complex.map((req: IRequirement) => this.toString(req, true)).join('; or ');
+      // console.log(requirement.required)
+        complexString += requirement.complex.map((req: IRequirement) => this.toString(req, true)).join('; OR ');
       }
       return complexString;
     }
