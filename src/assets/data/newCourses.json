@@ -159,7 +159,15 @@
     "periods": [0, 1, 2],
     "requirements": [
       { "type": 1, "required": 1, "papers": ["ACADENG101"], "flags": {} },
-      { "type": 0, "required": 0, "papersExcluded": ["ESOL210"], "flags": {} }
+      { "type": 0, "required": 0, "papersExcluded": ["ESOL210"], "flags": {} },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ACADENG100"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
     ],
     "isActive": true
   },
@@ -1722,7 +1730,9 @@
                 "type": 0,
                 "required": 30,
                 "flags": {},
-                "faculties": ["Anthropology, Sociology, Media Film and Television, or Communication"]
+                "faculties": [
+                  "Anthropology, Sociology, Media Film and Television, or Communication"
+                ]
               }
             ],
             "papers": "ANTHRO100, ARTHIST115"
@@ -1848,7 +1858,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Anthropology, Art History, Transnational Cultures and Creative Practice"]
+            "faculties": [
+              "Anthropology, Art History, Transnational Cultures and Creative Practice"
+            ]
           }
         ]
       },
@@ -2181,7 +2193,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Anthropology, Theological and Religious Studies, Sociology"]
+            "faculties": [
+              "Anthropology, Theological and Religious Studies, Sociology"
+            ]
           }
         ]
       },
@@ -2482,7 +2496,9 @@
             "required": 30,
             "flags": {},
             "stage": 2,
-            "faculties": ["Anthropology, Art History, Transnational Cultures and Creative Practice"]
+            "faculties": [
+              "Anthropology, Art History, Transnational Cultures and Creative Practice"
+            ]
           }
         ]
       },
@@ -2750,7 +2766,9 @@
             "required": 30,
             "flags": {},
             "stage": 2,
-            "faculties": ["Anthropology, Global Politics and Human Rights, Political Studies, Politics and International Relations, Sociology"]
+            "faculties": [
+              "Anthropology, Global Politics and Human Rights, Political Studies, Politics and International Relations, Sociology"
+            ]
           }
         ]
       }
@@ -3070,7 +3088,9 @@
             "required": 30,
             "flags": {},
             "stage": 2,
-            "faculties": ["Anthropology, Political Studies, Politics and International Relations, Sociology"]
+            "faculties": [
+              "Anthropology, Political Studies, Politics and International Relations, Sociology"
+            ]
           }
         ]
       },
@@ -14605,6 +14625,15 @@
             "faculties": ["BEd(TESOL)"]
           }
         ]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["EDPRAC306", "EDPROFST306"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
       }
     ],
     "isActive": true
@@ -19062,7 +19091,7 @@
     "title": "Introduction to Investments",
     "desc": "Markets for shares, fixed income securities, options and futures. Methods of valuing shares, fixed income securities, options, and futures. Simple techniques of hedging risk. Portfolio diversification. Portfolio evaluation.",
     "faculties": ["Business and Economics", "Science"],
-    "department": ["Finance" , "Mathematics", "Statistics"],
+    "department": ["Finance", "Mathematics", "Statistics"],
     "points": 15,
     "stage": 2
   },
@@ -25385,7 +25414,9 @@
             "type": 0,
             "required": 15,
             "flags": {},
-            "papers": ["BUSINESS102, BUSINESS103, BUSINESS112, BUSINESS113, MGMT101"]
+            "papers": [
+              "BUSINESS102, BUSINESS103, BUSINESS112, BUSINESS113, MGMT101"
+            ]
           },
           { "type": 0, "required": 90, "flags": {} },
           {
@@ -31008,7 +31039,9 @@
             "required": 30,
             "flags": {},
             "stage": 2,
-            "faculties": ["Global Environment and Sustainable Development, Global Politics and Human Rights"]
+            "faculties": [
+              "Global Environment and Sustainable Development, Global Politics and Human Rights"
+            ]
           }
         ]
       }
@@ -31232,7 +31265,9 @@
             "required": 30,
             "flags": {},
             "stage": 2,
-            "faculties": ["Global Environment and Sustainable Development, Global Politics and Human Rights"]
+            "faculties": [
+              "Global Environment and Sustainable Development, Global Politics and Human Rights"
+            ]
           }
         ]
       }
@@ -31366,7 +31401,9 @@
             "required": 30,
             "flags": {},
             "stage": 2,
-            "faculties": ["Global Environment and Sustainable Development,  Global Politics and Human Rights"]
+            "faculties": [
+              "Global Environment and Sustainable Development,  Global Politics and Human Rights"
+            ]
           }
         ]
       }
@@ -31540,7 +31577,12 @@
         "flags": {},
         "complex": [
           { "type": 0, "required": 30, "flags": {}, "faculties": ["English"] },
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Linguistics"] }
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Linguistics"]
+          }
         ]
       },
       {
@@ -37741,7 +37783,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           { "type": 0, "required": 60, "flags": {} }
         ]
       },
@@ -38423,7 +38470,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           { "type": 0, "required": 60, "flags": {} }
         ]
       },
@@ -38446,7 +38498,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           {
             "type": 1,
             "required": 1,
@@ -38492,7 +38549,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           {
             "type": 1,
             "required": 1,
@@ -38528,7 +38590,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           { "type": 0, "required": 90, "flags": {} }
         ]
       },
@@ -38551,7 +38618,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           {
             "type": 0,
             "required": 15,
@@ -38580,7 +38652,12 @@
         "flags": {},
         "complex": [
           { "type": 1, "required": 1, "flags": {}, "papers": "PHIL102" },
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           {
             "type": 0,
             "required": 30,
@@ -38702,7 +38779,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           { "type": 0, "required": 90, "flags": {} }
         ]
       },
@@ -38725,7 +38807,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           {
             "type": 1,
             "required": 1,
@@ -38785,7 +38872,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosphy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosphy"]
+          },
           { "type": 0, "required": 60, "flags": {} }
         ]
       }
@@ -38837,7 +38929,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           {
             "type": 0,
             "required": 15,
@@ -38865,7 +38962,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           { "type": 0, "required": 60, "flags": {} }
         ]
       },
@@ -39035,7 +39137,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           {
             "type": 1,
             "required": 1,
@@ -39076,7 +39183,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           { "type": 0, "required": 60, "flags": {} }
         ]
       },
@@ -39099,7 +39211,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           {
             "type": 1,
             "required": 1,
@@ -39126,7 +39243,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Philosophy"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Philosophy"]
+          },
           { "type": 0, "required": 60, "flags": {} }
         ]
       },
@@ -41079,7 +41201,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           {
@@ -41112,7 +41236,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           {
@@ -41255,21 +41381,27 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           {
             "type": 0,
             "required": 15,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1,
             "complex": [
               {
                 "type": 0,
                 "required": 15,
                 "flags": {},
-                "faculties": ["Philosophy, Sociology, Media, Film and Television, History"],
+                "faculties": [
+                  "Philosophy, Sociology, Media, Film and Television, History"
+                ],
                 "stage": 1
               }
             ]
@@ -41284,7 +41416,9 @@
                 "type": 0,
                 "required": 15,
                 "flags": {},
-                "faculties": ["Political Studies, Politics and International Relations"],
+                "faculties": [
+                  "Political Studies, Politics and International Relations"
+                ],
                 "stage": 1
               }
             ]
@@ -41319,7 +41453,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           {
@@ -41332,7 +41468,9 @@
                 "type": 0,
                 "required": 15,
                 "flags": {},
-                "faculties": ["Political Studies, Politics and International Relations"],
+                "faculties": [
+                  "Political Studies, Politics and International Relations"
+                ],
                 "stage": 1
               }
             ]
@@ -41341,7 +41479,9 @@
             "type": 0,
             "required": 15,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1,
             "complex": [
               {
@@ -41451,14 +41591,18 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           {
             "type": 0,
             "required": 15,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1,
             "complex": [
               {
@@ -41480,7 +41624,9 @@
                 "type": 0,
                 "required": 15,
                 "flags": {},
-                "faculties": ["Political Studies, Politics and International Relations"],
+                "faculties": [
+                  "Political Studies, Politics and International Relations"
+                ],
                 "stage": 1
               }
             ]
@@ -41530,7 +41676,9 @@
             "required": 30,
             "flags": {},
             "stage": 1,
-            "faculties": ["Politics and International Relations, M\u0101ori Studies"]
+            "faculties": [
+              "Politics and International Relations, M\u0101ori Studies"
+            ]
           },
           { "type": 1, "required": 1, "flags": {}, "papers": "M\u0100ORI130" },
           {
@@ -41611,7 +41759,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           {
@@ -41712,7 +41862,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations, M\u0101ori Studies"]
+            "faculties": [
+              "Political Studies, Politics and International Relations, M\u0101ori Studies"
+            ]
           },
           { "type": 0, "required": 60, "flags": {} }
         ]
@@ -41739,7 +41891,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"]
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ]
           },
           {
             "type": 1,
@@ -41783,20 +41937,26 @@
             "required": 30,
             "flags": {},
             "stage": 1,
-            "faculties": ["Political Studies, Politics and International Relations"]
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ]
           },
           {
             "type": 0,
             "required": 15,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1,
             "complex": [
               {
                 "type": 0,
                 "required": 15,
                 "flags": {},
-                "faculties": ["Philosophy, Sociology, Media, Film and Television, History"],
+                "faculties": [
+                  "Philosophy, Sociology, Media, Film and Television, History"
+                ],
                 "stage": 1
               }
             ]
@@ -41811,7 +41971,9 @@
                 "type": 0,
                 "required": 15,
                 "flags": {},
-                "faculties": ["Political Studies, Politics and International Relations"],
+                "faculties": [
+                  "Political Studies, Politics and International Relations"
+                ],
                 "stage": 1
               }
             ]
@@ -41846,7 +42008,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           {
@@ -41887,7 +42051,9 @@
             "required": 30,
             "flags": {},
             "stage": 1,
-            "faculties": ["Political Studies, Politics and International Relations"]
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ]
           },
           {
             "type": 1,
@@ -41974,14 +42140,18 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           {
             "type": 0,
             "required": 15,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1,
             "complex": [
               {
@@ -42086,7 +42256,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           {
@@ -42099,7 +42271,9 @@
                 "type": 0,
                 "required": 15,
                 "flags": {},
-                "faculties": ["Political Studies, Politics and International Relations"],
+                "faculties": [
+                  "Political Studies, Politics and International Relations"
+                ],
                 "stage": 1
               }
             ]
@@ -42192,7 +42366,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations, Asian Studies, History"],
+            "faculties": [
+              "Political Studies, Politics and International Relations, Asian Studies, History"
+            ],
             "stage": 1
           },
           {
@@ -42270,14 +42446,18 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           {
             "type": 0,
             "required": 15,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1,
             "complex": [
               {
@@ -42396,7 +42576,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 2
           },
           {
@@ -42409,7 +42591,9 @@
                 "type": 0,
                 "required": 15,
                 "flags": {},
-                "faculties": ["Political Studies, Politics and International Relations"],
+                "faculties": [
+                  "Political Studies, Politics and International Relations"
+                ],
                 "stage": 2
               }
             ]
@@ -42523,7 +42707,9 @@
                 "required": 15,
                 "flags": {},
                 "stage": 2,
-                "faculties": [" Economics, History, Philosophy, M\u0101ori Studies, Sociology"]
+                "faculties": [
+                  " Economics, History, Philosophy, M\u0101ori Studies, Sociology"
+                ]
               }
             ]
           },
@@ -42711,14 +42897,18 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 2
           },
           {
             "type": 0,
             "required": 15,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 2,
             "complex": [
               {
@@ -42806,7 +42996,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 2
           },
           {
@@ -42839,7 +43031,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 2
           },
           {
@@ -42944,14 +43138,18 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 2
           },
           {
             "type": 0,
             "required": 15,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 2,
             "complex": [
               {
@@ -43192,7 +43390,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Political Studies, Politics and International Relations"],
+            "faculties": [
+              "Political Studies, Politics and International Relations"
+            ],
             "stage": 1
           },
           { "type": 0, "required": 60, "flags": {}, "faculties": ["Arts"] }
@@ -47280,7 +47480,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Health Social Sciences, Social Science for Public Health"],
+            "faculties": [
+              "Health Social Sciences, Social Science for Public Health"
+            ],
             "stage": 1
           },
           { "type": 0, "required": 60, "flags": {} }
@@ -51660,7 +51862,7 @@
     "name": "ANTHRO109",
     "title": "Future Generations Anthropology",
     "desc": "Acknowledges the colonial history of anthropology but imagines an anthropology that is relevant now and for the future, with Aotearoa New Zealand not as just a site of study but an active producer of anthropological knowledge. Explore key anthropological concepts through contemporary research settings and demonstrate the usefulness of anthropology in addressing fundamental local and global issues.",
-    "faculties": ["Arts","Science"],
+    "faculties": ["Arts", "Science"],
     "department": "Anthropology",
     "points": 15,
     "stage": 1
@@ -53466,7 +53668,9 @@
             "required": 15,
             "flags": {},
             "stage": 1,
-            "faculties": ["Ancient History, Classical Studies, Classical Studies and Ancient History, Gender Studies"]
+            "faculties": [
+              "Ancient History, Classical Studies, Classical Studies and Ancient History, Gender Studies"
+            ]
           },
           { "type": 1, "required": 1, "flags": {}, "papers": "GREEK101" },
           { "type": 1, "required": 1, "flags": {}, "papers": "LATIN101" }
@@ -53521,7 +53725,9 @@
             "required": 15,
             "flags": {},
             "stage": 1,
-            "faculties": ["Ancient History, Classical Studies, Classical Studies and Ancient History"]
+            "faculties": [
+              "Ancient History, Classical Studies, Classical Studies and Ancient History"
+            ]
           },
           { "type": 1, "required": 1, "flags": {}, "papers": "GREEK101" },
           { "type": 1, "required": 1, "flags": {}, "papers": "LATIN101" }
@@ -53557,7 +53763,9 @@
             "required": 15,
             "flags": {},
             "stage": 1,
-            "faculties": ["Classical Studies, Ancient History, Classical Studies and Ancient History, Philosophy"]
+            "faculties": [
+              "Classical Studies, Ancient History, Classical Studies and Ancient History, Philosophy"
+            ]
           },
           { "type": 1, "required": 1, "flags": {}, "papers": "GREEK101" },
           { "type": 1, "required": 1, "flags": {}, "papers": "LATIN101" },
@@ -53594,7 +53802,9 @@
             "required": 15,
             "flags": {},
             "stage": 1,
-            "faculties": ["Classical Studies, Ancient History, Classical Studies and Ancient History, Philosophy"]
+            "faculties": [
+              "Classical Studies, Ancient History, Classical Studies and Ancient History, Philosophy"
+            ]
           },
           { "type": 1, "required": 1, "flags": {}, "papers": "EUROPEAN100" },
           { "type": 1, "required": 1, "flags": {}, "papers": "GREEK101" },
@@ -53892,7 +54102,9 @@
             "required": 15,
             "flags": {},
             "stage": 1,
-            "faculties": ["Ancient History, Classical Studies, Classical Studies and Ancient History, Art History"]
+            "faculties": [
+              "Ancient History, Classical Studies, Classical Studies and Ancient History, Art History"
+            ]
           },
           { "type": 1, "required": 1, "flags": {}, "papers": "GREEK101" },
           { "type": 1, "required": 1, "flags": {}, "papers": "LATIN101" }
@@ -53922,7 +54134,9 @@
             "required": 15,
             "flags": {},
             "stage": 1,
-            "faculties": ["Ancient History, Classical Studies, Classical Studies and Ancient History, Drama"]
+            "faculties": [
+              "Ancient History, Classical Studies, Classical Studies and Ancient History, Drama"
+            ]
           },
           { "type": 1, "required": 1, "flags": {}, "papers": "GREEK101" },
           { "type": 1, "required": 1, "flags": {}, "papers": "LATIN101" }
@@ -53957,7 +54171,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Ancient History, Classical Studies, Classical Studies and Ancient History"]
+            "faculties": [
+              "Ancient History, Classical Studies, Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -54055,7 +54271,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Classical Studies, Ancient History, Classical Studies and Ancient History"]
+            "faculties": [
+              "Classical Studies, Ancient History, Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -54095,7 +54313,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Classical Studies, Ancient History, Classical Studies and Ancient History"]
+            "faculties": [
+              "Classical Studies, Ancient History, Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -54135,7 +54355,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Classical Studies, Ancient History, Classical Studies and Ancient History"]
+            "faculties": [
+              "Classical Studies, Ancient History, Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -54175,7 +54397,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Ancient History, Classical Studies, Classical Studies and Ancient History"]
+            "faculties": [
+              "Ancient History, Classical Studies, Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -54275,7 +54499,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Ancient History, Classical Studies,  Classical Studies and Ancient History"]
+            "faculties": [
+              "Ancient History, Classical Studies,  Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -54315,7 +54541,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Ancient History, Classical Studies, Classical Studies and Ancient History"]
+            "faculties": [
+              "Ancient History, Classical Studies, Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -54385,7 +54613,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Ancient History, Classical Studies, Classical Studies and Ancient History"]
+            "faculties": [
+              "Ancient History, Classical Studies, Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -54425,7 +54655,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Ancient History, Classical Studies, Classical Studies and Ancient History"]
+            "faculties": [
+              "Ancient History, Classical Studies, Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -54471,7 +54703,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Classical Studies, Ancient History, Classical Studies and Ancient History"]
+            "faculties": [
+              "Classical Studies, Ancient History, Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -54511,7 +54745,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Classical Studies, Ancient History, Classical Studies and Ancient History"]
+            "faculties": [
+              "Classical Studies, Ancient History, Classical Studies and Ancient History"
+            ]
           },
           {
             "type": 0,
@@ -59811,7 +60047,9 @@
             "required": 15,
             "flags": {},
             "stage": 2,
-            "faculties": ["Business, International Business, Innovation and Entrepreneurship, Management"]
+            "faculties": [
+              "Business, International Business, Innovation and Entrepreneurship, Management"
+            ]
           },
           {
             "type": 1,
@@ -60124,7 +60362,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["European Studies, German, Italian, Spanish, or Transnational Cultures and Creative Practice"]
+            "faculties": [
+              "European Studies, German, Italian, Spanish, or Transnational Cultures and Creative Practice"
+            ]
           }
         ]
       }
@@ -61292,7 +61532,9 @@
             "type": 0,
             "required": 30,
             "flags": {},
-            "faculties": ["Politics and International Relations, Employment Relations and Organisational Studies"],
+            "faculties": [
+              "Politics and International Relations, Employment Relations and Organisational Studies"
+            ],
             "stage": 1
           },
           {
@@ -61310,7 +61552,9 @@
                 "type": 0,
                 "required": 30,
                 "flags": {},
-                "faculties": ["Global Politics and Human Rights, International Relations and Business"]
+                "faculties": [
+                  "Global Politics and Human Rights, International Relations and Business"
+                ]
               }
             ]
           }
@@ -61742,7 +61986,12 @@
         "required": 1,
         "flags": {},
         "complex": [
-          { "type": 0, "required": 30, "flags": {}, "faculties": ["Sociology"] },
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "faculties": ["Sociology"]
+          },
           {
             "type": 0,
             "required": 30,
@@ -63075,5 +63324,53 @@
         "flags": {}
       }
     ]
+  },
+  {
+    "id": 3515,
+    "name": "EDPRAC204",
+    "title": "Health and Physical Education Practicum 2",
+    "desc": "Develops the knowledge, skills and attitudes associated with effective pedagogy in diverse health and physical education contexts. Requires demonstration of informed and ethical practice and addresses such questions as: Do I have the subject matter knowledge? Can I teach it effectively? Can I access the required knowledge? How do I assess student learning?",
+    "faculties": ["Education and Social Work"],
+    "department": "Education Practice",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 1, "required": 2, "papers": ["EDPRAC100", "EDPROFST102"], "flags": {} },
+        {
+          "type": 1,
+          "required": 1,
+          "papers": ["EDPROFST208"],
+          "flags":
+          {
+            "isCorequesite": true
+          }
+        }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3516,
+    "name": "EDPRAC205",
+    "title": "Health and Physical Education Practicum 2",
+    "desc": "Develops the knowledge, skills and attitudes associated with effective pedagogy in diverse health and physical education contexts. Requires demonstration of informed and ethical practice and addresses such questions as: Do I have the subject matter knowledge? Can I teach it effectively? Can I access the required knowledge? How do I assess student learning?",
+    "faculties": ["Education and Social Work"],
+    "department": "Education Practice",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 1, "required": 2, "papers": ["EDPRAC105", "EDPROFST103"], "flags": {} },
+        {
+          "type": 1,
+          "required": 1,
+          "papers": ["EDPROFST212"],
+          "flags":
+          {
+            "isCorequesite": true
+          }
+        }
+    ],
+    "isActive": true
   }
+
+
 ]
