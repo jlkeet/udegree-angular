@@ -143,3 +143,37 @@
 .cdk-overlay-container .cdk-overlay-pane .my-panel-class {
   position: absolute !important;
 } 
+
+
+// Collapse styling
+
+.pg-bar .mat-expansion-panel-body {
+  background-color: #fff;
+  padding: 0px 0px !important;
+}
+
+.mat-expansion-panel-header:hover {
+  background-color: #fff !important;
+}
+
+// .mat-expansion-panel-header {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   padding: 0px !important;
+//   height: 90px !important;
+//   margin-top: 20px;
+//   margin-bottom: -10px;
+//   background-color: #fff !important;
+
+// }
+
+.mat-expansion-panel-header-title {
+  display: flex;
+  min-width: 100%;
+  padding: 33px;
+  padding-top: 20px !important;
+  height: 15px;
+  pointer-events: visiblefill !important; 
+  min-width: 1px !important;
+}

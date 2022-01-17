@@ -1,178 +1,219 @@
 <div class="progress-panel-content">
+  <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+    <mat-expansion-panel-header style="margin-top: 0px; margin-bottom: 0px;" (click)="expansionOnClick()">
+      <mat-toolbar class="plain">
+        <span> Bachelor of {{faculty? faculty.name: ''}} </span>
+        <span class="spacer"></span>
+        <span class="edit-button" (click)="pageChange()"> &#x270e; </span>
+      </mat-toolbar>
+    </mat-expansion-panel-header>
 
-  <mat-toolbar class="plain">
-    <span>
-      Bachelor of {{faculty? faculty.name: ''}}
-    </span>
-    <span class="spacer"></span>
-    <span class="edit-button" (click)="pageChange()">
-      &#x270e;
-    </span>
-  </mat-toolbar>
 
-  <div *ngIf="gpa" class="gpa">
-    Total GPA {{gpa.toFixed(2)}}
-  </div>
+  <div *ngIf="gpa" class="gpa">Total GPA {{gpa.toFixed(2)}}</div>
 
   <div class="progress-panel-bar-container flex flex-col flex-start">
     <div class="progress-bar-group">
+
       <progress-bar-multi-container
-         *ngFor="let requirement of requirements"
-         [requirement]="requirement"
-         (click)="selectRequirements(requirement)"
-         [courses]="courses">
+        *ngFor="let requirement of requirements"
+        [requirement]="requirement"
+        (click)="selectRequirements(requirement)"
+        [courses]="courses"
+      >
       </progress-bar-multi-container>
     </div>
   </div>
+</mat-expansion-panel>
 
+<P></P>
+
+<mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+  <mat-expansion-panel-header style="margin-top: 0px; margin-bottom: 0px;" (click)="expansionOnClick()">
   <mat-toolbar *ngIf="majors?.name && !pathways?.name" class="plain">
-    <span>
-      {{majors.name}}
-    </span>
+    <span> {{majors.name}} </span>
   </mat-toolbar>
-
-  <div *ngIf="majors?.name && !pathways?.name" class="progress-panel-bar-container flex flex-col flex-start">
+</mat-expansion-panel-header>
+  <div
+    *ngIf="majors?.name && !pathways?.name"
+    class="progress-panel-bar-container flex flex-col flex-start"
+  >
     <div class="progress-bar-group">
       <progress-bar-multi-container
-         *ngFor="let requirement of majorRequirements"
-         [requirement]="requirement"
-         (click)="selectRequirements(requirement)"
-         [courses]="courses">
+        *ngFor="let requirement of majorRequirements"
+        [requirement]="requirement"
+        (click)="selectRequirements(requirement)"
+        [courses]="courses"
+      >
       </progress-bar-multi-container>
     </div>
   </div>
+</mat-expansion-panel>
 
   <mat-toolbar *ngIf="pathways?.name" class="plain">
-    <span>
-      {{majors.name}}: {{pathways.name}} Pathway
-    </span>
+    <span> {{majors.name}}: {{pathways.name}} Pathway </span>
   </mat-toolbar>
 
-  <div *ngIf="pathways?.name" class="progress-panel-bar-container flex flex-col flex-start">
+  <div
+    *ngIf="pathways?.name"
+    class="progress-panel-bar-container flex flex-col flex-start"
+  >
     <div class="progress-bar-group">
       <progress-bar-multi-container
-         *ngFor="let requirement of pathwayRequirements"
-         [requirement]="requirement"
-         (click)="selectRequirements(requirement)"
-         [courses]="courses">
+        *ngFor="let requirement of pathwayRequirements"
+        [requirement]="requirement"
+        (click)="selectRequirements(requirement)"
+        [courses]="courses"
+      >
       </progress-bar-multi-container>
     </div>
   </div>
 
+
   <mat-toolbar *ngIf="conjoint" class="plain">
-    <span>
-      Bachelor of {{conjoint.name}}
-    </span>
+    <span> Bachelor of {{conjoint.name}} </span>
   </mat-toolbar>
 
-  <div *ngIf="conjoint" class="progress-panel-bar-container flex flex-col flex-start"> 
+  <div
+    *ngIf="conjoint"
+    class="progress-panel-bar-container flex flex-col flex-start"
+  >
     <div class="progress-bar-group">
       <progress-bar-multi-container
-         *ngFor="let i of conjointRequirements"
-         [requirement]="i"
-         (click)="selectRequirements(i)"
-         [courses]="courses">
+        *ngFor="let i of conjointRequirements"
+        [requirement]="i"
+        (click)="selectRequirements(i)"
+        [courses]="courses"
+      >
       </progress-bar-multi-container>
     </div>
   </div>
 
   <mat-toolbar *ngIf="majors?.name && secondMajors?.name" class="plain">
-    <span>
-      {{secondMajors.name}}
-    </span>
+    <span> {{secondMajors.name}} </span>
   </mat-toolbar>
 
-  <div *ngIf="majors?.name && secondMajors?.name" class="progress-panel-bar-container flex flex-col flex-start">
+  <div
+    *ngIf="majors?.name && secondMajors?.name"
+    class="progress-panel-bar-container flex flex-col flex-start"
+  >
     <div class="progress-bar-group">
       <progress-bar-multi-container
-         *ngFor="let requirement of secondMajorRequirements"
-         [requirement]="requirement"
-         [courses]="courses"
-         (click)="selectRequirements(requirement)">
+        *ngFor="let requirement of secondMajorRequirements"
+        [requirement]="requirement"
+        [courses]="courses"
+        (click)="selectRequirements(requirement)"
+      >
       </progress-bar-multi-container>
     </div>
   </div>
 
+  <P></P>
 
-    <mat-toolbar *ngIf="modules?.name" class="plain">
-    <span>
-      {{modules.name}}
-    </span>
+  <mat-toolbar *ngIf="modules?.name" class="plain">
+    <span> {{modules.name}} </span>
   </mat-toolbar>
 
-  <div *ngIf="modules?.name" class="progress-panel-bar-container flex flex-col flex-start">
+  <div
+    *ngIf="modules?.name"
+    class="progress-panel-bar-container flex flex-col flex-start"
+  >
     <div class="progress-bar-group">
       <progress-bar-multi-container
-         *ngFor="let requirement of moduleRequirements"
-         [requirement]="requirement"
-         [courses]="courses"
-         (click)="selectRequirements(requirement)">
+        *ngFor="let requirement of moduleRequirements"
+        [requirement]="requirement"
+        [courses]="courses"
+        (click)="selectRequirements(requirement)"
+      >
       </progress-bar-multi-container>
     </div>
   </div>
 
-  <div *ngIf="!modules?.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
-  <button class="addmodule" (click)="addingModule=true;moduleClicked()" *ngIf="addingModule === false">
-    Add Module
-  </button>
-  <span class="select-module" *ngIf="addingModule === true && addedModule===false">
-    <mat-form-field>
-    <mat-select
-    panelClass="my-panel-class"
-    [(value)]="currentModules[0]"
-    [placeholder]= "'Module (optional)'"
-    (selectionChange)="changeModule(0, $event)"
-    [disabled]="addingModule===false"
-   >
-   
-   <mat-option *ngFor="let module of modulesList" [value]="module.value" (click)="addedModule=true">
-    {{ module.view }}
-  </mat-option>
-  </mat-select>
-</mat-form-field>
-</span>
-</div>
-
-<mat-toolbar *ngIf="secondModules?.name" class="plain">
-  <span>
-    {{secondModules.name}}
-  </span>
-</mat-toolbar>
-
-<div *ngIf="secondModules?.name" class="progress-panel-bar-container flex flex-col flex-start">
-  <div class="progress-bar-group">
-    <progress-bar-multi-container
-       *ngFor="let requirement of secondModuleRequirements"
-       [requirement]="requirement"
-       [courses]="courses"
-       (click)="selectRequirements(requirement)">
-    </progress-bar-multi-container>
+  <div
+    *ngIf="!modules?.name && faculty?.name === 'Arts' || faculty?.name === 'Science'"
+  >
+    <button
+      class="addmodule"
+      (click)="addingModule=true;moduleClicked()"
+      *ngIf="addingModule === false"
+    >
+      Add Module
+    </button>
+    <span
+      class="select-module"
+      *ngIf="addingModule === true && addedModule===false"
+    >
+      <mat-form-field>
+        <mat-select
+          panelClass="my-panel-class"
+          [(value)]="currentModules[0]"
+          [placeholder]="'Module (optional)'"
+          (selectionChange)="changeModule(0, $event)"
+          [disabled]="addingModule===false"
+        >
+          <mat-option
+            *ngFor="let module of modulesList"
+            [value]="module.value"
+            (click)="addedModule=true"
+          >
+            {{ module.view }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
-</div>
 
+  <P></P>
 
+  <mat-toolbar *ngIf="secondModules?.name" class="plain">
+    <span> {{secondModules.name}} </span>
+  </mat-toolbar>
 
-<div *ngIf="!secondModules?.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
-  <button class="addmodule" (click)="addingSecondModule=true;secondModuleClicked()" *ngIf="addingSecondModule === false">
-    Add Module
-  </button>
-  <span class="select-module" *ngIf="addingSecondModule === true && addedSecondModule===false">
-    <mat-form-field>
-    <mat-select
-    panelClass="my-panel-class"
-    [(value)]="currentSecondModules[0]"
-    [placeholder]= "'Module Two (optional)'"
-    (selectionChange)="changeSecondModule(0, $event)"
-    [disabled]="addingSecondModule===false"
-   >
-   
-   <mat-option *ngFor="let module of secondModulesList[0]" [value]="module.value" (click)="addedSecondModule=true">
-    {{ module.view }}
-  </mat-option>
-  </mat-select>
-</mat-form-field>
-</span>
-</div> 
+  <div
+    *ngIf="secondModules?.name"
+    class="progress-panel-bar-container flex flex-col flex-start"
+  >
+    <div class="progress-bar-group">
+      <progress-bar-multi-container
+        *ngFor="let requirement of secondModuleRequirements"
+        [requirement]="requirement"
+        [courses]="courses"
+        (click)="selectRequirements(requirement)"
+      >
+      </progress-bar-multi-container>
+    </div>
+  </div>
 
-
+  <div
+    *ngIf="!secondModules?.name && faculty?.name === 'Arts' || faculty?.name === 'Science'"
+  >
+    <button
+      class="addmodule"
+      (click)="addingSecondModule=true;secondModuleClicked()"
+      *ngIf="addingSecondModule === false"
+    >
+      Add Module
+    </button>
+    <span
+      class="select-module"
+      *ngIf="addingSecondModule === true && addedSecondModule===false"
+    >
+      <mat-form-field>
+        <mat-select
+          panelClass="my-panel-class"
+          [(value)]="currentSecondModules[0]"
+          [placeholder]="'Module Two (optional)'"
+          (selectionChange)="changeSecondModule(0, $event)"
+          [disabled]="addingSecondModule===false"
+        >
+          <mat-option
+            *ngFor="let module of secondModulesList[0]"
+            [value]="module.value"
+            (click)="addedSecondModule=true"
+          >
+            {{ module.view }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
+  </div>
 </div>

@@ -93,6 +93,7 @@ export class ProgressPanel {
 
   private collectionList = ["module", "secondModule"];
   private storeList = ["modules", "secondModules"];
+  private isDisabled = false;
 
   constructor(
     private location: LocationRef,
@@ -492,6 +493,17 @@ export class ProgressPanel {
         this.secondModulesList[0].splice([i], 2);
       }
     }
+  }
+
+
+  private expansionOnClick() {
+    this.isDisabled = false;
+    return this.isDisabled;
+  }
+
+  private noExpansionOnClick() {
+    this.isDisabled = true;
+    return this.isDisabled;
   }
 
 }
