@@ -196,14 +196,17 @@ export class ProgressPanel {
 
   private updateRequirementList() {
     this.requirements = []
-      //.concat(this.faculty ? (this.majors[0] && this.majors[1] ?
       .concat(
         this.faculty
           ? this.majors
             ? this.faculty.majorRequirements
-            : this.faculty.doubleMajorRequirements
-          : []
+            : this.faculty.majorRequirements
+          : []  
       );
+      // .concat(
+      //   this.faculty ? this.majors ? this.faculty.majorRequirements : null
+      //   : []
+      // );  
     this.conjointRequirements = [].concat(
       this.conjoint
         ? this.majors
@@ -211,6 +214,10 @@ export class ProgressPanel {
           : this.conjoint.doubleMajorRequirements
         : []
     );
+    // .concat(
+    //   this.conjoint ? this.majors ? this.conjoint.majorRequirements : null
+    //   : []
+    // );  
 
     if (this.conjointRequirements.length > 0) {
       this.requirements = [].concat(
