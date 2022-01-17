@@ -28,11 +28,11 @@ export class DegreeSelection {
   ];
 
   private degreeType;
-  private faculties = [];
+  public faculties = [];
   public conjoints = [];
-  private currentFaculties = [];
-  private currentConjoint = [];
-  private majors = [];
+  public currentFaculties = [];
+  public currentConjoint = [];
+  public majors = [];
   public pathways = [];
   private secondMajors = [];
   public modules = [];
@@ -287,7 +287,7 @@ export class DegreeSelection {
     }
   }
 
-  private changeFaculty(which, event) {
+  public changeFaculty(which, event) {
     const facultyNames = this.currentFaculties.map((faculty) =>
       faculty ? faculty.name : null
     );
@@ -324,7 +324,7 @@ export class DegreeSelection {
     this.populateMajors();
   }
 
-  private changeMajor(which, event) {
+  public changeMajor(which, event) {
     const majorNames = this.currentMajors.map((major) =>
       major ? major.name : null
     );

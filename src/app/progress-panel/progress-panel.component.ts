@@ -73,14 +73,17 @@ export class ProgressPanel {
   private faculty;
   private conjoint;
   private majors;
+  private majorsList = [];
   private secondMajors;
   private pathways;
   private modules;
+  private faculties = []
   private modulesList;
   private secondModules;
   private secondModulesList;
   private minor: any;
   private subs;
+  private currentFaculties;
   private currentMajors;
   private currentPathways;
   private currentModules;
@@ -115,6 +118,9 @@ export class ProgressPanel {
     this.pathways = degreeSelect.pathways;
     this.currentPathways = degreeSelect.currentPathways;
     this.currentMajors = degreeSelect.currentMajors;
+    this.faculties = degreeSelect.faculties;
+    this.currentFaculties = degreeSelect.currentFaculties;
+    this.majorsList = degreeSelect.majors;
   }
 
   public ngOnInit() {
@@ -269,9 +275,109 @@ export class ProgressPanel {
     return found !== undefined;
   }
 
-  private pageChange() {
+  private deleteDegree() {
+    
     this.email = this.degreeSelect.email;
-    this.deleteWholePlan();
+    
+    let collectionList = [
+      "degree",
+      "conjoint",
+      "major",
+      "pathway",
+      "secondMajor",
+      "module",
+      "secondModule",
+    ];
+    let storeList = [
+      "faculty",
+      "conjoint",
+      "majors",
+      "pathways",
+      "secondMajors",
+      "modules",
+      "secondModules",
+    ];
+    for (let i = 0; i < collectionList.length; i++) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection(collectionList[i])
+        .get()
+        .toPromise()
+        .then((sub) => {
+          if (sub.docs.length > 0) {
+            // Check to see if documents exist in the courses collection
+            sub.forEach((element) => {
+              // Loop to get all the ids of the docs
+              this.deleteId = element.id;
+              this.storeHelper.update(storeList[i], null);
+              // 
+              this.db
+                .collection("users")
+                .doc(this.email)
+                .collection(collectionList[i])
+                .doc(this.deleteId)
+                .delete();
+                
+            });
+          }
+          
+        });
+    }
+  }
+
+  private deleteMajor() {
+    
+    this.email = this.degreeSelect.email;
+    
+    let collectionList = [
+      "degree",
+      "conjoint",
+      "major",
+      "pathway",
+      "secondMajor",
+      "module",
+      "secondModule",
+    ];
+    let storeList = [
+      "faculty",
+      "conjoint",
+      "majors",
+      "pathways",
+      "secondMajors",
+      "modules",
+      "secondModules",
+    ];
+    for (let i = 1; i < collectionList.length; i++) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection(collectionList[i])
+        .get()
+        .toPromise()
+        .then((sub) => {
+          if (sub.docs.length > 0) {
+            // Check to see if documents exist in the courses collection
+            sub.forEach((element) => {
+              // Loop to get all the ids of the docs
+              this.deleteId = element.id;
+              this.storeHelper.update(storeList[i], null);
+              // 
+              this.db
+                .collection("users")
+                .doc(this.email)
+                .collection(collectionList[i])
+                .doc(this.deleteId)
+                .delete();
+                
+            });
+          }
+          
+        });
+    }
+    this.addingModule = false;
+    this.addedModule = false
+    this.currentMajors[0] = null;
   }
 
   private yearAndPeriod(): any {
@@ -358,6 +464,14 @@ export class ProgressPanel {
     }
   }
 
+  private changeFaculty(which, event) {
+    this.degreeSelect.changeFaculty(which, event);
+  }
+
+  private changeMajor(which, event) {
+    this.degreeSelect.changeMajor(which, event);
+  }
+
   private changeModule(which, event) {
     this.store.changes.pluck("modules").subscribe((modules) => {
       this.modules = modules;
@@ -421,49 +535,17 @@ export class ProgressPanel {
       (courseGrades.length + failed);
   }
 
-  private deleteWholePlan() {
-    let collectionList = [
-      "degree",
-      "conjoint",
-      "major",
-      "pathway",
-      "secondMajor",
-      "module",
-      "secondModule",
-    ];
-    let storeList = [
-      "faculty",
-      "conjoint",
-      "majors",
-      "pathways",
-      "secondMajors",
-      "modules",
-      "secondModules",
-    ];
-    for (let i = 0; i < collectionList.length; i++) {
-      this.db
-        .collection("users")
-        .doc(this.email)
-        .collection(collectionList[i])
-        .get()
-        .toPromise()
-        .then((sub) => {
-          if (sub.docs.length > 0) {
-            // Check to see if documents exist in the courses collection
-            sub.forEach((element) => {
-              // Loop to get all the ids of the docs
-              this.deleteId = element.id;
-              this.storeHelper.update(storeList[i], null);
-              this.onPageChange.emit();
-              this.db
-                .collection("users")
-                .doc(this.email)
-                .collection(collectionList[i])
-                .doc(this.deleteId)
-                .delete();
-            });
-          }
-        });
+  private degreeClicked() {
+    for (let i = this.modulesList.length -1; i >= 0; i--) {
+      if (!this.modulesList[i].value.faculties.includes(this.faculty.name)) {
+        this.modulesList.splice([i], 1);
+      }
+      if (
+        this.modulesList[i].value.name === this.modules.name ||
+        this.modulesList[i].value.name === this.secondModules.name
+      ) {
+        this.modulesList.splice([i], 2);
+      }
     }
   }
 

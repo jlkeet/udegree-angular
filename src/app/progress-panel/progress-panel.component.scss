@@ -76,23 +76,23 @@
   background:#ddd;
   font-size:12px;
 }
-.edit-button{
-  cursor:pointer;
-  background:white;
-  width:30px;
-  height:35px;
-  border-radius:5px;
-  border: 1px solid;
-  text-align:center;
-  color:#bbf;
-  font-weight:bold;
-  font-size:24px;
-}
+// .edit-button{
+//   cursor:pointer;
+//   background:white;
+//   width:30px;
+//   height:35px;
+//   border-radius:5px;
+//   border: 1px solid;
+//   text-align:center;
+//   color:#bbf;
+//   font-weight:bold;
+//   font-size:24px;
+// }
 
-.edit-button:hover {
-  background:rgb(143, 143, 202);
-  color:#fff;
-}
+// .edit-button:hover {
+//   background:rgb(143, 143, 202);
+//   color:#fff;
+// }
 
 .plain {
   background: white;
@@ -154,6 +154,24 @@
 
 .mat-expansion-panel-header:hover {
   background-color: #fff !important;
+}
+
+.delete-pg {
+  cursor: pointer;
+  font-size: 50px;
+  font-weight: bold;
+  color: #e1e7e9;
+  width: 31px;
+  height: 31px;
+}
+
+.cross-pg {
+  display: none;
+}
+
+
+.mat-expansion-panel-header:hover .cross-pg{
+  display: block !important;
 }
 
 // .mat-expansion-panel-header {
