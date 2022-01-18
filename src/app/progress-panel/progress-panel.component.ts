@@ -557,17 +557,8 @@ export class ProgressPanel {
   }
 
   private degreeClicked() {
-    for (let i = this.modulesList.length -1; i >= 0; i--) {
-      if (!this.modulesList[i].value.faculties.includes(this.faculty.name)) {
-        this.modulesList.splice([i], 1);
-      }
-      if (
-        this.modulesList[i].value.name === this.modules.name ||
-        this.modulesList[i].value.name === this.secondModules.name
-      ) {
-        this.modulesList.splice([i], 2);
-      }
-    }
+    this.addingDegree = true;
+    this.faculties = this.degreeSelect.faculties;
   }
 
  private majorClicked() {

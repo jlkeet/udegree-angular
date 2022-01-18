@@ -36,7 +36,7 @@
     <div *ngIf="!faculty?.name">
       <button
         class="addmodule"
-        (click)="addingDegree=true"
+        (click)="degreeClicked();"
         *ngIf="addingDegree === false"
       >
         Add Degree

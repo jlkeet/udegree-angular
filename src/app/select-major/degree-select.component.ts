@@ -293,20 +293,21 @@ export class DegreeSelection {
     const facultyNames = this.currentFaculties.map((faculty) =>
       faculty ? faculty.name : null
     );
-    this.changeBlurb(this.currentFaculties[which].blurb);
+   // this.changeBlurb(this.currentFaculties[which].blurb);
     if (this.degreeType === "regular") {
       this.currentMajors = [null, null];
     } else {
       this.currentMajors[which] = null;
     }
-    this.storeHelper.update("faculty", this.currentFaculties[0]);
+    this.storeHelper.update("faculty", event.value);
     this.dbCourses.setSelection(
       this.email,
       "faculty",
-      this.currentFaculties[0],
+      event.value,
       "degree"
     );
     this.facultyForEmail = this.storeHelper.current("faculty");
+    this.currentFaculties[0] = event.value;
     this.checkFlags();
     this.populateMajors();
   }
@@ -327,7 +328,6 @@ export class DegreeSelection {
   }
 
   public changeMajor(which, event) {
-    console.log(event.value)
     const majorNames = this.currentMajors.map((major) =>
       major ? major.name : null
     );
