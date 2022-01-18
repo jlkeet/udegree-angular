@@ -77,12 +77,15 @@ export class ProgressPanel {
   public addedMajor = false;
   public addingConjoint = false;
   public addedConjoint = false;
+  public addingSecondMajor = false;
+  public addedSecondMajor = false;
 
   private faculty;
   private conjoint;
   private majors;
   private majorsList = [];
   private secondMajors;
+  private secondMajorsList =[];
   private pathways;
   private modules;
   private faculties = []
@@ -95,6 +98,7 @@ export class ProgressPanel {
   private currentFaculties;
   private currentConjoints;
   private currentMajors;
+  private currentSecondMajors;
   private currentPathways;
   private currentModules;
   private currentSecondModules;
@@ -134,6 +138,9 @@ export class ProgressPanel {
     this.currentFaculties = degreeSelect.currentFaculties;
     this.conjoints = degreeSelect.conjoints;
     this.currentConjoints = degreeSelect.currentConjoint;
+    this.secondMajorsList = degreeSelect.currentSecondMajors;
+    this.currentSecondMajors = degreeSelect.currentSecondMajors;
+
   }
 
   public ngOnInit() {
@@ -251,6 +258,7 @@ export class ProgressPanel {
     this.secondMajorRequirements = [].concat(
       this.secondMajors ? this.secondMajors.requirements : []
     );
+
     //  .concat(this.minor ? this.minor.requirements : []);
 
     this.moduleRequirements = [].concat(
@@ -266,14 +274,16 @@ export class ProgressPanel {
       this.majors !== undefined &&
       this.secondMajors !== undefined
     ) {
-      this.majorRequirements = [
-        ...this.majorRequirements,
-        this.majors.conjointRequirements,
-      ];
-      this.secondMajorRequirements = [
-        ...this.secondMajorRequirements,
-        this.secondMajors.conjointRequirements,
-      ];
+      if (this.majors.conjointRequirements && this.secondMajors.conjointRequirements) {
+      this.majorRequirements.push(this.majors.conjointRequirements[0])
+      this.secondMajorRequirements.push(this.secondMajors.conjointRequirements[0])
+    }
+      
+      // this.secondMajorRequirements = [
+      //   ... this.secondMajors.conjointRequirements,
+      // ];
+     // console.log(this.majors)
+     // console.log(this.secondMajorRequirements)
     }
   }
 
@@ -504,6 +514,10 @@ export class ProgressPanel {
     this.degreeSelect.changeConjoint(which, event);
   }
 
+  private changeSecondMajor(which, event) {
+    this.degreeSelect.changeSecondMajor(which, event);
+  }
+
   private changeModule(which, event) {
     this.store.changes.pluck("modules").subscribe((modules) => {
       this.modules = modules;
@@ -580,6 +594,11 @@ export class ProgressPanel {
  private conjointClicked() {
   this.addingConjoint = true;
   this.conjoints = this.degreeSelect.conjoints;
+}
+
+private secondMajorClicked() {
+  this.addingSecondMajor = true;
+  this.secondMajorsList = this.degreeSelect.secondMajors;
 }
 
   private moduleClicked() {

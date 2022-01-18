@@ -34,7 +34,7 @@ export class DegreeSelection {
   public currentConjoint = [];
   public majors = [];
   public pathways = [];
-  private secondMajors = [];
+  public secondMajors = [];
   public modules = [];
   public secondModules = [];
   private degree = null;
@@ -42,7 +42,7 @@ export class DegreeSelection {
   public currentPathways = [];
   public currentModules = [];
   public currentSecondModules = [];
-  private currentSecondMajors = [];
+  public currentSecondMajors = [];
   private doubleMajorAllowed;
   public email: string = "";
   public degreeId: string = "";
@@ -218,11 +218,11 @@ export class DegreeSelection {
     //   return { value: secondModules, view: secondModules.name };
     // });
 
-    // this.secondMajors = departmentService
-    //   .getDepartments()
-    //   .map((secondMajors) => {
-    //     return { value: secondMajors, view: secondMajors.name };
-    //   })
+    this.secondMajors = this.departmentService
+      .getDepartments()
+      .map((secondMajors) => {
+        return { value: secondMajors, view: secondMajors.name };
+      })
 
     this.checkFlags();
     this.populateMajors();
@@ -388,11 +388,12 @@ export class DegreeSelection {
     );
   }
 
-  private changeSecondMajor(which, event) {
+  public changeSecondMajor(which, event) {
     const majorNames = this.currentSecondMajors.map((secondMajor) =>
       secondMajor ? secondMajor.name : null
     );
-    this.changeBlurb(this.currentSecondMajors[which].blurb);
+    this.currentSecondMajors[0] = event.value;
+   // this.changeBlurb(this.currentSecondMajors[which].blurb);
     this.storeHelper.update("secondMajors", this.currentSecondMajors[0]);
     this.dbCourses.setSelection(
       this.email,
@@ -400,6 +401,8 @@ export class DegreeSelection {
       this.currentSecondMajors[0],
       "secondMajor"
     );
+    this.checkFlags();
+    this.populateMajors();
   }
 
   public changeBlurb(blurb: string) {

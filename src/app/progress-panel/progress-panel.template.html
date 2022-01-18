@@ -225,9 +225,27 @@ hideToggle
   </span>
 </div>
 
+<P></P>
+
+<mat-expansion-panel
+class="pg-bar"
+[disabled]="isDisabled"
+[expanded]="true"
+hideToggle
+>
+<mat-expansion-panel-header
+  *ngIf="secondMajors?.name"
+  style="margin-top: 0px; margin-bottom: 0px"
+  (click)="expansionOnClick()"
+>
+
   <mat-toolbar *ngIf="majors?.name && secondMajors?.name" class="plain">
     <span> {{secondMajors.name}} </span>
+    <span class="spacer"></span>
+    <span class="delete-pg" (click)="noExpansionOnClick(); deleteDegree();">
+      <span class="cross-pg">&times;</span></span>
   </mat-toolbar>
+</mat-expansion-panel-header>
 
   <div
     *ngIf="majors?.name && secondMajors?.name"
@@ -243,6 +261,40 @@ hideToggle
       </progress-bar-multi-container>
     </div>
   </div>
+
+
+  <div *ngIf="!secondMajors?.name">
+    <button
+      class="addmodule"
+      (click)="secondMajorClicked();"
+      *ngIf="addingSecondMajor === false"
+    >
+      Add Second Major
+    </button>
+    <span
+      class="select-module"
+      *ngIf="addingSecondMajor === true && addedSecondMajor===false"
+    >
+      <mat-form-field>
+        <mat-select
+          panelClass="my-panel-class"
+          [(value)]="currentSecondMajors[0]"
+          placeholder="Second Major"
+          (selectionChange)="changeSecondMajor(0, $event)"
+          [disabled]="addingSecondMajor===false"
+        >
+          <mat-option
+            *ngFor="let secondMajor of secondMajorsList"
+            [value]="secondMajor.value"
+            (click)="addedSecondMajor=true"
+          >
+          {{ secondMajor.view }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
+  </div>
+</mat-expansion-panel>
 
   <p></p>
 
