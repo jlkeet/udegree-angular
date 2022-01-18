@@ -39,8 +39,7 @@ import { StoreHelper } from '../services';
   template: `
   <div class="relative">
     <div *ngIf="!collapsed" class="panel" >
-      <progress-panel *ngIf="progress" (onPageChange)="changePage()"></progress-panel>
-      <degree-select *ngIf="!progress" (onPageChange)="changePage()"></degree-select>
+      <progress-panel (onPageChange)="changePage()"></progress-panel>
       <div class="no-select expand" (click)="collapse()">
         <div class="margin-auto">
          &lt;
