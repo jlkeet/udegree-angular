@@ -17,13 +17,19 @@
         "flags": {}
       }
     ],
-    "secondMajorRequirements": []
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Academic English Studies and Linguistics"],
+        "aboveStage": 2
+      }
+    ]
   },
   {
     "name": "Anthropology",
     "faculties": ["Arts"],
     "papers": "ANTHRO103, ANTHRO104, ANTHRO106, ANTHRO107, ANTHRO108,ANTHRO109, ANTHRO200, ANTHRO201, ANTHRO202, ANTHRO205, ANTHRO206, ANTHRO207, ANTHRO208, ANTHRO212, ANTHRO213, ANTHRO217, ANTHRO220, ANTHRO234, ANTHRO235, ANTHRO237, ANTHRO241, ANTHRO250, ANTHRO251, MĀORI230, MĀORI330, MĀORI396, ANTHRO301, ANTHRO301, ANTHRO306, ANTHRO309, ANTHRO317, ANTHRO319, ANTHRO321, ANTHRO327, ANTHRO329, ANTHRO337, ANTHRO340, ANTHRO345, ANTHRO347, ANTHRO348, ANTHRO349, ANTHRO351, ANTHRO352, ANTHRO353, ANTHRO354, ANTHRO358, ANTHRO360, ANTHRO365, ANTHRO366, ANTHRO367, ANTHRO370, ANTHRO372, ANTHRO373, ANTHRO374, ANTHRO376, ANTHRO399",
-    "restrict": "",
     "requirements": [
       {
         "type": 0,
@@ -36,6 +42,14 @@
         "required": 15,
         "papers": ["ANTHRO200", "ANTHRO201", "ANTHRO202", "ANTHRO203"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Anthropology"],
+        "aboveStage": 2
       }
     ]
   },
@@ -64,6 +78,14 @@
           "noMore": true
         }
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Art History"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -76,6 +98,14 @@
         "required": 30,
         "papers": ["ASIAN100", "ASIAN303"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Asian Studies"],
+        "aboveStage": 2
       }
     ]
   },
@@ -125,6 +155,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Chinese"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -150,6 +188,14 @@
         "papers": ["ANCIENT300-385"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Classical Studies and Ancient History"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -162,6 +208,14 @@
         "required": 30,
         "papers": ["CRIM208", "CRIM301"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Criminology"],
+        "aboveStage": 2
       }
     ]
   },
@@ -182,6 +236,14 @@
         "papers": ["DRAMA301-306"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Drama"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -194,6 +256,14 @@
         "required": 45,
         "papers": ["ECON152", "ECON201", "ECON211"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Economics"],
+        "aboveStage": 2
       }
     ]
   },
@@ -214,6 +284,14 @@
         "papers": ["EDUC200", "EDUC201", "EDUC204", "EDUC207-283"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Education"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -228,7 +306,14 @@
         "flags": {}
       }
     ],
-    "secondMajorRequirements": []
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Employment Relations and Organisation Studies"],
+        "aboveStage": 2
+      }
+    ]
   },
   {
     "name": "English",
@@ -249,6 +334,14 @@
           "ENGLISH353"
         ],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["English"],
+        "aboveStage": 2
       }
     ]
   },
@@ -358,6 +451,14 @@
         "papers": ["EUROPEAN100"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["European Studies"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -395,6 +496,14 @@
         "papers": ["EUROPEAN200-278", "EUROPEAN300-378"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["French"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -413,6 +522,14 @@
         "required": 15,
         "papers": ["GENDER301-307"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Gender Studies"],
+        "aboveStage": 2
       }
     ]
   },
@@ -458,6 +575,14 @@
         "papers": ["GEOG399"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Geography"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -497,6 +622,14 @@
           "noMore": true
         }
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["German"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -510,12 +643,28 @@
         "papers": ["HLTHSOC100", "HLTHSOC201", "HLTHSOC301"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Health and Society"],
+        "aboveStage": 2
+      }
     ]
   },
   {
     "name": "History",
     "faculties": ["Arts"],
-    "papers": "ASIAN100, EUROPEAN100, HISTORY103-108, HUMS101, ANCIENT255, ARTHIST225, HISTORY201-271, PACIFIC214, POLITICS229, ANCIENT355, ARTHIST325, HISTORY300-371, HUMS300, MĀORI396, PACIFIC314"
+    "papers": "ASIAN100, EUROPEAN100, HISTORY103-108, HUMS101, ANCIENT255, ARTHIST225, HISTORY201-271, PACIFIC214, POLITICS229, ANCIENT355, ARTHIST325, HISTORY300-371, HUMS300, MĀORI396, PACIFIC314",
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["History"],
+        "aboveStage": 2
+      }
+    ]
   },
   {
     "name": "Italian",
@@ -555,6 +704,14 @@
           "noMore": true
         }
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Italian"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -593,6 +750,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Japanese"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -617,6 +782,14 @@
         "required": 15,
         "papers": ["ANTHRO329", "ASIAN302", "ASIAN309", "KOREAN305"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Korean"],
+        "aboveStage": 2
       }
     ]
   },
@@ -651,6 +824,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Latin"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -670,6 +851,14 @@
         "papers": ["LINGUIST200", "LINGUIST201", "LINGUIST300", "LINGUIST301"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Linguistics"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -682,6 +871,14 @@
         "required": 60,
         "papers": ["COMPSCI120", "COMPSCI225", "PHIL101", "PHIL222"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Logic and Computation"],
+        "aboveStage": 2
       }
     ]
   },
@@ -702,6 +899,14 @@
           "MĀORI302"
         ],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Māori Studies"],
+        "aboveStage": 2
       }
     ]
   },
@@ -735,7 +940,14 @@
         "flags": {}
       }
     ],
-    "secondMajorRequirements": []
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Mathematics"],
+        "aboveStage": 2
+      }
+    ]
   },
   {
     "name": "Media, Film and Television",
@@ -766,6 +978,14 @@
         "papers": ["MEDIA307-328", "MEDIA331", "MEDIA332", "MEDIA336"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Media, Film and Television"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -780,7 +1000,14 @@
         "flags": {}
       }
     ],
-    "secondMajorRequirements": []
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Music"],
+        "aboveStage": 2
+      }
+    ]
   },
   {
     "name": "Pacific Studies",
@@ -793,17 +1020,42 @@
         "papers": ["PACIFIC100", "PACIFIC200"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Pacific Studies"],
+        "aboveStage": 2
+      }
     ]
   },
   {
     "name": "Philosophy",
     "faculties": ["Arts"],
-    "papers": "PHIL100-105, PHIL200-268, LOGICOMP301, PHIL300-368"
+    "papers": "PHIL100-105, PHIL200-268, LOGICOMP301, PHIL300-368",
+
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Philosophy"],
+        "aboveStage": 2
+      }
+    ]
   },
   {
     "name": "Politics and International Relations",
     "faculties": ["Arts"],
-    "papers": "POLITICS106-109, COMMS201, HISTORY227, PHIL205, POLITICS202-254, COMMS304, MĀORI330, MĀORI335, PHIL310, POLITICS300-356"
+    "papers": "POLITICS106-109, COMMS201, HISTORY227, PHIL205, POLITICS202-254, COMMS304, MĀORI330, MĀORI335, PHIL310, POLITICS300-356",
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Politics and International Relations"],
+        "aboveStage": 2
+      }
+    ]
   },
   {
     "name": "Psychology",
@@ -844,6 +1096,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Psychology"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -856,6 +1116,14 @@
         "required": 1,
         "papers": ["SOCIOL310"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Sociology"],
+        "aboveStage": 2
       }
     ]
   },
@@ -923,6 +1191,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Spanish"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -979,6 +1255,14 @@
         "papers": ["ENGSCI391", "STATS301", "STATS302", "STATS310-383"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Statistics"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -1003,6 +1287,14 @@
         "required": 15,
         "papers": ["THEOREL300-316", "THEOREL319-321"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Theological and Religious Studies"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1030,7 +1322,14 @@
         "flags": {}
       }
     ],
-    "secondMajorRequirements": []
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Communication"],
+        "aboveStage": 2
+      }
+    ]
   },
   {
     "name": "Teaching English to Speakers of Other Languages",
@@ -1044,7 +1343,14 @@
         "flags": {}
       }
     ],
-    "secondMajorRequirements": []
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Teaching English to Speakers of Other Languages"],
+        "aboveStage": 2
+      }
+    ]
   },
   {
     "name": "European Studies - European Cultures and Languages",
@@ -1061,21 +1367,97 @@
             "required": 15,
             "flags": {},
             "stage": 3,
-            "papers": ["ARTHIST303", "ARTHIST310", "ARTHIST315", "ARTHIST321-325", "ARTHIST336", "COMPLIT302", "EUROPEAN300", "EUROPEAN304", "EUROPEAN307", "EUROPEAN377", "EUROPEAN378", "FRENCH304", "FRENCH305", "FRENCH341", "FRENCH344", "FRENCH349", "FRENCH377", "FRENCH378", "GERMAN301", "GERMAN302", "GERMAN310", "GERMAN377", "GERMAN378", "ITALIAN300", "ITALIAN304", "ITALIAN309", "ITALIAN333", "ITALIAN335", "ITALIAN336", "ITALIAN377", "ITALIAN378", "PHIL340", "PHIL341", "RUSSIAN390", "SPANISH313", "SPANISH317", "SPANISH318", "SPANISH319", "SPANISH320", "SPANISH321", "SPANISH345", "SPANISH377", "SPANISH378"]
+            "papers": [
+              "ARTHIST303",
+              "ARTHIST310",
+              "ARTHIST315",
+              "ARTHIST321-325",
+              "ARTHIST336",
+              "COMPLIT302",
+              "EUROPEAN300",
+              "EUROPEAN304",
+              "EUROPEAN307",
+              "EUROPEAN377",
+              "EUROPEAN378",
+              "FRENCH304",
+              "FRENCH305",
+              "FRENCH341",
+              "FRENCH344",
+              "FRENCH349",
+              "FRENCH377",
+              "FRENCH378",
+              "GERMAN301",
+              "GERMAN302",
+              "GERMAN310",
+              "GERMAN377",
+              "GERMAN378",
+              "ITALIAN300",
+              "ITALIAN304",
+              "ITALIAN309",
+              "ITALIAN333",
+              "ITALIAN335",
+              "ITALIAN336",
+              "ITALIAN377",
+              "ITALIAN378",
+              "PHIL340",
+              "PHIL341",
+              "RUSSIAN390",
+              "SPANISH313",
+              "SPANISH317",
+              "SPANISH318",
+              "SPANISH319",
+              "SPANISH320",
+              "SPANISH321",
+              "SPANISH345",
+              "SPANISH377",
+              "SPANISH378"
+            ]
           },
           {
             "type": 0,
             "required": 15,
             "flags": {},
             "stage": 3,
-            "papers": ["ANCIENT354-360", "EUROPEAN302", "EUROPEAN312", "FRENCH344", "HISTORY309", "HISTORY317", "HISTORY324", "HISTORY326", "HISTORY356", "RUSSIAN390"]
+            "papers": [
+              "ANCIENT354-360",
+              "EUROPEAN302",
+              "EUROPEAN312",
+              "FRENCH344",
+              "HISTORY309",
+              "HISTORY317",
+              "HISTORY324",
+              "HISTORY326",
+              "HISTORY356",
+              "RUSSIAN390"
+            ]
           },
           {
             "type": 0,
             "required": 15,
             "flags": {},
             "stage": 3,
-            "papers": ["ARTHIST303", "ARTHIST315", "ARTHIST324", "ARTHIST325", "ARTHIST336", "COMPLIT303", "ENGLISH310", "ENGLISH340", "ENGLISH353", "FRENCH306", "GREEK300", "GREEK310", "HISTORY339", "HISTORY356", "ITALIAN303", "ITALIAN309", "LATIN300", "LATIN310", "PHIL302", "THEOREL307"]
+            "papers": [
+              "ARTHIST303",
+              "ARTHIST315",
+              "ARTHIST324",
+              "ARTHIST325",
+              "ARTHIST336",
+              "COMPLIT303",
+              "ENGLISH310",
+              "ENGLISH340",
+              "ENGLISH353",
+              "FRENCH306",
+              "GREEK300",
+              "GREEK310",
+              "HISTORY339",
+              "HISTORY356",
+              "ITALIAN303",
+              "ITALIAN309",
+              "LATIN300",
+              "LATIN310",
+              "PHIL302",
+              "THEOREL307"
+            ]
           }
         ]
       },
@@ -1084,6 +1466,14 @@
         "required": 15,
         "papers": ["EUROPEAN100"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["European Studies - European Cultures and Languages"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1199,119 +1589,138 @@
         "required": 15,
         "papers": ["EUROPEAN100"],
         "flags": {}
-      },
+      }
+    ],
+    "conjointRequirements": [
       {
-        "name": "European Studies - Medieval and Early Modern European Studies",
-        "faculties": ["Arts"],
-        "papers": "GREEK100, GREEK101, HUMS101, LATIN100, LATIN101, COMPLIT202, ENGLISH213, ENGLISH265, GREEK200, HISTORY239, HISTORY243, ITALIAN209, ITALIAN210, LATIN200, PHIL204, THEOREL207, ARTHIST303, ARTHIST315, ARTHIST324, ARTHIST325, ARTHIST336, COMPLIT303, ENGLISH310, ENGLISH340, ENGLISH353, FRENCH306, GREEK300, GREEK310, HISTORY339, HISTORY356, ITALIAN303, ITALIAN309, LATIN300, LATIN310, PHIL302, THEOREL307",
-        "requirements": [
+        "type": 0,
+        "required": 45,
+        "departments": ["European Studies - European History and Politics"],
+        "aboveStage": 2
+      }
+    ]
+  },
+
+  {
+    "name": "European Studies - Medieval and Early Modern European Studies",
+    "faculties": ["Arts"],
+    "papers": "GREEK100, GREEK101, HUMS101, LATIN100, LATIN101, COMPLIT202, ENGLISH213, ENGLISH265, GREEK200, HISTORY239, HISTORY243, ITALIAN209, ITALIAN210, LATIN200, PHIL204, THEOREL207, ARTHIST303, ARTHIST315, ARTHIST324, ARTHIST325, ARTHIST336, COMPLIT303, ENGLISH310, ENGLISH340, ENGLISH353, FRENCH306, GREEK300, GREEK310, HISTORY339, HISTORY356, ITALIAN303, ITALIAN309, LATIN300, LATIN310, PHIL302, THEOREL307",
+    "requirements": [
+      {
+        "type": 0,
+        "required": 2,
+        "flags": {},
+        "complex": [
           {
             "type": 0,
-            "required": 2,
+            "required": 15,
             "flags": {},
-            "complex": [
-              {
-                "type": 0,
-                "required": 15,
-                "flags": {},
-                "stage": 3,
-                "papers": [
-                  "ARTHIST303",
-                  "ARTHIST310",
-                  "ARTHIST315",
-                  "ARTHIST321",
-                  "ARTHIST324",
-                  "ARTHIST325",
-                  "ARTHIST336",
-                  "COMPLIT302",
-                  "EUROPEAN300",
-                  "EUROPEAN304",
-                  "EUROPEAN307",
-                  "EUROPEAN377",
-                  "EUROPEAN378",
-                  "FRENCH304",
-                  "FRENCH305",
-                  "FRENCH341",
-                  "FRENCH344",
-                  "FRENCH349",
-                  "FRENCH377",
-                  "FRENCH378",
-                  "GERMAN301",
-                  "GERMAN302",
-                  "GERMAN310",
-                  "GERMAN377",
-                  "GERMAN378",
-                  "ITALIAN300",
-                  "ITALIAN304",
-                  "ITALIAN309",
-                  "ITALIAN333-336",
-                  "ITALIAN377",
-                  "ITALIAN378",
-                  "PHIL340",
-                  "PHIL341",
-                  "RUSSIAN390",
-                  "SPANISH313",
-                  "SPANISH317-321",
-                  "SPANISH345",
-                  "SPANISH377",
-                  "SPANISH378"
-                ]
-              },
-              {
-                "type": 0,
-                "required": 15,
-                "flags": {},
-                "stage": 3,
-                "papers": [
-                  "ANCIENT354-360",
-                  "EUROPEAN302",
-                  "EUROPEAN312",
-                  "FRENCH344",
-                  "HISTORY309",
-                  "HISTORY317",
-                  "HISTORY324",
-                  "HISTORY326",
-                  "HISTORY356",
-                  "RUSSIAN390"
-                ]
-              },
-              {
-                "type": 0,
-                "required": 15,
-                "flags": {},
-                "stage": 3,
-                "papers": [
-                  "ARTHIST303",
-                  "ARTHIST315",
-                  "ARTHIST324",
-                  "ARTHIST325",
-                  "ARTHIST336",
-                  "COMPLIT303",
-                  "ENGLISH310",
-                  "ENGLISH340",
-                  "ENGLISH353",
-                  "FRENCH306",
-                  "GREEK300",
-                  "GREEK310",
-                  "HISTORY339",
-                  "HISTORY356",
-                  "ITALIAN303",
-                  "ITALIAN309",
-                  "LATIN300",
-                  "LATIN310",
-                  "PHIL302",
-                  "THEOREL307"
-                ]
-              }
+            "stage": 3,
+            "papers": [
+              "ARTHIST303",
+              "ARTHIST310",
+              "ARTHIST315",
+              "ARTHIST321",
+              "ARTHIST324",
+              "ARTHIST325",
+              "ARTHIST336",
+              "COMPLIT302",
+              "EUROPEAN300",
+              "EUROPEAN304",
+              "EUROPEAN307",
+              "EUROPEAN377",
+              "EUROPEAN378",
+              "FRENCH304",
+              "FRENCH305",
+              "FRENCH341",
+              "FRENCH344",
+              "FRENCH349",
+              "FRENCH377",
+              "FRENCH378",
+              "GERMAN301",
+              "GERMAN302",
+              "GERMAN310",
+              "GERMAN377",
+              "GERMAN378",
+              "ITALIAN300",
+              "ITALIAN304",
+              "ITALIAN309",
+              "ITALIAN333-336",
+              "ITALIAN377",
+              "ITALIAN378",
+              "PHIL340",
+              "PHIL341",
+              "RUSSIAN390",
+              "SPANISH313",
+              "SPANISH317-321",
+              "SPANISH345",
+              "SPANISH377",
+              "SPANISH378"
             ]
           },
           {
             "type": 0,
             "required": 15,
-            "papers": ["EUROPEAN100"],
-            "flags": {}
+            "flags": {},
+            "stage": 3,
+            "papers": [
+              "ANCIENT354-360",
+              "EUROPEAN302",
+              "EUROPEAN312",
+              "FRENCH344",
+              "HISTORY309",
+              "HISTORY317",
+              "HISTORY324",
+              "HISTORY326",
+              "HISTORY356",
+              "RUSSIAN390"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "flags": {},
+            "stage": 3,
+            "papers": [
+              "ARTHIST303",
+              "ARTHIST315",
+              "ARTHIST324",
+              "ARTHIST325",
+              "ARTHIST336",
+              "COMPLIT303",
+              "ENGLISH310",
+              "ENGLISH340",
+              "ENGLISH353",
+              "FRENCH306",
+              "GREEK300",
+              "GREEK310",
+              "HISTORY339",
+              "HISTORY356",
+              "ITALIAN303",
+              "ITALIAN309",
+              "LATIN300",
+              "LATIN310",
+              "PHIL302",
+              "THEOREL307"
+            ]
           }
         ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["EUROPEAN100"],
+        "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": [
+          "European Studies - Medieval and Early Modern European Studies"
+        ],
+        "aboveStage": 2
       }
     ]
   },
@@ -1365,7 +1774,14 @@
         "flags": {}
       }
     ],
-    "secondMajorRequirements": []
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Communication and Social Change"],
+        "aboveStage": 2
+      }
+    ]
   },
   {
     "name": "Communication and Technology",
@@ -1409,6 +1825,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Communication and Technology"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -1438,6 +1862,14 @@
         "required": 45,
         "papers": ["COMMS314", "MGMT304", "MGMT314", "SOCIOL335"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Communication in Leadership"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1483,6 +1915,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Accounting"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -1519,6 +1959,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Business Analytics"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -1537,6 +1985,14 @@
         "papers": ["COMLAW301–321", "LAWCOMM422"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Commercial Law"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -1554,6 +2010,14 @@
         "required": 45,
         "papers": ["ECON301–381"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Economics"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1576,13 +2040,16 @@
       {
         "type": 0,
         "required": 45,
-        "papers": [
-          "ACCTG371",
-          "COMLAW305",
-          "ECON352",
-          "FINANCE351-384"
-        ],
+        "papers": ["ACCTG371", "COMLAW305", "ECON352", "FINANCE351-384"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Finance"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1608,6 +2075,14 @@
         "papers": ["BUSAN301", "BUSAN302", "INFOSYS300–341", "OPSMGT357"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Information Systems"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -1631,6 +2106,14 @@
         "required": 15,
         "papers": ["INNOVENT305", "INNOVENT307", "INNOVENT308", "MGMT302"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Innovation and Entrepreneurship"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1669,6 +2152,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["International Business"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -1690,11 +2181,16 @@
       {
         "type": 0,
         "required": 15,
-        "papers": [
-          "BUSINESS328",
-          "MGMT300-320"
-        ],
+        "papers": ["BUSINESS328", "MGMT300-320"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Management"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1717,13 +2213,16 @@
       {
         "type": 0,
         "required": 30,
-        "papers": [
-          "MKTG301",
-          "MKTG302",
-          "MKTG304–312",
-          "MKTG314"
-        ],
+        "papers": ["MKTG301", "MKTG302", "MKTG304–312", "MKTG314"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Marketing"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1751,6 +2250,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Operations and Supply Chain Management"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -1774,6 +2281,14 @@
         "required": 15,
         "papers": ["ACCTG311", "ACCTG371", "ECON361", "FINANCE361"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Taxation"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1815,6 +2330,14 @@
           "POPLHLTH313"
         ],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Population Health"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1858,6 +2381,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Anthropological Science"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -1888,6 +2419,14 @@
         "papers": ["BIOSCI301–395", "MARINE303"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Biological Sciences"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -1915,11 +2454,16 @@
       {
         "type": 0,
         "required": 30,
-        "papers": [
-          "CHEM310-340",
-          "CHEM360-390"
-        ],
+        "papers": ["CHEM310-340", "CHEM360-390"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Chemistry"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1944,6 +2488,14 @@
         "required": 45,
         "papers": ["COMPSCI300–379"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Computer Science"],
+        "aboveStage": 2
       }
     ]
   },
@@ -1992,6 +2544,14 @@
           "GEOG51"
         ],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Earth Sciences"],
+        "aboveStage": 2
       }
     ]
   },
@@ -2068,6 +2628,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Environmental Physics"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -2129,6 +2697,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Environmental Science"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -2158,6 +2734,14 @@
           "EXERSCI307"
         ],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Exercise Sciences"],
+        "aboveStage": 2
       }
     ]
   },
@@ -2217,6 +2801,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Geographic Information Science"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -2253,6 +2845,14 @@
         "required": 45,
         "papers": ["GEOG302–390", "GISCI341–344"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Geography"],
+        "aboveStage": 2
       }
     ]
   },
@@ -2298,6 +2898,14 @@
           "OPSMGT357"
         ],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Information and Technology Management"],
+        "aboveStage": 2
       }
     ]
   },
@@ -2349,6 +2957,14 @@
           "PHIL323"
         ],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Logic and Computation"],
+        "aboveStage": 2
       }
     ]
   },
@@ -2402,6 +3018,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Marine Science"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -2431,6 +3055,14 @@
         "required": 45,
         "papers": ["MATHS302–363"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Mathematics"],
+        "aboveStage": 2
       }
     ]
   },
@@ -2467,6 +3099,14 @@
         "required": 15,
         "papers": ["MEDSCI320", "PHARMCOL399"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Pharmacology"],
+        "aboveStage": 2
       }
     ]
   },
@@ -2538,6 +3178,14 @@
         "papers": ["PHYSICS331–335", "PHYSICS340", "PHYSICS356", "PHYSICS390"],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Physics"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -2574,6 +3222,14 @@
         ],
         "flags": {}
       }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Physiology"],
+        "aboveStage": 2
+      }
     ]
   },
   {
@@ -2603,6 +3259,14 @@
         "required": 45,
         "papers": ["EDUC323", "EXERSCI307", "PSYCH300–326"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Psychology"],
+        "aboveStage": 2
       }
     ]
   },
@@ -2645,6 +3309,14 @@
         "required": 45,
         "papers": ["STATS301–389", "ENGSCI391"],
         "flags": {}
+      }
+    ],
+    "conjointRequirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Statistics"],
+        "aboveStage": 2
       }
     ]
   }

@@ -42,7 +42,6 @@ export class FirebaseDbService {
   }
 
   public setSelection(email, collectionName, collection, document) {
-    console.log(collection)
     this.db
     .collection("users")
     .doc(email)

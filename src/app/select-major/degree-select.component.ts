@@ -261,7 +261,7 @@ export class DegreeSelection {
     }
 
     if (this.currentConjoint[0] !== null) {
-      this.secondMajors[0] = this.departmentService
+      this.secondMajors = this.departmentService
         .departmentsInFaculty(this.currentConjoint[0])
         .map((department) => {
           return { value: department, view: department.name };
@@ -312,17 +312,18 @@ export class DegreeSelection {
     this.populateMajors();
   }
 
-  private changeConjoint(which, event) {
+  public changeConjoint(which, event) {
     const conjointNames = this.currentConjoint.map((conjoint) =>
       conjoint ? conjoint.name : null
     );
-    this.storeHelper.update("conjoint", this.currentConjoint[0]);
+    this.storeHelper.update("conjoint", event.value);
     this.dbCourses.setSelection(
       this.email,
       "conjoint",
-      this.currentConjoint[0],
+      event.value,
       "conjoint"
     );
+    this.currentConjoint[0] = event.value;
     this.checkFlags();
     this.populateMajors();
   }

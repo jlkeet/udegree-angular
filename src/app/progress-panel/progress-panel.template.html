@@ -155,9 +155,24 @@
   </span>
 </div>
 
+<P></P>
+
+<mat-expansion-panel
+class="pg-bar"
+[disabled]="isDisabled"
+[expanded]="true"
+hideToggle
+>
+<mat-expansion-panel-header
+  *ngIf="conjoint?.name"
+  style="margin-top: 0px; margin-bottom: 0px"
+  (click)="expansionOnClick()"
+>
+
   <mat-toolbar *ngIf="conjoint" class="plain">
     <span> Bachelor of {{conjoint.name}} </span>
   </mat-toolbar>
+</mat-expansion-panel-header>
 
   <div
     *ngIf="conjoint"
@@ -173,6 +188,39 @@
       </progress-bar-multi-container>
     </div>
   </div>
+</mat-expansion-panel>
+
+<div *ngIf="!conjoint?.name">
+  <button
+    class="addmodule"
+    (click)="conjointClicked();"
+    *ngIf="addingConjoint === false"
+  >
+    Add Conjoint (Optional)
+  </button>
+  <span
+    class="select-module"
+    *ngIf="addingConjoint === true && addedConjoint===false"
+  >
+    <mat-form-field>
+      <mat-select
+        panelClass="my-panel-class"
+        [(value)]="currentConjoints[0]"
+        placeholder="Faculty"
+        (selectionChange)="changeConjoint(0, $event)"
+        [disabled]="addingConjoint===false"
+      >
+        <mat-option
+          *ngFor="let conjoint of conjoints"
+          [value]="conjoint.value"
+          (click)="addedConjoint=true"
+        >
+        {{ conjoint.view }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </span>
+</div>
 
   <mat-toolbar *ngIf="majors?.name && secondMajors?.name" class="plain">
     <span> {{secondMajors.name}} </span>

@@ -174,8 +174,8 @@ export class RequirementService {
 
   public shortTitle(requirement: IRequirement) {
     if (this.isComplex(requirement)) {
-      // return 'Complex rule';
-      return this.toString(requirement, null)
+      return 'Complex rule';
+      // return this.toString(requirement, null)
     }
 
     // if (requirement.papers !== undefined) {
