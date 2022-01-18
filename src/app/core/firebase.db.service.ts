@@ -42,7 +42,7 @@ export class FirebaseDbService {
   }
 
   public setSelection(email, collectionName, collection, document) {
-    console.log(document)
+    console.log(collection)
     this.db
     .collection("users")
     .doc(email)
@@ -112,6 +112,7 @@ export class FirebaseDbService {
       });
       this.getPlanFromDb(collectionName, degId).then((res) => {
         this.storeHelper.update(storeHelperName, res)
+        // console.log(this.storeHelper.current(storeHelperName))
       });
     });
   }

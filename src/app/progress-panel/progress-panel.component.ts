@@ -25,6 +25,7 @@ import {
 import {
   CourseEventService,
   CourseService,
+  DepartmentService,
   IRequirement,
   LocationRef,
   ModuleService,
@@ -65,10 +66,15 @@ export class ProgressPanel {
   private moduleRequirements: IRequirement[];
   private secondModuleRequirements: IRequirement[];
   private gpa;
+
   public addingModule = false;
   public addedModule = false;
   public addingSecondModule = false;
   public addedSecondModule = false;
+  public addingDegree = false;
+  public addedDegree = false;
+  public addingMajor = false;
+  public addedMajor = false;
 
   private faculty;
   private conjoint;
@@ -109,7 +115,8 @@ export class ProgressPanel {
     private degreeSelect: DegreeSelection,
     private moduleService: ModuleService,
     private dbCourses: FirebaseDbService,
-    private userService: UserContainer
+    private userService: UserContainer,
+    private departmentService: DepartmentService
   ) {
     this.currentModules = degreeSelect.currentModules;
     this.modulesList = degreeSelect.modules[0];
@@ -181,6 +188,7 @@ export class ProgressPanel {
         }
       }),
     ];
+    console.log(this.majorsList)
   }
 
   public ngOnChanges() {
@@ -331,6 +339,12 @@ export class ProgressPanel {
           
         });
     }
+    this.addingDegree = false;
+    this.addedDegree = false
+    this.addingMajor = false;
+    this.addedMajor = false
+    this.currentFaculties[0] = null;
+    this.currentMajors[0] = null;
   }
 
   private deleteMajor() {
@@ -382,8 +396,8 @@ export class ProgressPanel {
           
         });
     }
-    this.addingModule = false;
-    this.addedModule = false
+    this.addingMajor = false;
+    this.addedMajor = false
     this.currentMajors[0] = null;
   }
 
@@ -555,6 +569,11 @@ export class ProgressPanel {
       }
     }
   }
+
+ private majorClicked() {
+   this.addingMajor = true;
+   this.majorsList = this.degreeSelect.majors;
+ }
 
   private moduleClicked() {
     for (let i = this.modulesList.length -1; i >= 0; i--) {

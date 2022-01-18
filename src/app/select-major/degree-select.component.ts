@@ -70,14 +70,17 @@ export class DegreeSelection {
     private dbCourses: FirebaseDbService,
     private userContainer: UserContainer,
   ) {
+
     this.authService.afAuth.authState.subscribe(async (auth) => { if (auth) {
       this.email = auth.email;
       this.email = userContainer.email
-      this.initiateCurrentPlanFromDb().then(() => {
-      this.initiateCurrentPlan()
+      this.initiateCurrentPlanFromDb();
+      setTimeout(() => {
+        this.initiateCurrentPlan()
+      }, 3000);  
     }
-      )
-    }});
+      
+    });
   }
 
   private initiateCurrentPlanFromDb() {
@@ -223,7 +226,6 @@ export class DegreeSelection {
 
     this.checkFlags();
     this.populateMajors();
-    
   }
 
   private checkFlags() {
@@ -251,7 +253,7 @@ export class DegreeSelection {
       this.currentConjoint[0] = null;
     }
     if (this.currentFaculties[0] !== null) {
-      this.majors[0] = this.departmentService
+      this.majors = this.departmentService
         .departmentsInFaculty(this.currentFaculties[0])
         .map((department) => {
           return { value: department, view: department.name };
@@ -325,16 +327,17 @@ export class DegreeSelection {
   }
 
   public changeMajor(which, event) {
+    console.log(event.value)
     const majorNames = this.currentMajors.map((major) =>
       major ? major.name : null
     );
 
-    this.changeBlurb(this.currentMajors[which].blurb);
-    this.storeHelper.update("majors", this.currentMajors[0]);
+   // this.changeBlurb(this.currentMajors[which].blurb);
+    this.storeHelper.update("majors", event.value);
     this.dbCourses.setSelection(
       this.email,
       "firstMajor",
-      this.currentMajors[0],
+      event.value,
       "major"
     );
     this.checkFlags();

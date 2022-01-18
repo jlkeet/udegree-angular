@@ -10,7 +10,8 @@ export class DepartmentService {
   }
 
   public departmentsInFaculty(faculty) {
-    return (this.departments.filter((department) => faculty.majors.includes(department.name)));
+    this.departments.filter((department) => faculty.majors.includes(department.name))
+    return (this.departments.filter((department) => faculty.name.includes(department.faculties[0])));
   }
 
   public allowedPaper() {

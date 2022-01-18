@@ -36,14 +36,14 @@
     <div *ngIf="!faculty?.name">
       <button
         class="addmodule"
-        (click)="addingModule=true"
-        *ngIf="addingModule === false"
+        (click)="addingDegree=true"
+        *ngIf="addingDegree === false"
       >
         Add Degree
       </button>
       <span
         class="select-module"
-        *ngIf="addingModule === true && addedModule===false"
+        *ngIf="addingDegree === true && addedDegree===false"
       >
         <mat-form-field>
           <mat-select
@@ -51,12 +51,12 @@
             [(value)]="currentFaculties[0]"
             placeholder="Faculty"
             (selectionChange)="changeFaculty(0, $event)"
-            [disabled]="addingModule===false"
+            [disabled]="addingDegree===false"
           >
             <mat-option
               *ngFor="let faculty of faculties"
               [value]="faculty.value"
-              (click)="addedModule=true"
+              (click)="addedDegree=true"
             >
             {{ faculty.view }}
             </mat-option>
@@ -123,17 +123,17 @@
     </div>
   </div>
 
-  <div *ngIf="!majors?.name && !pathways?.name" class="plain">
+  <div *ngIf="!majors?.name && !pathways?.name && faculty?.name" class="plain">
     <button
     class="addmodule"
-    (click)="addingModule=true"
-    *ngIf="addingModule === false"
+    (click)="majorClicked();"
+    *ngIf="addingMajor === false"
   >
     Add Major
   </button>
   <span
     class="select-module"
-    *ngIf="addingModule === true && addedModule===false"
+    *ngIf="addingMajor === true && addedMajor === false"
   >
     <mat-form-field>
       <mat-select
@@ -141,12 +141,12 @@
         [(value)]="currentMajors[0]"
         placeholder="Major"
         (selectionChange)="changeMajor(0, $event)"
-        [disabled]="addingModule===false"
+        [disabled]="addingMajor === false"
       >
         <mat-option
           *ngFor="let major of majorsList"
           [value]="major.value"
-          (click)="addedModule=true"
+          (click)="addedMajor = true"
         >
         {{ major.view }}
         </mat-option>
