@@ -171,6 +171,9 @@ hideToggle
 
   <mat-toolbar *ngIf="conjoint" class="plain">
     <span> Bachelor of {{conjoint.name}} </span>
+    <span class="spacer"></span>
+    <span class="delete-pg" (click)="noExpansionOnClick(); deleteDegree();">
+      <span class="cross-pg">&times;</span></span>
   </mat-toolbar>
 </mat-expansion-panel-header>
 
