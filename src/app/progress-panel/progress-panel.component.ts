@@ -162,6 +162,10 @@ export class ProgressPanel {
 
       this.store.changes.pluck("majors").subscribe((majors) => {
         this.majors = majors;
+        if (this.majors) {
+        //  console.log(this.majors)
+          this.pathwayCheck(this.majors)
+        }
         this.updateRequirementList();
       }),
 
@@ -757,6 +761,9 @@ export class ProgressPanel {
   }
 
   private pathwayCheck(value) {
+
+    // Something weird happening with pathways here, they are being removed on reload, something to do with the pathwaysList?
+
     this.pathwaysList = this.degreeSelect.pathways;
     // console.log(this.pathwaysList)
     for (let i = 0; i < this.pathwaysList.length; i++) {
@@ -765,6 +772,7 @@ export class ProgressPanel {
         this.addedMajor = false;
       }
     }
+
   }
 
   private pathwayClicked(value) {

@@ -245,7 +245,7 @@ hideToggle
   </div>
 </mat-expansion-panel>
 
-<div *ngIf="!conjoint?.name">
+<div *ngIf="!conjoint?.name && faculty?.name">
   <button
     class="addmodule"
     (click)="conjointClicked();"
@@ -315,7 +315,7 @@ hideToggle
   </div>
 
 
-  <div *ngIf="!secondMajors?.name">
+  <div *ngIf="!secondMajors?.name && conjoint?.name">
     <button
       class="addmodule"
       (click)="secondMajorClicked();"
@@ -388,7 +388,7 @@ hideToggle
 </mat-expansion-panel>
 
 
-  <div *ngIf="!modules?.name && faculty?.name === 'Arts' || !modules?.name && faculty?.name === 'Science'">
+  <div *ngIf="(majors?.name) && ((!modules?.name && faculty?.name === 'Arts') || (!modules?.name && faculty?.name === 'Science'))">
     <button
       class="addmodule"
       (click)="moduleClicked()"
@@ -459,7 +459,7 @@ hideToggle
   </div>
 </mat-expansion-panel>
 
-  <div *ngIf="!secondModules?.name && faculty?.name === 'Arts' || !secondModules?.name && faculty?.name === 'Science'">
+  <div *ngIf="(majors?.name) && ((!secondModules?.name && faculty?.name === 'Arts') || (!secondModules?.name && faculty?.name === 'Science'))">
     <button
       class="addmodule"
       (click)="secondModuleClicked()"
