@@ -214,9 +214,9 @@ export class DegreeSelection {
       return { value: modules, view: modules.name };
     });
 
-    // this.secondModules = this.moduleService.getModules().map((secondModules) => {
-    //   return { value: secondModules, view: secondModules.name };
-    // });
+    this.secondModules = this.moduleService.getModules().map((secondModules) => {
+      return { value: secondModules, view: secondModules.name };
+    });
 
     this.secondMajors = this.departmentService
       .getDepartments()
@@ -345,47 +345,54 @@ export class DegreeSelection {
     this.populateMajors();
   }
 
-  private changePathway(which, event) {
+  public changePathway(which, event) {
     const pathwayNames = this.currentPathways.map((pathway) =>
       pathway ? pathway.name : null
     );
 
-    this.changeBlurb(this.currentPathways[which].blurb);
-    this.storeHelper.update("pathways", this.currentPathways[0]);
+    this.storeHelper.update("pathways", event.value);
     this.dbCourses.setSelection(
       this.email,
       "pathway",
-      this.currentPathways[0],
+      event.value,
       "pathway"
     );
+    this.currentPathways[0] = event.value;
+    this.checkFlags();
+    this.populateMajors();
   }
 
-  private changeModule(which, event) {
+  public changeModule(which, event) {
     const moduleNames = this.currentModules.map((module) =>
       module ? module.name : null
     );
 
-    this.changeBlurb(this.currentModules[which].blurb);
-    this.storeHelper.update("modules", this.currentModules[0]);
+    this.storeHelper.update("modules", event.value);
     this.dbCourses.setSelection(
       this.email,
       "modules",
-      this.currentModules[0],
+      event.value,
       "module"
     );
+    this.currentModules[0] = event.value;
+    this.checkFlags();
+    this.populateMajors();
   }
 
-  private changeSecondModule(which, event) {
+  public changeSecondModule(which, event) {
     const secondModuleNames = this.currentSecondModules.map((secondModule) =>
       secondModule ? secondModule.name : null
     );
-    this.storeHelper.update("secondModules", this.currentSecondModules[0]);
+    this.storeHelper.update("secondModules", event.value);
     this.dbCourses.setSelection(
       this.email,
       "secondModule",
-      this.currentSecondModules[0],
+      event.value,
       "secondModule"
     );
+    this.currentSecondModules[0] = event.value;
+    this.checkFlags();
+    this.populateMajors();
   }
 
   public changeSecondMajor(which, event) {

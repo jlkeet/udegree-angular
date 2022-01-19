@@ -75,21 +75,25 @@ export class ProgressPanel {
   public addedDegree = false;
   public addingMajor = false;
   public addedMajor = false;
+  public addingPathway = false;
+  public addedPathway = false;
   public addingConjoint = false;
   public addedConjoint = false;
   public addingSecondMajor = false;
   public addedSecondMajor = false;
+  private requiresPathway = false;
 
   private faculty;
   private conjoint;
   private majors;
   private majorsList = [];
   private secondMajors;
-  private secondMajorsList =[];
+  private secondMajorsList = [];
   private pathways;
+  private pathwaysList = [];
   private modules;
-  private faculties = []
-  private conjoints = []
+  private faculties = [];
+  private conjoints = [];
   private modulesList;
   private secondModules;
   private secondModulesList;
@@ -127,11 +131,11 @@ export class ProgressPanel {
     private departmentService: DepartmentService
   ) {
     this.currentModules = degreeSelect.currentModules;
-    this.modulesList = degreeSelect.modules[0];
+    this.modulesList = degreeSelect.modules;
     this.currentSecondModules = degreeSelect.currentSecondModules;
     this.secondModulesList = degreeSelect.secondModules;
     this.currentPathways = degreeSelect.currentPathways;
-    this.pathways = degreeSelect.pathways;
+    this.pathwaysList = degreeSelect.pathways;
     this.currentMajors = degreeSelect.currentMajors;
     this.majorsList = degreeSelect.majors;
     this.faculties = degreeSelect.faculties;
@@ -140,7 +144,6 @@ export class ProgressPanel {
     this.currentConjoints = degreeSelect.currentConjoint;
     this.secondMajorsList = degreeSelect.currentSecondMajors;
     this.currentSecondMajors = degreeSelect.currentSecondMajors;
-
   }
 
   public ngOnInit() {
@@ -215,21 +218,19 @@ export class ProgressPanel {
   // Have commented out the major[0] for now will but will come back for it later.
 
   private updateRequirementList() {
-    this.requirements = []
-      .concat(
-        this.faculty
-          ? this.majors
-            ? this.faculty.majorRequirements
-            : this.faculty.majorRequirements
-          : []  
-      );
-      // .concat(
-      //   this.faculty ? this.majors ? this.faculty.majorRequirements : null
-      //   : []
-      // );  
-     // console.log(this.conjoint)
-    this.conjointRequirements = []
-    .concat(
+    this.requirements = [].concat(
+      this.faculty
+        ? this.majors
+          ? this.faculty.majorRequirements
+          : this.faculty.majorRequirements
+        : []
+    );
+    // .concat(
+    //   this.faculty ? this.majors ? this.faculty.majorRequirements : null
+    //   : []
+    // );
+    // console.log(this.conjoint)
+    this.conjointRequirements = [].concat(
       this.conjoint
         ? this.majors
           ? this.conjoint.majorRequirements
@@ -239,7 +240,7 @@ export class ProgressPanel {
     // .concat(
     //   this.conjoint ? this.majors ? this.conjoint.majorRequirements : null
     //   : []
-    // );  
+    // );
 
     if (this.conjointRequirements.length > 0) {
       this.requirements = [].concat(
@@ -274,16 +275,15 @@ export class ProgressPanel {
       this.majors !== undefined &&
       this.secondMajors !== undefined
     ) {
-      if (this.majors.conjointRequirements && this.secondMajors.conjointRequirements) {
-      this.majorRequirements.push(this.majors.conjointRequirements[0])
-      this.secondMajorRequirements.push(this.secondMajors.conjointRequirements[0])
-    }
-      
-      // this.secondMajorRequirements = [
-      //   ... this.secondMajors.conjointRequirements,
-      // ];
-     // console.log(this.majors)
-     // console.log(this.secondMajorRequirements)
+      if (
+        this.majors.conjointRequirements &&
+        this.secondMajors.conjointRequirements
+      ) {
+        this.majorRequirements.push(this.majors.conjointRequirements[0]);
+        this.secondMajorRequirements.push(
+          this.secondMajors.conjointRequirements[0]
+        );
+      }
     }
   }
 
@@ -308,9 +308,8 @@ export class ProgressPanel {
   }
 
   private deleteDegree() {
-    
     this.email = this.degreeSelect.email;
-    
+
     let collectionList = [
       "degree",
       "conjoint",
@@ -343,39 +342,35 @@ export class ProgressPanel {
               // Loop to get all the ids of the docs
               this.deleteId = element.id;
               this.storeHelper.update(storeList[i], null);
-              // 
+              //
               this.db
                 .collection("users")
                 .doc(this.email)
                 .collection(collectionList[i])
                 .doc(this.deleteId)
                 .delete();
-                
             });
           }
-          
         });
     }
     this.addingDegree = false;
-    this.addedDegree = false
+    this.addedDegree = false;
     this.addingMajor = false;
-    this.addedMajor = false
+    this.addedMajor = false;
     this.currentFaculties[0] = null;
     this.currentMajors[0] = null;
   }
 
   private deleteMajor() {
-    
     this.email = this.degreeSelect.email;
-    
+
     let collectionList = [
       "degree",
       "conjoint",
       "major",
       "pathway",
       "secondMajor",
-      "module",
-      "secondModule",
+
     ];
     let storeList = [
       "faculty",
@@ -383,8 +378,6 @@ export class ProgressPanel {
       "majors",
       "pathways",
       "secondMajors",
-      "modules",
-      "secondModules",
     ];
     for (let i = 1; i < collectionList.length; i++) {
       this.db
@@ -400,22 +393,217 @@ export class ProgressPanel {
               // Loop to get all the ids of the docs
               this.deleteId = element.id;
               this.storeHelper.update(storeList[i], null);
-              // 
+              //
               this.db
                 .collection("users")
                 .doc(this.email)
                 .collection(collectionList[i])
                 .doc(this.deleteId)
                 .delete();
-                
             });
           }
-          
         });
     }
     this.addingMajor = false;
-    this.addedMajor = false
+    this.addedMajor = false;
     this.currentMajors[0] = null;
+  }
+
+  private deletePathway() {
+    this.email = this.degreeSelect.email;
+
+    let collectionList = [
+      "pathway",
+    ];
+    let storeList = [
+      "pathways",
+    ];
+    for (let i = 0; i < collectionList.length; i++) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection(collectionList[i])
+        .get()
+        .toPromise()
+        .then((sub) => {
+          if (sub.docs.length > 0) {
+            // Check to see if documents exist in the courses collection
+            sub.forEach((element) => {
+              // Loop to get all the ids of the docs
+              this.deleteId = element.id;
+              this.storeHelper.update(storeList[i], null);
+              //
+              this.db
+                .collection("users")
+                .doc(this.email)
+                .collection(collectionList[i])
+                .doc(this.deleteId)
+                .delete();
+            });
+          }
+        });
+    }
+    this.addingPathway = false;
+    this.addedPathway = false;
+    this.currentPathways[0] = null;
+  }
+
+  private deleteConjoint() {
+    this.email = this.degreeSelect.email;
+
+    let collectionList = [
+      "conjoint",
+    ];
+    let storeList = [
+      "conjoint",
+    ];
+    for (let i = 0; i < collectionList.length; i++) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection(collectionList[i])
+        .get()
+        .toPromise()
+        .then((sub) => {
+          if (sub.docs.length > 0) {
+            // Check to see if documents exist in the courses collection
+            sub.forEach((element) => {
+              // Loop to get all the ids of the docs
+              this.deleteId = element.id;
+              this.storeHelper.update(storeList[i], null);
+              //
+              this.db
+                .collection("users")
+                .doc(this.email)
+                .collection(collectionList[i])
+                .doc(this.deleteId)
+                .delete();
+            });
+          }
+        });
+    }
+    this.addingConjoint = false;
+    this.addedConjoint = false;
+    this.currentConjoints[0] = null;
+    this.deleteSecondMajor();
+  }
+
+
+  private deleteSecondMajor() {
+    this.email = this.degreeSelect.email;
+
+    let collectionList = [
+      "secondMajor",
+    ];
+    let storeList = [
+      "secondMajors",
+    ];
+    for (let i = 0; i < collectionList.length; i++) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection(collectionList[i])
+        .get()
+        .toPromise()
+        .then((sub) => {
+          if (sub.docs.length > 0) {
+            // Check to see if documents exist in the courses collection
+            sub.forEach((element) => {
+              // Loop to get all the ids of the docs
+              this.deleteId = element.id;
+              this.storeHelper.update(storeList[i], null);
+              //
+              this.db
+                .collection("users")
+                .doc(this.email)
+                .collection(collectionList[i])
+                .doc(this.deleteId)
+                .delete();
+            });
+          }
+        });
+    }
+    this.addingSecondMajor = false;
+    this.addedSecondMajor = false;
+    this.currentSecondMajors[0] = null;
+  }
+
+  private deleteModule() {
+    this.email = this.degreeSelect.email;
+
+    let collectionList = [
+      "module",
+    ];
+    let storeList = [
+      "modules",
+    ];
+    for (let i = 0; i < collectionList.length; i++) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection(collectionList[i])
+        .get()
+        .toPromise()
+        .then((sub) => {
+          if (sub.docs.length > 0) {
+            // Check to see if documents exist in the courses collection
+            sub.forEach((element) => {
+              // Loop to get all the ids of the docs
+              this.deleteId = element.id;
+              this.storeHelper.update(storeList[i], null);
+              //
+              this.db
+                .collection("users")
+                .doc(this.email)
+                .collection(collectionList[i])
+                .doc(this.deleteId)
+                .delete();
+            });
+          }
+        });
+    }
+    this.addingModule = false;
+    this.addedModule = false;
+    this.currentModules[0] = null;
+  }
+
+  private deleteSecondModule() {
+    this.email = this.degreeSelect.email;
+
+    let collectionList = [
+      "secondModule",
+    ];
+    let storeList = [
+      "secondModules",
+    ];
+    for (let i = 0; i < collectionList.length; i++) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection(collectionList[i])
+        .get()
+        .toPromise()
+        .then((sub) => {
+          if (sub.docs.length > 0) {
+            // Check to see if documents exist in the courses collection
+            sub.forEach((element) => {
+              // Loop to get all the ids of the docs
+              this.deleteId = element.id;
+              this.storeHelper.update(storeList[i], null);
+              //
+              this.db
+                .collection("users")
+                .doc(this.email)
+                .collection(collectionList[i])
+                .doc(this.deleteId)
+                .delete();
+            });
+          }
+        });
+    }
+    this.addingSecondModule = false;
+    this.addedSecondModule = false;
+    this.currentSecondModules[0] = null;
   }
 
   private yearAndPeriod(): any {
@@ -510,6 +698,10 @@ export class ProgressPanel {
     this.degreeSelect.changeMajor(which, event);
   }
 
+  private changePathway(which, event) {
+    this.degreeSelect.changePathway(which, event);
+  }
+
   private changeConjoint(which, event) {
     this.degreeSelect.changeConjoint(which, event);
   }
@@ -519,49 +711,11 @@ export class ProgressPanel {
   }
 
   private changeModule(which, event) {
-    this.store.changes.pluck("modules").subscribe((modules) => {
-      this.modules = modules;
-      this.updateRequirementList();
-    });
-
-    const moduleNames = this.degreeSelect.currentModules.map((module) =>
-      module ? module.name : null
-    );
-    this.degreeSelect.changeBlurb(this.currentModules[which].blurb);
-    this.storeHelper.update("modules", this.currentModules[0]);
-    // this.degreeSelect.setModule(this.email, this.currentModules[0]);
-
-    this.dbCourses.setSelection(
-      this.email,
-      "modules",
-      this.currentModules[0],
-      "module"
-    );
-
-    this.degreeSelect.populateMajors();
+    this.degreeSelect.changeModule(which, event);
   }
 
   private changeSecondModule(which, event) {
-    this.store.changes.pluck("secondModules").subscribe((secondModules) => {
-      this.secondModules = secondModules;
-      this.updateRequirementList();
-    });
-
-    const secondModuleNames = this.degreeSelect.currentSecondModules.map(
-      (secondModule) => (secondModule ? secondModule.name : null)
-    );
-    // this.degreeSelect.changeBlurb(this.currentSecondModules[which].blurb);
-    this.storeHelper.update("secondModules", this.currentSecondModules[0]);
-    // this.degreeSelect.setSecondModule(this.email, this.currentSecondModules[0]);
-
-    this.dbCourses.setSelection(
-      this.email,
-      "secondModule",
-      this.currentSecondModules[0],
-      "secondModule"
-    );
-
-    this.degreeSelect.populateMajors();
+    this.degreeSelect.changeSecondModule(which, event);
   }
 
   private calculateGPA() {
@@ -586,49 +740,86 @@ export class ProgressPanel {
     this.faculties = this.degreeSelect.faculties;
   }
 
- private majorClicked() {
-   this.addingMajor = true;
-   this.majorsList = this.degreeSelect.majors;
- }
+  private majorClicked() {
+    this.addingMajor = true;
+    this.majorsList = this.degreeSelect.majors;
+  }
 
- private conjointClicked() {
-  this.addingConjoint = true;
-  this.conjoints = this.degreeSelect.conjoints;
-}
+  private conjointClicked() {
+    this.addingConjoint = true;
+    this.conjoints = this.degreeSelect.conjoints;
+  }
 
-private secondMajorClicked() {
-  this.addingSecondMajor = true;
-  this.secondMajorsList = this.degreeSelect.secondMajors;
-}
+  private secondMajorClicked() {
+    this.addingSecondMajor = true;
+    this.secondMajorsList = this.degreeSelect.secondMajors;
+  }
+
+  private pathwayCheck(value) {
+    this.pathwaysList = this.degreeSelect.pathways;
+    // console.log(this.pathwaysList)
+    for (let i = 0; i < this.pathwaysList.length; i++) {
+      if (!this.pathwaysList[0][i].value.faculties.includes(value.name)) {
+        this.requiresPathway = true;
+        this.addedMajor = false;
+      }
+    }
+  }
+
+  private pathwayClicked(value) {
+    this.addingPathway = true;
+  }
 
   private moduleClicked() {
-    for (let i = this.modulesList.length -1; i >= 0; i--) {
-      if (!this.modulesList[i].value.faculties.includes(this.faculty.name)) {
+   this.addingModule = true;
+    this.modulesList = this.degreeSelect.modules;
+    for (let i = this.modulesList[0].length - 1; i > 0; i--) {
+      if (!this.modulesList[0][i].value.faculties.includes(this.faculty.name)) {
         this.modulesList.splice([i], 1);
       }
+    //  console.log(this.modulesList[0])
+    //  console.log(this.modulesList[0][i])
       if (
-        this.modulesList[i].value.name === this.modules.name ||
-        this.modulesList[i].value.name === this.secondModules.name
+        this.modulesList[0][i].value.name === this.modules.name ||
+        this.modulesList[0][i].value.name === this.secondModules.name
       ) {
         this.modulesList.splice([i], 2);
       }
     }
+  //  console.log(this.modulesList[0])
   }
 
   private secondModuleClicked() {
-    for (let i = this.secondModulesList[0].length -1; i >= 0; i--) {
-      if (!this.secondModulesList[0][i].value.faculties.includes(this.faculty.name)) {
-        this.secondModulesList[0].splice([i], 1);
-      }
-      if (
-        this.secondModulesList[0][i].value.name === this.modules.name ||
-        this.secondModulesList[0][i].value.name === this.secondModules.name
-      ) {
-        this.secondModulesList[0].splice([i], 2);
+    this.addingSecondModule = true;
+     this.secondModulesList = this.degreeSelect.secondModules;
+     for (let i = this.secondModulesList[0].length - 1; i > 0; i--) {
+       if (!this.secondModulesList[0][i].value.faculties.includes(this.faculty.name)) {
+         this.secondModulesList.splice([i], 1);
+       }
+     //  console.log(this.modulesList[0])
+     //  console.log(this.modulesList[0][i])
+       if (
+         this.secondModulesList[0][i].value.name === this.modules.name ||
+         this.secondModulesList[0][i].value.name === this.secondModules.name
+       ) {
+         this.secondModulesList.splice([i], 2);
+       }
+     }
+   //  console.log(this.modulesList[0])
+   }
+
+  private pathwayFilter() {
+    for (let i = this.pathwaysList[0].length - 1; i >= 0; i--) {
+      // console.log(this.pathwaysList[0][i])
+      // console.log(this.currentMajors[0].name)
+      if (!this.pathwaysList[0][i].value.faculties.includes(this.currentMajors[0].name)) 
+      {
+      //  console.log(this.pathwaysList[0][i])
+        this.pathwaysList[0].splice([i], 1);
+
       }
     }
   }
-
 
   private expansionOnClick() {
     this.isDisabled = false;
@@ -639,5 +830,4 @@ private secondMajorClicked() {
     this.isDisabled = true;
     return this.isDisabled;
   }
-
 }

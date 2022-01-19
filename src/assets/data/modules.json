@@ -366,29 +366,29 @@
           "COMPSCI235",
           "COMPSCI331"
         ]
+      }
+    ]
+  },
+  {
+    "name": "Studies in Food and Health",
+    "blurb": "Providing critical skills and insights to enhance understanding of experiences with food and nutrition",
+    "faculties": ["Science"],
+    "courses": ["FOODSCI100", "FOODSCI200", "FOODSCI301", "EXERSCI206"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["FOODSCI100"]
       },
       {
-        "name": "Studies in Food and Health",
-        "blurb": "Providing critical skills and insights to enhance understanding of experiences with food and nutrition",
-        "faculties": ["Science"],
-        "courses": ["FOODSCI100", "FOODSCI200", "FOODSCI301", "EXERSCI206"],
-        "requirements": [
-          {
-            "type": 1,
-            "required": 1,
-            "papers": ["FOODSCI100"]
-          },
-          {
-            "type": 1,
-            "required": 1,
-            "papers": ["FOODSCI200"]
-          },
-          {
-            "type": 1,
-            "required": 1,
-            "papers": ["FOODSCI301", "EXERSCI206"]
-          }
-        ]
+        "type": 1,
+        "required": 1,
+        "papers": ["FOODSCI200"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["FOODSCI301", "EXERSCI206"]
       }
     ]
   },

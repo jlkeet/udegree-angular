@@ -78,7 +78,7 @@
     <mat-expansion-panel-header
       style="margin-top: 0px; margin-bottom: 0px"
       (click)="expansionOnClick()"
-      *ngIf="majors?.name"
+      *ngIf="majors?.name && !pathways?.name"
     >
 
     <mat-toolbar *ngIf="majors?.name && !pathways?.name" class="plain">
@@ -104,9 +104,27 @@
   </div>
   </mat-expansion-panel>
 
+  <P></P>
+
+  <mat-expansion-panel
+  class="pg-bar"
+  [disabled]="isDisabled"
+  [expanded]="true"
+  hideToggle
+>
+  <mat-expansion-panel-header
+    style="margin-top: 0px; margin-bottom: 0px"
+    (click)="expansionOnClick()"
+    *ngIf="pathways?.name"
+  >
+
   <mat-toolbar *ngIf="pathways?.name" class="plain">
     <span> {{majors.name}}: {{pathways.name}} Pathway </span>
+    <span class="spacer"></span>
+    <span class="delete-pg" (click)="noExpansionOnClick(); deletePathway();">
+      <span class="cross-pg">&times;</span></span>
   </mat-toolbar>
+</mat-expansion-panel-header>
 
   <div
     *ngIf="pathways?.name"
@@ -122,8 +140,9 @@
       </progress-bar-multi-container>
     </div>
   </div>
+  </mat-expansion-panel>
 
-  <div *ngIf="!majors?.name && !pathways?.name && faculty?.name" class="plain">
+  <div *ngIf="!majors?.name && !requiresPathway && !pathways?.name && faculty?.name" class="plain">
     <button
     class="addmodule"
     (click)="majorClicked();"
@@ -146,13 +165,46 @@
         <mat-option
           *ngFor="let major of majorsList"
           [value]="major.value"
-          (click)="addedMajor = true"
+          (click)="addedMajor = true;pathwayCheck(major.value);"
         >
         {{ major.view }}
         </mat-option>
       </mat-select>
     </mat-form-field>
   </span>
+</div>
+
+<div *ngIf="requiresPathway" class="plain">
+  {{pathwayFilter()}}
+  <button
+  class="addmodule"
+  (click)="pathwayClicked();"
+  *ngIf="addingPathway === false"
+>
+  Select Pathway
+</button>
+<span
+  class="select-module"
+  *ngIf="addingPathway === true && addedPathway === false"
+>
+  <mat-form-field>
+    <mat-select
+      panelClass="my-panel-class"
+      [(value)]="currentPathways[0]"
+      placeholder="Pathway"
+      (selectionChange)="changePathway(0, $event)"
+      [disabled]="addingPathway === false"
+    >
+      <mat-option
+        *ngFor="let path of pathwaysList[0]"
+        [value]="path.value"
+        (click)="addedPathway = true;pathwayCheck(path.value);requiresPathway=false;"
+      >
+      {{ path.view }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</span>
 </div>
 
 <P></P>
@@ -172,7 +224,7 @@ hideToggle
   <mat-toolbar *ngIf="conjoint" class="plain">
     <span> Bachelor of {{conjoint.name}} </span>
     <span class="spacer"></span>
-    <span class="delete-pg" (click)="noExpansionOnClick(); deleteDegree();">
+    <span class="delete-pg" (click)="noExpansionOnClick(); deleteConjoint();">
       <span class="cross-pg">&times;</span></span>
   </mat-toolbar>
 </mat-expansion-panel-header>
@@ -242,7 +294,7 @@ hideToggle
   <mat-toolbar *ngIf="majors?.name && secondMajors?.name" class="plain">
     <span> {{secondMajors.name}} </span>
     <span class="spacer"></span>
-    <span class="delete-pg" (click)="noExpansionOnClick(); deleteDegree();">
+    <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondMajor();">
       <span class="cross-pg">&times;</span></span>
   </mat-toolbar>
 </mat-expansion-panel-header>
@@ -298,9 +350,26 @@ hideToggle
 
   <p></p>
 
+
+  <mat-expansion-panel
+  class="pg-bar"
+  [disabled]="isDisabled"
+  [expanded]="true"
+  hideToggle
+  >
+  <mat-expansion-panel-header
+    *ngIf="modules?.name"
+    style="margin-top: 0px; margin-bottom: 0px"
+    (click)="expansionOnClick()"
+  >
+
   <mat-toolbar *ngIf="modules?.name" class="plain">
     <span> {{modules.name}} </span>
+    <span class="spacer"></span>
+    <span class="delete-pg" (click)="noExpansionOnClick(); deleteModule();">
+      <span class="cross-pg">&times;</span></span>
   </mat-toolbar>
+  </mat-expansion-panel-header>
 
   <div
     *ngIf="modules?.name"
@@ -316,11 +385,13 @@ hideToggle
       </progress-bar-multi-container>
     </div>
   </div>
+</mat-expansion-panel>
 
-  <div *ngIf="!modules?.name && faculty?.name === 'Arts' || faculty?.name === 'Science'">
+
+  <div *ngIf="!modules?.name && faculty?.name === 'Arts' || !modules?.name && faculty?.name === 'Science'">
     <button
       class="addmodule"
-      (click)="addingModule=true;moduleClicked()"
+      (click)="moduleClicked()"
       *ngIf="addingModule === false"
     >
       Add Module
@@ -338,7 +409,7 @@ hideToggle
           [disabled]="addingModule===false"
         >
           <mat-option
-            *ngFor="let module of modulesList"
+            *ngFor="let module of modulesList[0]"
             [value]="module.value"
             (click)="addedModule=true"
           >
@@ -349,11 +420,28 @@ hideToggle
     </span>
   </div>
 
+
   <p></p>
+
+  <mat-expansion-panel
+  class="pg-bar"
+  [disabled]="isDisabled"
+  [expanded]="true"
+  hideToggle
+  >
+  <mat-expansion-panel-header
+    *ngIf="secondModules?.name"
+    style="margin-top: 0px; margin-bottom: 0px"
+    (click)="expansionOnClick()"
+  >
 
   <mat-toolbar *ngIf="secondModules?.name" class="plain">
     <span> {{secondModules.name}} </span>
+    <span class="spacer"></span>
+    <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondModule();">
+      <span class="cross-pg">&times;</span></span>
   </mat-toolbar>
+  </mat-expansion-panel-header>
 
   <div
     *ngIf="secondModules?.name"
@@ -369,13 +457,12 @@ hideToggle
       </progress-bar-multi-container>
     </div>
   </div>
+</mat-expansion-panel>
 
-  <div
-    *ngIf="!secondModules?.name && faculty?.name === 'Arts' || faculty?.name === 'Science'"
-  >
+  <div *ngIf="!secondModules?.name && faculty?.name === 'Arts' || !secondModules?.name && faculty?.name === 'Science'">
     <button
       class="addmodule"
-      (click)="addingSecondModule=true;secondModuleClicked()"
+      (click)="secondModuleClicked()"
       *ngIf="addingSecondModule === false"
     >
       Add Module
@@ -388,7 +475,7 @@ hideToggle
         <mat-select
           panelClass="my-panel-class"
           [(value)]="currentSecondModules[0]"
-          [placeholder]="'Module Two (optional)'"
+          [placeholder]="'Module (optional)'"
           (selectionChange)="changeSecondModule(0, $event)"
           [disabled]="addingSecondModule===false"
         >
@@ -403,4 +490,4 @@ hideToggle
       </mat-form-field>
     </span>
   </div>
-</div>
+
