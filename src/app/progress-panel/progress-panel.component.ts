@@ -446,6 +446,7 @@ export class ProgressPanel {
     this.addingPathway = false;
     this.addedPathway = false;
     this.currentPathways[0] = null;
+    this.deleteMajor();
   }
 
   private deleteConjoint() {
