@@ -32680,13 +32680,13 @@
             "type": 2,
             "required": 2,
             "flags": {},
-            "papers": "MATHS120, MATHS130"
+            "papers": ["MATHS120", "MATHS130"]
           },
           {
             "type": 0,
             "required": 15,
             "flags": {},
-            "papers": "MATHS108,MATHS150,MATHS153,ENGGEN150,ENGSCI111"
+            "papers": ["MATHS108", "MATHS150" , "MATHS153", "ENGGEN150", "ENGSCI111"]
           }
         ]
       }

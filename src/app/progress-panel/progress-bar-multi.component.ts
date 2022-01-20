@@ -1,4 +1,6 @@
 import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
+import { MatExpansionPanel } from '@angular/material';
+import { RequirementService } from '../services';
 
 export interface IBarState {
   color: string;
@@ -11,11 +13,14 @@ export interface IBarState {
   styles: [require('./progress-bar-multi.component.scss')],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   // need to use rquire syntax to work with tests
-  template: require('./progress-bar-multi.template.html')
+  template: require('./progress-bar-multi.template.html'),
+
+  viewProviders: [MatExpansionPanel]
 })
 export class ProgressBarMulti implements OnChanges {
   @Input() public isTotal: boolean; // true if this is the total progress bar
   @Input() public inactive: boolean; // if true the progress bar is greyed out counts do not update
+  @Input() public isComplex: boolean;
   @Input() public max: number;
   @Input() public title: string;
   @Input() public hoverText: string; // text to show on hover over
@@ -34,6 +39,8 @@ export class ProgressBarMulti implements OnChanges {
   private barTwoHoverText: string;
   private barThreeHoverText: string;
 
+  private isDisabled = false;
+
   public ngOnInit() {
     this.updatePercentage();
     this.updateProgress();
@@ -41,6 +48,13 @@ export class ProgressBarMulti implements OnChanges {
   }
 
   public ngOnChanges(changes: { [value: string]: SimpleChange }) {
+
+    if (this.title === "Complex rule") {
+      this.isComplex = true;
+    } else {
+      this.isComplex = false;
+    }
+    
     if (this.inactive) {
       return;
     }
@@ -96,6 +110,10 @@ export class ProgressBarMulti implements OnChanges {
     }`;
   }
 
+  private complexRuleBarHide() {
+
+  }
+
   private onMouseOver() {
     this.showText = true;
   }
@@ -107,5 +125,15 @@ export class ProgressBarMulti implements OnChanges {
   private calculatePercentage(value: number) {
     const width = Math.floor(value / this.max * 100);
     return width > 100 ? 100 : width;
+  }
+
+  private expansionOnClick() {
+    this.isDisabled = false;
+    return this.isDisabled;
+  }
+
+  private noExpansionOnClick() {
+    this.isDisabled = true;
+    return this.isDisabled;
   }
 }

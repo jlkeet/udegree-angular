@@ -1,17 +1,30 @@
 
 <div id="bar-total" [title]="hoverText" class="bar-main-container" [class.inactive]="inactive" [class.totalBar]="isTotal">
 
-    <div class="progress-bar-title" [class.inactive]="inactive">
+    <div *ngIf="!isComplex" class="progress-bar-title" [class.inactive]="inactive">
       <!--<img src='assets/img/file.svg' class="file-icon" />-->
       {{title}}
     </div>
+
+    <mat-expansion-panel
+    class="complex-container"
+    [disabled]="isDisabled"
+    [expanded]="true"
+    hideToggle
+  >
+    <mat-expansion-panel-header *ngIf="isComplex" class="complex-header">
+      <!--<img src='assets/img/file.svg' class="file-icon" />-->
+      <span style="height: 70px">{{title}}</span>
+    </mat-expansion-panel-header>
+    </mat-expansion-panel>
     
     <div class="wrap">
-      <!--<div class="bar-percentage">{{total}}/{{max}}</div> -->
-        <div class="bar-container">
+      <!-- <div class="bar-percentage">{{total}}/{{max}}</div> -->
+        <div *ngIf="!isComplex" class="bar-container">
             <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth title="{{barOneHoverText}}"></div>
             <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth title="{{barTwoHoverText}}"></div>
             <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth title="{{barTwoHoverText}}"></div>
         </div>
     </div> 
+
 </div>

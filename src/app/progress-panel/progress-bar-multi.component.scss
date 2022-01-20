@@ -1,7 +1,7 @@
 
 .progress-bar-title {
   // background: linear-gradient(to right, #98fb98, #98fb98 20%, #ffffe0 20%, #ffffe0 60%, #ddd 60%, #ddd 100%);
-  padding-left: 15px;
+  padding-left: 15px !important;
   position: relative;
   font-weight: normal;
   font-size: 14px;
@@ -11,6 +11,31 @@
     color: #ddd;
   }    
 
+}
+
+.complex-header {
+  padding-left: 15px !important;
+  position: relative;
+  font-weight: normal;
+  font-size: 14px;
+  //height:20px;
+  color: #000;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 60px !important;
+
+}
+
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+}
+
+.complex-container {
+
+}
+
+.complex-container:hover {
+  border: 0px;
 }
 
 .bar-main-container:hover {
@@ -32,10 +57,23 @@
       background: #ddd;
     }
   }
+
+  &.isComplex {
+    display: none;
+
+    .bar-percentage { 
+      display: none;
+    }
+  }
+
+
 }
 .wrap {
   padding: 1em;
   padding-top: 2px;
+  &.isComplex {
+    display: hidden !important;
+  }
 }
 .bar-percentage {
   float: left;

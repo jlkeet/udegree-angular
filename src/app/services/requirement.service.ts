@@ -44,6 +44,7 @@ export interface IRequirement {
 export class RequirementService {
 
   private i = 0;
+  public complexRuleForPgBar = false;
 
   constructor(private departmentService: DepartmentService) { }
 
@@ -126,6 +127,7 @@ export class RequirementService {
       const filtered = this.filterByRequirement(requirement,
         planned.filter((course: ICourse) => course.status !== CourseStatus.Failed));
       const depts = new Set<string>();
+     // this.complexRuleForPgBar = false;
 
       if (this.checkFlag(requirement, 'differentdepts')) {
         filtered.forEach((course: ICourse) => depts.add(course.department));

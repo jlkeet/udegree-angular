@@ -60,6 +60,7 @@ export class ProgressBarMultiContainer {
     if (this.inactive) {
       return;
     }
+
     this.barOneState = this.getBarValue(
       this.barOneState,
       this.courses,

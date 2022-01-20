@@ -34,6 +34,7 @@ describe('ProgressBarMulti component', () => {
         comp.isTotal = false;
         comp.inactive = false;
         comp.hoverText = 'hoverText';
+        comp.isComplex = false;
         return comp;
     }
 
@@ -64,6 +65,20 @@ describe('ProgressBarMulti component', () => {
     expect(container.nativeElement.classList).toContain('inactive');
 
  });  
+
+ it('should set the isComplex class', () => {
+
+   const fixture = TestBed.createComponent(ProgressBarMulti);
+   let comp = fixture.componentInstance;
+   
+   initialiseComponent(comp);
+   comp.isComplex = true;
+   fixture.detectChanges();
+   
+   const container  = fixture.debugElement.query(By.css('.bar-main-container'));
+   expect(container.nativeElement.classList).toContain('isComplex');
+
+});  
 
  it('should NOT set the hoverText if inactive', () => {
 

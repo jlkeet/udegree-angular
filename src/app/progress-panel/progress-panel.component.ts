@@ -38,6 +38,8 @@ import { UserService } from "../core/user.service";
 import { UserContainer } from "../common";
 import { DebugRenderer2 } from "@angular/core/src/view/services";
 import { ValueConverter } from "@angular/compiler/src/render3/view/template";
+import { ProgressBarModule } from "primeng/primeng";
+import { ProgressBarMulti } from "./progress-bar-multi.component";
 
 /*
   Component for displaying a group of progress bars
@@ -115,6 +117,7 @@ export class ProgressPanel {
   private collectionList = ["module", "secondModule"];
   private storeList = ["modules", "secondModules"];
   private isDisabled = false;
+  private isComplex: boolean;
 
   constructor(
     private location: LocationRef,
@@ -128,7 +131,8 @@ export class ProgressPanel {
     private moduleService: ModuleService,
     private dbCourses: FirebaseDbService,
     private userService: UserContainer,
-    private departmentService: DepartmentService
+    private departmentService: DepartmentService,
+    private progressMulti: ProgressBarMulti,
   ) {
     this.currentModules = degreeSelect.currentModules;
     this.modulesList = degreeSelect.modules;
@@ -144,6 +148,7 @@ export class ProgressPanel {
     this.currentConjoints = degreeSelect.currentConjoint;
     this.secondMajorsList = degreeSelect.currentSecondMajors;
     this.currentSecondMajors = degreeSelect.currentSecondMajors;
+    this.isComplex = progressMulti.isComplex
   }
 
   public ngOnInit() {
@@ -162,10 +167,10 @@ export class ProgressPanel {
 
       this.store.changes.pluck("majors").subscribe((majors) => {
         this.majors = majors;
-        if (this.majors) {
+        // if (this.majors) {
         //  console.log(this.majors)
-          this.pathwayCheck(this.majors)
-        }
+        //  this.pathwayCheck(this.majors)
+        // }
         this.updateRequirementList();
       }),
 
@@ -684,8 +689,13 @@ export class ProgressPanel {
       year: semester.year,
     };
 
+    
+
+    if (requirement.complex.length > 0) {
+  } else {
     this.router.navigate(["/add"], { queryParams });
   }
+}
 
   private orNull(arg) {
     if (arg) {
