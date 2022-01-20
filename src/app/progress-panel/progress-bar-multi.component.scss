@@ -30,13 +30,6 @@
   box-shadow: none;
 }
 
-.complex-container {
-
-}
-
-.complex-container:hover {
-  border: 0px;
-}
 
 .bar-main-container:hover {
   border: 1px solid #37d8ae;
@@ -66,6 +59,9 @@
     }
   }
 
+  .bar-main-container .complex-container:hover {
+    border: none !important;
+  }
 
 }
 .wrap {

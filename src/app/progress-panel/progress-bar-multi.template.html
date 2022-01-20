@@ -18,6 +18,7 @@
     </mat-expansion-panel-header>
 
     <div *ngIf="isComplex" class="wrap">
+      {{hoverText}}
       <!-- <div class="bar-percentage">{{total}}/{{max}}</div> -->
         <div class="bar-container">
             <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth title="{{barOneHoverText}}"></div>
