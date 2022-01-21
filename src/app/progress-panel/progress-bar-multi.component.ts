@@ -38,8 +38,15 @@ export class ProgressBarMulti implements OnChanges {
   private barOneHoverText: string;
   private barTwoHoverText: string;
   private barThreeHoverText: string;
+  private requirements = [];
 
   private isDisabled = false;
+
+  constructor(
+
+    private requirementService: RequirementService
+
+  ) {}
 
   public ngOnInit() {
     this.updatePercentage();
@@ -48,6 +55,8 @@ export class ProgressBarMulti implements OnChanges {
   }
 
   public ngOnChanges(changes: { [value: string]: SimpleChange }) {
+
+
 
     if (this.title === "Complex rule") {
       this.isComplex = true;
@@ -128,6 +137,7 @@ export class ProgressBarMulti implements OnChanges {
   }
 
   private expansionOnClick() {
+    this.requirements = this.requirementService.requirements
     this.isDisabled = false;
     return this.isDisabled;
   }

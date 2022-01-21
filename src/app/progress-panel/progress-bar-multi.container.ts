@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChange } from "@angular/core";
+import { Component, Input, OnChanges, SimpleChange, EventEmitter } from "@angular/core";
 import { Store } from "../app.store";
 import { ICourse } from "../interfaces";
 import { CourseStatus } from "../models";
@@ -33,17 +33,19 @@ export class ProgressBarMultiContainer {
   @Input() public requirement;
   @Input() public courses;
 
-  private hoverText: string;
+  private hoverText: string | any[];
+  private hoverTextComplex;
   private max: number;
   private title;
   private inactive: boolean = false;
   private barOneState: IBarState = { value: 0, color: "#66cc00" };
   private barTwoState: IBarState = { value: 0, color: "#f2d600" };
   private barThreeState: IBarState = { value: 0, color: "#66bbff" };
+  private onPageChange = new EventEmitter<null>();
 
   constructor(
     private store: Store,
-    private requirementService: RequirementService
+    private requirementService: RequirementService,
   ) {}
 
   public ngOnChanges() {
@@ -53,7 +55,20 @@ export class ProgressBarMultiContainer {
   public ngOnInit() {
     this.title = this.requirementService.shortTitle(this.requirement);
     this.hoverText = this.requirementService.toString(this.requirement, false);
+
+
+  if (typeof this.hoverText !== 'string') {
+  //  console.log(this.hoverText)
+     for (let i = 0; i < this.hoverText.length; i++) {
+      //  console.log(i)
+      //  this.hoverText = this.hoverText[i]
+      this.hoverTextComplex = this.hoverText[i]
+    //  console.log(this.hoverTextComplex)
+      }
+ //     console.log(this.hoverTextComplex)
+  }
     this.max = this.requirement.required;
+   
   }
 
   private updateState(courses: ICourse[]) {

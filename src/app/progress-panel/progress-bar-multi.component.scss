@@ -30,6 +30,9 @@
   box-shadow: none;
 }
 
+.mat-expansion-panel-content.mat-expanded {
+  border: 1px solid #37d8ae;
+}
 
 .bar-main-container:hover {
   border: 1px solid #37d8ae;

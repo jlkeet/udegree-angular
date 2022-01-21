@@ -9,7 +9,7 @@
     <mat-expansion-panel
     class="complex-container"
     [disabled]="isDisabled"
-    [expanded]="true"
+    [expanded]="false"
     hideToggle
   >
     <mat-expansion-panel-header *ngIf="isComplex" class="complex-header" (click)="expansionOnClick()">
@@ -18,15 +18,17 @@
     </mat-expansion-panel-header>
 
     <div *ngIf="isComplex" class="wrap">
-      {{hoverText}}
+      <div *ngFor="let rule of hoverText">
+            {{rule}}
       <!-- <div class="bar-percentage">{{total}}/{{max}}</div> -->
         <div class="bar-container">
             <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth title="{{barOneHoverText}}"></div>
             <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth title="{{barTwoHoverText}}"></div>
             <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth title="{{barTwoHoverText}}"></div>
         </div>
+        <P>OR</P>
+      </div>
     </div> 
-
     </mat-expansion-panel>
     
     <div class="wrap">

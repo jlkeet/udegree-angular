@@ -233,7 +233,7 @@ export class AddCourseContainer {
     this.flagIneligible();
   }
 
-  private checkRequirements(course: ICourse): string[] {
+  private checkRequirements(course: ICourse): string[] | any[] {
    // console.log("I'm firing -1 ", this.currentSemester.length)
     if (course && course.requirements !== undefined) {
       if (this.currentSemester.length > 0) {

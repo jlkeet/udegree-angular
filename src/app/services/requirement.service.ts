@@ -45,6 +45,7 @@ export class RequirementService {
 
   private i = 0;
   public complexRuleForPgBar = false;
+  public requirements = [];
 
   constructor(private departmentService: DepartmentService) { }
 
@@ -119,10 +120,13 @@ export class RequirementService {
   public requirementCheck(requirement: IRequirement, planned: ICourse[]): number {
    //console.log(requirement)
     if (this.isComplex(requirement)) {
+      this.requirements = requirement.complex;
+      // console.log("Complex: ", this.requirementLen)
       let filled = requirement.complex.map((subRequirement: IRequirement) => this.requirementFilled(subRequirement, planned))
         .filter((tested: boolean) => tested).length;
       return Math.min(filled, requirement.required);
     }  else {
+      // console.log("Not Complex: ", this.requirementLen)
       let mapped;
       const filtered = this.filterByRequirement(requirement,
         planned.filter((course: ICourse) => course.status !== CourseStatus.Failed));
@@ -228,17 +232,31 @@ export class RequirementService {
 
     if (this.isComplex(requirement)) {
       let complexString = omitRequires ? '' : 'Requires ';
+      let newComplexString = []
       if (requirement.required === requirement.complex.length) {
         complexString = requirement.complex.map((req: IRequirement) => this.toString(req, true)).join(' AND ');
       } else {
         if (requirement.required !== 1) {
           complexString += requirement.required + ' of: ';
         }
-      // console.log(requirement.required)
-        complexString += requirement.complex.map((req: IRequirement) => this.toString(req, true)).join('; OR ');
+
+       complexString += requirement.complex.map((req: IRequirement) => this.toString(req, true)).join('; OR ');
+       newComplexString = requirement.complex.map((req: IRequirement) => this.toString(req,true))
+
       }
+
+      // for (let i = 0; i < newComplexString.length; i++){
+      //   //   console.log(newComplexString[i]) 
+      //      return newComplexString[i];
+      //    }
+    // console.log(newComplexString)
+
+    if (typeof newComplexString !== 'string') {
+      return newComplexString;
+    } else {
       return complexString;
     }
+  }
 
     if (
       requirement.type === RequirementType.Papers &&

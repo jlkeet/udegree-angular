@@ -59,7 +59,7 @@ import {
 })
 export class PlannerContainer {
   private planned: ICourse[] = [];
-  private messages: string[] = [];
+  private messages: string[] | any[] = []; 
   private majorSelected: boolean = false;
   private selected: ICourse = null;
   private sub;
