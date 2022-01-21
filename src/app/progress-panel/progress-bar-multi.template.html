@@ -17,7 +17,7 @@
     </mat-expansion-panel-header>
 
     <div *ngIf="isComplex" class="wrap">
-      <div *ngFor="let rule of hoverText">
+      <div *ngFor="let rule of hoverText; let i=index">
             {{rule}}
       <!-- <div class="bar-percentage">{{total}}/{{max}}</div> -->
         <div class="bar-container">
@@ -25,7 +25,9 @@
             <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth title="{{barTwoHoverText}}"></div>
             <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth title="{{barTwoHoverText}}"></div>
         </div>
-        <P>OR</P>
+          <div *ngIf="i < hoverText.length - 1">
+          <P>OR</P>
+        </div>
       </div>
     </div> 
 
