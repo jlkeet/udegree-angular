@@ -1,4 +1,3 @@
-
 <div id="bar-total" [title]="hoverText" class="bar-main-container" [class.inactive]="inactive" [class.totalBar]="isTotal">
 
     <div *ngIf="!isComplex" class="progress-bar-title" [class.inactive]="inactive">
@@ -14,7 +13,7 @@
   >
     <mat-expansion-panel-header *ngIf="isComplex" class="complex-header" (click)="expansionOnClick()">
       <!--<img src='assets/img/file.svg' class="file-icon" />-->
-      <span style="height: 70px">{{title}}</span>
+      <span>{{title}}</span>
     </mat-expansion-panel-header>
 
     <div *ngIf="isComplex" class="wrap">
@@ -29,7 +28,9 @@
         <P>OR</P>
       </div>
     </div> 
+
     </mat-expansion-panel>
+
     
     <div class="wrap">
       <!-- <div class="bar-percentage">{{total}}/{{max}}</div> -->

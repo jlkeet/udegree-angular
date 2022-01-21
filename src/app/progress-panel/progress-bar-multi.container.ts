@@ -8,7 +8,8 @@ import { IBarState } from "./progress-bar-multi.component";
 @Component({
   selector: "progress-bar-multi-container",
   styles: [``],
-  template: `<progress-bar-multi
+  template: `
+  <progress-bar-multi
     [title]="title"
     [max]="max"
     [barOne]="barOneState"
@@ -16,7 +17,8 @@ import { IBarState } from "./progress-bar-multi.component";
     [barThree]="barThreeState"
     [isTotal]="isTotal"
     [hoverText]="hoverText"
-  ></progress-bar-multi>`,
+  ></progress-bar-multi>
+  `,
 })
 
 /*
@@ -42,6 +44,7 @@ export class ProgressBarMultiContainer {
   private barTwoState: IBarState = { value: 0, color: "#f2d600" };
   private barThreeState: IBarState = { value: 0, color: "#66bbff" };
   private onPageChange = new EventEmitter<null>();
+  private complexBool: boolean;
 
   constructor(
     private store: Store,
@@ -55,9 +58,11 @@ export class ProgressBarMultiContainer {
   public ngOnInit() {
     this.title = this.requirementService.shortTitle(this.requirement);
     this.hoverText = this.requirementService.toString(this.requirement, false);
+    this.complexBool = false
 
 
   if (typeof this.hoverText !== 'string') {
+    this.complexBool = true;
   //  console.log(this.hoverText)
      for (let i = 0; i < this.hoverText.length; i++) {
       //  console.log(i)
