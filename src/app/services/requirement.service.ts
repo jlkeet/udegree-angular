@@ -118,15 +118,21 @@ export class RequirementService {
   }
 
   public requirementCheck(requirement: IRequirement, planned: ICourse[]): number {
-   //console.log(requirement)
+
     if (this.isComplex(requirement)) {
+
       this.requirements = requirement.complex;
-      // console.log("Complex: ", this.requirementLen)
+
       let filled = requirement.complex.map((subRequirement: IRequirement) => this.requirementFilled(subRequirement, planned))
         .filter((tested: boolean) => tested).length;
+
+     // console.log(requirement.complex[0].required)
+
       return Math.min(filled, requirement.required);
+
+
     }  else {
-      // console.log("Not Complex: ", this.requirementLen)
+
       let mapped;
       const filtered = this.filterByRequirement(requirement,
         planned.filter((course: ICourse) => course.status !== CourseStatus.Failed));
@@ -162,12 +168,17 @@ export class RequirementService {
 
   public requirementFilled(requirement: IRequirement, planned: ICourse[]): boolean {
     if (this.isComplex(requirement)) {
-      let filled = requirement.complex.map((subRequirement: IRequirement) => this.requirementFilled(subRequirement, planned))
-        .filter((tested: boolean) => tested).length;
-      // console.log(requirement);
-      // console.log(filled + ' of ' + requirement.required);
-      return filled >= requirement.required;
+
+      // let filled = requirement.complex.map((subRequirement: IRequirement) => this.requirementFilled(subRequirement, planned))
+      //   .filter((tested: boolean) => tested).length;
+
+     // console.log(requirement);
+     // console.log(filled + ' of ' + requirement.required);
+     // console.log(filled >= requirement.complex[0].required)
+
+     // return filled >= requirement.required;
     }  else {
+
       return this.requirementCheck(requirement, planned) === requirement.required;
     }
   }
@@ -221,7 +232,7 @@ export class RequirementService {
     return str;
   }
 
-  private isComplex(requirement: IRequirement) {
+  public isComplex(requirement: IRequirement) {
     return requirement.hasOwnProperty('complex');
   }
 

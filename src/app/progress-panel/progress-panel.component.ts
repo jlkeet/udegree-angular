@@ -691,9 +691,7 @@ export class ProgressPanel {
 
     
     if (requirement.complex !== undefined) {
-      console.log("true: ", requirement.complex)
   } else {
-    console.log("else: ", requirement.complex)
     this.router.navigate(["/add"], { queryParams });
   }
 }

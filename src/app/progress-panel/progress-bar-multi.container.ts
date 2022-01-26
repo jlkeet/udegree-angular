@@ -1,4 +1,5 @@
-import { Component, Input, OnChanges, SimpleChange, EventEmitter } from "@angular/core";
+import { NumberFormatStyle } from "@angular/common";
+import { Component, Input, OnChanges, SimpleChange, EventEmitter, ChangeDetectionStrategy } from "@angular/core";
 import { Store } from "../app.store";
 import { ICourse } from "../interfaces";
 import { CourseStatus } from "../models";
@@ -7,18 +8,20 @@ import { IBarState } from "./progress-bar-multi.component";
 
 @Component({
   selector: "progress-bar-multi-container",
-  styles: [``],
-  template: `
-  <progress-bar-multi
-    [title]="title"
-    [max]="max"
-    [barOne]="barOneState"
-    [barTwo]="barTwoState"
-    [barThree]="barThreeState"
-    [isTotal]="isTotal"
-    [hoverText]="hoverText"
-  ></progress-bar-multi>
-  `,
+  styles: [require('./progress-bar-multi.component.scss')],
+  // template: `
+  // <progress-bar-multi
+  //   [title]="title"
+  //   [max]="max"
+  //   [barOne]="barOneState"
+  //   [barTwo]="barTwoState"
+  //   [barThree]="barThreeState"
+  //   [isTotal]="isTotal"
+  //   [hoverText]="hoverText"
+  // ></progress-bar-multi>
+  // `,
+  templateUrl: "progress-bar-multi.container.template.html",
+  changeDetection: ChangeDetectionStrategy.OnPush // Needed to suppress after change error for now
 })
 
 /*
@@ -34,10 +37,11 @@ import { IBarState } from "./progress-bar-multi.component";
 export class ProgressBarMultiContainer {
   @Input() public requirement;
   @Input() public courses;
+  @Input() public isComplex: boolean;
 
   private hoverText: string | any[];
   private hoverTextComplex;
-  private max: number;
+  public max = 0;
   private title;
   private inactive: boolean = false;
   private barOneState: IBarState = { value: 0, color: "#66cc00" };
@@ -45,6 +49,10 @@ export class ProgressBarMultiContainer {
   private barThreeState: IBarState = { value: 0, color: "#66bbff" };
   private onPageChange = new EventEmitter<null>();
   private complexBool: boolean;
+  public complexRule;
+  public combinedRule = [];
+
+  private isDisabled = false;
 
   constructor(
     private store: Store,
@@ -56,24 +64,28 @@ export class ProgressBarMultiContainer {
   }
 
   public ngOnInit() {
+
     this.title = this.requirementService.shortTitle(this.requirement);
     this.hoverText = this.requirementService.toString(this.requirement, false);
-    this.complexBool = false
-
-
-  if (typeof this.hoverText !== 'string') {
-    this.complexBool = true;
-  //  console.log(this.hoverText)
-     for (let i = 0; i < this.hoverText.length; i++) {
-      //  console.log(i)
-      //  this.hoverText = this.hoverText[i]
-      this.hoverTextComplex = this.hoverText[i]
-    //  console.log(this.hoverTextComplex)
+    
+    if (this.requirementService.isComplex(this.requirement)) {
+      this.isComplex = true;
+      this.complexRule = this.requirement.complex
+      
+      for (let i = 0; i < this.hoverText.length; i++)
+      {
+        this.combinedRule.push({
+          rule: this.requirementService.toString(this.complexRule[i], false),
+          complexMax: this.complexRule[i].required,
+          hoverText: this.requirementService.toString(this.complexRule[i], false)
+        })
+        // this.max = this.combinedRule[i].complexMax
+        // console.log(this.max)
       }
- //     console.log(this.hoverTextComplex)
-  }
+  } else {
     this.max = this.requirement.required;
-   
+    this.isComplex = false;
+  }
   }
 
   private updateState(courses: ICourse[]) {
@@ -102,16 +114,41 @@ export class ProgressBarMultiContainer {
   private getBarValue(
     currentState: IBarState,
     courses: ICourse[],
-    status: CourseStatus
+    status: CourseStatus,
   ) {
     if (courses === undefined || courses.length === 0) {
       return Object.assign({}, currentState, { value: 0 });
     }
+    if (this.requirementService.isComplex(this.requirement)) {
+      for (let i = 0; i < this.requirement.complex.length; i++) {
+      const value = this.requirementService.fulfilledByStatus(
+        this.requirement.complex[i],
+        courses,
+        status
+      );
+      return Object.assign({}, currentState, { value });
+      }
+  
+    } else {
     const value = this.requirementService.fulfilledByStatus(
       this.requirement,
       courses,
       status
     );
+  
     return Object.assign({}, currentState, { value });
+    }
   }
+
+
+  private expansionOnClick() {
+    this.isDisabled = false;
+    return this.isDisabled;
+  }
+
+  private noExpansionOnClick() {
+    this.isDisabled = true;
+    return this.isDisabled;
+  }
+
 }

@@ -1,6 +1,11 @@
 import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material';
+import { request } from 'https';
+import { ProgressBarModule } from 'primeng/primeng';
+import { ICourse } from '../interfaces';
+import { CourseStatus } from '../models';
 import { RequirementService } from '../services';
+import { ProgressBarMultiContainer } from './progress-bar-multi.container';
 
 export interface IBarState {
   color: string;
@@ -27,6 +32,7 @@ export class ProgressBarMulti implements OnChanges {
   @Input() public barOne: IBarState;
   @Input() public barTwo: IBarState;
   @Input() public barThree: IBarState;
+  @Input() public rule: string;
 
   public states: any[];
   private total: number = 0;
@@ -39,12 +45,14 @@ export class ProgressBarMulti implements OnChanges {
   private barTwoHoverText: string;
   private barThreeHoverText: string;
   private requirements = [];
+  private combinedRule = [];
 
   private isDisabled = false;
 
   constructor(
 
-    private requirementService: RequirementService
+    private requirementService: RequirementService,
+    private progressBarMultiContainer: ProgressBarMultiContainer,
 
   ) {}
 
@@ -55,8 +63,6 @@ export class ProgressBarMulti implements OnChanges {
   }
 
   public ngOnChanges(changes: { [value: string]: SimpleChange }) {
-
-
 
     if (this.title === "Complex rule") {
       this.isComplex = true;
@@ -75,6 +81,7 @@ export class ProgressBarMulti implements OnChanges {
     }
 
     if (changes.max) {
+    //  console.log(changes)
       this.updatePercentage(changes.max.currentValue);
       this.updateProgress();
       this.updateTotal();
@@ -132,11 +139,13 @@ export class ProgressBarMulti implements OnChanges {
   }
 
   private calculatePercentage(value: number) {
+
     const width = Math.floor(value / this.max * 100);
     return width > 100 ? 100 : width;
   }
 
   private expansionOnClick() {
+
     this.requirements = this.requirementService.requirements
     this.isDisabled = false;
     return this.isDisabled;
@@ -146,4 +155,21 @@ export class ProgressBarMulti implements OnChanges {
     this.isDisabled = true;
     return this.isDisabled;
   }
+
+  private populateCombined() {
+    this.combinedRule = this.progressBarMultiContainer.combinedRule;
+    for (let i = 0; i < this.combinedRule.length; i++) {
+    //  this.max = this.combinedRule[i].complexMax;
+      console.log(this.combinedRule[i].complexMax)
+    }
+  //  console.log(this.combinedRule)
+  }
+
+  private newMax(newMax) {
+   this.progressBarMultiContainer.max = newMax;
+   this.max = newMax;
+ //   console.log(this.max)
+  //  this.progressBarMultiContainer.
+  }
+
 }

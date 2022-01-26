@@ -1,5 +1,5 @@
-<div>
-        <progress-bar-multi
+<div *ngIf="!isComplex">
+        <!-- <progress-bar-multi
             [title]="title" 
             [max]="max" 
             [isTotal]="isTotal"
@@ -7,5 +7,51 @@
             [hoverText]="hoverText"
             [states]="states"
             [isComplex]="isComplex"
-        ></progress-bar-multi>
+        ></progress-bar-multi> -->
+
+         <progress-bar-multi
+           [title]="title"
+           [max]="max"
+           [barOne]="barOneState"
+           [barTwo]="barTwoState"
+           [barThree]="barThreeState"
+           [isTotal]="isTotal"
+           [hoverText]="hoverText"
+         ></progress-bar-multi>
+</div>
+
+<div *ngIf="isComplex">
+
+    <div id="bar-total" [title]="hoverText" class="bar-main-container" style="padding-bottom: 0px !important" [class.inactive]="inactive" [class.totalBar]="isTotal">
+
+    <mat-expansion-panel
+    class="complex-container"
+    [disabled]="isDisabled"
+    [expanded]="false"
+    hideToggle
+  >
+
+    <mat-expansion-panel-header *ngIf="isComplex" class="complex-header" style="padding-bottom: 37px !important" (click)="expansionOnClick();">
+      <!--<img src='assets/img/file.svg' class="file-icon" />-->
+      <span>{{title}}</span>
+    </mat-expansion-panel-header>
+
+
+    <div *ngFor="let item of combinedRule; let i=index">
+     <progress-bar-multi
+       [title]="title"
+       [max]="item.complexMax"
+       [barOne]="barOneState"
+       [barTwo]="barTwoState"
+       [barThree]="barThreeState"
+       [isTotal]="isTotal"
+       [hoverText]="hoverText"
+       [rule]="item.rule"
+     ></progress-bar-multi>
+     <div *ngIf="i < combinedRule.length - 1">
+     <P style="padding-left: 15px !important">OR</P>
+    </div>
+    </div>
+    </mat-expansion-panel>
+    </div>
 </div>

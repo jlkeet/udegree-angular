@@ -1,38 +1,42 @@
 <div id="bar-total" [title]="hoverText" class="bar-main-container" [class.inactive]="inactive" [class.totalBar]="isTotal">
 
-    <div *ngIf="!isComplex" class="progress-bar-title" [class.inactive]="inactive">
-      <!--<img src='assets/img/file.svg' class="file-icon" />-->
-      {{title}}
-    </div>
-
-    <mat-expansion-panel
+    <!-- <mat-expansion-panel
     class="complex-container"
     [disabled]="isDisabled"
     [expanded]="false"
     hideToggle
   >
-    <mat-expansion-panel-header *ngIf="isComplex" class="complex-header" (click)="expansionOnClick()">
-      <!--<img src='assets/img/file.svg' class="file-icon" />-->
+
+    <mat-expansion-panel-header *ngIf="isComplex" class="complex-header" (click)="expansionOnClick();populateCombined();">
       <span>{{title}}</span>
-    </mat-expansion-panel-header>
+    </mat-expansion-panel-header> -->
 
     <div *ngIf="isComplex" class="wrap">
-      <div *ngFor="let rule of hoverText; let i=index">
+          
+        <!-- <div *ngFor="let item of combinedRule; let i=index"> -->
+            <!-- {{newMax(item.complexMax)}} -->
+            <div class="progress-bar-title" style="padding-left: 4px !important">
             {{rule}}
-      <!-- <div class="bar-percentage">{{total}}/{{max}}</div> -->
+          </div>
+        <!-- <div class="bar-percentage">{{total}}/{{item.complexMax}}</div> -->
         <div class="bar-container">
             <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth title="{{barOneHoverText}}"></div>
             <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth title="{{barTwoHoverText}}"></div>
             <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth title="{{barTwoHoverText}}"></div>
         </div>
-          <div *ngIf="i < hoverText.length - 1">
+           <!-- <div *ngIf="i < combinedRule.length - 1">
           <P>OR</P>
-        </div>
-      </div>
-    </div> 
+        </div> -->
+       </div>
+    <!-- </div> -->
+  <!-- </div>  -->
 
-    </mat-expansion-panel>
+    <!-- </mat-expansion-panel> -->
 
+    <div *ngIf="!isComplex" class="progress-bar-title" [class.inactive]="inactive">
+      <!--<img src='assets/img/file.svg' class="file-icon" />-->
+      {{title}}
+    </div>
     
     <div class="wrap">
       <!-- <div class="bar-percentage">{{total}}/{{max}}</div> -->

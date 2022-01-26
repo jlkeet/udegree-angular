@@ -104,6 +104,7 @@ import { ExportButton } from './courses-panel/export-button.component';
 import { FirebaseDbService } from './core/firebase.db.service';
 import { ProgressPanel } from './progress-panel';
 import { ProgressBarMulti } from './progress-panel';
+import { ProgressBarMultiContainer } from './progress-bar-multi.container';
 
 
 // Application wide providers
@@ -228,6 +229,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     DegreeSelection,
     ProgressPanel,
     ProgressBarMulti,
+    progress.ProgressBarMultiContainer,
 
     ...providers
   ]
