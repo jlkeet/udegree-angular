@@ -52,7 +52,12 @@ export class ProgressBarMultiContainer {
   public complexRule;
   public combinedRule = [];
 
+
   private isDisabled = false;
+
+  private barOneStateComplex = [];
+  private barTwoStateComplex = [];
+  private barThreeStateComplex = [];
 
   constructor(
     private store: Store,
@@ -80,7 +85,7 @@ export class ProgressBarMultiContainer {
           hoverText: this.requirementService.toString(this.complexRule[i], false)
         })
         // this.max = this.combinedRule[i].complexMax
-        // console.log(this.max)
+       // console.log(this.barOneState, this.barTwoState, this.barThreeState)
       }
   } else {
     this.max = this.requirement.required;
@@ -92,6 +97,33 @@ export class ProgressBarMultiContainer {
     if (this.inactive) {
       return;
     }
+
+    if (this.requirementService.isComplex(this.requirement)) {
+      // for (let i = 0; i < this.requirement.complex.length; i++) {
+      // this.barOneStateComplex.push(this.getComplexBarValue(
+      //   this.barOneState,
+      //   this.courses,
+      //   CourseStatus.Completed,
+      //   this.requirement.complex[i]
+      // ));
+
+      // this.barTwoStateComplex.push(this.getComplexBarValue(
+      //   this.barTwoState,
+      //   this.courses,
+      //   CourseStatus.Enrolled,
+      //   this.requirement.complex[i],
+      // ));
+
+      // this.barThreeStateComplex.push(this.getComplexBarValue(
+      //   this.barThreeState,
+      //   this.courses,
+      //   CourseStatus.Planned,
+      //   this.requirement.complex[i],
+      // ));
+      // }
+      this.updateComplexBars(this.courses)
+      
+    } else {
 
     this.barOneState = this.getBarValue(
       this.barOneState,
@@ -109,7 +141,9 @@ export class ProgressBarMultiContainer {
       this.courses,
       CourseStatus.Planned
     );
+  //  console.log(this.requirement , this.barOneState, ' ', this.barTwoState, ' ', this.barThreeState)
   }
+}
 
   private getBarValue(
     currentState: IBarState,
@@ -120,29 +154,73 @@ export class ProgressBarMultiContainer {
       return Object.assign({}, currentState, { value: 0 });
     }
     if (this.requirementService.isComplex(this.requirement)) {
-      for (let i = 0; i < this.requirement.complex.length; i++) {
-      const value = this.requirementService.fulfilledByStatus(
-        this.requirement.complex[i],
-        courses,
-        status
-      );
-      return Object.assign({}, currentState, { value });
-      }
-  
+      // for (let i = 0; i < this.requirement.complex.length; i++) {
+      // const value = this.requirementService.fulfilledByStatus(
+      //   this.requirement.complex[i],
+      //   courses,
+      //   status
+      // );
+      // return Object.assign(this.complexBarArray);
     } else {
     const value = this.requirementService.fulfilledByStatus(
       this.requirement,
       courses,
       status
     );
-  
     return Object.assign({}, currentState, { value });
     }
+  }
+
+  private getComplexBarValue(
+    currentState: IBarState,
+    courses: ICourse[],
+    status: CourseStatus,
+    requirement
+  ) {
+    const value = this.requirementService.fulfilledByStatus(
+      requirement,
+      courses,
+      status
+    );
+   // console.log(value)
+    return Object.assign({}, currentState, { value });
+
+  }
+
+  private updateComplexBars(courses: ICourse[]) {
+
+    this.barOneStateComplex = [],
+    this.barTwoStateComplex = [],
+    this.barThreeStateComplex = []
+
+    for (let i = 0; i < this.requirement.complex.length; i++) {
+      this.barOneStateComplex.push(this.getComplexBarValue(
+        this.barOneState,
+        this.courses,
+        CourseStatus.Completed,
+        this.requirement.complex[i]
+      ));
+
+      this.barTwoStateComplex.push(this.getComplexBarValue(
+        this.barTwoState,
+        this.courses,
+        CourseStatus.Enrolled,
+        this.requirement.complex[i],
+      ));
+
+      this.barThreeStateComplex.push(this.getComplexBarValue(
+        this.barThreeState,
+        this.courses,
+        CourseStatus.Planned,
+        this.requirement.complex[i],
+      ));
+      }
   }
 
 
   private expansionOnClick() {
     this.isDisabled = false;
+    this.updateComplexBars(this.courses)
     return this.isDisabled;
   }
 
