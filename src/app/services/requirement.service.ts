@@ -191,19 +191,19 @@ export class RequirementService {
 
   public shortTitle(requirement: IRequirement) {
     if (this.isComplex(requirement)) {
-      return 'Complex rule';
+      return 'Complex Rule';
       // return this.toString(requirement, null)
     }
 
-    // if (requirement.papers !== undefined) {
-    //   if (requirement.papers.length <= 4 &&
-    //     requirement.papers.filter((paper: string) => paper.includes('-')).length === 0) {
-    //     return requirement.papers.join(', ');
-    //   } else {
-    //     // Change this to reflect the hyphenated rule
-    //     return 'Compulsory papers';
-    //   }
-    // }
+    if (requirement.papers !== undefined) {
+      if (requirement.papers.length <= 4 &&
+        requirement.papers.filter((paper: string) => paper.includes('-')).length === 0) {
+        // return requirement.papers.join(', ');
+      } else {
+        // Change this to reflect the hyphenated rule
+        return  requirement.required + (requirement.type === RequirementType.Points ? ' Points' : ' Papers') + ' From Selection';
+      }
+    }
 
     // This kind of looks insane, but it's a reasonably obvious pattern
     const str = requirement.required +
