@@ -201,7 +201,7 @@ export class RequirementService {
         // return requirement.papers.join(', ');
       } else {
         // Change this to reflect the hyphenated rule
-        return  requirement.required + (requirement.type === RequirementType.Points ? ' Points' : ' Papers') + ' From Selection';
+        return requirement.required + (requirement.type === RequirementType.Points ? ' Points' : ' Papers') + ' From Selection';
       }
     }
 

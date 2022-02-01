@@ -39,7 +39,7 @@
 
     <div *ngFor="let item of combinedRule; let i=index">
      <progress-bar-multi
-       [title]="title"
+       [title]="item.hoverText"
        [max]="item.complexMax"
        [barOne]="barOneStateComplex[i]"
        [barTwo]="barTwoStateComplex[i]"
