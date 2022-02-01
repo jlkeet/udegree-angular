@@ -118,7 +118,7 @@ export class SemesterPanel {
         );
       } else {
         // this.semester.id =
-        console.log(`onDropModel: moving to semester ${this.semester.period}`);
+       // console.log(`onDropModel: moving to semester ${this.semester.period}`);
         this.droppedCourseSaveDB(droppedCourse);
         this.courseEventService.raiseCourseMoved({
           courseId: droppedCourse.id,
@@ -187,7 +187,8 @@ export class SemesterPanel {
       .collection("users")
       .doc(this.email)
       .collection("courses", (ref) => {
-        const query = ref.where("id", "==", String(course.id));
+        console.log(ref)
+        const query = ref.where("id", "==", course.id);
         query.get().then((snapshot) => {
           snapshot.forEach((doc) => {
             this.db
@@ -199,8 +200,10 @@ export class SemesterPanel {
                 year: course.newYear,
                 period: course.newPeriod,
               });
+              console.log(doc)
           });
         });
+
         return query;
       });
   }
