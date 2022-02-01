@@ -2,7 +2,7 @@ export class FacultyService {
   private faculties;
 
   constructor() {
-    this.faculties = require('../../assets/data/faculties.json');
+    this.faculties = require('../../assets/data/facultiesNew.json');
   }
 
   public getFaculties() {
