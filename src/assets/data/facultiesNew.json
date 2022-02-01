@@ -81,6 +81,53 @@
         "Ethnomusicology",
         "Latin American Studies"
       ],
+      "majorRequirements": [
+        {
+          "type": 0,
+          "required": 360
+        },
+        {
+          "type": 0,
+          "required": 300,
+          "faculties": [
+            "Arts"
+          ]
+        },
+        {
+          "type": 0,
+          "required": 180,
+          "faculties": [
+            "Arts"
+          ],
+          "aboveStage": 1
+        },
+        {
+          "type": 0,
+          "required": 180,
+          "faculties": [
+            "Arts"
+          ],
+          "aboveStage": 2
+        },
+        {
+          "type": 0,
+          "required": 30,
+          "faculties": [
+            "Arts",
+            "Open"
+          ],
+          "flags": [
+            "general"
+          ]
+        },
+        {
+          "type": 3,
+          "required": 3,
+          "flags": {
+            "differentDepts": true
+          }
+        }
+      ],
       "doubleMajorRequirements": [
         {
           "type": 0,
@@ -123,14 +170,10 @@
             "differentDepts": true
           }
         }
-      ]
-    },
-    {
-      "name": "",
-      "abbrv": "",
-      "majorRequirements": [],
-      "doubleMajorRequirements": [],
-      "flags": []
+      ],
+    "flags": [
+      "Dbl Mjr"
+    ]
     },
     {
       "name": "Commerce",
@@ -282,8 +325,7 @@
         }
       ],
       "flags": [
-        "Dbl Mjr",
-        ""
+        "Dbl Mjr"
       ]
     },
     {
@@ -726,7 +768,8 @@
         }
       ],
       "flags": [
-        "Next"
+        "Next",
+        "Dbl Mjr"
       ]
     },
     {

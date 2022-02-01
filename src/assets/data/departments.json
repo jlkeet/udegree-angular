@@ -6,6 +6,17 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Academic English Studies and Linguistics"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Academic English Studies and Linguistics"],
+          "aboveStage": 2
+        },
+      {
+        "type": 0,
         "required": 75,
         "papers": [
           "ACADENG210",
@@ -33,6 +44,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Anthropology"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Anthropology"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 30,
         "papers": ["ANTHRO103-109"],
         "flags": {}
@@ -58,6 +81,18 @@
     "faculties": ["Arts"],
     "papers": "ARTHIST107, ARTHIST108, ARTHIST109, ARTHIST114, ARTHIST115, HUMS101, ARTHIST200, ARTHIST201, ARTHIST203, ARTHIST204, ARTHIST206, ARTHIST210, ARTHIST214, ARTHIST215, ARTHIST217, ARTHIST224, ARTHIST225, ARTHIST230, ARTHIST231, ARTHIST233, ARTHIST235, ARTHIST236, ARTHIST238, ARTHIST245, ARTHIST246, ARTHIST247, ANCIENT280, PHIL212, HUMS300, ARTHIST300, ARTHIST303, ARTHIST310, ARTHIST313, ARTHIST314, ARTHIST315, ARTHIST317, ARTHIST321, ARTHIST324, ARTHIST325, ARTHIST331, ARTHIST332, ARTHIST333, ARTHIST334, ARTHIST335, ARTHIST336, ARTHIST338, ARTHIST345, ARTHIST346, ARTHIST347",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Art History"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Art History"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 45,
@@ -95,6 +130,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Asian Studies"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Asian Studies"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 30,
         "papers": ["ASIAN100", "ASIAN303"],
         "flags": {}
@@ -114,6 +161,18 @@
     "faculties": ["Arts"],
     "papers": "ASIAN100, CHINESE100-178, TRANSLAT100, ASIAN200, ASIAN204, CHINESE200-278, HISTORY213, HISTORY225, POLITICS211, POLITICS254, ASIAN302, ASIAN303, ASIAN304, CHINESE300-378, HISTORY313, HISTORY335, TRANSLAT300",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Chinese"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Chinese"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 30,
@@ -172,6 +231,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Classical Studies and Ancient History"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Classical Studies and Ancient History"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 15,
         "papers": ["ANCIENT100-130"],
         "flags": {}
@@ -205,6 +276,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Criminology"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Criminology"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 30,
         "papers": ["CRIM208", "CRIM301"],
         "flags": {}
@@ -224,6 +307,18 @@
     "faculties": ["Arts"],
     "papers": "ANCIENT110, DANCE101, DRAMA100, MĀORI190, MUS145, PACIFIC110, ANCIENT225, ANCIENT285, DANCE201, DRAMA202-205, ENGLISH213, ENGLISH265, EUROPEAN207, MĀORI292, MUS 245-248, PACIFIC210, ANCIENT325, ANCIENT385, DRAMA 301-307, ENGLISH310, ENGLISH353, EUROPEAN307, MĀORI393, PACIFIC310",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Drama"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Drama"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 60,
@@ -253,6 +348,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Economics"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Economics"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 45,
         "papers": ["ECON152", "ECON201", "ECON211"],
         "flags": {}
@@ -272,6 +379,18 @@
     "faculties": ["Arts"],
     "papers": "EDUC100, EDUC105, EDUC113-117, EDUC121, EDUC122, YOUTHWRK152, EDUC200, EDUC201, EDUC204-224, EDUC283, EDUC300-308, EDUC313-319, EDUC322, EDUC323, EDUC341-384, EDUCN300, MATHS302, SOCYOUTH300",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Education"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Education"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 30,
@@ -301,6 +420,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Employment Relations and Organisation Studies"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Employment Relations and Organisation Studies"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 15,
         "papers": ["MGMT211", "MGMT223", "SOCIOL208"],
         "flags": {}
@@ -320,6 +451,18 @@
     "faculties": ["Arts"],
     "papers": "ENGLISH101-121, ENGLISH204-265, ENGLISH305-356",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["English"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["English"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 15,
@@ -349,6 +492,18 @@
     "name": "European Studies",
     "faculties": ["Arts"],
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["European Studies"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["European Studies"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 2,
@@ -468,6 +623,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["French"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["French"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 15,
         "papers": ["EUROPEAN100"],
         "flags": {}
@@ -513,6 +680,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Gender Studies"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Gender Studies"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 30,
         "papers": ["GENDER101", "GENDER208"],
         "flags": {}
@@ -538,6 +717,18 @@
     "faculties": ["Arts"],
     "papers": "EARTHSCI105, GEOG101-140, GEOG202-262, GISCI241, GISCI242, GEOG302-399, GISCI341, GISCI343",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Geography"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Geography"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 30,
@@ -592,6 +783,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["German"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["German"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 45,
         "papers": ["EUROPEAN100", "GERMAN201", "GERMAN301"],
         "flags": {}
@@ -639,6 +842,18 @@
     "secondMajorRequirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Health and Society"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Health and Society"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 45,
         "papers": ["HLTHSOC100", "HLTHSOC201", "HLTHSOC301"],
         "flags": {}
@@ -660,6 +875,18 @@
     "conjointRequirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["History"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["History"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 45,
         "departments": ["History"],
         "aboveStage": 2
@@ -671,6 +898,18 @@
     "faculties": ["Arts"],
     "papers": "EUROPEAN100, ARTHIST236, COMPLIT200, COMPLIT202, COMPLIT210, EUROPEAN200, EUROPEAN207, ITALIAN201, ITALIAN202, ITALIAN204-209, ITALIAN211, ITALIAN235-278, MUS243, ITALIAN300, ITALIAN301, ITALIAN305-379",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Italian"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Italian"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 45,
@@ -721,6 +960,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Japanese"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Japanese"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 45,
         "papers": ["ASIAN100", "JAPANESE150", "JAPANESE332"],
         "flags": {}
@@ -767,6 +1018,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Korean"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Korean"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 45,
         "papers": ["ASIAN100", "KOREAN120", "KOREAN301"],
         "flags": {}
@@ -798,6 +1061,18 @@
     "faculties": ["Arts"],
     "papers": "ANCIENT102-130, GREEK100, GREEK101, LATIN100, LATIN101, ANCIENT200-285, GREEK200-204, LATIN200-205, ANCIENT300-385, GREEK300-310, LATIN300-310",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Latin"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Latin"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 30,
@@ -841,6 +1116,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Linguistics"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Linguistics"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 15,
         "papers": ["LINGUIST100"],
         "flags": {}
@@ -868,6 +1155,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Logic and Computation"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Logic and Computation"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 60,
         "papers": ["COMPSCI120", "COMPSCI225", "PHIL101", "PHIL222"],
         "flags": {}
@@ -887,6 +1186,18 @@
     "faculties": ["Arts"],
     "papers": "COOKIS101, MĀORI101-190, POLITICS107, ANTHRO207, ARTHIST238, COOKIS201, COOKIS204, HISTORY227, HISTORY260, MĀORI200-292, POLITICS229, ARTHIST338, COOKIS300, COOKIS301, HISTORY360, HUMS300, MĀORI301-396",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Māori Studies"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Māori Studies"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 45,
@@ -915,6 +1226,18 @@
     "faculties": ["Arts"],
     "papers": "MATHS102-190, COMPSCI225, MATHS202-270, STATS210, ENGSCI391, MATHS302-363, STATS310, STATS325, STATS370",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Mathematics"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Mathematics"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 30,
@@ -956,6 +1279,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Media, Film and Television"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Media, Film and Television"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 30,
         "papers": ["COMMS100", "MEDIA101"],
         "flags": {}
@@ -994,6 +1329,18 @@
     "papers": "ANTHRO103, ANTHRO106, MĀORI190, MUS103-111, MUS130, MUS143-162, PACIFIC110, ANTHRO202, ANTHRO217, ANTHRO234, MUS203-207, MUS230, MUS231, MUS243-265, MUS276, ANTHRO301, ANTHRO327, ANTHRO329, ANTHRO357, MUS306, MUS307, MUS330-334, MUS343-367, MUS376, MUS387, MUS389",
     "requirements": [
       {
+        "type": 0,
+        "required": 120,
+        "departments": ["Music"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Music"],
+          "aboveStage": 2
+        },
+
+      {
         "type": 1,
         "required": 1,
         "papers": ["MUS104"],
@@ -1015,6 +1362,30 @@
     "papers": "COOKIS101, HISTORY104, PACIFIC100, PACIFIC105, PACIFIC110, SAMOAN101, TONGAN101, ARTHIST217, COOKIS201, COOKIS204, PACIFIC200-216, SAMOAN201, TONGAN201, ARTHIST317, COOKIS300, COOKIS301, PACIFIC300-316, SAMOAN301, TONGAN301",
     "requirements": [
       {
+        "type": 0,
+        "required": 120,
+        "departments": ["Pacific Studies"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Pacific Studies"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
+        "required": 120,
+        "departments": [""]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": [""],
+          "aboveStage": 2
+        },
+
+      {
         "type": 1,
         "required": 2,
         "papers": ["PACIFIC100", "PACIFIC200"],
@@ -1034,7 +1405,19 @@
     "name": "Philosophy",
     "faculties": ["Arts"],
     "papers": "PHIL100-105, PHIL200-268, LOGICOMP301, PHIL300-368",
-
+    "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Philosophy"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Philosophy"],
+          "aboveStage": 2
+        }
+    ],
     "conjointRequirements": [
       {
         "type": 0,
@@ -1048,6 +1431,20 @@
     "name": "Politics and International Relations",
     "faculties": ["Arts"],
     "papers": "POLITICS106-109, COMMS201, HISTORY227, PHIL205, POLITICS202-254, COMMS304, MĀORI330, MĀORI335, PHIL310, POLITICS300-356",
+    "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Politics and International Relations"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Politics and International Relations"],
+          "aboveStage": 2
+        }
+    ],
+
     "conjointRequirements": [
       {
         "type": 0,
@@ -1062,6 +1459,18 @@
     "faculties": ["Arts"],
     "papers": "PSYCH108, PSYCH109, STATS100-125, PSYCH200209, EDUC323, EXERSCI307, PSYCH300-320, PSYCH326-328",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Psychology"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Psychology"],
+          "aboveStage": 2
+        },
+
       {
         "type": 1,
         "required": 2,
@@ -1112,6 +1521,18 @@
     "papers": "SOCIOL100-105, CRIM205, GENDER208, SOCIOL200-229, GENDER301, SOCIOL300-340",
     "requirements": [
       {
+        "type": 0,
+        "required": 120,
+        "departments": ["Sociology"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Sociology"],
+          "aboveStage": 2
+        },
+
+      {
         "type": 1,
         "required": 1,
         "papers": ["SOCIOL310"],
@@ -1132,6 +1553,18 @@
     "faculties": ["Arts"],
     "papers": "EUROPEAN100, SPANISH178, COMPLIT200-210, EUROPEAN200, EUROPEAN206, EUROPEAN207, LATINAM201, LATINAM210, LATINAM216, MUS243, SPANISH201-278, EUROPEAN300, EUROPEAN302, EUROPEAN307, LATINAM301-325, SPANISH302-378",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Spanish"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Spanish"],
+          "aboveStage": 2
+        },
+
       {
         "type": 1,
         "required": 1,
@@ -1207,6 +1640,18 @@
     "papers": "COMPSCI101, DATASCI100, MATHS108, MATHS120, MATHS130, MATHS162, STATS100-150, MATHS208, MATHS250, MATHS269, STATS201-290, ENGSCI391, STATS301-389, STATS399",
     "requirements": [
       {
+        "type": 0,
+        "required": 120,
+        "departments": ["Statistics"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Statistics"],
+          "aboveStage": 2
+        },
+
+      {
         "type": 1,
         "required": 1,
         "papers": ["STATS101", "STATS108", "STATS125"],
@@ -1272,6 +1717,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["Theological and Religious Studies"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Theological and Religious Studies"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 15,
         "papers": ["THEOREL101", "THEOREL102", "THEOREL106"],
         "flags": {}
@@ -1303,6 +1760,18 @@
     "faculties": ["Arts"],
     "papers": "BUSINESS151, COMMS100, COMMS104, DRAMA100, ENGLISH121, MĀORI130, MKTG151, PACIFIC105, SCIGEN101, BUSINESS291, COMMS200–208, MĀORI271, MEDIA212, MEDIA214, MEDIA222, POLITICS233, SCIGEN201, SCREEN200, SCREEN201, COMMS301–309, MEDIA314, MEDIA327, MEDIA328, MKTG306, POLITICS345, SCIGEN301, SOCIOL318",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["Communication"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Communication"],
+          "aboveStage": 2
+        },
+
       {
         "type": 1,
         "required": 2,
@@ -1337,6 +1806,18 @@
     "papers": "ACADENG101, ENGWRIT101, EDUC117, LANGTCHG101, LINGUIST100, LINGUIST101, LANGTCHG202, LINGUIST203, LANGTCHG205, LANGTCHG207, LANGTCHG209, LANGTCHG300–302, LANGTCHG304–312",
     "requirements": [
       {
+        "type": 0,
+        "required": 120,
+        "departments": ["Teaching English to Speakers of Other Languages"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["Teaching English to Speakers of Other Languages"],
+          "aboveStage": 2
+        },
+
+      {
         "type": 1,
         "required": 1,
         "papers": ["LANGTCHG101"],
@@ -1357,6 +1838,18 @@
     "faculties": ["Arts"],
     "papers": "ANCIENT110, ANCIENT130, ARTHIST107, ARTHIST109, EUROPEAN100, FRENCH102, GERMAN102, GERMAN106, HUMS101, ITALIAN107, LATINAM101, MUS140, RUSSIAN100, RUSSIAN101, SPANISH105, ANCIENT200, ANCIENT201, ANCIENT225, ANCIENT245, ANCIENT250, ANCIENT270, ANCIENT280, ARTHIST201–203, ARTHIST210, ARTHIST215, ARTHIST224, ARTHIST225, ARTHIST236, COMPLIT200, COMPLIT206, COMPLIT210, EUROPEAN200, EUROPEAN207, EUROPEAN208, EUROPEAN277, EUROPEAN278, FRENCH203, FRENCH204, FRENCH218, FRENCH230, FRENCH239, FRENCH241, FRENCH244, FRENCH269, FRENCH277, FRENCH278, GERMAN200, GERMAN201, GERMAN210, GERMAN211, GERMAN230, GERMAN277, GERMAN278, ITALIAN200, ITALIAN201, ITALIAN202, ITALIAN203, ITALIAN204, ITALIAN209, ITALIAN210, ITALIAN211, ITALIAN212, ITALIAN232, ITALIAN277, ITALIAN278, MUS240, MUS241, MUS243, PHIL209, RUSSIAN200, RUSSIAN201, SPANISH200, SPANISH201, SPANISH202, SPANISH218, SPANISH277, SPANISH278, ARTHIST303, ARTHIST310, ARTHIST315, ARTHIST321, ARTHIST324, ARTHIST325, ARTHIST336, COMPLIT302, EUROPEAN300, EUROPEAN304, EUROPEAN307, EUROPEAN377, EUROPEAN378, FRENCH304, FRENCH305, FRENCH341, FRENCH344, FRENCH349, FRENCH377, FRENCH378, GERMAN301, GERMAN302, GERMAN310, GERMAN377, GERMAN378, ITALIAN300, ITALIAN304, ITALIAN309, ITALIAN333, ITALIAN335, ITALIAN336, ITALIAN377, ITALIAN378, PHIL340, PHIL341, RUSSIAN390, SPANISH313, SPANISH317-321, SPANISH345, SPANISH377, SPANISH378",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["European Studies - European Cultures and Languages"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["European Studies - European Cultures and Languages"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 2,
@@ -1484,6 +1977,18 @@
     "requirements": [
       {
         "type": 0,
+        "required": 120,
+        "departments": ["European Studies - European History and Politics"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["European Studies - European History and Politics"],
+          "aboveStage": 2
+        },
+
+      {
+        "type": 0,
         "required": 2,
         "flags": {},
         "complex": [
@@ -1606,6 +2111,18 @@
     "faculties": ["Arts"],
     "papers": "GREEK100, GREEK101, HUMS101, LATIN100, LATIN101, COMPLIT202, ENGLISH213, ENGLISH265, GREEK200, HISTORY239, HISTORY243, ITALIAN209, ITALIAN210, LATIN200, PHIL204, THEOREL207, ARTHIST303, ARTHIST315, ARTHIST324, ARTHIST325, ARTHIST336, COMPLIT303, ENGLISH310, ENGLISH340, ENGLISH353, FRENCH306, GREEK300, GREEK310, HISTORY339, HISTORY356, ITALIAN303, ITALIAN309, LATIN300, LATIN310, PHIL302, THEOREL307",
     "requirements": [
+      {
+        "type": 0,
+        "required": 120,
+        "departments": ["European Studies - Medieval and Early Modern European Studies"]
+        },
+        {
+          "type": 0,
+          "required": 45,
+          "departments": ["European Studies - Medieval and Early Modern European Studies"],
+          "aboveStage": 2
+        },
+
       {
         "type": 0,
         "required": 2,

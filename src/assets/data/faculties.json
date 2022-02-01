@@ -119,6 +119,13 @@
         "flags": [
           "general"
         ]
+      },
+      {
+        "type": 3,
+        "required": 3,
+        "flags": {
+          "differentDepts": true
+        }
       }
     ],
     "doubleMajorRequirements": [
