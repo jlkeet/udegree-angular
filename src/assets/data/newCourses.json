@@ -25884,6 +25884,15 @@
     "stage": 2,
     "requirements": [
       { "type": 1, "required": 1, "papers": ["ITALIAN107"], "flags": {} },
+        {
+          "type": 1,
+          "required": 1,
+          "papers": ["ITALIAN200"],
+          "flags":
+          {
+            "isCorequesite": true
+          }
+        },
       {
         "type": 0,
         "required": 0,
@@ -26162,7 +26171,31 @@
     "faculties": ["Arts"],
     "department": "Italian",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 0,
+        "papersExcluded": ["ITALIAN111", "ITALIAN211", "ITALIAN312"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN107"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN200"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1594,
@@ -26213,7 +26246,30 @@
     "department": "Italian",
     "points": 15,
     "stage": 2,
-    "requirements": []
+    "requirements": [
+      {
+        "type": 1,
+        "required": 0,
+        "papersExcluded": ["ITALIAN232", "ITALIAN336"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN107"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN200"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1590,
@@ -26237,7 +26293,31 @@
     "faculties": ["Arts"],
     "department": "Italian",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 0,
+        "papersExcluded": ["ITALIAN210", "ITALIAN309"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN107"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN200"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1588,
@@ -26580,7 +26660,31 @@
     "faculties": ["Arts"],
     "department": "Italian",
     "points": 15,
-    "stage": 3
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN201"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN202", "ITALIAN204", "ITALIAN206", "ITALIAN209", "ITALIAN211", "ITALIAN235", "ITALIAN236"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN300"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1609,
@@ -26871,7 +26975,19 @@
     "faculties": ["Arts"],
     "department": "Japanese",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["JAPANESE231", "JAPANESE 232"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1625,
@@ -27089,7 +27205,26 @@
     "faculties": ["Arts"],
     "department": "Japanese",
     "points": 15,
-    "stage": 3
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "faculties": ["Japanese"],
+        "stage": 2,
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["JAPANESE331", "JAPANESE 332"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1635,
@@ -27225,7 +27360,27 @@
     "faculties": ["Arts"],
     "department": "Japanese",
     "points": 15,
-    "stage": 3
+    "stage": 3,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["JAPANESE222"], "flags": {} },
+      {
+        "type": 0,
+        "required": 30,
+        "faculties": ["Japanese"],
+        "stage": 2,
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["JAPANESE331", "JAPANESE 332"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1638,
@@ -28800,7 +28955,19 @@
     "faculties": ["Law"],
     "department": "Law",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["LAW298", "LAW299"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1735,
@@ -29142,7 +29309,16 @@
         "papers": ["LAW201", "LAW211", "LAW231", "LAW241"],
         "flags": {}
       },
-      { "type": 1, "required": 0, "papersExcluded": ["LAW415"], "flags": {} }
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["LAW301", "LAW306"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      },
+      { "type": 1, "required": 0, "papersExcluded": ["LAW415", "LAWCOMM 452", "LAWCOMM456"], "flags": {} }
     ],
     "isActive": true
   },
@@ -32621,7 +32797,19 @@
     "faculties": ["Science", "Arts"],
     "department": "Mathematics",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGGEN150", "ENGSCI111", "MATHS108", "MATHS120", "MATHS150", "MATHS153"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1963,
@@ -32855,10 +33043,26 @@
     "stage": 2,
     "requirements": [
       {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+      {
         "type": 1,
         "required": 0,
         "papers": ["MATHS208", "MATHS250", "ENGSCI211"],
         "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MATHS250"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+        ]
       }
     ],
     "isActive": true
@@ -35026,12 +35230,23 @@
   {
     "id": 2114,
     "name": "MUS170",
-    "title": "Jazz Performance 1",
+    "title": "Jazz Performance 1 (Seek Departmental approval for this course)",
     "desc": "The development of instrumental technique and improvisational skills though in-depth study of scales, rhythm, harmony and relevant musical analysis. This course prepares students who major in Jazz Performance and includes 1:1 tuition and group based improvisation classes.",
     "faculties": ["Creative Arts and Industries"],
     "department": "Music",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MUS197"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ]
   },
   {
     "id": 2146,
@@ -43889,6 +44104,15 @@
         "required": 1,
         "papers": ["ACCTG101", "BUSINESS114", "PROPERTY102"],
         "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["PROPERTY251"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
       }
     ],
     "isActive": true
@@ -44326,7 +44550,31 @@
     "faculties": ["Business and Economics"],
     "department": "Property",
     "points": 15,
-    "stage": 3
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["PROPERTY211-281"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["PROPERTY371"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["PROPERTY311"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 2602,
@@ -44894,7 +45142,7 @@
   {
     "id": 2623,
     "name": "PSYCH308B",
-    "title": "Research Topic",
+    "title": "Research Topic (Requires departmental approval)",
     "desc": "A course of research supervised by a staff member and written up as a course for publication instead of a final examination. A list of available supervisors and topics is published each year in the Psychology Department Undergraduate Handbook.  Prerequisite: 45 points at Stage II Psychology and 15 points from STATS 101-125, 191 Corequisite: Student must be enrolled in (or have completed) an additional 45 points at Stage III in Psychology courses plus Head of School approval",
     "faculties": ["Science", "Arts"],
     "department": "Psychology",
@@ -47688,7 +47936,18 @@
     "faculties": ["Education and Social Work"],
     "department": "Social Work",
     "points": 15,
-    "stage": 3
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOCWORK317"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ]
   },
   {
     "id": 2776,
@@ -47892,6 +48151,15 @@
     "stage": 4,
     "requirements": [
       { "type": 1, "required": 1, "papers": ["SOCWORK317"], "flags": {} },
+          {
+            "type": 1,
+            "required": 1,
+            "papers": ["SOCWORK311"],
+            "flags":
+            {
+              "isCorequesite": true
+            }
+          },
       {
         "type": 1,
         "required": 0,
@@ -49502,7 +49770,35 @@
     "faculties": ["Science", "Arts"],
     "department": "Statistics",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "requirements": [ 
+      {
+      "complex": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGGEN150", "ENGSCI111", "STATS125"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["MATHS120", "MATHS130"],
+        "flags": {}
+      }
+    ]
+    },
+    {
+      "type": 1,
+      "required": 1,
+      "papers": ["ENGSCI211", "MATHS208", "MATHS250"],
+      "flags":
+      {
+        "isCorequesite": true
+      }
+    }
+  ],
+    "isActive": true
   },
   {
     "id": 2881,
@@ -49523,7 +49819,25 @@
     "faculties": ["Science", "Arts"],
     "department": "Statistics",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MATHS108", "MATHS110", "MATHS120", "MATHS130"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      },
+      {
+        "type": 1,
+        "required": 0,
+        "papersExcluded": ["STATS210"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 2885,
@@ -49533,7 +49847,20 @@
     "faculties": ["Science", "Arts", "Business and Economics"],
     "department": "Statistics",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["ENGSCI111", "ENGGEN150", "STATS125"], "flags": {} },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MATHS208", "MATHS250", "ENGSCI211"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 2877,
@@ -49721,7 +50048,7 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["STATS125", "STATS210", "STATS225", ""],
+        "papers": ["STATS125", "STATS210", "STATS225"],
         "flags": {}
       },
       {
@@ -49828,6 +50155,24 @@
     "points": 15,
     "stage": 2,
     "requirements": [
+      {
+        "complex": [
+        {
+          "type": 1,
+          "required": 1,
+          "papers": ["ENGSCI211", "STATS201", "STATS208"],
+          "flags": {}
+        },
+        {
+          "type": 1,
+          "required": 1,
+          "papers": ["ENGSCI211", "STATS201", "STATS208"],
+          "flags": {
+            "isCorequesite": true
+          }
+        }
+      ]
+      },
       { "type": 1, "required": 0, "papersExcluded": ["ENGSCI255"], "flags": {} }
     ],
     "isActive": true
@@ -63333,7 +63678,7 @@
     "faculties": ["Education and Social Work"],
     "department": "Education Practice",
     "points": 15,
-    "stage": 3,
+    "stage": 2,
     "requirements": [
       { "type": 1, "required": 2, "papers": ["EDPRAC100", "EDPROFST102"], "flags": {} },
         {
@@ -63356,7 +63701,7 @@
     "faculties": ["Education and Social Work"],
     "department": "Education Practice",
     "points": 15,
-    "stage": 3,
+    "stage": 2,
     "requirements": [
       { "type": 1, "required": 2, "papers": ["EDPRAC105", "EDPROFST103"], "flags": {} },
         {
@@ -63370,7 +63715,123 @@
         }
     ],
     "isActive": true
+  },
+  {
+    "id": 3517,
+    "name": "EDPROFST208",
+    "title": "Inquiry into Practice 2",
+    "desc": "Develops informed understandings about the nature of high quality, effective teaching practices for diverse akonga. Interprets teaching as inquiry with reference to relevant curricula. Identifies and examines specific teacher actions that support high quality, effective teaching and learning. Further develops understandings of strategies central to the second teaching practicum.",
+    "faculties": ["Education and Social Work"],
+    "department": "Education Professional Studies",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      { "type": 1, "required": 2, "papers": ["EDPROFST102", "EDPRAC100"], "flags": {} },
+        {
+          "type": 1,
+          "required": 1,
+          "papers": ["EDPRAC204"],
+          "flags":
+          {
+            "isCorequesite": true
+          }
+        }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3518,
+    "name": "EDPROFST306",
+    "title": "Contact your department for more info about this course",
+    "desc": "Contact your department for more info about this course",
+    "faculties": ["Education and Social Work"],
+    "department": "Education Professional Studies",
+    "points": 30,
+    "stage": 3,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3519,
+    "name": "ITALIAN305",
+    "title": "Foundations of European Literature (Texts in Italian)",
+    "desc": "Examines the founding texts of Italian literature and canonical books of Western culture: Dante\u2019s Divine Comedy, a poetic summary of medieval learning, Boccaccio\u2019s Decameron, a flawless human comedy and Petrarch\u2019s Canzoniere (scattered rhymes), an intense examination of the self which became the model for love poetry in Western literature from Sidney and Shakespeare to the Romantic poets.",
+    "faculties": ["Arts"],
+    "department": "Italian",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN201"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN202", "ITALIAN204", "ITALIAN206", "ITALIAN209", "ITALIAN211", "ITALIAN235", "ITALIAN236"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ITALIAN302", "ITALIAN303", "ITALIAN304"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN300"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3520,
+    "name": "ITALIAN330",
+    "title": "Modern Italian Fiction and Drama",
+    "desc": "Studies in selected fictional and dramatic works of the twentieth century and beyond. It considers the structures, topics and influence of these works and the ways in which they refer to historical, social and political issues as well as to literary and theatrical conventions.",
+    "faculties": ["Arts"],
+    "department": "Italian",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN201"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN202", "ITALIAN204", "ITALIAN206", "ITALIAN209", "ITALIAN211", "ITALIAN235", "ITALIAN236"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ITALIAN331", "ITALIAN339"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ITALIAN300"],
+        "flags":
+        {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
   }
+
 
 
 ]

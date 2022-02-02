@@ -39,6 +39,7 @@
         (click)="degreeClicked();"
         *ngIf="addingDegree === false"
       >
+      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
         Add Degree
       </button>
       <span
@@ -148,6 +149,7 @@
     (click)="majorClicked();"
     *ngIf="addingMajor === false"
   >
+  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
     Add Major
   </button>
   <span
@@ -181,6 +183,7 @@
   (click)="pathwayClicked();"
   *ngIf="addingPathway === false"
 >
+<img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
   Select Pathway
 </button>
 <span
@@ -251,6 +254,7 @@ hideToggle
     (click)="conjointClicked();"
     *ngIf="addingConjoint === false"
   >
+  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
     Add Conjoint (Optional)
   </button>
   <span
@@ -315,13 +319,16 @@ hideToggle
   </div>
 
 
-  <div *ngIf="!secondMajors?.name && conjoint?.name">
+  <div *ngIf="!secondMajors?.name && conjoint?.name || faculty?.name === 'Arts'">
     <button
       class="addmodule"
       (click)="secondMajorClicked();"
       *ngIf="addingSecondMajor === false"
     >
+    <img class="info-button">
+
       Add Second Major
+      <span *ngIf="faculty.name === 'Arts'">( Compulsary for Bachelor of Arts )</span>
     </button>
     <span
       class="select-module"
@@ -394,6 +401,7 @@ hideToggle
       (click)="moduleClicked()"
       *ngIf="addingModule === false"
     >
+    <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
       Add Module
     </button>
     <span
@@ -465,6 +473,7 @@ hideToggle
       (click)="secondModuleClicked()"
       *ngIf="addingSecondModule === false"
     >
+    <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
       Add Module
     </button>
     <span
