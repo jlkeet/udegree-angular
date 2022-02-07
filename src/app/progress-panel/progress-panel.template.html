@@ -11,7 +11,7 @@
       (click)="expansionOnClick()"
     >
         <mat-toolbar class="plain">
-        <span> Bachelor of {{faculty? faculty.name: ''}} </span>
+        <span> Degree: Bachelor of {{faculty? faculty.name: ''}} </span>
         <span class="spacer"></span>
         <span class="delete-pg" (click)="noExpansionOnClick(); deleteDegree();">
           <span class="cross-pg">&times;</span></span>
@@ -83,7 +83,7 @@
     >
 
     <mat-toolbar *ngIf="majors?.name && !pathways?.name" class="plain">
-      <span> {{majors.name}} </span>
+      <span>Major: {{majors.name}} </span>
       <span class="spacer"></span>
       <span class="delete-pg" (click)="noExpansionOnClick(); deleteMajor();">
         <span class="cross-pg">&times;</span></span>
@@ -120,7 +120,7 @@
   >
 
   <mat-toolbar *ngIf="pathways?.name" class="plain">
-    <span> {{majors.name}}: {{pathways.name}} Pathway </span>
+    <span> {{majors.name}} Pathway: {{pathways.name}} </span>
     <span class="spacer"></span>
     <span class="delete-pg" (click)="noExpansionOnClick(); deletePathway();">
       <span class="cross-pg">&times;</span></span>
@@ -225,7 +225,7 @@ hideToggle
 >
 
   <mat-toolbar *ngIf="conjoint" class="plain">
-    <span> Bachelor of {{conjoint.name}} </span>
+    <span>Conjoint: Bachelor of {{conjoint.name}} </span>
     <span class="spacer"></span>
     <span class="delete-pg" (click)="noExpansionOnClick(); deleteConjoint();">
       <span class="cross-pg">&times;</span></span>
@@ -296,7 +296,7 @@ hideToggle
 >
 
   <mat-toolbar *ngIf="majors?.name && secondMajors?.name" class="plain">
-    <span> {{secondMajors.name}} </span>
+    <span>Second Major: {{secondMajors.name}} </span>
     <span class="spacer"></span>
     <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondMajor();">
       <span class="cross-pg">&times;</span></span>
@@ -371,7 +371,7 @@ hideToggle
   >
 
   <mat-toolbar *ngIf="modules?.name" class="plain">
-    <span> {{modules.name}} </span>
+    <span>Module: {{modules.name}} </span>
     <span class="spacer"></span>
     <span class="delete-pg" (click)="noExpansionOnClick(); deleteModule();">
       <span class="cross-pg">&times;</span></span>
@@ -444,7 +444,7 @@ hideToggle
   >
 
   <mat-toolbar *ngIf="secondModules?.name" class="plain">
-    <span> {{secondModules.name}} </span>
+    <span>Module: {{secondModules.name}} </span>
     <span class="spacer"></span>
     <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondModule();">
       <span class="cross-pg">&times;</span></span>
