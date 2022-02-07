@@ -10,6 +10,7 @@ import { StoreHelper } from '../services';
       background:white;
       border: 1px solid #f4f7f8;
       border-radius: 10px;
+      margin-top: 10px;
     }
 
     .expand {
