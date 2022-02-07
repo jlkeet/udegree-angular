@@ -776,12 +776,11 @@ export class ProgressPanel {
     this.pathwaysList = this.degreeSelect.pathways;
     // console.log(this.pathwaysList)
     for (let i = 0; i < this.pathwaysList.length; i++) {
-      if (!this.pathwaysList[0][i].value.faculties.includes(value.name)) {
+      if (this.pathwaysList[0][i].value.faculties.includes(value.name)) {
         this.requiresPathway = true;
         this.addedMajor = false;
       }
     }
-
   }
 
   private pathwayClicked(value) {
