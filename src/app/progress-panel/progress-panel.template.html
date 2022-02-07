@@ -35,7 +35,7 @@
 
     <div *ngIf="!faculty?.name">
       <button
-        class="addmodule"
+        class="addmodule-degree"
         (click)="degreeClicked();"
         *ngIf="addingDegree === false"
       >
@@ -145,7 +145,7 @@
 
   <div *ngIf="!majors?.name && !requiresPathway && !pathways?.name && faculty?.name" class="plain">
     <button
-    class="addmodule"
+    class="addmodule-major"
     (click)="majorClicked();"
     *ngIf="addingMajor === false"
   >
