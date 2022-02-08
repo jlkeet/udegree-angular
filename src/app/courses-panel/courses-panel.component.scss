@@ -87,3 +87,25 @@
 .export-container {
   width:100%;
 }
+
+.export-button-options {
+  margin: auto;
+  width: 25%;
+  padding-top: 110px;
+}
+
+.export-button-yes {
+  background-color:#65cc01;
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  width: 45%;
+  display:inline-block;
+  margin-right: 10px;
+}
+
+.export-button-cancel {
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  width: 45%;
+  display:inline-block;
+}

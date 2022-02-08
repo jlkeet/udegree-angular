@@ -13,6 +13,7 @@ import {
   MatToolbarModule,
   MatFormFieldModule,
   MatTooltipModule,
+  MatDialogModule,
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -105,6 +106,7 @@ import { FirebaseDbService } from './core/firebase.db.service';
 import { ProgressPanel } from './progress-panel';
 import { ProgressBarMulti } from './progress-panel';
 import { ProgressBarMultiContainer } from './progress-bar-multi.container';
+import { CourseDialogComponent } from './courses-panel/course-dialog.component';
 
 
 // Application wide providers
@@ -175,6 +177,9 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     RegisterComponent,
     SplashScreenComponent,
     UserContainer,
+
+
+    CourseDialogComponent
     
   ],
   imports: [
@@ -194,6 +199,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     MatSidenavModule,
     MatFormFieldModule,
     MatTooltipModule,
+    MatDialogModule,
     NgbModule,
     NgxInfiniteScrollerModule,
     RouterModule.forRoot(ROUTES),
@@ -232,7 +238,8 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     progress.ProgressBarMultiContainer,
 
     ...providers
-  ]
+  ],
+   entryComponents: [CourseDialogComponent]
 })
 export class AppModule {
  

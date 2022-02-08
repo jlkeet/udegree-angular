@@ -19,6 +19,9 @@ import {
 } from "../services";
 import html2canvas from 'html2canvas';
 
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { CourseDialogComponent } from "./course-dialog.component";
+
 @Component({
     host: {
       style: "flex: 3 0 auto;",
@@ -41,10 +44,29 @@ import html2canvas from 'html2canvas';
       private db: AngularFirestore,
       public authService: AuthService,
       private userService: UserService,
+      public dialog: MatDialog,
     ) {
      this.userService.getCurrentUser().then( (user) => {this.name = user.displayName, this.email = user.email}) 
     }
 
+   private openDialog() {
+
+      const dialogConfig = new MatDialogConfig();
+
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = true;
+
+      dialogConfig.data = {
+        id: 1,
+        title: 'Angular For Beginners'
+    };
+
+      const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig);
+
+      dialogRef.afterClosed().subscribe(
+          data => console.log("Dialog output:", data)
+      );    
+  }
 
 public exportButton() {
     

@@ -1,11 +1,13 @@
 <div class="filter-panel">
   <div class="pad">
-    <div class="remove-pad flex-justify" >
+    <div class="remove-pad flex-justify">
       <div>
         <mat-form-field class="space">
           <mat-select multiple placeholder="Faculties"
                                [(ngModel)]="filterParams.faculties"
                                (selectionChange)="onChange()"
+                               disableOptionCentering
+                               panelClass="filter-dropdown"
                                >
             <mat-option *ngFor="let faculty of facultyChoices"
                                [value]="faculty.value">
@@ -20,6 +22,7 @@
           <mat-select multiple placeholder="Departments"
                                [(ngModel)]="filterParams.departments"
                                (selectionChange)="onChange()"
+                               disableOptionCentering
                                >
             <mat-option *ngFor="let department of departmentChoices"
                                [value]="department.value">
@@ -34,6 +37,7 @@
           <mat-select multiple placeholder="Campus"
                                [(ngModel)]="filterParams.campus"
                                (selectionChange)="onChange()"
+                               disableOptionCentering
                                >
             <mat-option *ngFor="let campus of campusChoices"
                                [value]="campus.value">
@@ -48,7 +52,8 @@
         <mat-form-field class="space">
           <mat-select multiple placeholder="Stages"
                       [(ngModel)]="filterParams.stage"
-                      (selectionChange)="onChange()">
+                      (selectionChange)="onChange()"
+                      disableOptionCentering>
             <mat-option *ngFor="let stage of stageChoices"
                       [value]="stage.value">
               {{stage.label}}

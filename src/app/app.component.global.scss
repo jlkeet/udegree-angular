@@ -93,7 +93,16 @@ body {
 
 main {
     padding: 30px;
-    zoom: 80%;
+   // zoom: 80%;
+}
+
+.mat-dialog-container {
+    width: 40vw !important;
+    height: 40vh !important;
+}
+
+.my-panel-class {
+    margin: 15px 10px;
 }
 
 .dropdown_user_status{
@@ -105,8 +114,12 @@ main {
 //     left: 1675.6px !important
 // }
 
+.filter-dropdown {
+    margin-left: 30px;
+}
+
 .cdk-overlay-0#cdk-overlay-pane {
-    left: 2675.6px !important
+ //   left: 2675.6px !important
 }
 
 .mat-pseudo-checkbox {
@@ -134,8 +147,8 @@ main {
 }
 
 .cdk-overlay-pane  {
-    max-width: 150px !important; 
-    transform: unset !important;
+    // max-width: 150px !important; 
+    // transform: unset !important;
 }
 
 // Semester Dropdown
