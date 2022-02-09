@@ -86,7 +86,7 @@ export class CourseFilter {
       shown = shown.filter((course: ICourse) => course.canAdd);
     }
     if (this.filterParams.general) {
-      flags['general'] = true;
+      flags['General'] = true;
     }
     if (this.filterParams.modules) {
       flags['modules'] = true;

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { exit } from 'process';
+import { isMappedTypeNode } from 'typescript';
 import { Course } from '../common';
 import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
 import { RequirementType } from '../models/requirement.enum';
 import { DepartmentService } from './department.service';
+import { FacultyService } from './faculty.service';
 
 export interface IRequirement {
   type: RequirementType;
@@ -47,7 +49,10 @@ export class RequirementService {
   public complexRuleForPgBar = false;
   public requirements = [];
 
-  constructor(private departmentService: DepartmentService) { }
+  constructor(
+    private departmentService: DepartmentService,
+    private facultyService: FacultyService
+    ) { }
 
   private intersection<T>(array1: T[], array2: T[]): T[] {
     if (array1 && array2) {
@@ -87,6 +92,9 @@ export class RequirementService {
   public filterByRequirement(requirement: IRequirement, courses: ICourse[]): ICourse[] {
     let filtered = courses;
     /* Could refactor this further to just make an array of includes and excludes */
+    // console.log(courses.map((course) => course.name.toUpperCase().lastIndexOf("G") === course.name.length - 1))
+    // courses.map((course) => course.faculties.toString() !== requirement.faculties[0]
+
     const filters = [
       {check: requirement.papers,
         filter: (course: ICourse) => this.paperRangeIncludes(requirement.papers, course.name.toUpperCase())},
@@ -99,10 +107,12 @@ export class RequirementService {
       {check: requirement.departments,
         filter: (course: ICourse) => requirement.departments.includes(course.department)},
       {check: requirement.departmentsExcluded,
-        filter: (course: ICourse) => !requirement.departmentsExcluded.includes(course.department)},
-      {check: this.checkFlag(requirement, 'general'),
-        filter: (course: ICourse) => course.name.toUpperCase().substr(-1) === 'G'}, // -1 takes the last character
-       {check: requirement.stage,
+        filter: (course: ICourse) => course.faculties.toString() !== requirement.faculties[0] },
+      {check: this.checkFlag(requirement, 'General'),
+      //   filter: (course: ICourse) => course.name.toUpperCase().substring(-1) === 'G'}, // -1 takes the last character
+      //  {check: requirement.stage,
+      filter: (course: ICourse) => course.name.toUpperCase().lastIndexOf("G") === course.name.length - 1}, // -1 takes the last character
+      {check: requirement.stage,
         filter: (course: ICourse) => requirement.stage === course.stage},
       {check: requirement.stages,
         filter: (course: ICourse) => requirement.stages.includes(course.stage)},
@@ -113,6 +123,7 @@ export class RequirementService {
         filter.check === null));
 
     // apply each of the filters in 'filters'
+    
     filters.forEach((filter) => { filtered = filtered.filter(filter.filter)});
     return filtered;
   }
@@ -137,9 +148,8 @@ export class RequirementService {
       const filtered = this.filterByRequirement(requirement,
         planned.filter((course: ICourse) => course.status !== CourseStatus.Failed));
       const depts = new Set<string>();
-     // this.complexRuleForPgBar = false;
 
-      if (this.checkFlag(requirement, 'differentdepts')) {
+      if (this.checkFlag(requirement, 'DifferentDepts')) {
         filtered.forEach((course: ICourse) => depts.add(course.department));
         return depts.size;
       }
@@ -153,11 +163,30 @@ export class RequirementService {
       }
 
       if (this.checkFlag(requirement, 'isCorequesite')) {
-        
         // console.log("Found: ", requirement.required)
          mapped = filtered.map((course: ICourse) => 1);
          //console.log("Found: ", mapped)
        }
+
+     //  console.log(filtered)
+
+       if (this.checkFlag(requirement, "General")) {
+         let j = 0;
+        mapped = filtered.map((course: ICourse) => {
+          for (let i = 0; i < planned.length; i++) {
+            if (planned[i].department === course.department) {
+              j++;
+            }
+          }
+          console.log(j)
+          if (j > 1) {
+           return 0;
+          } else {
+           return 15;
+          }
+        });
+       // console.log("Found: ", mapped)
+      }
 
       if (mapped != undefined || null) { // Make sure not undefined before assigning
       const total = mapped.reduce((num1: number, num2: number) => num1 + num2, 0);
@@ -207,8 +236,9 @@ export class RequirementService {
 
     // This kind of looks insane, but it's a reasonably obvious pattern
     const str = requirement.required +
-      (this.checkFlag(requirement, 'General') ? ' General' : '') +
-      (requirement.type === RequirementType.Points ? ' Points' : ' Papers') +
+      (this.checkFlag(requirement, 'General') ? ' General Education Points'  : '') +
+      (requirement.type === RequirementType.Points && this.checkFlag(requirement, 'General') === false ? ' Points' : '') +
+      (requirement.type === RequirementType.Papers && this.checkFlag(requirement, 'General') === false ? ' Papers' : '') +
       (requirement.stage !== undefined ? ' ' + requirement.stage + '00-level' : '') +
       (requirement.aboveStage !== undefined ? ' above ' + requirement.aboveStage + '00-level' : '') +
       (requirement.departments !== undefined ? ' from ' + requirement.departments.join(', ') : '') +
@@ -218,7 +248,7 @@ export class RequirementService {
       (this.checkFlag(requirement, 'MajorOne') ? ' from first major' : '') +
       (this.checkFlag(requirement, 'MajorTwo') ? ' from second major' : '') +
       (this.checkFlag(requirement, 'isCorequesite') ? ' as a co-requesite' : '') +
-      (requirement.faculties !== undefined ? ' from ' + requirement.faculties.join(', ') : '') +
+      (requirement.faculties !== undefined && this.checkFlag(requirement, 'General') === false ? ' from ' + requirement.faculties.join(', ') : '') +
       (requirement.facultiesExcluded !== undefined ? ' outside ' + requirement.facultiesExcluded.join(', ') : '') +
       '';
 
@@ -229,6 +259,8 @@ export class RequirementService {
           return str + " from: " + requirement.papers.join(', ');
           }
         } 
+  //  console.log(requirement, ' ', this.checkFlag(requirement, 'General'))  
+  //  console.log(str)  
     return str;
   }
 
@@ -307,7 +339,7 @@ export class RequirementService {
   }
 
   public checkFlag(requirement: IRequirement, flag: string) {
-    return requirement.flags !== undefined && requirement.flags[flag];
+    return requirement.flags !== undefined && requirement.flags[0] === flag;
     // .map((str: string) => str.toLowerCase())
     // .includes(flag.toLowerCase());
   }

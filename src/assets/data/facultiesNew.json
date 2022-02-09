@@ -20,9 +20,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -114,18 +131,32 @@
           "required": 30,
           "faculties": [
             "Arts",
-            "Open"
+            "Architectural Studies",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
           ],
           "flags": [
-            "general"
+            "General"
           ]
         },
         {
           "type": 3,
           "required": 3,
-          "flags": {
-            "differentDepts": true
-          }
+          "flags": [
+            "DifferentDepts"
+          ]
         }
       ],
       "doubleMajorRequirements": [
@@ -245,9 +276,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "doubleMajorRequirements": [
@@ -419,9 +467,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ]
     },
@@ -447,9 +512,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -472,10 +554,27 @@
         },
         {
           "type": 0,
-          "required": 15,
-          "flags": {
-            "general": true
-          }
+          "required": 30,
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -503,10 +602,28 @@
         },
         {
           "type": 0,
-          "required": 15,
-          "flags": {
-            "general": true
-          }
+          "required": 30,
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -553,9 +670,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -648,9 +782,27 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -694,10 +846,28 @@
         },
         {
           "type": 0,
-          "required": 15,
-          "flags": {
-            "general": true
-          }
+          "required": 30,
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -756,9 +926,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "doubleMajorRequirements": [
@@ -793,10 +980,27 @@
         },
         {
           "type": 0,
-          "required": 15,
-          "flags": {
-            "general": true
-          }
+          "required": 30,
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -825,9 +1029,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -855,10 +1076,27 @@
         },
         {
           "type": 0,
-          "required": 15,
-          "flags": {
-            "general": true
-          }
+          "required": 30,
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -887,9 +1125,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -968,9 +1223,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "doubleMajorRequirements": [
@@ -1047,9 +1319,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -1122,9 +1411,25 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -1153,9 +1458,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ],
       "flags": [
@@ -1225,9 +1547,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ]
     },
@@ -1251,9 +1590,22 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Arts",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Health and Physical Education",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Science",
+            "Social Work",
+            "Sport"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ]
     },
@@ -1299,9 +1651,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         }
       ]
     },
@@ -1325,9 +1694,26 @@
         {
           "type": 0,
           "required": 30,
-          "flags": {
-            "general": true
-          }
+          "faculties": [
+            "Architectural Studies",
+            "Commerce",
+            "Dance Studies",
+            "Education (Teaching English to Speakers of Other Languages)",
+            "Fine Arts",
+            "Health and Physical Education",
+            "Music",
+            "Nursing",
+            "Optometry",
+            "Pharmacy",
+            "Property",
+            "Science",
+            "Social Work",
+            "Sport",
+            "Urban Planning"
+          ],
+          "flags": [
+            "General"
+          ]
         },
         {
           "type": 0,

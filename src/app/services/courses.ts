@@ -276,14 +276,16 @@ private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseS
 
   private generalToggle(courseName: string): string {
     if (this.isGeneral(courseName)) {
+     // console.log(courseName.substring(0, courseName.length))
       return courseName.substring(0, courseName.length - 1);
     } else {
-      return courseName + 'G';
+     // return courseName + 'G';
     }
   }
 
   public isGeneral(courseName: string): boolean {
-    return courseName.substr(-1) === 'G';
+   // console.log(courseName, ' ', courseName.lastIndexOf("G") === courseName.length - 1);
+    return courseName.lastIndexOf("G") === courseName.length - 1;
   }
 
   public stringToCourse(courseName: string) {
