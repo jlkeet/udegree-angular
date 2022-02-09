@@ -163,13 +163,12 @@ export class RequirementService {
       }
 
       if (this.checkFlag(requirement, 'isCorequesite')) {
-        // console.log("Found: ", requirement.required)
          mapped = filtered.map((course: ICourse) => 1);
-         //console.log("Found: ", mapped)
        }
 
-     //  console.log(filtered)
-
+       // Ugly code here, but essentially this first checks to see if the requirement is gen ed.
+       // Then it filteres the gen ed paper(s) and checks to see if there's already another paper taken from
+       // the same dept, if it does then it doesnt count toward the progress bar otherwise it does.
        if (this.checkFlag(requirement, "General")) {
          let j = 0;
         mapped = filtered.map((course: ICourse) => {
@@ -185,7 +184,6 @@ export class RequirementService {
            return 15;
           }
         });
-       // console.log("Found: ", mapped)
       }
 
       if (mapped != undefined || null) { // Make sure not undefined before assigning
