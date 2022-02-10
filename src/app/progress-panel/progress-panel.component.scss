@@ -169,10 +169,33 @@
   margin: auto;
 }
 
+.without-arrow {
+  .mat-select-trigger {
+    height: 80px;
+  }
+}
+
+.mat-select-placeholder {
+  padding-right: 100px;
+}
+
+.without-arrow {
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto;
+  // width: 25%;
+  // padding: 25px 0;
+}
+
 .cdk-overlay-container .cdk-overlay-pane .my-panel-class {
   position: absolute !important;
 } 
 
+ .without-arrow {
+   .mat-select-arrow {
+    border: none;
+   }
+}
 
 // Collapse styling
 
@@ -228,7 +251,8 @@
 .info-button {
   position: absolute;
   left: 1% !important;
-  margin-top: -9%;
+  margin-top: 1%;
+  z-index: 1;
   content: url("https://img.icons8.com/material-outlined/32/000000/info.png")
 }
 

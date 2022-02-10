@@ -144,26 +144,22 @@
   </mat-expansion-panel>
 
   <div *ngIf="!majors?.name && !requiresPathway && !pathways?.name && faculty?.name" class="plain">
-    <button
-    class="addmodule-major"
-    (click)="majorClicked();"
-    *ngIf="addingMajor === false"
-  >
   <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
-    Add Major
-  </button>
-  <span
+
+  <!-- <span
     class="select-module"
     *ngIf="addingMajor === true && addedMajor === false"
-  >
-    <mat-form-field>
+  > -->
+    <mat-form-field class="without-arrow addmodule-major">
+
+      <div style="text-align: center; margin-top: 20px;">Add Major</div>
       <mat-select
         panelClass="my-panel-class"
         [(value)]="currentMajors[0]"
-        placeholder="Major"
         (selectionChange)="changeMajor(0, $event)"
         [disabled]="addingMajor === false"
       >
+
         <mat-option
           *ngFor="let major of majorsList"
           [value]="major.value"
@@ -173,7 +169,8 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-  </span>
+  <!-- </span> -->
+</div>
 </div>
 
 <div *ngIf="requiresPathway" class="plain">

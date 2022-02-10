@@ -177,7 +177,6 @@ export class RequirementService {
               j++;
             }
           }
-          console.log(j)
           if (j > 1) {
            return 0;
           } else {

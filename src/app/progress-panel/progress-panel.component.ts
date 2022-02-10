@@ -153,6 +153,7 @@ export class ProgressPanel {
 
   public ngOnInit() {
     this.email = this.userService.email;
+    this.majorClicked();
 
     this.subs = [
       this.store.changes.pluck("faculty").subscribe((faculty) => {
@@ -755,8 +756,10 @@ export class ProgressPanel {
   }
 
   private majorClicked() {
-    this.addingMajor = true;
-    this.majorsList = this.degreeSelect.majors;
+    setTimeout(() => {     
+      this.addingMajor = true;
+      this.majorsList = this.degreeSelect.majors; }, 4000 )
+      console.log("do it garry")
   }
 
   private conjointClicked() {
