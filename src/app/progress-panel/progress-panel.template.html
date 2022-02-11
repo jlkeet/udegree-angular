@@ -157,11 +157,10 @@
         panelClass="my-panel-class"
         [(value)]="currentMajors[0]"
         (selectionChange)="changeMajor(0, $event)"
-        [disabled]="addingMajor === false"
       >
 
         <mat-option
-          *ngFor="let major of majorsList"
+          *ngFor="let major of degreeSelect.majors"
           [value]="major.value"
           (click)="addedMajor = true;pathwayCheck(major.value);"
         >

@@ -153,7 +153,6 @@ export class ProgressPanel {
 
   public ngOnInit() {
     this.email = this.userService.email;
-    this.majorClicked();
 
     this.subs = [
       this.store.changes.pluck("faculty").subscribe((faculty) => {
