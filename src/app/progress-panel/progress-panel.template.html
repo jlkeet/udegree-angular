@@ -345,28 +345,18 @@ hideToggle
 
 
   <div *ngIf="(majors?.name) && ((!modules?.name && faculty?.name === 'Arts') || (!modules?.name && faculty?.name === 'Science'))">
-    <button
-      class="addmodule"
-      (click)="moduleClicked()"
-      *ngIf="addingModule === false"
-    >
+
     <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
-      Add Module
-    </button>
-    <span
-      class="select-module"
-      *ngIf="addingModule === true && addedModule===false"
-    >
-      <mat-form-field>
+    <mat-form-field class="without-arrow addmodule">
+      <div style="text-align: center; margin-top: 20px;">Add Module (Optional)</div>
+
         <mat-select
           panelClass="my-panel-class"
           [(value)]="currentModules[0]"
-          [placeholder]="'Module (optional)'"
           (selectionChange)="changeModule(0, $event)"
-          [disabled]="addingModule===false"
         >
           <mat-option
-            *ngFor="let module of modulesList[0]"
+            *ngFor="let module of degreeSelect.modules[0]"
             [value]="module.value"
             (click)="addedModule=true"
           >
@@ -374,7 +364,6 @@ hideToggle
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </span>
   </div>
 
 
@@ -417,28 +406,18 @@ hideToggle
 </mat-expansion-panel>
 
   <div *ngIf="(majors?.name) && ((!secondModules?.name && faculty?.name === 'Arts') || (!secondModules?.name && faculty?.name === 'Science'))">
-    <button
-      class="addmodule"
-      (click)="secondModuleClicked()"
-      *ngIf="addingSecondModule === false"
-    >
+
     <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
-      Add Module
-    </button>
-    <span
-      class="select-module"
-      *ngIf="addingSecondModule === true && addedSecondModule===false"
-    >
-      <mat-form-field>
+    <mat-form-field class="without-arrow addmodule">
+    <div style="text-align: center; margin-top: 20px;">Add Module (Optional) </div>
+
         <mat-select
           panelClass="my-panel-class"
           [(value)]="currentSecondModules[0]"
-          [placeholder]="'Module (optional)'"
           (selectionChange)="changeSecondModule(0, $event)"
-          [disabled]="addingSecondModule===false"
         >
           <mat-option
-            *ngFor="let module of secondModulesList[0]"
+            *ngFor="let module of degreeSelect.secondModules[0]"
             [value]="module.value"
             (click)="addedSecondModule=true"
           >
@@ -446,6 +425,5 @@ hideToggle
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </span>
   </div>
 
