@@ -216,29 +216,22 @@ hideToggle
   </div>
 </mat-expansion-panel>
 
+
+
 <div *ngIf="!conjoint?.name && faculty?.name">
-  <button
-    class="addmodule"
-    (click)="conjointClicked();"
-    *ngIf="addingConjoint === false"
-  >
+
   <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
-    Add Conjoint (Optional)
-  </button>
-  <span
-    class="select-module"
-    *ngIf="addingConjoint === true && addedConjoint===false"
-  >
-    <mat-form-field>
+  <mat-form-field class="without-arrow addmodule-major">
+
+    <div style="text-align: center; margin-top: 20px;">Add Conjoint (Optional)</div>
+
       <mat-select
         panelClass="my-panel-class"
         [(value)]="currentConjoints[0]"
-        placeholder="Faculty"
         (selectionChange)="changeConjoint(0, $event)"
-        [disabled]="addingConjoint===false"
       >
         <mat-option
-          *ngFor="let conjoint of conjoints"
+          *ngFor="let conjoint of degreeSelect.conjoints"
           [value]="conjoint.value"
           (click)="addedConjoint=true"
         >
@@ -246,7 +239,6 @@ hideToggle
         </mat-option>
       </mat-select>
     </mat-form-field>
-  </span>
 </div>
 
 <P></P>
@@ -288,30 +280,20 @@ hideToggle
 
 
   <div *ngIf="!secondMajors?.name && conjoint?.name || faculty?.name === 'Arts'">
-    <button
-      class="addmodule"
-      (click)="secondMajorClicked();"
-      *ngIf="addingSecondMajor === false"
-    >
-    <img class="info-button">
 
-      Add Second Major
-      <span *ngIf="faculty.name === 'Arts'">( Compulsary for Bachelor of Arts )</span>
-    </button>
-    <span
-      class="select-module"
-      *ngIf="addingSecondMajor === true && addedSecondMajor===false"
-    >
-      <mat-form-field>
+    <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
+      <mat-form-field class="without-arrow addmodule-major">
+
+      <div *ngIf="faculty.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>
+      <div *ngIf="faculty.name === 'Arts'" style="text-align: center; margin-top: 20px;">( Compulsary for Bachelor of Arts )</div>
+
         <mat-select
           panelClass="my-panel-class"
           [(value)]="currentSecondMajors[0]"
-          placeholder="Second Major"
           (selectionChange)="changeSecondMajor(0, $event)"
-          [disabled]="addingSecondMajor===false"
         >
           <mat-option
-            *ngFor="let secondMajor of secondMajorsList"
+            *ngFor="let secondMajor of this.degreeSelect.secondMajors"
             [value]="secondMajor.value"
             (click)="addedSecondMajor=true"
           >
@@ -319,7 +301,6 @@ hideToggle
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </span>
   </div>
 </mat-expansion-panel>
 
