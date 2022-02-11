@@ -773,12 +773,8 @@ export class ProgressPanel {
 
   private pathwayCheck(value) {
 
-    // Something weird happening with pathways here, they are being removed on reload, something to do with the pathwaysList?
-
-    this.pathwaysList = this.degreeSelect.pathways;
-    // console.log(this.pathwaysList)
-    for (let i = 0; i < this.pathwaysList.length; i++) {
-      if (this.pathwaysList[0][i].value.faculties.includes(value.name)) {
+    for (let i = 0; i < this.degreeSelect.pathways.length; i++) {
+      if (this.degreeSelect.pathways[0][i].value.faculties.includes(value.name)) {
         this.requiresPathway = true;
         this.addedMajor = false;
       }
@@ -828,13 +824,14 @@ export class ProgressPanel {
    }
 
   private pathwayFilter() {
-    for (let i = this.pathwaysList[0].length - 1; i >= 0; i--) {
+    for (let i = this.degreeSelect.pathways.length[0] - 1; i >= 0; i--) {
       // console.log(this.pathwaysList[0][i])
       // console.log(this.currentMajors[0].name)
-      if (!this.pathwaysList[0][i].value.faculties.includes(this.currentMajors[0].name)) 
+      console.log(this.degreeSelect.pathways[0][i])
+      if (!this.degreeSelect.pathways[0][i].value.faculties.includes(this.currentMajors[0].name)) 
       {
       //  console.log(this.pathwaysList[0][i])
-        this.pathwaysList[0].splice([i], 1);
+      this.degreeSelect.pathways[0].splice([i], 1);
 
       }
     }
