@@ -31,31 +31,21 @@
         </progress-bar-multi-container>
       </div>
     </div>
-
+  </mat-expansion-panel>
 
     <div *ngIf="!faculty?.name">
-      <button
-        class="addmodule-degree"
-        (click)="degreeClicked();"
-        *ngIf="addingDegree === false"
-      >
       <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
-        Add Degree
-      </button>
-      <span
-        class="select-module"
-        *ngIf="addingDegree === true && addedDegree===false"
-      >
-        <mat-form-field>
+
+      <mat-form-field class="without-arrow addmodule-degree">
+        <div style="text-align: center; margin-top: 20px;"> Add Degree</div>
+
           <mat-select
             panelClass="my-panel-class"
             [(value)]="currentFaculties[0]"
-            placeholder="Faculty"
             (selectionChange)="changeFaculty(0, $event)"
-            [disabled]="addingDegree===false"
           >
             <mat-option
-              *ngFor="let faculty of faculties"
+              *ngFor="let faculty of degreeSelect.faculties"
               [value]="faculty.value"
               (click)="addedDegree=true"
             >
@@ -63,11 +53,9 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-      </span>
+
     </div>
-
-  </mat-expansion-panel>
-
+    
   <p></p>
 
   <mat-expansion-panel
