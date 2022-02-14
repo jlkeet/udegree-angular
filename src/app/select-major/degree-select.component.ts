@@ -206,8 +206,8 @@ export class DegreeSelection {
       return { value: pathways, view: pathways.name };
     });
 
-    this.conjoints = this.conjointService.getConjoints().map((conjoint) => {
-      return { value: conjoint, view: conjoint.name };
+    this.conjoints = this.conjointService.getConjoints().filter(v => v.name !== this.currentFaculties[0].name).map((conjoint) => {
+        return { value: conjoint, view: conjoint.name };
     });
 
     this.modules = this.moduleService.getModules().map((modules) => {
