@@ -47,7 +47,7 @@
             <mat-option
               *ngFor="let faculty of degreeSelect.faculties"
               [value]="faculty.value"
-              (click)="addedDegree=true"
+              (click)="addedDegree=true;degreeSelect.getFilteredConjoints();"
             >
             {{ faculty.view }}
             </mat-option>
@@ -146,7 +146,7 @@
         <mat-option
           *ngFor="let major of degreeSelect.majors"
           [value]="major.value"
-          (click)="addedMajor = true;pathwayCheck(major.value);"
+          (click)="addedMajor = true;pathwayCheck(major.value);degreeSelect.getFilteredSecondMajors();"
         >
         {{ major.view }}
         </mat-option>
@@ -354,7 +354,7 @@ hideToggle
 </div>
 
 
-<div *ngIf="!secondMajors?.name && conjoint?.name || faculty?.name === 'Arts'">
+<div *ngIf="!secondMajors?.name && conjoint?.name || !secondMajors?.name && faculty?.name === 'Arts'">
 
   <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
     <mat-form-field class="without-arrow addmodule-major">

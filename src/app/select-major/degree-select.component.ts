@@ -194,36 +194,8 @@ export class DegreeSelection {
       ];
     }
 
-    this.faculties = this.facultyService.getFaculties().map((faculty) => {
-      return { value: faculty, view: faculty.name };
-    });
-
-    this.majors = this.departmentService.getDepartments().map((majors) => {
-      return { value: majors, view: majors.name };
-    });
-
-    this.pathways = this.pathwayService.getPathways().map((pathways) => {
-      return { value: pathways, view: pathways.name };
-    });
-
-    this.conjoints = this.conjointService.getConjoints().filter(v => v.name !== this.currentFaculties[0].name).map((conjoint) => {
-        return { value: conjoint, view: conjoint.name };
-    });
-
-    this.modules = this.moduleService.getModules().map((modules) => {
-      return { value: modules, view: modules.name };
-    });
-
-    this.secondModules = this.moduleService.getModules().map((secondModules) => {
-      return { value: secondModules, view: secondModules.name };
-    });
-
-    this.secondMajors = this.departmentService
-      .getDepartments()
-      .map((secondMajors) => {
-        return { value: secondMajors, view: secondMajors.name };
-      })
-
+    
+    this.getFilteredLists();
     this.checkFlags();
     this.populateMajors();
   }
@@ -439,8 +411,52 @@ export class DegreeSelection {
         this.pathways[0].splice([i], 1);
       }
     }
-
-
-
   }
+
+  public getFilteredLists() {
+    this.faculties = this.facultyService.getFaculties().map((faculty) => {
+      return { value: faculty, view: faculty.name };
+    });
+
+    this.majors = this.departmentService.getDepartments().map((majors) => {
+      return { value: majors, view: majors.name };
+    });
+
+    this.pathways = this.pathwayService.getPathways().map((pathways) => {
+      return { value: pathways, view: pathways.name };
+    });
+
+    this.conjoints = this.conjointService.getConjoints().filter(v => v.name !== this.currentFaculties[0].name).map((conjoint) => {
+      return { value: conjoint, view: conjoint.name };
+    });
+
+    this.modules = this.moduleService.getModules().map((modules) => {
+      return { value: modules, view: modules.name };
+    });
+
+    this.secondModules = this.moduleService.getModules().map((secondModules) => {
+      return { value: secondModules, view: secondModules.name };
+    });
+
+    this.secondMajors = this.departmentService
+      .getDepartments().filter(v => v.name !== this.currentMajors[0].name)
+      .map((secondMajors) => {
+        return { value: secondMajors, view: secondMajors.name };
+      })
+  }
+
+  public getFilteredConjoints() {
+    this.conjoints = this.conjointService.getConjoints().filter(v => v.name !== this.currentFaculties[0].name).map((conjoint) => {
+      return { value: conjoint, view: conjoint.name };
+  });
+  }
+
+  public getFilteredSecondMajors() {
+    this.secondMajors = this.departmentService
+      .getDepartments().filter(v => v.name !== this.currentMajors[0].name)
+      .map((secondMajors) => {
+        return { value: secondMajors, view: secondMajors.name };
+      })
+    }
+
 }
