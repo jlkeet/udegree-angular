@@ -4213,7 +4213,7 @@
     "requirements": [
       {
         "type": 1,
-        "required": null,
+        "required": 0,
         "papersExcluded": ["ARTHIST104", "ARTHIST105", "ARTHIST141"],
         "flags": {}
       }

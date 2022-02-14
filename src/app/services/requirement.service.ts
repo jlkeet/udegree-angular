@@ -227,7 +227,7 @@ export class RequirementService {
         // return requirement.papers.join(', ');
       } else {
         // Change this to reflect the hyphenated rule
-        return requirement.required + (requirement.type === RequirementType.Points ? ' Points' : ' Papers') + ' From List (Click to see list)';
+        return requirement.required + (requirement.type === RequirementType.Points ? ' Points' : ' Courses') + ' From List (Click to see list)';
       }
     }
 
@@ -235,7 +235,7 @@ export class RequirementService {
     const str = requirement.required +
       (this.checkFlag(requirement, 'General') ? ' General Education Points'  : '') +
       (requirement.type === RequirementType.Points && this.checkFlag(requirement, 'General') === false ? ' Points' : '') +
-      (requirement.type === RequirementType.Papers && this.checkFlag(requirement, 'General') === false ? ' Papers' : '') +
+      (requirement.type === RequirementType.Papers && this.checkFlag(requirement, 'General') === false ? ' Courses' : '') +
       (requirement.stage !== undefined ? ' ' + requirement.stage + '00-level' : '') +
       (requirement.aboveStage !== undefined ? ' above ' + requirement.aboveStage + '00-level' : '') +
       (requirement.departments !== undefined ? ' from ' + requirement.departments.join(', ') : '') +
@@ -318,7 +318,7 @@ export class RequirementService {
     
 
     const str = (omitRequires ? '' : 'Requires ') + requirement.required +
-      (requirement.type === RequirementType.Points ? ' points' : ' papers') +
+      (requirement.type === RequirementType.Points ? ' points' : ' courses') +
       (requirement.papers !== undefined ? ' from ' + requirement.papers.join(', ') : '') +
       (requirement.papersExcluded !== undefined ? ' excluding ' + requirement.papersExcluded.join(', ') : '') +
       (requirement.stage !== undefined ? ' at ' + requirement.stage + '00-level' : '') +
