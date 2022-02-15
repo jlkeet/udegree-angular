@@ -575,6 +575,7 @@ export class ProgressPanel {
     this.addingModule = false;
     this.addedModule = false;
     this.currentModules[0] = null;
+    this.degreeSelect.getFilteredModules();
   }
 
   private deleteSecondModule() {

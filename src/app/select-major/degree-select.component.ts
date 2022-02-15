@@ -430,7 +430,7 @@ export class DegreeSelection {
       return { value: conjoint, view: conjoint.name };
     });
 
-    this.modules = this.moduleService.getModules().map((modules) => {
+    this.modules = this.moduleService.getModules().filter(v => v.name !== this.currentSecondModules[0].name).map((modules) => {
       return { value: modules, view: modules.name };
     });
 
@@ -458,6 +458,12 @@ export class DegreeSelection {
         return { value: secondMajors, view: secondMajors.name };
       })
     }
+
+    public getFilteredModules() {
+      this.modules = this.moduleService.getModules().filter(v => v.name !== this.currentSecondModules[0].name).map((modules) => {
+        return { value: modules, view: modules.name };
+      });
+      }
 
     public getFilteredSecondModules() {
       this.secondModules = this.moduleService.getModules().filter(v => v.name !== this.currentModules[0].name).map((secondModules) => {
