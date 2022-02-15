@@ -247,18 +247,18 @@ export class DegreeSelection {
     }
 
     if (this.currentModules[0] !== null) {
-      this.modules[0] = this.moduleService.getModules().map((module) => {
-        return { value: module, view: module.name };
+      this.secondModules = this.moduleService.getModules().map((secondModule) => {
+        return { value: secondModule, view: secondModule.name };
       });
     }
 
-    if (this.currentSecondModules[0] !== null) {
-      this.secondModules[0] = this.moduleService
-        .getModules()
-        .map((secondModule) => {
-          return { value: secondModule, view: secondModule.name };
-        });
-    }
+    // if (this.currentSecondModules[0] !== null) {
+    //   this.secondModules[0] = this.moduleService
+    //     .getModules()
+    //     .map((secondModule) => {
+    //       return { value: secondModule, view: secondModule.name };
+    //     });
+    // }
   }
 
   public changeFaculty(which, event) {
@@ -434,7 +434,7 @@ export class DegreeSelection {
       return { value: modules, view: modules.name };
     });
 
-    this.secondModules = this.moduleService.getModules().map((secondModules) => {
+    this.secondModules = this.moduleService.getModules().filter(v => v.name !== this.currentModules[0].name).map((secondModules) => {
       return { value: secondModules, view: secondModules.name };
     });
 
@@ -458,5 +458,11 @@ export class DegreeSelection {
         return { value: secondMajors, view: secondMajors.name };
       })
     }
+
+    public getFilteredSecondModules() {
+      this.secondModules = this.moduleService.getModules().filter(v => v.name !== this.currentModules[0].name).map((secondModules) => {
+        return { value: secondModules, view: secondModules.name };
+      });
+      }
 
 }

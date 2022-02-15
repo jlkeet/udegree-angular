@@ -614,6 +614,7 @@ export class ProgressPanel {
     this.addingSecondModule = false;
     this.addedSecondModule = false;
     this.currentSecondModules[0] = null;
+   this.degreeSelect.getFilteredSecondModules();
   }
 
   private yearAndPeriod(): any {
