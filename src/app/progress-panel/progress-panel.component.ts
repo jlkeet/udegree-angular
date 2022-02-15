@@ -134,10 +134,6 @@ export class ProgressPanel {
     private departmentService: DepartmentService,
     private progressMulti: ProgressBarMulti,
   ) {
-    this.currentModules = degreeSelect.currentModules;
-    this.modulesList = degreeSelect.modules;
-    this.currentSecondModules = degreeSelect.currentSecondModules;
-    this.secondModulesList = degreeSelect.secondModules;
     this.currentPathways = degreeSelect.currentPathways;
     this.pathwaysList = degreeSelect.pathways;
     this.currentMajors = degreeSelect.currentMajors;
@@ -148,6 +144,10 @@ export class ProgressPanel {
     this.currentConjoints = degreeSelect.currentConjoint;
     this.secondMajorsList = degreeSelect.currentSecondMajors;
     this.currentSecondMajors = degreeSelect.currentSecondMajors;
+    this.currentModules = degreeSelect.currentModules;
+    this.modulesList = degreeSelect.modules;
+    this.currentSecondModules = degreeSelect.currentSecondModules;
+    this.secondModulesList = degreeSelect.secondModules;
     this.isComplex = progressMulti.isComplex
   }
 
@@ -760,7 +760,6 @@ export class ProgressPanel {
     setTimeout(() => {     
       this.addingMajor = true;
       this.majorsList = this.degreeSelect.majors; }, 4000 )
-      console.log("do it garry")
   }
 
   private conjointClicked() {

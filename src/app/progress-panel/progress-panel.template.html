@@ -253,9 +253,9 @@ hideToggle
       </progress-bar-multi-container>
     </div>
   </div>
+</mat-expansion-panel>
 
-  <p></p>
-
+<p></p>
 
   <mat-expansion-panel
   class="pg-bar"
@@ -355,7 +355,6 @@ hideToggle
     </mat-form-field>
 </div>
 
-
 <div *ngIf="!secondMajors?.name && conjoint?.name || !secondMajors?.name && faculty?.name === 'Arts'">
 
   <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
@@ -379,8 +378,8 @@ hideToggle
       </mat-select>
     </mat-form-field>
 </div>
-</mat-expansion-panel>
 
+<p></p>
 
   <div *ngIf="(majors?.name) && ((!modules?.name && faculty?.name === 'Arts') || (!modules?.name && faculty?.name === 'Science'))">
 
@@ -412,7 +411,7 @@ hideToggle
 
     <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
     <mat-form-field class="without-arrow addmodule">
-    <div style="text-align: center; margin-top: 20px;">Add Module (Optional) </div>
+    <div style="text-align: center; margin-top: 20px;">Add Second Module (Optional) </div>
 
         <mat-select
           panelClass="my-panel-class"
@@ -420,11 +419,11 @@ hideToggle
           (selectionChange)="changeSecondModule(0, $event)"
         >
           <mat-option
-            *ngFor="let module of degreeSelect.secondModules"
-            [value]="module.value"
-            (click)="addedSecondModule=true"
+            *ngFor="let secondModule of degreeSelect.secondModules"
+            [value]="secondModule.value"
+            (click)="addedSecondModule=true;degreeSelect.getFilteredModules()"
           >
-            {{ module.view }}
+            {{ secondModule.view }}
           </mat-option>
         </mat-select>
       </mat-form-field>

@@ -246,11 +246,10 @@ export class DegreeSelection {
       });
     }
 
-    if (this.currentModules[0] !== null) {
-      this.secondModules = this.moduleService.getModules().map((secondModule) => {
-        return { value: secondModule, view: secondModule.name };
-      });
-    }
+    if (this.currentModules[0][0] !== null) {
+        this.getFilteredSecondModules();
+      };
+    
 
     // if (this.currentSecondModules[0] !== null) {
     //   this.secondModules[0] = this.moduleService
@@ -313,6 +312,7 @@ export class DegreeSelection {
       event.value,
       "major"
     );
+    this.currentMajors[0] = event.value
     this.checkFlags();
     this.populateMajors();
   }
@@ -430,13 +430,28 @@ export class DegreeSelection {
       return { value: conjoint, view: conjoint.name };
     });
 
-    this.modules = this.moduleService.getModules().filter(v => v.name !== this.currentSecondModules[0].name).map((modules) => {
-      return { value: modules, view: modules.name };
-    });
+    this.getFilteredModules();
+    this.getFilteredSecondModules();
 
-    this.secondModules = this.moduleService.getModules().filter(v => v.name !== this.currentModules[0].name).map((secondModules) => {
-      return { value: secondModules, view: secondModules.name };
-    });
+  //   this.modules = this.moduleService.getModules().filter(v => v.name !== this.currentSecondModules[0].name).map((modules) => {
+  //     return { value: modules, view: modules.name };
+  //   });
+
+  //   if (this.currentFaculties[0].name === "Arts") {
+  //     this.modules = this.moduleService.getModules().filter(v => v.faculties[0] !== "Science").map((modules) => {
+  //       return { value: modules, view: modules.name };
+  //     });
+  //   }
+
+  //   this.secondModules = this.moduleService.getModules().filter(v => v.name !== this.currentModules[0].name).map((secondModules) => {
+  //     return { value: secondModules, view: secondModules.name };
+  //   });
+
+  //   if (this.currentFaculties[0].name === "Arts") {
+  //     this.secondModules = this.moduleService.getModules().filter(f => f.faculties[0] !== "Science").map((secondModules) => {
+  //       return { value: secondModules, view: secondModules.name };
+  //     });
+  // }
 
     this.secondMajors = this.departmentService
       .getDepartments().filter(v => v.name !== this.currentMajors[0].name)
@@ -463,12 +478,26 @@ export class DegreeSelection {
       this.modules = this.moduleService.getModules().filter(v => v.name !== this.currentSecondModules[0].name).map((modules) => {
         return { value: modules, view: modules.name };
       });
+
+      if (this.currentFaculties[0].name === "Arts") {
+        this.modules = this.moduleService.getModules().filter(v => v.faculties[0] !== "Science").map((modules) => {
+          return { value: modules, view: modules.name };
+        });
+      }
+
       }
 
     public getFilteredSecondModules() {
       this.secondModules = this.moduleService.getModules().filter(v => v.name !== this.currentModules[0].name).map((secondModules) => {
         return { value: secondModules, view: secondModules.name };
       });
+
+      if (this.currentFaculties[0].name === "Arts") {
+        this.secondModules = this.moduleService.getModules().filter(f => f.faculties[0] !== "Science" && f.name !== this.currentModules[0].name).map((secondModules) => {
+          return { value: secondModules, view: secondModules.name };
+        });
+      }
+
       }
 
 }
