@@ -41,7 +41,7 @@ import { StoreHelper } from '../services';
   <div class="relative">
     <div *ngIf="!collapsed" class="panel" >
       <progress-panel (onPageChange)="changePage()"></progress-panel>
-      <div class="no-select expand" (click)="collapse()">
+      <div *ngIf="mobile" class="no-select expand" (click)="collapse()">
         <div class="margin-auto">
          &lt;
         </div>
@@ -59,11 +59,16 @@ import { StoreHelper } from '../services';
 export class LeftPanelContainer {
   private progress = false;
   private collapsed = false;
+  private mobile = false;
 
   constructor(private storeHelper: StoreHelper) {
   }
 
   private ngOnInit() {
+    console.log(window.screen.width)
+    if (window.screen.width === 360) { // 768px portrait
+      this.mobile = true;
+    }
     this.progress = this.storeHelper.current('page');
     this.collapsed = this.storeHelper.current('collapsed');
   }

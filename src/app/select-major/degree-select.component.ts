@@ -498,6 +498,12 @@ export class DegreeSelection {
         });
       }
 
+      if (this.currentFaculties[0].name === "Science") {
+        this.secondModules = this.moduleService.getModules().filter(f => f.faculties[0] !== "Arts" && f.name !== this.currentModules[0].name).map((secondModules) => {
+          return { value: secondModules, view: secondModules.name };
+        });
+      }
+
       }
 
 }
