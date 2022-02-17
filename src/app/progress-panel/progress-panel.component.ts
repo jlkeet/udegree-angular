@@ -40,6 +40,8 @@ import { DebugRenderer2 } from "@angular/core/src/view/services";
 import { ValueConverter } from "@angular/compiler/src/render3/view/template";
 import { ProgressBarModule } from "primeng/primeng";
 import { ProgressBarMulti } from "./progress-bar-multi.component";
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { ProgressDialogComponent } from "./progress-dialog.component";
 
 /*
   Component for displaying a group of progress bars
@@ -133,6 +135,7 @@ export class ProgressPanel {
     private userService: UserContainer,
     private departmentService: DepartmentService,
     private progressMulti: ProgressBarMulti,
+    public dialog: MatDialog,
   ) {
     this.currentPathways = degreeSelect.currentPathways;
     this.pathwaysList = degreeSelect.pathways;
@@ -847,4 +850,22 @@ export class ProgressPanel {
     this.isDisabled = true;
     return this.isDisabled;
   }
+
+  private openDialog(degSelectId) {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+      id: degSelectId,
+  };
+  
+    const dialogRef = this.dialog.open(ProgressDialogComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+        data => console.log("Dialog output:", data)
+    );    
+}
+
 }

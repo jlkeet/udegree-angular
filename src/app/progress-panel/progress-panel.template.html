@@ -34,7 +34,7 @@
   </mat-expansion-panel>
 
     <div *ngIf="!faculty?.name">
-      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
+      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(1);"/>
 
       <mat-form-field class="without-arrow addmodule-degree">
         <div style="text-align: center; margin-top: 20px;"> Add Degree</div>
@@ -132,7 +132,7 @@
   </mat-expansion-panel>
 
   <div *ngIf="!majors?.name && !requiresPathway && !pathways?.name && faculty?.name" class="plain">
-  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
+  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);"/>
 
     <mat-form-field class="without-arrow addmodule-major">
 
@@ -157,7 +157,7 @@
 
 <div *ngIf="requiresPathway" class="plain">
   {{pathwayFilter()}}
-<img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
+<img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(4);"/>
 <mat-form-field class="without-arrow addmodule-major">
 
   <div style="text-align: center; margin-top: 20px;">Select Pathway</div>
@@ -334,7 +334,7 @@ hideToggle
 
 <div *ngIf="!conjoint?.name && faculty?.name">
 
-  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
+  <img class="info-button"  src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(2);"/>
   <mat-form-field class="without-arrow addmodule-major">
 
     <div style="text-align: center; margin-top: 20px;">Add Conjoint (Optional)</div>
@@ -383,7 +383,7 @@ hideToggle
 
   <div *ngIf="(majors?.name) && ((!modules?.name && faculty?.name === 'Arts') || (!modules?.name && faculty?.name === 'Science'))">
 
-    <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
+    <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(5);"/>
     <mat-form-field class="without-arrow addmodule">
       <div style="text-align: center; margin-top: 20px;">Add Module (Optional)</div>
 
@@ -409,7 +409,7 @@ hideToggle
 
   <div *ngIf="(majors?.name) && ((!secondModules?.name && faculty?.name === 'Arts') || (!secondModules?.name && faculty?.name === 'Science'))">
 
-    <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
+    <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(5);"/>
     <mat-form-field class="without-arrow addmodule">
     <div style="text-align: center; margin-top: 20px;">Add Second Module (Optional) </div>
 
