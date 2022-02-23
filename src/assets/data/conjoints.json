@@ -763,11 +763,13 @@
       {
         "type": 0,
         "required": 150,
+        "faculties": ["Science"],
         "aboveStage": 1
       },
       {
         "type": 0,
         "required": 75,
+        "faculties": ["Science"],
         "aboveStage": 2
       },
       {

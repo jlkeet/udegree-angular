@@ -65,7 +65,6 @@ export class LeftPanelContainer {
   }
 
   private ngOnInit() {
-    console.log(window.screen.width)
     if (window.screen.width === 360) { // 768px portrait
       this.mobile = true;
     }

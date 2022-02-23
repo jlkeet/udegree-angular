@@ -361,7 +361,8 @@ hideToggle
     <mat-form-field class="without-arrow addmodule-major">
 
     <div *ngIf="faculty.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>
-    <div *ngIf="faculty.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major <BR> (Compulsary for Bachelor of Arts)</div>
+    <div *ngIf="faculty.name === 'Arts' && currentConjoints === null" style="text-align: center; margin-top: 20px;">Add Second Major <BR> (Compulsary for Bachelor of Arts)</div>
+    <div *ngIf="faculty.name !== null && currentConjoints !== null" style="text-align: center; margin-top: 20px;">Add Second Major <BR> (Compulsary for Conjoint)</div>
 
       <mat-select
         panelClass="my-panel-class"
