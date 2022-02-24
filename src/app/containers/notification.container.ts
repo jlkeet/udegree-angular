@@ -43,7 +43,6 @@ export class NotificationContainer {
 
   public ngOnInit() {
     this.store.changes.pluck('messages').subscribe((messages: Message[]) => {
-    //  console.log(messages);
       this.messages = messages;
     });
   }

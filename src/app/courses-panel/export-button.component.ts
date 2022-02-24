@@ -98,7 +98,7 @@ public exportButton() {
     private getImage() {
       var storageRef = firebase.storage().ref("/users/" + this.email + "/images/").child("plan")
       .getDownloadURL()
-      .then(url => { console.log(url)
+      .then(url => {
         var xhr = new XMLHttpRequest();
         xhr.responseType = 'blob';
         xhr.onload = (event) => {

@@ -51,7 +51,6 @@ export class FirebaseDbService {
   }
 
   public addSelection(email, collectionName, collection, document) {
-    console.log(document)
     this.db
     .collection("users")
     .doc(email)
@@ -111,7 +110,6 @@ export class FirebaseDbService {
       });
       this.getPlanFromDb(collectionName, degId).then((res) => {
         this.storeHelper.update(storeHelperName, res)
-        // console.log(this.storeHelper.current(storeHelperName))
       });
     });
   }

@@ -106,12 +106,10 @@ export class CourseService {
     this.updateErrors();
     this.courseCounter++;
     this.setCourseDb(copy ,courseId, period, year, status)
-    console.log(courseId)
   }
 
 private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseStatus, grade?: null){
   let result = course;
-  console.log(result)
   this.db
   .collection("users") 
   .doc(this.email) // Here is where we set the docID to the email so its accessible in the database.
@@ -132,7 +130,6 @@ private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseS
     grade: grade ? grade : null,
     canDelete: true,
     }))
-    .then((docRef) => {console.log("Here's the docId " + docRef.id)} )
   }
 
 
@@ -276,7 +273,6 @@ private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseS
 
   private generalToggle(courseName: string): string {
     if (this.isGeneral(courseName)) {
-     // console.log(courseName.substring(0, courseName.length))
       return courseName.substring(0, courseName.length - 1);
     } else {
      // return courseName + 'G';
@@ -284,7 +280,6 @@ private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseS
   }
 
   public isGeneral(courseName: string): boolean {
-   // console.log(courseName, ' ', courseName.lastIndexOf("G") === courseName.length - 1);
     return courseName.lastIndexOf("G") === courseName.length - 1;
   }
 

@@ -426,7 +426,7 @@ export class DegreeSelection {
       return { value: pathways, view: pathways.name };
     });
 
-    this.conjoints = this.conjointService.getConjoints().filter(v => v.name !== this.currentFaculties[0].name).map((conjoint) => {
+    this.conjoints = this.conjointService.getConjoints().filter(v => {if (this.currentFaculties[0]) { v.name !== this.currentFaculties[0].name}}).map((conjoint) => {
       return { value: conjoint, view: conjoint.name };
     });
 
@@ -479,7 +479,7 @@ export class DegreeSelection {
         return { value: modules, view: modules.name };
       });
 
-      if (this.currentFaculties[0].name === "Arts") {
+      if (this.currentFaculties[0] && this.currentFaculties[0].name === "Arts") {
         this.modules = this.moduleService.getModules().filter(v => v.faculties[0] !== "Science").map((modules) => {
           return { value: modules, view: modules.name };
         });
@@ -492,13 +492,13 @@ export class DegreeSelection {
         return { value: secondModules, view: secondModules.name };
       });
 
-      if (this.currentFaculties[0].name === "Arts") {
+      if (this.currentFaculties[0] && this.currentFaculties[0].name === "Arts") {
         this.secondModules = this.moduleService.getModules().filter(f => f.faculties[0] !== "Science" && f.name !== this.currentModules[0].name).map((secondModules) => {
           return { value: secondModules, view: secondModules.name };
         });
       }
 
-      if (this.currentFaculties[0].name === "Science") {
+      if (this.currentFaculties[0] && this.currentFaculties[0].name === "Science") {
         this.secondModules = this.moduleService.getModules().filter(f => f.faculties[0] !== "Arts" && f.name !== this.currentModules[0].name).map((secondModules) => {
           return { value: secondModules, view: secondModules.name };
         });

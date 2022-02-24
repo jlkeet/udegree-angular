@@ -170,10 +170,6 @@ export class ProgressPanel {
 
       this.store.changes.pluck("majors").subscribe((majors) => {
         this.majors = majors;
-        // if (this.majors) {
-        //  console.log(this.majors)
-        //  this.pathwayCheck(this.majors)
-        // }
         this.updateRequirementList();
       }),
 
@@ -237,11 +233,6 @@ export class ProgressPanel {
           : this.faculty.majorRequirements
         : []
     );
-    // .concat(
-    //   this.faculty ? this.majors ? this.faculty.majorRequirements : null
-    //   : []
-    // );
-    // console.log(this.conjoint)
     this.conjointRequirements = [].concat(
       this.conjoint
         ? this.majors
@@ -249,10 +240,6 @@ export class ProgressPanel {
           : this.conjoint.doubleMajorRequirements
         : []
     );
-    // .concat(
-    //   this.conjoint ? this.majors ? this.conjoint.majorRequirements : null
-    //   : []
-    // );
 
     if (this.conjointRequirements.length > 0) {
       this.requirements = [].concat(
@@ -796,8 +783,6 @@ export class ProgressPanel {
       if (!this.modulesList[0][i].value.faculties.includes(this.faculty.name)) {
         this.modulesList.splice([i], 1);
       }
-    //  console.log(this.modulesList[0])
-    //  console.log(this.modulesList[0][i])
       if (
         this.modulesList[0][i].value.name === this.modules.name ||
         this.modulesList[0][i].value.name === this.secondModules.name
@@ -805,7 +790,6 @@ export class ProgressPanel {
         this.modulesList.splice([i], 2);
       }
     }
-  //  console.log(this.modulesList[0])
   }
 
   private secondModuleClicked() {
@@ -815,8 +799,6 @@ export class ProgressPanel {
        if (!this.secondModulesList[0][i].value.faculties.includes(this.faculty.name)) {
          this.secondModulesList.splice([i], 1);
        }
-     //  console.log(this.modulesList[0])
-     //  console.log(this.modulesList[0][i])
        if (
          this.secondModulesList[0][i].value.name === this.modules.name ||
          this.secondModulesList[0][i].value.name === this.secondModules.name
@@ -824,17 +806,12 @@ export class ProgressPanel {
          this.secondModulesList.splice([i], 2);
        }
      }
-   //  console.log(this.modulesList[0])
    }
 
   private pathwayFilter() {
     for (let i = this.degreeSelect.pathways.length[0] - 1; i >= 0; i--) {
-      // console.log(this.pathwaysList[0][i])
-      // console.log(this.currentMajors[0].name)
-      console.log(this.degreeSelect.pathways[0][i])
       if (!this.degreeSelect.pathways[0][i].value.faculties.includes(this.currentMajors[0].name)) 
       {
-      //  console.log(this.pathwaysList[0][i])
       this.degreeSelect.pathways[0].splice([i], 1);
 
       }

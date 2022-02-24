@@ -92,8 +92,6 @@ export class RequirementService {
   public filterByRequirement(requirement: IRequirement, courses: ICourse[]): ICourse[] {
     let filtered = courses;
     /* Could refactor this further to just make an array of includes and excludes */
-    // console.log(courses.map((course) => course.name.toUpperCase().lastIndexOf("G") === course.name.length - 1))
-    // courses.map((course) => course.faculties.toString() !== requirement.faculties[0]
 
     const filters = [
       {check: requirement.papers,
@@ -137,8 +135,6 @@ export class RequirementService {
       let filled = requirement.complex.map((subRequirement: IRequirement) => this.requirementFilled(subRequirement, planned))
         .filter((tested: boolean) => tested).length;
 
-     // console.log(requirement.complex[0].required)
-
       return Math.min(filled, requirement.required);
 
 
@@ -159,7 +155,6 @@ export class RequirementService {
       } else if (requirement.type === RequirementType.Papers) {
         mapped = filtered.map((course: ICourse) => 1);
       } else {
-        //console.log('ERROR REQUIREMENT HAS TYPE ' + requirement.type);
       }
 
       if (this.checkFlag(requirement, 'isCorequesite')) {
@@ -197,10 +192,6 @@ export class RequirementService {
 
       // let filled = requirement.complex.map((subRequirement: IRequirement) => this.requirementFilled(subRequirement, planned))
       //   .filter((tested: boolean) => tested).length;
-
-     // console.log(requirement);
-     // console.log(filled + ' of ' + requirement.required);
-     // console.log(filled >= requirement.complex[0].required)
 
      // return filled >= requirement.required;
     }  else {
@@ -255,9 +246,7 @@ export class RequirementService {
         } else {
           return str + " from: " + requirement.papers.join(', ');
           }
-        } 
-  //  console.log(requirement, ' ', this.checkFlag(requirement, 'General'))  
-  //  console.log(str)  
+        }
     return str;
   }
 
@@ -284,12 +273,6 @@ export class RequirementService {
        newComplexString = requirement.complex.map((req: IRequirement) => this.toString(req,true))
 
       }
-
-      // for (let i = 0; i < newComplexString.length; i++){
-      //   //   console.log(newComplexString[i]) 
-      //      return newComplexString[i];
-      //    }
-    // console.log(newComplexString)
 
     if (typeof newComplexString !== 'string') {
       return newComplexString;

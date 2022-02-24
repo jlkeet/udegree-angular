@@ -81,7 +81,6 @@ export class ProgressBarMulti implements OnChanges {
     }
 
     if (changes.max) {
-    //  console.log(changes)
       this.updatePercentage(changes.max.currentValue);
       this.updateProgress();
       this.updateTotal();
@@ -160,15 +159,12 @@ export class ProgressBarMulti implements OnChanges {
     this.combinedRule = this.progressBarMultiContainer.combinedRule;
     for (let i = 0; i < this.combinedRule.length; i++) {
     //  this.max = this.combinedRule[i].complexMax;
-      console.log(this.combinedRule[i].complexMax)
     }
-  //  console.log(this.combinedRule)
   }
 
   private newMax(newMax) {
    this.progressBarMultiContainer.max = newMax;
    this.max = newMax;
- //   console.log(this.max)
   //  this.progressBarMultiContainer.
   }
 

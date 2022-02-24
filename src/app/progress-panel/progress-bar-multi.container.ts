@@ -85,7 +85,6 @@ export class ProgressBarMultiContainer {
           hoverText: this.requirementService.toString(this.complexRule[i], false)
         })
         // this.max = this.combinedRule[i].complexMax
-       // console.log(this.barOneState, this.barTwoState, this.barThreeState)
       }
   } else {
     this.max = this.requirement.required;
@@ -141,7 +140,6 @@ export class ProgressBarMultiContainer {
       this.courses,
       CourseStatus.Planned
     );
-  //  console.log(this.requirement , this.barOneState, ' ', this.barTwoState, ' ', this.barThreeState)
   }
 }
 
@@ -182,7 +180,6 @@ export class ProgressBarMultiContainer {
       courses,
       status
     );
-   // console.log(value)
     return Object.assign({}, currentState, { value });
 
   }

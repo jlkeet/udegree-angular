@@ -24,7 +24,6 @@ export class FacultyList {
   ) { }
 
   public clicked(faculty) {
-    console.log("faculty list firing")
     this.facultyClicked.emit({
       value: faculty
     });

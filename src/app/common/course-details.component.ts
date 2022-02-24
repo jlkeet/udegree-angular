@@ -125,7 +125,6 @@ export class CourseDetails {
       return { label: module.name, value: module.name };
     });
 
-    console.log(this.courseStatus)
   }
 
   public addCourse() {

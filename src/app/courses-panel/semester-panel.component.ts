@@ -187,7 +187,6 @@ export class SemesterPanel {
       .collection("users")
       .doc(this.email)
       .collection("courses", (ref) => {
-        console.log(ref)
         const query = ref.where("id", "==", course.id);
         query.get().then((snapshot) => {
           snapshot.forEach((doc) => {
@@ -200,7 +199,6 @@ export class SemesterPanel {
                 year: course.newYear,
                 period: course.newPeriod,
               });
-              console.log(doc)
           });
         });
 
@@ -322,8 +320,6 @@ export class SemesterPanel {
   }
 
   private getSelectedSem(j) {
-   // console.log("previous period: ", this.previousYear)
-    // console.log("this period: ", this.semester.period)
     this.previousPeriod = this.semester.period;
     let k;
     switch (j) {
@@ -340,7 +336,6 @@ export class SemesterPanel {
         k = 2;
         break;
     }
- //   console.log(k);
     this.saveChangedSemCourse(k);
   }
 
@@ -359,17 +354,14 @@ export class SemesterPanel {
     this.boolCheck = true;
     let courses = this.storeHelper.current("courses");
     if (i < 10) {
-  //    console.log(i);
       this.savedNewSem = this.updatePeriodsInCourse(i);
     } else {
-      console.log("not working period");
       this.savedNewSem = this.semester.period;
       this.previousPeriod = this.semester.period;
     }
     if (i > 10) {
       this.savedNewYear = this.updateYearsInCourse(i);
     } else {
-   //   console.log("not working year");
       this.savedNewYear = this.semester.year;
       // this.previousYear = this.semester.year;
     }
@@ -382,7 +374,6 @@ export class SemesterPanel {
     this.checkIfArrayIsUnique(this.storeHelper.current("semesters"))
 
     if (this.boolCheck) {
-      console.log("firing")
       for (let j = 0; j < courses.length; j++) {
         this.db
           .collection("users")
@@ -431,7 +422,6 @@ export class SemesterPanel {
       const query = ref.where('both', '==', this.semester.year + " " + this.semester.period);
       query.get().then( snapshot => {
         snapshot.forEach(sem => {
-          console.log(sem)
           this.db
           .collection("users")
           .doc(this.email)
@@ -451,7 +441,6 @@ export class SemesterPanel {
       const query = ref.where('both', '==', this.previousYear + " " + this.previousPeriod);
       query.get().then( snapshot => {
         snapshot.forEach(sem => {
-          console.log("firing 3: ", this.savedNewYear, " ", this.savedNewSem)
           this.db
           .collection("users")
           .doc(this.email)
