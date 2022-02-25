@@ -426,10 +426,11 @@ export class DegreeSelection {
       return { value: pathways, view: pathways.name };
     });
 
-    this.conjoints = this.conjointService.getConjoints().filter(v => {if (this.currentFaculties[0]) { v.name !== this.currentFaculties[0].name}}).map((conjoint) => {
+    if (this.currentFaculties[0] != null) { 
+    this.conjoints = this.conjointService.getConjoints().filter(v => v.name !== this.currentFaculties[0].name).map((conjoint) => {
       return { value: conjoint, view: conjoint.name };
     });
-
+  }
     this.getFilteredModules();
     this.getFilteredSecondModules();
 
