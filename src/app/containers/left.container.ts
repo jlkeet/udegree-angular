@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { StoreHelper } from '../services';
 
+import { HostListener } from "@angular/core";
+
 @Component({
   selector: 'left-panel',
   styles: [`
@@ -56,18 +58,33 @@ import { StoreHelper } from '../services';
   `
 })
 
+
+
 export class LeftPanelContainer {
   private progress = false;
   private collapsed = false;
   private mobile = false;
+  private screenHeight;
+  private screenWidth;
 
   constructor(private storeHelper: StoreHelper) {
+    this.onResize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+     this.screenHeight = window.innerHeight;
+     this.screenWidth = window.innerWidth;
+
+
+     if (this.screenWidth < 768) {
+      this.mobile = true;
+     } else {
+       this.mobile = false;
+     }
   }
 
   private ngOnInit() {
-    if (window.screen.width === 360) { // 768px portrait
-      this.mobile = true;
-    }
     this.progress = this.storeHelper.current('page');
     this.collapsed = this.storeHelper.current('collapsed');
   }
