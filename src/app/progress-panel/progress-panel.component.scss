@@ -226,17 +226,17 @@
   display: block !important;
 }
 
-// .mat-expansion-panel-header {
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   padding: 0px !important;
-//   height: 90px !important;
-//   margin-top: 20px;
-//   margin-bottom: -10px;
-//   background-color: #fff !important;
+.mat-expansion-panel-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px !important;
+  height: 90px !important;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  background-color: #fff !important;
 
-// }
+}
 
 .mat-expansion-panel-header-title {
   display: flex;
