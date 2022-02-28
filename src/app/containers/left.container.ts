@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { StoreHelper } from '../services';
 
 import { HostListener } from "@angular/core";
+import { MatTabsModule } from '@angular/material';
 
 @Component({
   selector: 'left-panel',
@@ -54,9 +55,16 @@ import { HostListener } from "@angular/core";
   </div>
 
   <div *ngIf="mobile" class="relative">
+  <mat-tab-group mat-align-tabs="start">
+  <mat-tab label="First">
   <div class="panel-mobile">
     <progress-panel (onPageChange)="changePage()"></progress-panel>
   </div>
+  </mat-tab>
+  <mat-tab label="Second">  
+    <planner-container-mobile></planner-container-mobile>
+  </mat-tab>
+  </mat-tab-group>
 </div>
   `
 })
@@ -86,6 +94,7 @@ export class LeftPanelContainer {
        this.mobile = false;
      }
   }
+
 
   private ngOnInit() {
     this.progress = this.storeHelper.current('page');

@@ -14,6 +14,7 @@ import {
   MatFormFieldModule,
   MatTooltipModule,
   MatDialogModule,
+  MatTabsModule,
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +24,7 @@ import {
   createNewHosts,
   removeNgStyles
 } from '@angularclass/hmr';
+import { HammerGestureConfig , HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 
 /* Firebase */
@@ -89,6 +91,7 @@ import {
   LeftPanelContainer,
   NotificationContainer,
   PlannerContainer,
+  PlannerContainerMobile,
   SelectDegreeContainer,
   SelectMajorContainer
 } from './containers';
@@ -146,6 +149,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
 
     NotificationContainer,
     PlannerContainer,
+    PlannerContainerMobile,
     SelectDegreeContainer,
     SelectMajorContainer,
 
@@ -201,6 +205,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     MatFormFieldModule,
     MatTooltipModule,
     MatDialogModule,
+    MatTabsModule,
     NgbModule,
     NgxInfiniteScrollerModule,
     RouterModule.forRoot(ROUTES),
@@ -230,6 +235,10 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     AuthGuard,
     FirebaseDbService,
     DragulaService,
+    { 
+      provide: HAMMER_GESTURE_CONFIG, 
+      useClass: HammerGestureConfig 
+  },
     WindowRef,
     FirebaseUserModel, // user data
     UserContainer,
