@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '../app.store';
 import { Message } from '../models';
+import { AppHeader } from '../app.header.component';
 
 /*
   Container for notifications.
@@ -21,21 +22,48 @@ import { Message } from '../models';
           top: 10px;
           float: left;
         }
+
+
+        .notification-container-mobile {
+          position: relative;
+          z-index:99;
+        }
+
+        .light-mobile {
+          color: #ddd;
+          top: 10px;
+        }
+
+        .notification-icon-mobile {
+          float: left;
+        }
   `
   ],
   template: `
-        <div class='notification-container'>
+        <div *ngIf="!isMobile" class='notification-container'>
         <span class="light"> | &nbsp;</span> 
             <notification-icon [messages]='messages' (clicked)='onIconClicked($event)'></notification-icon>
             <notification-list [messages]='messages' [show]='showMessages'></notification-list>
+        </div>
+
+        <div *ngIf="isMobile" class='notification-container-mobile'>
+        <span class="light-mobile">&nbsp;|&nbsp;</span>
+        <div class="notification-icon-mobile"> 
+            <notification-icon [messages]='messages' (clicked)='onIconClicked($event)'></notification-icon>
+            <notification-list [messages]='messages' [show]='showMessages'></notification-list>
+        </div>
+
         </div>
   `
 })
 export class NotificationContainer {
   private messages: Message[] = [];
   private showMessages: boolean = false;
+  private isMobile;
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private appHeader: AppHeader) {
+    this.isMobile = appHeader.mobile;
+  }
 
   public onIconClicked() {
     this.showMessages = !this.showMessages;

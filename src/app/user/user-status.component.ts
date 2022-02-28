@@ -4,6 +4,7 @@ import { UserService } from "../core/user.service";
 import { AuthService } from "../core/auth.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AngularFirestore } from "@angular/fire/firestore";
+import { LeftPanelContainer } from "../containers";
 
 @Component({
   selector: "user-container",
@@ -17,16 +18,19 @@ export class UserContainer {
   public email: string = "";
   private uid: String;
   public logInCounter = 0;
+  public isMobile;
 
   constructor(
     public userService: UserService,
     public authService: AuthService,
     public db: AngularFirestore,
     private router: Router,
-    private user: FirebaseUserModel
+    private user: FirebaseUserModel,
+    private leftPanel: LeftPanelContainer
   ) {
-    
+
     this.authService.afAuth.authState.subscribe(async (auth) => {
+      this.isMobile = leftPanel.mobile;
       if (auth == null) {
         // Check to see if user is logged in
         this.isLoggedIn = false;
@@ -71,4 +75,5 @@ export class UserContainer {
         });
     });
   }
+
 }

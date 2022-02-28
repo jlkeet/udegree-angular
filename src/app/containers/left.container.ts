@@ -63,7 +63,7 @@ import { HostListener } from "@angular/core";
 export class LeftPanelContainer {
   private progress = false;
   private collapsed = false;
-  private mobile = false;
+  public mobile = false;
   private screenHeight;
   private screenWidth;
 
@@ -87,6 +87,11 @@ export class LeftPanelContainer {
   private ngOnInit() {
     this.progress = this.storeHelper.current('page');
     this.collapsed = this.storeHelper.current('collapsed');
+
+    if (this.screenWidth < 768) {
+      this.mobile = true;
+    }
+
   }
 
   private changePage() {

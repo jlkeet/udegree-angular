@@ -109,7 +109,6 @@ import { ProgressBarMultiContainer } from './progress-bar-multi.container';
 import { CourseDialogComponent } from './courses-panel/course-dialog.component';
 import { ProgressDialogComponent } from './progress-panel/progress-dialog.component'
 
-
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -234,6 +233,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     WindowRef,
     FirebaseUserModel, // user data
     UserContainer,
+    LeftPanelContainer,
     DegreeSelection,
     ProgressPanel,
     ProgressBarMulti,

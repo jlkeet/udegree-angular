@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from './app.store';
+import { HostListener } from "@angular/core";
 
 /*
   Component that displays the site header
@@ -61,12 +62,37 @@ import { Store } from './app.store';
 })
 export class AppHeader {
 
+public mobile = false;
+private screenHeight;
+private screenWidth;
+
 private slogan: string;
     constructor(private store: Store ) {
           this.store.changes.pluck('slogan')
         .subscribe((slogan: string) => {
           this.slogan = slogan;
         });
+        this.onResize();
     }
 
+    @HostListener('window:resize', ['$event'])
+    onResize(event?) {
+   this.screenHeight = window.innerHeight;
+   this.screenWidth = window.innerWidth;
+
+
+   if (this.screenWidth < 768) {
+    this.mobile = true;
+   } else {
+     this.mobile = false;
+   }
 }
+
+private ngOnInit() {
+  if (this.screenWidth < 768) {
+    this.mobile = true;
+  }
+}
+
+}
+
