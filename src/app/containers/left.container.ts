@@ -15,6 +15,13 @@ import { HostListener } from "@angular/core";
       margin-top: 10px;
     }
 
+   .panel-mobile {
+      background:white;
+      border: 1px solid #f4f7f8;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
     .expand {
       background: #eee;
       height: 100px;
@@ -40,21 +47,17 @@ import { HostListener } from "@angular/core";
     }
   `],
   template: `
-  <div class="relative">
-    <div *ngIf="!collapsed" class="panel" >
+  <div *ngIf="!mobile" class="relative">
+    <div class="panel" >
       <progress-panel (onPageChange)="changePage()"></progress-panel>
-      <div *ngIf="mobile" class="no-select expand" (click)="collapse()">
-        <div class="margin-auto">
-         &lt;
-        </div>
-      </div>
-    </div>
-    <div *ngIf="collapsed" class="absolute-half expand" (click)="collapse()" >
-      <div class="margin-auto">
-        &gt;
-      </div>
     </div>
   </div>
+
+  <div *ngIf="mobile" class="relative">
+  <div class="panel-mobile">
+    <progress-panel (onPageChange)="changePage()"></progress-panel>
+  </div>
+</div>
   `
 })
 

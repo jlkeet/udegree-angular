@@ -1,4 +1,6 @@
 <splash-screen [animationType]="'fade-out'" [duration]="2"></splash-screen>
+
+<div *ngIf="!isMobile">
 <header>
   <app-header></app-header>
 </header>
@@ -7,3 +9,16 @@
 <!-- containers will get injected here -->
 <router-outlet></router-outlet>
 </main>
+</div>
+
+<div *ngIf="isMobile">
+  <header>
+    <app-header></app-header>
+  </header>
+  
+  <main style="padding: 0px;">
+  <!-- containers will get injected here -->
+  <router-outlet></router-outlet>
+  </main>
+  </div>
+

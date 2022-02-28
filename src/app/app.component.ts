@@ -6,6 +6,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AddCourseService } from './add-course';
 import * as services from './services';
+import { AppHeader } from './app.header.component';
 
 
 
@@ -36,15 +37,19 @@ export class App {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';
   public name = 'Angular 2 Webpack Starter';
   public url = 'https://twitter.com/AngularClass';
+  public isMobile;
 
   data : any = [];
 
   constructor(
     private db_courses: AngularFireDatabase,
     private db: AngularFirestore,
+    private appHeader: AppHeader
 
     
-    ) {}
+    ) {
+      this.isMobile = appHeader.mobile;
+    }
 }
 
 

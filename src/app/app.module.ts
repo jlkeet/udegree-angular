@@ -234,6 +234,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     FirebaseUserModel, // user data
     UserContainer,
     LeftPanelContainer,
+    AppHeader,
     DegreeSelection,
     ProgressPanel,
     ProgressBarMulti,

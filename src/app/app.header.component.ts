@@ -44,6 +44,10 @@ import { HostListener } from "@angular/core";
       color: #444;
       padding-right: 50px;
     }
+
+    .header {
+      width: 360px;
+    }
   `],
   template: `
       <mat-toolbar>
@@ -54,9 +58,12 @@ import { HostListener } from "@angular/core";
         <span class="u">Udegree</span>
         </span></a>
         <span class="spacer"> </span>
-        <span class="right-side">
+        <span *ngIf="!this.mobile" class="right-side">
           <user-container></user-container>
         </span>
+        <span *ngIf="this.mobile">
+        <user-container></user-container>
+      </span>
       </mat-toolbar>
   `,
 })

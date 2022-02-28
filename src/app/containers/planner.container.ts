@@ -20,6 +20,8 @@ import {
   StoreHelper
 } from '../services';
 
+import { AppHeader } from '../app.header.component';
+
 /*
   Container for the planning page.
   This container will respond to changes in the store.
@@ -38,10 +40,19 @@ import {
     .fullwidth {
       width: 100%;
     }
+
+    .planner-container-mobile {
+      flex-direction: row;
+      width: 100%;
+  }
+  .fullwidth-mobile {
+    width: 100%;
+  }
+
   `
   ],
   template: `
-        <div class='planner-container'>
+        <div *ngIf="!isMobile" class='planner-container'>
           <left-panel></left-panel>
 
           <div class='flex flex-col relative fullwidth'>
@@ -55,6 +66,12 @@ import {
               </courses-panel>
           </div>
         </div>
+
+
+        <div *ngIf="isMobile" class='planner-container-mobile'>
+        <left-panel></left-panel>
+      </div>
+
   `
 })
 export class PlannerContainer {
@@ -63,13 +80,17 @@ export class PlannerContainer {
   private majorSelected: boolean = false;
   private selected: ICourse = null;
   private sub;
+  public isMobile;
 
   constructor(
     private requirementService: RequirementService,
     private storeHelper: StoreHelper,
     private store: Store,
-    private courseService: CourseService
-  ) {}
+    private courseService: CourseService,
+    private appHeader: AppHeader,
+  ) {
+    this.isMobile = appHeader.mobile;
+  }
 
   public ngOnInit() {
     this.sub = this.store.changes.pluck('courses').

@@ -82,6 +82,14 @@ $light-theme : mat-light-theme($primary, $accent, $warn);
 
 /* GLOBAL */
 
+html, body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  body {
+    width: 100%;
+  }
+
 body { 
     font-family: $font-family;
     font-size: $font-size;
