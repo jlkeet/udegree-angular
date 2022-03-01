@@ -85,6 +85,7 @@ export class PlannerContainerMobile {
   public ngOnInit() {
     this.sub = this.store.changes.pluck('courses').
       subscribe( (courses: ICourse[]) => this.planned = courses);
+      console.log(this.planned)
   }
 
   public ngOnDestroy() {

@@ -14,7 +14,9 @@
         <span> Degree: Bachelor of {{faculty? faculty.name: ''}} </span>
         <span class="spacer"></span>
         <span class="delete-pg" (click)="noExpansionOnClick(); deleteDegree();">
-          <span class="cross-pg">&times;</span></span>
+          <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+          <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+        </span>
       </mat-toolbar>
     </mat-expansion-panel-header>
 
@@ -74,7 +76,9 @@
       <span>Major: {{majors.name}} </span>
       <span class="spacer"></span>
       <span class="delete-pg" (click)="noExpansionOnClick(); deleteMajor();">
-        <span class="cross-pg">&times;</span></span>
+        <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+        <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+      </span>
     </mat-toolbar>
   </mat-expansion-panel-header>
   <div
@@ -111,7 +115,9 @@
     <span> {{majors.name}} Pathway: {{pathways.name}} </span>
     <span class="spacer"></span>
     <span class="delete-pg" (click)="noExpansionOnClick(); deletePathway();">
-      <span class="cross-pg">&times;</span></span>
+      <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+      <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+    </span>
   </mat-toolbar>
 </mat-expansion-panel-header>
 
@@ -196,7 +202,9 @@ hideToggle
     <span>Conjoint: Bachelor of {{conjoint.name}} </span>
     <span class="spacer"></span>
     <span class="delete-pg" (click)="noExpansionOnClick(); deleteConjoint();">
-      <span class="cross-pg">&times;</span></span>
+      <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+      <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+    </span>
   </mat-toolbar>
 </mat-expansion-panel-header>
 
@@ -235,7 +243,9 @@ hideToggle
     <span>Second Major: {{secondMajors.name}} </span>
     <span class="spacer"></span>
     <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondMajor();">
-      <span class="cross-pg">&times;</span></span>
+      <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+      <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+    </span>
   </mat-toolbar>
 </mat-expansion-panel-header>
 
@@ -273,7 +283,9 @@ hideToggle
     <span>Module: {{modules.name}} </span>
     <span class="spacer"></span>
     <span class="delete-pg" (click)="noExpansionOnClick(); deleteModule();">
-      <span class="cross-pg">&times;</span></span>
+      <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+      <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+    </span>
   </mat-toolbar>
   </mat-expansion-panel-header>
 
@@ -311,7 +323,9 @@ hideToggle
   <span>Module: {{secondModules.name}} </span>
   <span class="spacer"></span>
   <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondModule();">
-    <span class="cross-pg">&times;</span></span>
+    <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+    <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+  </span>
 </mat-toolbar>
 </mat-expansion-panel-header>
 

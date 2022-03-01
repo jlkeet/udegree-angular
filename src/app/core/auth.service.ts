@@ -22,6 +22,10 @@ export class AuthService {
       this.afAuth.auth
       .signInWithPopup(provider)
       .then(res => {
+        this.db
+        .collection("users") // Here is where we set the docID to the email so its accessible in the database.
+        .doc(res.user.email)
+        .set({email: res.user.email, name: res.user.displayName})
         resolve(res);
       }, err => {
         console.log(err);
@@ -52,6 +56,10 @@ export class AuthService {
       this.afAuth.auth
       .signInWithPopup(provider)
       .then(res => {
+        this.db
+        .collection("users") // Here is where we set the docID to the email so its accessible in the database.
+        .doc(res.user.email)
+        .set({email: res.user.email, name: res.user.displayName})
         resolve(res);
       }, err => {
         console.log(err);

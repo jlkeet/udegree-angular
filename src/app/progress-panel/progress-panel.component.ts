@@ -86,6 +86,7 @@ export class ProgressPanel {
   public addingSecondMajor = false;
   public addedSecondMajor = false;
   private requiresPathway = false;
+  
 
   private faculty;
   private conjoint;

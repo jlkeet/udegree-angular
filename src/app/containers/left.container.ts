@@ -56,12 +56,12 @@ import { MatTabsModule } from '@angular/material';
 
   <div *ngIf="mobile" class="relative" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')">
   <mat-tab-group mat-align-tabs="start" [(selectedIndex)]="selectedTab">
-  <mat-tab label="First">
+  <mat-tab label="Degree View">
   <div class="panel-mobile">
     <progress-panel (onPageChange)="changePage()"></progress-panel>
   </div>
   </mat-tab>
-  <mat-tab label="Second">  
+  <mat-tab label="Semester View">  
     <planner-container-mobile></planner-container-mobile>
   </mat-tab>
   </mat-tab-group>
