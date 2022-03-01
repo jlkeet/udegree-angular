@@ -42,6 +42,7 @@
         <div style="text-align: center; margin-top: 20px;"> Add Degree</div>
 
           <mat-select
+            *ngIf="!userService.isMobile"
             panelClass="my-panel-class"
             [(value)]="currentFaculties[0]"
             (selectionChange)="changeFaculty(0, $event)"
@@ -54,6 +55,22 @@
             {{ faculty.view }}
             </mat-option>
           </mat-select>
+
+          <mat-select
+          *ngIf="userService.isMobile"
+          panelClass="my-panel-class-mobile"
+          [(value)]="currentFaculties[0]"
+          (selectionChange)="changeFaculty(0, $event)"
+        >
+          <mat-option
+            *ngFor="let faculty of degreeSelect.faculties"
+            [value]="faculty.value"
+            (click)="addedDegree=true;degreeSelect.getFilteredConjoints();"
+          >
+          {{ faculty.view }}
+          </mat-option>
+        </mat-select>
+
         </mat-form-field>
 
     </div>
@@ -169,6 +186,7 @@
   <div style="text-align: center; margin-top: 20px;">Select Pathway</div>
 
     <mat-select
+      *ngIf="!userService.isMobile"
       panelClass="my-panel-class"
       [(value)]="currentPathways[0]"
       (selectionChange)="changePathway(0, $event)"
@@ -181,6 +199,21 @@
       {{ path.view }}
       </mat-option>
     </mat-select>
+
+    <mat-select
+    *ngIf="userService.isMobile"
+    panelClass="my-panel-class-mobile"
+    [(value)]="currentPathways[0]"
+    (selectionChange)="changePathway(0, $event)"
+  >
+    <mat-option
+      *ngFor="let path of degreeSelect.pathways[0]"
+      [value]="path.value"
+      (click)="addedPathway = true;pathwayCheck(path.value);requiresPathway=false;"
+    >
+    {{ path.view }}
+    </mat-option>
+  </mat-select>
   </mat-form-field>
 </div>
 
@@ -354,6 +387,7 @@ hideToggle
     <div style="text-align: center; margin-top: 20px;">Add Conjoint (Optional)</div>
 
       <mat-select
+        *ngIf="!userService.isMobile"
         panelClass="my-panel-class"
         [(value)]="currentConjoints[0]"
         (selectionChange)="changeConjoint(0, $event)"
@@ -366,6 +400,23 @@ hideToggle
         {{ conjoint.view }}
         </mat-option>
       </mat-select>
+
+      <mat-select
+      *ngIf="userService.isMobile"
+      panelClass="my-panel-class-mobile"
+      [(value)]="currentConjoints[0]"
+      (selectionChange)="changeConjoint(0, $event)"
+    >
+
+    <mat-option
+    *ngFor="let conjoint of degreeSelect.conjoints"
+    [value]="conjoint.value"
+    (click)="addedConjoint=true"
+  >
+  {{ conjoint.view }}
+  </mat-option>
+</mat-select>
+
     </mat-form-field>
 </div>
 
@@ -381,6 +432,7 @@ hideToggle
     <div *ngIf="faculty.name !== null && currentConjoints !== null" style="text-align: center; margin-top: 20px;">Add Second Major <BR> (Compulsary for Conjoint)</div>
 
       <mat-select
+        *ngIf="!userService.isMobile"
         panelClass="my-panel-class"
         [(value)]="currentSecondMajors[0]"
         (selectionChange)="changeSecondMajor(0, $event)"
@@ -393,6 +445,21 @@ hideToggle
         {{ secondMajor.view }}
         </mat-option>
       </mat-select>
+
+      <mat-select
+      *ngIf="userService.isMobile"
+      panelClass="my-panel-class-mobile"
+      [(value)]="currentSecondMajors[0]"
+      (selectionChange)="changeSecondMajor(0, $event)"
+    >
+      <mat-option
+        *ngFor="let secondMajor of this.degreeSelect.secondMajors"
+        [value]="secondMajor.value"
+        (click)="addedSecondMajor=true"
+      >
+      {{ secondMajor.view }}
+      </mat-option>
+    </mat-select>
     </mat-form-field>
 </div>
 
@@ -405,6 +472,7 @@ hideToggle
       <div style="text-align: center; margin-top: 20px;">Add Module (Optional)</div>
 
         <mat-select
+          *ngIf="!userService.isMobile"
           panelClass="my-panel-class"
           [(value)]="currentModules[0]"
           (selectionChange)="changeModule(0, $event)"
@@ -417,6 +485,21 @@ hideToggle
             {{ module.view }}
           </mat-option>
         </mat-select>
+
+        <mat-select
+        *ngIf="userService.isMobile"
+        panelClass="my-panel-class-mobile"
+        [(value)]="currentModules[0]"
+        (selectionChange)="changeModule(0, $event)"
+      >
+        <mat-option
+          *ngFor="let module of degreeSelect.modules"
+          [value]="module.value"
+          (click)="addedModule=true;degreeSelect.getFilteredSecondModules();"
+        >
+          {{ module.view }}
+        </mat-option>
+      </mat-select>
       </mat-form-field>
   </div>
 
@@ -431,6 +514,7 @@ hideToggle
     <div style="text-align: center; margin-top: 20px;">Add Second Module (Optional) </div>
 
         <mat-select
+          *ngIf="!userService.isMobile"
           panelClass="my-panel-class"
           [(value)]="currentSecondModules[0]"
           (selectionChange)="changeSecondModule(0, $event)"
@@ -443,6 +527,21 @@ hideToggle
             {{ secondModule.view }}
           </mat-option>
         </mat-select>
+
+        <mat-select
+        *ngIf="userService.isMobile"
+        panelClass="my-panel-class-mobile"
+        [(value)]="currentSecondModules[0]"
+        (selectionChange)="changeSecondModule(0, $event)"
+      >
+        <mat-option
+          *ngFor="let secondModule of degreeSelect.secondModules"
+          [value]="secondModule.value"
+          (click)="addedSecondModule=true;degreeSelect.getFilteredModules()"
+        >
+          {{ secondModule.view }}
+        </mat-option>
+      </mat-select>
       </mat-form-field>
   </div>
 
