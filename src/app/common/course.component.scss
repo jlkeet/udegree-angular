@@ -17,6 +17,15 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 375px) {
+  .course {
+      width: 47vw;
+   }
+   .cross {
+    display:block !important;
+  }
+}
+
 .course:hover .cross {
   display: block;
 }

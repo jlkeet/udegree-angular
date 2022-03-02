@@ -70,6 +70,16 @@
   height: 1.84em;;
 }
 
+@media (max-width: 375px) { 
+  .export-button {
+    float:none !important;
+    display: block;
+    width: 30%;
+    margin: auto;
+    color:black;
+  }
+}
+
 .export-button {
   float:right;
   color:black;

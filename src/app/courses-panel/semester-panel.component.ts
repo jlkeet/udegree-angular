@@ -15,6 +15,7 @@ import { CoursesPanel } from "./courses-panel.component";
 import { HighlightSpanKind } from "typescript";
 import { Router } from "@angular/router";
 import { BoundPlayerFactory } from "@angular/core/src/render3/styling/player_factory";
+import { UserContainer } from "../common";
 
 @Component({
   selector: "semester-panel",
@@ -55,6 +56,7 @@ export class SemesterPanel {
     private db: AngularFirestore,
     private coursePanelService: CoursesPanel,
     private router: Router,
+    private userContainer: UserContainer,
   ) {
     this.email = this.courseService.email;
   }

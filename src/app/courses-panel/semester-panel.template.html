@@ -1,4 +1,4 @@
-<mat-expansion-panel #mep="matExpansionPanel" [disabled]="isDisabled" [expanded]=true hideToggle>
+<mat-expansion-panel class="carousel-mobile" #mep="matExpansionPanel" [disabled]="isDisabled" [expanded]=true hideToggle>
   <mat-expansion-panel-header (click)="expansionOnClick()">
     <span class="gpa-sem" *ngIf="gpa">Semester GPA {{ gpa.toFixed(2) }} </span>
     <mat-panel-title class="title">
