@@ -6,6 +6,7 @@ import {
 import {
   AddCourseService,
 } from '../add-course';
+import { AppHeader } from '../app.header.component';
 import { Store } from '../app.store';
 import { ICourse } from '../interfaces';
 import {
@@ -77,8 +78,10 @@ export class AddCourseContainer {
     private store: Store,
     private coursesService: CourseService,
     private courseEventService: CourseEventService,
-    private requirementService: RequirementService
+    private requirementService: RequirementService,
+    private appHeader: AppHeader
   ) {
+
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.period = Number(this.route.snapshot.queryParams.period);
     this.year = Number(this.route.snapshot.queryParams.year);

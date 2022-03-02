@@ -8,6 +8,8 @@ import {
 import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
 import { DepartmentService, FacultyService, RequirementService, ConjointService } from '../services';
+import { AppHeader } from '../app.header.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 /*
     Component for filtering a list of courses by eligibility / search term
@@ -51,7 +53,8 @@ export class CourseFilter {
     private departmentService: DepartmentService,
     private facultyService: FacultyService,
     private requirementService: RequirementService,
-    private conjointService: ConjointService
+    private conjointService: ConjointService,
+    private appHeader: AppHeader
   ) { }
 
   public ngOnInit() {
