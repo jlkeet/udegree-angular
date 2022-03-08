@@ -12,8 +12,52 @@
   background:white;
 }
 
+.add-course-filter-title {
+  padding: 0px !important;
+  margin-left: 0px !important;
+  height: 30px !important;
+}
+
+.add-course-filter-header {
+
+}
+
+.add-course-filter-panel {
+  box-shadow: none !important;
+}
+
+::ng-deep .add-course-filter-panel .mat-expansion-panel-content .mat-expansion-panel-body {
+  padding: 0px !important;
+}
+
+.radio-group-style {
+  display: inline-grid !important;
+}
+
+::ng-deep .slide-toggle .mat-slide-toggle-label {
+  display: inline-grid !important;
+}
+
+::ng-deep .slide-toggle .mat-slide-toggle-bar {
+  margin-top: 15px !important;
+}
+
+.slide-toggle-group {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
 .pad {
   padding:10px;
+}
+
+@media (max-width: 375px) {
+
+  .pad {
+    padding-top: 1px;
+  }
 }
 
 //this gets rid of the big space that mat-form uses 
@@ -38,3 +82,10 @@ toggle-switch {
   margin-right:20px;
   align-items: center;
 }
+
+@media (max-width: 375px) {
+  .flex-justify {
+    display: block;
+  }
+}
+

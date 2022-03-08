@@ -86,13 +86,13 @@ export class AddCourseContainer {
     this.period = Number(this.route.snapshot.queryParams.period);
     this.year = Number(this.route.snapshot.queryParams.year);
     const defaultFaculties = [this.storeHelper.current('faculty')];
-    let facultyFilter = this.mapToArray(this.route.snapshot.queryParams.faculties);
-    facultyFilter = facultyFilter.length !== 0 ? facultyFilter :
-      (defaultFaculties[0] ? defaultFaculties.map((faculty) => faculty.name) : []);
+   // let facultyFilter = this.mapToArray(this.route.snapshot.queryParams.faculties);
+   // facultyFilter = facultyFilter.length !== 0 ? facultyFilter :
+   //   (defaultFaculties[0] ? defaultFaculties.map((faculty) => faculty.name) : []);
     this.filterParams = {
       departments: this.mapToArray(this.route.snapshot.queryParams.departments),
-      faculties: facultyFilter,
-      // faculties: this.mapToArray(this.route.snapshot.queryParams.faculties),
+      //faculties: facultyFilter,
+      faculties: this.mapToArray(this.route.snapshot.queryParams.faculties),
       general: this.orNull(this.route.snapshot.queryParams.general),
       corequesite: this.orNull(this.route.snapshot.queryParams.corequesite),
       hidePlanned: this.orNull(this.route.snapshot.queryParams.hidePlanned),

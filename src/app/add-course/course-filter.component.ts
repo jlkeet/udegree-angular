@@ -72,7 +72,6 @@ export class CourseFilter {
   .map((conjoint) => {
     return { value: conjoint.name, label: conjoint.name };
   });
-
 }
 
   public ngOnChanges() {
@@ -97,17 +96,57 @@ export class CourseFilter {
     if (this.filterParams.hidePlanned) {
       shown = shown.filter((course: ICourse) => !this.plannedNames.includes(course.name));
     }
+
+   if (event) {
+    console.log(whichSwitch)
+    if (event.checked === true) {
+      
+    switch (whichSwitch) {
+      case 'faculty':
+        console.log(this.filterParams.faculties)
+        this.filterParams.faculties.push(event.source.value)
+        break;
+      case 'department':
+        console.log(this.filterParams.departments)
+        this.filterParams.departments.push(event.source.value)
+        break;
+      // case 'campus':
+      //   this.filterParams.campus.push(event.source.value)
+      // case 'stage':
+      //   this.filterParams.stages.push(event.source.value)
+    }  
+
+    } else {
+
+      switch (whichSwitch) {
+        case 'faculty':
+          let i = this.filterParams.faculties.indexOf(event.source.value);
+          this.filterParams.faculties.splice(i, 1);
+          break;
+        case 'department':
+          let j = this.filterParams.departments.indexOf(event.source.value);
+          this.filterParams.departments.splice(j, 1);
+          break;
+        // case 'campus':
+        //   let k = this.filterParams.campus.indexOf(event.source.value);
+        //   this.filterParams.campus.splice(k, 1);
+        // case 'stage':
+        //   let l = this.filterParams.stages.indexOf(event.source.value);
+        //   this.filterParams.stages.splice(l, 1);
+    }
+  }
+}
+
     const requirement = {
       departments: this.filterParams.departments.length !== 0 ? this.toArray(this.filterParams.departments) : null,
-      faculties: this.filterParams.faculties.length !== 0 ? this.toArray(this.filterParams.faculties) : null,
+      faculties: this.filterParams.faculties.length !== 0 ? this.toArray(this.filterParams.faculties)  : null,
       flags,
       required: 0,
       stages: this.filterParams.stage.length !== 0 ? this.toArray(this.filterParams.stage).map((n) => Number(n)) : null,
       type: 0
     };
+   console.log(this.filterParams.faculties)
     shown = this.requirementService.filterByRequirement(requirement, shown);
-
-
     // This has grown too much, try to simplify
     if (this.filterParams.searchTerm !== '' && this.filterParams.searchTerm !== null) {
       let terms = [this.filterParams.searchTerm];
