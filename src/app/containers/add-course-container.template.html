@@ -59,6 +59,7 @@
 
 <div *ngIf="appHeader.mobile">
   <div class="add-course">
+    <div (swiperight)="prevSemester()" (swipeleft)="nextSemester()">
 
     <course-details
        *ngIf="selected || custom"
@@ -84,6 +85,11 @@
       <button class="plain-button" (click)="nextSemester()">
         &gt;
       </button>  -->
+
+
+      <button class="btn btn--next" routerLink="/planner">
+        DONE
+      </button> 
     </mat-toolbar>
 
     <course-filter 
@@ -100,6 +106,7 @@
     </add-course-panel>
 
   </div>
+</div>
 </div>
 
 </div>

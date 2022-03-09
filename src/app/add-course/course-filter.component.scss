@@ -83,6 +83,29 @@ toggle-switch {
   align-items: center;
 }
 
+.mat-checkbox-whole {
+  width: 110%;
+  padding-top: 10px;
+}
+
+.mat-checkbox-whole:active {
+  background: rgba(0,0,0,.04);
+  transition: border-color 90ms cubic-bezier(0,0,.2,.1),background-color 90ms cubic-bezier(0,0,.2,.1);
+  transition-property: border-color, background-color;
+  transition-duration: 90ms, 90ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 0.1), cubic-bezier(0, 0, 0.2, 0.1);
+  transition-delay: 0s, 0s;
+}
+
+.mat-checkbox-whole:after {
+  background: rgba(0,0,0,.04);
+  transition: border-color 90ms cubic-bezier(0,0,.2,.1),background-color 90ms cubic-bezier(0,0,.2,.1);
+  transition-property: border-color, background-color;
+  transition-duration: 90ms, 90ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 0.1), cubic-bezier(0, 0, 0.2, 0.1);
+  transition-delay: 0s, 0s;
+}
+
 @media (max-width: 375px) {
   .flex-justify {
     display: block;

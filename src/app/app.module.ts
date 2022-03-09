@@ -17,6 +17,7 @@ import {
   MatTabsModule,
   MatRadioModule,
   MatCheckboxModule,
+  MatIconModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -210,6 +211,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     MatTabsModule,
     MatRadioModule,
     MatCheckboxModule,
+    MatIconModule,
     NgbModule,
     NgxInfiniteScrollerModule,
     RouterModule.forRoot(ROUTES),

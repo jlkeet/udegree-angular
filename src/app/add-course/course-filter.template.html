@@ -120,8 +120,8 @@
         </mat-expansion-panel-header>
 
           <section class="radio-group-style" [ngModel]="filterParams.faculties" ngDefaultControl>
-              <div *ngFor="let faculty of facultyChoices">
-            <mat-checkbox [value]="faculty.value" (change)="onChange($event, 'faculty')">
+              <div class="mat-checkbox-whole" *ngFor="let faculty of facultyChoices">
+            <mat-checkbox class="mat-checkbox-text" [value]="faculty.value" (change)="onChange($event, 'faculty')">
               {{faculty.label}}
           </mat-checkbox>
         </div>
@@ -154,7 +154,7 @@
         </mat-expansion-panel-header>
 
         <section class="radio-group-style" [ngModel]="filterParams.departments" ngDefaultControl>
-          <div *ngFor="let department of departmentChoices">
+          <div class="mat-checkbox-whole" *ngFor="let department of departmentChoices">
         <mat-checkbox [value]="department.value" (change)="onChange($event, 'department')">
           {{department.label}}
       </mat-checkbox>
@@ -188,7 +188,7 @@
 
 
         <section class="radio-group-style" [ngModel]="filterParams.campus" ngDefaultControl>
-          <div *ngFor="let campus of campusChoices">
+          <div class="mat-checkbox-whole" *ngFor="let campus of campusChoices">
         <mat-checkbox [value]="campus.value" (change)="onChange($event, 'campus')">
           {{campus.label}}
       </mat-checkbox>
@@ -221,7 +221,7 @@
         </mat-expansion-panel-header>
 
         <section class="radio-group-style" [ngModel]="filterParams.stage" ngDefaultControl>
-          <div *ngFor="let stage of stageChoices">
+          <div class="mat-checkbox-whole" *ngFor="let stage of stageChoices">
         <mat-checkbox [value]="stage.value" (change)="onChange($event, 'stage')">
           {{stage.label}}
       </mat-checkbox>
@@ -268,10 +268,10 @@
                       matInput
                       type="search"
                       name="search"
-                      placeholder="Search"
                       [(ngModel)]="filterParams.searchTerm"
                       (ngModelChange)="onChange(null, null, true)"
                       (blur)="onChange()">
+                      <mat-icon matPrefix>search</mat-icon>
     </mat-form-field>
   </mat-accordion>
   <P></P>

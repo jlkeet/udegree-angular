@@ -182,6 +182,44 @@ border-radius: 10px !important;
     color: #0e899e;
 }
 
+// Mat Checkbox styling
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 18px;
+    height: 18px;
+}
+
+.mat-checkbox-frame {
+    border-radius: 50% !important;
+    background-color: #eff2f4 !important;
+    border-width: 0px !important;
+    border-style: solid;
+}
+
+.mat-checkbox-label {
+    font-weight: 400 !important;
+    font-size: 16px;
+}
+
+.mat-checkbox-layout {
+    margin-bottom: 20px;
+}
+
+.mat-checkbox-inner-container {
+    margin-bottom: 2px !important;
+}
+    
+.mat-checkbox-background, .mat-checkbox-frame {
+    border-radius: 50% !important;
+}
+    
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #00a8ff !important;
+}
+    
+
 .bg-purple {
     background-color: #915D85;
 }

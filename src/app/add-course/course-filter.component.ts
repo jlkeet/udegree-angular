@@ -98,16 +98,12 @@ export class CourseFilter {
     }
 
    if (event) {
-    console.log(whichSwitch)
     if (event.checked === true) {
-      
     switch (whichSwitch) {
       case 'faculty':
-        console.log(this.filterParams.faculties)
         this.filterParams.faculties.push(event.source.value)
         break;
       case 'department':
-        console.log(this.filterParams.departments)
         this.filterParams.departments.push(event.source.value)
         break;
       // case 'campus':
@@ -145,7 +141,6 @@ export class CourseFilter {
       stages: this.filterParams.stage.length !== 0 ? this.toArray(this.filterParams.stage).map((n) => Number(n)) : null,
       type: 0
     };
-   console.log(this.filterParams.faculties)
     shown = this.requirementService.filterByRequirement(requirement, shown);
     // This has grown too much, try to simplify
     if (this.filterParams.searchTerm !== '' && this.filterParams.searchTerm !== null) {
