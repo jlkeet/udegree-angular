@@ -10,6 +10,18 @@
   color: black;
   text-align: left;
 }
+@media (max-width: 375px) {
+.course-card-container {
+  border: 2px solid #eee;
+  border-radius:4px;
+  height: 160px;
+  width: auto;
+  margin: 5px;
+  padding: 5px 15px 0 15px;
+  color: black;
+  text-align: left;
+}
+}
 
 .points {
   display:flex;

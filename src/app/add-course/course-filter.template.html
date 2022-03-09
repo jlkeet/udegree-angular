@@ -103,6 +103,14 @@
 <div class="filter-panel">
   <div class="pad">
     <div class="remove-pad flex-justify">
+
+      <div class="searchBox">
+        <input class="searchInput" type="search" name="search" placeholder="Search" [(ngModel)]="filterParams.searchTerm" (ngModelChange)="onChange(null, null, true)" (blur)="onChange()">
+        <button class="searchButton" (click)="searchBtnToggle($event)">
+            <i class="material-icons">search</i>
+        </button>
+    </div>
+
       <mat-accordion multi>
       <mat-expansion-panel class="add-course-filter-panel" [expanded]=false hideToggle>
         <mat-expansion-panel-header class="add-course-filter-header">
@@ -262,18 +270,21 @@
         Hide planned
       </mat-slide-toggle>
     </div>
-    </mat-expansion-panel>
-    <mat-form-field>
-      <input
+
+    <!-- <mat-form-field> -->
+      <!-- <input
                       matInput
                       type="search"
                       name="search"
                       [(ngModel)]="filterParams.searchTerm"
                       (ngModelChange)="onChange(null, null, true)"
                       (blur)="onChange()">
-                      <mat-icon matPrefix>search</mat-icon>
-    </mat-form-field>
+                      <mat-icon matPrefix>search</mat-icon> -->
+                      
+    <!-- </mat-form-field> -->
+  </mat-expansion-panel>
   </mat-accordion>
+
   <P></P>
   </div>
   <hr style="width:90%; margin:auto;"/>

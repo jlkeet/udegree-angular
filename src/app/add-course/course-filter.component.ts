@@ -30,6 +30,8 @@ export class CourseFilter {
   @Input() private planned: ICourse[];
   @Input() private filterParams: any;
 
+  private searchToggle = false;
+
   private facultyChoices;
   private conjointChoices;
   private departmentChoices;
@@ -180,6 +182,10 @@ export class CourseFilter {
       return arg;
     }
     return arg.split(',');
+  }
+
+  private searchBtnToggle(event) {
+    console.log("Firing" , event)
   }
 
 }
