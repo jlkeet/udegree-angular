@@ -154,13 +154,14 @@
   </div>
   </mat-expansion-panel>
 
-  <div *ngIf="!majors?.name && !requiresPathway && !pathways?.name && faculty?.name" class="plain">
+  <div style="position:relative" *ngIf="!majors?.name && !requiresPathway && !pathways?.name && faculty?.name" class="plain">
   <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);"/>
 
     <mat-form-field class="without-arrow addmodule-major">
 
       <div style="text-align: center; margin-top: 20px;">Add Major</div>
       <mat-select
+        *ngIf="!userService.isMobile"
         panelClass="my-panel-class"
         [(value)]="currentMajors[0]"
         (selectionChange)="changeMajor(0, $event)"
@@ -174,11 +175,29 @@
         {{ major.view }}
         </mat-option>
       </mat-select>
+
+
+      <mat-select
+      *ngIf="userService.isMobile"
+      panelClass="my-panel-class-mobile"
+      [(value)]="currentMajors[0]"
+      (selectionChange)="changeMajor(0, $event)"
+    >
+
+      <mat-option
+        *ngFor="let major of degreeSelect.majors"
+        [value]="major.value"
+        (click)="addedMajor = true;pathwayCheck(major.value);degreeSelect.getFilteredSecondMajors();"
+      >
+      {{ major.view }}
+      </mat-option>
+    </mat-select>
+
     </mat-form-field>
 </div>
 </div>
 
-<div *ngIf="requiresPathway" class="plain">
+<div style="position:relative" *ngIf="requiresPathway" class="plain">
   {{pathwayFilter()}}
 <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(4);"/>
 <mat-form-field class="without-arrow addmodule-major">
@@ -379,11 +398,10 @@ hideToggle
 </mat-expansion-panel>
 
 
-<div *ngIf="!conjoint?.name && faculty?.name">
+<div *ngIf="!conjoint?.name && faculty?.name" style="position:relative">
 
   <img class="info-button"  src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(2);"/>
   <mat-form-field class="without-arrow addmodule-major">
-
     <div style="text-align: center; margin-top: 20px;">Add Conjoint (Optional)</div>
 
       <mat-select
@@ -422,7 +440,7 @@ hideToggle
 
 <P></P>
 
-<div *ngIf="!secondMajors?.name && conjoint?.name || !secondMajors?.name && faculty?.name === 'Arts'">
+<div style="position:relative" *ngIf="!secondMajors?.name && conjoint?.name || !secondMajors?.name && faculty?.name === 'Arts'">
 
   <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
     <mat-form-field class="without-arrow addmodule-major">
@@ -465,7 +483,7 @@ hideToggle
 
 <p></p>
 
-  <div *ngIf="(majors?.name) && ((!modules?.name && faculty?.name === 'Arts') || (!modules?.name && faculty?.name === 'Science'))">
+  <div style="position:relative" *ngIf="(majors?.name) && ((!modules?.name && faculty?.name === 'Arts') || (!modules?.name && faculty?.name === 'Science'))">
 
     <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(5);"/>
     <mat-form-field class="without-arrow addmodule">
@@ -507,7 +525,7 @@ hideToggle
   <p></p>
 
 
-  <div *ngIf="(majors?.name) && ((!secondModules?.name && faculty?.name === 'Arts') || (!secondModules?.name && faculty?.name === 'Science'))">
+  <div style="position:relative" *ngIf="(majors?.name) && ((!secondModules?.name && faculty?.name === 'Arts') || (!secondModules?.name && faculty?.name === 'Science'))">
 
     <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(5);"/>
     <mat-form-field class="without-arrow addmodule">
