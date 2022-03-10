@@ -164,3 +164,40 @@ color : #2f3640;
 }
 }
 
+.button-toggle-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-course-button {
+  width: 90px;
+  color: white;
+  background-color: #FF5403;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+.collapse-filter-button {
+  width: 90px;
+  color: white;
+  background-color: #37d8ae;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin-left: 7px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  border-top-color: #000000;
+  animation: spinner .8s linear;
+}

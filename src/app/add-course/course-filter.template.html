@@ -106,12 +106,12 @@
 
       <div class="searchBox">
         <input class="searchInput" type="search" name="search" placeholder="Search" [(ngModel)]="filterParams.searchTerm" (ngModelChange)="onChange(null, null, true)" (blur)="onChange()">
-        <button class="searchButton" (click)="searchBtnToggle($event)">
+        <button class="searchButton">
             <i class="material-icons">search</i>
         </button>
     </div>
 
-      <mat-accordion multi>
+      <mat-accordion #accordion="matAccordion" multi>
       <mat-expansion-panel class="add-course-filter-panel" [expanded]=false hideToggle>
         <mat-expansion-panel-header class="add-course-filter-header">
           <mat-panel-title class="add-course-filter-title">
@@ -120,7 +120,7 @@
           </mat-expansion-panel-header>
       <div>  
         <!-- <mat-form-field class="space"> -->
-          <mat-expansion-panel class="add-course-filter-panel" [expanded]=false>
+          <mat-expansion-panel class="add-course-filter-panel" [(expanded)]="panelOpenStateFaculty">
           <mat-expansion-panel-header class="add-course-filter-header">
             <mat-panel-title class="add-course-filter-title"> 
           Faculties
@@ -154,7 +154,7 @@
 
       <div>
 
-        <mat-expansion-panel class="add-course-filter-panel" [expanded]=false>
+        <mat-expansion-panel class="add-course-filter-panel" [(expanded)]="panelOpenStateDepartment">
           <mat-expansion-panel-header class="add-course-filter-header">
             <mat-panel-title class="add-course-filter-title"> 
           Departments
@@ -187,7 +187,7 @@
       <div>
 
 
-        <mat-expansion-panel class="add-course-filter-panel" [expanded]=false>
+        <mat-expansion-panel class="add-course-filter-panel" [(expanded)]="panelOpenStateCampus">
           <mat-expansion-panel-header class="add-course-filter-header">
             <mat-panel-title class="add-course-filter-title"> 
               Campus
@@ -197,7 +197,7 @@
 
         <section class="radio-group-style" [ngModel]="filterParams.campus" ngDefaultControl>
           <div class="mat-checkbox-whole" *ngFor="let campus of campusChoices">
-        <mat-checkbox [value]="campus.value" (change)="onChange($event, 'campus')">
+        <mat-checkbox [disabled]="true" [value]="campus.value" (change)="onChange($event, 'campus')">
           {{campus.label}}
       </mat-checkbox>
     </div>
@@ -221,7 +221,7 @@
 
       <div>
 
-        <mat-expansion-panel class="add-course-filter-panel" [expanded]=false>
+        <mat-expansion-panel class="add-course-filter-panel" [(expanded)]="panelOpenStateStage">
           <mat-expansion-panel-header class="add-course-filter-header">
             <mat-panel-title class="add-course-filter-title"> 
               Stages
@@ -271,6 +271,10 @@
       </mat-slide-toggle>
     </div>
 
+    <div class="button-toggle-group">
+    <button class='btn remove-course-button' [class.spinner]="loading" [disabled]="loading" (click)="clearAll()">Clear</button>
+    <button class='btn collapse-filter-button' (click)="accordion.closeAll();collapseAll();">Done</button>
+    </div>
     <!-- <mat-form-field> -->
       <!-- <input
                       matInput

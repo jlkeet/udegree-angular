@@ -30,7 +30,11 @@ export class CourseFilter {
   @Input() private planned: ICourse[];
   @Input() private filterParams: any;
 
-  private searchToggle = false;
+  private panelOpenStateFaculty = false;
+  private panelOpenStateDepartment = false;
+  private panelOpenStateCampus = false;
+  private panelOpenStateStage = false;
+  private loading = false;
 
   private facultyChoices;
   private conjointChoices;
@@ -184,8 +188,28 @@ export class CourseFilter {
     return arg.split(',');
   }
 
-  private searchBtnToggle(event) {
-    console.log("Firing" , event)
+  private clearAll() {
+    this.loading = true;
+    this.ngOnInit();
+    this.filterParams.corequesite = null;
+    this.filterParams.departments = [];
+    this.filterParams.faculties = [];
+    this.filterParams.general = null;
+    this.filterParams.hidePlanned = null;
+    this.filterParams.ineligible = null;
+    this.filterParams.searchTerm = "";
+    this.filterParams.stage = [];
+    
+    setTimeout(() => {     
+      this.loading = false; }, 600 )
+  
+  }
+
+  private collapseAll() {
+    this.panelOpenStateFaculty = false;
+    this.panelOpenStateDepartment = false;
+    this.panelOpenStateCampus = false;
+    this.panelOpenStateStage = false;
   }
 
 }
