@@ -31,7 +31,7 @@
 
         <div class="minimised-courses">
           <span *ngFor="let course of courses">
-            <span *ngIf="!mep.expanded" matTooltip={{course.name}} class="circle"
+            <span *ngIf="!mep.expanded" class="circle"
               [ngStyle]="{'background-color': smallCourseStatusBar(course)}"></span>
           </span>
         </div>

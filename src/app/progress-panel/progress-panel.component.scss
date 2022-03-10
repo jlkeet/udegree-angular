@@ -8,6 +8,7 @@
   // border: 1px solid #eee;
   border-radius: 7px;
   width: 100%;
+  overflow: hidden !important;
 }
 
 .progress-panel-bar-container {
@@ -202,6 +203,7 @@
 .pg-bar .mat-expansion-panel-body {
   background-color: #fff;
   padding: 0px 0px !important;
+
 }
 
 .mat-expansion-panel-header:hover {

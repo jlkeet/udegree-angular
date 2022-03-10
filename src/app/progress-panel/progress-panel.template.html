@@ -1,4 +1,5 @@
 <div class="progress-panel-content">
+  <mat-accordion multi>
   <mat-expansion-panel
     class="pg-bar"
     [disabled]="isDisabled"
@@ -195,7 +196,7 @@
 
     </mat-form-field>
 </div>
-</div>
+
 
 <div style="position:relative" *ngIf="requiresPathway" class="plain">
   {{pathwayFilter()}}
@@ -562,4 +563,7 @@ hideToggle
       </mat-select>
       </mat-form-field>
   </div>
+</mat-accordion>
+  </div>
+
 
