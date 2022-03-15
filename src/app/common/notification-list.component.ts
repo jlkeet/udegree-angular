@@ -46,8 +46,6 @@ import { Store } from '../app.store';
         .notification-list {
             right: -98px;
             width: 374px;
-            overflow-x: overlay;
-            overflow-y: hidden;
     }
 
     }
