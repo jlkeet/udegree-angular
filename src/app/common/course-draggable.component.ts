@@ -33,10 +33,11 @@ export class CourseDraggable {
   @Input() public year: number;
   @Input() public period: Period;
 
-  private showDelete: boolean;
+  private showDelete: boolean = false;
   private backgroundColor: string;
   private displayGrade: string;
   // private isDragging: boolean = false;
+  private status: boolean = false;
 
   constructor(
     private el: ElementRef,
@@ -75,6 +76,11 @@ export class CourseDraggable {
     this.courseClicked.emit({
       value: this.course
     });
+  }
+
+  private pressForDel() {
+   this.status = !this.status;
+   console.log("Firing")
   }
 
   public ngOnInit() {

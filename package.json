@@ -39,6 +39,7 @@
     "ng2-dragula": "^2.1.1",
     "ngx-avatar": "^4.1.0",
     "ngx-infinite-scroller": "^0.6.3",
+    "ngx-long-click": "0.0.11",
     "node-sass": "^4.14.1",
     "npm": "^6.14.15",
     "primeng": "^5.0.0-rc.0",

@@ -21,6 +21,13 @@ import { Store } from '../app.store';
         top: -16px;
         right: -5px;
     }
+    @media (max-width: 375px) {
+    .notification-icon-badge-container {
+        position: absolute;
+        top: -16px;
+        right: 12px;
+    }
+}
 
     .notification-icon-badge-container:hover {
         position: absolute;

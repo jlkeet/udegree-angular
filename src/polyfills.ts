@@ -40,6 +40,7 @@ import 'zone.js/dist/zone';
  */
  (window as any)['global'] = window;
 
+
 // Typescript emit helpers polyfill
 import 'ts-helpers';
 

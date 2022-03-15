@@ -21,13 +21,44 @@
   .course {
       width: 47vw;
    }
-   .cross {
-    display:block !important;
+   .course-shake {
+    width: 47vw;
+    border-radius:5px;
+    height: 100px;
+    padding-top:15px;
+    padding-left:15px;
+    padding-right:15px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    flex-direction:column;
+    box-sizing: border-box;
+    animation: shake 1.0s;
+    animation-iteration-count: infinite;
+  
+    .cross {
+      display: block;
+    }
   }
 }
 
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+@media (min-width: 380px) {
 .course:hover .cross {
   display: block;
+}
 }
 
 .cross {

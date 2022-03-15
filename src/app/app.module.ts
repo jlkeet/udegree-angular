@@ -17,7 +17,8 @@ import {
   MatTabsModule,
   MatRadioModule,
   MatCheckboxModule,
-  MatIconModule
+  MatIconModule,
+  MatListModule,
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +29,7 @@ import {
   removeNgStyles
 } from '@angularclass/hmr';
 import { HammerGestureConfig , HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import {NgxLongClickModule} from 'ngx-long-click';
 
 
 /* Firebase */
@@ -212,8 +214,10 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     MatRadioModule,
     MatCheckboxModule,
     MatIconModule,
+    MatListModule,
     NgbModule,
     NgxInfiniteScrollerModule,
+    NgxLongClickModule,
     RouterModule.forRoot(ROUTES),
     DragulaModule,
     // PrimeNg Modules

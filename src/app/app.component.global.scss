@@ -82,6 +82,8 @@ $light-theme : mat-light-theme($primary, $accent, $warn);
 
 /* GLOBAL */
 
+.mat-sidenav-container { height: 100% } 
+
 html, body {
   //  overflow-x: hidden;
    // overflow-y: scroll;
