@@ -41,6 +41,16 @@ import { Store } from '../app.store';
         background-color: #E0FFFF;
         color: #46b7cc;
     }
+
+    @media (max-width: 375px) {
+        .notification-list {
+            right: -98px;
+            width: 374px;
+            overflow-x: overlay;
+            overflow-y: hidden;
+    }
+
+    }
     `],
     template:
     `<div *ngIf="show" class="notification-list" [ngClass]="borderClass">
