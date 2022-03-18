@@ -727,13 +727,13 @@
           "SOCIOL103",
           "STATS101",
           "POPLHLTH203",
-          "POPHLTH206–208",
-          "POPHLTH211–215",
+          "POPHLTH206-208",
+          "POPHLTH211-215",
           "STATS201",
           "MAORIHTH301",
           "POPLHLTH301",
-          "POPHLTH303–307",
-          "POPHLTH310–316",
+          "POPHLTH303-307",
+          "POPHLTH310-316",
           "STATS330"
         ],
         "flags": {}
@@ -1391,7 +1391,7 @@
         "required": 210,
         "papers": [
           "EDPROFM100",
-          "SPORTHPE101–104",
+          "SPORTHPE101-104",
           "SPORT101",
           "EDUCSW201",
           "HEALTHED201",
@@ -1443,47 +1443,7 @@
     "flags": ["Next"]
   },
   {
-    "name": "Urban Planning",
-    "abbrv": "BUrbPlan",
-    "majors": ["None"],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 480
-      },
-      {
-        "type": 0,
-        "required": 450,
-        "faculties": ["Urban Planning"],
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 30,
-        "faculties": [
-          "Architectural Studies",
-          "Arts",
-          "Commerce",
-          "Dance Studies",
-          "Education (Teaching English to Speakers of Other Languages)",
-          "Fine Arts",
-          "Health and Physical Education",
-          "Music",
-          "Nursing",
-          "Optometry",
-          "Pharmacy",
-          "Property",
-          "Science",
-          "Social Work",
-          "Sport"
-        ],
-        "flags": ["General"]
-      }
-    ],
-    "flags": ["Prescribed"]
-  },
-  {
-    "name": "Bachelor of Communication",
+    "name": "Communications",
     "abbrv": "BC",
     "majors": [
       "Communication and Social Change",
@@ -1499,20 +1459,20 @@
       {
         "type": 0,
         "required": 315,
-        "faculties": ["Bachelor of Communication"],
+        "faculties": ["Communications"],
         "flags": {}
       },
       {
         "type": 0,
         "required": 180,
-        "faculties": ["Bachelor of Communication"],
+        "faculties": ["Communications"],
         "aboveStage": 1,
         "flags": {}
       },
       {
         "type": 0,
         "required": 90,
-        "faculties": ["Bachelor of Communication"],
+        "faculties": ["Communications"],
         "aboveStage": 2,
         "flags": {}
       },
@@ -1561,7 +1521,7 @@
     ]
   },
   {
-    "name": "Bachelor of Design",
+    "name": "Design",
     "abbrv": "BDes",
     "majorRequirements": [
       {
@@ -1572,7 +1532,7 @@
       {
         "type": 0,
         "required": 300,
-        "faculties": ["Bachelor of Design"],
+        "faculties": ["Design"],
         "flags": {}
       },
       {
@@ -1596,7 +1556,7 @@
     ]
   },
   {
-    "name": "Bachelor of Global Studies",
+    "name": "Global Studies",
     "abbrv": "BGlobalSt",
     "majorRequirements": [
       {
@@ -1607,7 +1567,7 @@
       {
         "type": 0,
         "required": 300,
-        "faculties": ["Bachelor of Global Studies"],
+        "faculties": ["Global Studies"],
         "flags": {}
       },
       {
@@ -1758,50 +1718,5 @@
       }
     ],
     "flags": ["Dbl Mjr"]
-  },
-  {
-    "name": "Bachelor of Physical Education",
-    "abbrv": "BPE",
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 480,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 420,
-        "faculties": ["Bachelor of Physical Education"],
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 30,
-        "faculties": [
-          "Architectural Studies",
-          "Commerce",
-          "Dance Studies",
-          "Education (Teaching English to Speakers of Other Languages)",
-          "Fine Arts",
-          "Health and Physical Education",
-          "Music",
-          "Nursing",
-          "Optometry",
-          "Pharmacy",
-          "Property",
-          "Science",
-          "Social Work",
-          "Sport",
-          "Urban Planning"
-        ],
-        "flags": ["General"]
-      },
-      {
-        "type": 0,
-        "required": 30,
-        "papers": ["EDCURRIC237–241", "EDCURRIC433"],
-        "flags": {}
-      }
-    ]
   }
 ]
