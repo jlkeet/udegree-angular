@@ -6,11 +6,6 @@
     width: 99%;
 }
 
-.add-course-container {
-  display: flex;        
-  width: 99%;
-}
-
 @media (max-width: 375px) { 
 
   .add-course-container {
@@ -19,12 +14,13 @@
 }
 
 .add-course {
-  position:relative;
-  width:100%;
+  position:absolute;
+  width:75%;
   height: calc(100vh - 105px);
   border:1px solid #f2f2f2;
   border-radius:5px;
-  margin-top: 10px
+  margin-top: 10px;
+  display: inline;
 }
 
 .step-panel {
