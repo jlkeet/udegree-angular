@@ -38,6 +38,7 @@
     "html2canvas": "^1.3.2",
     "ng2-dragula": "^2.1.1",
     "ngx-avatar": "^4.1.0",
+    "ngx-infinite-scroll": "^6.0.1",
     "ngx-infinite-scroller": "^0.6.3",
     "ngx-long-click": "0.0.11",
     "node-sass": "^4.14.1",

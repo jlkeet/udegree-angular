@@ -217,6 +217,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     MatListModule,
     NgbModule,
     NgxInfiniteScrollerModule,
+    InfiniteScrollModule,
     NgxLongClickModule,
     RouterModule.forRoot(ROUTES),
     DragulaModule,

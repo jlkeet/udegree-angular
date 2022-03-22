@@ -6413,10 +6413,11 @@
     "faculties": ["Science", "Medicine & Surgery"],
     "department": "Biological Sciences",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
-    "id": 332,
+    "id": "332",
     "name": "BIOSCI107",
     "title": "Biology for Biomedical Science: Cellular Processes and Development",
     "desc": "The cellular basis of mammalian form and function including embryology and development. Particular emphasis will be placed on the cellular components of the blood, neural, muscular, reproductive, immune and supporting systems, and how they contribute to the structure and function of the body as a whole.",
@@ -7599,7 +7600,8 @@
     "faculties": ["Science"],
     "department": "Chemistry",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 401,
@@ -7609,7 +7611,8 @@
     "faculties": ["Science"],
     "department": "Chemistry",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 402,
@@ -7623,7 +7626,7 @@
     "isActive": false
   },
   {
-    "id": 403,
+    "id": "403",
     "name": "CHEM110",
     "title": "Chemistry of the Living World",
     "desc": "A foundation for understanding the chemistry of life is laid by exploring the diversity and reactivity of organic compounds. A systematic study of reactivity focuses on the site and mechanism of reaction including application of chemical kinetics. A quantitative study of proton transfer reactions features control of pH of fluids in both living systems and the environment.",
@@ -7641,7 +7644,8 @@
     "faculties": ["Science"],
     "department": "Chemistry",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 405,
@@ -7651,7 +7655,8 @@
     "faculties": ["Science"],
     "department": "Chemistry",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 406,

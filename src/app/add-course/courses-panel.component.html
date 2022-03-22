@@ -1,6 +1,7 @@
 <div
-    ngxInfiniteScroller
-    (onScrollDown)="onScroll()"
+    infiniteScroll
+    [scrollWindow]="false"
+    (scrolled)="onScroll()"
     class="courses-panel" [class.details-overlay]="selected">
       
       <div *ngIf="curScroll.length !== 0">
