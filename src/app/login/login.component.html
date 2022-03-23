@@ -12,18 +12,18 @@
           <input type="password" class="form-control" formControlName="password">
           <label class="login-error">{{errorMessage}}</label>
         </div>
-        <button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-default">Login</button>
+        <button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-pendo btn-default">Login</button>
       </form>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook</button>
+      <button type="button" class="btn btn-pendo btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook</button>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Continue with Google</button>
+      <button type="button" class="btn btn-pendo btn-danger btn-block" (click)="tryGoogleLogin()">Continue with Google</button>
     </div>
   </div>
   <!-- <div class="row">
