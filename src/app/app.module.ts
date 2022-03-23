@@ -116,6 +116,7 @@ import { ProgressBarMulti } from './progress-panel';
 import { ProgressBarMultiContainer } from './progress-bar-multi.container';
 import { CourseDialogComponent } from './courses-panel/course-dialog.component';
 import { ProgressDialogComponent } from './progress-panel/progress-dialog.component'
+import { UserDialogComponent } from './user/user-dialog-component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -189,7 +190,8 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
 
     // Pop-up components
     ProgressDialogComponent,
-    CourseDialogComponent
+    CourseDialogComponent,
+    UserDialogComponent
     
   ],
   imports: [
@@ -262,7 +264,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
 
     ...providers
   ],
-   entryComponents: [CourseDialogComponent, ProgressDialogComponent],
+   entryComponents: [CourseDialogComponent, ProgressDialogComponent, UserDialogComponent],
 })
 export class AppModule {
  

@@ -25,7 +25,7 @@ export class AddCoursePanel {
   constructor(private courseService: CourseService, private storeHelper: StoreHelper, private db_courses: AngularFireDatabase, private db: AngularFirestore) { }
 
   ngOnChanges(changes: SimpleChanges){
-    this.scrollTo = 2;
+    this.scrollTo = 10;
     this.curScroll = this.departmentCourses.slice(0, this.scrollTo);
   }
 

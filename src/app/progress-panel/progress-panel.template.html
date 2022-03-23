@@ -443,7 +443,7 @@ hideToggle
 
 <div style="position:relative" *ngIf="!secondMajors?.name && conjoint?.name || !secondMajors?.name && faculty?.name === 'Arts'">
 
-  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png"/>
+  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);"/>
     <mat-form-field class="without-arrow addmodule-major">
 
     <div *ngIf="faculty.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>

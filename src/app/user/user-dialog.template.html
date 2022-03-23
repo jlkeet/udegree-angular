@@ -1,0 +1,9 @@
+
+<div *ngIf="degSelectId === 1">
+    <h2 mat-dialog-title>Are you sure you want to log out?</h2>
+        
+    <mat-dialog-actions class="export-button-options">
+        <button class="btn export-button-yes"(click)="authService.doLogout();close();">Yes</button>
+        <button class="btn export-button-cancel"(click)="close();">Cancel</button>
+    </mat-dialog-actions>
+    </div>

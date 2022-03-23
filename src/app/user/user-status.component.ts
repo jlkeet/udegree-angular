@@ -5,6 +5,9 @@ import { AuthService } from "../core/auth.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { LeftPanelContainer } from "../containers";
+import { MatDialog, MatDialogConfig } from "@angular/material";
+import { CourseDialogComponent } from "../courses-panel/course-dialog.component";
+import { UserDialogComponent } from "./user-dialog-component";
 
 @Component({
   selector: "user-container",
@@ -20,13 +23,15 @@ export class UserContainer {
   public logInCounter = 0;
   public isMobile;
 
+
   constructor(
     public userService: UserService,
     public authService: AuthService,
     public db: AngularFirestore,
     private router: Router,
     private user: FirebaseUserModel,
-    private leftPanel: LeftPanelContainer
+    private leftPanel: LeftPanelContainer,
+    private dialog: MatDialog
   ) {
 
     this.authService.afAuth.authState.subscribe(async (auth) => {
@@ -75,5 +80,24 @@ export class UserContainer {
         });
     });
   }
+
+  private openDialog() {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+      id: 1,
+      title: 'Angular For Beginners'
+  };
+
+    const dialogRef = this.dialog.open(UserDialogComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+        data => console.log("Dialog output:", data)
+    );    
+}
 
 }
