@@ -45,7 +45,7 @@
 
   </mat-expansion-panel-header>
   <div *ngIf="toggled" class="courses">
-    <div class="flex dragula-container">
+    <div #autoscroll class="flex dragula-container">
       <div class="semester-courses" [dragula]="bagName" [dragulaModel]="courses" [attr.period]="semester.period"
         [attr.year]="semester.year">
         <course-draggable *ngFor="let course of courses; let i = index" (deleteCourseClicked)="deleteCourse(course)"

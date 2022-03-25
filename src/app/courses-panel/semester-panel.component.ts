@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter, Output, ViewEncapsulation } from "@angular/core";
+import { Component, Input, EventEmitter, Output, ViewEncapsulation, ElementRef, ViewChild } from "@angular/core";
 import { snapshotChanges } from "@angular/fire/database";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { DragulaService } from "ng2-dragula";
@@ -16,6 +16,7 @@ import { HighlightSpanKind } from "typescript";
 import { Router } from "@angular/router";
 import { BoundPlayerFactory } from "@angular/core/src/render3/styling/player_factory";
 import { UserContainer } from "../common";
+import autoScroll from 'dom-autoscroller';
 
 @Component({
   selector: "semester-panel",
@@ -23,7 +24,9 @@ import { UserContainer } from "../common";
   encapsulation: ViewEncapsulation.None,
   templateUrl: "semester-panel.template.html",
 })
+
 export class SemesterPanel {
+  @ViewChild('autoscroll') autoscroll: ElementRef;
   @Input() private semester;
   @Input() private courses: ICourse[];
 
@@ -59,9 +62,28 @@ export class SemesterPanel {
     private userContainer: UserContainer,
   ) {
     this.email = this.courseService.email;
+    
   }
+  
 
   private ngOnInit() {
+
+        // AutoScroll
+        setTimeout(() => {
+          let scroll = autoScroll([
+            this.autoscroll.nativeElement,
+          ], {
+              margin: 20,
+              maxSpeed: 5,
+              scrollWhenOutside: true,
+              autoScroll: function () {
+                //Only scroll when the pointer is down.
+                return this.down;
+                //return true;
+              }
+            });
+        }, 3000);
+
     this.bagName = "courses";
     const bag = this.dragulaService.find(this.bagName);
 

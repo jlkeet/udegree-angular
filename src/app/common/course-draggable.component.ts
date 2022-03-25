@@ -23,6 +23,7 @@ import { StoreHelper } from '../services';
   styles: [require('./course.component.scss')],
   templateUrl: './course-draggable.template.html'
 })
+
 export class CourseDraggable {
   @Output() public addCourseClicked = new EventEmitter();
   @Output() public courseClicked = new EventEmitter();
@@ -38,6 +39,7 @@ export class CourseDraggable {
   private displayGrade: string;
   // private isDragging: boolean = false;
   private status: boolean = false;
+  
 
   constructor(
     private el: ElementRef,
@@ -50,7 +52,21 @@ export class CourseDraggable {
     dragulaService.drop.subscribe((value) => self.isDragging = false);
     dragulaService.over.subscribe((value) => self.isDragging = true);
     dragulaService.out.subscribe((value) => self.isDragging = false);*/
+
+
+
+    // let scrollPosition = 0;
+    // const body_el = document.getElementById('body');
+    // ...or whatever you want to do to get the body element; I gave it an id='body' attribute
+
+    // dragula_obj.on('drag', function (el) { scroll_disable(); });
+    // dragula_obj.on('dragend', function (el) { scroll_enable(); });  
+
+    
+
   }
+
+  
 
   public addCourse() {
     this.addCourseClicked.emit({
@@ -172,4 +188,30 @@ export class CourseDraggable {
     }
     
   }
+
+  
+
+// private scroll_disable() {
+
+// console.log('scroll_disable()');
+// scrollPosition = window.pageYOffset;
+// body_el.style.overflow = 'hidden';
+// body_el.style.position = 'fixed';
+// body_el.style.top = `-${scrollPosition}px`;
+// body_el.style.width = '100%';
+
+// }
+
+// private scroll_enable() {
+
+// console.log('scroll_enable()');
+// body_el.style.removeProperty('overflow');
+// body_el.style.removeProperty('position');
+// body_el.style.removeProperty('top');
+// body_el.style.removeProperty('width');
+// window.scrollTo(0, scrollPosition);
+// }
+
+
+
 }

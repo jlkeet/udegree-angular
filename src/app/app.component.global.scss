@@ -87,9 +87,11 @@ $light-theme : mat-light-theme($primary, $accent, $warn);
 html, body {
   //  overflow-x: hidden;
    // overflow-y: scroll;
+   height: 100%;
   }
   body {
     width: 100%;
+    overscroll-behavior-y: contain !important;
   }
 
 body { 
@@ -98,7 +100,7 @@ body {
     margin: 0;
     color: #607d8b;
     background:#f9fbfc;
-   // zoom: 100%;
+    zoom: 100%;
 }
 
 main {

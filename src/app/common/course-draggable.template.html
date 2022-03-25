@@ -1,4 +1,4 @@
-<div class="course course--draggable" (click)="toggleDetails()" (longClick)="pressForDel()" clickDelayMs="2000" (mouseover)="showDelete = true" (mouseleave)="showDelete = false" [ngClass]="status ? 'course-shake' : 'course'" title="{{course.help}}"  
+<div style="touch-action: none;" class="course course--draggable" (click)="toggleDetails()" (longClick)="pressForDel()" clickDelayMs="2000" (mouseover)="showDelete = true" (mouseleave)="showDelete = false" [ngClass]="status ? 'course-shake' : 'course'" title="{{course.help}}"  
     [style.background-color]="backgroundColor"
     [class.course--error]="course.isError" >
     <!--[class.dragging]="isDragging"-->
