@@ -69,7 +69,7 @@ export class RequirementService {
    */
   public paperRangeIncludes(paperRange: string[], checkIncluded: string): boolean {
     for (const range of paperRange) {
-      if (range.includes('-')) {
+      if (range.includes('–')) {
         const index = range.search(/[0-9]/);
         const dept = range.substring(0, index);
         const codes = range.substring(index);
