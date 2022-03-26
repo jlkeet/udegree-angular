@@ -66299,5 +66299,145 @@
         "flags": {}
       }
     ]
+  },
+
+
+
+  {
+    "id": 3618,
+    "name": "BUSAN300",
+    "title": "Data Wrangling",
+    "desc": "Organisations are increasingly adopting big data analysis, predictive analytics, social data mining, and deep machine learning to gain business intelligence and insight. The value of such technologies relies on having high-quality data, yet raw data is messy and its transformation to add value is often neglected. Students will explore a data wrangling toolbox to add value to data.",
+    "faculties": ["Science"],
+    "department": "Business Analytics",
+    "points": 15,
+    "stage": 3,
+    "isActive": true,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["BUSAN201", "INFOMGMT292", "INFOSYS222"],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "id": 3619,
+    "name": "BUSAN301",
+    "title": "Data Visualisation",
+    "desc": "Visual representations of data enable complex ideas to be communicated clearly and effectively. Covers how to better engage decision makers via data visualisation. Focusses on transforming data into visual digital narratives using modern visualisation tools.",
+    "faculties": ["Science"],
+    "department": "Business Analytics",
+    "points": 15,
+    "stage": 3,
+    "isActive": true,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["BUSAN201", "BUSAN201", "INFOMGMT290-296", "INFOSYS220-280", "STATS208", "STATS255"],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "id": 3620,
+    "name": "BUSAN302",
+    "title": "Big Data and Machine Learning",
+    "desc": "Provides essential skills to build data-driven digital innovations that augment business decisions. This involves identifying problems faced by different groups of individuals from different spheres of life, analysing the problem space and data needs, building a prototype for a selected design, and using machine learning tools and cloud-based big data analytics.",
+    "faculties": ["Science"],
+    "department": "Business Analytics",
+    "points": 15,
+    "stage": 3,
+    "isActive": true,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["BUSAN201", "INFOMGMT292", "INFOSYS222"],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "id": 3621,
+    "name": "BUSAN303",
+    "title": "Special Topic",
+    "desc": "Special Topic",
+    "faculties": ["Science"],
+    "department": "Business Analytics",
+    "points": 15,
+    "stage": 3,
+    "isActive": true,
+    "requirements": []
+  },
+  {
+    "id": 3622,
+    "name": "BUSAN304",
+    "title": "Business Analytics Capstone",
+    "desc": "Based on a real-life project and focuses on creating a competitive advantage through improving the overall decision-making process of the company hosting the project: from data through to decisions. By exploring the challenges surrounding decision-making students will utilise the skills gained in previous courses enabling the deployment of business analytics tools to find practical solutions to benefit the host company.",
+    "faculties": ["Science"],
+    "department": "Business Analytics",
+    "points": 15,
+    "stage": 3,
+    "isActive": true,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["BUSAN201", "BUSAN202"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["BUSAN200", "STATS200", "STATS255"],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "id": 3623,
+    "name": "BUSAN305",
+    "title": "Simulation Modelling",
+    "desc": "Uncertainty exists in all management decisions and simulation is used for analysing systems in industry. This course focuses on modelling real-world problems using a commercial simulation tool. Industrial case studies will motivate the content of the course. Topics include the simulation process, general queue modelling, modelling networks (computer or transportation networks) and simulating operations (machine scheduling or assembly line modelling). The emphasis is on “learning by doing”.",
+    "faculties": ["Science"],
+    "department": "Business Analytics",
+    "points": 15,
+    "stage": 3,
+    "isActive": true,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["BUSAN200", "ENGSCI255", "INFOMGMT290", "OPSMGT255", "OPSMGT258", "STATS201-290"],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "id": 3624,
+    "name": "BUSAN306",
+    "title": "Directed Study",
+    "desc": "Directed Study",
+    "faculties": ["Science"],
+    "department": "Business Analytics",
+    "points": 15,
+    "stage": 3,
+    "isActive": true,
+    "requirements": []
+  },
+  {
+    "id": 3625,
+    "name": "INFOSYS302",
+    "title": "Special Topic",
+    "desc": "Special Topic",
+    "faculties": ["Business And Economics", "Science", "Commerce"],
+    "department": "Information Systems",
+    "points": 15,
+    "stage": 3,
+    "requirements": [],
+    "isActive": true
   }
 ]
