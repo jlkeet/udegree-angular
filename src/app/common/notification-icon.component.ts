@@ -21,7 +21,7 @@ import { Store } from '../app.store';
         top: -16px;
         right: -5px;
     }
-    @media (max-width: 375px) {
+    @media (max-width: 415px) {
     .notification-icon-badge-container {
         position: absolute;
         top: -16px;

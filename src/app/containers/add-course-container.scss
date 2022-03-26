@@ -6,7 +6,7 @@
     width: 99%;
 }
 
-@media (max-width: 375px) { 
+@media (max-width: 415px) { 
 
   .add-course-container {
     display: inline-block;        
@@ -18,7 +18,7 @@
 
 .add-course {
   position:absolute;
-  width:75%;
+  // width:75%;
   height: calc(100vh - 105px);
   border:1px solid #f2f2f2;
   border-radius:5px;
@@ -62,7 +62,7 @@
   border-radius:5px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 415px) {
   .plain {
     padding-bottom: 0px;
   }

@@ -42,7 +42,7 @@ import { Store } from '../app.store';
         color: #46b7cc;
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 415px) {
         .notification-list {
             right: -98px;
             width: 374px;
