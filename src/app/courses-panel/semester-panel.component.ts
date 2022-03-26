@@ -308,7 +308,8 @@ export class SemesterPanel {
 
   private yearList() {
     this.yearListArray = [];
-    let i = new Date().getFullYear();
+   // let i = new Date().getFullYear();
+    let i = 2010
     while (i < 2030) {
       this.yearListArray.push(i);
       i++;
