@@ -198,6 +198,9 @@
 </div>
 
 
+
+
+
 <div style="position:relative" *ngIf="requiresPathway" class="plain">
   {{pathwayFilter()}}
 <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(4);"/>
@@ -319,6 +322,46 @@ hideToggle
 </mat-expansion-panel>
 
 <p></p>
+
+<mat-expansion-panel
+class="pg-bar"
+[disabled]="isDisabled"
+[expanded]="true"
+hideToggle
+>
+<mat-expansion-panel-header
+  *ngIf="thirdMajors?.name"
+  style="margin-top: 0px; margin-bottom: 0px"
+  (click)="expansionOnClick()"
+>
+
+  <mat-toolbar *ngIf="majors?.name && thirdMajors?.name" class="plain">
+    <span>Third Major: {{thirdMajors.name}} </span>
+    <span class="spacer"></span>
+    <span class="delete-pg" (click)="noExpansionOnClick(); deleteThirdMajor();">
+      <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+      <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+    </span>
+  </mat-toolbar>
+</mat-expansion-panel-header>
+
+  <div
+    *ngIf="majors?.name && secondMajors?.name && thirdMajors?.name"
+    class="progress-panel-bar-container flex flex-col flex-start"
+  >
+    <div class="progress-bar-group">
+      <progress-bar-multi-container
+        *ngFor="let requirement of thirdMajorRequirements"
+        [requirement]="requirement"
+        [courses]="courses"
+        (click)="selectRequirements(requirement)"
+      >
+      </progress-bar-multi-container>
+    </div>
+  </div>
+</mat-expansion-panel>
+
+<P></P>
 
   <mat-expansion-panel
   class="pg-bar"
@@ -446,8 +489,10 @@ hideToggle
   <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);"/>
     <mat-form-field class="without-arrow addmodule-major">
 
-    <div *ngIf="faculty.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>
-    <div *ngIf="faculty.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major <BR> (Compulsary for Bachelor of Arts)</div>
+    <!-- <div *ngIf="faculty.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>
+    <div *ngIf="faculty.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major <BR> (Compulsary for Bachelor of Arts)</div> -->
+      
+    <div *ngIf="faculty.name === 'Arts' || conjoint.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>
 
       <mat-select
         *ngIf="!userService.isMobile"
@@ -476,6 +521,47 @@ hideToggle
         (click)="addedSecondMajor=true"
       >
       {{ secondMajor.view }}
+      </mat-option>
+    </mat-select>
+    </mat-form-field>
+</div>
+
+<p></p>
+
+<div style="position:relative" *ngIf="!thirdMajors?.name && secondMajors?.name && conjoint?.name === 'Arts' || !thirdMajors?.name && faculty?.name === 'Arts' &&  conjoint?.name && secondMajors?.name">
+
+  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);"/>
+    <mat-form-field class="without-arrow addmodule-major">
+
+    <div style="text-align: center; margin-top: 20px;">Add Third Major</div>
+
+      <mat-select
+        *ngIf="!userService.isMobile"
+        panelClass="my-panel-class"
+        [(value)]="currentThirdMajors[0]"
+        (selectionChange)="changeThirdMajor(0, $event)"
+      >
+        <mat-option
+          *ngFor="let thirdMajor of this.degreeSelect.thirdMajors"
+          [value]="thirdMajor.value"
+          (click)="addedThirdMajor=true"
+        >
+        {{ thirdMajor.view }}
+        </mat-option>
+      </mat-select>
+
+      <mat-select
+      *ngIf="userService.isMobile"
+      panelClass="my-panel-class-mobile"
+      [(value)]="currentThirdMajors[0]"
+      (selectionChange)="changeThirdMajor(0, $event)"
+    >
+      <mat-option
+        *ngFor="let thirdMajor of this.degreeSelect.thirdMajors"
+        [value]="thirdMajor.value"
+        (click)="addedthirdMajor=true"
+      >
+      {{ thirdMajor.view }}
       </mat-option>
     </mat-select>
     </mat-form-field>

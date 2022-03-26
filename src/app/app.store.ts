@@ -18,6 +18,7 @@ export interface State {
   conjoint: any;
   majors: any[];
   secondMajors: any[];
+  thirdMajors: any[];
   pathways: any[];
   modules: any[];
   secondModules: any[];
@@ -35,6 +36,7 @@ const defaultState = {
   majorSelected: false,
   majors: [null, null],
   secondMajors: [null, null],
+  thirdMajors: [null, null],
   pathways: [null, null],
   modules: [null, null],
   secondModules: [null, null],

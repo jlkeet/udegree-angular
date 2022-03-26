@@ -42,6 +42,7 @@ export class SelectMajorContainer {
   private conjoint;
   private majors;
   private secondMajors;
+  private thirdMajors;
   private pathways;
   private modules;
   private secondModules;
@@ -62,6 +63,7 @@ export class SelectMajorContainer {
     this.majors = this.storeHelper.current('majors');
     this.conjoint = this.storeHelper.current('conjoint');
     this.secondMajors = this.storeHelper.current('secondMajors')
+    this.thirdMajors = this.storeHelper.current('secondMajors')
     this.pathways = this.storeHelper.current('pathways')
     this.modules = this.storeHelper.current('modules')
     this.secondModules = this.storeHelper.current('secondModules')

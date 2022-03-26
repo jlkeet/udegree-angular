@@ -35,6 +35,7 @@ export class DegreeSelection {
   public majors = [];
   public pathways = [];
   public secondMajors = [];
+  public thirdMajors = [];
   public modules = [];
   public secondModules = [];
   private degree = null;
@@ -43,11 +44,13 @@ export class DegreeSelection {
   public currentModules = [];
   public currentSecondModules = [];
   public currentSecondMajors = [];
+  public currentThirdMajors = [];
   private doubleMajorAllowed;
   public email: string = "";
   public degreeId: string = "";
   public majorId: string = "";
   public secondMajorId: string = "";
+  public thirdMajorId: string = "";
   public conjointId: string = "";
   public pathwayId: string = "";
   public moduleId: string = "";
@@ -91,6 +94,7 @@ export class DegreeSelection {
         "major",
         "pathway",
         "secondMajor",
+        "thirdMajor",
         "module",
         "secondModule",
       ];
@@ -100,6 +104,7 @@ export class DegreeSelection {
         "majors",
         "pathways",
         "secondMajors",
+        "thirdMajors",
         "modules",
         "secondModules",
       ];
@@ -176,6 +181,14 @@ export class DegreeSelection {
       ];
     }
 
+    if (this.currentThirdMajors === null) {
+    } else {
+      this.currentThirdMajors = [
+        this.storeHelper.current("thirdMajors"),
+        null,
+      ];
+    }
+
     if (this.currentPathways === null) {
     } else {
       this.currentPathways = [this.storeHelper.current("pathways"), null];
@@ -216,6 +229,8 @@ export class DegreeSelection {
       this.majors[1] = this.majors[0];
     } else {
       this.currentSecondMajors[0] = null;
+
+      this.currentThirdMajors[0] = null; // Is this necessary?
     }
     this.blurb = "";
   }
@@ -235,6 +250,16 @@ export class DegreeSelection {
     if (this.currentConjoint[0] !== null) {
       this.secondMajors = this.departmentService
         .departmentsInFaculty(this.currentConjoint[0])
+        .map((department) => {
+          return { value: department, view: department.name };
+        });
+    }
+
+    // This might need to change from Arts to a variable
+
+    if (this.currentConjoint[0].name === 'Arts' || this.currentFaculties[0].name === 'Arts') {
+      this.thirdMajors = this.departmentService
+        .departmentsInFaculty('Arts')
         .map((department) => {
           return { value: department, view: department.name };
         });
@@ -384,6 +409,23 @@ export class DegreeSelection {
     this.populateMajors();
   }
 
+  public changeThirdMajor(which, event) {
+    const majorNames = this.currentThirdMajors.map((thirdMajor) =>
+      thirdMajor ? thirdMajor.name : null
+    );
+    this.currentThirdMajors[0] = event.value;
+   // this.changeBlurb(this.currentSecondMajors[which].blurb);
+    this.storeHelper.update("thirdMajors", this.currentThirdMajors[0]);
+    this.dbCourses.setSelection(
+      this.email,
+      "thirdMajor",
+      this.currentThirdMajors[0],
+      "thirdMajor"
+    );
+    this.checkFlags();
+    this.populateMajors();
+  }
+
   public changeBlurb(blurb: string) {
     if (blurb) {
       this.blurb = blurb;
@@ -399,6 +441,7 @@ export class DegreeSelection {
       this.currentMajors[0] &&
       (this.degreeType === "regular" ||
         this.currentSecondMajors[0] ||
+        this.currentThirdMajors[0] ||
         this.currentPathways[0])
     ) {
       this.onPageChange.emit();
@@ -459,7 +502,13 @@ export class DegreeSelection {
       .map((secondMajors) => {
         return { value: secondMajors, view: secondMajors.name };
       })
-  }
+
+  this.thirdMajors = this.departmentService
+  .getDepartments().filter(v => v.name !== this.currentMajors[0].name)
+  .map((thirdMajors) => {
+    return { value: thirdMajors, view: thirdMajors.name };
+  })
+}
 
   public getFilteredConjoints() {
     this.conjoints = this.conjointService.getConjoints().filter(v => v.name !== this.currentFaculties[0].name).map((conjoint) => {
@@ -474,6 +523,14 @@ export class DegreeSelection {
         return { value: secondMajors, view: secondMajors.name };
       })
     }
+
+    public getFilteredThirdMajors() {
+      this.thirdMajors = this.departmentService
+        .getDepartments().filter(v => v.name !== this.currentMajors[0].name)
+        .map((thirdMajors) => {
+          return { value: thirdMajors, view: thirdMajors.name };
+        })
+      }
 
     public getFilteredModules() {
       this.modules = this.moduleService.getModules().filter(v => v.name !== this.currentSecondModules[0].name).map((modules) => {

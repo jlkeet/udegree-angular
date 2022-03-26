@@ -62,10 +62,12 @@ export class ProgressPanel {
   private courses: ICourse[] = [];
   private majorIsSelected: boolean = false;
   private secondMajorIsSelected: boolean = false;
+  private thirdMajorIsSelected: boolean = false;
   private requirements: IRequirement[];
   private conjointRequirements: IRequirement[];
   private majorRequirements: IRequirement[];
   private secondMajorRequirements: IRequirement[];
+  private thirdMajorRequirements: IRequirement[];
   private pathwayRequirements: IRequirement[];
   private moduleRequirements: IRequirement[];
   private secondModuleRequirements: IRequirement[];
@@ -85,6 +87,8 @@ export class ProgressPanel {
   public addedConjoint = false;
   public addingSecondMajor = false;
   public addedSecondMajor = false;
+  public addingThirdMajor = false;
+  public addedThirdMajor = false;
   private requiresPathway = false;
   
 
@@ -94,6 +98,8 @@ export class ProgressPanel {
   private majorsList = [];
   private secondMajors;
   private secondMajorsList = [];
+  private thirdMajors;
+  private thirdMajorsList = [];
   private pathways;
   private pathwaysList = [];
   private modules;
@@ -108,6 +114,7 @@ export class ProgressPanel {
   private currentConjoints;
   private currentMajors;
   private currentSecondMajors;
+  private currentThirdMajors;
   private currentPathways;
   private currentModules;
   private currentSecondModules;
@@ -148,6 +155,8 @@ export class ProgressPanel {
     this.currentConjoints = degreeSelect.currentConjoint;
     this.secondMajorsList = degreeSelect.currentSecondMajors;
     this.currentSecondMajors = degreeSelect.currentSecondMajors;
+    this.thirdMajorsList = degreeSelect.currentThirdMajors;
+    this.currentThirdMajors = degreeSelect.currentThirdMajors;
     this.currentModules = degreeSelect.currentModules;
     this.modulesList = degreeSelect.modules;
     this.currentSecondModules = degreeSelect.currentSecondModules;
@@ -181,6 +190,11 @@ export class ProgressPanel {
 
       this.store.changes.pluck("secondMajors").subscribe((secondMajors) => {
         this.secondMajors = secondMajors;
+        this.updateRequirementList();
+      }),
+
+      this.store.changes.pluck("thirdMajors").subscribe((thirdMajors) => {
+        this.thirdMajors = thirdMajors;
         this.updateRequirementList();
       }),
 
@@ -260,6 +274,10 @@ export class ProgressPanel {
       this.secondMajors ? this.secondMajors.requirements : []
     );
 
+    this.thirdMajorRequirements = [].concat(
+      this.thirdMajors ? this.thirdMajors.requirements : []
+    );
+
     //  .concat(this.minor ? this.minor.requirements : []);
 
     this.moduleRequirements = [].concat(
@@ -269,6 +287,8 @@ export class ProgressPanel {
     this.secondModuleRequirements = [].concat(
       this.secondModules ? this.secondModules.requirements : []
     );
+
+    // Leaving this here for third major reqs?
 
     if (
       this.conjointRequirements.length > 0 &&
@@ -316,6 +336,7 @@ export class ProgressPanel {
       "major",
       "pathway",
       "secondMajor",
+      "thirdMajor",
       "module",
       "secondModule",
     ];
@@ -325,6 +346,7 @@ export class ProgressPanel {
       "majors",
       "pathways",
       "secondMajors",
+      "thirdMajors",
       "modules",
       "secondModules",
     ];
@@ -370,6 +392,7 @@ export class ProgressPanel {
       "major",
       "pathway",
       "secondMajor",
+      "thirdMajor",
 
     ];
     let storeList = [
@@ -378,6 +401,7 @@ export class ProgressPanel {
       "majors",
       "pathways",
       "secondMajors",
+      "thirdMajors",
     ];
     for (let i = 1; i < collectionList.length; i++) {
       this.db
@@ -487,6 +511,7 @@ export class ProgressPanel {
     this.addedConjoint = false;
     this.currentConjoints[0] = null;
     this.deleteSecondMajor();
+    this.deleteThirdMajor();
   }
 
 
@@ -527,6 +552,45 @@ export class ProgressPanel {
     this.addingSecondMajor = false;
     this.addedSecondMajor = false;
     this.currentSecondMajors[0] = null;
+  }
+
+  private deleteThirdMajor() {
+    this.email = this.degreeSelect.email;
+
+    let collectionList = [
+      "thirdMajor",
+    ];
+    let storeList = [
+      "thirdMajors",
+    ];
+    for (let i = 0; i < collectionList.length; i++) {
+      this.db
+        .collection("users")
+        .doc(this.email)
+        .collection(collectionList[i])
+        .get()
+        .toPromise()
+        .then((sub) => {
+          if (sub.docs.length > 0) {
+            // Check to see if documents exist in the courses collection
+            sub.forEach((element) => {
+              // Loop to get all the ids of the docs
+              this.deleteId = element.id;
+              this.storeHelper.update(storeList[i], null);
+              //
+              this.db
+                .collection("users")
+                .doc(this.email)
+                .collection(collectionList[i])
+                .doc(this.deleteId)
+                .delete();
+            });
+          }
+        });
+    }
+    this.addingThirdMajor = false;
+    this.addedThirdMajor = false;
+    this.currentThirdMajors[0] = null;
   }
 
   private deleteModule() {
@@ -717,6 +781,10 @@ export class ProgressPanel {
     this.degreeSelect.changeSecondMajor(which, event);
   }
 
+  private changeThirdMajor(which, event) {
+    this.degreeSelect.changeThirdMajor(which, event);
+  }
+
   private changeModule(which, event) {
     this.degreeSelect.changeModule(which, event);
   }
@@ -761,6 +829,11 @@ export class ProgressPanel {
   private secondMajorClicked() {
     this.addingSecondMajor = true;
     this.secondMajorsList = this.degreeSelect.secondMajors;
+  }
+
+  private thirdMajorClicked() {
+    this.addingThirdMajor = true;
+    this.thirdMajorsList = this.degreeSelect.thirdMajors;
   }
 
   private pathwayCheck(value) {
