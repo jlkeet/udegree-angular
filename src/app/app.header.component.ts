@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from './app.store';
 import { HostListener } from "@angular/core";
+import { Route } from '@angular/router';
 
 /*
   Component that displays the site header

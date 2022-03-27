@@ -257,7 +257,7 @@ export class DegreeSelection {
 
     // This might need to change from Arts to a variable
 
-    if (this.currentConjoint[0].name === 'Arts' || this.currentFaculties[0].name === 'Arts') {
+    if (this.currentSecondMajors[0] !== null) {
       this.thirdMajors = this.departmentService
         .departmentsInFaculty('Arts')
         .map((department) => {

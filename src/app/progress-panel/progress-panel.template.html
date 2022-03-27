@@ -484,7 +484,7 @@ hideToggle
 
 <P></P>
 
-<div style="position:relative" *ngIf="!secondMajors?.name && conjoint?.name || !secondMajors?.name && majors?.name && faculty?.name">
+<div style="position:relative" *ngIf="!secondMajors?.name && conjoint?.name || !secondMajors?.name && majors?.name && faculty?.name === 'Arts'">
 
   <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);"/>
     <mat-form-field class="without-arrow addmodule-major">
@@ -492,7 +492,8 @@ hideToggle
     <!-- <div *ngIf="faculty.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>
     <div *ngIf="faculty.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major <BR> (Compulsary for Bachelor of Arts)</div> -->
       
-    <div *ngIf="faculty.name === 'Arts' || conjoint.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>
+    <div *ngIf="faculty?.name === 'Arts' || conjoint?.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major (For Arts)</div>
+    <div *ngIf="faculty?.name !== 'Arts' && conjoint?.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major (For Conjoint)</div>
 
       <mat-select
         *ngIf="!userService.isMobile"

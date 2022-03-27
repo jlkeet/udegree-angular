@@ -1,0 +1,92 @@
+@mixin absCenter {
+    position: absolute;
+   top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+.footer__links-header{
+font-weight: 600;
+font-size: 32px;
+}
+
+
+.copyright {
+
+}
+
+.footer__top-layer{
+    height: 20rem;
+
+}
+
+.footer__middle-layer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: #55c57a;
+   
+
+}
+
+.footer__bottom-layer {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      
+    &--item{
+        margin: 1rem;
+    }
+}
+
+.footer__left-box {
+//padding: 5rem;
+}
+
+.footer__right-box {
+    display: flex;
+    flex-direction: column;
+   
+    &--item {
+
+    }
+    &--links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    }
+    &--logo
+    {
+        
+        height: 30%;
+    }
+}
+
+
+.footer__social {
+    display: flex;
+    flex-direction: row;
+  
+    
+    &--icon {
+        width: 32px;
+        height:32px;
+      margin-left: 1rem;
+       
+    }
+}
+
+.written-by-link {
+    color: teal;
+}
+
+ul li {
+    cursor: pointer;
+}

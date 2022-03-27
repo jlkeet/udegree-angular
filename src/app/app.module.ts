@@ -117,6 +117,9 @@ import { ProgressBarMultiContainer } from './progress-bar-multi.container';
 import { CourseDialogComponent } from './courses-panel/course-dialog.component';
 import { ProgressDialogComponent } from './progress-panel/progress-dialog.component'
 import { UserDialogComponent } from './user/user-dialog-component';
+import { PrivacyContainer } from './privacy-policy/privacy-policy.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -158,6 +161,8 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     PlannerContainerMobile,
     SelectDegreeContainer,
     SelectMajorContainer,
+    PrivacyContainer,
+    FooterComponent,
 
     LeftPanelContainer,
 
