@@ -4403,7 +4403,7 @@
     "stage": 2,
     "requirements": [
       {
-        "type": 2,
+        "type": 0,
         "required": 15,
         "faculties": ["Art History"],
         "stage": 1,
