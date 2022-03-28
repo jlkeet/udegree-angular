@@ -10,9 +10,9 @@ export class DepartmentService {
   }
 
   public departmentsInFaculty(faculty) {
-    this.departments.filter((department) => {if (faculty.majors !== undefined) { faculty.majors.includes(department.name)}})
+    this.departments.filter((department) => {faculty.majors.includes(department.name)})
     
-    return (this.departments.filter((department) => {if (faculty.name !== undefined) { faculty.name.includes(department.faculties[0])}}));
+    return (this.departments.filter((department) => faculty.name.includes(department.faculties[0])));
   }
 
   public allowedPaper() {
