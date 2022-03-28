@@ -66458,5 +66458,223 @@
       }
     ],
     "isActive": true
+  },
+
+
+
+  {
+    "id": 3627,
+    "name": "HLTHSOC100",
+    "title": "Introduction to Critical Global Health",
+    "desc": "An introduction to how the social sciences and humanities shed light on understandings of the social, political-economic, historical and cultural dynamics that underpin contemporary healthcare, medical practices and knowledge-production, and experiences of health and illness around the world. Examines real-life case studies using a range of health social science approaches.",
+    "faculties": ["Arts"],
+    "department": "Health and Society",
+    "points": 15,
+    "stage": 1,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3628,
+    "name": "HLTHSOC201",
+    "title": "Medicine, Power and Politics",
+    "desc": "Explores the interplay between cultural values, local and national politics, and global health programmes and initiatives. Examines how experiences of medical care and ideas of illness and health vary across different cultural groups and socio-cultural settings, with a focus on issues of scientific expertise, patient empowerment and government involvement in healthcare.",
+    "faculties": ["Arts"],
+    "department": "Health and Society",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["HLTHSOC100"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3629,
+    "name": "HLTHSOC202",
+    "title": "Global Health and Development",
+    "desc": "Introduces a critical social science approach to the study of health and globalisation, tracing historical genealogies from colonial hygiene movements, to international public health in the development sector, through to contemporary global health institutions and their governance structures. Current issues and case studies in health and development including the roles of Non-Governmental Organisations (NGOs), participatory approaches, and human rights frameworks.",
+    "faculties": ["Arts"],
+    "department": "Health and Society",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+        {
+          "type": 0,
+          "required": 1,
+          "flags": {},
+          "complex": [
+            {
+              "type": 1,
+              "required": 1,
+              "flags": {},
+              "papers": ["HLTHSOC100"]
+            },
+            {
+              "type": 0,
+              "required": 15,
+              "flags": {},
+              "stage": 1,
+              "departments": ["Anthropology", "Gender Studies", "Politics and International Relations", "Sociology"]
+            },
+            {
+              "type": 0,
+              "required": 15,
+              "flags": {},
+              "departments": ["Global Studies"]
+            }
+          ]
+        }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3630,
+    "name": "HLTHSOC203",
+    "title": "Contemporary Issues: Pandemics",
+    "desc": "Examines contemporary and historical pandemics in terms of their social and cultural impact, political-economic facets, and implications for health and healthcare. Topics include the social ramifications of states of emergency; the ethical implications of vaccines and other healthcare measures; religious, activist and NGO responses.",
+    "faculties": ["Arts"],
+    "department": "Health and Society",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "stage": 1,
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3631,
+    "name": "HLTHSOC301",
+    "title": "Researching Health and Social Medicine",
+    "desc": "Introduces qualitative research approaches to health and social medicine and equips students with the methodological skills to conduct their own research project. Reviews all phases of a research project: design and theoretical framing, ethical considerations, methods employed for data collection and analysis, and writing.",
+    "faculties": ["Arts"],
+    "department": "Health and Society",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "stage": 2,
+        "departments": ["Health and Society"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3632,
+    "name": "HLTHSOC302",
+    "title": "Global Health and Development",
+    "desc": "Introduces a critical social science approach to the study of health and globalisation, tracing historical genealogies from colonial hygiene movements, to international public health in the development sector, through to contemporary global health institutions and their governance structures. Current issues and case studies in health and development including the roles of NGOs, participatory approaches and human rights frameworks.",
+    "faculties": ["Arts"],
+    "department": "Health and Society",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 0,
+            "required": 15,
+            "stage": 2,
+            "departments": ["Anthropology", "Gender Studies", "Health and Society", "Politics and International Relations", "Sociology"],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "stage": 2,
+            "departments": ["Global Studies"],
+            "flags": {}
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3633,
+    "name": "HLTHSOC303",
+    "title": "The Body",
+    "desc": "Examines cultural and historical variations in how societies understand and experience the human body, with a focus on social, historical, philosophical and political-economic approaches. Topics such as political violence, sport, health, illness, sexuality, gender and religious ritual will be considered. Case studies explore the cultural construction and social experience of the human body in a diverse range of global settings.",
+    "faculties": ["Arts"],
+    "department": "Health and Society",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "stage": 2,
+        "departments": ["Health and Society"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3634,
+    "name": "HLTHSOC304",
+    "title": "Violence and Pain",
+    "desc": "Examines the meanings of violence and the various forms it might take, as well as how violence and pain shape ideas about personhood, the body, community and the state. Examines how experiences of pain are communicated, how various forms of violence shape and transform daily life, and how the study of health social science can address these impacts.",
+    "faculties": ["Arts"],
+    "department": "Health and Society",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["HLTHSOC201"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "stage": 2,
+        "faculties": ["Arts"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3635,
+    "name": "HLTHSOC305",
+    "title": "Culture, Science and Technology",
+    "desc": "Examines the interplay between culture, scientific knowledge and practice, and technological development with respect to health and illness. Focusing on the social, cultural, ethical, and political dimensions of science and technology, the course introduces students to critical examinations of how knowledge, progress, innovation and expertise are constituted across a variety of global settings.",
+    "faculties": ["Arts"],
+    "department": "Health and Society",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["HLTHSOC201"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "stage": 2,
+        "faculties": ["Arts"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
   }
 ]
