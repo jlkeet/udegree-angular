@@ -130,7 +130,6 @@ private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseS
     grade: grade ? grade : null,
     canDelete: true,
     }))
-    console.log("firing " , this.email)
   }
 
 

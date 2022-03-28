@@ -96,7 +96,6 @@ export class CourseDraggable {
 
   private pressForDel() {
    this.status = !this.status;
-   console.log("Firing")
   }
 
   public ngOnInit() {

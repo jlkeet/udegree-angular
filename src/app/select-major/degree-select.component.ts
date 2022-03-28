@@ -239,7 +239,6 @@ export class DegreeSelection {
     if (this.currentConjoint[0] === undefined) {
       this.currentConjoint[0] = null;
     }
-    console.log(this.currentFaculties[0])
     if (this.currentFaculties[0] !== null) {
       this.majors = this.departmentService
         .departmentsInFaculty(this.currentFaculties[0])

@@ -270,13 +270,36 @@ export class ProgressPanel {
       this.pathways ? this.pathways.requirements : []
     );
 
-    this.secondMajorRequirements = [].concat(
-      this.secondMajors ? this.secondMajors.requirements : []
-    );
+    // this.secondMajorRequirements = [].concat(
+    //   this.secondMajors ? this.secondMajors.requirements : []
+    // );
 
+    if (this.storeHelper.current('conjoint') !== undefined && this.secondMajors !== undefined) {
+
+      this.secondMajorRequirements = [].concat(
+        this.secondMajors.conjointRequirements
+      );
+    } else {
+
+      this.secondMajorRequirements = [].concat(
+        this.secondMajors ? this.secondMajors.requirements : []
+      );
+    }
+
+
+
+   if (this.storeHelper.current('conjoint') && this.secondMajors !== undefined) {
+
+     if (this.storeHelper.current('conjoint').name === 'Arts') {
     this.thirdMajorRequirements = [].concat(
-      this.thirdMajors ? this.thirdMajors.requirements : []
+      this.thirdMajors.conjointRequirements
     );
+     }
+  }
+
+    // this.thirdMajorRequirements = [].concat(
+    //   this.thirdMajors ? this.thirdMajors.requirements : []
+    // );
 
     //  .concat(this.minor ? this.minor.requirements : []);
 
@@ -290,21 +313,21 @@ export class ProgressPanel {
 
     // Leaving this here for third major reqs?
 
-    if (
-      this.conjointRequirements.length > 0 &&
-      this.majors !== undefined &&
-      this.secondMajors !== undefined
-    ) {
-      if (
-        this.majors.conjointRequirements &&
-        this.secondMajors.conjointRequirements
-      ) {
-        this.majorRequirements.push(this.majors.conjointRequirements[0]);
-        this.secondMajorRequirements.push(
-          this.secondMajors.conjointRequirements[0]
-        );
-      }
-    }
+    // if (
+    //   this.conjointRequirements.length > 0 &&
+    //   this.majors !== undefined &&
+    //   this.secondMajors !== undefined
+    // ) {
+    //   if (
+    //     this.majors.conjointRequirements &&
+    //     this.secondMajors.conjointRequirements
+    //   ) {
+    //     this.majorRequirements.push(this.majors.conjointRequirements[0]);
+    //     this.secondMajorRequirements.push(
+    //       this.secondMajors.conjointRequirements[0]
+    //     );
+    //   }
+    // }
   }
 
   private navigateToSelectMajor() {

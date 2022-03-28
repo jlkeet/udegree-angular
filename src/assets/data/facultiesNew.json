@@ -154,10 +154,6 @@
         "required": 75,
         "faculties": ["Arts"],
         "aboveStage": 2
-      },
-      {
-        "type": 0,
-        "required": 15
       }
     ],
     "flags": ["Dbl Mjr"]

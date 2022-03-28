@@ -170,7 +170,6 @@ export class CourseFilter {
         })
         .length > 0);
     }
-    console.log(shown)
     this.toggleChange.emit({
       noUpdate,
       shown,
