@@ -190,10 +190,10 @@ export class RequirementService {
   public requirementFilled(requirement: IRequirement, planned: ICourse[]): boolean {
     if (this.isComplex(requirement)) {
 
-      // let filled = requirement.complex.map((subRequirement: IRequirement) => this.requirementFilled(subRequirement, planned))
-      //   .filter((tested: boolean) => tested).length;
+      let filled = requirement.complex.map((subRequirement: IRequirement) => this.requirementFilled(subRequirement, planned))
+        .filter((tested: boolean) => tested).length;
 
-     // return filled >= requirement.required;
+     return filled >= requirement.required;
     }  else {
 
       return this.requirementCheck(requirement, planned) === requirement.required;
