@@ -66439,5 +66439,24 @@
     "stage": 3,
     "requirements": [],
     "isActive": true
+  },
+  {
+    "id": 3626,
+    "name": "ECON152",
+    "title": "Principles of Economics",
+    "desc": "Analysis of issues that affect our daily lives, including pricing decisions by firms and their impact on our cost of living; game theory and strategic decision-making; tackling problems of pollution and global warming; and how governments use monetary and fiscal policies to stimulate economic growth and address unemployment and inequality.",
+    "faculties": ["Business And Economics", "Commerce"],
+    "department": "Economics",
+    "points": 15,
+    "stage": 1,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ECON151", "BUSINESS115"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
   }
 ]
