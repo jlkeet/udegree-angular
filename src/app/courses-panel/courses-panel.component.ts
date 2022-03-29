@@ -61,7 +61,7 @@ export class CoursesPanel {
   @Input() public courses: ICourse[] = [];
 
   private messages: Message[];
-  private semesters = [];
+  public semesters = [];
   private filteredCourses;
   private newOpen;
   private courseCounter: number;
@@ -184,7 +184,7 @@ export class CoursesPanel {
         s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
       );
       this.storeHelper.update("semesters", this.semesters);
-      this.dbCourses.addSelection(this.email, "semester", newSemester, "semesters")
+     // this.dbCourses.addSelection(this.email, "semester", newSemester, "semesters")
       this.addingSemester = false;
       this.nextSemesterCheck();
     } else {
@@ -484,7 +484,9 @@ export class CoursesPanel {
 // Function that updates the correct year and period when deleting a semester
 
 public updateSemesterCheck() {
+
   if (this.semesters.length > 0) {
+    
     let latestYear = this.semesters[this.semesters.length-1]['year']
     let latestPeriod = this.semesters[this.semesters.length-1]['period']
 

@@ -42,6 +42,7 @@ import { ProgressBarModule } from "primeng/primeng";
 import { ProgressBarMulti } from "./progress-bar-multi.component";
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ProgressDialogComponent } from "./progress-dialog.component";
+import { CoursesPanel } from "../courses-panel";
 
 /*
   Component for displaying a group of progress bars
@@ -144,6 +145,7 @@ export class ProgressPanel {
     private departmentService: DepartmentService,
     private progressMulti: ProgressBarMulti,
     public dialog: MatDialog,
+    private coursesPanel: CoursesPanel
   ) {
     this.currentPathways = degreeSelect.currentPathways;
     this.pathwaysList = degreeSelect.pathways;
@@ -721,9 +723,12 @@ export class ProgressPanel {
           .map((n) => n + 1 + requirement.aboveStage)
           .toString()
       : null;
-    const semester = this.yearAndPeriod();
-    if (semester === null) {
-      return;
+    let newSem = this.storeHelper.current("semesters")
+    let semester = newSem[newSem.length-1]
+    if (semester === undefined) {
+      this.coursesPanel.newSemester()
+      newSem = this.storeHelper.current("semesters")
+      semester = newSem[newSem.length-1]
     }
 
     const queryParams = {
