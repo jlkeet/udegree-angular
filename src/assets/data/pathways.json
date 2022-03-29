@@ -699,7 +699,7 @@
         "type": 0,
         "required": 45,
         "papers": [
-          "MATHS302–363"
+          "MATHS302-363"
         ],
         "flags": {}
       }
@@ -939,7 +939,7 @@
         "papers": [
           "ELECTENG210",
           "ELECTENG292",
-          "PHYSICS201–203",
+          "PHYSICS201-203",
           "PHYSICS244"
         ],
         "flags": {}
@@ -978,7 +978,7 @@
         "type": 0,
         "required": 15,
         "papers": [
-          "STATS100–125"
+          "STATS100-125"
         ],
         "flags": {}
       },
@@ -986,7 +986,7 @@
         "type": 0,
         "required": 45,
         "papers": [
-          "PSYCH200–209"
+          "PSYCH200-209"
         ],
         "flags": {}
       },
@@ -996,7 +996,7 @@
         "papers": [
           "EDUC323",
           "EXERSCI307",
-          "PSYCH300–326"
+          "PSYCH300-326"
         ],
         "flags": {}
       }
@@ -1021,7 +1021,7 @@
         "type": 0,
         "required": 15,
         "papers": [
-          "STATS100–125"
+          "STATS100-125"
         ],
         "flags": {}
       },
@@ -1057,7 +1057,7 @@
         "type": 0,
         "required": 15,
         "papers": [
-          "STATS101–125"
+          "STATS101-125"
         ],
         "flags": {}
       },
@@ -1066,7 +1066,7 @@
         "required": 30,
         "papers": [
           "DATASCI100",
-          "STATS101–150"
+          "STATS101-150"
         ],
         "flags": {}
       },
@@ -1085,7 +1085,7 @@
         "type": 0,
         "required": 45,
         "papers": [
-          "STATS201–255",
+          "STATS201-255",
           "MATHS208",
           "MATHS250"
         ],
@@ -1106,7 +1106,7 @@
         "type": 0,
         "required": 45,
         "papers": [
-          "STATS301–389",
+          "STATS301-389",
           "ENGSCI391"
         ],
         "flags": {}
@@ -1209,7 +1209,7 @@
         "type": 0,
         "required": 15,
         "papers": [
-          "MATHS108–153"
+          "MATHS108-153"
         ],
         "flags": {}
       },
@@ -1253,7 +1253,7 @@
         "type": 0,
         "required": 45,
         "papers": [
-          "STATS301–389",
+          "STATS301-389",
           "ENGSCI391"
         ],
         "flags": {}

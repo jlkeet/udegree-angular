@@ -69,7 +69,7 @@ export class RequirementService {
    */
   public paperRangeIncludes(paperRange: string[], checkIncluded: string): boolean {
     for (const range of paperRange) {
-      if (range.includes('–')) {
+      if (range.includes('-')) {
         const index = range.search(/[0-9]/);
         const dept = range.substring(0, index);
         const codes = range.substring(index);
@@ -78,7 +78,7 @@ export class RequirementService {
         const dept2 = checkIncluded.substring(0, index2);
         const code2 = parseInt(checkIncluded.substring(index2), 10);
 
-        const codeTerminals = codes.split('–'); // splits into start and end numbers
+        const codeTerminals = codes.split('-'); // splits into start and end numbers
         if (dept === dept2 && code2 >= parseInt(codeTerminals[0], 10) && code2 <= parseInt(codeTerminals[1], 10)) {
           console.log(true, ' 1')
           return true;
@@ -87,7 +87,6 @@ export class RequirementService {
         return true;
       }
     }
-    console.log(false)
     return false;
   }
 
@@ -216,9 +215,9 @@ export class RequirementService {
 
     if (requirement.papers !== undefined) {
       if (requirement.papers.length <= 4 &&
-        requirement.papers.filter((paper: string) => paper.includes('–')).length === 0) {
+        requirement.papers.filter((paper: string) => paper.includes('-')).length === 0) {
       //    console.log(requirement.papers.join(', '))
-         return requirement.papers.join(', ');
+         return requirement.required + (requirement.type === RequirementType.Points ? ' Points' : ' Courses') + ' From ' + requirement.papers.join(', ');
       } else {
         // Change this to reflect the hyphenated rule
       //  console.log(requirement)

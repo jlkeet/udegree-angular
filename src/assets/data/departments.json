@@ -2529,7 +2529,7 @@
   {
     "name": "Communication",
     "faculties": ["Arts"],
-    "papers": "BUSINESS151, COMMS100, COMMS104, DRAMA100, ENGLISH121, MĀORI130, MKTG151, PACIFIC105, SCIGEN101, BUSINESS291, COMMS200–208, MĀORI271, MEDIA212, MEDIA214, MEDIA222, POLITICS233, SCIGEN201, SCREEN200, SCREEN201, COMMS301–309, MEDIA314, MEDIA327, MEDIA328, MKTG306, POLITICS345, SCIGEN301, SOCIOL318",
+    "papers": "BUSINESS151, COMMS100, COMMS104, DRAMA100, ENGLISH121, MĀORI130, MKTG151, PACIFIC105, SCIGEN101, BUSINESS291, COMMS200-208, MĀORI271, MEDIA212, MEDIA214, MEDIA222, POLITICS233, SCIGEN201, SCREEN200, SCREEN201, COMMS301-309, MEDIA314, MEDIA327, MEDIA328, MKTG306, POLITICS345, SCIGEN301, SOCIOL318",
     "requirements": [
       {
         "type": 0,
@@ -2552,13 +2552,13 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS200–208"],
+        "papers": ["COMMS200-208"],
         "flags": {}
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS301–309", "MEDIA314"],
+        "papers": ["COMMS301-309", "MEDIA314"],
         "flags": {}
       }
     ],
@@ -2578,13 +2578,13 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS200–208"],
+        "papers": ["COMMS200-208"],
         "flags": {}
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS301–309", "MEDIA314"],
+        "papers": ["COMMS301-309", "MEDIA314"],
         "flags": {}
       }
     ]
@@ -2592,7 +2592,7 @@
   {
     "name": "Teaching English to Speakers of Other Languages",
     "faculties": ["Arts"],
-    "papers": "ACADENG101, ENGWRIT101, EDUC117, LANGTCHG101, LINGUIST100, LINGUIST101, LANGTCHG202, LINGUIST203, LANGTCHG205, LANGTCHG207, LANGTCHG209, LANGTCHG300–302, LANGTCHG304–312",
+    "papers": "ACADENG101, ENGWRIT101, EDUC117, LANGTCHG101, LINGUIST100, LINGUIST101, LANGTCHG202, LINGUIST203, LANGTCHG205, LANGTCHG207, LANGTCHG209, LANGTCHG300-302, LANGTCHG304-312",
     "requirements": [
       {
         "type": 0,
@@ -2631,7 +2631,7 @@
   {
     "name": "European Studies - European Cultures and Languages",
     "faculties": ["Arts"],
-    "papers": "ANCIENT110, ANCIENT130, ARTHIST107, ARTHIST109, EUROPEAN100, FRENCH102, GERMAN102, GERMAN106, HUMS101, ITALIAN107, LATINAM101, MUS140, RUSSIAN100, RUSSIAN101, SPANISH105, ANCIENT200, ANCIENT201, ANCIENT225, ANCIENT245, ANCIENT250, ANCIENT270, ANCIENT280, ARTHIST201–203, ARTHIST210, ARTHIST215, ARTHIST224, ARTHIST225, ARTHIST236, COMPLIT200, COMPLIT206, COMPLIT210, EUROPEAN200, EUROPEAN207, EUROPEAN208, EUROPEAN277, EUROPEAN278, FRENCH203, FRENCH204, FRENCH218, FRENCH230, FRENCH239, FRENCH241, FRENCH244, FRENCH269, FRENCH277, FRENCH278, GERMAN200, GERMAN201, GERMAN210, GERMAN211, GERMAN230, GERMAN277, GERMAN278, ITALIAN200, ITALIAN201, ITALIAN202, ITALIAN203, ITALIAN204, ITALIAN209, ITALIAN210, ITALIAN211, ITALIAN212, ITALIAN232, ITALIAN277, ITALIAN278, MUS240, MUS241, MUS243, PHIL209, RUSSIAN200, RUSSIAN201, SPANISH200, SPANISH201, SPANISH202, SPANISH218, SPANISH277, SPANISH278, ARTHIST303, ARTHIST310, ARTHIST315, ARTHIST321, ARTHIST324, ARTHIST325, ARTHIST336, COMPLIT302, EUROPEAN300, EUROPEAN304, EUROPEAN307, EUROPEAN377, EUROPEAN378, FRENCH304, FRENCH305, FRENCH341, FRENCH344, FRENCH349, FRENCH377, FRENCH378, GERMAN301, GERMAN302, GERMAN310, GERMAN377, GERMAN378, ITALIAN300, ITALIAN304, ITALIAN309, ITALIAN333, ITALIAN335, ITALIAN336, ITALIAN377, ITALIAN378, PHIL340, PHIL341, RUSSIAN390, SPANISH313, SPANISH317-321, SPANISH345, SPANISH377, SPANISH378",
+    "papers": "ANCIENT110, ANCIENT130, ARTHIST107, ARTHIST109, EUROPEAN100, FRENCH102, GERMAN102, GERMAN106, HUMS101, ITALIAN107, LATINAM101, MUS140, RUSSIAN100, RUSSIAN101, SPANISH105, ANCIENT200, ANCIENT201, ANCIENT225, ANCIENT245, ANCIENT250, ANCIENT270, ANCIENT280, ARTHIST201-203, ARTHIST210, ARTHIST215, ARTHIST224, ARTHIST225, ARTHIST236, COMPLIT200, COMPLIT206, COMPLIT210, EUROPEAN200, EUROPEAN207, EUROPEAN208, EUROPEAN277, EUROPEAN278, FRENCH203, FRENCH204, FRENCH218, FRENCH230, FRENCH239, FRENCH241, FRENCH244, FRENCH269, FRENCH277, FRENCH278, GERMAN200, GERMAN201, GERMAN210, GERMAN211, GERMAN230, GERMAN277, GERMAN278, ITALIAN200, ITALIAN201, ITALIAN202, ITALIAN203, ITALIAN204, ITALIAN209, ITALIAN210, ITALIAN211, ITALIAN212, ITALIAN232, ITALIAN277, ITALIAN278, MUS240, MUS241, MUS243, PHIL209, RUSSIAN200, RUSSIAN201, SPANISH200, SPANISH201, SPANISH202, SPANISH218, SPANISH277, SPANISH278, ARTHIST303, ARTHIST310, ARTHIST315, ARTHIST321, ARTHIST324, ARTHIST325, ARTHIST336, COMPLIT302, EUROPEAN300, EUROPEAN304, EUROPEAN307, EUROPEAN377, EUROPEAN378, FRENCH304, FRENCH305, FRENCH341, FRENCH344, FRENCH349, FRENCH377, FRENCH378, GERMAN301, GERMAN302, GERMAN310, GERMAN377, GERMAN378, ITALIAN300, ITALIAN304, ITALIAN309, ITALIAN333, ITALIAN335, ITALIAN336, ITALIAN377, ITALIAN378, PHIL340, PHIL341, RUSSIAN390, SPANISH313, SPANISH317-321, SPANISH345, SPANISH377, SPANISH378",
     "requirements": [
       {
         "type": 0,
@@ -3587,7 +3587,7 @@
         "type": 0,
         "required": 15,
         "papers": [
-          "BUSAN300–305",
+          "BUSAN300-305",
           "MKTG308",
           "OPSMGT357",
           "STATS301",
@@ -3618,7 +3618,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMLAW301–321", "LAWCOMM422"],
+        "papers": ["COMLAW301-321", "LAWCOMM422"],
         "flags": {}
       }
     ],
@@ -3644,7 +3644,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ECON301–381"],
+        "papers": ["ECON301-381"],
         "flags": {}
       }
     ],
@@ -3708,7 +3708,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["BUSAN301", "BUSAN302", "INFOSYS300–341", "OPSMGT357"],
+        "papers": ["BUSAN301", "BUSAN302", "INFOSYS300-341", "OPSMGT357"],
         "flags": {}
       }
     ],
@@ -3849,7 +3849,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["MKTG301", "MKTG302", "MKTG304–312", "MKTG314"],
+        "papers": ["MKTG301", "MKTG302", "MKTG304-312", "MKTG314"],
         "flags": {}
       }
     ],
@@ -3961,7 +3961,7 @@
         "required": 30,
         "papers": [
           "MAORIHTH301",
-          "POPLHLTH305–307",
+          "POPLHLTH305-307",
           "POPLHLTH312",
           "POPLHLTH313"
         ],
@@ -3996,7 +3996,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["ANTHRO205–208", "ANTHRO235", "ANTHRO252"],
+        "papers": ["ANTHRO205-208", "ANTHRO235", "ANTHRO252"],
         "flags": {}
       },
       {
@@ -4046,13 +4046,13 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["BIOSCI201–290"],
+        "papers": ["BIOSCI201-290"],
         "flags": {}
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["BIOSCI301–395", "MARINE303"],
+        "papers": ["BIOSCI301-395", "MARINE303"],
         "flags": {}
       }
     ],
@@ -4122,7 +4122,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMPSCI300–379"],
+        "papers": ["COMPSCI300-379"],
         "flags": {}
       }
     ],
@@ -4172,7 +4172,7 @@
         "type": 0,
         "required": 30,
         "papers": [
-          "EARTHSCI303–372",
+          "EARTHSCI303-372",
           "EARTHSCI390",
           "GEOG331",
           "GEOG332",
@@ -4258,8 +4258,8 @@
           "GEOG335",
           "GISCI341",
           "MARINE302",
-          "MATHS361–363",
-          "PHYSICS331–334",
+          "MATHS361-363",
+          "PHYSICS331-334",
           "PHYSICS340"
         ],
         "flags": {}
@@ -4394,7 +4394,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMPSCI130", "GEOG101–140", "STATS101", "URBPLAN103"],
+        "papers": ["COMPSCI130", "GEOG101-140", "STATS101", "URBPLAN103"],
         "flags": {}
       },
       {
@@ -4427,13 +4427,13 @@
         "type": 0,
         "required": 30,
         "papers": [
-          "COMPSCI313–373",
+          "COMPSCI313-373",
           "GEOG342",
           "GISCI341",
           "GISCI343",
           "GISCI390",
           "SCIGEN301",
-          "STATS301–389"
+          "STATS301-389"
         ],
         "flags": {}
       }
@@ -4479,7 +4479,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["GEOG302–390", "GISCI341–344"],
+        "papers": ["GEOG302-390", "GISCI341-344"],
         "flags": {}
       }
     ],
@@ -4695,7 +4695,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["MATHS302–363"],
+        "papers": ["MATHS302-363"],
         "flags": {}
       }
     ],
@@ -4796,7 +4796,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["PHYSICS201–203"],
+        "papers": ["PHYSICS201-203"],
         "flags": {}
       },
       {
@@ -4806,7 +4806,7 @@
           "ELECTENG303",
           "ELECTENG331",
           "MEDSCI309",
-          "PHYSICS331–335",
+          "PHYSICS331-335",
           "PHYSICS340",
           "PHYSICS356",
           "PHYSICS371",
@@ -4817,7 +4817,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["PHYSICS331–335", "PHYSICS340", "PHYSICS356", "PHYSICS390"],
+        "papers": ["PHYSICS331-335", "PHYSICS340", "PHYSICS356", "PHYSICS390"],
         "flags": {}
       }
     ],
@@ -4887,19 +4887,19 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["STATS100–125"],
+        "papers": ["STATS100-125"],
         "flags": {}
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["PSYCH200–209"],
+        "papers": ["PSYCH200-209"],
         "flags": {}
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["EDUC323", "EXERSCI307", "PSYCH300–326"],
+        "papers": ["EDUC323", "EXERSCI307", "PSYCH300-326"],
         "flags": {}
       }
     ],
@@ -4919,13 +4919,13 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["STATS101–125"],
+        "papers": ["STATS101-125"],
         "flags": {}
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["DATASCI100", "STATS101–150"],
+        "papers": ["DATASCI100", "STATS101-150"],
         "flags": {}
       },
       {
@@ -4937,7 +4937,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["STATS201–255", "MATHS208", "MATHS250"],
+        "papers": ["STATS201-255", "MATHS208", "MATHS250"],
         "flags": {}
       },
       {
@@ -4949,7 +4949,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["STATS301–389", "ENGSCI391"],
+        "papers": ["STATS301-389", "ENGSCI391"],
         "flags": {}
       }
     ],
