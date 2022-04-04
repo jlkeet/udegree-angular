@@ -82,6 +82,10 @@ $light-theme : mat-light-theme($primary, $accent, $warn);
 
 /* GLOBAL */
 
+* {
+    outline: none !important;
+}
+
 .mat-sidenav-container { height: 100% } 
 
 html, body {
