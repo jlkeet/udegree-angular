@@ -257,9 +257,17 @@ export class DegreeSelection {
 
     // This might need to change from Arts to a variable
 
+    // if (this.currentSecondMajors[0] !== null) {
+    //   this.thirdMajors = this.departmentService
+    //     .departmentsInFaculty('Arts')
+    //     .map((department) => {
+    //       return { value: department, view: department.name };
+    //     });
+    // }
+
     if (this.currentSecondMajors[0] !== null) {
       this.thirdMajors = this.departmentService
-        .departmentsInFaculty('Arts')
+        .getDepartments()
         .map((department) => {
           return { value: department, view: department.name };
         });

@@ -292,7 +292,7 @@ export class ProgressPanel {
 
    if (this.storeHelper.current('conjoint') && this.secondMajors !== undefined) {
 
-     if (this.storeHelper.current('conjoint').name === 'Arts') {
+     if (this.storeHelper.current('conjoint') !== undefined) {
     this.thirdMajorRequirements = [].concat(
       this.thirdMajors.conjointRequirements
     );
