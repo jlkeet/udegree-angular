@@ -1,655 +1,455 @@
 <div class="progress-panel-content">
   <mat-accordion multi>
-  <mat-expansion-panel
-    class="pg-bar"
-    [disabled]="isDisabled"
-    [expanded]="true"
-    hideToggle
-  >
-    <mat-expansion-panel-header
-      *ngIf="faculty?.name"
-      style="margin-top: 0px; margin-bottom: 0px"
-      (click)="expansionOnClick()"
-    >
+
+    <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+      <mat-expansion-panel-header *ngIf="faculty?.name && conjoint?.name" style="margin-top: 0px; margin-bottom: 0px"
+        (click)="expansionOnClick()">
+
         <mat-toolbar class="plain">
-        <span> Degree: Bachelor of {{faculty? faculty.name: ''}} </span>
-        <span class="spacer"></span>
-        <span class="delete-pg" (click)="noExpansionOnClick(); deleteDegree();">
-          <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
-          <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
-        </span>
-      </mat-toolbar>
-    </mat-expansion-panel-header>
+          <span>Conjoint Total Points</span>
+          <span class="spacer"></span>
+          <span class="delete-pg" (click)="noExpansionOnClick(); deleteDegree();">
+            <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+            <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+          </span>
+        </mat-toolbar>
+      </mat-expansion-panel-header>
 
-    <div *ngIf="gpa" class="gpa">Total GPA {{gpa.toFixed(2)}}</div>
-
-    <div *ngIf="faculty?.name" class="progress-panel-bar-container flex flex-col flex-start">
-      <div class="progress-bar-group">
-        <progress-bar-multi-container
-          *ngFor="let requirement of requirements"
-          [requirement]="requirement"
-          (click)="selectRequirements(requirement)"
-          [courses]="courses"
-        >
-        </progress-bar-multi-container>
+      <div *ngIf="gpa" class="gpa">Total GPA {{gpa.toFixed(2)}}</div>
+      <div *ngIf="faculty?.name && conjoint?.name" class="progress-panel-bar-container flex flex-col flex-start">
+        <div class="progress-bar-group">
+          <progress-bar-multi-container [requirement]="conjointRequirements[conjointRequirements.length-1]"
+            (click)="selectRequirements(conjointRequirements)" [courses]="courses">
+          </progress-bar-multi-container>
+        </div>
       </div>
-    </div>
-  </mat-expansion-panel>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+      <mat-expansion-panel-header *ngIf="faculty?.name" style="margin-top: 0px; margin-bottom: 0px"
+        (click)="expansionOnClick()">
+        <mat-toolbar class="plain">
+          <span> Degree: Bachelor of {{faculty? faculty.name: ''}} </span>
+          <span class="spacer"></span>
+          <span class="delete-pg" (click)="noExpansionOnClick(); deleteDegree();">
+            <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+            <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+          </span>
+        </mat-toolbar>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="gpa && !conjoint.name" class="gpa">Total GPA {{gpa.toFixed(2)}}</div>
+
+      <div *ngIf="faculty?.name" class="progress-panel-bar-container flex flex-col flex-start">
+        <div class="progress-bar-group">
+          <progress-bar-multi-container *ngFor="let requirement of requirements" [requirement]="requirement"
+            (click)="selectRequirements(requirement)" [courses]="courses">
+          </progress-bar-multi-container>
+        </div>
+      </div>
+    </mat-expansion-panel>
 
     <div *ngIf="!faculty?.name">
-      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(1);"/>
+      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(1);" />
 
       <mat-form-field class="without-arrow addmodule-degree">
         <div style="text-align: center; margin-top: 20px;"> Add Degree</div>
 
-          <mat-select
-            *ngIf="!userService.isMobile"
-            panelClass="my-panel-class"
-            [(value)]="currentFaculties[0]"
-            (selectionChange)="changeFaculty(0, $event)"
-          >
-            <mat-option
-              *ngFor="let faculty of degreeSelect.faculties"
-              [value]="faculty.value"
-              (click)="addedDegree=true;degreeSelect.getFilteredConjoints();"
-            >
+        <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentFaculties[0]"
+          (selectionChange)="changeFaculty(0, $event)">
+          <mat-option *ngFor="let faculty of degreeSelect.faculties" [value]="faculty.value"
+            (click)="addedDegree=true;degreeSelect.getFilteredConjoints();">
             {{ faculty.view }}
-            </mat-option>
-          </mat-select>
-
-          <mat-select
-          *ngIf="userService.isMobile"
-          panelClass="my-panel-class-mobile"
-          [(value)]="currentFaculties[0]"
-          (selectionChange)="changeFaculty(0, $event)"
-        >
-          <mat-option
-            *ngFor="let faculty of degreeSelect.faculties"
-            [value]="faculty.value"
-            (click)="addedDegree=true;degreeSelect.getFilteredConjoints();"
-          >
-          {{ faculty.view }}
           </mat-option>
         </mat-select>
 
-        </mat-form-field>
+        <mat-select *ngIf="userService.isMobile" panelClass="my-panel-class-mobile" [(value)]="currentFaculties[0]"
+          (selectionChange)="changeFaculty(0, $event)">
+          <mat-option *ngFor="let faculty of degreeSelect.faculties" [value]="faculty.value"
+            (click)="addedDegree=true;degreeSelect.getFilteredConjoints();">
+            {{ faculty.view }}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
 
     </div>
 
-  <p></p>
+    <p></p>
 
-  <mat-expansion-panel
-    class="pg-bar"
-    [disabled]="isDisabled"
-    [expanded]="true"
-    hideToggle
-  >
-    <mat-expansion-panel-header
-      style="margin-top: 0px; margin-bottom: 0px"
-      (click)="expansionOnClick()"
-      *ngIf="majors?.name && !pathways?.name"
-    >
+    <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+      <mat-expansion-panel-header style="margin-top: 0px; margin-bottom: 0px" (click)="expansionOnClick()"
+        *ngIf="majors?.name && !pathways?.name">
 
-    <mat-toolbar *ngIf="majors?.name && !pathways?.name" class="plain">
-      <span>Major: {{majors.name}} </span>
-      <span class="spacer"></span>
-      <span class="delete-pg" (click)="noExpansionOnClick(); deleteMajor();">
-        <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
-        <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
-      </span>
-    </mat-toolbar>
-  </mat-expansion-panel-header>
-  <div
-    *ngIf="majors?.name && !pathways?.name"
-    class="progress-panel-bar-container flex flex-col flex-start"
-  >
-    <div class="progress-bar-group">
-      <progress-bar-multi-container
-        *ngFor="let requirement of majorRequirements"
-        [requirement]="requirement"
-        (click)="selectRequirements(requirement)"
-        [courses]="courses"
-      >
-      </progress-bar-multi-container>
+        <mat-toolbar *ngIf="majors?.name && !pathways?.name" class="plain">
+          <span>Major: {{majors.name}} </span>
+          <span class="spacer"></span>
+          <span class="delete-pg" (click)="noExpansionOnClick(); deleteMajor();">
+            <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+            <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+          </span>
+        </mat-toolbar>
+      </mat-expansion-panel-header>
+      <div *ngIf="majors?.name && !pathways?.name" class="progress-panel-bar-container flex flex-col flex-start">
+        <div class="progress-bar-group">
+          <progress-bar-multi-container *ngFor="let requirement of majorRequirements" [requirement]="requirement"
+            (click)="selectRequirements(requirement)" [courses]="courses">
+          </progress-bar-multi-container>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <P></P>
+
+    <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+      <mat-expansion-panel-header style="margin-top: 0px; margin-bottom: 0px" (click)="expansionOnClick()"
+        *ngIf="pathways?.name">
+
+        <mat-toolbar *ngIf="pathways?.name" class="plain">
+          <span> {{majors.name}} Pathway: {{pathways.name}} </span>
+          <span class="spacer"></span>
+          <span class="delete-pg" (click)="noExpansionOnClick(); deletePathway();">
+            <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+            <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+          </span>
+        </mat-toolbar>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="pathways?.name" class="progress-panel-bar-container flex flex-col flex-start">
+        <div class="progress-bar-group">
+          <progress-bar-multi-container *ngFor="let requirement of pathwayRequirements" [requirement]="requirement"
+            (click)="selectRequirements(requirement)" [courses]="courses">
+          </progress-bar-multi-container>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <div style="position:relative" *ngIf="!majors?.name && !requiresPathway && !pathways?.name && faculty?.name"
+      class="plain">
+      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);" />
+
+      <mat-form-field class="without-arrow addmodule-major">
+
+        <div style="text-align: center; margin-top: 20px;">Add Major</div>
+        <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentMajors[0]"
+          (selectionChange)="changeMajor(0, $event)">
+
+          <mat-option *ngFor="let major of degreeSelect.majors" [value]="major.value"
+            (click)="addedMajor = true;pathwayCheck(major.value);degreeSelect.getFilteredSecondMajors();">
+            {{ major.view }}
+          </mat-option>
+        </mat-select>
+
+
+        <mat-select *ngIf="userService.isMobile" panelClass="my-panel-class-mobile" [(value)]="currentMajors[0]"
+          (selectionChange)="changeMajor(0, $event)">
+
+          <mat-option *ngFor="let major of degreeSelect.majors" [value]="major.value"
+            (click)="addedMajor = true;pathwayCheck(major.value);degreeSelect.getFilteredSecondMajors();">
+            {{ major.view }}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
     </div>
-  </div>
-  </mat-expansion-panel>
 
-  <P></P>
 
-  <mat-expansion-panel
-  class="pg-bar"
-  [disabled]="isDisabled"
-  [expanded]="true"
-  hideToggle
->
-  <mat-expansion-panel-header
-    style="margin-top: 0px; margin-bottom: 0px"
-    (click)="expansionOnClick()"
-    *ngIf="pathways?.name"
-  >
 
-  <mat-toolbar *ngIf="pathways?.name" class="plain">
-    <span> {{majors.name}} Pathway: {{pathways.name}} </span>
-    <span class="spacer"></span>
-    <span class="delete-pg" (click)="noExpansionOnClick(); deletePathway();">
-      <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
-      <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
-    </span>
-  </mat-toolbar>
-</mat-expansion-panel-header>
 
-  <div
-    *ngIf="pathways?.name"
-    class="progress-panel-bar-container flex flex-col flex-start"
-  >
-    <div class="progress-bar-group">
-      <progress-bar-multi-container
-        *ngFor="let requirement of pathwayRequirements"
-        [requirement]="requirement"
-        (click)="selectRequirements(requirement)"
-        [courses]="courses"
-      >
-      </progress-bar-multi-container>
+
+    <div style="position:relative" *ngIf="requiresPathway" class="plain">
+      {{pathwayFilter()}}
+      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(4);" />
+      <mat-form-field class="without-arrow addmodule-major">
+
+        <div style="text-align: center; margin-top: 20px;">Select Pathway</div>
+
+        <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentPathways[0]"
+          (selectionChange)="changePathway(0, $event)">
+          <mat-option *ngFor="let path of degreeSelect.pathways[0]" [value]="path.value"
+            (click)="addedPathway = true;pathwayCheck(path.value);requiresPathway=false;">
+            {{ path.view }}
+          </mat-option>
+        </mat-select>
+
+        <mat-select *ngIf="userService.isMobile" panelClass="my-panel-class-mobile" [(value)]="currentPathways[0]"
+          (selectionChange)="changePathway(0, $event)">
+          <mat-option *ngFor="let path of degreeSelect.pathways[0]" [value]="path.value"
+            (click)="addedPathway = true;pathwayCheck(path.value);requiresPathway=false;">
+            {{ path.view }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
-  </div>
-  </mat-expansion-panel>
-
-  <div style="position:relative" *ngIf="!majors?.name && !requiresPathway && !pathways?.name && faculty?.name" class="plain">
-  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);"/>
-
-    <mat-form-field class="without-arrow addmodule-major">
-
-      <div style="text-align: center; margin-top: 20px;">Add Major</div>
-      <mat-select
-        *ngIf="!userService.isMobile"
-        panelClass="my-panel-class"
-        [(value)]="currentMajors[0]"
-        (selectionChange)="changeMajor(0, $event)"
-      >
-
-        <mat-option
-          *ngFor="let major of degreeSelect.majors"
-          [value]="major.value"
-          (click)="addedMajor = true;pathwayCheck(major.value);degreeSelect.getFilteredSecondMajors();"
-        >
-        {{ major.view }}
-        </mat-option>
-      </mat-select>
 
 
-      <mat-select
-      *ngIf="userService.isMobile"
-      panelClass="my-panel-class-mobile"
-      [(value)]="currentMajors[0]"
-      (selectionChange)="changeMajor(0, $event)"
-    >
+    <P></P>
 
-      <mat-option
-        *ngFor="let major of degreeSelect.majors"
-        [value]="major.value"
-        (click)="addedMajor = true;pathwayCheck(major.value);degreeSelect.getFilteredSecondMajors();"
-      >
-      {{ major.view }}
-      </mat-option>
-    </mat-select>
+    <div style="position:relative" *ngIf="!secondMajors?.name && faculty?.name === 'Arts'">
 
-    </mat-form-field>
-</div>
+      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);" />
+      <mat-form-field class="without-arrow addmodule-major">
 
-
-
-
-
-<div style="position:relative" *ngIf="requiresPathway" class="plain">
-  {{pathwayFilter()}}
-<img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(4);"/>
-<mat-form-field class="without-arrow addmodule-major">
-
-  <div style="text-align: center; margin-top: 20px;">Select Pathway</div>
-
-    <mat-select
-      *ngIf="!userService.isMobile"
-      panelClass="my-panel-class"
-      [(value)]="currentPathways[0]"
-      (selectionChange)="changePathway(0, $event)"
-    >
-      <mat-option
-        *ngFor="let path of degreeSelect.pathways[0]"
-        [value]="path.value"
-        (click)="addedPathway = true;pathwayCheck(path.value);requiresPathway=false;"
-      >
-      {{ path.view }}
-      </mat-option>
-    </mat-select>
-
-    <mat-select
-    *ngIf="userService.isMobile"
-    panelClass="my-panel-class-mobile"
-    [(value)]="currentPathways[0]"
-    (selectionChange)="changePathway(0, $event)"
-  >
-    <mat-option
-      *ngFor="let path of degreeSelect.pathways[0]"
-      [value]="path.value"
-      (click)="addedPathway = true;pathwayCheck(path.value);requiresPathway=false;"
-    >
-    {{ path.view }}
-    </mat-option>
-  </mat-select>
-  </mat-form-field>
-</div>
-
-<P></P>
-
-<mat-expansion-panel
-class="pg-bar"
-[disabled]="isDisabled"
-[expanded]="true"
-hideToggle
->
-<mat-expansion-panel-header
-  *ngIf="conjoint?.name"
-  style="margin-top: 0px; margin-bottom: 0px"
-  (click)="expansionOnClick()"
->
-
-  <mat-toolbar *ngIf="conjoint" class="plain">
-    <span>Conjoint: Bachelor of {{conjoint.name}} </span>
-    <span class="spacer"></span>
-    <span class="delete-pg" (click)="noExpansionOnClick(); deleteConjoint();">
-      <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
-      <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
-    </span>
-  </mat-toolbar>
-</mat-expansion-panel-header>
-
-  <div
-    *ngIf="conjoint"
-    class="progress-panel-bar-container flex flex-col flex-start"
-  >
-    <div class="progress-bar-group">
-      <progress-bar-multi-container
-        *ngFor="let i of conjointRequirements"
-        [requirement]="i"
-        (click)="selectRequirements(i)"
-        [courses]="courses"
-      >
-      </progress-bar-multi-container>
-    </div>
-  </div>
-</mat-expansion-panel>
-
-
-<P></P>
-
-<mat-expansion-panel
-class="pg-bar"
-[disabled]="isDisabled"
-[expanded]="true"
-hideToggle
->
-<mat-expansion-panel-header
-  *ngIf="secondMajors?.name"
-  style="margin-top: 0px; margin-bottom: 0px"
-  (click)="expansionOnClick()"
->
-
-  <mat-toolbar *ngIf="majors?.name && secondMajors?.name" class="plain">
-    <span>Second Major: {{secondMajors.name}} </span>
-    <span class="spacer"></span>
-    <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondMajor();">
-      <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
-      <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
-    </span>
-  </mat-toolbar>
-</mat-expansion-panel-header>
-
-  <div
-    *ngIf="majors?.name && secondMajors?.name"
-    class="progress-panel-bar-container flex flex-col flex-start"
-  >
-    <div class="progress-bar-group">
-      <progress-bar-multi-container
-        *ngFor="let requirement of secondMajorRequirements"
-        [requirement]="requirement"
-        [courses]="courses"
-        (click)="selectRequirements(requirement)"
-      >
-      </progress-bar-multi-container>
-    </div>
-  </div>
-</mat-expansion-panel>
-
-<p></p>
-
-<mat-expansion-panel
-class="pg-bar"
-[disabled]="isDisabled"
-[expanded]="true"
-hideToggle
->
-<mat-expansion-panel-header
-  *ngIf="thirdMajors?.name"
-  style="margin-top: 0px; margin-bottom: 0px"
-  (click)="expansionOnClick()"
->
-
-  <mat-toolbar *ngIf="majors?.name && thirdMajors?.name" class="plain">
-    <span>Third Major: {{thirdMajors.name}} </span>
-    <span class="spacer"></span>
-    <span class="delete-pg" (click)="noExpansionOnClick(); deleteThirdMajor();">
-      <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
-      <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
-    </span>
-  </mat-toolbar>
-</mat-expansion-panel-header>
-
-  <div
-    *ngIf="majors?.name && secondMajors?.name && thirdMajors?.name"
-    class="progress-panel-bar-container flex flex-col flex-start"
-  >
-    <div class="progress-bar-group">
-      <progress-bar-multi-container
-        *ngFor="let requirement of thirdMajorRequirements"
-        [requirement]="requirement"
-        [courses]="courses"
-        (click)="selectRequirements(requirement)"
-      >
-      </progress-bar-multi-container>
-    </div>
-  </div>
-</mat-expansion-panel>
-
-<P></P>
-
-  <mat-expansion-panel
-  class="pg-bar"
-  [disabled]="isDisabled"
-  [expanded]="true"
-  hideToggle
-  >
-  <mat-expansion-panel-header
-    *ngIf="modules?.name"
-    style="margin-top: 0px; margin-bottom: 0px"
-    (click)="expansionOnClick()"
-  >
-
-  <mat-toolbar *ngIf="modules?.name" class="plain">
-    <span>Module: {{modules.name}} </span>
-    <span class="spacer"></span>
-    <span class="delete-pg" (click)="noExpansionOnClick(); deleteModule();">
-      <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
-      <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
-    </span>
-  </mat-toolbar>
-  </mat-expansion-panel-header>
-
-  <div
-    *ngIf="modules?.name"
-    class="progress-panel-bar-container flex flex-col flex-start"
-  >
-    <div class="progress-bar-group">
-      <progress-bar-multi-container
-        *ngFor="let requirement of moduleRequirements"
-        [requirement]="requirement"
-        [courses]="courses"
-        (click)="selectRequirements(requirement)"
-      >
-      </progress-bar-multi-container>
-    </div>
-  </div>
-</mat-expansion-panel>
-
-<p></p>
-
-<mat-expansion-panel
-class="pg-bar"
-[disabled]="isDisabled"
-[expanded]="true"
-hideToggle
->
-<mat-expansion-panel-header
-  *ngIf="secondModules?.name"
-  style="margin-top: 0px; margin-bottom: 0px"
-  (click)="expansionOnClick()"
->
-
-<mat-toolbar *ngIf="secondModules?.name" class="plain">
-  <span>Module: {{secondModules.name}} </span>
-  <span class="spacer"></span>
-  <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondModule();">
-    <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
-    <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
-  </span>
-</mat-toolbar>
-</mat-expansion-panel-header>
-
-<div
-  *ngIf="secondModules?.name"
-  class="progress-panel-bar-container flex flex-col flex-start"
->
-  <div class="progress-bar-group">
-    <progress-bar-multi-container
-      *ngFor="let requirement of secondModuleRequirements"
-      [requirement]="requirement"
-      [courses]="courses"
-      (click)="selectRequirements(requirement)"
-    >
-    </progress-bar-multi-container>
-  </div>
-</div>
-</mat-expansion-panel>
-
-
-<div *ngIf="!conjoint?.name && faculty?.name" style="position:relative">
-
-  <img class="info-button"  src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(2);"/>
-  <mat-form-field class="without-arrow addmodule-major">
-    <div style="text-align: center; margin-top: 20px;">Add Conjoint (Optional)</div>
-
-      <mat-select
-        *ngIf="!userService.isMobile"
-        panelClass="my-panel-class"
-        [(value)]="currentConjoints[0]"
-        (selectionChange)="changeConjoint(0, $event)"
-      >
-        <mat-option
-          *ngFor="let conjoint of degreeSelect.conjoints"
-          [value]="conjoint.value"
-          (click)="addedConjoint=true"
-        >
-        {{ conjoint.view }}
-        </mat-option>
-      </mat-select>
-
-      <mat-select
-      *ngIf="userService.isMobile"
-      panelClass="my-panel-class-mobile"
-      [(value)]="currentConjoints[0]"
-      (selectionChange)="changeConjoint(0, $event)"
-    >
-
-    <mat-option
-    *ngFor="let conjoint of degreeSelect.conjoints"
-    [value]="conjoint.value"
-    (click)="addedConjoint=true"
-  >
-  {{ conjoint.view }}
-  </mat-option>
-</mat-select>
-
-    </mat-form-field>
-</div>
-
-<P></P>
-
-<div style="position:relative" *ngIf="!secondMajors?.name && conjoint?.name || !secondMajors?.name && majors?.name && faculty?.name === 'Arts'">
-
-  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);"/>
-    <mat-form-field class="without-arrow addmodule-major">
-
-    <!-- <div *ngIf="faculty.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>
+        <!-- <div *ngIf="faculty.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>
     <div *ngIf="faculty.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major <BR> (Compulsary for Bachelor of Arts)</div> -->
-      
-    <div *ngIf="faculty?.name === 'Arts' || conjoint?.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major (For Arts)</div>
-    <div *ngIf="faculty?.name !== 'Arts' && conjoint?.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major (For Conjoint)</div>
 
-      <mat-select
-        *ngIf="!userService.isMobile"
-        panelClass="my-panel-class"
-        [(value)]="currentSecondMajors[0]"
-        (selectionChange)="changeSecondMajor(0, $event)"
-      >
-        <mat-option
-          *ngFor="let secondMajor of this.degreeSelect.secondMajors"
-          [value]="secondMajor.value"
-          (click)="addedSecondMajor=true"
-        >
-        {{ secondMajor.view }}
-        </mat-option>
-      </mat-select>
+        <div *ngIf="faculty?.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major (For Arts)
+        </div>
 
-      <mat-select
-      *ngIf="userService.isMobile"
-      panelClass="my-panel-class-mobile"
-      [(value)]="currentSecondMajors[0]"
-      (selectionChange)="changeSecondMajor(0, $event)"
-    >
-      <mat-option
-        *ngFor="let secondMajor of this.degreeSelect.secondMajors"
-        [value]="secondMajor.value"
-        (click)="addedSecondMajor=true"
-      >
-      {{ secondMajor.view }}
-      </mat-option>
-    </mat-select>
-    </mat-form-field>
-</div>
+        <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentSecondMajors[0]"
+          (selectionChange)="changeSecondMajor(0, $event)">
+          <mat-option *ngFor="let secondMajor of degreeSelect.secondMajors" [value]="secondMajor.value"
+            (click)="addedSecondMajor=true">
+            {{ secondMajor.view }}
+          </mat-option>
+        </mat-select>
 
-<p></p>
+        <mat-select *ngIf="userService.isMobile" panelClass="my-panel-class-mobile" [(value)]="currentSecondMajors[0]"
+          (selectionChange)="changeSecondMajor(0, $event)">
+          <mat-option *ngFor="let secondMajor of degreeSelect.secondMajors" [value]="secondMajor.value"
+            (click)="addedSecondMajor=true">
+            {{ secondMajor.view }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-<div style="position:relative" *ngIf="!thirdMajors?.name && secondMajors?.name && conjoint?.name === 'Arts' || !thirdMajors?.name && faculty?.name === 'Arts' &&  conjoint?.name && secondMajors?.name">
+    <P></P>
 
-  <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);"/>
-    <mat-form-field class="without-arrow addmodule-major">
+    <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+      <mat-expansion-panel-header *ngIf="secondMajors?.name" style="margin-top: 0px; margin-bottom: 0px"
+        (click)="expansionOnClick()">
 
-    <div style="text-align: center; margin-top: 20px;">Add Third Major</div>
+        <mat-toolbar *ngIf="majors?.name && secondMajors?.name" class="plain">
+          <span>Second Major: {{secondMajors.name}} </span>
+          <span class="spacer"></span>
+          <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondMajor();">
+            <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+            <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+          </span>
+        </mat-toolbar>
+      </mat-expansion-panel-header>
 
-      <mat-select
-        *ngIf="!userService.isMobile"
-        panelClass="my-panel-class"
-        [(value)]="currentThirdMajors[0]"
-        (selectionChange)="changeThirdMajor(0, $event)"
-      >
-        <mat-option
-          *ngFor="let thirdMajor of this.degreeSelect.thirdMajors"
-          [value]="thirdMajor.value"
-          (click)="addedThirdMajor=true"
-        >
-        {{ thirdMajor.view }}
-        </mat-option>
-      </mat-select>
+      <div *ngIf="majors?.name && secondMajors?.name" class="progress-panel-bar-container flex flex-col flex-start">
+        <div class="progress-bar-group">
+          <progress-bar-multi-container *ngFor="let requirement of secondMajorRequirements" [requirement]="requirement"
+            [courses]="courses" (click)="selectRequirements(requirement)">
+          </progress-bar-multi-container>
+        </div>
+      </div>
+    </mat-expansion-panel>
 
-      <mat-select
-      *ngIf="userService.isMobile"
-      panelClass="my-panel-class-mobile"
-      [(value)]="currentThirdMajors[0]"
-      (selectionChange)="changeThirdMajor(0, $event)"
-    >
-      <mat-option
-        *ngFor="let thirdMajor of this.degreeSelect.thirdMajors"
-        [value]="thirdMajor.value"
-        (click)="addedthirdMajor=true"
-      >
-      {{ thirdMajor.view }}
-      </mat-option>
-    </mat-select>
-    </mat-form-field>
-</div>
+    <p></p>
 
-<p></p>
+    <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+      <mat-expansion-panel-header *ngIf="conjoint?.name" style="margin-top: 0px; margin-bottom: 0px"
+        (click)="expansionOnClick()">
 
-  <div style="position:relative" *ngIf="(majors?.name) && ((!modules?.name && faculty?.name === 'Arts') || (!modules?.name && faculty?.name === 'Science'))">
+        <mat-toolbar *ngIf="conjoint" class="plain">
+          <span>Conjoint: Bachelor of {{conjoint.name}} </span>
+          <span class="spacer"></span>
+          <span class="delete-pg" (click)="noExpansionOnClick(); deleteConjoint();">
+            <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+            <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+          </span>
+        </mat-toolbar>
+      </mat-expansion-panel-header>
 
-    <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(5);"/>
-    <mat-form-field class="without-arrow addmodule">
-      <div style="text-align: center; margin-top: 20px;">Add Module (Optional)</div>
+      <div *ngIf="conjoint?.name" class="progress-panel-bar-container flex flex-col flex-start">
+        <div class="progress-bar-group">
+          <progress-bar-multi-container *ngFor="let i of conjointRequirements | slice:1:conjointRequirements.length-1"
+            [requirement]="i" (click)="selectRequirements(i)" [courses]="courses">
+          </progress-bar-multi-container>
+        </div>
+      </div>
+    </mat-expansion-panel>
 
-        <mat-select
-          *ngIf="!userService.isMobile"
-          panelClass="my-panel-class"
-          [(value)]="currentModules[0]"
-          (selectionChange)="changeModule(0, $event)"
-        >
-          <mat-option
-            *ngFor="let module of degreeSelect.modules"
-            [value]="module.value"
-            (click)="addedModule=true;degreeSelect.getFilteredSecondModules();"
-          >
+
+    <P></P>
+
+    <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+      <mat-expansion-panel-header *ngIf="thirdMajors?.name" style="margin-top: 0px; margin-bottom: 0px"
+        (click)="expansionOnClick()">
+
+        <mat-toolbar *ngIf="majors?.name && thirdMajors?.name" class="plain">
+          <span>Conjoint Major: {{thirdMajors.name}} </span>
+          <span class="spacer"></span>
+          <span class="delete-pg" (click)="noExpansionOnClick(); deleteThirdMajor();">
+            <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+            <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+          </span>
+        </mat-toolbar>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="majors?.name && secondMajors?.name && thirdMajors?.name"
+        class="progress-panel-bar-container flex flex-col flex-start">
+        <div class="progress-bar-group">
+          <progress-bar-multi-container *ngFor="let requirement of thirdMajorRequirements" [requirement]="requirement"
+            [courses]="courses" (click)="selectRequirements(requirement)">
+          </progress-bar-multi-container>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <P></P>
+
+    <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+      <mat-expansion-panel-header *ngIf="modules?.name" style="margin-top: 0px; margin-bottom: 0px"
+        (click)="expansionOnClick()">
+
+        <mat-toolbar *ngIf="modules?.name" class="plain">
+          <span>Module: {{modules.name}} </span>
+          <span class="spacer"></span>
+          <span class="delete-pg" (click)="noExpansionOnClick(); deleteModule();">
+            <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+            <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+          </span>
+        </mat-toolbar>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="modules?.name" class="progress-panel-bar-container flex flex-col flex-start">
+        <div class="progress-bar-group">
+          <progress-bar-multi-container *ngFor="let requirement of moduleRequirements" [requirement]="requirement"
+            [courses]="courses" (click)="selectRequirements(requirement)">
+          </progress-bar-multi-container>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <p></p>
+
+    <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+      <mat-expansion-panel-header *ngIf="secondModules?.name" style="margin-top: 0px; margin-bottom: 0px"
+        (click)="expansionOnClick()">
+
+        <mat-toolbar *ngIf="secondModules?.name" class="plain">
+          <span>Module: {{secondModules.name}} </span>
+          <span class="spacer"></span>
+          <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondModule();">
+            <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
+            <span *ngIf="userService.isMobile" class="cross-pg-mobile">&times;</span>
+          </span>
+        </mat-toolbar>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="secondModules?.name" class="progress-panel-bar-container flex flex-col flex-start">
+        <div class="progress-bar-group">
+          <progress-bar-multi-container *ngFor="let requirement of secondModuleRequirements" [requirement]="requirement"
+            [courses]="courses" (click)="selectRequirements(requirement)">
+          </progress-bar-multi-container>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+
+    <div *ngIf="!conjoint?.name && faculty?.name" style="position:relative">
+
+      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(2);" />
+      <mat-form-field class="without-arrow addmodule-major">
+        <div style="text-align: center; margin-top: 20px;">Add Conjoint (Optional)</div>
+
+        <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentConjoints[0]"
+          (selectionChange)="changeConjoint(0, $event)">
+          <mat-option *ngFor="let conjoint of degreeSelect.conjoints" [value]="conjoint.value"
+            (click)="addedConjoint=true">
+            {{ conjoint.view }}
+          </mat-option>
+        </mat-select>
+
+        <mat-select *ngIf="userService.isMobile" panelClass="my-panel-class-mobile" [(value)]="currentConjoints[0]"
+          (selectionChange)="changeConjoint(0, $event)">
+
+          <mat-option *ngFor="let conjoint of degreeSelect.conjoints" [value]="conjoint.value"
+            (click)="addedConjoint=true">
+            {{ conjoint.view }}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+    </div>
+
+    <p></p>
+
+    <div style="position:relative"
+      *ngIf="!thirdMajors?.name && secondMajors?.name && conjoint?.name === 'Arts' || !thirdMajors?.name && faculty?.name === 'Arts' &&  conjoint?.name && secondMajors?.name">
+
+      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(3);" />
+      <mat-form-field class="without-arrow addmodule-major">
+
+        <div style="text-align: center; margin-top: 20px;">Add Conjoint Major</div>
+
+        <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentThirdMajors[0]"
+          (selectionChange)="changeThirdMajor(0, $event)">
+          <mat-option *ngFor="let thirdMajor of this.degreeSelect.thirdMajors" [value]="thirdMajor.value"
+            (click)="addedThirdMajor=true">
+            {{ thirdMajor.view }}
+          </mat-option>
+        </mat-select>
+
+        <mat-select *ngIf="userService.isMobile" panelClass="my-panel-class-mobile" [(value)]="currentThirdMajors[0]"
+          (selectionChange)="changeThirdMajor(0, $event)">
+          <mat-option *ngFor="let thirdMajor of this.degreeSelect.thirdMajors" [value]="thirdMajor.value"
+            (click)="addedthirdMajor=true">
+            {{ thirdMajor.view }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <p></p>
+
+    <div style="position:relative"
+      *ngIf="(majors?.name) && ((!modules?.name && faculty?.name === 'Arts') || (!modules?.name && faculty?.name === 'Science'))">
+
+      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(5);" />
+      <mat-form-field class="without-arrow addmodule">
+        <div style="text-align: center; margin-top: 20px;">Add Module (Optional)</div>
+
+        <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentModules[0]"
+          (selectionChange)="changeModule(0, $event)">
+          <mat-option *ngFor="let module of degreeSelect.modules" [value]="module.value"
+            (click)="addedModule=true;degreeSelect.getFilteredSecondModules();">
             {{ module.view }}
           </mat-option>
         </mat-select>
 
-        <mat-select
-        *ngIf="userService.isMobile"
-        panelClass="my-panel-class-mobile"
-        [(value)]="currentModules[0]"
-        (selectionChange)="changeModule(0, $event)"
-      >
-        <mat-option
-          *ngFor="let module of degreeSelect.modules"
-          [value]="module.value"
-          (click)="addedModule=true;degreeSelect.getFilteredSecondModules();"
-        >
-          {{ module.view }}
-        </mat-option>
-      </mat-select>
+        <mat-select *ngIf="userService.isMobile" panelClass="my-panel-class-mobile" [(value)]="currentModules[0]"
+          (selectionChange)="changeModule(0, $event)">
+          <mat-option *ngFor="let module of degreeSelect.modules" [value]="module.value"
+            (click)="addedModule=true;degreeSelect.getFilteredSecondModules();">
+            {{ module.view }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
-  </div>
+    </div>
 
 
-  <p></p>
+    <p></p>
 
 
-  <div style="position:relative" *ngIf="(majors?.name) && ((!secondModules?.name && faculty?.name === 'Arts') || (!secondModules?.name && faculty?.name === 'Science'))">
+    <div style="position:relative"
+      *ngIf="(majors?.name) && ((!secondModules?.name && faculty?.name === 'Arts') || (!secondModules?.name && faculty?.name === 'Science'))">
 
-    <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(5);"/>
-    <mat-form-field class="without-arrow addmodule">
-    <div style="text-align: center; margin-top: 20px;">Add Second Module (Optional) </div>
+      <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(5);" />
+      <mat-form-field class="without-arrow addmodule">
+        <div style="text-align: center; margin-top: 20px;">Add Second Module (Optional) </div>
 
-        <mat-select
-          *ngIf="!userService.isMobile"
-          panelClass="my-panel-class"
-          [(value)]="currentSecondModules[0]"
-          (selectionChange)="changeSecondModule(0, $event)"
-        >
-          <mat-option
-            *ngFor="let secondModule of degreeSelect.secondModules"
-            [value]="secondModule.value"
-            (click)="addedSecondModule=true;degreeSelect.getFilteredModules()"
-          >
+        <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentSecondModules[0]"
+          (selectionChange)="changeSecondModule(0, $event)">
+          <mat-option *ngFor="let secondModule of degreeSelect.secondModules" [value]="secondModule.value"
+            (click)="addedSecondModule=true;degreeSelect.getFilteredModules()">
             {{ secondModule.view }}
           </mat-option>
         </mat-select>
 
-        <mat-select
-        *ngIf="userService.isMobile"
-        panelClass="my-panel-class-mobile"
-        [(value)]="currentSecondModules[0]"
-        (selectionChange)="changeSecondModule(0, $event)"
-      >
-        <mat-option
-          *ngFor="let secondModule of degreeSelect.secondModules"
-          [value]="secondModule.value"
-          (click)="addedSecondModule=true;degreeSelect.getFilteredModules()"
-        >
-          {{ secondModule.view }}
-        </mat-option>
-      </mat-select>
+        <mat-select *ngIf="userService.isMobile" panelClass="my-panel-class-mobile" [(value)]="currentSecondModules[0]"
+          (selectionChange)="changeSecondModule(0, $event)">
+          <mat-option *ngFor="let secondModule of degreeSelect.secondModules" [value]="secondModule.value"
+            (click)="addedSecondModule=true;degreeSelect.getFilteredModules()">
+            {{ secondModule.view }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
-  </div>
-</mat-accordion>
-  </div>
-
-
+    </div>
+  </mat-accordion>
+</div>

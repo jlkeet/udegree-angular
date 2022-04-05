@@ -247,8 +247,18 @@ export class DegreeSelection {
         });
     }
 
-    if (this.currentConjoint[0] !== null) {
+  if (this.currentFaculties[0] === 'Arts') {
+    if (this.currentFaculties[0].name === 'Arts') {
       this.secondMajors = this.departmentService
+        .departmentsInFaculty(this.currentFaculties[0])
+        .map((department) => {
+          return { value: department, view: department.name };
+        });
+    }
+  }
+
+    if (this.currentConjoint[0] !== null) {
+      this.thirdMajors = this.departmentService
         .departmentsInFaculty(this.currentConjoint[0])
         .map((department) => {
           return { value: department, view: department.name };
@@ -265,13 +275,13 @@ export class DegreeSelection {
     //     });
     // }
 
-    if (this.currentSecondMajors[0] !== null) {
-      this.thirdMajors = this.departmentService
-        .getDepartments()
-        .map((department) => {
-          return { value: department, view: department.name };
-        });
-    }
+    // if (this.currentSecondMajors[0] !== null) {
+    //   this.thirdMajors = this.departmentService
+    //     .getDepartments()
+    //     .map((department) => {
+    //       return { value: department, view: department.name };
+    //     });
+    // }
 
     if (this.currentMajors[0] !== null) {
       this.pathways[0] = this.pathwayService.getPathways().map((path) => {

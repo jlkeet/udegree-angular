@@ -26,6 +26,7 @@ export interface IRequirement {
   isCorequesite?: boolean,
   aboveStage?: number;
   general?: boolean;
+  futher?: boolean;
   flags?: string[];
   complex?: IRequirement[];
 }
@@ -151,6 +152,11 @@ export class RequirementService {
         return depts.size;
       }
 
+      // if (this.checkFlag(requirement, 'Further')) {
+      //   filtered.forEach((course: ICourse) => depts.add(course.department));
+      //   return depts.size;
+      // }
+
       if (requirement.type === RequirementType.Points) {
         mapped = filtered.map((course: ICourse) => course.points);
       } else if (requirement.type === RequirementType.Papers) {
@@ -161,6 +167,11 @@ export class RequirementService {
       if (this.checkFlag(requirement, 'isCorequesite')) {
          mapped = filtered.map((course: ICourse) => 1);
        }
+
+       if (this.checkFlag(requirement, 'total')) {
+         console.log(requirement)
+        mapped = filtered.map((course: ICourse) => course.points);
+      }
 
        // Ugly code here, but essentially this first checks to see if the requirement is gen ed.
        // Then it filteres the gen ed paper(s) and checks to see if there's already another paper taken from
@@ -235,10 +246,12 @@ export class RequirementService {
       (requirement.departments !== undefined ? ' from ' + requirement.departments.join(', ') : '') +
       (requirement.departmentsExcluded !== undefined ? ' outside ' + requirement.departments.join(', ') : '') +
       (this.checkFlag(requirement, 'DifferentDepts') ? ' of different subjects' : '') +
+      (this.checkFlag(requirement, 'Further') ? ' from any subject' : '') +
       (this.checkFlag(requirement, 'Major') ? ' from major' : '') +
       (this.checkFlag(requirement, 'MajorOne') ? ' from first major' : '') +
       (this.checkFlag(requirement, 'MajorTwo') ? ' from second major' : '') +
       (this.checkFlag(requirement, 'isCorequesite') ? ' as a co-requesite' : '') +
+      (this.checkFlag(requirement, 'total') ? ' Total' : '') +
       (requirement.faculties !== undefined && this.checkFlag(requirement, 'General') === false ? ' from ' + requirement.faculties.join(', ') : '') +
       (requirement.facultiesExcluded !== undefined ? ' outside ' + requirement.facultiesExcluded.join(', ') : '') +
       '';
@@ -312,9 +325,11 @@ export class RequirementService {
       (requirement.departments !== undefined ? ' from ' + requirement.departments.join(', ') : '') +
       (requirement.departmentsExcluded !== undefined ? ' outside ' + requirement.departments.join(', ') : '') +
       (this.checkFlag(requirement, 'DifferentDepts') ? ' of different subjects' : '') +
+      (this.checkFlag(requirement, 'Further') ? ' from any subject' : '') +
       (this.checkFlag(requirement, 'Major') ? ' from major' : '') +
       (this.checkFlag(requirement, 'MajorOne') ? ' from first major' : '') +
       (this.checkFlag(requirement, 'MajorTwo') ? ' from second major' : '') +
+      (this.checkFlag(requirement, 'total') ? ' Total' : '') +
       (requirement.faculties !== undefined ? ' from ' + requirement.faculties.join(', ') : '') +
       (requirement.facultiesExcluded !== undefined ? ' outside ' + requirement.facultiesExcluded.join(', ') : '') +
       (this.checkFlag(requirement, 'General') ? ' General schedule' : '') + '';
@@ -323,6 +338,7 @@ export class RequirementService {
 
   public checkFlag(requirement: IRequirement, flag: string) {
     return requirement.flags !== undefined && requirement.flags[0] === flag;
+
     // .map((str: string) => str.toLowerCase())
     // .includes(flag.toLowerCase());
   }

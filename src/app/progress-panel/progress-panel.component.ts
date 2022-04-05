@@ -250,6 +250,7 @@ export class ProgressPanel {
           : this.faculty.majorRequirements
         : []
     );
+
     this.conjointRequirements = [].concat(
       this.conjoint
         ? this.majors
@@ -257,6 +258,18 @@ export class ProgressPanel {
           : this.conjoint.doubleMajorRequirements
         : []
     );
+
+    if (this.conjoint && this.faculty) {
+      console.log("firing ", this.conjoint, ' ', this.faculty )
+        if (this.faculty.conjointTotal[0].required >= this.conjoint.conjointTotal[0].required) {
+          this.conjointRequirements.push(this.faculty.conjointTotal[0])
+          console.log("Faculty fire")
+        } else {
+          this.conjointRequirements.push(this.conjoint.conjointTotal[0])
+          console.log("Conjoint fire ", this.conjoint.conjointTotal[0])
+      }
+  }
+
 
     if (this.conjointRequirements.length > 0) {
       this.requirements = [].concat(
@@ -272,21 +285,16 @@ export class ProgressPanel {
       this.pathways ? this.pathways.requirements : []
     );
 
-    // this.secondMajorRequirements = [].concat(
-    //   this.secondMajors ? this.secondMajors.requirements : []
-    // );
+    this.secondMajorRequirements = [].concat(
+      this.secondMajors ? this.secondMajors.requirements : []
+    );
 
-    if (this.storeHelper.current('conjoint') !== undefined && this.secondMajors !== undefined) {
+    if (this.storeHelper.current('conjoint') !== undefined && this.thirdMajors !== undefined) {
 
-      this.secondMajorRequirements = [].concat(
-        this.secondMajors.conjointRequirements
+      this.thirdMajorRequirements = [].concat(
+        this.thirdMajors.conjointRequirements
       );
-    } else {
-
-      this.secondMajorRequirements = [].concat(
-        this.secondMajors ? this.secondMajors.requirements : []
-      );
-    }
+    } 
 
 
 
@@ -766,6 +774,11 @@ export class ProgressPanel {
       //   requirement.flags && requirement.flags.includes("general")
       //     ? true
       //     : null,
+      further:
+        requirement.flags && requirement.flags.includes("further")
+          ? true
+            : null,
+      
       period: semester.period,
       searchTerm: this.orNull(
         requirement.papers ? requirement.papers.toString() : null

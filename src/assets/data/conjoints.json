@@ -1,28 +1,5 @@
 [
   {
-    "name": "Architectural Studies",
-    "abbrv": "BAS",
-    "majors": ["None"],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 255
-      },
-      {
-        "type": 0,
-        "required": 330,
-        "faculties": ["Architectural Studies"]
-      },
-      {
-        "type": 0,
-        "required": 30,
-        "faculties": ["Law and Creative Arts and Industry", "Open"],
-        "flags": ["general"]
-      }
-    ],
-    "flags": ["Prescribed"]
-  },
-  {
     "name": "Arts",
     "blurb": "Art is a dart that starts or parts the heart",
     "abbrv": "BA",
@@ -70,7 +47,18 @@
       "Theological and Religious Studies",
       "Writing Studies"
     ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
+      {
+        "type": 0,
+        "required": 270
+      },
       {
         "type": 0,
         "required": 255,
@@ -87,60 +75,12 @@
         "required": 75,
         "faculties": ["Arts"],
         "aboveStage": 2
+      },
+      {
+        "type": 0,
+        "required": 15
       }
     ]
-  },
-  {
-    "name": "Business and Information Management",
-    "abbrv": "BBIM",
-    "majors": [
-      "Accounting",
-      "Business",
-      "Commercial Law",
-      "Economics",
-      "Information Management",
-      "Information Systems",
-      "Marketing",
-      "Operations Management",
-      "Statistics"
-    ],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 360
-      },
-      {
-        "type": 0,
-        "required": 150,
-        "papers": [
-          "ACCTG101",
-          "BUSINESS101",
-          "BUSINESS102",
-          "BUSINESS291",
-          "COMLAW101",
-          "ECON151",
-          "ECON152",
-          "INFOMGMT192",
-          "INFOSYS110",
-          "OPSMGT357",
-          "STATS108"
-        ],
-        "flags": ["Core"]
-      },
-      {
-        "type": 0,
-        "required": 30,
-        "faculties": ["Business and Economics", "Open"],
-        "flags": ["general"]
-      }
-    ],
-    "doubleMajorRequirements": [
-      {
-        "type": 0,
-        "required": 0
-      }
-    ],
-    "flags": []
   },
   {
     "name": "Commerce",
@@ -158,6 +98,13 @@
       "Marketing",
       "Operations and Supply Chain Management",
       "Taxation"
+    ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
     ],
     "majorRequirements": [
       {
@@ -246,124 +193,6 @@
     "flags": ["Dbl Mjr", "Next"]
   },
   {
-    "name": "Dance Studies",
-    "abbrv": "BDanceSt",
-    "majors": ["None"],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 360
-      },
-      {
-        "type": 0,
-        "required": 300,
-        "faculties": ["Dance Studies"]
-      },
-      {
-        "type": 0,
-        "required": 30,
-        "faculties": ["Law and Creative Arts and Industries", "Open"],
-        "flags": ["general"]
-      },
-      {
-        "type": 0,
-        "required": 180,
-        "faculties": ["Dance Studies"],
-        "aboveStage": 1
-      },
-      {
-        "type": 0,
-        "required": 90,
-        "faculties": ["Dance Studies"],
-        "aboveStage": 2
-      },
-      {
-        "type": 0,
-        "required": 90,
-        "papers": [
-          "DANCE107",
-          "DANCE110",
-          "DANCE112",
-          "DANCE120",
-          "DANCE131",
-          "MAORI190"
-        ]
-      },
-      {
-        "type": 0,
-        "required": 90,
-        "papers": [
-          "DANCE210",
-          "DANCE212",
-          "DANCE220",
-          "DANCE222",
-          "DANCE231",
-          "PACIFIC110"
-        ]
-      },
-      {
-        "type": 0,
-        "required": 90,
-        "papers": [
-          "DANCE 302",
-          "DANCE310",
-          "DANCE314",
-          "DANCE320",
-          "DANCE322",
-          "DANCE331"
-        ]
-      },
-      {
-        "type": 0,
-        "required": 30,
-        "papers": [
-          "DANCE121",
-          "DANCE201",
-          "DANCE207",
-          "DANCE211",
-          "DANCE215",
-          "DANCE250",
-          "DANCE300",
-          "DANCE301",
-          "DANCE312",
-          "DANCE315",
-          "DANCE350",
-          "DANCE351"
-        ]
-      }
-    ],
-    "flags": ["Prescribed"]
-  },
-  {
-    "name": "Education (TESOL)",
-    "abbrv": "BEd(TESOL)",
-    "majors": ["None"],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 360
-      }
-    ],
-    "flags": ["Prescribed"]
-  },
-  {
-    "name": "Education (Teaching)",
-    "abbrv": "BEd(Tchg)",
-    "majors": [
-      "Early Childhood Education",
-      "Primary or Intermediate Teaching",
-      "Secondary Teaching",
-      "Teaching in Te Reo Maori"
-    ],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 360
-      }
-    ],
-    "flags": ["Next"]
-  },
-  {
     "name": "Engineering (Honours)",
     "abbrv": "BE(Hons)",
     "majors": [
@@ -377,10 +206,22 @@
       "Mechatronics Engineering",
       "Software Engineering"
     ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 690,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
-        "required": 420
+        "required": 435
+      },
+      {
+        "type": 0,
+        "required": 420,
+        "faculties": ["Engineering"]
       },
       {
         "type": 0,
@@ -423,7 +264,12 @@
     "majorRequirements": [
       {
         "type": 0,
-        "required": 255
+        "required": 270
+      },
+      {
+        "type": 0,
+        "required": 255,
+        "faculties": ["Fine Arts"]
       },
       {
         "type": 0,
@@ -485,7 +331,12 @@
     "majorRequirements": [
       {
         "type": 0,
-        "required": 255
+        "required": 270
+      },
+      {
+        "type": 0,
+        "required": 255,
+        "faculties": ["Health Sciences"]
       },
       {
         "type": 0,
@@ -573,7 +424,12 @@
     "majorRequirements": [
       {
         "type": 0,
-        "required": 405
+        "required": 420
+      },
+      {
+        "type": 0,
+        "required": 405,
+        "faculties": ["Laws"]
       },
       {
         "type": 0,

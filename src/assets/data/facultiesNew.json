@@ -86,6 +86,13 @@
       "Writing Studies"
     ],
     "minors": ["Dance", "Ethnomusicology", "Latin American Studies"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -174,6 +181,13 @@
       "Marketing",
       "Operations and Supply Chain Management",
       "Taxation"
+    ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
     ],
     "majorRequirements": [
       {
@@ -528,6 +542,13 @@
         ],
         "flags": ["General"]
       }
+    ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 690,
+      "flags": ["total"]
+    }
     ],
     "doubleMajorRequirements": [
       {
