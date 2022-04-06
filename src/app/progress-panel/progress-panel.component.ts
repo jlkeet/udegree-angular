@@ -260,13 +260,10 @@ export class ProgressPanel {
     );
 
     if (this.conjoint && this.faculty) {
-      console.log("firing ", this.conjoint, ' ', this.faculty )
         if (this.faculty.conjointTotal[0].required >= this.conjoint.conjointTotal[0].required) {
           this.conjointRequirements.push(this.faculty.conjointTotal[0])
-          console.log("Faculty fire")
         } else {
           this.conjointRequirements.push(this.conjoint.conjointTotal[0])
-          console.log("Conjoint fire ", this.conjoint.conjointTotal[0])
       }
   }
 

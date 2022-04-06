@@ -21,6 +21,7 @@ import html2canvas from 'html2canvas';
 
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { CourseDialogComponent } from "./course-dialog.component";
+import { updateHeritageClause } from "typescript";
 
 @Component({
     host: {
@@ -31,6 +32,9 @@ import { CourseDialogComponent } from "./course-dialog.component";
     templateUrl: "./export-button.template.html",
   })
   export class ExportButton {
+    static exportButton() {
+        throw new Error("Method not implemented.");
+    }
   
     public email: string;
     private name: string;
@@ -67,73 +71,6 @@ import { CourseDialogComponent } from "./course-dialog.component";
           data => console.log("Dialog output:", data)
       );    
   }
-
-public exportButton() {
-    
-    //   this.facultyEmail = this.storeHelper.current("faculty").name  
-    // switch(this.facultyEmail) {
-    //   case "Arts":
-    //     console.log("Arts Faculty Email");
-    //     this.facultyEmail = "asc@auckland.ac.nz"
-    //     break;
-    //   case "Science":
-    //     console.log("Science Faculty Email");
-    //     this.facultyEmail = "scifac@auckland.ac.nz"
-    //     break;
-    //   }
-  
-    html2canvas(document.body).then((canvas) =>  {
-      this.authService.afAuth.authState.subscribe((auth) => {    
-      canvas.toBlob(function(blob) {
-        var newImg = document.createElement('img'),
-            url = URL.createObjectURL(blob);
-            let dataURL = canvas.toDataURL("image/png");
-      firebase.storage().ref("/users/" + auth.email + "/images/").child("plan").put(blob).then(() => {}
-        )})})})
-  
-        setTimeout(()=>{
-          this.getImage()}, 6000);
-    }
-  
-    private getImage() {
-      var storageRef = firebase.storage().ref("/users/" + this.email + "/images/").child("plan")
-      .getDownloadURL()
-      .then(url => {
-        var xhr = new XMLHttpRequest();
-        xhr.responseType = 'blob';
-        xhr.onload = (event) => {
-          var blob = xhr.response;
-        };
-        xhr.open('GET', url);
-        xhr.send();
-        this.sendImage(url)
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-    }
-  
-    private sendImage(url) {
-      const email = "jackson@udegree.co"
-      const subject = this.name + "'s Plan"
-      
-     this.db
-    .collection("mail")
-    .add({
-      from:email,
-      to: this.email,
-      // cc: Add Faculty Email to cc here
-      message: {
-          subject: subject,
-          html: '<p>Here’s an attachment for you!</p>',
-          attachments: [{
-            filename: "plan.png",
-            path: url,
-            type: 'image/png',
-            }],
-      },
-    })
-    }
 
     private changeColor() {
       this.toggle = !this.toggle;

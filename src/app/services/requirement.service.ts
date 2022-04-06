@@ -169,7 +169,6 @@ export class RequirementService {
        }
 
        if (this.checkFlag(requirement, 'total')) {
-         console.log(requirement)
         mapped = filtered.map((course: ICourse) => course.points);
       }
 
