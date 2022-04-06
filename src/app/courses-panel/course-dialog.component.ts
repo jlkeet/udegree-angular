@@ -56,7 +56,6 @@ export class CourseDialogComponent implements OnInit {
 
 
 public exportButton() {
-    console.log("firing export")
       //   this.facultyEmail = this.storeHelper.current("faculty").name  
       // switch(this.facultyEmail) {
       //   case "Arts":
@@ -73,13 +72,12 @@ public exportButton() {
       setTimeout(()=>{
 
       html2canvas(document.body).then((canvas) =>  {
-        console.log("firing html2canvas")
         this.authService.afAuth.authState.subscribe((auth) => {    
         canvas.toBlob(function(blob) {
           var newImg = document.createElement('img'),
               url = URL.createObjectURL(blob);
               let dataURL = canvas.toDataURL("image/png");
-        firebase.storage().ref("/users/" + auth.email + "/images/").child("plan").put(blob).then(() => {console.log("firing")}
+        firebase.storage().ref("/users/" + auth.email + "/images/").child("plan").put(blob).then(() => {}
           )})})})
 
         }, 2000);
@@ -89,7 +87,6 @@ public exportButton() {
       }
     
       private getImage() {
-        console.log("firing get image")
         var storageRef = firebase.storage().ref("/users/" + this.email + "/images/").child("plan")
         .getDownloadURL()
         .then(url => {
@@ -108,7 +105,6 @@ public exportButton() {
       }
     
       private sendImage(url) {
-        console.log("firing send image")
         const email = "jackson@udegree.co"
         const subject = this.name + "'s Plan"
         
