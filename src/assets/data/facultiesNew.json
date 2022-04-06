@@ -593,6 +593,13 @@
     "name": "Fine Arts",
     "abbrv": "BFA",
     "majors": ["None"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -703,6 +710,13 @@
     "name": "Health Sciences",
     "abbrv": "BHSc",
     "majors": ["Population Health", "Path to Med"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -891,6 +905,13 @@
     "name": "Laws",
     "abbrv": "LLB",
     "majors": ["None"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 675,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -967,6 +988,13 @@
       "Musicology",
       "Popular Music"
     ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -1032,6 +1060,13 @@
     "name": "Nursing",
     "abbrv": "BNurs",
     "majors": ["None"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 570,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -1168,6 +1203,13 @@
     "name": "Property",
     "abbrv": "BProp",
     "majors": ["None"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -1260,6 +1302,13 @@
       "Psychology",
       "Statistics",
       "Path to Med"
+    ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
     ],
     "majorRequirements": [
       {
@@ -1392,6 +1441,13 @@
       "Health Education and Promotion",
       "Dance"
     ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -1466,6 +1522,13 @@
       "Communication and Social Change",
       "Communication and Technology",
       "Communication in Leadership"
+    ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
     ],
     "majorRequirements": [
       {
@@ -1575,6 +1638,13 @@
   {
     "name": "Global Studies",
     "abbrv": "BGlobalSt",
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,

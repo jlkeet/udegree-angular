@@ -261,6 +261,13 @@
     "name": "Fine Arts",
     "abbrv": "BFA",
     "majors": ["None"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -328,6 +335,13 @@
     "name": "Health Sciences",
     "abbrv": "BHSc",
     "majors": ["Population Health", "Path to Med"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -421,6 +435,13 @@
     "name": "Laws",
     "abbrv": "LLB",
     "majors": ["None"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 675,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -445,18 +466,6 @@
     "flags": ["Prescribed"]
   },
   {
-    "name": "Medicine & Surgery",
-    "abbrv": "MBChB",
-    "majors": ["BHSc", "BSc"],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 360
-      }
-    ],
-    "flags": ["Next"]
-  },
-  {
     "name": "Music",
     "abbrv": "BMus",
     "majors": [
@@ -465,6 +474,13 @@
       "Jazz Performance",
       "Musicology",
       "Popular Music"
+    ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
     ],
     "majorRequirements": [
       {
@@ -484,6 +500,13 @@
     "name": "Nursing",
     "abbrv": "BNurs",
     "majors": ["None"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 570,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -503,33 +526,16 @@
     "flags": ["Prescribed"]
   },
   {
-    "name": "Optometry",
-    "abbrv": "BOptm",
-    "majors": ["None"],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 360
-      }
-    ],
-    "flags": ["Prescribed"]
-  },
-  {
-    "name": "Pharmacy",
-    "abbrv": "BPharm",
-    "majors": ["None"],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 360
-      }
-    ],
-    "flags": ["Prescribed"]
-  },
-  {
     "name": "Property",
     "abbrv": "BProp",
     "majors": ["None"],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -607,6 +613,13 @@
       "Statistics",
       "Path to Med"
     ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -633,23 +646,6 @@
     ]
   },
   {
-    "name": "Social Work",
-    "abbrv": "BSW",
-    "majors": [
-      "Child and Family Practice",
-      "General Social Work",
-      "Health Social Work Practice",
-      "Youth Services Practice"
-    ],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 360
-      }
-    ],
-    "flags": ["Next"]
-  },
-  {
     "name": "Sport, Health and Physical Education",
     "abbrv": "BSportHPE",
     "majors": [
@@ -660,6 +656,13 @@
       "Health Education and Promotion",
       "Dance"
     ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
@@ -669,24 +672,19 @@
     "flags": ["Next"]
   },
   {
-    "name": "Urban Planning",
-    "abbrv": "BUrbPlan",
-    "majors": ["None"],
-    "majorRequirements": [
-      {
-        "type": 0,
-        "required": 360
-      }
-    ],
-    "flags": ["Prescribed"]
-  },
-  {
     "name": "Bachelor of Communication",
     "abbrv": "BC",
     "majors": [
       "Communication and Social Change",
       "Communication and Technology",
       "Communication in Leadership"
+    ],
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
     ],
     "majorRequirements": [
       {
@@ -738,6 +736,13 @@
   {
     "name": "Bachelor of Global Studies",
     "abbrv": "BGlobalSt",
+    "conjointTotal": [
+      {
+      "type": 0,
+      "required": 540,
+      "flags": ["total"]
+    }
+    ],
     "majorRequirements": [
       {
         "type": 0,
