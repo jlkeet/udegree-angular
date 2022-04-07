@@ -247,7 +247,7 @@ export class DegreeSelection {
         });
     }
 
-  if (this.currentFaculties[0] === 'Arts') {
+  if (this.currentFaculties[0]) {
     if (this.currentFaculties[0].name === 'Arts') {
       this.secondMajors = this.departmentService
         .departmentsInFaculty(this.currentFaculties[0])
