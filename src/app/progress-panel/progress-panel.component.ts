@@ -53,7 +53,7 @@ import { CoursesPanel } from "../courses-panel";
     style: "flex: 0 0 auto;",
   },
   selector: "progress-panel",
-  styles: [require("./progress-panel.component.scss")],
+  styleUrls: [require("./progress-panel.component.scss")],
   templateUrl: "./progress-panel.template.html",
   encapsulation: ViewEncapsulation.None,
 })
@@ -286,19 +286,10 @@ export class ProgressPanel {
       this.secondMajors ? this.secondMajors.requirements : []
     );
 
-    if (this.storeHelper.current('conjoint') !== undefined && this.thirdMajors !== undefined) {
-
-      this.thirdMajorRequirements = [].concat(
-        this.thirdMajors.conjointRequirements
-      );
-    } 
-
-
-
-   if (this.storeHelper.current('conjoint') && this.secondMajors !== undefined) {
+   if (this.storeHelper.current('conjoint') && this.secondMajors && this.thirdMajors) {
 
      if (this.storeHelper.current('conjoint') !== undefined) {
-    this.thirdMajorRequirements = [].concat(
+      this.thirdMajorRequirements = [].concat(
       this.thirdMajors.conjointRequirements
     );
      }
@@ -317,24 +308,6 @@ export class ProgressPanel {
     this.secondModuleRequirements = [].concat(
       this.secondModules ? this.secondModules.requirements : []
     );
-
-    // Leaving this here for third major reqs?
-
-    // if (
-    //   this.conjointRequirements.length > 0 &&
-    //   this.majors !== undefined &&
-    //   this.secondMajors !== undefined
-    // ) {
-    //   if (
-    //     this.majors.conjointRequirements &&
-    //     this.secondMajors.conjointRequirements
-    //   ) {
-    //     this.majorRequirements.push(this.majors.conjointRequirements[0]);
-    //     this.secondMajorRequirements.push(
-    //       this.secondMajors.conjointRequirements[0]
-    //     );
-    //   }
-    // }
   }
 
   private navigateToSelectMajor() {

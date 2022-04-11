@@ -17,31 +17,32 @@ import { Router } from "@angular/router";
 import { BoundPlayerFactory } from "@angular/core/src/render3/styling/player_factory";
 import { UserContainer } from "../common";
 import autoScroll from 'dom-autoscroller';
+import { catchError } from "rxjs/operators";
 
 @Component({
   selector: "semester-panel",
-  styles: [require("./semester-panel.component.scss")],
+  styleUrls: [require("./semester-panel.component.scss")],
   encapsulation: ViewEncapsulation.None,
   templateUrl: "semester-panel.template.html",
 })
 
 export class SemesterPanel {
   @ViewChild('autoscroll') autoscroll: ElementRef;
-  @Input() private semester;
-  @Input() private courses: ICourse[];
+  @Input() public semester;
+  @Input() public courses: ICourse[];
 
-  private addingSemester = false;
+  public addingSemester = false;
   private MAX_POINTS = 80;
   private toggled = true;
   private bagName;
   private atMaxPoints;
-  private gpa;
+  public gpa;
   private courseCounter: number;
   private email: string;
   private collapsed = false;
-  private yearListArray = [];
-  private periodListArray = [];
-  private isDisabled = false;
+  public yearListArray = [];
+  public periodListArray = [];
+  public isDisabled = false;
   private savedNewSem;
   private savedNewYear;
   private previousYear;
@@ -68,21 +69,21 @@ export class SemesterPanel {
 
   private ngOnInit() {
 
-        // AutoScroll
-        setTimeout(() => {
-          let scroll = autoScroll([
-            this.autoscroll.nativeElement,
-          ], {
-              margin: 20,
-              maxSpeed: 5,
-              scrollWhenOutside: true,
-              autoScroll: function () {
-                //Only scroll when the pointer is down.
-                return this.down;
-                //return true;
-              }
-            });
-        }, 3000);
+        // // AutoScroll
+        // setTimeout(() => {
+        //   let scroll = autoScroll([
+        //     this.autoscroll.nativeElement,
+        //   ], {
+        //       margin: 20,
+        //       maxSpeed: 5,
+        //       scrollWhenOutside: true,
+        //       autoScroll: function () {
+        //         //Only scroll when the pointer is down.
+        //         return this.down;
+        //         //return true;
+        //       }
+        //     });
+        // }, 3000);
 
     this.bagName = "courses";
     const bag = this.dragulaService.find(this.bagName);
@@ -94,6 +95,10 @@ export class SemesterPanel {
           return !el!.hasAttribute("fake");
         },
       });
+    }
+
+    if (this.dragulaService.find(this.bagName) !== undefined) {
+      this.dragulaService.find(this.bagName).drake.dragging = true
     }
 
     this.dragulaService.drop().subscribe((value: any) => {
@@ -274,7 +279,7 @@ export class SemesterPanel {
     this.semesterSort();
   }
 
-  private smallCourseStatusBar(course) {
+  public smallCourseStatusBar(course) {
     switch (course.status) {
       case 0:
         return "#66bbff";
@@ -291,22 +296,22 @@ export class SemesterPanel {
     return course.name;
   }
 
-  private newSemesterDD() {
+  public newSemesterDD() {
     this.addingSemester = true;
     //this.coursePanelService.newSemester();
   }
 
-  private expansionOnClick() {
+  public expansionOnClick() {
     this.isDisabled = false;
     return this.isDisabled;
   }
 
-  private noExpansionOnClick() {
+  public noExpansionOnClick() {
     this.isDisabled = true;
     return this.isDisabled;
   }
 
-  private yearList() {
+  public yearList() {
     this.yearListArray = [];
    // let i = new Date().getFullYear();
     let i = 2010
@@ -317,7 +322,7 @@ export class SemesterPanel {
     return this.yearListArray[0 - 9];
   }
 
-  private periodList() {
+  public periodList() {
     this.periodListArray = [];
     let i = 0;
     while (i < 3) {
@@ -337,14 +342,14 @@ export class SemesterPanel {
     return this.periodListArray[0 - 2];
   }
 
-  private getSelectedYear(i) {
+  public getSelectedYear(i) {
     
     this.previousYear = this.semester.year;
     this.semester.year = i;
     this.saveChangedSemCourse(i);
   }
 
-  private getSelectedSem(j) {
+  public getSelectedSem(j) {
     this.previousPeriod = this.semester.period;
     let k;
     switch (j) {

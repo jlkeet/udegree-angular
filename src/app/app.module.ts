@@ -119,6 +119,7 @@ import { ProgressDialogComponent } from './progress-panel/progress-dialog.compon
 import { UserDialogComponent } from './user/user-dialog-component';
 import { PrivacyContainer } from './privacy-policy/privacy-policy.component';
 import { FooterComponent } from './footer/footer.component';
+import { CourseDraggable } from './common';
 
 
 // Application wide providers

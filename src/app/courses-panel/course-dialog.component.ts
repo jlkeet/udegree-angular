@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Inject, OnInit } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { EmailValidator, FormBuilder, FormGroup } from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef, MatDialog} from "@angular/material";
 import { AuthService } from "../core/auth.service";
 import { UserService } from "../core/user.service";
 import { ExportButton } from "./export-button.component";
 import html2canvas from 'html2canvas';
 import * as firebase from "firebase";
+import { updateHeritageClause } from "typescript";
 
 @Component({
     selector: 'course-dialog',
@@ -105,15 +106,15 @@ public exportButton() {
       }
     
       private sendImage(url) {
-        const email = "jackson@udegree.co"
+        const email = "jackson@mg.udegree.co"
         const subject = this.name + "'s Plan"
         
        this.db
       .collection("mail")
       .add({
         from: email,
-        to: "jackson.keet@mac.com",
-        cc: this.email,
+        to: "harry@udegree.co",
+        // cc: "jackson.keet@udegree.co",
         message: {
             subject: subject,
             html: '<p>Here’s an attachment for you!</p>',

@@ -30,8 +30,8 @@ require('./app.component.global.scss');
   selector: 'app',
   // http://blog.thoughtram.io/angular/2015/06/29/shadow-dom-strategies-in-angular2.html
   // note we use styles property, not styleUrls
-  styles: [require('./app.component.scss')],
-  template: require('./app.component.html')
+  styleUrls: [('./app.component.scss')],
+  templateUrl: './app.component.html'
 })
 export class App {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';

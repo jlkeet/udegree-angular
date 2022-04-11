@@ -4,7 +4,8 @@ import {
   EventEmitter,
   Input,
   Output,
-  Renderer
+  Renderer,
+  Renderer2
 } from '@angular/core';
 import { DragulaService } from 'ng2-dragula';
 import { ICourse } from '../interfaces';
@@ -20,7 +21,7 @@ import { StoreHelper } from '../services';
     style: 'margin: 5px 2.5px;'
   },
   selector: 'course-draggable',
-  styles: [require('./course.component.scss')],
+  styleUrls: [require('./course.component.scss')],
   templateUrl: './course-draggable.template.html'
 })
 
@@ -35,15 +36,17 @@ export class CourseDraggable {
   @Input() public period: Period;
 
   private showDelete: boolean = false;
-  private backgroundColor: string;
-  private displayGrade: string;
+  public backgroundColor: string;
+  public displayGrade: string;
   // private isDragging: boolean = false;
-  private status: boolean = false;
+  public status: boolean = false;
+  private group;
+  private canDrag: boolean = true;
   
 
   constructor(
     private el: ElementRef,
-    private renderer: Renderer,
+    private renderer: Renderer2,
     private storeHelper: StoreHelper,
     private dragulaService: DragulaService
   ) {
@@ -60,13 +63,16 @@ export class CourseDraggable {
     // ...or whatever you want to do to get the body element; I gave it an id='body' attribute
 
     // dragula_obj.on('drag', function (el) { scroll_disable(); });
-    // dragula_obj.on('dragend', function (el) { scroll_enable(); });  
-
+    // dragula_obj.on('dragend', function (el) { scroll_enable(); }); 
+    this.group = this.dragulaService.find("courses") 
     
+
 
   }
 
-  
+  public ngOnChanges() {
+    // this.group.drake.dragging = this.canDrag
+  }
 
   public addCourse() {
     this.addCourseClicked.emit({
@@ -88,22 +94,25 @@ export class CourseDraggable {
 
   public toggleDetails() {
     this.course.selected = !this.course.selected;
-
     this.courseClicked.emit({
       value: this.course
     });
   }
 
-  private pressForDel() {
+  public pressForDel() {
+    console.log("Firing")
    this.status = !this.status;
+   this.canDrag = !this.canDrag
+   this.group.drake.dragging = this.canDrag
   }
 
   public ngOnInit() {
     this.setBackgroundColour();
-    this.initialiseDrag(this.course.status);
+    // this.initialiseDrag(this.course.status);
     this.course.help = CourseStatus[this.course.status];
     this.displayGradeConvert()
-    
+
+    this.dragulaService.out().subscribe((value: any) => {console.log(value)})
   }
 
   private setBackgroundColour() {
@@ -145,10 +154,9 @@ export class CourseDraggable {
   }
 
   private setDragStatus(enableDrag: boolean) {
-    this.renderer.setElementClass(
+    this.renderer.addClass(
       this.el.nativeElement,
-      'no-drag',
-      !enableDrag
+      'no-drag'
     );
   }
 
