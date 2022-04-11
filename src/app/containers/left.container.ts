@@ -3,6 +3,7 @@ import { StoreHelper } from "../services";
 
 import { HostListener } from "@angular/core";
 import { MatTabsModule } from "@angular/material";
+import { AddCourseContainer } from "./add-course-container";
 
 @Component({
   selector: "left-panel",
@@ -64,7 +65,7 @@ import { MatTabsModule } from "@angular/material";
       (touchstart)="swipe($event, 'start')"
       (touchend)="swipe($event, 'end')"
     >
-      <mat-tab-group mat-align-tabs="start" [(selectedIndex)]="selectedTab">
+      <mat-tab-group #tabGroup mat-align-tabs="start" [(selectedIndex)]="this.addCourse.tabIndex">
         <mat-tab label="Degree View">
           <div class="panel-mobile">
             <progress-panel (onPageChange)="changePage()"></progress-panel>
@@ -86,10 +87,15 @@ export class LeftPanelContainer {
 
   private swipeCoord;
   private swipeTime;
-  private selectedTab = 0;
+  public selectedTab;
 
-  constructor(private storeHelper: StoreHelper) {
+  constructor (
+
+    private storeHelper: StoreHelper, 
+    public addCourse: AddCourseContainer
+    ) {
     this.onResize();
+    this.selectedTab = this.addCourse.tabIndex
   }
 
   @HostListener("window:resize", ["$event"])
@@ -159,4 +165,5 @@ export class LeftPanelContainer {
     const collapsed = this.storeHelper.update("collapsed", !this.collapsed);
     this.collapsed = !this.collapsed;
   }
+
 }

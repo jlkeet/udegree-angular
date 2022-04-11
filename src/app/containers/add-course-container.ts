@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {
   ActivatedRoute,
   Router
@@ -28,6 +28,7 @@ import {
   StoreHelper
 } from '../services';
 
+
 /*
   Container for addding a course to a semester.
   TODO:: Split this up!
@@ -35,11 +36,12 @@ import {
 
 @Component({
   selector: 'add-course-container',
-  styles: [require('./add-course-container.scss')],
+  styleUrls: [require('./add-course-container.scss')],
   templateUrl: './add-course-container.template.html'
 })
 
 export class AddCourseContainer {
+
   private majorSelected: boolean;
   private semesterText: string;
   private semesterCourses: ICourse[];
@@ -52,6 +54,7 @@ export class AddCourseContainer {
   private shown: ICourse[] = [];
   private filterParams;
   private modules;
+  public tabIndex = 0;
 
   // list of departments and their courses for a faculty
   private departmentCourses: DepartmentCoursesModel[];
@@ -70,6 +73,7 @@ export class AddCourseContainer {
   private custom;
 
   constructor(
+
     private addCourseService: AddCourseService,
     private moduleService: ModuleService,
     private storeHelper: StoreHelper,
@@ -79,7 +83,8 @@ export class AddCourseContainer {
     private coursesService: CourseService,
     private courseEventService: CourseEventService,
     private requirementService: RequirementService,
-    private appHeader: AppHeader
+    private appHeader: AppHeader,
+
   ) {
 
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;

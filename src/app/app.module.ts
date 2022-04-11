@@ -267,6 +267,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     CoursesPanel,
     ProgressPanel,
     ProgressBarMulti,
+    AddCourseContainer,
     progress.ProgressBarMultiContainer,
 
     ...providers

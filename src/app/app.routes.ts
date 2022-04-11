@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserResolver } from './user/user.resolver';
 import { AuthGuard } from './core/auth.guard';
 import { PrivacyContainer } from './privacy-policy/privacy-policy.component';
+import { SemesterPanel } from './courses-panel';
 
 
 

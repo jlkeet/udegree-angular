@@ -98,7 +98,7 @@ export class SemesterPanel {
     }
 
     if (this.dragulaService.find(this.bagName) !== undefined) {
-      this.dragulaService.find(this.bagName).drake.dragging = true
+      // this.dragulaService.find(this.bagName).drake.dragging = true
     }
 
     this.dragulaService.drop().subscribe((value: any) => {
