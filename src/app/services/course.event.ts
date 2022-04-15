@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NgxLongClickDirective } from 'ngx-long-click';
 import { Subject } from 'rxjs/Subject';
 import { ICourse } from '../interfaces';
 import { CourseStatus, Period } from '../models';
@@ -17,12 +18,15 @@ export class CourseEventService {
   private courseStatusSource = new Subject<StatusEvent>();
   private errorsChangedSource = new Subject<ErrorsChangedEvent>();
 
+  private longClickSource = new Subject<ClickedEvent>();
+
   // Observable string streams
   public courseMoved = this.courseMovedSource.asObservable();
   public courseRemoved = this.courseRemovedSource.asObservable();
   public courseClicked = this.courseClickedSource.asObservable();
   public courseStatus = this.courseStatusSource.asObservable();
   public errorsChanged = this.errorsChangedSource.asObservable();
+  public longClick = this.longClickSource.asObservable();
 
   // Service message commands
   public raiseCourseMoved(event: MovedEvent) {
@@ -42,6 +46,10 @@ export class CourseEventService {
 
   public raiseErrorsChanged(event: ErrorsChangedEvent) {
     this.errorsChangedSource.next(event);
+  }
+
+  public raiseLongCourseClicked(event: ClickedEvent) {
+    this.longClickSource.next(event)
   }
 }
 

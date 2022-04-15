@@ -49,7 +49,7 @@
       <div class="semester-courses" [dragula]="bagName" [dragulaModel]="courses" [attr.period]="semester.period"
         [attr.year]="semester.year">
         <course-draggable *ngFor="let course of courses; let i = index" (deleteCourseClicked)="deleteCourse(course)"
-          (courseClicked)="courseClicked(course)" [course]="course" [attr.data-id]="course.id"
+          (courseClicked)="courseClicked(course)" (longClick)="longCourseClicked(course)" [course]="course" [attr.data-id]="course.id"
           [attr.data-period]="semester.period" [attr.data-year]="semester.year"></course-draggable>
         <div fake *ngIf="!atMaxPoints && boolCheck" class="fakecourse" [routerLink]="['/add']"
           [queryParams]="{ period: semester.period, year: semester.year }">

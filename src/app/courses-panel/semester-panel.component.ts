@@ -51,6 +51,8 @@ export class SemesterPanel {
   private boolCheck = true;
   private onPageChange = new EventEmitter<null>();
 
+  private course;
+
   constructor(
     private courseService: CourseService,
     private courseEventService: CourseEventService,
@@ -65,7 +67,6 @@ export class SemesterPanel {
     this.email = this.courseService.email;
     
   }
-  
 
   private ngOnInit() {
 
@@ -92,17 +93,41 @@ export class SemesterPanel {
       this.dragulaService.createGroup(this.bagName, {
         isContainer: (el) => el!.classList.contains("dragula-container"),
         moves: (el, source, handle, sibling) => {
+        if (this.userContainer.isMobile) {  
+          if (this.course) {
+            return this.course.dragIt;
+          } else {
+            false;
+          }
+        } else {
           return !el!.hasAttribute("fake");
+        }
         },
       });
     }
 
-    if (this.dragulaService.find(this.bagName) !== undefined) {
-      // this.dragulaService.find(this.bagName).drake.dragging = true
-    }
+    // if (bag === undefined) {
+    //   console.log("firing")
+    //   this.dragulaService.createGroup(this.bagName, {
+    //     isContainer: (el) => el!.classList.contains("dragula-container"),
+    //     moves: (el, source, handle, sibling) => {
+    //       return !el!.hasAttribute("fake");
+    //     },
+    //   });
+    // }
+
+    // this.dragulaService.dropModel(this.bagName)
+    //         .subscribe(
+    //             (value: {
+    //                 name: string; el: Element; target: Element;
+    //                 source: Element; sibling: Element; item: any; sourceModel: any[]; targetModel: any[]; sourceIndex: number; targetIndex: number;
+    //             }) => {
+    //                 console.log(value)
+    //             });
 
     this.dragulaService.drop().subscribe((value: any) => {
       // need to handle event for this bag only! TODO and semester too?
+      console.log(this.dragulaService)
       if (value.name === this.bagName) {
         this.onDropModel(value);
       }
@@ -209,6 +234,11 @@ export class SemesterPanel {
 
   private courseClicked(course: ICourse) {
     this.courseEventService.raiseCourseClicked({ course });
+  }
+
+  private longCourseClicked(course: ICourse) {
+    this.courseEventService.raiseLongCourseClicked({ course })
+    this.course = course
   }
 
   private droppedCourseSaveDB(course) {

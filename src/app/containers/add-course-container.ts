@@ -46,7 +46,7 @@ export class AddCourseContainer {
   private semesterText: string;
   private semesterCourses: ICourse[];
   private lastSelection: number = null;
-  private selected: ICourse = null;
+  public selected: ICourse = null;
   private searchTerm: string = '';
   private planned: ICourse[] = [];
   private beforeSemester: ICourse[];

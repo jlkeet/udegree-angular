@@ -35,6 +35,7 @@ export interface ICourse {
   requirements?: IRequirement[];
   grade?: number; // grade in GPA format
   isActive?: boolean; // Remove inactive courses from course list
+  dragIt?: boolean; // To control dragability for touch devices
 }
 
 // an idea - not used yet

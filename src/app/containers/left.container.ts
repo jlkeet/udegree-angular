@@ -95,7 +95,6 @@ export class LeftPanelContainer {
     public addCourse: AddCourseContainer
     ) {
     this.onResize();
-    this.selectedTab = this.addCourse.tabIndex
   }
 
   @HostListener("window:resize", ["$event"])
@@ -111,6 +110,9 @@ export class LeftPanelContainer {
   }
 
   private swipe(e: TouchEvent, when: string): void {
+  if (this.addCourse.selected) {
+    console.log("firing")
+  }  
     const coord: [number, number] = [
       e.changedTouches[0].clientX,
       e.changedTouches[0].clientY,
@@ -132,15 +134,16 @@ export class LeftPanelContainer {
       ) {
         // Horizontal enough
         const swipe = direction[0] < 0 ? "next" : "previous";
+        console.log(swipe)
         if (swipe === "next") {
-          const isFirst = this.selectedTab === 0;
-          if (this.selectedTab <= 3) {
-            this.selectedTab = isFirst ? 1 : this.selectedTab + 1;
+          const isFirst = this.addCourse.tabIndex === 0;
+          if (this.addCourse.tabIndex <= 3) {
+            this.addCourse.tabIndex = isFirst ? 1 : this.addCourse.tabIndex + 1;
           }
         } else if (swipe === "previous") {
-          const isLast = this.selectedTab === 1;
-          if (this.selectedTab >= 1) {
-            this.selectedTab = this.selectedTab - 1;
+          const isLast = this.addCourse.tabIndex === 1;
+          if (this.addCourse.tabIndex >= 1) {
+            this.addCourse.tabIndex = this.addCourse.tabIndex - 1;
           }
         }
       }
@@ -164,6 +167,11 @@ export class LeftPanelContainer {
   private collapse() {
     const collapsed = this.storeHelper.update("collapsed", !this.collapsed);
     this.collapsed = !this.collapsed;
+  }
+
+  public whichTab() {
+    this.selectedTab = this.addCourse.tabIndex;
+    return this.selectedTab;
   }
 
 }

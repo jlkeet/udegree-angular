@@ -5,8 +5,9 @@ import {
   Input,
   Output,
   Renderer,
-  Renderer2
+  // Renderer2
 } from '@angular/core';
+import * as dragula from 'dragula';
 import { DragulaService } from 'ng2-dragula';
 import { ICourse } from '../interfaces';
 import { CourseStatus, Period } from '../models';
@@ -31,6 +32,8 @@ export class CourseDraggable {
   @Output() public cancelClicked = new EventEmitter();
   @Output() public deleteCourseClicked = new EventEmitter();
 
+  @Output() public longClick = new EventEmitter();
+
   @Input() public course: ICourse;
   @Input() public year: number;
   @Input() public period: Period;
@@ -41,12 +44,13 @@ export class CourseDraggable {
   // private isDragging: boolean = false;
   public status: boolean = false;
   private group;
-  private canDrag: boolean = true;
+  public canDrag;
+  private bagName;
   
 
   constructor(
     private el: ElementRef,
-    private renderer: Renderer2,
+    private renderer: Renderer,
     private storeHelper: StoreHelper,
     private dragulaService: DragulaService
   ) {
@@ -64,14 +68,6 @@ export class CourseDraggable {
 
     // dragula_obj.on('drag', function (el) { scroll_disable(); });
     // dragula_obj.on('dragend', function (el) { scroll_enable(); }); 
-    this.group = this.dragulaService.find("courses") 
-    
-
-
-  }
-
-  public ngOnChanges() {
-    // this.group.drake.dragging = this.canDrag
   }
 
   public addCourse() {
@@ -100,19 +96,23 @@ export class CourseDraggable {
   }
 
   public pressForDel() {
-    console.log("Firing")
+
    this.status = !this.status;
    this.canDrag = !this.canDrag
-   this.group.drake.dragging = this.canDrag
+
+   this.course.dragIt = this.canDrag
+
+   this.longClick.emit({
+     value: this.course,
+   })
+
   }
 
   public ngOnInit() {
     this.setBackgroundColour();
-    // this.initialiseDrag(this.course.status);
+    this.initialiseDrag(this.course.status);
     this.course.help = CourseStatus[this.course.status];
     this.displayGradeConvert()
-
-    this.dragulaService.out().subscribe((value: any) => {console.log(value)})
   }
 
   private setBackgroundColour() {
@@ -154,9 +154,10 @@ export class CourseDraggable {
   }
 
   private setDragStatus(enableDrag: boolean) {
-    this.renderer.addClass(
+    this.renderer.setElementClass(
       this.el.nativeElement,
-      'no-drag'
+      'no-drag',
+      !enableDrag
     );
   }
 
@@ -195,7 +196,6 @@ export class CourseDraggable {
     }
     
   }
-
   
 
 // private scroll_disable() {
