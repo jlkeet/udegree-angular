@@ -1702,20 +1702,20 @@
       {
         "type": 0,
         "required": 255,
-        "faculties": ["Bachelor of Global Studies"],
+        "faculties": ["Global Studies"],
         "flags": {}
       },
       {
         "type": 0,
         "required": 165,
-        "faculties": ["Bachelor of Global Studies"],
+        "faculties": ["Global Studies"],
         "aboveStage": 1,
         "flags": {}
       },
       {
         "type": 0,
         "required": 75,
-        "faculties": ["Bachelor of Global Studies"],
+        "faculties": ["Global Studies"],
         "aboveStage": 2,
         "flags": {}
       },
