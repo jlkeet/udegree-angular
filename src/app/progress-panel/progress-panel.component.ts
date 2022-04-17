@@ -744,10 +744,10 @@ export class ProgressPanel {
       //   requirement.flags && requirement.flags.includes("general")
       //     ? true
       //     : null,
-      further:
-        requirement.flags && requirement.flags.includes("further")
-          ? true
-            : null,
+      // further:
+      //   requirement.flags && requirement.flags.includes("further")
+      //     ? true
+      //       : null,
       
       period: semester.period,
       searchTerm: this.orNull(
