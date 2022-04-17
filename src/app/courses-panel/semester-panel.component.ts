@@ -90,16 +90,29 @@ export class SemesterPanel {
     this.bagName = "courses";
     const bag = this.dragulaService.find(this.bagName);
 
+    // if (bag === undefined) {
+    //   this.dragulaService.createGroup(this.bagName, {
+    //     isContainer: (el) => el!.classList.contains("dragula-container"),
+    //     moves: (el, source, handle, sibling) => {
+    //     if (this.userContainer.isMobile) {  
+    //       if (this.course) {
+    //         return this.course.dragIt;
+    //       } else {
+    //         return false;
+    //       }
+    //     } else {
+    //       return !el!.hasAttribute("fake");
+    //     }
+    //     },
+    //   });
+    // }
+
     if (bag === undefined) {
       this.dragulaService.createGroup(this.bagName, {
         isContainer: (el) => el!.classList.contains("dragula-container"),
         moves: (el, source, handle, sibling) => {
         if (this.userContainer.isMobile) {  
-          if (this.course) {
-            return this.course.dragIt;
-          } else {
-            return false;
-          }
+          return handle.className === 'handle';
         } else {
           return !el!.hasAttribute("fake");
         }

@@ -118,3 +118,22 @@
   width: 25%;
   display: inline-block;
 }
+
+.course-draggable-content {
+  width: 100%;
+
+}
+
+@media (max-width: 415px) {
+.handle {
+  background: url("./../../assets/img/draggable-dots.svg");
+  background-repeat: no-repeat;
+  max-width: 100%;
+  background-size: contain;
+  width: 38px;
+  height: 38px;
+  margin-left: -22px;
+  float: left;
+  touch-action: none;
+  }
+}

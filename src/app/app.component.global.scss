@@ -88,18 +88,18 @@ $light-theme : mat-light-theme($primary, $accent, $warn);
 
 @media (max-width: 415px) {
     * {
-        -webkit-touch-callout: none !important; /* iOS Safari */
-        -webkit-user-select: none !important; /* Safari */
-         -khtml-user-select: none; /* Konqueror HTML */
-           -moz-user-select: none; /* Old versions of Firefox */
-            -ms-user-select: none; /* Internet Explorer/Edge */
-                user-select: none; 
-                -webkit-touch-callout: none;
-                -webkit-user-callout: none;
-                -webkit-user-select: none;
-                -webkit-user-drag: none;
-                -webkit-user-modify: none;
-                -webkit-highlight: none;
+        // -webkit-touch-callout: none !important; /* iOS Safari */
+        // -webkit-user-select: none !important; /* Safari */
+        //  -khtml-user-select: none; /* Konqueror HTML */
+        //    -moz-user-select: none; /* Old versions of Firefox */
+        //     -ms-user-select: none; /* Internet Explorer/Edge */
+        //         user-select: none; 
+        //         -webkit-touch-callout: none;
+        //         -webkit-user-callout: none;
+        //         -webkit-user-select: none;
+        //         -webkit-user-drag: none;
+        //         -webkit-user-modify: none;
+        //         -webkit-highlight: none;
     }
 }
 
