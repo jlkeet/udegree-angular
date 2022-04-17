@@ -173,7 +173,7 @@
         "type": 0,
         "required": 30,
         "faculties": ["Business and Economics", "Open"],
-        "flags": ["general"]
+        "flags": ["General"]
       },
       {
         "type": 0,

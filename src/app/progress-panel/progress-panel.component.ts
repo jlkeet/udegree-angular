@@ -740,10 +740,10 @@ export class ProgressPanel {
           ? requirement.secondModules.toString()
           : null
         : null,
-      // general:
-      //   requirement.flags && requirement.flags.includes("general")
-      //     ? true
-      //     : null,
+      general:
+        requirement.flags && requirement.flags.includes("General")
+          ? true
+          : null,
       // further:
       //   requirement.flags && requirement.flags.includes("further")
       //     ? true

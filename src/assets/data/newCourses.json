@@ -20,7 +20,7 @@
           "ESOL210",
           "ACADENG210"
         ],
-        "flags": { "general": false }
+        "flags": {}
       }
     ],
     "isActive": true
@@ -266,7 +266,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": "16",
@@ -1362,7 +1363,8 @@
     "faculties": ["Arts"],
     "department": "Anthropology",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": "88",
@@ -1372,7 +1374,8 @@
     "faculties": ["Arts"],
     "department": "Anthropology",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": "89",
@@ -1382,7 +1385,9 @@
     "faculties": ["Arts"],
     "department": "Anthropology",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": "90",
@@ -1404,7 +1409,8 @@
     "department": "Anthropology",
     "points": 15,
     "stage": 1,
-    "isActive": false
+    "isActive": false,
+    "general": true
   },
   {
     "id": "92",
@@ -1444,7 +1450,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": "94",
@@ -3756,7 +3763,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": "211",
@@ -4278,7 +4286,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 243,
@@ -4288,7 +4297,8 @@
     "faculties": ["Arts"],
     "department": "Art History",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 244,
@@ -4298,7 +4308,9 @@
     "faculties": ["Arts"],
     "department": "Art History",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 245,
@@ -5882,7 +5894,8 @@
     "faculties": ["Arts"],
     "department": "Asian Studies",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 300,
@@ -5892,7 +5905,10 @@
     "faculties": ["Arts"],
     "department": "Asian Studies",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
+
   },
   {
     "id": 301,
@@ -5952,7 +5968,7 @@
         "flags": {}
       }
     ],
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 304,
@@ -5972,7 +5988,7 @@
         "flags": {}
       }
     ],
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 305,
@@ -6328,7 +6344,8 @@
     "faculties": ["Science"],
     "department": "Biological Sciences",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 324,
@@ -6338,7 +6355,9 @@
     "faculties": ["Science"],
     "department": "Biological Sciences",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 325,
@@ -6359,7 +6378,8 @@
     "faculties": ["Science", "Medicine & Surgery"],
     "department": "Biological Sciences",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 327,
@@ -6403,7 +6423,8 @@
     "department": "Biological Sciences",
     "points": 15,
     "stage": 1,
-    "isActive": false
+    "isActive": false,
+    "general": true
   },
   {
     "id": 331,
@@ -7376,7 +7397,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 387,
@@ -7612,7 +7634,8 @@
     "department": "Chemistry",
     "points": 15,
     "stage": 1,
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 402,
@@ -7954,7 +7977,9 @@
     "faculties": ["Engineering"],
     "department": "Chemical and Materials Engineering",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 426,
@@ -8205,7 +8230,8 @@
     "faculties": ["Arts"],
     "department": "Chinese",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 444,
@@ -8215,7 +8241,9 @@
     "faculties": ["Arts"],
     "department": "Chinese",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 445,
@@ -8883,7 +8911,8 @@
     "department": "Classical Studies",
     "points": 15,
     "stage": 1,
-    "isActive": false
+    "isActive": false,
+    "general": true
   },
   {
     "id": 490,
@@ -10768,7 +10797,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 563,
@@ -11457,7 +11487,9 @@
     "department": "Cook Islands Maori",
     "points": 15,
     "stage": 1,
-    "requirements": []
+    "requirements": [],
+    "isActive": true,
+    "general": true
   },
   {
     "id": 602,
@@ -11904,7 +11936,8 @@
     "department": "Dance Studies",
     "points": 15,
     "stage": 1,
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 631,
@@ -11985,7 +12018,8 @@
     "points": 15,
     "stage": 2,
     "requirements": [{ "type": 0, "required": 60, "flags": {} }],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 638,
@@ -12424,7 +12458,9 @@
     "faculties": ["Education and Social Work"],
     "department": "Disability Studies",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 664,
@@ -12490,7 +12526,8 @@
     "faculties": ["Arts"],
     "department": "Drama",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 668,
@@ -12500,7 +12537,9 @@
     "faculties": ["Arts"],
     "department": "Drama",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 669,
@@ -12689,7 +12728,8 @@
     "department": "Earth Sciences",
     "points": 15,
     "stage": 1,
-    "requirements": []
+    "requirements": [],
+    "isActive": true
   },
   {
     "id": 683,
@@ -12700,7 +12740,9 @@
     "department": "Earth Sciences",
     "points": 15,
     "stage": 1,
-    "requirements": []
+    "requirements": [],
+    "isActive": true,
+    "general": true
   },
   {
     "id": 684,
@@ -12824,7 +12866,8 @@
     "points": 15,
     "stage": 2,
     "requirements": [{ "type": 0, "required": 75, "flags": {} }],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 691,
@@ -15403,7 +15446,8 @@
     "department": "Education",
     "points": 15,
     "stage": 1,
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 951,
@@ -15413,7 +15457,8 @@
     "faculties": ["Education and Social Work", "Arts"],
     "department": "Education",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 952,
@@ -15424,7 +15469,8 @@
     "department": "Education",
     "points": 15,
     "stage": 1,
-    "isActive": false
+    "isActive": false,
+    "general": true
   },
   {
     "id": 953,
@@ -15565,7 +15611,8 @@
     "requirements": [
       { "type": 0, "required": 0, "papersExcluded": ["EDUC117"], "flags": {} }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 962,
@@ -15586,7 +15633,9 @@
     "faculties": ["Education and Social Work", "Arts"],
     "department": "Education",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 964,
@@ -16437,7 +16486,9 @@
     "faculties": ["Engineering"],
     "department": "Engineering General",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1022,
@@ -16674,7 +16725,8 @@
     "faculties": ["Arts"],
     "department": "English",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1040,
@@ -16684,7 +16736,9 @@
     "faculties": ["Arts"],
     "department": "English",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1041,
@@ -16750,7 +16804,8 @@
     "department": "English",
     "points": 15,
     "stage": 1,
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1047,
@@ -18584,7 +18639,8 @@
     "faculties": ["Science"],
     "department": "Environmental Science",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1142,
@@ -18594,7 +18650,9 @@
     "faculties": ["Science"],
     "department": "Environmental Science",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1143,
@@ -18700,7 +18758,8 @@
     "faculties": ["Arts"],
     "department": "European Studies",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1152,
@@ -18710,7 +18769,9 @@
     "faculties": ["Arts"],
     "department": "European Studies",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1153,
@@ -19328,7 +19389,8 @@
     "department": "Fine Arts",
     "points": 15,
     "stage": 1,
-    "requirements": []
+    "requirements": [],
+    "isActive": true
   },
   {
     "id": 1191,
@@ -19338,7 +19400,8 @@
     "faculties": ["Creative Arts and Industries"],
     "department": "Fine Arts",
     "points": 30,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1192,
@@ -19348,7 +19411,8 @@
     "faculties": ["Creative Arts and Industries"],
     "department": "Fine Arts",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1193,
@@ -19358,7 +19422,8 @@
     "faculties": ["Creative Arts and Industries"],
     "department": "Fine Arts",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1194,
@@ -19368,7 +19433,9 @@
     "faculties": ["Creative Arts and Industries"],
     "department": "Fine Arts",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1195,
@@ -19389,7 +19456,8 @@
     "faculties": ["Creative Arts and Industries"],
     "department": "Fine Arts",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "isActive": true
   },
   {
     "id": 1197,
@@ -19413,7 +19481,8 @@
     "faculties": ["Creative Arts and Industries"],
     "department": "Fine Arts",
     "points": 45,
-    "stage": 2
+    "stage": 2,
+    "isActive": true
   },
   {
     "id": 1199,
@@ -19423,7 +19492,8 @@
     "faculties": ["Creative Arts and Industries"],
     "department": "Fine Arts",
     "points": 30,
-    "stage": 2
+    "stage": 2,
+    "isActive": true
   },
   {
     "id": 1200,
@@ -19547,7 +19617,8 @@
     "points": 30,
     "stage": 2,
     "requirements": [{ "type": 0, "required": 60, "flags": {} }],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1206,
@@ -19559,7 +19630,8 @@
     "points": 30,
     "stage": 2,
     "requirements": [{ "type": 0, "required": 60, "flags": {} }],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1207,
@@ -19988,7 +20060,8 @@
     "faculties": ["Arts"],
     "department": "French",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1236,
@@ -19998,7 +20071,9 @@
     "faculties": ["Arts"],
     "department": "French",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1237,
@@ -20763,7 +20838,8 @@
     "department": "Media, Film and Television",
     "points": 15,
     "stage": 2,
-    "isActive": false
+    "isActive": false,
+    "general": true
   },
   {
     "id": 1288,
@@ -21470,7 +21546,8 @@
     "faculties": ["Science", "Arts"],
     "department": "Geography",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1347,
@@ -21480,7 +21557,9 @@
     "faculties": ["Science", "Arts"],
     "department": "Geography",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1348,
@@ -21490,7 +21569,8 @@
     "faculties": ["Science", "Arts"],
     "department": "Geography",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1349,
@@ -21500,7 +21580,9 @@
     "faculties": ["Science", "Arts"],
     "department": "Geography",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1350,
@@ -21521,7 +21603,8 @@
     "faculties": ["Science", "Arts"],
     "department": "Geography",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "isActive": true
   },
   {
     "id": 1352,
@@ -21531,7 +21614,8 @@
     "faculties": ["Science", "Arts"],
     "department": "Geography",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "isActive": true
   },
   {
     "id": 1353,
@@ -21563,7 +21647,8 @@
     "faculties": ["Science", "Arts"],
     "department": "Geography",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "isActive": true
   },
   {
     "id": 1356,
@@ -22125,7 +22210,8 @@
     "faculties": ["Arts"],
     "department": "German",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1391,
@@ -22135,7 +22221,9 @@
     "faculties": ["Arts"],
     "department": "German",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1392,
@@ -22872,7 +22960,8 @@
     "faculties": ["Arts"],
     "department": "History",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1443,
@@ -22882,7 +22971,9 @@
     "faculties": ["Arts"],
     "department": "History",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1444,
@@ -22892,7 +22983,8 @@
     "faculties": ["Arts"],
     "department": "History",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1445,
@@ -25520,7 +25612,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1572,
@@ -25587,7 +25680,8 @@
         ]
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1571,
@@ -26255,7 +26349,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1579,
@@ -27049,7 +27144,8 @@
     "faculties": ["Arts"],
     "department": "Japanese",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1620,
@@ -27059,7 +27155,9 @@
     "faculties": ["Arts"],
     "department": "Japanese",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1641,
@@ -27833,7 +27931,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1657,
@@ -29119,7 +29218,8 @@
     "requirements": [
       { "type": 1, "required": 0, "papersExcluded": ["LAW101"], "flags": {} }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1731,
@@ -29264,7 +29364,8 @@
     "requirements": [
       { "type": 1, "required": 1, "papers": ["LATIN100"], "flags": {} }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1770,
@@ -31699,7 +31800,8 @@
     "faculties": ["Arts", "Science"],
     "department": "Linguistics",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1894,
@@ -31709,7 +31811,9 @@
     "faculties": ["Arts", "Science"],
     "department": "Linguistics",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1892,
@@ -32445,7 +32549,8 @@
     "faculties": ["Arts"],
     "department": "Maori Studies",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1925,
@@ -32455,7 +32560,9 @@
     "faculties": ["Arts"],
     "department": "Maori Studies",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1926,
@@ -32546,7 +32653,9 @@
     "faculties": ["Arts", "Science"],
     "department": "Maori Studies",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1930,
@@ -32856,7 +32965,9 @@
     "faculties": ["Science"],
     "department": "Marine Science",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1961,
@@ -32948,7 +33059,8 @@
     "department": "Mathematics",
     "points": 15,
     "stage": 1,
-    "isActive": false
+    "isActive": false,
+    "general": true
   },
   {
     "id": 1960,
@@ -33040,7 +33152,8 @@
     "requirements": [
       { "type": 0, "required": 0, "papersExcluded": ["MATHS190"], "flags": {} }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 1967,
@@ -33627,7 +33740,9 @@
     "faculties": ["Medical and Health Sciences"],
     "department": "Medical Science",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2051,
@@ -33905,7 +34020,9 @@
     "faculties": ["Medical and Health Sciences"],
     "department": "Medical Science",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2021,
@@ -34914,7 +35031,9 @@
     "faculties": ["Business and Economics", "Commerce"],
     "department": "Marketing",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2082,
@@ -35375,7 +35494,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2107,
@@ -35495,7 +35615,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2113,
@@ -37866,7 +37987,8 @@
     "department": "Pacific Studies",
     "points": 60,
     "stage": 1,
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2283,
@@ -38525,7 +38647,8 @@
     "department": "Pharmacy",
     "points": 15,
     "stage": 1,
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2314,
@@ -38547,7 +38670,8 @@
     "department": "Philosophy",
     "points": 15,
     "stage": 1,
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2321,
@@ -40829,7 +40953,8 @@
     "department": "Physics",
     "points": 15,
     "stage": 1,
-    "isActive": false
+    "isActive": false,
+    "general": true
   },
   {
     "id": 2418,
@@ -40851,7 +40976,8 @@
     "department": "Physics",
     "points": 15,
     "stage": 1,
-    "isActive": false
+    "isActive": false,
+    "general": true
   },
   {
     "id": 2420,
@@ -41549,7 +41675,8 @@
     "department": "Politics and International Relations",
     "points": 15,
     "stage": 1,
-    "requirements": []
+    "requirements": [],
+    "isActive": true
   },
   {
     "id": 2486,
@@ -41604,7 +41731,9 @@
     "faculties": ["Arts"],
     "department": "Politics and International Relations",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2477,
@@ -42265,7 +42394,9 @@
     "faculties": ["Medical and Health Services"],
     "department": "Population Health",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2547,
@@ -44144,7 +44275,8 @@
     "department": "Population Health",
     "points": 15,
     "stage": 1,
-    "isActive": false
+    "isActive": false,
+    "general": true
   },
   {
     "id": 2568,
@@ -45101,7 +45233,9 @@
     "department": "Psychology",
     "points": 15,
     "stage": 1,
-    "requirements": []
+    "requirements": [],
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2607,
@@ -45869,7 +46003,8 @@
     "faculties": ["Arts"],
     "department": "Russian",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 2638,
@@ -45879,7 +46014,9 @@
     "faculties": ["Arts"],
     "department": "Russian",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2639,
@@ -45973,7 +46110,8 @@
     "faculties": ["Science"],
     "department": "Science Scholars",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "isActive": true
   },
   {
     "id": 2654,
@@ -45983,7 +46121,9 @@
     "faculties": ["Arts"],
     "department": "Samoan",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2661,
@@ -45993,7 +46133,8 @@
     "faculties": ["Science", "Arts"],
     "department": "Science General",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 2658,
@@ -46049,7 +46190,8 @@
     "faculties": ["Science"],
     "department": "Science Scholars",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 2662,
@@ -46059,7 +46201,9 @@
     "faculties": ["Science"],
     "department": "Science General",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2660,
@@ -46527,7 +46671,9 @@
     "faculties": ["Arts"],
     "department": "Sociology",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2697,
@@ -46549,7 +46695,8 @@
     "department": "Sociology",
     "points": 15,
     "stage": 1,
-    "isActive": false
+    "isActive": false,
+    "general": true
   },
   {
     "id": 2699,
@@ -48989,7 +49136,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2814,
@@ -50190,7 +50338,9 @@
     "faculties": ["Science"],
     "department": "Statistics",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2887,
@@ -50341,7 +50491,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2875,
@@ -50902,7 +51053,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2909,
@@ -50985,7 +51137,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2913,
@@ -51657,7 +51810,8 @@
     "faculties": ["Arts"],
     "department": "Tongan",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 2941,
@@ -51667,7 +51821,9 @@
     "faculties": ["Arts"],
     "department": "Tongan",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 2942,
@@ -52555,7 +52711,9 @@
     "faculties": ["Education and Social Work"],
     "department": "Youth Work",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": 3021,
@@ -54340,7 +54498,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3106",
@@ -56592,7 +56751,9 @@
     "faculties": ["Engineering"],
     "department": "Engineering General",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3109",
@@ -58609,7 +58770,8 @@
     "requirements": [
       { "type": 0, "required": 0, "papersExcluded": ["GENDER100"], "flags": {} }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3163",
@@ -59708,7 +59870,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3305",
@@ -60600,7 +60763,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3346",
@@ -61754,7 +61918,9 @@
     "faculties": ["Medical And Health Sciences", "Optometry"],
     "department": "Optometry and Vision Science",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3405",
@@ -62110,7 +62276,8 @@
     "faculties": ["Science"],
     "department": "Physics",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": "3419",
@@ -62120,7 +62287,9 @@
     "faculties": ["Science"],
     "department": "Physics",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3420",
@@ -62920,7 +63089,9 @@
     "faculties": ["Science"],
     "department": "Science General",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3449",
@@ -63557,7 +63728,8 @@
     "faculties": ["Science", "Arts"],
     "department": "Sustainability",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": "3480",
@@ -63567,7 +63739,9 @@
     "faculties": ["Science"],
     "department": "Sustainability",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3481",
@@ -63887,7 +64061,8 @@
     "faculties": ["Arts"],
     "department": "Translation Studies",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": "3496",
@@ -63897,7 +64072,9 @@
     "faculties": ["Arts"],
     "department": "Translation Studies",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3497",
@@ -63951,7 +64128,8 @@
         "flags": {}
       }
     ],
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": "3500",
@@ -64815,7 +64993,8 @@
     "department": "Communications",
     "points": 15,
     "stage": 1,
-    "isActive": true
+    "isActive": true,
+    "general": true
   },
   {
     "id": 3545,
@@ -65588,7 +65767,8 @@
     "points": 15,
     "stage": 1,
     "isActive": true,
-    "requirements": []
+    "requirements": [],
+    "general": true
   },
   {
     "id": 3582,

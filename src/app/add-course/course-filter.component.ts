@@ -95,6 +95,8 @@ export class CourseFilter {
     }
     if (this.filterParams.general) {
       flags['General'] = true;
+      shown = shown.filter((course: ICourse) => course.general);
+
     }
     if (this.filterParams.modules) {
       flags['modules'] = true;

@@ -36,6 +36,7 @@ export interface ICourse {
   grade?: number; // grade in GPA format
   isActive?: boolean; // Remove inactive courses from course list
   dragIt?: boolean; // To control dragability for touch devices
+  general?: boolean;
 }
 
 // an idea - not used yet
