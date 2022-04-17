@@ -18,6 +18,7 @@ import { BoundPlayerFactory } from "@angular/core/src/render3/styling/player_fac
 import { UserContainer } from "../common";
 import autoScroll from 'dom-autoscroller';
 import { catchError } from "rxjs/operators";
+import * as dragula from "dragula";
 
 @Component({
   selector: "semester-panel",
@@ -97,7 +98,7 @@ export class SemesterPanel {
           if (this.course) {
             return this.course.dragIt;
           } else {
-            false;
+            return false;
           }
         } else {
           return !el!.hasAttribute("fake");
@@ -116,18 +117,9 @@ export class SemesterPanel {
     //   });
     // }
 
-    // this.dragulaService.dropModel(this.bagName)
-    //         .subscribe(
-    //             (value: {
-    //                 name: string; el: Element; target: Element;
-    //                 source: Element; sibling: Element; item: any; sourceModel: any[]; targetModel: any[]; sourceIndex: number; targetIndex: number;
-    //             }) => {
-    //                 console.log(value)
-    //             });
-
     this.dragulaService.drop().subscribe((value: any) => {
       // need to handle event for this bag only! TODO and semester too?
-      console.log(this.dragulaService)
+      console.log(value)
       if (value.name === this.bagName) {
         this.onDropModel(value);
       }
@@ -239,6 +231,28 @@ export class SemesterPanel {
   private longCourseClicked(course: ICourse) {
     this.courseEventService.raiseLongCourseClicked({ course })
     this.course = course
+
+
+    // let bag = this.dragulaService.find(this.bagName)
+
+    // if (bag !== undefined) {
+    //   this.dragulaService.destroy(this.bagName);
+
+    //   this.dragulaService.createGroup(this.bagName, {
+    //     isContainer: (el) => el!.classList.contains("dragula-container"),
+    //     moves: (el, source, handle, sibling) => {
+    //     if (this.userContainer.isMobile) {  
+    //       if (this.course) {
+    //         return this.course.dragIt;
+    //       } else {
+    //         return false;
+    //       }
+    //     } else {
+    //       return !el!.hasAttribute("fake");
+    //     }
+    //     },
+    //   });
+    // }
   }
 
   private droppedCourseSaveDB(course) {
