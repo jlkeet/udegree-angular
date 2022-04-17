@@ -10,7 +10,7 @@
   position: fixed;
   padding-left: 35px;
   padding-right: 35px;
-  padding-top:25px;
+  padding-top:15px;
   z-index: 2;
   overflow: hidden;
   flex-grow: 1;
@@ -61,7 +61,7 @@
 
 .course-points {
   position:absolute;
-  top:35px;
+  top:25px;
   left:200px;
   height:25px;
   color: #2ab6fe;
@@ -76,8 +76,8 @@
 .add-course-button {
   width:150px;
   color:white;
-  background-color:#37d8ae;
-  margin-top: 30px;
+  background-color:#65cc01;
+  margin-top: 10px;
   margin-left: 5px;
 }
 
@@ -85,7 +85,7 @@
   width:150px;
   color:#9a9a9a;
   background-color: #d8d8d8;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-left: 5px;
   cursor: not-allowed;
 }
@@ -168,7 +168,7 @@
 }
 
 .round-completed label {
-  background-color: #37d8ae;
+  background-color: #65cc01;
   border-radius: 50%;
   cursor: pointer;
   height: 25px;
@@ -217,8 +217,8 @@
 }
 
 .round input[type="checkbox"]:checked + label {
-  background-color: #37d8ae;
-  border-color: #37d8ae;
+  background-color: #65cc01;
+  border-color: #65cc01;
 }
 
 .round input[type="checkbox"]:checked + label:after {
@@ -241,16 +241,16 @@
 
 .status-card-container:hover {
 
-  border: 2px solid #37d8ae;
+  border: 2px solid #65cc01;
   cursor: pointer;
 }
 
 .status-card-container:focus {
 
-  border: 2px solid #37d8ae;
+  border: 2px solid #65cc01;
   cursor: pointer;
 }
 
 .status-selected {
-  border: 2px solid #37d8ae;
+  border: 2px solid #65cc01;
 }

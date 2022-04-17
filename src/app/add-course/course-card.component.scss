@@ -40,7 +40,7 @@
 }
 
 .planned-card {
-  border-color: #37d8ae;
+  border-color: #65cc01;
 }
 .bold {
   font-weight:bold;
@@ -81,7 +81,7 @@
 
 .planned-message {
   margin-top: 15px;
-  color: #37d8ae;
+  color: #65cc01;
   font-size:13px;
 }
 
@@ -117,8 +117,8 @@
 }
 
 .round input[type="checkbox"]:checked + label {
-  background-color: #37d8ae;
-  border-color: #37d8ae;
+  background-color: #65cc01;
+  border-color: #65cc01;
 }
 
 .round input[type="checkbox"]:checked + label:after {
