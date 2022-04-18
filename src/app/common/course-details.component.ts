@@ -263,8 +263,12 @@ export class CourseDetails {
   private alreadyPlanned() {
 
   for (let i = 0; i < this.storeHelper.current("courses").length; i++) {  
+  if (this.course) {
     if (this.storeHelper.current("courses")[i].name === this.course.name) {
-      return true
+      return true;
+      }
+    } else {
+      return false;
     }
   }
   
