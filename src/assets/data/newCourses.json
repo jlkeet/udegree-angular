@@ -56573,2747 +56573,6 @@
     "isActive": true
   },
   {
-    "id": "3100",
-    "name": "EDUCM106",
-    "title": "He Tirohanga ki te M\u0101tauranga i Aotearoa",
-    "desc": "Examines historical and contemporary topics and themes in M\u0101ori schooling and education, with particular reference to the revitalisation of Te Reo M\u0101ori. Considers M\u0101ori educational aspirations and questions in the context of Treaty, social justice and equity debates in Aotearoa New Zealand. Examines te reo M\u0101ori discourse relevant to educational contexts and themes investigated in this course.",
-    "faculties": ["Education And Social Work"],
-    "department": "Education M\u0101ori",
-    "points": 15,
-    "stage": 1,
-    "requirements": [
-      { "type": 0, "required": 0, "papersExcluded": ["EDUCM118"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3101",
-    "name": "EDUCM198",
-    "title": "Te Whakahua Reo M\u0101ori",
-    "desc": "An online self-directed introductory te reo M\u0101ori course that provides opportunities to learn correct pronunciation and some basic language for use in professional situations.",
-    "faculties": ["Education And Social Work"],
-    "department": "Education M\u0101ori",
-    "points": null,
-    "stage": 1
-  },
-  {
-    "id": "3102",
-    "name": "EDUCM203",
-    "title": "Te Atawhai i te Rerenga K\u0113tanga",
-    "desc": "Analyses how experiences and outcomes for learners in contemporary education contexts are shaped by social constructions informed by class, ethnicity, culture, gender, sexuality, and (dis)ability. Examines the role of education policies and socio-historical context on teacher responsiveness to diversity and difference. Explores a range of transformative approaches. Particular attention is given to Pasifika learners.",
-    "faculties": ["Education And Social Work"],
-    "department": "Education M\u0101ori",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["EDUCM106"], "flags": {} },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["EDPROFM205"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3103",
-    "name": "EDUCM324",
-    "title": "Whiria Te Kaha T\u016b\u0101tinitini",
-    "desc": "Critically appraises philosophical perspectives on education to enable students to articulate a developing philosophy and practice of teaching including the relationship between local, national and global politics and inclusive education in Aotearoa New Zealand. Highlights concepts of social justice, equity and diversity and relates these concepts to competing discourses of ability, (dis)ability and inclusion. Examines te reo M\u0101ori discourse appropriate to course content.",
-    "faculties": ["Education And Social Work"],
-    "department": "Education M\u0101ori",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["EDUCM203"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3104",
-    "name": "ELECTENG291",
-    "title": "Fundamentals of Electrical Engineering",
-    "desc": "AC and DC circuit analysis in the context of linear electrical and electronic systems. Time and frequency domain approaches to describing and analysing electrical networks and systems.",
-    "faculties": ["Engineering"],
-    "department": "Electrical and Electronic Engineering",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["ELECTENG101"], "flags": {} },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ELECTENG202"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3105",
-    "name": "ELECTENG292",
-    "title": "Electronics",
-    "desc": "Electronic devices and circuits for solving engineering problems. Analysis of linear and non-linear microelectronic circuits and their practical applications.",
-    "faculties": ["Engineering", "Science"],
-    "department": ["Electrical and Electronic Engineering", "Physics"],
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          { "type": 1, "required": 1, "flags": {}, "papers": ["ELECTENG202"] },
-          { "type": 1, "required": 1, "flags": {}, "papers": ["ELECTENG291"] },
-          {
-            "type": 1,
-            "required": 2,
-            "flags": {},
-            "papers": ["PHYSICS121", "PHYSICS244"]
-          }
-        ]
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ELECTENG210"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3106",
-    "name": "ELECTENG331",
-    "title": "Signals and Systems",
-    "desc": "Introduction to continuous-time and discrete-time signals and systems. Spectral analysis and representation of analog and digital signals, and linear, time-invariant systems. Conversion between analog and digital signals. Systems for manipulating and filtering signals in hardware and software.",
-    "faculties": ["Engineering", "Science"],
-    "department": ["Electrical and Electronic Engineering", "Physics"],
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          { "type": 1, "required": 1, "flags": {}, "papers": ["ELECTENG202"] },
-          { "type": 1, "required": 1, "flags": {}, "papers": ["ELECTENG291"] },
-          {
-            "type": 1,
-            "required": 2,
-            "flags": {},
-            "papers": ["PHYSICS140", "PHYSICS244"]
-          }
-        ]
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ELECTENG303"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3107",
-    "name": "ELECTENG332",
-    "title": "Control Systems",
-    "desc": "Introduction to modelling in the time-domain and frequency domain. The fundamental body of knowledge underlying the control and enhancement of system behaviour, with application to the analysis and control of systems.",
-    "faculties": ["Engineering"],
-    "department": "Electrical and Electronic Engineering",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["ELECTENG202", "ELECTENG291"],
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ELECTENG303"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3108",
-    "name": "ENGGEN101G",
-    "title": "Software, Data and Intelligent Automation",
-    "desc": "Introduces concepts of intelligent automation, robotic process automation, analytics and artificial intelligence/machine learning. Includes consideration of data privacy and sovereignty, and the ethics of AI. Students will engage in critical analysis of potential intelligent automation applications and solutions, and will build their own software robot through practical laboratory work.",
-    "faculties": ["Engineering"],
-    "department": "Engineering General",
-    "points": 15,
-    "stage": 1,
-    "isActive": true,
-    "general": true
-  },
-  {
-    "id": "3109",
-    "name": "ENGLISH113",
-    "title": "Global South: New World Texts",
-    "desc": "Introduces cross-disciplinary study of transnational texts in English, with particular reference to poetry and prose works from the Caribbean and Pacific, including New Zealand. In both regions, the local history of writing is extensive and includes notable texts that reflect diverse cultural origins, but also a sharp sense of the new (scenes, socio-political structures, languages).",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 1
-  },
-  {
-    "id": "3110",
-    "name": "ENGLISH214",
-    "title": "Early Texts: Modern Inventions",
-    "desc": "A study of key works and contexts of selected medieval and early modern writers, including Chaucer, Shakespeare, Milton, and Behn. Offers a compact history of literary engagements with important social issues that arose in a period notable for revolution and reform; also develops knowledge of literary forms and trends that are historically important, but, in this period, relatively new.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 15,
-        "departments": ["English"],
-        "stage": 1,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH210", "ENGLISH330"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3111",
-    "name": "ENGLISH216",
-    "title": "Modernist Transformations",
-    "desc": "Taking transformation as its theme, the course focuses on a selection of influential Modernist works that map out some of the possibilities for the avant-garde in the early 20th century. Students will expand their knowledge of modernism as a multimedia, multicultural phenomenon and exert their imaginations and research skills as they consider its relevance to contemporary cultural production.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["English"],
-        "stage": 1,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH206", "ENGLISH222", "ENGLISH322"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3112",
-    "name": "ENGLISH217",
-    "title": "Postcolonial Memory: Ireland",
-    "desc": "Explores globally significant issues of cultural memory, identity and postcolonial inheritance through the lens of Irish literature and cultural experience. Debates about memory and postcoloniality guide our navigation of twentieth and twenty-first century Irish novels, plays, poetry and short stories. Conversely, our literary navigations interrogate postcolonial representations of identity across changing cultural contexts.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["English"],
-        "stage": 1,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH266", "ENGLISH316", "ENGLISH361"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3113",
-    "name": "ENGLISH223",
-    "title": "Modern Writing and Critical Thinking",
-    "desc": "Explores theories and practices of writing and criticality in academic, civic, and artistic contexts. We consider some of the scripts that organise literate social practices and how to perceive and extrapolate their principles. We explore how we are affected by, how we navigate, and how we transform our immersive world of signs.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 15,
-        "departments": ["English"],
-        "stage": 1,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH305"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3114",
-    "name": "ENGLISH229",
-    "title": "Literary Theory and Critical Practice",
-    "desc": "Examines the concerns and methods of contemporary criticism through a selection of key concepts central to the study of literature. We explore the history of these concepts, the theoretical issues they raise, and the reading strategies they permit. The emphasis is on literary theory as a resource that opens out possibilities for critical practice.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 15,
-        "departments": ["English"],
-        "stage": 1,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH230", "ENGLISH329"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3115",
-    "name": "ENGLISH313",
-    "title": "From Romantics to Victorians",
-    "desc": "An exploration of some key preoccupations of nineteenth-century literature: identity and the psyche, and the self\u2019s engagement with the other. Both topics will be considered against a changing social context which influenced religious beliefs and constructions of gender in particular. Covers poetry and prose from the 1790s to the 1880s.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["English"],
-        "stage": 2,
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3116",
-    "name": "ENGLISH316",
-    "title": "Postcolonial Memory: Ireland",
-    "desc": "Explores globally significant issues of cultural memory, identity and postcolonial inheritance through the lens of Irish literature and cultural experience. Debates about memory and postcoloniality guide our navigation of twentieth and twenty-first century Irish novels, plays, poetry and short stories. Conversely, our literary navigations interrogate postcolonial representations of identity across changing cultural contexts.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["English"],
-        "stage": 2,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH217", "ENGLISH266", "ENGLISH361"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3117",
-    "name": "ENGLISH318",
-    "title": "The Gothic: Texts and Theory",
-    "desc": "An advanced introduction to literary theory through an exploration of classic works of Gothic Literature. We examine the competing claims of psychoanalysis, new historicism, post-colonialism and queer studies in accounting for the appeal and cultural significance of the Gothic mode.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      { "type": 0, "required": 30, "stage": 2, "flags": {} },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH321"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3118",
-    "name": "ENGLISH322",
-    "title": "Modernist Transformations",
-    "desc": "Takes transformation as its theme, focuses on a selection of influential Modernist works that map out some of the possibilities for the avant-garde in the early 20th century. Students will expand their knowledge of modernism as a multimedia, multicultural phenomenon and exert their imaginations and research skills as they consider its relevance to contemporary cultural production.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["English"],
-        "stage": 1,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH206", "ENGLISH216", "ENGLISH222"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3119",
-    "name": "ENGLISH324",
-    "title": "Creative Writing: Four Genres",
-    "desc": "Develops practical skills in four writing genres: Poetry, Multimedia, Creative Non-Fiction and Short Fiction. A range of published models will be studied alongside write and workshop exercises and students will develop close-reading skills. Two portfolios of creative work cover all four genres, based on work begun in seminars.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      { "type": 0, "required": 60, "flags": {} },
-      { "type": 0, "required": 45, "departments": ["English"], "flags": {} },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH252"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3120",
-    "name": "ENGLISH329",
-    "title": "Literary Theory and Critical Practice",
-    "desc": "Examines the concerns and methods of contemporary criticism through a selection of key concepts central to the study of literature. We explore the history of these concepts, the theoretical issues they raise, and the reading strategies they permit. The emphasis is on literary theory as a resource that opens out possibilities for critical practice.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["English"],
-        "stage": 2,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH229", "ENGLISH230"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3121",
-    "name": "ENGLISH330",
-    "title": "Early Texts, Modern Inventions",
-    "desc": "A study of key works and contexts of selected medieval and early modern writers, including Chaucer, Shakespeare, Milton, and Behn. Offers a compact history of literary engagements with important social issues that arose in a period notable for revolution and reform; also develops knowledge of literary forms and trends that are historically important, but, in this period, relatively new.",
-    "faculties": ["Arts"],
-    "department": "English",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["English"],
-        "stage": 2,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["ENGLISH214", "ENGLISH351"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3122",
-    "name": "ENGSCI344",
-    "title": "Computational Design for Physical Systems",
-    "desc": "Computational engineering solutions to problems involving complex physical systems, using numerical tools commonly used in engineering practice. This will develop skills in: analysing complexity and selecting an appropriate model representation of the physical problem; choosing the correct computational tool with which to solve the model; designing and executing appropriate numerical experiments using the chosen tool; validating, interpreting and communicating the simulation results.",
-    "faculties": ["Engineering"],
-    "department": "Engineering Science",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["BIOMENG321", "ENGSCI343"],
-        "flags": {}
-      },
-      { "type": 0, "required": 0, "papersExcluded": ["ENGSCI746"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3123",
-    "name": "ENVENG200",
-    "title": "Fundamentals of Environmental Engineering",
-    "desc": "Introduction to environmental engineering principles. Role of environmental engineers in the twenty-first century. Environmental measurements, environmental standards and impact assessment. Material mass balance. Drinking water, wastewater and stormwater treatment. Air quality parameters. Solid waste management. Sustainability. Environmental Impact Assessment.",
-    "faculties": ["Engineering"],
-    "department": "Environmental Engineering",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["ENGGEN140"], "flags": {} },
-      { "type": 0, "required": 0, "papersExcluded": ["ENVENG244"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3124",
-    "name": "ENVENG300",
-    "title": "Natural and Built Environment Processes",
-    "desc": "Chemical and Biological treatment processes. Surface water quality modelling. Soil chemistry. Contaminant fate and transport in soil and groundwater. Contaminated sites remediation.",
-    "faculties": ["Engineering"],
-    "department": "Environmental Engineering",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["ENVENG200"], "flags": {} },
-      { "type": 0, "required": 0, "papersExcluded": ["ENVENG341"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3125",
-    "name": "ENVENG331",
-    "title": "Three Waters: Quality and Treatment",
-    "desc": "Drinking-water treatment, stormwater and agricultural runoffs, biological wastewater treatment, small-scale water treatment systems, nutrient removal, micropollutants, emerging contaminants, water quality standards.",
-    "faculties": ["Engineering"],
-    "department": "Environmental Engineering",
-    "points": 15,
-    "stage": 3
-  },
-  {
-    "id": "3126",
-    "name": "ENVSCI399",
-    "title": "Capstone: Environmental Science",
-    "desc": "Students will engage with the research process, as practised in environmental science. Independent or small group research projects will be undertaken under the guidance of an academic mentor. Students will design and complete an independent research project and communicate their findings. The emphasis is on research skills and assisting students in developing and implementing their independent academic research project.",
-    "faculties": ["Science"],
-    "department": "Environmental Science",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 0,
-            "required": 30,
-            "flags": {},
-            "stage": 3,
-            "departments": ["Environmental Science"]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 0,
-                "required": 15,
-                "flags": {},
-                "stage": 3,
-                "departments": ["Environmental Science"]
-              },
-              {
-                "type": 0,
-                "required": 30,
-                "flags": {},
-                "stage": 3,
-                "faculties": ["Science"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3127",
-    "name": "FINEARTS220",
-    "title": "Nga Toi Taketake: Fibre and Textile",
-    "desc": "Engages students with materials and methods of making that are indigenous to Aotearoa. Explores concepts, methods and techniques of Te Ao M\u0101ori through the development and creation of contemporary fibre and textile-based artworks. Through an exploration of practices such as tukutuku, students will consider how collaboration, pattern, symbolism and whanaungatanga can be embedded in artworks.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3128",
-    "name": "FINEARTS221",
-    "title": "Nga Toi Taketake: Objects",
-    "desc": "Engages students with materials and methods of making that are indigenous to Aotearoa. Explores concepts, methods and techniques of Te Ao M\u0101ori through the development and creation of contemporary artworks using materials such as wood, clay, stone, and shell.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3129",
-    "name": "FINEARTS222",
-    "title": "Printed Matter: Printmaking",
-    "desc": "Explores contemporary printed matter. Students will work with a range of traditional printmaking technologies that may include monoprint, screen print, woodcut, and photogravure as well as expanded, experimental processes using digital and laser cutting technologies.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3130",
-    "name": "FINEARTS223",
-    "title": "Printed Matter: Publication",
-    "desc": "Introduces students to print publication as a site of contemporary practice exploring ways in which artists, designers, and activists have made use of the printed form as a social medium. Students will experiment with the format and materiality of printed media, and the experience of viewing, through the production of self-published works such as artist\u2019s books, posters, and zines. Technical workshops will develop skills in digital and hand-made print and production methods.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3131",
-    "name": "FINEARTS224",
-    "title": "Time-Based: Digital Film",
-    "desc": "Offers a practical exploration of digital film production. Students will learn camera techniques and editing skills to support the development of experimental visual stories while learning how digital workflow and project management can affect a creative outcome. Students will work both collaboratively and individually, using a range of filmmaking equipment and editing software to make short films.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3132",
-    "name": "FINEARTS225",
-    "title": "Time-Based: Audio-Visual Installation",
-    "desc": "Explores the installation aspect of making audio-visual time-based artworks. Students will consider what happens to audio-visual work once it leaves the computer including how artworks are rendered in physical space for viewers to engage with. Students will learn the basics of audio-video installation practices and experiment with audio visual installations.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3133",
-    "name": "FINEARTS226",
-    "title": "Photography: Digital Photography",
-    "desc": "Covers the conceptual and practical possibilities of digital photography. Students will experiment with a wide range of image-making technologies including SLR digital cameras. Lighting considerations and a range of options for printing digital photos will be explored. Contemporary photographic practices will be covered within the context of global image circulation.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3134",
-    "name": "FINEARTS227",
-    "title": "Photography: Analogue Photography",
-    "desc": "Provides students with an overview of analogue photographic processes. Students will gain skills in darkroom photography, including a practical understanding of film camera technologies, developing and printing processes, and the use of darkroom techniques to refine and manipulate photographic imagery.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3135",
-    "name": "FINEARTS228",
-    "title": "Painting: Materiality and Process",
-    "desc": "Considers the various ways in which actions, processes, and materials can shape a painting practice. Covers a range of painterly actions and a self-generated list of \u2018paint-related\u2019 verbs (to roll, to smudge, to scrape). Students will create a \u2018catalogue\u2019 of marks and manipulations of paint. They will then develop these ideas through a studio practice which explores abstraction, materiality, and considerations of form. A broad range of traditional, modern and expanded paint properties and mediums will be considered.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3136",
-    "name": "FINEARTS229",
-    "title": "Painting: Painted Images",
-    "desc": "Explores contemporary techniques of still life and representational painting as a means of re-thinking visual histories. Students will gather and arrange source materials and object references and explore a range of painted responses. Emphasises the construction and preparation of supports and surfaces, colour theory, and the methods and mediums that support painting practice.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3137",
-    "name": "FINEARTS230",
-    "title": "Sculpture: Constructing and Fabricating",
-    "desc": "Based in the metal and wood workshops, this course will guide students in the exploration of materials and construction processes. Develop sculptural works in metal or wood. Students will use tools and techniques such as cutting, joining and welding.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3138",
-    "name": "FINEARTS231",
-    "title": "Sculpture: Shaping and Casting",
-    "desc": "Engages with tactile processes of object-making and reproduction to create works of contemporary art using clay, wax, and other materials. Students will make reproductions of their handmade objects using a range of casting processes and explore how multiples impact the form and content of artworks.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3139",
-    "name": "FINEARTS232",
-    "title": "Performance: Communication, Identity and Community",
-    "desc": "Focuses on performance art as a means of communication. Examines the ways in which performance can be integral to an artistic and cultural identity, contemporary life, and community.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3140",
-    "name": "FINEARTS233",
-    "title": "Performance: Action/Documentation",
-    "desc": "Considers how documentation effects our understanding of performance art and what might be done to retain and communicate the ephemeral effects of a passing event. Students explore their own performance practice and develop appropriate methods of documentation including video, photography, drawing, and sound recording. Students will work both collaboratively and individually, using documentation as a visual and conceptual tool.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3141",
-    "name": "FINEARTS234",
-    "title": "Creative Careers: Pathways",
-    "desc": "Emphasises the practical aspects of establishing a career as a creative practitioner. Covers writing proposals, applications, artist\u2019s statements, and other practical tools for a creative career. Focuses on the ability to communicate ideas effectively to peers and professional networks.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3142",
-    "name": "FINEARTS235",
-    "title": "Creative Careers: Making Exhibitions",
-    "desc": "Students will consider the types of roles and structures that exist in contemporary art worlds, with a focus on curatorial practice and exhibition making from the perspective of the artist. Engaging with the local art world, students will develop a critically informed exhibition proposal for a real-world context.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3143",
-    "name": "FINEARTS240",
-    "title": "Indigeneity and Culture: Ko wai au?",
-    "desc": "Encourages the development and creation of artworks that explore whakapapa, whakawhanaungatanga, genealogy, and relationality as the foundation of creative practice in the contexts of Aotearoa and Te-Moana-Nui-a-Kiwa. Related indigenous methodologies and concepts will be explored.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3144",
-    "name": "FINEARTS241",
-    "title": "Indigeneity and Culture: Power and Place",
-    "desc": "Explores and examines the ongoing impact of colonisation, imperialism, and migration through art making. Related indigenous methodologies and concepts will be explored.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3145",
-    "name": "FINEARTS242",
-    "title": "Image, Object and Materiality: What is an Image?",
-    "desc": "Addresses image-making in a digital world. Explores the relation between the fabrication of individual images and their circulation through mass media using different mediums. Reflection on the different ways artists might embrace or subvert the profusion of internet imagery.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3146",
-    "name": "FINEARTS243",
-    "title": "Image, Object and Materiality: What is an Object?",
-    "desc": "Addresses object-making in a digital world. Responds to the immaterial condition of internet culture, students will generate sculptural objects that exist in real space. Reflection on materiality and mediation in contemporary culture.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3147",
-    "name": "FINEARTS244",
-    "title": "Embodiment, Identity and Agency: Art and Audience",
-    "desc": "Explores the role of the audience in art and examines the work of artists and writers who have challenged assumptions about audience. Students will make creative work with a particular audience in mind using their own choice of means and/or modes of encounter. They will explore how to negotiate the ethics of working with others, including working with mana whenua.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3148",
-    "name": "FINEARTS245",
-    "title": "Embodiment, Identity and Agency: Art and the Self",
-    "desc": "How is identity produced? Explores key concepts of fluidity, intersectionality, body image, fashion, gender and persona, in relation to photography, film, art, and fashion.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3149",
-    "name": "FINEARTS246",
-    "title": "Systems, Ecologies and Environments: Art in the Anthropocene",
-    "desc": "Students will undertake a studio art project that responds to the challenges of the Anthropocene and climate change. The course explores related art and ideas from Aotearoa and overseas.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3150",
-    "name": "FINEARTS247",
-    "title": "Systems, Ecologies and Environments: Embodied Nature",
-    "desc": "Explores our place as a species within a broader ecological framework. Enables students to reflect on the limitations proposed by ways of thinking that separate self from world. Through studio practice and artistic research, develops an enhanced awareness of and sensitivity to living systems.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3151",
-    "name": "FINEARTS248",
-    "title": "Technology and Material Futures: Mixed Realities",
-    "desc": "Considers virtual and tactile methods of production in contemporary art. Investigates the tension where the physical and virtual worlds are woven together. In mixed realities, the line between analogue and digital artmaking is blurred. This course provides an opportunity to experiment with technologies which might include 3D printing, real-time and interactive technologies, laser cutting, digital casting, and 3D scanning.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3152",
-    "name": "FINEARTS249",
-    "title": "Technology and Material Futures: World-making",
-    "desc": "Focuses on the idea that a key driver of creative practice is the seeking out and imagining of alternative models for living, this course provides students with the opportunity to engage in world-making. Students generate and produce artworks that explore new worlds. Provides an understanding of how material affects and conceptual propositions work together to produce meaning in an artwork.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 4,
-            "flags": {},
-            "papers": [
-              "FINEARTS101",
-              "FINEARTS102",
-              "FINEARTS103",
-              "FINEARTS104"
-            ]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 2,
-                "flags": {},
-                "papers": ["FINEARTS110", "FINEARTS113"]
-              },
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FINEARTS111", "FINEARTS112"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3153",
-    "name": "FINEARTS320",
-    "title": "Creative Practice Research Methodologies",
-    "desc": "What does it mean to consider creative practice as research? Examines the history and theory of contemporary art\u2019s relationship to the academy, focused on the practical implications of framing art-making as a capstone project. Develops academic research skills culminating in a research proposal.",
-    "faculties": ["Creative Arts And Industries", "Fine Arts"],
-    "department": "Fine Arts",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 3,
-            "flags": {},
-            "papers": ["FINEARTS204", "FINEARTS207", "FINEARTS208"]
-          },
-          {
-            "type": 1,
-            "required": 3,
-            "flags": {},
-            "papers": ["FINEARTS204", "FINEARTS207", "FINEARTS212"]
-          },
-          {
-            "type": 1,
-            "required": 3,
-            "flags": {},
-            "papers": ["FINEARTS204", "FINEARTS208", "FINEARTS209"]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 4,
-                "flags": {},
-                "papers": [
-                  "FINEARTS110",
-                  "FINEARTS111",
-                  "FINEARTS112",
-                  "FINEARTS113"
-                ]
-              },
-              {
-                "type": 0,
-                "required": 90,
-                "flags": {},
-                "papers": [
-                  "FINEARTS220",
-                  "FINEARTS221",
-                  "FINEARTS222",
-                  "FINEARTS223",
-                  "FINEARTS224",
-                  "FINEARTS225",
-                  "FINEARTS226",
-                  "FINEARTS227",
-                  "FINEARTS228",
-                  "FINEARTS229",
-                  "FINEARTS230",
-                  "FINEARTS321",
-                  "FINEARTS232",
-                  "FINEARTS233",
-                  "FINEARTS234",
-                  "FINEARTS235",
-                  "FINEARTS240",
-                  "FINEARTS241",
-                  "FINEARTS242",
-                  "FINEARTS243",
-                  "FINEARTS244",
-                  "FINEARTS245",
-                  "FINEARTS246",
-                  "FINEARTS247",
-                  "FINEARTS248",
-                  "FINEARTS249",
-                  "FINEARTS250"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3154",
-    "name": "FOODSCI100",
-    "title": "Foundations of Food and Nutrition",
-    "desc": "Introduces students to the multifaceted nature of Food Science and Nutrition with a focus on the interplay between food, nutrition and health. Introduce the chemical, biological, sensory, and processing aspects of foods. Societal, economic, legislative and regulatory aspects will also be introduced. Concepts will be illustrated using real food systems with a focus on lipids, water and vitamin C.",
-    "faculties": ["Science"],
-    "department": "Food Science",
-    "points": 15,
-    "stage": 1,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["FOODSCI201"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3155",
-    "name": "FOODSCI110",
-    "title": "Concepts in Food and Nutrition",
-    "desc": "Introduces students to the multifaceted nature of food science and nutrition with a focus on the interplay between food, nutrition and health. Provides general insights relating food molecules to food function and health. Societal, economic, legislative and regulatory aspects will also be explored. No background in science is assumed.",
-    "faculties": ["Science"],
-    "department": "Food Science",
-    "points": 15,
-    "stage": 1,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["FOODSCI100"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3156",
-    "name": "FOODSCI200",
-    "title": "Food Composition and Nutrition",
-    "desc": "Covers the composition and structure of food. The approach will extend the FOODSCI 100 content from lipids to proteins, carbohydrates and key minor food components. There will be a focus on the molecular structure of the major food components and how they relate to the physical, sensory and nutritional properties of foods.",
-    "faculties": ["Science"],
-    "department": "Food Science",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["BIOSCI106", "CHEM110", "FOODSCI100"],
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["FOODSCI201"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3157",
-    "name": "FOODSCI202",
-    "title": "Food Preservation",
-    "desc": "Food is spoilt by microbiological, chemical, biochemical and physical processes. It is important to understand the mechanism of spoilage caused by each of these processes in order to prevent or minimise such degradation. This course includes fundamental principles covering the preservation and processing of different food products. The principles involved in the development of food safety and HACCP programmes, as well as New Zealand food laws are also covered.",
-    "faculties": ["Science"],
-    "department": "Food Science",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["FOODSCI200", "FOODSCI201"],
-        "flags": {}
-      },
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["MATHS108", "MATHS110"],
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["FOODSCI302"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3158",
-    "name": "FOODSCI306",
-    "title": "Principles of Food Processing",
-    "desc": "The fundamental principles of freezing and thawing, thermal processing and canning, fermentation and dehydration are studied. The fundamental areas of engineering relevant for food processing such as heat and mass transfer, are covered. Process impact on food safety, quality and preservation is also discussed.",
-    "faculties": ["Science"],
-    "department": "Food Science",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["FOODSCI202"], "flags": {} },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["CHEMMAT756"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3159",
-    "name": "FOODSCI310",
-    "title": "Theory of Food Product Design",
-    "desc": "Examines the science underpinning human sensory perception and food preferences and how this science interfaces with the design and development of food products as well as the fundamental aspects of food product development.",
-    "faculties": ["Science"],
-    "department": "Food Science",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 1,
-        "required": 2,
-        "papers": ["FOODSCI100", "FOODSCI200"],
-        "flags": {}
-      },
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["STATS101", "STATS108"],
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["FOODSCI303", "FOODSCI304"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3160",
-    "name": "FOODSCI399",
-    "title": "Capstone: Food and Nutrition",
-    "desc": "Food and Nutrition pathway students will work together in groups to identify and develop a new food product or food system that addresses or responds to a nutritional issue. Students will focus on the interplay between the nutritional aspects of the product or system and the sensory, stability, convenience, cost, regulatory and processing aspects of the product.",
-    "faculties": ["Science"],
-    "department": "Food Science",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          { "type": 1, "required": 1, "flags": {}, "papers": ["FOODSCI303"] },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              {
-                "type": 1,
-                "required": 1,
-                "flags": {},
-                "papers": ["FOODSCI310"]
-              },
-              {
-                "type": 0,
-                "required": 30,
-                "flags": {},
-                "stage": 3,
-                "departments": ["Food Science and Nutrition"]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3161",
-    "name": "GENDER101",
-    "title": "Gender: Global and Local",
-    "desc": "Develops an understanding of key concepts that underlie gender analysis, and how they are expressed in politics, culture and society. Examines the meaning of gender across a range of subjects and issues on the global stage and in our everyday lives.",
-    "faculties": ["Arts", "Health Sciences"],
-    "department": "Gender Studies",
-    "points": 15,
-    "stage": 1,
-    "requirements": [
-      { "type": 0, "required": 0, "papersExcluded": ["GENDER100"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3162",
-    "name": "GENDER101G",
-    "title": "Gender: Global and Local",
-    "desc": "Develops an understanding of key concepts that underlie gender analysis, and how they are expressed in politics, culture and society. Examines the meaning of gender across a range of subjects and issues on the global stage and in our everyday lives.",
-    "faculties": ["Arts"],
-    "department": "Gender Studies",
-    "points": 15,
-    "stage": 1,
-    "requirements": [
-      { "type": 0, "required": 0, "papersExcluded": ["GENDER100"], "flags": {} }
-    ],
-    "isActive": true,
-    "general": true
-  },
-  {
-    "id": "3163",
-    "name": "GENDER301",
-    "title": "Gender, Sex and Commodification",
-    "desc": "Focuses on current and controversial issues at the intersections of sex and gender and their co-construction. Issues will be approached from contemporary feminist and queer theory perspectives. Various topics are critically examined in both theoretical and practical terms, such as co-constructions of gender and sexualities in pornography and advertising, technologies and reproduction, representations of transgender bodies/identities, and the selling of cybersex.",
-    "faculties": ["Arts"],
-    "department": "Gender Studies",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["Communication", "Gender Studies", "Sociology"],
-        "stage": 2,
-        "flags": {}
-      },
-      { "type": 0, "required": 0, "papersExcluded": ["SOCIOL324"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3164",
-    "name": "GEOG106",
-    "title": "Geographies of the Pacific",
-    "desc": "Examines the diverse geographies of Pacific peoples, their worldviews and ways of living. Case studies are used to place these geographies in entangled environmental, economic, historical, social, cultural and political contexts and to identify contradictory dynamics of change.",
-    "faculties": ["Science"],
-    "department": "Geography",
-    "points": 15,
-    "stage": 1
-  },
-  {
-    "id": "3165",
-    "name": "GEOG308",
-    "title": "Geopolitics and Indigenous Rights",
-    "desc": "Examines Indigenous peoples as agents of geopolitical change. Introduces colonial/decolonial geographies to demonstrate the geopolitical implications of Indigenous ways of knowing, being and doing. Key themes include: territory and geopolitics; Indigenous identities, subject-formation and intersectionality; Indigenous knowledges, rights and political agency; and, Indigenous relationships with non-Indigenous peoples.",
-    "faculties": ["Science"],
-    "department": "Geography",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      { "type": 0, "required": 30, "stage": 2, "flags": {} },
-      { "type": 0, "required": 0, "papersExcluded": ["GEOG312"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3166",
-    "name": "GEOG335",
-    "title": "Applied Physical Geography",
-    "desc": "Examines the challenges of \u2018doing science\u2019 in the real world. With particular emphasis on climate, fluvial and coastal processes, the types of data, knowledge and information needed for decision making in environmental contexts are examined. Examines the ways human activities effect, and are affected by, the environmental settings of humans. Seeks improved understanding, and prediction, of the world around humans framed as both a resource and hazard.",
-    "faculties": ["Science"],
-    "department": "Geography",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 45,
-        "departments": ["Geography"],
-        "stage": 2,
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["GEOG331", "GEOG332"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3167",
-    "name": "GEOG342",
-    "title": "Technology, Power and Social Change",
-    "desc": "Technology, algorithms, and Big data are changing our relationships with reality, space and power. This course explores how we know each other, society, and ourselves in this period of unprecedented technological change",
-    "faculties": ["Science"],
-    "department": "Geography",
-    "points": 15,
-    "stage": 3,
-    "requirements": [{ "type": 0, "required": 45, "stage": 2, "flags": {} }],
-    "isActive": true
-  },
-  {
-    "id": "3168",
-    "name": "GEOG399",
-    "title": "Capstone: Geography",
-    "desc": "An engagement with the research process, as practised in geography. Students will undertake an independent research project and communicate their findings, with due attention to research design, methodology, research ethics, information sources, field practise, data analysis, and research communication. Independent or small group research projects may involve residential or local fieldwork, laboratory analysis, desktop analysis or other research activities.",
-    "faculties": ["Science"],
-    "department": "Geography",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["GEOG250"], "flags": {} },
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["Geography"],
-        "stage": 3,
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3169",
-    "name": "GEOPHYS213",
-    "title": "The Geophysical Environment",
-    "desc": "This course explores the physical principles governing \u2013 and the connections between \u2013 the Earth\u2019s atmosphere, oceans and interior. Topics include the structure of the solid earth, ocean currents and tides, and fundamental aspects of weather and climate.",
-    "faculties": ["Science"],
-    "department": "Geophysics",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["PHYSICS120", "PHYSICS121", "PHYSICS150", "PHYSICS160"],
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 1,
-            "required": 1,
-            "flags": {},
-            "papers": ["ENGSCI111", "MATHS108", "MATHS150", "MATHS153"]
-          },
-          {
-            "type": 1,
-            "required": 2,
-            "flags": {},
-            "papers": ["MATHS120", "MATHS130"]
-          }
-        ]
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["PHYSICS213"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3170",
-    "name": "GEOPHYS310",
-    "title": "Physics of the Earth",
-    "desc": "Covers the physics of the solid earth from the surface to the core. Specifically, the course explores the Earth\u2019s gravitational field (including the rotation and figure of the earth), seismology, heat flow, the magnetic and electromagnetic field to unravel the properties, processes, and structure of the Earth\u2019s interior.",
-    "faculties": ["Science"],
-    "department": "Geophysics",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["EARTHSCI103", "EARTHSCI120", "GEOLOGY103"],
-        "flags": {}
-      },
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["GEOPHYS213", "PHYSICS213"],
-        "flags": {}
-      },
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["ENGSCI211", "MATHS253", "MATHS260", "PHYSICS211"],
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["GEOPHYS330"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3171",
-    "name": "GEOPHYS311",
-    "title": "Atmosphere, Ocean, and Climate Physics",
-    "desc": "Examines the physical and dynamic processes shaping the atmosphere and oceans, covering the thermodynamics of the climate system and the dynamics of global atmospheric and oceanic circulations. Explores the fundamental physical processes that control Earth\u2019s climate and investigates the dilemmas they present in our current understanding of climate.",
-    "faculties": ["Science"],
-    "department": "Geophysics",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["PHYSICS201", "PHYSICS231"],
-        "flags": {}
-      },
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["GEOPHYS213", "PHYSICS213"],
-        "flags": {}
-      },
-      {
-        "type": 1,
-        "required": 1,
-        "papers": ["ENGSCI211", "MATHS253", "MATHS260", "PHYSICS211"],
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["GEOPHYS331"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3172",
-    "name": "GEOPHYS399",
-    "title": "Capstone: Geophysics",
-    "desc": "Students will employ core methodologies (experimental, observational, computational, numerical) to investigate some aspect of a key geophysical phenomenon, and relate their findings to contemporary research in the field, considering wider societal aspects and issues. Students will develop their skills in communication, critical thinking, teaching and creative problem solving.",
-    "faculties": ["Science"],
-    "department": "Geophysics",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 1,
-        "required": 2,
-        "papers": ["GEOPHYS310", "GEOPHYS311", "GEOPHYS361"],
-        "flags": {}
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["EARTHSCI399", "PHYSICS399"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3173",
-    "name": "GERMAN106",
-    "title": "Discover Germany Through Film",
-    "desc": "Introduces students to key issues and developments in German culture, history and society through the medium of film. Surveying the years between 1945 and the present, films will focus on the reconstruction of Germany after WWII, the division and reunification of Germany as well as on current issues around migration, identity and diversity in the German-speaking world.",
-    "faculties": ["Arts"],
-    "department": "German",
-    "points": 15,
-    "stage": 1,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["GERMAN130", "GERMAN231"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3174",
-    "name": "GERMAN214",
-    "title": "Teaching German as a foreign language",
-    "desc": "Provides an overview of teaching and learning German as a second or heritage language. Students gain a solid understanding of German teaching and learning, including concepts and theories behind second language learning, individual differences, learning needs, approaches to strengthen learner autonomy as well as methods and principles of teaching German.",
-    "faculties": ["Arts"],
-    "department": "German",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["GERMAN201"], "flags": {} },
-      { "type": 0, "required": 0, "papersExcluded": ["GERMAN314"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3175",
-    "name": "GERMAN250",
-    "title": "The Holocaust in Literature and Film",
-    "desc": "With a focus on German texts and films pertaining to World War II and the Holocaust, the course charts the development of the ideas and the language of genocide, and the representation of the Holocaust in literature and films.",
-    "faculties": ["Arts"],
-    "department": "German",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      { "type": 0, "required": 30, "faculties": ["Arts"], "flags": {} },
-      { "type": 0, "required": 0, "papersExcluded": ["GERMAN350"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3176",
-    "name": "GERMAN260",
-    "title": "Topics in German Linguistics",
-    "desc": "Focuses on the linguistic fields of German sociolinguistics and German applied linguistics and deepens the understanding of the current linguistic situation in the German speaking area.",
-    "faculties": ["Arts"],
-    "department": "German",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["GERMAN102"], "flags": {} },
-      { "type": 0, "required": 0, "papersExcluded": ["GERMAN360"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3177",
-    "name": "GERMAN314",
-    "title": "Teaching German as a Foreign Language",
-    "desc": "Provides an overview of teaching and learning German as a second or heritage language. Students gain a solid understanding of German teaching and learning, including concepts and theories behind second language learning, individual differences, learning needs, approaches to strengthen learner autonomy as well as methods and principles of teaching German.",
-    "faculties": ["Arts"],
-    "department": "German",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["GERMAN301"], "flags": {} },
-      { "type": 0, "required": 0, "papersExcluded": ["GERMAN214"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3178",
-    "name": "GERMAN331",
-    "title": "German Cinema from Murnau to Riefenstahl",
-    "desc": "A close analysis of film from the Weimar Republic and the Third Reich as seen against the political and social upheavals of the time with an emphasis on the role of gender and the portrayal of gender in film.",
-    "faculties": ["Arts"],
-    "department": "German",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["German"],
-        "aboveStage": 1,
-        "flags": {}
-      },
-      { "type": 0, "required": 0, "papersExcluded": ["GERMAN230"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3179",
-    "name": "GERMAN350",
-    "title": "The Holocaust in Literature and Film",
-    "desc": "With a focus on German texts and films pertaining to World War II and the Holocaust, the course charts the development of the ideas and the language of genocide, and the representation of the Holocaust in literature and films.",
-    "faculties": ["Arts"],
-    "department": "German",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 30,
-        "departments": ["German"],
-        "stage": 2,
-        "flags": {}
-      },
-      { "type": 0, "required": 0, "papersExcluded": ["GERMAN250"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3180",
-    "name": "GERMAN360",
-    "title": "Topics in German Linguistics",
-    "desc": "Focuses on the linguistic fields of German sociolinguistics and German applied linguistics and deepens the understanding of the current linguistic situation in the German speaking area.",
-    "faculties": ["Arts"],
-    "department": "German",
-    "points": 15,
-    "stage": 3,
-    "requirements": [
-      { "type": 1, "required": 1, "papers": ["GERMAN201"], "flags": {} },
-      { "type": 0, "required": 0, "papersExcluded": ["GERMAN260"], "flags": {} }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3181",
-    "name": "HISTORY205",
-    "title": "Bloodlands: Global Warfare",
-    "desc": "Asks historical questions about warfare in the modern era. Analyses conflicts and state violence and their impacts on people and their governments in a global setting. Themes include: the causes, course and consequences of warfare; restraint in warfare; ideologies of war and peace; civil war and revolution; imperial warfare; genocide; the human impact and context of war.",
-    "faculties": ["Arts"],
-    "department": "History",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 1,
-        "flags": {},
-        "complex": [
-          {
-            "type": 0,
-            "required": 30,
-            "flags": {},
-            "stage": 1,
-            "departments": ["Global Politics and Human Rights"]
-          },
-          {
-            "type": 0,
-            "required": 2,
-            "flags": {},
-            "complex": [
-              { "type": 0, "required": 30, "flags": {} },
-              {
-                "type": 0,
-                "required": 15,
-                "flags": {},
-                "stage": 1,
-                "departments": ["History"]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["HISTORY309"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3182",
-    "name": "HISTORY225",
-    "title": "Samurai and Scholars: Early Modern China and Japan",
-    "desc": "Early modern China and Japan shared not only geographical space in East Asia but also a history of cultural interaction, trade, and an enduring interest in Confucianism as a moral, philosophical, and social framework. This course explores and compares the government, trade, and culture of these two societies with a focus on the structures and patterns of everyday life.",
-    "faculties": ["Arts"],
-    "department": "History",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      { "type": 0, "required": 60, "flags": {} },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": [
-          "HISTORY222",
-          "HISTORY242",
-          "HISTORY322",
-          "HISTORY335",
-          "HISTORY342"
-        ],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3183",
-    "name": "HISTORY239",
-    "title": "Medieval Cultures: Faith, Power, Identities",
-    "desc": "Explores the social, cultural, religious and political histories of medieval Europe and its relations with wider worlds. Topics covered may vary from year to year, but will likely include social structures, the place of religious faith, gender relations, power and authority, ethnic identities, conflict and dissent, migrations, literary and artistic expressions, and responses to crises.",
-    "faculties": ["Arts"],
-    "department": "History",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 15,
-        "departments": ["History"],
-        "stage": 1,
-        "flags": {}
-      },
-      { "type": 0, "required": 30, "flags": {} },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": [
-          "HISTORY219",
-          "HISTORY254",
-          "HISTORY268",
-          "HISTORY319",
-          "HISTORY339",
-          "HISTORY354",
-          "HISTORY368"
-        ],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3184",
-    "name": "HISTORY256",
-    "title": "Sex and Gender in the Middle Millennium (500-1500CE)",
-    "desc": "A historical study of sex, sexualities and genders in global contexts between c. 500 and c. 1500 CE. This period corresponds with the \u2018medieval\u2019 era in European history but is here extended to encompass global comparisons. Topics include ideas about the body; marital sex; reproduction; abstinence; prostitution and slavery; homosexualities; and trans histories.",
-    "faculties": ["Arts"],
-    "department": "History",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      {
-        "type": 0,
-        "required": 15,
-        "departments": ["History", "Gender Studies"],
-        "stage": 1,
-        "flags": {}
-      },
-      { "type": 0, "required": 30, "flags": {} },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["HISTORY326"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
-    "id": "3185",
-    "name": "HISTORY271",
-    "title": "Atlantic Revolutions",
-    "desc": "Introduces students to early modern Atlantic history. From the mid-16th to the early 19th centuries, revolutionary upheavals in the Netherlands, England, the Americas and France made the Atlantic basin a crucible of global change. Topics include state power and imperial competition; commercial and cultural interconnections; colonisation and conflict; local and transoceanic communication networks; and the experiences of revolutionary change.",
-    "faculties": ["Arts"],
-    "department": "History",
-    "points": 15,
-    "stage": 2,
-    "requirements": [
-      { "type": 0, "required": 60, "flags": {} },
-      {
-        "type": 0,
-        "required": 0,
-        "papersExcluded": ["HISTORY371"],
-        "flags": {}
-      }
-    ],
-    "isActive": true
-  },
-  {
     "id": "3186",
     "name": "HISTORY309",
     "title": "Bloodlands: Global Warfare",
@@ -66842,6 +64101,2783 @@
         "required": 15,
         "stage": 2,
         "faculties": ["Arts"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+
+
+
+
+  {
+    "id": 3636,
+    "name": "EDUCM106",
+    "title": "He Tirohanga ki te M\u0101tauranga i Aotearoa",
+    "desc": "Examines historical and contemporary topics and themes in M\u0101ori schooling and education, with particular reference to the revitalisation of Te Reo M\u0101ori. Considers M\u0101ori educational aspirations and questions in the context of Treaty, social justice and equity debates in Aotearoa New Zealand. Examines te reo M\u0101ori discourse relevant to educational contexts and themes investigated in this course.",
+    "faculties": ["Education And Social Work"],
+    "department": "Education M\u0101ori",
+    "points": 15,
+    "stage": 1,
+    "requirements": [
+      { "type": 0, "required": 0, "papersExcluded": ["EDUCM118"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3637,
+    "name": "EDUCM198",
+    "title": "Te Whakahua Reo M\u0101ori",
+    "desc": "An online self-directed introductory te reo M\u0101ori course that provides opportunities to learn correct pronunciation and some basic language for use in professional situations.",
+    "faculties": ["Education And Social Work"],
+    "department": "Education M\u0101ori",
+    "points": null,
+    "stage": 1
+  },
+  {
+    "id": 3638,
+    "name": "EDUCM203",
+    "title": "Te Atawhai i te Rerenga K\u0113tanga",
+    "desc": "Analyses how experiences and outcomes for learners in contemporary education contexts are shaped by social constructions informed by class, ethnicity, culture, gender, sexuality, and (dis)ability. Examines the role of education policies and socio-historical context on teacher responsiveness to diversity and difference. Explores a range of transformative approaches. Particular attention is given to Pasifika learners.",
+    "faculties": ["Education And Social Work"],
+    "department": "Education M\u0101ori",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["EDUCM106"], "flags": {} },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["EDPROFM205"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3639,
+    "name": "EDUCM324",
+    "title": "Whiria Te Kaha T\u016b\u0101tinitini",
+    "desc": "Critically appraises philosophical perspectives on education to enable students to articulate a developing philosophy and practice of teaching including the relationship between local, national and global politics and inclusive education in Aotearoa New Zealand. Highlights concepts of social justice, equity and diversity and relates these concepts to competing discourses of ability, (dis)ability and inclusion. Examines te reo M\u0101ori discourse appropriate to course content.",
+    "faculties": ["Education And Social Work"],
+    "department": "Education M\u0101ori",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["EDUCM203"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3640,
+    "name": "ELECTENG291",
+    "title": "Fundamentals of Electrical Engineering",
+    "desc": "AC and DC circuit analysis in the context of linear electrical and electronic systems. Time and frequency domain approaches to describing and analysing electrical networks and systems.",
+    "faculties": ["Engineering"],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["ELECTENG101"], "flags": {} },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ELECTENG202"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3641,
+    "name": "ELECTENG292",
+    "title": "Electronics",
+    "desc": "Electronic devices and circuits for solving engineering problems. Analysis of linear and non-linear microelectronic circuits and their practical applications.",
+    "faculties": ["Engineering", "Science"],
+    "department": ["Electrical and Electronic Engineering", "Physics"],
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          { "type": 1, "required": 1, "flags": {}, "papers": ["ELECTENG202"] },
+          { "type": 1, "required": 1, "flags": {}, "papers": ["ELECTENG291"] },
+          {
+            "type": 1,
+            "required": 2,
+            "flags": {},
+            "papers": ["PHYSICS121", "PHYSICS244"]
+          }
+        ]
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ELECTENG210"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3642,
+    "name": "ELECTENG331",
+    "title": "Signals and Systems",
+    "desc": "Introduction to continuous-time and discrete-time signals and systems. Spectral analysis and representation of analog and digital signals, and linear, time-invariant systems. Conversion between analog and digital signals. Systems for manipulating and filtering signals in hardware and software.",
+    "faculties": ["Engineering", "Science"],
+    "department": ["Electrical and Electronic Engineering", "Physics"],
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          { "type": 1, "required": 1, "flags": {}, "papers": ["ELECTENG202"] },
+          { "type": 1, "required": 1, "flags": {}, "papers": ["ELECTENG291"] },
+          {
+            "type": 1,
+            "required": 2,
+            "flags": {},
+            "papers": ["PHYSICS140", "PHYSICS244"]
+          }
+        ]
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ELECTENG303"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3643,
+    "name": "ELECTENG332",
+    "title": "Control Systems",
+    "desc": "Introduction to modelling in the time-domain and frequency domain. The fundamental body of knowledge underlying the control and enhancement of system behaviour, with application to the analysis and control of systems.",
+    "faculties": ["Engineering"],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG202", "ELECTENG291"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ELECTENG303"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3644,
+    "name": "ENGGEN101G",
+    "title": "Software, Data and Intelligent Automation",
+    "desc": "Introduces concepts of intelligent automation, robotic process automation, analytics and artificial intelligence/machine learning. Includes consideration of data privacy and sovereignty, and the ethics of AI. Students will engage in critical analysis of potential intelligent automation applications and solutions, and will build their own software robot through practical laboratory work.",
+    "faculties": ["Engineering"],
+    "department": "Engineering General",
+    "points": 15,
+    "stage": 1,
+    "isActive": true,
+    "general": true
+  },
+  {
+    "id": 3645,
+    "name": "ENGLISH113",
+    "title": "Global South: New World Texts",
+    "desc": "Introduces cross-disciplinary study of transnational texts in English, with particular reference to poetry and prose works from the Caribbean and Pacific, including New Zealand. In both regions, the local history of writing is extensive and includes notable texts that reflect diverse cultural origins, but also a sharp sense of the new (scenes, socio-political structures, languages).",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 1
+  },
+  {
+    "id": 3646,
+    "name": "ENGLISH214",
+    "title": "Early Texts: Modern Inventions",
+    "desc": "A study of key works and contexts of selected medieval and early modern writers, including Chaucer, Shakespeare, Milton, and Behn. Offers a compact history of literary engagements with important social issues that arose in a period notable for revolution and reform; also develops knowledge of literary forms and trends that are historically important, but, in this period, relatively new.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "departments": ["English"],
+        "stage": 1,
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH210", "ENGLISH330"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3647,
+    "name": "ENGLISH216",
+    "title": "Modernist Transformations",
+    "desc": "Taking transformation as its theme, the course focuses on a selection of influential Modernist works that map out some of the possibilities for the avant-garde in the early 20th century. Students will expand their knowledge of modernism as a multimedia, multicultural phenomenon and exert their imaginations and research skills as they consider its relevance to contemporary cultural production.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["English"],
+        "stage": 1,
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH206", "ENGLISH222", "ENGLISH322"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3648,
+    "name": "ENGLISH217",
+    "title": "Postcolonial Memory: Ireland",
+    "desc": "Explores globally significant issues of cultural memory, identity and postcolonial inheritance through the lens of Irish literature and cultural experience. Debates about memory and postcoloniality guide our navigation of twentieth and twenty-first century Irish novels, plays, poetry and short stories. Conversely, our literary navigations interrogate postcolonial representations of identity across changing cultural contexts.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["English"],
+        "stage": 1,
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH266", "ENGLISH316", "ENGLISH361"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3649,
+    "name": "ENGLISH223",
+    "title": "Modern Writing and Critical Thinking",
+    "desc": "Explores theories and practices of writing and criticality in academic, civic, and artistic contexts. We consider some of the scripts that organise literate social practices and how to perceive and extrapolate their principles. We explore how we are affected by, how we navigate, and how we transform our immersive world of signs.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "departments": ["English"],
+        "stage": 1,
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH305"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3650,
+    "name": "ENGLISH229",
+    "title": "Literary Theory and Critical Practice",
+    "desc": "Examines the concerns and methods of contemporary criticism through a selection of key concepts central to the study of literature. We explore the history of these concepts, the theoretical issues they raise, and the reading strategies they permit. The emphasis is on literary theory as a resource that opens out possibilities for critical practice.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "departments": ["English"],
+        "stage": 1,
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH230", "ENGLISH329"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3651,
+    "name": "ENGLISH313",
+    "title": "From Romantics to Victorians",
+    "desc": "An exploration of some key preoccupations of nineteenth-century literature: identity and the psyche, and the self\u2019s engagement with the other. Both topics will be considered against a changing social context which influenced religious beliefs and constructions of gender in particular. Covers poetry and prose from the 1790s to the 1880s.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["English"],
+        "stage": 2,
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3652,
+    "name": "ENGLISH316",
+    "title": "Postcolonial Memory: Ireland",
+    "desc": "Explores globally significant issues of cultural memory, identity and postcolonial inheritance through the lens of Irish literature and cultural experience. Debates about memory and postcoloniality guide our navigation of twentieth and twenty-first century Irish novels, plays, poetry and short stories. Conversely, our literary navigations interrogate postcolonial representations of identity across changing cultural contexts.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["English"],
+        "stage": 2,
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH217", "ENGLISH266", "ENGLISH361"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3653,
+    "name": "ENGLISH318",
+    "title": "The Gothic: Texts and Theory",
+    "desc": "An advanced introduction to literary theory through an exploration of classic works of Gothic Literature. We examine the competing claims of psychoanalysis, new historicism, post-colonialism and queer studies in accounting for the appeal and cultural significance of the Gothic mode.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 0, "required": 30, "stage": 2, "flags": {} },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH321"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3654,
+    "name": "ENGLISH322",
+    "title": "Modernist Transformations",
+    "desc": "Takes transformation as its theme, focuses on a selection of influential Modernist works that map out some of the possibilities for the avant-garde in the early 20th century. Students will expand their knowledge of modernism as a multimedia, multicultural phenomenon and exert their imaginations and research skills as they consider its relevance to contemporary cultural production.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["English"],
+        "stage": 1,
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH206", "ENGLISH216", "ENGLISH222"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3655,
+    "name": "ENGLISH324",
+    "title": "Creative Writing: Four Genres",
+    "desc": "Develops practical skills in four writing genres: Poetry, Multimedia, Creative Non-Fiction and Short Fiction. A range of published models will be studied alongside write and workshop exercises and students will develop close-reading skills. Two portfolios of creative work cover all four genres, based on work begun in seminars.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 0, "required": 60, "flags": {} },
+      { "type": 0, "required": 45, "departments": ["English"], "flags": {} },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH252"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3656,
+    "name": "ENGLISH329",
+    "title": "Literary Theory and Critical Practice",
+    "desc": "Examines the concerns and methods of contemporary criticism through a selection of key concepts central to the study of literature. We explore the history of these concepts, the theoretical issues they raise, and the reading strategies they permit. The emphasis is on literary theory as a resource that opens out possibilities for critical practice.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["English"],
+        "stage": 2,
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH229", "ENGLISH230"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3657,
+    "name": "ENGLISH330",
+    "title": "Early Texts, Modern Inventions",
+    "desc": "A study of key works and contexts of selected medieval and early modern writers, including Chaucer, Shakespeare, Milton, and Behn. Offers a compact history of literary engagements with important social issues that arose in a period notable for revolution and reform; also develops knowledge of literary forms and trends that are historically important, but, in this period, relatively new.",
+    "faculties": ["Arts"],
+    "department": "English",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["English"],
+        "stage": 2,
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["ENGLISH214", "ENGLISH351"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3658,
+    "name": "ENGSCI344",
+    "title": "Computational Design for Physical Systems",
+    "desc": "Computational engineering solutions to problems involving complex physical systems, using numerical tools commonly used in engineering practice. This will develop skills in: analysing complexity and selecting an appropriate model representation of the physical problem; choosing the correct computational tool with which to solve the model; designing and executing appropriate numerical experiments using the chosen tool; validating, interpreting and communicating the simulation results.",
+    "faculties": ["Engineering"],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["BIOMENG321", "ENGSCI343"],
+        "flags": {}
+      },
+      { "type": 0, "required": 0, "papersExcluded": ["ENGSCI746"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3659,
+    "name": "ENVENG200",
+    "title": "Fundamentals of Environmental Engineering",
+    "desc": "Introduction to environmental engineering principles. Role of environmental engineers in the twenty-first century. Environmental measurements, environmental standards and impact assessment. Material mass balance. Drinking water, wastewater and stormwater treatment. Air quality parameters. Solid waste management. Sustainability. Environmental Impact Assessment.",
+    "faculties": ["Engineering"],
+    "department": "Environmental Engineering",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["ENGGEN140"], "flags": {} },
+      { "type": 0, "required": 0, "papersExcluded": ["ENVENG244"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3660,
+    "name": "ENVENG300",
+    "title": "Natural and Built Environment Processes",
+    "desc": "Chemical and Biological treatment processes. Surface water quality modelling. Soil chemistry. Contaminant fate and transport in soil and groundwater. Contaminated sites remediation.",
+    "faculties": ["Engineering"],
+    "department": "Environmental Engineering",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["ENVENG200"], "flags": {} },
+      { "type": 0, "required": 0, "papersExcluded": ["ENVENG341"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3661,
+    "name": "ENVENG331",
+    "title": "Three Waters: Quality and Treatment",
+    "desc": "Drinking-water treatment, stormwater and agricultural runoffs, biological wastewater treatment, small-scale water treatment systems, nutrient removal, micropollutants, emerging contaminants, water quality standards.",
+    "faculties": ["Engineering"],
+    "department": "Environmental Engineering",
+    "points": 15,
+    "stage": 3
+  },
+  {
+    "id": 3662,
+    "name": "ENVSCI399",
+    "title": "Capstone: Environmental Science",
+    "desc": "Students will engage with the research process, as practised in environmental science. Independent or small group research projects will be undertaken under the guidance of an academic mentor. Students will design and complete an independent research project and communicate their findings. The emphasis is on research skills and assisting students in developing and implementing their independent academic research project.",
+    "faculties": ["Science"],
+    "department": "Environmental Science",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "stage": 3,
+            "departments": ["Environmental Science"]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 0,
+                "required": 15,
+                "flags": {},
+                "stage": 3,
+                "departments": ["Environmental Science"]
+              },
+              {
+                "type": 0,
+                "required": 30,
+                "flags": {},
+                "stage": 3,
+                "faculties": ["Science"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3663,
+    "name": "FINEARTS220",
+    "title": "Nga Toi Taketake: Fibre and Textile",
+    "desc": "Engages students with materials and methods of making that are indigenous to Aotearoa. Explores concepts, methods and techniques of Te Ao M\u0101ori through the development and creation of contemporary fibre and textile-based artworks. Through an exploration of practices such as tukutuku, students will consider how collaboration, pattern, symbolism and whanaungatanga can be embedded in artworks.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3664,
+    "name": "FINEARTS221",
+    "title": "Nga Toi Taketake: Objects",
+    "desc": "Engages students with materials and methods of making that are indigenous to Aotearoa. Explores concepts, methods and techniques of Te Ao M\u0101ori through the development and creation of contemporary artworks using materials such as wood, clay, stone, and shell.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3665,
+    "name": "FINEARTS222",
+    "title": "Printed Matter: Printmaking",
+    "desc": "Explores contemporary printed matter. Students will work with a range of traditional printmaking technologies that may include monoprint, screen print, woodcut, and photogravure as well as expanded, experimental processes using digital and laser cutting technologies.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3666,
+    "name": "FINEARTS223",
+    "title": "Printed Matter: Publication",
+    "desc": "Introduces students to print publication as a site of contemporary practice exploring ways in which artists, designers, and activists have made use of the printed form as a social medium. Students will experiment with the format and materiality of printed media, and the experience of viewing, through the production of self-published works such as artist\u2019s books, posters, and zines. Technical workshops will develop skills in digital and hand-made print and production methods.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3667,
+    "name": "FINEARTS224",
+    "title": "Time-Based: Digital Film",
+    "desc": "Offers a practical exploration of digital film production. Students will learn camera techniques and editing skills to support the development of experimental visual stories while learning how digital workflow and project management can affect a creative outcome. Students will work both collaboratively and individually, using a range of filmmaking equipment and editing software to make short films.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3668,
+    "name": "FINEARTS225",
+    "title": "Time-Based: Audio-Visual Installation",
+    "desc": "Explores the installation aspect of making audio-visual time-based artworks. Students will consider what happens to audio-visual work once it leaves the computer including how artworks are rendered in physical space for viewers to engage with. Students will learn the basics of audio-video installation practices and experiment with audio visual installations.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3669,
+    "name": "FINEARTS226",
+    "title": "Photography: Digital Photography",
+    "desc": "Covers the conceptual and practical possibilities of digital photography. Students will experiment with a wide range of image-making technologies including SLR digital cameras. Lighting considerations and a range of options for printing digital photos will be explored. Contemporary photographic practices will be covered within the context of global image circulation.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3670,
+    "name": "FINEARTS227",
+    "title": "Photography: Analogue Photography",
+    "desc": "Provides students with an overview of analogue photographic processes. Students will gain skills in darkroom photography, including a practical understanding of film camera technologies, developing and printing processes, and the use of darkroom techniques to refine and manipulate photographic imagery.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3671,
+    "name": "FINEARTS228",
+    "title": "Painting: Materiality and Process",
+    "desc": "Considers the various ways in which actions, processes, and materials can shape a painting practice. Covers a range of painterly actions and a self-generated list of \u2018paint-related\u2019 verbs (to roll, to smudge, to scrape). Students will create a \u2018catalogue\u2019 of marks and manipulations of paint. They will then develop these ideas through a studio practice which explores abstraction, materiality, and considerations of form. A broad range of traditional, modern and expanded paint properties and mediums will be considered.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3672,
+    "name": "FINEARTS229",
+    "title": "Painting: Painted Images",
+    "desc": "Explores contemporary techniques of still life and representational painting as a means of re-thinking visual histories. Students will gather and arrange source materials and object references and explore a range of painted responses. Emphasises the construction and preparation of supports and surfaces, colour theory, and the methods and mediums that support painting practice.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3673,
+    "name": "FINEARTS230",
+    "title": "Sculpture: Constructing and Fabricating",
+    "desc": "Based in the metal and wood workshops, this course will guide students in the exploration of materials and construction processes. Develop sculptural works in metal or wood. Students will use tools and techniques such as cutting, joining and welding.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3674,
+    "name": "FINEARTS231",
+    "title": "Sculpture: Shaping and Casting",
+    "desc": "Engages with tactile processes of object-making and reproduction to create works of contemporary art using clay, wax, and other materials. Students will make reproductions of their handmade objects using a range of casting processes and explore how multiples impact the form and content of artworks.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3675,
+    "name": "FINEARTS232",
+    "title": "Performance: Communication, Identity and Community",
+    "desc": "Focuses on performance art as a means of communication. Examines the ways in which performance can be integral to an artistic and cultural identity, contemporary life, and community.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3676,
+    "name": "FINEARTS233",
+    "title": "Performance: Action/Documentation",
+    "desc": "Considers how documentation effects our understanding of performance art and what might be done to retain and communicate the ephemeral effects of a passing event. Students explore their own performance practice and develop appropriate methods of documentation including video, photography, drawing, and sound recording. Students will work both collaboratively and individually, using documentation as a visual and conceptual tool.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3677,
+    "name": "FINEARTS234",
+    "title": "Creative Careers: Pathways",
+    "desc": "Emphasises the practical aspects of establishing a career as a creative practitioner. Covers writing proposals, applications, artist\u2019s statements, and other practical tools for a creative career. Focuses on the ability to communicate ideas effectively to peers and professional networks.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3678,
+    "name": "FINEARTS235",
+    "title": "Creative Careers: Making Exhibitions",
+    "desc": "Students will consider the types of roles and structures that exist in contemporary art worlds, with a focus on curatorial practice and exhibition making from the perspective of the artist. Engaging with the local art world, students will develop a critically informed exhibition proposal for a real-world context.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3679,
+    "name": "FINEARTS240",
+    "title": "Indigeneity and Culture: Ko wai au?",
+    "desc": "Encourages the development and creation of artworks that explore whakapapa, whakawhanaungatanga, genealogy, and relationality as the foundation of creative practice in the contexts of Aotearoa and Te-Moana-Nui-a-Kiwa. Related indigenous methodologies and concepts will be explored.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3680,
+    "name": "FINEARTS241",
+    "title": "Indigeneity and Culture: Power and Place",
+    "desc": "Explores and examines the ongoing impact of colonisation, imperialism, and migration through art making. Related indigenous methodologies and concepts will be explored.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3681,
+    "name": "FINEARTS242",
+    "title": "Image, Object and Materiality: What is an Image?",
+    "desc": "Addresses image-making in a digital world. Explores the relation between the fabrication of individual images and their circulation through mass media using different mediums. Reflection on the different ways artists might embrace or subvert the profusion of internet imagery.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3682,
+    "name": "FINEARTS243",
+    "title": "Image, Object and Materiality: What is an Object?",
+    "desc": "Addresses object-making in a digital world. Responds to the immaterial condition of internet culture, students will generate sculptural objects that exist in real space. Reflection on materiality and mediation in contemporary culture.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3683,
+    "name": "FINEARTS244",
+    "title": "Embodiment, Identity and Agency: Art and Audience",
+    "desc": "Explores the role of the audience in art and examines the work of artists and writers who have challenged assumptions about audience. Students will make creative work with a particular audience in mind using their own choice of means and/or modes of encounter. They will explore how to negotiate the ethics of working with others, including working with mana whenua.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3684,
+    "name": "FINEARTS245",
+    "title": "Embodiment, Identity and Agency: Art and the Self",
+    "desc": "How is identity produced? Explores key concepts of fluidity, intersectionality, body image, fashion, gender and persona, in relation to photography, film, art, and fashion.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3685,
+    "name": "FINEARTS246",
+    "title": "Systems, Ecologies and Environments: Art in the Anthropocene",
+    "desc": "Students will undertake a studio art project that responds to the challenges of the Anthropocene and climate change. The course explores related art and ideas from Aotearoa and overseas.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3686,
+    "name": "FINEARTS247",
+    "title": "Systems, Ecologies and Environments: Embodied Nature",
+    "desc": "Explores our place as a species within a broader ecological framework. Enables students to reflect on the limitations proposed by ways of thinking that separate self from world. Through studio practice and artistic research, develops an enhanced awareness of and sensitivity to living systems.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3687,
+    "name": "FINEARTS248",
+    "title": "Technology and Material Futures: Mixed Realities",
+    "desc": "Considers virtual and tactile methods of production in contemporary art. Investigates the tension where the physical and virtual worlds are woven together. In mixed realities, the line between analogue and digital artmaking is blurred. This course provides an opportunity to experiment with technologies which might include 3D printing, real-time and interactive technologies, laser cutting, digital casting, and 3D scanning.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3688,
+    "name": "FINEARTS249",
+    "title": "Technology and Material Futures: World-making",
+    "desc": "Focuses on the idea that a key driver of creative practice is the seeking out and imagining of alternative models for living, this course provides students with the opportunity to engage in world-making. Students generate and produce artworks that explore new worlds. Provides an understanding of how material affects and conceptual propositions work together to produce meaning in an artwork.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 4,
+            "flags": {},
+            "papers": [
+              "FINEARTS101",
+              "FINEARTS102",
+              "FINEARTS103",
+              "FINEARTS104"
+            ]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 2,
+                "flags": {},
+                "papers": ["FINEARTS110", "FINEARTS113"]
+              },
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FINEARTS111", "FINEARTS112"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3689,
+    "name": "FINEARTS320",
+    "title": "Creative Practice Research Methodologies",
+    "desc": "What does it mean to consider creative practice as research? Examines the history and theory of contemporary art\u2019s relationship to the academy, focused on the practical implications of framing art-making as a capstone project. Develops academic research skills culminating in a research proposal.",
+    "faculties": ["Creative Arts And Industries", "Fine Arts"],
+    "department": "Fine Arts",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 3,
+            "flags": {},
+            "papers": ["FINEARTS204", "FINEARTS207", "FINEARTS208"]
+          },
+          {
+            "type": 1,
+            "required": 3,
+            "flags": {},
+            "papers": ["FINEARTS204", "FINEARTS207", "FINEARTS212"]
+          },
+          {
+            "type": 1,
+            "required": 3,
+            "flags": {},
+            "papers": ["FINEARTS204", "FINEARTS208", "FINEARTS209"]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 4,
+                "flags": {},
+                "papers": [
+                  "FINEARTS110",
+                  "FINEARTS111",
+                  "FINEARTS112",
+                  "FINEARTS113"
+                ]
+              },
+              {
+                "type": 0,
+                "required": 90,
+                "flags": {},
+                "papers": [
+                  "FINEARTS220",
+                  "FINEARTS221",
+                  "FINEARTS222",
+                  "FINEARTS223",
+                  "FINEARTS224",
+                  "FINEARTS225",
+                  "FINEARTS226",
+                  "FINEARTS227",
+                  "FINEARTS228",
+                  "FINEARTS229",
+                  "FINEARTS230",
+                  "FINEARTS321",
+                  "FINEARTS232",
+                  "FINEARTS233",
+                  "FINEARTS234",
+                  "FINEARTS235",
+                  "FINEARTS240",
+                  "FINEARTS241",
+                  "FINEARTS242",
+                  "FINEARTS243",
+                  "FINEARTS244",
+                  "FINEARTS245",
+                  "FINEARTS246",
+                  "FINEARTS247",
+                  "FINEARTS248",
+                  "FINEARTS249",
+                  "FINEARTS250"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3690,
+    "name": "FOODSCI100",
+    "title": "Foundations of Food and Nutrition",
+    "desc": "Introduces students to the multifaceted nature of Food Science and Nutrition with a focus on the interplay between food, nutrition and health. Introduce the chemical, biological, sensory, and processing aspects of foods. Societal, economic, legislative and regulatory aspects will also be introduced. Concepts will be illustrated using real food systems with a focus on lipids, water and vitamin C.",
+    "faculties": ["Science"],
+    "department": "Food Science",
+    "points": 15,
+    "stage": 1,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["FOODSCI201"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3691,
+    "name": "FOODSCI110",
+    "title": "Concepts in Food and Nutrition",
+    "desc": "Introduces students to the multifaceted nature of food science and nutrition with a focus on the interplay between food, nutrition and health. Provides general insights relating food molecules to food function and health. Societal, economic, legislative and regulatory aspects will also be explored. No background in science is assumed.",
+    "faculties": ["Science"],
+    "department": "Food Science",
+    "points": 15,
+    "stage": 1,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["FOODSCI100"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3692,
+    "name": "FOODSCI200",
+    "title": "Food Composition and Nutrition",
+    "desc": "Covers the composition and structure of food. The approach will extend the FOODSCI 100 content from lipids to proteins, carbohydrates and key minor food components. There will be a focus on the molecular structure of the major food components and how they relate to the physical, sensory and nutritional properties of foods.",
+    "faculties": ["Science"],
+    "department": "Food Science",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["BIOSCI106", "CHEM110", "FOODSCI100"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["FOODSCI201"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3693,
+    "name": "FOODSCI202",
+    "title": "Food Preservation",
+    "desc": "Food is spoilt by microbiological, chemical, biochemical and physical processes. It is important to understand the mechanism of spoilage caused by each of these processes in order to prevent or minimise such degradation. This course includes fundamental principles covering the preservation and processing of different food products. The principles involved in the development of food safety and HACCP programmes, as well as New Zealand food laws are also covered.",
+    "faculties": ["Science"],
+    "department": "Food Science",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["FOODSCI200", "FOODSCI201"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MATHS108", "MATHS110"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["FOODSCI302"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3694,
+    "name": "FOODSCI306",
+    "title": "Principles of Food Processing",
+    "desc": "The fundamental principles of freezing and thawing, thermal processing and canning, fermentation and dehydration are studied. The fundamental areas of engineering relevant for food processing such as heat and mass transfer, are covered. Process impact on food safety, quality and preservation is also discussed.",
+    "faculties": ["Science"],
+    "department": "Food Science",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["FOODSCI202"], "flags": {} },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["CHEMMAT756"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3695,
+    "name": "FOODSCI310",
+    "title": "Theory of Food Product Design",
+    "desc": "Examines the science underpinning human sensory perception and food preferences and how this science interfaces with the design and development of food products as well as the fundamental aspects of food product development.",
+    "faculties": ["Science"],
+    "department": "Food Science",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["FOODSCI100", "FOODSCI200"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["STATS101", "STATS108"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["FOODSCI303", "FOODSCI304"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3696,
+    "name": "FOODSCI399",
+    "title": "Capstone: Food and Nutrition",
+    "desc": "Food and Nutrition pathway students will work together in groups to identify and develop a new food product or food system that addresses or responds to a nutritional issue. Students will focus on the interplay between the nutritional aspects of the product or system and the sensory, stability, convenience, cost, regulatory and processing aspects of the product.",
+    "faculties": ["Science"],
+    "department": "Food Science",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          { "type": 1, "required": 1, "flags": {}, "papers": ["FOODSCI303"] },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              {
+                "type": 1,
+                "required": 1,
+                "flags": {},
+                "papers": ["FOODSCI310"]
+              },
+              {
+                "type": 0,
+                "required": 30,
+                "flags": {},
+                "stage": 3,
+                "departments": ["Food Science and Nutrition"]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3697,
+    "name": "GENDER101",
+    "title": "Gender: Global and Local",
+    "desc": "Develops an understanding of key concepts that underlie gender analysis, and how they are expressed in politics, culture and society. Examines the meaning of gender across a range of subjects and issues on the global stage and in our everyday lives.",
+    "faculties": ["Arts", "Health Sciences"],
+    "department": "Gender Studies",
+    "points": 15,
+    "stage": 1,
+    "requirements": [
+      { "type": 0, "required": 0, "papersExcluded": ["GENDER100"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3698,
+    "name": "GENDER101G",
+    "title": "Gender: Global and Local",
+    "desc": "Develops an understanding of key concepts that underlie gender analysis, and how they are expressed in politics, culture and society. Examines the meaning of gender across a range of subjects and issues on the global stage and in our everyday lives.",
+    "faculties": ["Arts"],
+    "department": "Gender Studies",
+    "points": 15,
+    "stage": 1,
+    "requirements": [
+      { "type": 0, "required": 0, "papersExcluded": ["GENDER100"], "flags": {} }
+    ],
+    "isActive": true,
+    "general": true
+  },
+  {
+    "id": 3699,
+    "name": "GENDER301",
+    "title": "Gender, Sex and Commodification",
+    "desc": "Focuses on current and controversial issues at the intersections of sex and gender and their co-construction. Issues will be approached from contemporary feminist and queer theory perspectives. Various topics are critically examined in both theoretical and practical terms, such as co-constructions of gender and sexualities in pornography and advertising, technologies and reproduction, representations of transgender bodies/identities, and the selling of cybersex.",
+    "faculties": ["Arts"],
+    "department": "Gender Studies",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["Communication", "Gender Studies", "Sociology"],
+        "stage": 2,
+        "flags": {}
+      },
+      { "type": 0, "required": 0, "papersExcluded": ["SOCIOL324"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3700,
+    "name": "GEOG106",
+    "title": "Geographies of the Pacific",
+    "desc": "Examines the diverse geographies of Pacific peoples, their worldviews and ways of living. Case studies are used to place these geographies in entangled environmental, economic, historical, social, cultural and political contexts and to identify contradictory dynamics of change.",
+    "faculties": ["Science"],
+    "department": "Geography",
+    "points": 15,
+    "stage": 1,
+    "isActive": true
+  },
+  {
+    "id": 3701,
+    "name": "GEOG308",
+    "title": "Geopolitics and Indigenous Rights",
+    "desc": "Examines Indigenous peoples as agents of geopolitical change. Introduces colonial/decolonial geographies to demonstrate the geopolitical implications of Indigenous ways of knowing, being and doing. Key themes include: territory and geopolitics; Indigenous identities, subject-formation and intersectionality; Indigenous knowledges, rights and political agency; and, Indigenous relationships with non-Indigenous peoples.",
+    "faculties": ["Science"],
+    "department": "Geography",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 0, "required": 30, "stage": 2, "flags": {} },
+      { "type": 0, "required": 0, "papersExcluded": ["GEOG312"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3702,
+    "name": "GEOG335",
+    "title": "Applied Physical Geography",
+    "desc": "Examines the challenges of \u2018doing science\u2019 in the real world. With particular emphasis on climate, fluvial and coastal processes, the types of data, knowledge and information needed for decision making in environmental contexts are examined. Examines the ways human activities effect, and are affected by, the environmental settings of humans. Seeks improved understanding, and prediction, of the world around humans framed as both a resource and hazard.",
+    "faculties": ["Science"],
+    "department": "Geography",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "departments": ["Geography"],
+        "stage": 2,
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["GEOG331", "GEOG332"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3703,
+    "name": "GEOG342",
+    "title": "Technology, Power and Social Change",
+    "desc": "Technology, algorithms, and Big data are changing our relationships with reality, space and power. This course explores how we know each other, society, and ourselves in this period of unprecedented technological change",
+    "faculties": ["Science"],
+    "department": "Geography",
+    "points": 15,
+    "stage": 3,
+    "requirements": [{ "type": 0, "required": 45, "stage": 2, "flags": {} }],
+    "isActive": true
+  },
+  {
+    "id": 3704,
+    "name": "GEOG399",
+    "title": "Capstone: Geography",
+    "desc": "An engagement with the research process, as practised in geography. Students will undertake an independent research project and communicate their findings, with due attention to research design, methodology, research ethics, information sources, field practise, data analysis, and research communication. Independent or small group research projects may involve residential or local fieldwork, laboratory analysis, desktop analysis or other research activities.",
+    "faculties": ["Science"],
+    "department": "Geography",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["GEOG250"], "flags": {} },
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["Geography"],
+        "stage": 3,
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3705,
+    "name": "GEOPHYS213",
+    "title": "The Geophysical Environment",
+    "desc": "This course explores the physical principles governing \u2013 and the connections between \u2013 the Earth\u2019s atmosphere, oceans and interior. Topics include the structure of the solid earth, ocean currents and tides, and fundamental aspects of weather and climate.",
+    "faculties": ["Science"],
+    "department": "Geophysics",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["PHYSICS120", "PHYSICS121", "PHYSICS150", "PHYSICS160"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 1,
+            "flags": {},
+            "papers": ["ENGSCI111", "MATHS108", "MATHS150", "MATHS153"]
+          },
+          {
+            "type": 1,
+            "required": 2,
+            "flags": {},
+            "papers": ["MATHS120", "MATHS130"]
+          }
+        ]
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["PHYSICS213"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3706,
+    "name": "GEOPHYS310",
+    "title": "Physics of the Earth",
+    "desc": "Covers the physics of the solid earth from the surface to the core. Specifically, the course explores the Earth\u2019s gravitational field (including the rotation and figure of the earth), seismology, heat flow, the magnetic and electromagnetic field to unravel the properties, processes, and structure of the Earth\u2019s interior.",
+    "faculties": ["Science"],
+    "department": "Geophysics",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["EARTHSCI103", "EARTHSCI120", "GEOLOGY103"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["GEOPHYS213", "PHYSICS213"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI211", "MATHS253", "MATHS260", "PHYSICS211"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["GEOPHYS330"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3707,
+    "name": "GEOPHYS311",
+    "title": "Atmosphere, Ocean, and Climate Physics",
+    "desc": "Examines the physical and dynamic processes shaping the atmosphere and oceans, covering the thermodynamics of the climate system and the dynamics of global atmospheric and oceanic circulations. Explores the fundamental physical processes that control Earth\u2019s climate and investigates the dilemmas they present in our current understanding of climate.",
+    "faculties": ["Science"],
+    "department": "Geophysics",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["PHYSICS201", "PHYSICS231"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["GEOPHYS213", "PHYSICS213"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI211", "MATHS253", "MATHS260", "PHYSICS211"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["GEOPHYS331"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3708,
+    "name": "GEOPHYS399",
+    "title": "Capstone: Geophysics",
+    "desc": "Students will employ core methodologies (experimental, observational, computational, numerical) to investigate some aspect of a key geophysical phenomenon, and relate their findings to contemporary research in the field, considering wider societal aspects and issues. Students will develop their skills in communication, critical thinking, teaching and creative problem solving.",
+    "faculties": ["Science"],
+    "department": "Geophysics",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["GEOPHYS310", "GEOPHYS311", "GEOPHYS361"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["EARTHSCI399", "PHYSICS399"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3709,
+    "name": "GERMAN106",
+    "title": "Discover Germany Through Film",
+    "desc": "Introduces students to key issues and developments in German culture, history and society through the medium of film. Surveying the years between 1945 and the present, films will focus on the reconstruction of Germany after WWII, the division and reunification of Germany as well as on current issues around migration, identity and diversity in the German-speaking world.",
+    "faculties": ["Arts"],
+    "department": "German",
+    "points": 15,
+    "stage": 1,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["GERMAN130", "GERMAN231"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3710,
+    "name": "GERMAN214",
+    "title": "Teaching German as a foreign language",
+    "desc": "Provides an overview of teaching and learning German as a second or heritage language. Students gain a solid understanding of German teaching and learning, including concepts and theories behind second language learning, individual differences, learning needs, approaches to strengthen learner autonomy as well as methods and principles of teaching German.",
+    "faculties": ["Arts"],
+    "department": "German",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["GERMAN201"], "flags": {} },
+      { "type": 0, "required": 0, "papersExcluded": ["GERMAN314"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3711,
+    "name": "GERMAN250",
+    "title": "The Holocaust in Literature and Film",
+    "desc": "With a focus on German texts and films pertaining to World War II and the Holocaust, the course charts the development of the ideas and the language of genocide, and the representation of the Holocaust in literature and films.",
+    "faculties": ["Arts"],
+    "department": "German",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      { "type": 0, "required": 30, "faculties": ["Arts"], "flags": {} },
+      { "type": 0, "required": 0, "papersExcluded": ["GERMAN350"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3712,
+    "name": "GERMAN260",
+    "title": "Topics in German Linguistics",
+    "desc": "Focuses on the linguistic fields of German sociolinguistics and German applied linguistics and deepens the understanding of the current linguistic situation in the German speaking area.",
+    "faculties": ["Arts"],
+    "department": "German",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["GERMAN102"], "flags": {} },
+      { "type": 0, "required": 0, "papersExcluded": ["GERMAN360"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id":  3713,
+    "name": "GERMAN314",
+    "title": "Teaching German as a Foreign Language",
+    "desc": "Provides an overview of teaching and learning German as a second or heritage language. Students gain a solid understanding of German teaching and learning, including concepts and theories behind second language learning, individual differences, learning needs, approaches to strengthen learner autonomy as well as methods and principles of teaching German.",
+    "faculties": ["Arts"],
+    "department": "German",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["GERMAN301"], "flags": {} },
+      { "type": 0, "required": 0, "papersExcluded": ["GERMAN214"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id":  3714,
+    "name": "GERMAN331",
+    "title": "German Cinema from Murnau to Riefenstahl",
+    "desc": "A close analysis of film from the Weimar Republic and the Third Reich as seen against the political and social upheavals of the time with an emphasis on the role of gender and the portrayal of gender in film.",
+    "faculties": ["Arts"],
+    "department": "German",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["German"],
+        "aboveStage": 1,
+        "flags": {}
+      },
+      { "type": 0, "required": 0, "papersExcluded": ["GERMAN230"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id":  3715,
+    "name": "GERMAN350",
+    "title": "The Holocaust in Literature and Film",
+    "desc": "With a focus on German texts and films pertaining to World War II and the Holocaust, the course charts the development of the ideas and the language of genocide, and the representation of the Holocaust in literature and films.",
+    "faculties": ["Arts"],
+    "department": "German",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "departments": ["German"],
+        "stage": 2,
+        "flags": {}
+      },
+      { "type": 0, "required": 0, "papersExcluded": ["GERMAN250"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id":  3716,
+    "name": "GERMAN360",
+    "title": "Topics in German Linguistics",
+    "desc": "Focuses on the linguistic fields of German sociolinguistics and German applied linguistics and deepens the understanding of the current linguistic situation in the German speaking area.",
+    "faculties": ["Arts"],
+    "department": "German",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["GERMAN201"], "flags": {} },
+      { "type": 0, "required": 0, "papersExcluded": ["GERMAN260"], "flags": {} }
+    ],
+    "isActive": true
+  },
+  {
+    "id":  3717,
+    "name": "HISTORY205",
+    "title": "Bloodlands: Global Warfare",
+    "desc": "Asks historical questions about warfare in the modern era. Analyses conflicts and state violence and their impacts on people and their governments in a global setting. Themes include: the causes, course and consequences of warfare; restraint in warfare; ideologies of war and peace; civil war and revolution; imperial warfare; genocide; the human impact and context of war.",
+    "faculties": ["Arts"],
+    "department": "History",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "stage": 1,
+            "departments": ["Global Politics and Human Rights"]
+          },
+          {
+            "type": 0,
+            "required": 2,
+            "flags": {},
+            "complex": [
+              { "type": 0, "required": 30, "flags": {} },
+              {
+                "type": 0,
+                "required": 15,
+                "flags": {},
+                "stage": 1,
+                "departments": ["History"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["HISTORY309"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id":  3718,
+    "name": "HISTORY225",
+    "title": "Samurai and Scholars: Early Modern China and Japan",
+    "desc": "Early modern China and Japan shared not only geographical space in East Asia but also a history of cultural interaction, trade, and an enduring interest in Confucianism as a moral, philosophical, and social framework. This course explores and compares the government, trade, and culture of these two societies with a focus on the structures and patterns of everyday life.",
+    "faculties": ["Arts"],
+    "department": "History",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      { "type": 0, "required": 60, "flags": {} },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": [
+          "HISTORY222",
+          "HISTORY242",
+          "HISTORY322",
+          "HISTORY335",
+          "HISTORY342"
+        ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id":  3719,
+    "name": "HISTORY239",
+    "title": "Medieval Cultures: Faith, Power, Identities",
+    "desc": "Explores the social, cultural, religious and political histories of medieval Europe and its relations with wider worlds. Topics covered may vary from year to year, but will likely include social structures, the place of religious faith, gender relations, power and authority, ethnic identities, conflict and dissent, migrations, literary and artistic expressions, and responses to crises.",
+    "faculties": ["Arts"],
+    "department": "History",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "departments": ["History"],
+        "stage": 1,
+        "flags": {}
+      },
+      { "type": 0, "required": 30, "flags": {} },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": [
+          "HISTORY219",
+          "HISTORY254",
+          "HISTORY268",
+          "HISTORY319",
+          "HISTORY339",
+          "HISTORY354",
+          "HISTORY368"
+        ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id":  3720,
+    "name": "HISTORY256",
+    "title": "Sex and Gender in the Middle Millennium (500-1500CE)",
+    "desc": "A historical study of sex, sexualities and genders in global contexts between c. 500 and c. 1500 CE. This period corresponds with the \u2018medieval\u2019 era in European history but is here extended to encompass global comparisons. Topics include ideas about the body; marital sex; reproduction; abstinence; prostitution and slavery; homosexualities; and trans histories.",
+    "faculties": ["Arts"],
+    "department": "History",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "departments": ["History", "Gender Studies"],
+        "stage": 1,
+        "flags": {}
+      },
+      { "type": 0, "required": 30, "flags": {} },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["HISTORY326"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id":  3721,
+    "name": "HISTORY271",
+    "title": "Atlantic Revolutions",
+    "desc": "Introduces students to early modern Atlantic history. From the mid-16th to the early 19th centuries, revolutionary upheavals in the Netherlands, England, the Americas and France made the Atlantic basin a crucible of global change. Topics include state power and imperial competition; commercial and cultural interconnections; colonisation and conflict; local and transoceanic communication networks; and the experiences of revolutionary change.",
+    "faculties": ["Arts"],
+    "department": "History",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      { "type": 0, "required": 60, "flags": {} },
+      {
+        "type": 0,
+        "required": 0,
+        "papersExcluded": ["HISTORY371"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id":  3722,
+    "name": "CHEM254A",
+    "title": "Modelling Chemical Processes",
+    "desc": "From quantum mechanics to enzyme active sites, statistical analysis to the greenhouse effect, models are essential to our understanding of chemical phenomena. But what makes a good model? How are they developed and tested? After exploring the concept of models and their relationship to the scientific method, students will investigate several currently accepted models used in the chemical sciences.",
+    "faculties": ["Science"],
+    "department": "Chemistry",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["CHEM110", "CHEM120"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": [
+          "MATHS108",
+          "MATHS110",
+          "MATHS130",
+          "MATHS150",
+          "PHYSICS120"
+        ],
         "flags": {}
       }
     ],
