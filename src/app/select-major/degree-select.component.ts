@@ -248,7 +248,7 @@ export class DegreeSelection {
     }
 
   if (this.currentFaculties[0]) {
-    if (this.currentFaculties[0].name === 'Arts') {
+    if (this.currentFaculties[0].name === 'Arts' || this.currentFaculties[0].name === 'Science' ) {
       this.secondMajors = this.departmentService
         .departmentsInFaculty(this.currentFaculties[0])
         .map((department) => {
@@ -536,7 +536,7 @@ export class DegreeSelection {
 
   public getFilteredSecondMajors() {
     this.secondMajors = this.departmentService
-      .getDepartments().filter(v => v.name !== this.currentMajors[0].name)
+    .departmentsInFaculty(this.currentFaculties[0]).filter(v => v.name !== this.currentMajors[0].name)
       .map((secondMajors) => {
         return { value: secondMajors, view: secondMajors.name };
       })
