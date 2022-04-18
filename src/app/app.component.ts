@@ -1,14 +1,16 @@
 /*
  * Angular 2 decorators and services
  */
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AddCourseService } from './add-course';
 import * as services from './services';
 import { AppHeader } from './app.header.component';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
-
+declare let gtag: Function;
 
 const mapValuesToArray = obj => Object.keys(obj).map(key => obj[key]);
 
@@ -33,7 +35,7 @@ require('./app.component.global.scss');
   styleUrls: [('./app.component.scss')],
   templateUrl: './app.component.html'
 })
-export class App {
+export class App implements OnInit {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';
   public name = 'Angular 2 Webpack Starter';
   public url = 'https://twitter.com/AngularClass';
@@ -44,12 +46,28 @@ export class App {
   constructor(
     private db_courses: AngularFireDatabase,
     private db: AngularFirestore,
-    private appHeader: AppHeader
+    private appHeader: AppHeader,
+    private router: Router
 
     
     ) {
       this.isMobile = appHeader.mobile;
     }
+
+    ngOnInit() {
+      this.setUpAnalytics();
+    }
+
+    setUpAnalytics() {
+      this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+          .subscribe((event: NavigationEnd) => {
+              gtag('config', 'G-MN927X4H5S',
+                  {
+                      page_path: event.urlAfterRedirects
+                  }
+              );
+          });
+  }
 }
 
 

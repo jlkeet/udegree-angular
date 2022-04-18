@@ -4,6 +4,8 @@
 import { enableDebugTools, disableDebugTools } from '@angular/platform-browser';
 import { enableProdMode, ApplicationRef } from '@angular/core';
 
+import { getAnalytics } from "firebase/analytics";
+
 
 export const environment = {
   production: false,
