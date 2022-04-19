@@ -596,21 +596,9 @@
         "papers": ["ENGGEN204"]
       },
       {
-        "type": 0,
-        "required": 195,
-        "faculties": ["Engineering"],
-        "aboveStage": 2
-      },
-      {
         "type": 1,
         "required": 1,
         "papers": ["ENGGEN403"]
-      },
-      {
-        "type": 0,
-        "required": 90,
-        "faculties": ["Engineering"],
-        "aboveStage": 4
       }
     ],
     "flags": ["Dbl Mjr"]

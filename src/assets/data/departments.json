@@ -3705,7 +3705,7 @@
     "requirements": [
       {
         "type": 0,
-        "required": 15,
+        "required": 1,
         "papers": ["BIOMENG299", "ENGGEN299"]
       },
       {
@@ -3727,8 +3727,8 @@
         ]
       },
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGGEN499"]
       },
       {
@@ -3748,8 +3748,16 @@
       }
     ],
     "conjointRequirements": [
-      {
-      }
+        {
+          "type": 0,
+          "required": 195,
+          "papers": ["BIOMENG221", "BIOMENG241", "BIOMENG261", "BIOSCI107", "ENGGEN204", "ENGSCI211", "ENGSCI233", "MEDSCI142", "BIOMENG321", "BIOMENG341", "ENGGEN303", "ENGSCI314", "ENGSCI331", "MEDSCI205", "MEDSCI309"]
+        },
+        {
+          "type": 0,
+          "required": 90,
+          "papers": ["BIOMENG791", "BIOMENG771", "CHEMMAT723", "CHEMMAT753", "CHEMMAT754", "CHEMMAT757", "COMPSYS705", "ELECTENG722", "ELECTENG733", "ENGSCI711", "ENGSCI712", "ENGSCI740", "ENGSCI741", "ENGSCI753", "ENGSCI772", "MATHS764", "MATHS765", "MECHENG743", "MEDSCI703", "MEDSCI737"]
+        }
     ]
   },
   {
@@ -3757,8 +3765,8 @@
     "faculties": ["Engineering"],
     "requirements": [
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["CHEMMAT299", "ENGGEN299"]
       },
       {
@@ -3780,8 +3788,8 @@
         ]
       },
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGGEN499"]
       },
       {
@@ -3807,6 +3815,14 @@
     ],
     "conjointRequirements": [
       {
+        "type": 0,
+        "required": 195,
+        "papers": ["CHEMMAT201", "CHEMMAT202", "CHEMMAT203", "CHEMMAT204", "CHEMMAT205", "CHEMMAT206", "ENGGEN204", "ENGSCI211", "CHEMMAT301", "CHEMMAT302", "CHEMMAT303", "CHEMMAT305", "CHEMMAT306", "ENGGEN303", "ENGSCI311"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["CHEMMAT752", "CHEMMAT720", "CHEMMAT723", "CHEMMAT724", "CHEMMAT725", "CHEMMAT753", "CHEMMAT754", "CHEMMAT755", "CHEMMAT756", "CHEMMAT757", "CHEMMAT758", "CHEMMAT759", "CHEMMAT760", "CHEMMAT763"]
       }
     ]
   },
@@ -3815,8 +3831,8 @@
     "faculties": ["Engineering"],
     "requirements": [
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["CIVIL299", "ENGGEN299"]
       },
       {
@@ -3838,8 +3854,8 @@
         ]
       },
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGGEN499"]
       },
       {
@@ -3860,6 +3876,14 @@
     ],
     "conjointRequirements": [
       {
+        "type": 0,
+        "required": 195,
+        "papers": ["CHEMMAT201", "CHEMMAT202", "CHEMMAT203", "CHEMMAT204", "CHEMMAT205", "CHEMMAT206", "ENGGEN204", "ENGSCI211", "CHEMMAT301", "CHEMMAT302", "CHEMMAT303", "CHEMMAT305", "CHEMMAT306", "ENGGEN303", "ENGSCI311"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["CIVIL700", "CIVIL722", "CIVIL726", "CIVIL729", "CIVIL731", "CIVIL733", "CIVIL735", "CIVIL736", "CIVIL741", "CIVIL750", "CIVIL782", "ENVENG701", "ENVENG740", "ENVENG747"]
       }
     ]
   },
@@ -3868,8 +3892,8 @@
     "faculties": ["Engineering"],
     "requirements": [
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["COMPSYS299", "ENGGEN299"]
       },
       {
@@ -3905,8 +3929,8 @@
         ]
       },
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGGEN499"]
       },
       {
@@ -3937,6 +3961,14 @@
     ],
     "conjointRequirements": [
       {
+        "type": 0,
+        "required": 195,
+        "papers": ["COMPSYS201", "COMPSYS209", "ELECTENG291", "ELECTENG292", "ENGGEN204", "ENGSCI211", "SOFTENG281", "ELECTENG204", "SOFTENG283", "SOFTENG284", "COMPSYS301", "COMPSYS305", "ENGGEN303", "ENGSCI313", "COMPSYS303", "COMPSYS304", "COMPSYS306", "COMPSYS302", "ELECTENG305", "ELECTENG331", "ELECTENG332", "SOFTENG325", "SOFTENG350", "SOFTENG364"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["COMPSYS701", "COMPSYS723", "COMPSYS726", "COMPSYS704", "COMPSYS705", "COMPSYS725", "COMPSYS710", "COMPSYS711", "COMPSYS712", "COMPSYS713", "COMPSYS714", "COMPSYS715", "COMPSYS721", "COMPSYS722", "COMPSYS727", "ELECTENG704", "ELECTENG706", "ELECTENG722", "ELECTENG726", "ELECTENG732", "ELECTENG733", "ELECTENG734", "SOFTENG701", "SOFTENG751", "SOFTENG761"]
       }
     ]
   },
@@ -3945,8 +3977,8 @@
     "faculties": ["Engineering"],
     "requirements": [
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ELECTENG299", "ENGGEN299"]
       },
       {
@@ -3982,8 +4014,8 @@
         ]
       },
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGGEN499"]
       },
       {
@@ -4004,6 +4036,14 @@
     ],
     "conjointRequirements": [
       {
+        "type": 0,
+        "required": 195,
+        "papers": ["COMPSYS201", "ELECTENG204", "ELECTENG209", "ELECTENG291", "ENGGEN204", "ENGSCI211", "SOFTENG281", "ELECTENG292", "SOFTENG283", "SOFTENG284", "ELECTENG310", "ELECTENG311", "ENGGEN303", "ENGSCI313", "ELECTENG305", "ELECTENG309", "ELECTENG331", "ELECTENG332", "COMPSYS302", "COMPSYS303", "COMPSYS304", "COMPSYS305", "COMPSYS306", "ELECTENG307", "SOFTENG325", "SOFTENG350", "SOFTENG364"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["ELECTENG770", "COMPSYS705", "COMPSYS723", "COMPSYS724", "COMPSYS725", "COMPSYS726", "COMPSYS727", "ELECTENG701", "ELECTENG703", "ELECTENG704", "ELECTENG706", "ELECTENG721", "ELECTENG722", "ELECTENG724", "ELECTENG726", "ELECTENG731", "ELECTENG732", "ELECTENG733", "ELECTENG734", "ELECTENG735", "ELECTENG736", "ELECTENG738", "SOFTENG753"]
       }
     ]
   },
@@ -4012,8 +4052,8 @@
     "faculties": ["Engineering"],
     "requirements": [
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGSCI299", "ENGGEN299"]
       },
       {
@@ -4042,8 +4082,8 @@
         ]
       },
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGGEN499"]
       },
       {
@@ -4064,6 +4104,14 @@
     ],
     "conjointRequirements": [
       {
+        "type": 0,
+        "required": 195,
+        "papers": ["BIOMENG221", "ENGGEN204", "ENGSCI211", "ENGSCI233", "ENGSCI255", "ENGSCI263", "BIOMENG241", "COMPSCI225", "ENGSCI205", "MECHENG211", "SOFTENG281", "STATS210", "ENGGEN303", "ENGSCI314", "ENGSCI331", "ENGSCI343", "ENGSCI344", "ENGSCI355", "ENGSCI391", "BIOMENG341", "ENGSCI309"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["ENGSCI773", "BIOMENG771", "ENGSCI701", "ENGSCI711", "ENGSCI712", "ENGSCI721", "ENGSCI740", "ENGSCI741", "ENGSCI742", "ENGSCI745", "ENGSCI753", "ENGSCI755", "ENGSCI760", "ENGSCI761", "ENGSCI762", "ENGSCI763", "ENGSCI768", "GEOTHERM785"]
       }
     ]
   },
@@ -4072,8 +4120,8 @@
     "faculties": ["Engineering"],
     "requirements": [
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["MECHENG299", "ENGGEN299"]
       },
       {
@@ -4096,8 +4144,8 @@
         ]
       },
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGGEN499"]
       },
       {
@@ -4118,6 +4166,14 @@
     ],
     "conjointRequirements": [
       {
+        "type": 0,
+        "required": 195,
+        "papers": ["ENGGEN204", "ENGSCI211", "MECHENG211", "MECHENG222", "MECHENG235", "MECHENG236", "MECHENG242", "MECHENG201", "ENGGEN303", "ENGSCI311", "MECHENG311", "MECHENG322", "MECHENG325", "MECHENG334", "MECHENG340", "MECHENG352"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["MECHENG731", "ENGGEN705", "MECHENG707", "MECHENG708", "MECHENG712", "MECHENG713", "MECHENG715", "MECHENG718", "MECHENG722", "MECHENG724", "MECHENG726", "MECHENG743", "MECHENG747", "MECHENG752", "MECHENG754"]
       }
     ]
   },
@@ -4126,8 +4182,8 @@
     "faculties": ["Engineering"],
     "requirements": [
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["MECHTRON299", "ENGGEN299"]
       },
       {
@@ -4150,8 +4206,8 @@
         ]
       },
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGGEN499"]
       },
       {
@@ -4172,6 +4228,14 @@
     ],
     "conjointRequirements": [
       {
+        "type": 0,
+        "required": 195,
+        "papers": ["ENGGEN204", "ENGSCI211", "MECHENG211", "MECHENG222", "MECHENG235", "MECHENG242", "MECHENG270", "MECHENG201", "ENGGEN303", "ENGSCI311", "MECHENG306", "MECHENG313", "MECHENG322", "MECHENG325", "MECHENG370", "MECHENG371"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["MECHENG705", "MECHENG706", "COMPSYS726", "ENGGEN705", "MECHENG707", "MECHENG708", "MECHENG709", "MECHENG712", "MECHENG715", "MECHENG718", "MECHENG722", "MECHENG724", "MECHENG726", "MECHENG735", "MECHENG736", "MECHENG752", "MECHENG754"]
       }
     ]
   },
@@ -4180,8 +4244,8 @@
     "faculties": ["Engineering"],
     "requirements": [
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["SOFTENG299", "ENGGEN299"]
       },
       {
@@ -4228,8 +4292,8 @@
         ]
       },
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGGEN499"]
       },
       {
@@ -4250,6 +4314,14 @@
     ],
     "conjointRequirements": [
       {
+        "type": 0,
+        "required": 195,
+        "papers": ["COMPSYS201", "ENGGEN204", "ENGSCI211", "SOFTENG206", "SOFTENG281", "SOFTENG283", "ELECTENG291", "SOFTENG282", "ELECTENG204", "ELECTENG292", "SOFTENG284", "ENGGEN303", "SOFTENG306", "SOFTENG325", "SOFTENG351", "SOFTENG310", "SOFTENG350", "SOFTENG364", "SOFTENG370", "COMPSCI367", "COMPSCI373", "COMPSYS303", "COMPSYS304", "COMPSYS305", "COMPSYS306", "ELECTENG305", "ELECTENG331", "ELECTENG332", "ENGSCI313"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["SOFTENG770", "COMPSYS705", "COMPSYS723", "COMPSYS726", "ELECTENG733", "ENGSCI760", "SOFTENG701", "SOFTENG702", "SOFTENG710", "SOFTENG711", "SOFTENG715", "SOFTENG750", "SOFTENG751", "SOFTENG752", "SOFTENG753", "SOFTENG754", "SOFTENG761", "SOFTENG762"]
       }
     ]
   },
@@ -4258,8 +4330,8 @@
     "faculties": ["Engineering"],
     "requirements": [
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["STRCTENG299", "ENGGEN299"]
       },
       {
@@ -4282,8 +4354,8 @@
         ]
       },
       {
-        "type": 0,
-        "required": 15,
+        "type": 1,
+        "required": 1,
         "papers": ["ENGGEN499"]
       },
       {
@@ -4304,6 +4376,14 @@
     ],
     "conjointRequirements": [
       {
+        "type": 0,
+        "required": 195,
+        "papers": ["CIVIL200", "CIVIL202", "CIVIL203", "ENGGEN204", "ENGSCI211", "ENVENG200", "STRCTENG200", "STRCTENG201", "CIVIL300", "ENGGEN303", "ENGSCI311", "STRCTENG300", "STRCTENG302", "STRCTENG303", "CIVIL301", "CIVIL302", "CIVIL303", "CIVIL305"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["CIVIL756", "CIVIL790", "ENGGEN403", "STRCTENG710", "CIVIL711", "CIVIL700", "CIVIL722", "CIVIL726", "CIVIL729", "CIVIL731", "CIVIL733", "CIVIL735", "CIVIL736", "CIVIL741", "CIVIL750", "CIVIL782", "CIVIL791", "ENVENG701", "ENVENG740", "ENVENG747" ]
       }
     ]
   },
