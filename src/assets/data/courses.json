@@ -35191,8 +35191,8 @@
   "requirements": [
   {
     "type": 1,
-    "required": 5,
-    "papers": ["LAW201", "LAW211", "LAW231", "LAW241", "LAW301"],
+    "required": 6,
+    "papers": ["LAW201", "LAW211", "LAW231", "LAW241", "LAW301A", "LAW301B"],
     "flags":
     {}
   },
@@ -35740,8 +35740,8 @@
   "requirements": [
   {
     "type": 1,
-    "required": 1,
-    "papers": ["LAW301"],
+    "required": 2,
+    "papers": ["LAW301A", "LAW301B"],
     "flags":
     {}
   },
@@ -36062,8 +36062,8 @@
   "requirements": [
   {
     "type": 1,
-    "required": 2,
-    "papers": ["LAW301", "LAW306"],
+    "required": 3,
+    "papers": ["LAW301A", "LAW301B", "LAW306"],
     "flags":
     {}
   },
@@ -36302,7 +36302,7 @@
   {
     "type": 1,
     "required": 1,
-    "papers": ["LAW301"],
+    "papers": ["LAW301A", "LAW301B"],
     "flags":
     {}
   }],
@@ -36565,8 +36565,8 @@
   "requirements": [
   {
     "type": 1,
-    "required": 1,
-    "papers": ["LAW301"],
+    "required": 2,
+    "papers": ["LAW301A", "LAW301B"],
     "flags":
     {}
   }],

@@ -28548,9 +28548,9 @@
     "desc": "A study of the history and principles of land law including: estates and interests in land, the effect of registration and indefeasibility of title, leasehold estates, easements and profits, mortgages, and concurrent interests in land, and covenants affecting freehold land.",
     "faculties": ["Laws"],
     "department": "Law",
-    "points": 20,
+    "points": 10,
     "stage": 3,
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 1703,
@@ -28589,9 +28589,9 @@
     "desc": "A study of the history and principles of land law including: estates and interests in land, the effect of registration and indefeasibility of title, leasehold estates, easements and profits, mortgages, and concurrent interests in land, and covenants affecting freehold land.",
     "faculties": ["Laws"],
     "department": "Law",
-    "points": 20,
+    "points": 10,
     "stage": 3,
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 1706,
@@ -29283,7 +29283,7 @@
     "desc": "An introduction to theories of the nature, functions and origins of law and legal systems, including sources of law; comparative concepts of law; an overview of constitutional and legal arrangements in New Zealand, including the role of the courts; the operation of the legal system in historical and contemporary New Zealand with a focus on concepts of property rights, the Treaty of Waitangi, Treaty Settlements and proposals for constitutional change.  <i>Note: Does not meet the General Education requirement for LLB, LLB(Hons), LLB conjoints or LLB(Hons) conjoints.</i>",
     "faculties": ["Laws"],
     "department": "Law",
-    "points": 10,
+    "points": 15,
     "stage": 1,
     "requirements": [
       { "type": 1, "required": 0, "papersExcluded": ["LAW101"], "flags": {} }
@@ -29298,9 +29298,19 @@
     "desc": "An introductory study of how law is made and applied in New Zealand \u2013 an overview of the law-making roles of the legislative, executive and judicial branches of government; other influences on the development of the law; an introduction to case law, including judicial reasoning and the doctrine of precedent; an introduction to statute law, including the legislative process and techniques of statutory interpretation and application; the interaction between case law and legislation.",
     "faculties": ["Laws"],
     "department": "Law",
-    "points": 10,
+    "points": 15,
     "stage": 1,
-    "isActive": false
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "LAW121"
+        ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1732,
@@ -29696,8 +29706,8 @@
       },
       {
         "type": 1,
-        "required": 2,
-        "papers": ["LAW301", "LAW306"],
+        "required": 3,
+        "papers": ["LAW301A", "LAW301B", "LAW306"],
         "flags": {
           "isCorequesite": true
         }
@@ -30442,7 +30452,7 @@
     "points": 15,
     "stage": 4,
     "requirements": [
-      { "type": 1, "required": 1, "papers": ["LAW301"], "flags": {} },
+      { "type": 1, "required": 2, "papers": ["LAW301A", "LAW301A"], "flags": {} },
       { "type": 1, "required": 0, "papersExcluded": ["LAW446"], "flags": {} }
     ],
     "isActive": true
@@ -30709,7 +30719,7 @@
     "points": 10,
     "stage": 4,
     "requirements": [
-      { "type": 1, "required": 2, "papers": ["LAW301", "LAW306"], "flags": {} },
+      { "type": 1, "required": 3, "papers": ["LAW301A", "LAW301B", "LAW306"], "flags": {} },
       {
         "type": 1,
         "required": 0,
@@ -30880,7 +30890,7 @@
     "points": 10,
     "stage": 4,
     "requirements": [
-      { "type": 1, "required": 1, "papers": ["LAW301"], "flags": {} }
+      { "type": 1, "required": 2, "papers": ["LAW301A", "LAW301B"], "flags": {} }
     ],
     "isActive": true
   },
@@ -31079,7 +31089,7 @@
     "points": 15,
     "stage": 4,
     "requirements": [
-      { "type": 1, "required": 1, "papers": ["LAW301"], "flags": {} }
+      { "type": 1, "required": 2, "papers": ["LAW301A", "LAW301B"], "flags": {} }
     ],
     "isActive": true
   },
@@ -57622,13 +57632,14 @@
     "requirements": [
       {
         "type": 1,
-        "required": 7,
+        "required": 9,
         "papers": [
           "LAW201",
           "LAW211",
           "LAW231",
           "LAW241",
-          "LAW301",
+          "LAW301A",
+          "LAW301B",
           "LAW306",
           "LAW316"
         ],
@@ -66998,6 +67009,339 @@
         "type": 0,
         "required": 15,
         "papers": ["ENGSCI311", "ENGSCI313", "ENGSCI314"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3726,
+    "name": "LAW141",
+    "title": "Legal Foundations",
+    "desc": "An overview of the classification, sources and operation of core aspects of New Zealand law, including state law and tikanga Māori. An introduction to other sources, perspectives and explanations of law.",
+    "faculties": ["Laws"],
+    "department": "Law",
+    "points": 15,
+    "stage": 1,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "LAW121"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "LAW131"
+        ],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3727,
+    "name": "HUMS101",
+    "title": "Europe: Medieval to Modern",
+    "desc": "A thematic and chronological survey of major developments in European history and visual culture since the early Middle Ages. The course is designed to provide a solid foundation for subsequent study in European history, art history and culture as well as an introduction to the nature of scholarly research and writing in the Humanities.",
+    "faculties": ["Arts"],
+    "department": "Humanities",
+    "points": 15,
+    "stage": 1,
+    "isActive": true
+  },
+  {
+    "id": 3728,
+    "name": "LAW306A",
+    "title": "Equity",
+    "desc": "A study of the central principles and remedies of equity including: the fiduciary principle, relationships of confidence, unconscionable conduct, undue influence, estoppel, assignments, trusts (express, resulting and constructive), charities, tracing, third-party liability, the assignment in equity of choses in action, and priorities. Basic principles of the law of succession and of the administration of estates.",
+    "faculties": ["Laws"],
+    "department": "Law",
+    "points": 10,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 10,
+        "papers": [
+          "LAW201", 
+          "LAW211", 
+          "LAW231", 
+          "LAW241"
+        ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3729,
+    "name": "LAW306B",
+    "title": "Equity",
+    "desc": "A study of the central principles and remedies of equity including: the fiduciary principle, relationships of confidence, unconscionable conduct, undue influence, estoppel, assignments, trusts (express, resulting and constructive), charities, tracing, third-party liability, the assignment in equity of choses in action, and priorities. Basic principles of the law of succession and of the administration of estates.",
+    "faculties": ["Laws"],
+    "department": "Law",
+    "points": 10,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "papers": [
+          "LAW201", 
+          "LAW211", 
+          "LAW231", 
+          "LAW241"
+        ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3730,
+    "name": "LAW400",
+    "title": "Legal Research 3",
+    "desc": "Completion of legal research requirements as approved by the Faculty of Law, including moot participation and opinion writing.",
+    "faculties": ["Laws"],
+    "department": "Law",
+    "points": 10,
+    "stage": 3,
+    "isActive": true
+  },
+  {
+    "id": 3731,
+    "name": "LAW410",
+    "title": "Special Topic",
+    "desc": "Special Topic",
+    "faculties": ["Laws"],
+    "department": "Law",
+    "points": 15,
+    "stage": 3,
+    "isActive": true
+  },
+  {
+    "id": 3732,
+    "name": "LAW411",
+    "title": "Special Topic",
+    "desc": "Special Topic",
+    "faculties": ["Laws"],
+    "department": "Law",
+    "points": 15,
+    "stage": 3,
+    "isActive": true
+  },
+  {
+    "id": 3733,
+    "name": "LAW456",
+    "title": "Supervised Research",
+    "desc": "A research paper, approved by the Dean of Faculty of Law, written under the supervision of a teacher in the Faculty of Law.",
+    "faculties": ["Laws"],
+    "department": "Law",
+    "points": 15,
+    "stage": 3,
+    "isActive": true
+  },
+  {
+    "id": 3734,
+    "name": "LAW458",
+    "title": "Legal Ethics",
+    "desc": "A study of legal ethics and professional responsibility including: an introduction to ethical analysis which examines various theories of ethics; the applicability of ethical analysis to legal practice; the concept of a profession and the ethical and professional duties of practitioners (which will include, amongst other topics, conflicts of interest, confidentiality, duties to the court, duties of loyalty and fidelity); the wider responsibilities of lawyers in the community.",
+    "faculties": ["Laws"],
+    "department": "Law",
+    "points": 10,
+    "stage": 3,
+    "isActive": true
+  },
+  {
+    "id": 3735,
+    "name": "LAW498",
+    "title": "Advanced Legal Research, Writing and Communication",
+    "desc": "Satisfactory completion of such advanced legal research, writing, communication and other requirements as determined by the Dean of Faculty of Law.",
+    "faculties": ["Laws"],
+    "department": "Law",
+    "points": 0,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "papers": [
+          "LAW201", "LAW211", "LAW231", "LAW241"
+        ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3736,
+    "name": "LAW499",
+    "title": "Legal Practice",
+    "desc": "Such work and practical experience in the detailed application of the law and in relation to the provision of legal services as approved by the Faculty of Law.",
+    "faculties": ["Laws"],
+    "department": "Law",
+    "points": 0,
+    "stage": 3,
+    "isActive": true
+  },
+  {
+    "id": 3737,
+    "name": "GISCI140",
+    "title": "Geographic Information and Spatial Thinking",
+    "desc": "An introduction to the conceptual base of Geographic Information Science, the practical use of geo-spatial data and various societal issues related to the use of Remote Sensing and Geographic Information Systems. This course will introduce students to a range of contemporary geospatial technologies. It covers key concepts and principles behind the development and application of these technologies. The course exercises cover a range of application of GIS for analysis and display of spatial data, focusing on non-programmable solutions.",
+    "faculties": ["Science"],
+    "department": "Geographic Information Science",
+    "points": 15,
+    "stage": 1,
+    "isActive": true
+  },
+  {
+    "id": 3738,
+    "name": "GISCI241",
+    "title": "Principles of Remote Sensing",
+    "desc": "An introduction to remote sensing tools and techniques and their application within the earth, environmental and urban environments. The course focuses on the processing, analysis and interpretation of data collected by government and commercial satellites, Unmanned Aerial Vehicles (UAV) and aerial photography. The course introduces image interpretation, multispectral images, supervised and unsupervised image classification and change detection. Techniques for analysing remote sensing data are introduced through a series and lab-based activities and are applied during an independent project.",
+    "faculties": ["Science"],
+    "department": "Geographic Information Science",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 60,
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3739,
+    "name": "GISCI242",
+    "title": "Principles of GIScience",
+    "desc": "Spatial analysis and GIScience applications of spatial data handling for built and natural environments within the context of theoretical frameworks for understanding human-driven and physical phenomena. Develops advanced practical knowledge of methodology and applications for changing environments. Focus topics include climate change, air pollution, healthcare access, transportation, and 3D game worlds.",
+    "faculties": ["Science"],
+    "department": "Geographic Information Science",
+    "points": 15,
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 60,
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3740,
+    "name": "GISCI243",
+    "title": "Special Topic",
+    "desc": "Special Topic",
+    "faculties": ["Science"],
+    "department": "Geographic Information Science",
+    "points": 15,
+    "stage": 2,
+    "isActive": true
+  },
+  {
+    "id": 3741,
+    "name": "GISCI341",
+    "title": "Remote Sensing of Surface Processes",
+    "desc": "Key concepts of geographic information science as applied to earth and environmental sciences. Monitoring, analysis, visualisation and modelling of landscape change for terrestrial and coastal environments, using imagery from satellites, airplanes (LiDAR) and UAVs. Principles and practice of field techniques, including RTK-GPS, LiDAR and UAV piloting will be reviewed with application to catchment management, conservation, natural hazards and civil infrastructure.",
+    "faculties": ["Science"],
+    "department": "Geographic Information Science",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": [
+          "GISCI241"
+        ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3742,
+    "name": "GISCI343",
+    "title": "GIScience Programming and Development",
+    "desc": "Programming and scripting-based techniques for spatial big data analysis, spatial data handling, modelling, automation, and development for the GIScience domain.",
+    "faculties": ["Science"],
+    "department": "Geographic Information Science",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "GISCI241",
+          "GISCI242",
+          "GEOG317",
+          "GEOG318"
+        ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3743,
+    "name": "GISCI344",
+    "title": "Special Topic",
+    "desc": "Special Topic",
+    "faculties": ["Science"],
+    "department": "Geographic Information Science",
+    "points": 15,
+    "stage": 3,
+    "isActive": true
+  },  
+  {
+    "id": 3744,
+    "name": "GISCI390",
+    "title": "Directed Study",
+    "desc": "Prerequisite: Academic Head approval",
+    "faculties": ["Science"],
+    "department": "Geographic Information Science",
+    "points": 15,
+    "stage": 3,
+    "isActive": true
+  },
+  {
+    "id": 3745,
+    "name": "GISCI390",
+    "title": "Directed Study",
+    "desc": "Prerequisite: Academic Head approval",
+    "faculties": ["Science"],
+    "department": "Geographic Information Science",
+    "points": 15,
+    "stage": 3,
+    "isActive": true
+  },
+  {
+    "id": 3746,
+    "name": "GISCI399",
+    "title": "Capstone: GIScience",
+    "desc": "Students will independently demonstrate domain knowledge through applying their skills as members of groups completing a community-based GIScience projects serving needs identified by community stakeholders. Groups will be assembled based on skillsets of individual students (e.g., programming, remote sensing, advanced vector analysis, etc.), and students will be assessed on their independent contributions to the group project.",
+    "faculties": ["Science"],
+    "department": "Geographic Information Science",
+    "points": 15,
+    "stage": 3,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "stage": 3,
+        "department": "Geographic Information Science",
         "flags": {}
       }
     ],
