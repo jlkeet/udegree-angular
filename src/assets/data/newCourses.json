@@ -6248,7 +6248,10 @@
     "faculties": ["Engineering"],
     "department": "Biomedical Engineering",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "isActive": true,
+    "requirements": [
+      { "type": 1, "required": 1, "papers": ["ENGGEN150", "ENGSCI111"], "flags": {}}]
   },
   {
     "id": 317,
@@ -6260,7 +6263,7 @@
     "points": 15,
     "stage": 2,
     "requirements": [
-      { "type": 1, "required": 1, "papers": ["ELECENG101"], "flags": {} }
+      { "type": 1, "required": 1, "papers": ["ELECTENG101"], "flags": {} }
     ],
     "isActive": true
   },
@@ -6323,7 +6326,15 @@
     "department": "Biomedical Engineering",
     "points": 15,
     "stage": 3,
-    "requirements": []
+    "requirements": [
+      {       
+        "type": 1,
+        "required": 1,
+        "papers": ["BIOMENG241"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 322,
@@ -8000,7 +8011,8 @@
     "faculties": ["Engineering"],
     "department": "Chemical and Materials Engineering",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 428,
@@ -16509,7 +16521,8 @@
     "faculties": ["Engineering"],
     "department": "Engineering General",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1024,
@@ -16557,7 +16570,8 @@
     "faculties": ["Engineering"],
     "department": "Engineering General",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1027,
@@ -16585,9 +16599,9 @@
     "desc": "To complete this course students must attain a level of competency in the English language as determined by the Faculty of Engineering.",
     "faculties": ["Engineering"],
     "department": "Engineering General",
-    "points": 15,
+    "points": 0,
     "stage": 1,
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 1029,
@@ -16628,7 +16642,7 @@
     "department": "Engineering General",
     "points": 15,
     "stage": 2,
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 1032,
@@ -16681,9 +16695,45 @@
     "points": 15,
     "stage": 4,
     "requirements": [
-      { "type": 1, "required": 1, "papers": ["ENGGEN303"], "flags": {} }
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 2,
+            "papers": ["BUSINESS101", "BUSINESS102"],
+            "flags": {}
+          },
+          {
+            "type": 1,
+            "required": 2,
+            "papers": ["BUSINESS111", "BUSINESS112"],
+            "flags": {}
+          },
+          {
+            "type": 1,
+            "required": 1,
+            "papers": ["DESIGN220", "DESIGN221", "DESIGN222"],
+            "flags": {}
+          },
+          {
+            "type": 1,
+            "required": 2,
+            "papers": ["ECON151", "GLOBAL101"],
+            "flags": {}
+          },
+          {
+            "type": 1,
+            "required": 2,
+            "papers": ["COMMS302", "ENGGEN303", "LAW241", "MUS186", "MUS365", "PROPERTY231", "SCIGEN201"],
+            "flags": {}
+          }
+        ]
+      }
     ],
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 1036,
@@ -16692,9 +16742,9 @@
     "desc": "Practical Work",
     "faculties": ["Engineering"],
     "department": "Engineering General",
-    "points": 15,
+    "points": 0,
     "stage": 4,
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 1037,
@@ -18072,7 +18122,19 @@
     "faculties": ["Engineering"],
     "department": "Engineering Science",
     "points": 15,
-    "stage": 2
+    "stage": 2,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": [
+          "ENGSCI111",
+          "ENGGEN150"
+        ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
   },
   {
     "id": 1107,
@@ -18118,9 +18180,17 @@
       },
       {
         "type": 1,
-        "required": 2,
+        "required": 1,
         "papers": ["ENGGEN150", "ENGSCI111"],
         "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI211"],
+        "flags": {
+          "isCorequesite": true
+        }
       }
     ],
     "isActive": true
@@ -34392,7 +34462,8 @@
     "desc": "An introduction to the procedures and technological aspects of typical manufacturing systems; basic concepts of plant and work design; automation; planning, implementation; simulation, and monitoring of production processes; project-based introduction to the tools and techniques applied by professional engineers in modern manufacturing plants.",
     "points": 15,
     "stage": 3,
-    "requirements": []
+    "requirements": [],
+    "isActive": true
   },
   {
     "id": 2001,
@@ -66878,6 +66949,55 @@
           "MATHS150",
           "PHYSICS120"
         ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3723,
+    "name": "BIOMENG299",
+    "title": "Workshop Practice",
+    "desc": "All Engineering students are required to have completed, to the approval of the Faculty, a recognised course in Workshop Practice (ENGGEN 299) prior to enrolling in Part III courses.",
+    "faculties": ["Engineering"],
+    "department": "Biomedical Engineering",
+    "points": 0,
+    "stage": 2,
+    "isActive": true
+  },
+  {
+    "id": 3724,
+    "name": "BIOMENG791",
+    "title": "Advanced Biomedical Engineering Design",
+    "desc": "An engineering project requiring the application and integration of material taught in lecture courses to the design of medical devices and software to meet client needs. The project also requires consideration of ethical issues, social impact, safety risks, and international regulations.",
+    "faculties": ["Engineering"],
+    "department": "Biomedical Engineering",
+    "points": 15,
+    "stage": 7,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["BIOMENG341"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3725,
+    "name": "BIOMENG771",
+    "title": "Musculoskeletal and Orthopaedic Biomechanics",
+    "desc": "Topics that biomechanical and orthopaedic engineers use in research and industry. Includes guest lectures from practitioners. Orthopaedic engineering topics cover implant design, material choice, implant stress shielding and bone loss, implant wear and bone remodelling. Musculoskeletal biomechanics topics cover motion capture, inverse kinematics and dynamics, muscle force evaluation, electromyography (EMG), inertial sensors and applications in sports medicine and rehabilitation.",
+    "faculties": ["Engineering"],
+    "department": "Biomedical Engineering",
+    "points": 15,
+    "stage": 7,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGSCI311", "ENGSCI313", "ENGSCI314"],
         "flags": {}
       }
     ],

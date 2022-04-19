@@ -24,8 +24,7 @@
           "LINGUIST200",
           "LINGUIST201",
           "LINGUIST203"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -44,8 +43,7 @@
           "LINGUIST200",
           "LINGUIST201",
           "LINGUIST203"
-        ],
-        "flags": {}
+        ]
       }
     ]
   },
@@ -68,14 +66,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["ANTHRO103-109"],
-        "flags": {}
+        "papers": ["ANTHRO103-109"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ANTHRO200", "ANTHRO201", "ANTHRO202", "ANTHRO203"],
-        "flags": {}
+        "papers": ["ANTHRO200", "ANTHRO201", "ANTHRO202", "ANTHRO203"]
       }
     ],
     "conjointRequirements": [
@@ -88,14 +84,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["ANTHRO103-109"],
-        "flags": {}
+        "papers": ["ANTHRO103-109"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ANTHRO200", "ANTHRO201", "ANTHRO202", "ANTHRO203"],
-        "flags": {}
+        "papers": ["ANTHRO200", "ANTHRO201", "ANTHRO202", "ANTHRO203"]
       }
     ]
   },
@@ -119,14 +113,12 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ARTHIST107-115", "ARTHIST200-247"],
-        "flags": {}
+        "papers": ["ARTHIST107-115", "ARTHIST200-247"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["ARTHIST300-347"],
-        "flags": {}
+        "papers": ["ARTHIST300-347"]
       },
       {
         "type": 0,
@@ -147,14 +139,12 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ARTHIST107-115", "ARTHIST200-247"],
-        "flags": {}
+        "papers": ["ARTHIST107-115", "ARTHIST200-247"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["ARTHIST300-347"],
-        "flags": {}
+        "papers": ["ARTHIST300-347"]
       },
       {
         "type": 0,
@@ -185,8 +175,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["ASIAN100", "ASIAN303"],
-        "flags": {}
+        "papers": ["ASIAN100", "ASIAN303"]
       }
     ],
     "conjointRequirements": [
@@ -199,8 +188,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["ASIAN100", "ASIAN303"],
-        "flags": {}
+        "papers": ["ASIAN100", "ASIAN303"]
       }
     ]
   },
@@ -224,14 +212,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["ASIAN100", "CHINESE130"],
-        "flags": {}
+        "papers": ["ASIAN100", "CHINESE130"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["CHINESE301", "CHINESE302", "TRANSLAT300"],
-        "flags": {}
+        "papers": ["CHINESE301", "CHINESE302", "TRANSLAT300"]
       },
       {
         "type": 0,
@@ -245,8 +231,7 @@
           "MEDIA205",
           "POLITICS211",
           "POLITICS254"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -259,8 +244,7 @@
           "CHINESE339",
           "HISTORY313",
           "HISTORY335"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -273,14 +257,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["ASIAN100", "CHINESE130"],
-        "flags": {}
+        "papers": ["ASIAN100", "CHINESE130"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["CHINESE301", "CHINESE302", "TRANSLAT300"],
-        "flags": {}
+        "papers": ["CHINESE301", "CHINESE302", "TRANSLAT300"]
       },
       {
         "type": 0,
@@ -294,8 +276,7 @@
           "MEDIA205",
           "POLITICS211",
           "POLITICS254"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -308,8 +289,7 @@
           "CHINESE339",
           "HISTORY313",
           "HISTORY335"
-        ],
-        "flags": {}
+        ]
       }
     ]
   },
@@ -333,20 +313,17 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["ANCIENT100-130"],
-        "flags": {}
+        "papers": ["ANCIENT100-130"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ANCIENT200-285"],
-        "flags": {}
+        "papers": ["ANCIENT200-285"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["ANCIENT300-385"],
-        "flags": {}
+        "papers": ["ANCIENT300-385"]
       }
     ],
     "conjointRequirements": [
@@ -359,20 +336,17 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["ANCIENT100-130"],
-        "flags": {}
+        "papers": ["ANCIENT100-130"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ANCIENT200-285"],
-        "flags": {}
+        "papers": ["ANCIENT200-285"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["ANCIENT300-385"],
-        "flags": {}
+        "papers": ["ANCIENT300-385"]
       }
     ]
   },
@@ -396,8 +370,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["CRIM208", "CRIM301"],
-        "flags": {}
+        "papers": ["CRIM208", "CRIM301"]
       }
     ],
     "conjointRequirements": [
@@ -410,8 +383,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["CRIM208", "CRIM301"],
-        "flags": {}
+        "papers": ["CRIM208", "CRIM301"]
       }
     ]
   },
@@ -435,14 +407,12 @@
       {
         "type": 0,
         "required": 60,
-        "papers": ["DRAMA100", "DRAMA202"],
-        "flags": {}
+        "papers": ["DRAMA100", "DRAMA202"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["DRAMA301-306"],
-        "flags": {}
+        "papers": ["DRAMA301-306"]
       }
     ],
     "conjointRequirements": [
@@ -455,14 +425,12 @@
       {
         "type": 0,
         "required": 60,
-        "papers": ["DRAMA100", "DRAMA202"],
-        "flags": {}
+        "papers": ["DRAMA100", "DRAMA202"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["DRAMA301-306"],
-        "flags": {}
+        "papers": ["DRAMA301-306"]
       }
     ]
   },
@@ -486,8 +454,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ECON152", "ECON201", "ECON211"],
-        "flags": {}
+        "papers": ["ECON152", "ECON201", "ECON211"]
       }
     ],
     "conjointRequirements": [
@@ -500,8 +467,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ECON152", "ECON201", "ECON211"],
-        "flags": {}
+        "papers": ["ECON152", "ECON201", "ECON211"]
       }
     ]
   },
@@ -525,14 +491,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["EDUC100-122"],
-        "flags": {}
+        "papers": ["EDUC100-122"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["EDUC200", "EDUC201", "EDUC204", "EDUC207-283"],
-        "flags": {}
+        "papers": ["EDUC200", "EDUC201", "EDUC204", "EDUC207-283"]
       }
     ],
     "conjointRequirements": [
@@ -545,14 +509,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["EDUC100-122"],
-        "flags": {}
+        "papers": ["EDUC100-122"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["EDUC200", "EDUC201", "EDUC204", "EDUC207-283"],
-        "flags": {}
+        "papers": ["EDUC200", "EDUC201", "EDUC204", "EDUC207-283"]
       }
     ]
   },
@@ -576,8 +538,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["MGMT211", "MGMT223", "SOCIOL208"],
-        "flags": {}
+        "papers": ["MGMT211", "MGMT223", "SOCIOL208"]
       }
     ],
     "conjointRequirements": [
@@ -590,8 +551,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["MGMT211", "MGMT223", "SOCIOL208"],
-        "flags": {}
+        "papers": ["MGMT211", "MGMT223", "SOCIOL208"]
       }
     ]
   },
@@ -624,8 +584,7 @@
           "ENGLISH313",
           "ENGLISH340",
           "ENGLISH353"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -647,8 +606,7 @@
           "ENGLISH313",
           "ENGLISH340",
           "ENGLISH353"
-        ],
-        "flags": {}
+        ]
       }
     ]
   },
@@ -671,7 +629,6 @@
       {
         "type": 0,
         "required": 2,
-        "flags": {},
         "complex": [
           {
             "type": 0,
@@ -767,8 +724,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       }
     ],
     "conjointRequirements": [
@@ -781,7 +737,6 @@
       {
         "type": 0,
         "required": 2,
-        "flags": {},
         "complex": [
           {
             "type": 0,
@@ -877,8 +832,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       }
     ]
   },
@@ -902,32 +856,27 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["FRENCH204-229", "FRENCH239", "FRENCH241-269", "FRENCH279"],
-        "flags": {}
+        "papers": ["FRENCH204-229", "FRENCH239", "FRENCH241-269", "FRENCH279"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["FRENCH304", "FRENCH305", "FRENCH377", "FRENCH378"],
-        "flags": {}
+        "papers": ["FRENCH304", "FRENCH305", "FRENCH377", "FRENCH378"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["FRENCH306-349", "FRENCH379"],
-        "flags": {}
+        "papers": ["FRENCH306-349", "FRENCH379"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["EUROPEAN200-278", "EUROPEAN300-378"],
-        "flags": {}
+        "papers": ["EUROPEAN200-278", "EUROPEAN300-378"]
       }
     ],
     "conjointRequirements": [
@@ -940,32 +889,27 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["FRENCH204-229", "FRENCH239", "FRENCH241-269", "FRENCH279"],
-        "flags": {}
+        "papers": ["FRENCH204-229", "FRENCH239", "FRENCH241-269", "FRENCH279"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["FRENCH304", "FRENCH305", "FRENCH377", "FRENCH378"],
-        "flags": {}
+        "papers": ["FRENCH304", "FRENCH305", "FRENCH377", "FRENCH378"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["FRENCH306-349", "FRENCH379"],
-        "flags": {}
+        "papers": ["FRENCH306-349", "FRENCH379"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["EUROPEAN200-278", "EUROPEAN300-378"],
-        "flags": {}
+        "papers": ["EUROPEAN200-278", "EUROPEAN300-378"]
       }
     ]
   },
@@ -989,14 +933,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["GENDER101", "GENDER208"],
-        "flags": {}
+        "papers": ["GENDER101", "GENDER208"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["GENDER301-307"],
-        "flags": {}
+        "papers": ["GENDER301-307"]
       }
     ],
     "conjointRequirements": [
@@ -1009,14 +951,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["GENDER101", "GENDER208"],
-        "flags": {}
+        "papers": ["GENDER101", "GENDER208"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["GENDER301-307"],
-        "flags": {}
+        "papers": ["GENDER301-307"]
       }
     ]
   },
@@ -1040,14 +980,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["GEOG101", "GEOG102"],
-        "flags": {}
+        "papers": ["GEOG101", "GEOG102"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["GEOG250"],
-        "flags": {}
+        "papers": ["GEOG250"]
       },
       {
         "type": 0,
@@ -1059,20 +997,17 @@
           "GEOG262",
           "GISCI241",
           "GISCI242"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["GEOG202", "GEOG205", "GEOG261", "GEOG262"],
-        "flags": {}
+        "papers": ["GEOG202", "GEOG205", "GEOG261", "GEOG262"]
       },
       {
         "type": 1,
         "required": 1,
-        "papers": ["GEOG399"],
-        "flags": {}
+        "papers": ["GEOG399"]
       }
     ],
     "conjointRequirements": [
@@ -1085,14 +1020,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["GEOG101", "GEOG102"],
-        "flags": {}
+        "papers": ["GEOG101", "GEOG102"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["GEOG250"],
-        "flags": {}
+        "papers": ["GEOG250"]
       },
       {
         "type": 0,
@@ -1104,20 +1037,17 @@
           "GEOG262",
           "GISCI241",
           "GISCI242"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["GEOG202", "GEOG205", "GEOG261", "GEOG262"],
-        "flags": {}
+        "papers": ["GEOG202", "GEOG205", "GEOG261", "GEOG262"]
       },
       {
         "type": 1,
         "required": 1,
-        "papers": ["GEOG399"],
-        "flags": {}
+        "papers": ["GEOG399"]
       }
     ]
   },
@@ -1141,8 +1071,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["EUROPEAN100", "GERMAN201", "GERMAN301"],
-        "flags": {}
+        "papers": ["EUROPEAN100", "GERMAN201", "GERMAN301"]
       },
       {
         "type": 0,
@@ -1153,8 +1082,7 @@
           "GERMAN291",
           "GERMAN303-360",
           "GERMAN391"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -1232,8 +1160,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["HLTHSOC100", "HLTHSOC201", "HLTHSOC301"],
-        "flags": {}
+        "papers": ["HLTHSOC100", "HLTHSOC201", "HLTHSOC301"]
       }
     ],
     "conjointRequirements": [
@@ -1246,8 +1173,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["HLTHSOC100", "HLTHSOC201", "HLTHSOC301"],
-        "flags": {}
+        "papers": ["HLTHSOC100", "HLTHSOC201", "HLTHSOC301"]
       }
     ]
   },
@@ -1308,20 +1234,17 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["EUROPEAN100", "ITALIAN201", "ITALIAN300"],
-        "flags": {}
+        "papers": ["EUROPEAN100", "ITALIAN201", "ITALIAN300"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ITALIAN202", "ITALIAN204", "ITALIAN209", "ITALIAN211"],
-        "flags": {}
+        "papers": ["ITALIAN202", "ITALIAN204", "ITALIAN209", "ITALIAN211"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["ITALIAN301", "ITALIAN305", "ITALIAN330-356"],
-        "flags": {}
+        "papers": ["ITALIAN301", "ITALIAN305", "ITALIAN330-356"]
       },
       {
         "type": 0,
@@ -1349,20 +1272,17 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["EUROPEAN100", "ITALIAN201", "ITALIAN300"],
-        "flags": {}
+        "papers": ["EUROPEAN100", "ITALIAN201", "ITALIAN300"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ITALIAN202", "ITALIAN204", "ITALIAN209", "ITALIAN211"],
-        "flags": {}
+        "papers": ["ITALIAN202", "ITALIAN204", "ITALIAN209", "ITALIAN211"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["ITALIAN301", "ITALIAN305", "ITALIAN330-356"],
-        "flags": {}
+        "papers": ["ITALIAN301", "ITALIAN305", "ITALIAN330-356"]
       },
       {
         "type": 0,
@@ -1401,8 +1321,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ASIAN100", "JAPANESE150", "JAPANESE332"],
-        "flags": {}
+        "papers": ["ASIAN100", "JAPANESE150", "JAPANESE332"]
       },
       {
         "type": 0,
@@ -1412,8 +1331,7 @@
           "JAPANESE222",
           "JAPANESE240-270",
           "JAPANESE292"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -1426,8 +1344,7 @@
           "JAPANESE385",
           "JAPANESE392",
           "HISTORY335"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -1440,8 +1357,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ASIAN100", "JAPANESE150", "JAPANESE332"],
-        "flags": {}
+        "papers": ["ASIAN100", "JAPANESE150", "JAPANESE332"]
       },
       {
         "type": 0,
@@ -1451,8 +1367,7 @@
           "JAPANESE222",
           "JAPANESE240-270",
           "JAPANESE292"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -1465,8 +1380,7 @@
           "JAPANESE385",
           "JAPANESE392",
           "HISTORY335"
-        ],
-        "flags": {}
+        ]
       }
     ]
   },
@@ -1490,20 +1404,17 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ASIAN100", "KOREAN120", "KOREAN301"],
-        "flags": {}
+        "papers": ["ASIAN100", "KOREAN120", "KOREAN301"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["ASIAN204", "ASIAN209", "KOREAN205"],
-        "flags": {}
+        "papers": ["ASIAN204", "ASIAN209", "KOREAN205"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ANTHRO329", "ASIAN302", "ASIAN309", "KOREAN305"],
-        "flags": {}
+        "papers": ["ANTHRO329", "ASIAN302", "ASIAN309", "KOREAN305"]
       }
     ],
     "conjointRequirements": [
@@ -1516,20 +1427,17 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ASIAN100", "KOREAN120", "KOREAN301"],
-        "flags": {}
+        "papers": ["ASIAN100", "KOREAN120", "KOREAN301"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["ASIAN204", "ASIAN209", "KOREAN205"],
-        "flags": {}
+        "papers": ["ASIAN204", "ASIAN209", "KOREAN205"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ANTHRO329", "ASIAN302", "ASIAN309", "KOREAN305"],
-        "flags": {}
+        "papers": ["ANTHRO329", "ASIAN302", "ASIAN309", "KOREAN305"]
       }
     ]
   },
@@ -1553,8 +1461,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["LATIN300-310"],
-        "flags": {}
+        "papers": ["LATIN300-310"]
       },
       {
         "type": 0,
@@ -1573,8 +1480,7 @@
           "GREEK101",
           "GREEK200-204",
           "GREEK300-310"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -1587,8 +1493,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["LATIN300-310"],
-        "flags": {}
+        "papers": ["LATIN300-310"]
       },
       {
         "type": 0,
@@ -1607,8 +1512,7 @@
           "GREEK101",
           "GREEK200-204",
           "GREEK300-310"
-        ],
-        "flags": {}
+        ]
       }
     ]
   },
@@ -1632,14 +1536,12 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["LINGUIST100"],
-        "flags": {}
+        "papers": ["LINGUIST100"]
       },
       {
         "type": 0,
         "required": 60,
-        "papers": ["LINGUIST200", "LINGUIST201", "LINGUIST300", "LINGUIST301"],
-        "flags": {}
+        "papers": ["LINGUIST200", "LINGUIST201", "LINGUIST300", "LINGUIST301"]
       }
     ],
     "conjointRequirements": [
@@ -1652,14 +1554,12 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["LINGUIST100"],
-        "flags": {}
+        "papers": ["LINGUIST100"]
       },
       {
         "type": 0,
         "required": 60,
-        "papers": ["LINGUIST200", "LINGUIST201", "LINGUIST300", "LINGUIST301"],
-        "flags": {}
+        "papers": ["LINGUIST200", "LINGUIST201", "LINGUIST300", "LINGUIST301"]
       }
     ]
   },
@@ -1683,8 +1583,7 @@
       {
         "type": 0,
         "required": 60,
-        "papers": ["COMPSCI120", "COMPSCI225", "PHIL101", "PHIL222"],
-        "flags": {}
+        "papers": ["COMPSCI120", "COMPSCI225", "PHIL101", "PHIL222"]
       }
     ],
     "conjointRequirements": [
@@ -1697,8 +1596,7 @@
       {
         "type": 0,
         "required": 60,
-        "papers": ["COMPSCI120", "COMPSCI225", "PHIL101", "PHIL222"],
-        "flags": {}
+        "papers": ["COMPSCI120", "COMPSCI225", "PHIL101", "PHIL222"]
       }
     ]
   },
@@ -1729,8 +1627,7 @@
           "MĀORI204",
           "MĀORI301",
           "MĀORI302"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -1750,8 +1647,7 @@
           "MĀORI204",
           "MĀORI301",
           "MĀORI302"
-        ],
-        "flags": {}
+        ]
       }
     ]
   },
@@ -1775,26 +1671,22 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["MATHS120", "MATHS130", "MATHS162", "MATHS199"],
-        "flags": {}
+        "papers": ["MATHS120", "MATHS130", "MATHS162", "MATHS199"]
       },
       {
         "type": 1,
         "required": 1,
-        "papers": ["MATHS250"],
-        "flags": {}
+        "papers": ["MATHS250"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["MATHS253-270"],
-        "flags": {}
+        "papers": ["MATHS253-270"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["MATHS302", "MATHS315-363"],
-        "flags": {}
+        "papers": ["MATHS302", "MATHS315-363"]
       }
     ],
     "conjointRequirements": [
@@ -1807,26 +1699,22 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["MATHS120", "MATHS130", "MATHS162", "MATHS199"],
-        "flags": {}
+        "papers": ["MATHS120", "MATHS130", "MATHS162", "MATHS199"]
       },
       {
         "type": 1,
         "required": 1,
-        "papers": ["MATHS250"],
-        "flags": {}
+        "papers": ["MATHS250"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["MATHS253-270"],
-        "flags": {}
+        "papers": ["MATHS253-270"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["MATHS302", "MATHS315-363"],
-        "flags": {}
+        "papers": ["MATHS302", "MATHS315-363"]
       }
     ]
   },
@@ -1850,8 +1738,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS100", "MEDIA101"],
-        "flags": {}
+        "papers": ["COMMS100", "MEDIA101"]
       },
       {
         "type": 0,
@@ -1862,14 +1749,12 @@
           "MEDIA229",
           "MEDIA231",
           "MEDIA236"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["MEDIA307-328", "MEDIA331", "MEDIA332", "MEDIA336"],
-        "flags": {}
+        "papers": ["MEDIA307-328", "MEDIA331", "MEDIA332", "MEDIA336"]
       }
     ],
     "conjointRequirements": [
@@ -1882,8 +1767,7 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS100", "MEDIA101"],
-        "flags": {}
+        "papers": ["COMMS100", "MEDIA101"]
       },
       {
         "type": 0,
@@ -1894,14 +1778,12 @@
           "MEDIA229",
           "MEDIA231",
           "MEDIA236"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["MEDIA307-328", "MEDIA331", "MEDIA332", "MEDIA336"],
-        "flags": {}
+        "papers": ["MEDIA307-328", "MEDIA331", "MEDIA332", "MEDIA336"]
       }
     ]
   },
@@ -1925,8 +1807,7 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["MUS104"],
-        "flags": {}
+        "papers": ["MUS104"]
       }
     ],
     "conjointRequirements": [
@@ -1939,8 +1820,7 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["MUS104"],
-        "flags": {}
+        "papers": ["MUS104"]
       }
     ]
   },
@@ -1976,8 +1856,7 @@
       {
         "type": 1,
         "required": 2,
-        "papers": ["PACIFIC100", "PACIFIC200"],
-        "flags": {}
+        "papers": ["PACIFIC100", "PACIFIC200"]
       }
     ],
     "conjointRequirements": [
@@ -2002,8 +1881,7 @@
       {
         "type": 1,
         "required": 2,
-        "papers": ["PACIFIC100", "PACIFIC200"],
-        "flags": {}
+        "papers": ["PACIFIC100", "PACIFIC200"]
       }
     ]
   },
@@ -2080,20 +1958,17 @@
       {
         "type": 1,
         "required": 2,
-        "papers": ["PSYCH108", "PSYCH109"],
-        "flags": {}
+        "papers": ["PSYCH108", "PSYCH109"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["STATS100", "STATS101", "STATS108", "STATS125"],
-        "flags": {}
+        "papers": ["STATS100", "STATS101", "STATS108", "STATS125"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["PSYCH200-209"],
-        "flags": {}
+        "papers": ["PSYCH200-209"]
       },
       {
         "type": 0,
@@ -2108,8 +1983,7 @@
           "PSYCH309",
           "PSYCH310-313",
           "PSYCH317-326"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -2122,20 +1996,17 @@
       {
         "type": 1,
         "required": 2,
-        "papers": ["PSYCH108", "PSYCH109"],
-        "flags": {}
+        "papers": ["PSYCH108", "PSYCH109"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["STATS100", "STATS101", "STATS108", "STATS125"],
-        "flags": {}
+        "papers": ["STATS100", "STATS101", "STATS108", "STATS125"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["PSYCH200-209"],
-        "flags": {}
+        "papers": ["PSYCH200-209"]
       },
       {
         "type": 0,
@@ -2150,8 +2021,7 @@
           "PSYCH309",
           "PSYCH310-313",
           "PSYCH317-326"
-        ],
-        "flags": {}
+        ]
       }
     ]
   },
@@ -2174,8 +2044,7 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["SOCIOL310"],
-        "flags": {}
+        "papers": ["SOCIOL310"]
       }
     ],
     "conjointRequirements": [
@@ -2188,8 +2057,7 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["SOCIOL310"],
-        "flags": {}
+        "papers": ["SOCIOL310"]
       }
     ]
   },
@@ -2213,14 +2081,12 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       },
       {
         "type": 1,
         "required": 1,
-        "papers": ["SPANISH201", "SPANISH278"],
-        "flags": {}
+        "papers": ["SPANISH201", "SPANISH278"]
       },
       {
         "type": 0,
@@ -2232,14 +2098,12 @@
           "SPANISH202",
           "SPANISH206",
           "SPANISH207"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["SPANISH319", "SPANISH323", "SPANISH377"],
-        "flags": {}
+        "papers": ["SPANISH319", "SPANISH323", "SPANISH377"]
       },
       {
         "type": 0,
@@ -2249,8 +2113,7 @@
           "LATINAM303-325",
           "SPANISH302-313",
           "SPANISH317-350"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -2266,8 +2129,7 @@
           "EUROPEAN300",
           "EUROPEAN302",
           "EUROPEAN307"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -2280,14 +2142,12 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       },
       {
         "type": 1,
         "required": 1,
-        "papers": ["SPANISH201", "SPANISH278"],
-        "flags": {}
+        "papers": ["SPANISH201", "SPANISH278"]
       },
       {
         "type": 0,
@@ -2299,14 +2159,12 @@
           "SPANISH202",
           "SPANISH206",
           "SPANISH207"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["SPANISH319", "SPANISH323", "SPANISH377"],
-        "flags": {}
+        "papers": ["SPANISH319", "SPANISH323", "SPANISH377"]
       },
       {
         "type": 0,
@@ -2316,8 +2174,7 @@
           "LATINAM303-325",
           "SPANISH302-313",
           "SPANISH317-350"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -2333,8 +2190,7 @@
           "EUROPEAN300",
           "EUROPEAN302",
           "EUROPEAN307"
-        ],
-        "flags": {}
+        ]
       }
     ]
   },
@@ -2358,8 +2214,7 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["STATS101", "STATS108", "STATS125"],
-        "flags": {}
+        "papers": ["STATS101", "STATS108", "STATS125"]
       },
       {
         "type": 0,
@@ -2370,14 +2225,12 @@
           "STATS108",
           "STATS125",
           "STATS150"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 1,
         "required": 1,
-        "papers": ["STATS201", "STATS208", "STATS210", "STATS225"],
-        "flags": {}
+        "papers": ["STATS201", "STATS208", "STATS210", "STATS225"]
       },
       {
         "type": 0,
@@ -2389,20 +2242,17 @@
           "STATS225",
           "STATS240",
           "STATS255"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 1,
         "required": 1,
-        "papers": ["STATS310", "STATS325", "STATS330", "STATS380"],
-        "flags": {}
+        "papers": ["STATS310", "STATS325", "STATS330", "STATS380"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["ENGSCI391", "STATS301", "STATS302", "STATS310-383"],
-        "flags": {}
+        "papers": ["ENGSCI391", "STATS301", "STATS302", "STATS310-383"]
       }
     ],
     "conjointRequirements": [
@@ -2415,8 +2265,7 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["STATS101", "STATS108", "STATS125"],
-        "flags": {}
+        "papers": ["STATS101", "STATS108", "STATS125"]
       },
       {
         "type": 0,
@@ -2427,14 +2276,12 @@
           "STATS108",
           "STATS125",
           "STATS150"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 1,
         "required": 1,
-        "papers": ["STATS201", "STATS208", "STATS210", "STATS225"],
-        "flags": {}
+        "papers": ["STATS201", "STATS208", "STATS210", "STATS225"]
       },
       {
         "type": 0,
@@ -2446,20 +2293,17 @@
           "STATS225",
           "STATS240",
           "STATS255"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 1,
         "required": 1,
-        "papers": ["STATS310", "STATS325", "STATS330", "STATS380"],
-        "flags": {}
+        "papers": ["STATS310", "STATS325", "STATS330", "STATS380"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["ENGSCI391", "STATS301", "STATS302", "STATS310-383"],
-        "flags": {}
+        "papers": ["ENGSCI391", "STATS301", "STATS302", "STATS310-383"]
       }
     ]
   },
@@ -2483,20 +2327,17 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["THEOREL101", "THEOREL102", "THEOREL106"],
-        "flags": {}
+        "papers": ["THEOREL101", "THEOREL102", "THEOREL106"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["THEOREL200-209", "THEOREL211", "THEOREL214-221"],
-        "flags": {}
+        "papers": ["THEOREL200-209", "THEOREL211", "THEOREL214-221"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["THEOREL300-316", "THEOREL319-321"],
-        "flags": {}
+        "papers": ["THEOREL300-316", "THEOREL319-321"]
       }
     ],
     "conjointRequirements": [
@@ -2509,20 +2350,17 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["THEOREL101", "THEOREL102", "THEOREL106"],
-        "flags": {}
+        "papers": ["THEOREL101", "THEOREL102", "THEOREL106"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["THEOREL200-209", "THEOREL211", "THEOREL214-221"],
-        "flags": {}
+        "papers": ["THEOREL200-209", "THEOREL211", "THEOREL214-221"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["THEOREL300-316", "THEOREL319-321"],
-        "flags": {}
+        "papers": ["THEOREL300-316", "THEOREL319-321"]
       }
     ]
   },
@@ -2546,20 +2384,17 @@
       {
         "type": 1,
         "required": 2,
-        "papers": ["COMMS100", "COMMS104"],
-        "flags": {}
+        "papers": ["COMMS100", "COMMS104"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS200-208"],
-        "flags": {}
+        "papers": ["COMMS200-208"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS301-309", "MEDIA314"],
-        "flags": {}
+        "papers": ["COMMS301-309", "MEDIA314"]
       }
     ],
     "conjointRequirements": [
@@ -2572,20 +2407,17 @@
       {
         "type": 1,
         "required": 2,
-        "papers": ["COMMS100", "COMMS104"],
-        "flags": {}
+        "papers": ["COMMS100", "COMMS104"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS200-208"],
-        "flags": {}
+        "papers": ["COMMS200-208"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS301-309", "MEDIA314"],
-        "flags": {}
+        "papers": ["COMMS301-309", "MEDIA314"]
       }
     ]
   },
@@ -2609,8 +2441,7 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["LANGTCHG101"],
-        "flags": {}
+        "papers": ["LANGTCHG101"]
       }
     ],
     "conjointRequirements": [
@@ -2623,8 +2454,7 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["LANGTCHG101"],
-        "flags": {}
+        "papers": ["LANGTCHG101"]
       }
     ]
   },
@@ -2648,7 +2478,6 @@
       {
         "type": 0,
         "required": 2,
-        "flags": {},
         "complex": [
           {
             "type": 0,
@@ -2752,8 +2581,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       }
     ],
     "conjointRequirements": [
@@ -2766,7 +2594,6 @@
       {
         "type": 0,
         "required": 2,
-        "flags": {},
         "complex": [
           {
             "type": 0,
@@ -2870,8 +2697,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       }
     ]
   },
@@ -2895,7 +2721,6 @@
       {
         "type": 0,
         "required": 2,
-        "flags": {},
         "complex": [
           {
             "type": 0,
@@ -2997,8 +2822,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       }
     ],
     "conjointRequirements": [
@@ -3011,7 +2835,6 @@
       {
         "type": 0,
         "required": 2,
-        "flags": {},
         "complex": [
           {
             "type": 0,
@@ -3113,8 +2936,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       }
     ]
   },
@@ -3139,7 +2961,6 @@
       {
         "type": 0,
         "required": 2,
-        "flags": {},
         "complex": [
           {
             "type": 0,
@@ -3239,8 +3060,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       }
     ],
     "conjointRequirements": [
@@ -3255,7 +3075,6 @@
       {
         "type": 0,
         "required": 2,
-        "flags": {},
         "complex": [
           {
             "type": 0,
@@ -3355,8 +3174,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["EUROPEAN100"],
-        "flags": {}
+        "papers": ["EUROPEAN100"]
       }
     ]
   },
@@ -3367,14 +3185,12 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMMS102", "COMMS212", "COMMS313"],
-        "flags": {}
+        "papers": ["COMMS102", "COMMS212", "COMMS313"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ENVSCI101", "GENDER101", "POLITICS106", "SOCIOL100"],
-        "flags": {}
+        "papers": ["ENVSCI101", "GENDER101", "POLITICS106", "SOCIOL100"]
       },
       {
         "type": 0,
@@ -3388,8 +3204,7 @@
           "POLITICS229",
           "SOCIOL210",
           "SOCIOL229"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -3406,8 +3221,7 @@
           "PHIL345",
           "POLITICS313",
           "SOCIOL333"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -3426,14 +3240,12 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMMS103", "COMMS208", "COMMS316"],
-        "flags": {}
+        "papers": ["COMMS103", "COMMS208", "COMMS316"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["COMPSCI101", "STATS101"],
-        "flags": {}
+        "papers": ["COMPSCI101", "STATS101"]
       },
       {
         "type": 0,
@@ -3444,8 +3256,7 @@
           "STATS201",
           "STATS220",
           "STATS240"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -3458,8 +3269,7 @@
           "SOCIOL300",
           "STATS302",
           "STATS330"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -3478,26 +3288,22 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMMS105", "COMMS214", "COMMS319"],
-        "flags": {}
+        "papers": ["COMMS105", "COMMS214", "COMMS319"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["COMMS104", "GENDER101"],
-        "flags": {}
+        "papers": ["COMMS104", "GENDER101"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMMS200", "COMMS213", "INNOVENT203", "MGMT223"],
-        "flags": {}
+        "papers": ["COMMS200", "COMMS213", "INNOVENT203", "MGMT223"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMMS314", "MGMT304", "MGMT314", "SOCIOL335"],
-        "flags": {}
+        "papers": ["COMMS314", "MGMT304", "MGMT314", "SOCIOL335"]
       }
     ],
     "conjointRequirements": [
@@ -3516,14 +3322,12 @@
       {
         "type": 1,
         "required": 1,
-        "papers": ["ACCTG102"],
-        "flags": {}
+        "papers": ["ACCTG102"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["ACCTG211", "ACCTG221", "ACCTG222"],
-        "flags": {}
+        "papers": ["ACCTG211", "ACCTG221", "ACCTG222"]
       },
       {
         "type": 0,
@@ -3536,8 +3340,7 @@
           "ACCTG331",
           "ACCTG371",
           "ACCTG382"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -3548,8 +3351,7 @@
           "COMLAW301",
           "INFOSYS306",
           "INFOSYS321"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -3568,20 +3370,17 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["BUSAN200", "STATS208", "STATS255"],
-        "flags": {}
+        "papers": ["BUSAN200", "STATS208", "STATS255"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["BUSAN201", "BUSAN304", "INFOSYS310"],
-        "flags": {}
+        "papers": ["BUSAN201", "BUSAN304", "INFOSYS310"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["BUSAN300", "BUSAN301"],
-        "flags": {}
+        "papers": ["BUSAN300", "BUSAN301"]
       },
       {
         "type": 0,
@@ -3592,8 +3391,7 @@
           "OPSMGT357",
           "STATS301",
           "STATS330"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -3612,14 +3410,12 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMLAW201", "COMLAW203"],
-        "flags": {}
+        "papers": ["COMLAW201", "COMLAW203"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMLAW301-321", "LAWCOMM422"],
-        "flags": {}
+        "papers": ["COMLAW301-321", "LAWCOMM422"]
       }
     ],
     "conjointRequirements": [
@@ -3638,14 +3434,12 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ECON152", "ECON201", "ECON211"],
-        "flags": {}
+        "papers": ["ECON152", "ECON201", "ECON211"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["ECON301-381"],
-        "flags": {}
+        "papers": ["ECON301-381"]
       }
     ],
     "conjointRequirements": [
@@ -3670,14 +3464,12 @@
           "MATHS208",
           "FINANCE251",
           "FINANCE261"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["ACCTG371", "COMLAW305", "ECON352", "FINANCE351-384"],
-        "flags": {}
+        "papers": ["ACCTG371", "COMLAW305", "ECON352", "FINANCE351-384"]
       }
     ],
     "conjointRequirements": [
@@ -3696,20 +3488,17 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["INFOSYS220", "INFOSYS222"],
-        "flags": {}
+        "papers": ["INFOSYS220", "INFOSYS222"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["INFOSYS303", "INFOSYS305"],
-        "flags": {}
+        "papers": ["INFOSYS303", "INFOSYS305"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["BUSAN301", "BUSAN302", "INFOSYS300-341", "OPSMGT357"],
-        "flags": {}
+        "papers": ["BUSAN301", "BUSAN302", "INFOSYS300-341", "OPSMGT357"]
       }
     ],
     "conjointRequirements": [
@@ -3728,20 +3517,17 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["INNOVENT203", "INNOVENT204"],
-        "flags": {}
+        "papers": ["INNOVENT203", "INNOVENT204"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["INNOVENT306"],
-        "flags": {}
+        "papers": ["INNOVENT306"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["INNOVENT305", "INNOVENT307", "INNOVENT308", "MGMT302"],
-        "flags": {}
+        "papers": ["INNOVENT305", "INNOVENT307", "INNOVENT308", "MGMT302"]
       }
     ],
     "conjointRequirements": [
@@ -3760,20 +3546,17 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["INTBUS201", "INTBUS202"],
-        "flags": {}
+        "papers": ["INTBUS201", "INTBUS202"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["INTBUS300"],
-        "flags": {}
+        "papers": ["INTBUS300"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["INTBUS305", "INTBUS306", "INTBUS307"],
-        "flags": {}
+        "papers": ["INTBUS305", "INTBUS306", "INTBUS307"]
       },
       {
         "type": 0,
@@ -3785,8 +3568,7 @@
           "INTBUS307",
           "INTBUS308",
           "MGMT302"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -3805,20 +3587,17 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["MGMT211", "MGMT223"],
-        "flags": {}
+        "papers": ["MGMT211", "MGMT223"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["MGMT300", "MGMT304", "MGMT309", "MGMT314", "COMLAW314"],
-        "flags": {}
+        "papers": ["MGMT300", "MGMT304", "MGMT309", "MGMT314", "COMLAW314"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["BUSINESS328", "MGMT300-320"],
-        "flags": {}
+        "papers": ["BUSINESS328", "MGMT300-320"]
       }
     ],
     "conjointRequirements": [
@@ -3837,20 +3616,17 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["MKTG202", "MKTG203"],
-        "flags": {}
+        "papers": ["MKTG202", "MKTG203"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["MKTG303"],
-        "flags": {}
+        "papers": ["MKTG303"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["MKTG301", "MKTG302", "MKTG304-312", "MKTG314"],
-        "flags": {}
+        "papers": ["MKTG301", "MKTG302", "MKTG304-312", "MKTG314"]
       }
     ],
     "conjointRequirements": [
@@ -3869,8 +3645,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["OPSMGT255", "OPSMGT258", "OPSMGT370"],
-        "flags": {}
+        "papers": ["OPSMGT255", "OPSMGT258", "OPSMGT370"]
       },
       {
         "type": 0,
@@ -3883,8 +3658,7 @@
           "OPSMGT371",
           "OPSMGT372",
           "OPSMGT376"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -3903,20 +3677,17 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMLAW201", "COMLAW203"],
-        "flags": {}
+        "papers": ["COMLAW201", "COMLAW203"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMLAW301", "COMLAW311"],
-        "flags": {}
+        "papers": ["COMLAW301", "COMLAW311"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ACCTG311", "ACCTG371", "ECON361", "FINANCE361"],
-        "flags": {}
+        "papers": ["ACCTG311", "ACCTG371", "ECON361", "FINANCE361"]
       }
     ],
     "conjointRequirements": [
@@ -3929,20 +3700,626 @@
     ]
   },
   {
+    "name": "Biomedical Engineering",
+    "faculties": ["Engineering"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["BIOMENG299", "ENGGEN299"]
+      },
+      {
+        "type": 0,
+        "required": 120,
+        "papers": ["BIOMENG221", "BIOMENG241", "BIOMENG261", "BIOSCI107", "ENGGEN204", "ENGSCI211", "ENGSCI233", "MEDSCI142"]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": [
+          "BIOMENG321", "BIOMENG341", "ENGGEN303", "ENGSCI314", "ENGSCI331", "MEDSCI205", "MEDSCI309"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "CHEM380", "CHEM392", "COMPSYS303", "ENGSCI309", "ENGSCI344", "ENGSCI355", "ENGSCI391", "EXERSCI303", "MATHS362", "MECHENG313", "MECHENG352", "MECHENG371", "MEDSCI312", "MEDSCI314", "MEDSCI318"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN499"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["BIOMENG791", "ENGGEN403"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["BIOMENG771", "CHEMMAT723", "CHEMMAT753", "CHEMMAT754", "CHEMMAT757", "COMPSYS705", "ELECTENG722", "ELECTENG733", "ENGSCI711", "ENGSCI712", "ENGSCI740", "ENGSCI741", "ENGSCI753", "ENGSCI772", "MATHS764", "MATHS765", "MECHENG743", "MEDSCI703", "MEDSCI737"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["ENGSCI700A", "ENGSCI700B"]
+      }
+    ],
+    "conjointRequirements": [
+      {
+      }
+    ]
+  },
+  {
+    "name": "Chemical and Materials Engineering",
+    "faculties": ["Engineering"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["CHEMMAT299", "ENGGEN299"]
+      },
+      {
+        "type": 0,
+        "required": 120,
+        "papers": ["CHEMMAT201", "CHEMMAT202", "CHEMMAT203", "CHEMMAT204", "CHEMMAT205", "CHEMMAT206", "ENGGEN204", "ENGSCI211"]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": [
+          "CHEMMAT301", "CHEMMAT302", "CHEMMAT303", "CHEMMAT305", "CHEMMAT306", "ENGGEN303", "ENGSCI311"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "CHEMMAT304", "CHEMMAT720", "CHEMMAT723", "CHEMMAT725", "CHEMMAT754", "CHEMMAT755", "CHEMMAT757"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN499"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["CHEMMAT752", "ENGGEN403"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["CHEMMAT720", "CHEMMAT723", "CHEMMAT724", "CHEMMAT725", "CHEMMAT753", "CHEMMAT754", "CHEMMAT755", "CHEMMAT756", "CHEMMAT757", "CHEMMAT758", "CHEMMAT759", "CHEMMAT760", "CHEMMAT763"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["CHEMMAT750A", "CHEMMAT750B"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["CHEMMAT751A", "CHEMMAT751B"]
+      }
+    ],
+    "conjointRequirements": [
+      {
+      }
+    ]
+  },
+  {
+    "name": "Civil Engineering",
+    "faculties": ["Engineering"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["CIVIL299", "ENGGEN299"]
+      },
+      {
+        "type": 0,
+        "required": 120,
+        "papers": ["CIVIL200, CIVIL202, CIVIL203, ENGGEN204, ENGSCI211, ENVENG200, STRCTENG200, STRCTENG201"]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": [
+          "CIVIL300", "CIVIL302", "CIVIL303", "ENGGEN303", "ENGSCI311", "ENVENG300", "STRCTENG304"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "CIVIL301", "CIVIL304", "CIVIL305", "ENVENG331"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN499"]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": ["CIVIL756", "CIVIL790", "CIVIL791", "ENGGEN403"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["CIVIL700", "CIVIL722", "CIVIL726", "CIVIL729", "CIVIL731", "CIVIL733", "CIVIL735", "CIVIL736", "CIVIL741", "CIVIL750", "CIVIL782", "ENVENG701", "ENVENG740", "ENVENG747"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["CIVIL705A", "CIVIL705B"]
+      }
+    ],
+    "conjointRequirements": [
+      {
+      }
+    ]
+  },
+  {
+    "name": "Computer Systems Engineering",
+    "faculties": ["Engineering"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["COMPSYS299", "ENGGEN299"]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": ["COMPSYS201", "COMPSYS209", "ELECTENG291", "ELECTENG292", "ENGGEN204", "ENGSCI211", "SOFTENG281"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "ELECTENG204", "SOFTENG283", "SOFTENG284"]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": [
+          "COMPSYS301", "COMPSYS305", "ENGGEN303", "ENGSCI313"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "COMPSYS303", "COMPSYS304", "COMPSYS306"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "COMPSYS302", "ELECTENG305", "ELECTENG331", "ELECTENG332", "SOFTENG325", "SOFTENG350", "SOFTENG364"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN499"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["COMPSYS770", "ENGGEN403"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["COMPSYS701", "COMPSYS723", "COMPSYS726"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["COMPSYS704", "COMPSYS705", "COMPSYS725"]
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": ["COMPSYS710", "COMPSYS711", "COMPSYS712", "COMPSYS713", "COMPSYS714", "COMPSYS715", "COMPSYS721", "COMPSYS722", "COMPSYS727", "ELECTENG704", "ELECTENG706", "ELECTENG722", "ELECTENG726", "ELECTENG732", "ELECTENG733", "ELECTENG734", "SOFTENG701", "SOFTENG751", "SOFTENG761"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["COMPSYS700A", "COMPSYS700B"]
+      }
+    ],
+    "conjointRequirements": [
+      {
+      }
+    ]
+  },
+  {
+    "name": "Electrical and Electronic Engineering",
+    "faculties": ["Engineering"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ELECTENG299", "ENGGEN299"]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": ["COMPSYS201", "ELECTENG204", "ELECTENG209", "ELECTENG291", "ENGGEN204", "ENGSCI211", "SOFTENG281"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "ELECTENG292", "SOFTENG283", "SOFTENG284"]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": [
+          "ELECTENG310", "ELECTENG311", "ENGGEN303", "ENGSCI313"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "ELECTENG305", "ELECTENG309", "ELECTENG331", "ELECTENG332"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "COMPSYS302", "COMPSYS303", "COMPSYS304", "COMPSYS305", "COMPSYS306", "ELECTENG307", "SOFTENG325", "SOFTENG350", "SOFTENG364"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN499"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["ELECTENG770", "ENGGEN403"]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": ["COMPSYS705", "COMPSYS723", "COMPSYS724", "COMPSYS725", "COMPSYS726", "COMPSYS727", "ELECTENG701", "ELECTENG703", "ELECTENG704", "ELECTENG706", "ELECTENG721", "ELECTENG722", "ELECTENG724", "ELECTENG726", "ELECTENG731", "ELECTENG732", "ELECTENG733", "ELECTENG734", "ELECTENG735", "ELECTENG736", "ELECTENG738", "SOFTENG753"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["ELECTENG700A", "ELECTENG700B"]
+      }
+    ],
+    "conjointRequirements": [
+      {
+      }
+    ]
+  },
+  {
+    "name": "Engineering Science",
+    "faculties": ["Engineering"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGSCI299", "ENGGEN299"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["BIOMENG221", "ENGGEN204", "ENGSCI211", "ENGSCI233", "ENGSCI255", "ENGSCI263"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "BIOMENG241", "COMPSCI225", "ENGSCI205", "MECHENG211", "SOFTENG281", "STATS210"]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": [
+          "ENGGEN303", "ENGSCI314", "ENGSCI331", "ENGSCI343", "ENGSCI344", "ENGSCI355", "ENGSCI391"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "BIOMENG341", "ENGSCI309"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN499"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["ENGSCI773", "ENGGEN403"]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": ["BIOMENG771", "ENGSCI701", "ENGSCI711", "ENGSCI712", "ENGSCI721", "ENGSCI740", "ENGSCI741", "ENGSCI742", "ENGSCI745", "ENGSCI753", "ENGSCI755", "ENGSCI760", "ENGSCI761", "ENGSCI762", "ENGSCI763", "ENGSCI768", "GEOTHERM785"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["ENGSCI700A", "ENGSCI700B"]
+      }
+    ],
+    "conjointRequirements": [
+      {
+      }
+    ]
+  },
+  {
+    "name": "Mechanical Engineering",
+    "faculties": ["Engineering"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["MECHENG299", "ENGGEN299"]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": ["ENGGEN204", "ENGSCI211", "MECHENG211", "MECHENG222", "MECHENG235", "MECHENG236", "MECHENG242"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": [
+          "MECHENG201"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 120,
+        "papers": [
+          "ENGGEN303", "ENGSCI311", "MECHENG311", "MECHENG322", "MECHENG325", "MECHENG334", "MECHENG340", "MECHENG352"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN499"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["MECHENG731", "ENGGEN403"]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": ["ENGGEN705", "MECHENG707", "MECHENG708", "MECHENG712", "MECHENG713", "MECHENG715", "MECHENG718", "MECHENG722", "MECHENG724", "MECHENG726", "MECHENG743", "MECHENG747", "MECHENG752", "MECHENG754"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["MECHENG700A", "MECHENG700B"]
+      }
+    ],
+    "conjointRequirements": [
+      {
+      }
+    ]
+  },
+  {
+    "name": "Mechatronics Engineering",
+    "faculties": ["Engineering"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["MECHTRON299", "ENGGEN299"]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": ["ENGGEN204", "ENGSCI211", "MECHENG211", "MECHENG222", "MECHENG235", "MECHENG242", "MECHENG270"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": [
+          "MECHENG201"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 120,
+        "papers": [
+          "ENGGEN303", "ENGSCI311", "MECHENG306", "MECHENG313", "MECHENG322", "MECHENG325", "MECHENG370", "MECHENG371"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN499"]
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": ["ENGGEN403", "MECHENG705", "MECHENG706"]
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": ["COMPSYS726", "ENGGEN705", "MECHENG707", "MECHENG708", "MECHENG709", "MECHENG712", "MECHENG715", "MECHENG718", "MECHENG722", "MECHENG724", "MECHENG726", "MECHENG735", "MECHENG736", "MECHENG752", "MECHENG754"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["MECHENG700A", "MECHENG700B"]
+      }
+    ],
+    "conjointRequirements": [
+      {
+      }
+    ]
+  },
+  {
+    "name": "Software Engineering",
+    "faculties": ["Engineering"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["SOFTENG299", "ENGGEN299"]
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": ["COMPSYS201", "ENGGEN204", "ENGSCI211", "SOFTENG206", "SOFTENG281", "SOFTENG283"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "ELECTENG291",
+          "SOFTENG282"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "ELECTENG204",
+          "ELECTENG292",
+          "SOFTENG284"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": [
+          "ENGGEN303", "SOFTENG306", "SOFTENG325", "SOFTENG351"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "SOFTENG310", "SOFTENG350", "SOFTENG364", "SOFTENG370"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "COMPSCI367", "COMPSCI373", "COMPSYS303", "COMPSYS304", "COMPSYS305", "COMPSYS306", "ELECTENG305", "ELECTENG331", "ELECTENG332", "ENGSCI313"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN499"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["ENGGEN403", "SOFTENG770"]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": ["COMPSYS705", "COMPSYS723", "COMPSYS726", "ELECTENG733", "ENGSCI760", "SOFTENG701", "SOFTENG702", "SOFTENG710", "SOFTENG711", "SOFTENG715", "SOFTENG750", "SOFTENG751", "SOFTENG752", "SOFTENG753", "SOFTENG754", "SOFTENG761", "SOFTENG762"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["SOFTENG700A", "SOFTENG700B"]
+      }
+    ],
+    "conjointRequirements": [
+      {
+      }
+    ]
+  },
+  {
+    "name": "Structural Engineering",
+    "faculties": ["Engineering"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["STRCTENG299", "ENGGEN299"]
+      },
+      {
+        "type": 0,
+        "required": 120,
+        "papers": ["CIVIL200", "CIVIL202", "CIVIL203", "ENGGEN204", "ENGSCI211", "ENVENG200", "STRCTENG200", "STRCTENG201"]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": [
+          "CIVIL300", "ENGGEN303", "ENGSCI311", "STRCTENG300", "STRCTENG302", "STRCTENG303"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "CIVIL301", "CIVIL302", "CIVIL303", "CIVIL305"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN499"]
+      },
+      {
+        "type": 0,
+        "required": 75,
+        "papers": ["CIVIL756", "CIVIL790", "ENGGEN403", "STRCTENG710", "CIVIL711"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["CIVIL700", "CIVIL722", "CIVIL726", "CIVIL729", "CIVIL731", "CIVIL733", "CIVIL735", "CIVIL736", "CIVIL741", "CIVIL750", "CIVIL782", "CIVIL791", "ENVENG701", "ENVENG740", "ENVENG747"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["CIVIL705A", "CIVIL705B"]
+      }
+    ],
+    "conjointRequirements": [
+      {
+      }
+    ]
+  },
+  {
     "name": "Population Health",
     "faculties": ["Health Sciences"],
     "requirements": [
       {
         "type": 0,
         "required": 30,
-        "papers": ["POPLHLTH300", "POPLHLTH302"],
-        "flags": {}
+        "papers": ["POPLHLTH300", "POPLHLTH302"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["MAORIHTH301", "POPLHLTH312", "POPLHLTH3313"],
-        "flags": {}
+        "papers": ["MAORIHTH301", "POPLHLTH312", "POPLHLTH3313"]
       },
       {
         "type": 0,
@@ -3953,8 +4330,7 @@
           "POPLHLTH304",
           "POPLHLTH311",
           "POPLHLTH316"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -3964,8 +4340,7 @@
           "POPLHLTH305-307",
           "POPLHLTH312",
           "POPLHLTH313"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -3984,20 +4359,17 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["ANTHRO107", "ANTHRO108"],
-        "flags": {}
+        "papers": ["ANTHRO107", "ANTHRO108"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["ANTHRO200", "ANTHRO201"],
-        "flags": {}
+        "papers": ["ANTHRO200", "ANTHRO201"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["ANTHRO205-208", "ANTHRO235", "ANTHRO252"],
-        "flags": {}
+        "papers": ["ANTHRO205-208", "ANTHRO235", "ANTHRO252"]
       },
       {
         "type": 0,
@@ -4014,8 +4386,7 @@
           "ANTHRO365",
           "ANTHRO367",
           "ANTHRO372"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -4034,26 +4405,22 @@
       {
         "type": 0,
         "required": 60,
-        "papers": ["BIOSCI101", "BIOSCI108", "BIOSCI109", "STATS101"],
-        "flags": {}
+        "papers": ["BIOSCI101", "BIOSCI108", "BIOSCI109", "STATS101"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["BIOSCI220"],
-        "flags": {}
+        "papers": ["BIOSCI220"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["BIOSCI201-290"],
-        "flags": {}
+        "papers": ["BIOSCI201-290"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["BIOSCI301-395", "MARINE303"],
-        "flags": {}
+        "papers": ["BIOSCI301-395", "MARINE303"]
       }
     ],
     "conjointRequirements": [
@@ -4072,26 +4439,22 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["CHEM110", "CHEM120"],
-        "flags": {}
+        "papers": ["CHEM110", "CHEM120"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["MATHS108", "MATHS110", "MATHS130", "PHYSICS120"],
-        "flags": {}
+        "papers": ["MATHS108", "MATHS110", "MATHS130", "PHYSICS120"]
       },
       {
         "type": 0,
         "required": 60,
-        "papers": ["CHEM251", "CHEM252", "CHEM253", "CHEM351"],
-        "flags": {}
+        "papers": ["CHEM251", "CHEM252", "CHEM253", "CHEM351"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["CHEM310-340", "CHEM360-390"],
-        "flags": {}
+        "papers": ["CHEM310-340", "CHEM360-390"]
       }
     ],
     "conjointRequirements": [
@@ -4110,20 +4473,17 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMPSCI110", "COMPSCI120", "COMPSCI130"],
-        "flags": {}
+        "papers": ["COMPSCI110", "COMPSCI120", "COMPSCI130"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMPSCI210", "COMPSCI220", "COMPSCI230"],
-        "flags": {}
+        "papers": ["COMPSCI210", "COMPSCI220", "COMPSCI230"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMPSCI300-379"],
-        "flags": {}
+        "papers": ["COMPSCI300-379"]
       }
     ],
     "conjointRequirements": [
@@ -4142,8 +4502,7 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["EARTHSCI120", "GEOG101", "EARTHSCI 220"],
-        "flags": {}
+        "papers": ["EARTHSCI120", "GEOG101", "EARTHSCI 220"]
       },
       {
         "type": 0,
@@ -4154,19 +4513,16 @@
           "EARTHSCI208",
           "EARTHSCI261",
           "EARTHSCI262"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["EARTHSCI320"],
-        "flags": {}
+        "papers": ["EARTHSCI320"]
       },
       {
         "type": 0,
-        "required": 0,
-        "flags": {}
+        "required": 0
       },
       {
         "type": 0,
@@ -4178,8 +4534,7 @@
           "GEOG332",
           "GEOG334",
           "GEOG51"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -4198,19 +4553,16 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["ENVPHYS100"],
-        "flags": {}
+        "papers": ["ENVPHYS100"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["PHYSICS120", "PHYSICS160"],
-        "flags": {}
+        "papers": ["PHYSICS120", "PHYSICS160"]
       },
       {
         "type": 0,
         "required": 1,
-        "flags": {},
         "complex": [
           {
             "type": 0,
@@ -4229,20 +4581,17 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["MATHS253", "MATHS260"],
-        "flags": {}
+        "papers": ["MATHS253", "MATHS260"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["ENVPHYS200", "ENVPHYS300", "PHYSICS201"],
-        "flags": {}
+        "papers": ["ENVPHYS200", "ENVPHYS300", "PHYSICS201"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["EARTHSCI361", "PHYSICS332"],
-        "flags": {}
+        "papers": ["EARTHSCI361", "PHYSICS332"]
       },
       {
         "type": 0,
@@ -4261,8 +4610,7 @@
           "MATHS361-363",
           "PHYSICS331-334",
           "PHYSICS340"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -4281,14 +4629,12 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["ENVSCI101", "ENVSCI201", "ENVSCI203"],
-        "flags": {}
+        "papers": ["ENVSCI101", "ENVSCI201", "ENVSCI203"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["STATS101", "STATS108"],
-        "flags": {}
+        "papers": ["STATS101", "STATS108"]
       },
       {
         "type": 0,
@@ -4307,14 +4653,12 @@
           "GISCI241",
           "GISCI242",
           "MARINE202"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["ENVSCI301", "ENVSCI303"],
-        "flags": {}
+        "papers": ["ENVSCI301", "ENVSCI303"]
       },
       {
         "type": 0,
@@ -4330,8 +4674,7 @@
           "GISCI341",
           "MARINE302",
           "MARINE303"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -4350,14 +4693,12 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["EXERSCI101", "EXERSCI103", "EXERSCI105"],
-        "flags": {}
+        "papers": ["EXERSCI101", "EXERSCI103", "EXERSCI105"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["EXERSCI201", "EXERSCI203", "EXERSCI205", "EXERSCI207"],
-        "flags": {}
+        "papers": ["EXERSCI201", "EXERSCI203", "EXERSCI205", "EXERSCI207"]
       },
       {
         "type": 0,
@@ -4368,8 +4709,7 @@
           "EXERSCI304",
           "EXERSCI305",
           "EXERSCI307"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -4388,20 +4728,17 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["COMPSCI130", "STATS101", "STATS108", "URBPLAN125"],
-        "flags": {}
+        "papers": ["COMPSCI130", "STATS101", "STATS108", "URBPLAN125"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMPSCI130", "GEOG101-140", "STATS101", "URBPLAN103"],
-        "flags": {}
+        "papers": ["COMPSCI130", "GEOG101-140", "STATS101", "URBPLAN103"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["GISCI241", "GISCI242"],
-        "flags": {}
+        "papers": ["GISCI241", "GISCI242"]
       },
       {
         "type": 0,
@@ -4414,14 +4751,12 @@
           "STATS220",
           "URBPLAN203",
           "URBPLAN205"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["GEOG342", "GISCI341", "GISCI343", "GISCI344"],
-        "flags": {}
+        "papers": ["GEOG342", "GISCI341", "GISCI343", "GISCI344"]
       },
       {
         "type": 0,
@@ -4434,8 +4769,7 @@
           "GISCI390",
           "SCIGEN301",
           "STATS301-389"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -4454,14 +4788,12 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["GEOG101", "GEOG102", "GEOG250"],
-        "flags": {}
+        "papers": ["GEOG101", "GEOG102", "GEOG250"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["GEOG202", "GEOG205", "GEOG261", "GEOG262"],
-        "flags": {}
+        "papers": ["GEOG202", "GEOG205", "GEOG261", "GEOG262"]
       },
       {
         "type": 0,
@@ -4473,14 +4805,12 @@
           "GEOG262",
           "GISCI241",
           "GISCI242"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["GEOG302-390", "GISCI341-344"],
-        "flags": {}
+        "papers": ["GEOG302-390", "GISCI341-344"]
       }
     ],
     "conjointRequirements": [
@@ -4499,14 +4829,12 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["COMPSCI101", "COMPSCI130", "INFOMGMT192", "INFOSYS110"],
-        "flags": {}
+        "papers": ["COMPSCI101", "COMPSCI130", "INFOMGMT192", "INFOSYS110"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["BUSAN201", "COMPSCI230", "INFOSYS220"],
-        "flags": {}
+        "papers": ["BUSAN201", "COMPSCI230", "INFOSYS220"]
       },
       {
         "type": 0,
@@ -4517,8 +4845,7 @@
           "INNOVENT203",
           "OPSMGT258",
           "SCIGEN201"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
@@ -4538,8 +4865,7 @@
           "INFOSYS321",
           "INFOSYS341",
           "OPSMGT357"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -4558,32 +4884,27 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["COMPSCI120", "PHIL101"],
-        "flags": {}
+        "papers": ["COMPSCI120", "PHIL101"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["COMPSCI130", "LINGUIST100", "PHIL105"],
-        "flags": {}
+        "papers": ["COMPSCI130", "LINGUIST100", "PHIL105"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["COMPSCI220", "LINGUIST200", "PHIL216"],
-        "flags": {}
+        "papers": ["COMPSCI220", "LINGUIST200", "PHIL216"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["COMPSCI225", "MATHS254", "MATHS255"],
-        "flags": {}
+        "papers": ["COMPSCI225", "MATHS254", "MATHS255"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["PHIL222", "COMPSCI350", "PHIL315"],
-        "flags": {}
+        "papers": ["PHIL222", "COMPSCI350", "PHIL315"]
       },
       {
         "type": 0,
@@ -4597,8 +4918,7 @@
           "PHIL306",
           "PHIL322",
           "PHIL323"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -4617,32 +4937,27 @@
       {
         "type": 0,
         "required": 60,
-        "papers": ["MARINE100", "STATS101", "MARINE202", "MARINE302"],
-        "flags": {}
+        "papers": ["MARINE100", "STATS101", "MARINE202", "MARINE302"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["BIOSCI108", "BIOSCI109"],
-        "flags": {}
+        "papers": ["BIOSCI108", "BIOSCI109"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["GEOG101", "GEOG103"],
-        "flags": {}
+        "papers": ["GEOG101", "GEOG103"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["BIOSCI220", "ENVSCI203", "STATS201"],
-        "flags": {}
+        "papers": ["BIOSCI220", "ENVSCI203", "STATS201"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["BIOSCI206", "BIOSCI208", "GEOG262", "GISCI241"],
-        "flags": {}
+        "papers": ["BIOSCI206", "BIOSCI208", "GEOG262", "GISCI241"]
       },
       {
         "type": 0,
@@ -4657,8 +4972,7 @@
           "MARINE303",
           "MARINE305",
           "MARINE306"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -4677,26 +4991,22 @@
       {
         "type": 0,
         "required": 45,
-        "papers": ["MATHS120", "MATHS130", "MATHS162", "MATHS199"],
-        "flags": {}
+        "papers": ["MATHS120", "MATHS130", "MATHS162", "MATHS199"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["MATHS250"],
-        "flags": {}
+        "papers": ["MATHS250"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["MATHS253", "MATHS254", "MATHS255", "MATHS260", "MATHS270"],
-        "flags": {}
+        "papers": ["MATHS253", "MATHS254", "MATHS255", "MATHS260", "MATHS270"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["MATHS302-363"],
-        "flags": {}
+        "papers": ["MATHS302-363"]
       }
     ],
     "conjointRequirements": [
@@ -4715,8 +5025,7 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["BIOSCI106", "CHEM110"],
-        "flags": {}
+        "papers": ["BIOSCI106", "CHEM110"]
       },
       {
         "type": 0,
@@ -4727,20 +5036,17 @@
           "MEDSCI204",
           "MEDSCI318",
           "MEDSCI319"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["BIOSCI203", "MEDSCI203", "MEDSCI205", "MEDSCI206"],
-        "flags": {}
+        "papers": ["BIOSCI203", "MEDSCI203", "MEDSCI205", "MEDSCI206"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["MEDSCI320", "PHARMCOL399"],
-        "flags": {}
+        "papers": ["MEDSCI320", "PHARMCOL399"]
       }
     ],
     "conjointRequirements": [
@@ -4759,19 +5065,16 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["PHYSICS120", "PHYSICS160"],
-        "flags": {}
+        "papers": ["PHYSICS120", "PHYSICS160"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["PHYSICS121"],
-        "flags": {}
+        "papers": ["PHYSICS121"]
       },
       {
         "type": 0,
         "required": 1,
-        "flags": {},
         "complex": [
           {
             "type": 0,
@@ -4790,14 +5093,12 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["MATHS253", "MATHS260"],
-        "flags": {}
+        "papers": ["MATHS253", "MATHS260"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["PHYSICS201-203"],
-        "flags": {}
+        "papers": ["PHYSICS201-203"]
       },
       {
         "type": 0,
@@ -4811,14 +5112,12 @@
           "PHYSICS356",
           "PHYSICS371",
           "PHYSICS390"
-        ],
-        "flags": {}
+        ]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["PHYSICS331-335", "PHYSICS340", "PHYSICS356", "PHYSICS390"],
-        "flags": {}
+        "papers": ["PHYSICS331-335", "PHYSICS340", "PHYSICS356", "PHYSICS390"]
       }
     ],
     "conjointRequirements": [
@@ -4837,20 +5136,17 @@
       {
         "type": 0,
         "required": 60,
-        "papers": ["BIOSCI107", "MEDSCI142", "MEDSCI205", "MEDSCI206"],
-        "flags": {}
+        "papers": ["BIOSCI107", "MEDSCI142", "MEDSCI205", "MEDSCI206"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["CHEM110", "PHYSICS120", "PHYSICS160"],
-        "flags": {}
+        "papers": ["CHEM110", "PHYSICS120", "PHYSICS160"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["MEDSCI201", "MEDSCI203", "MEDSCI204"],
-        "flags": {}
+        "papers": ["MEDSCI201", "MEDSCI203", "MEDSCI204"]
       },
       {
         "type": 0,
@@ -4861,8 +5157,7 @@
           "MEDSCI312",
           "MEDSCI316",
           "MEDSCI317"
-        ],
-        "flags": {}
+        ]
       }
     ],
     "conjointRequirements": [
@@ -4881,26 +5176,22 @@
       {
         "type": 0,
         "required": 30,
-        "papers": ["PSYCH108", "PSYCH109"],
-        "flags": {}
+        "papers": ["PSYCH108", "PSYCH109"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["STATS100-125"],
-        "flags": {}
+        "papers": ["STATS100-125"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["PSYCH200-209"],
-        "flags": {}
+        "papers": ["PSYCH200-209"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["EDUC323", "EXERSCI307", "PSYCH300-326"],
-        "flags": {}
+        "papers": ["EDUC323", "EXERSCI307", "PSYCH300-326"]
       }
     ],
     "conjointRequirements": [
@@ -4919,38 +5210,32 @@
       {
         "type": 0,
         "required": 15,
-        "papers": ["STATS101-125"],
-        "flags": {}
+        "papers": ["STATS101-125"]
       },
       {
         "type": 0,
         "required": 30,
-        "papers": ["DATASCI100", "STATS101-150"],
-        "flags": {}
+        "papers": ["DATASCI100", "STATS101-150"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["STATS201", "STATS208", "STATS210", "STATS225"],
-        "flags": {}
+        "papers": ["STATS201", "STATS208", "STATS210", "STATS225"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["STATS201-255", "MATHS208", "MATHS250"],
-        "flags": {}
+        "papers": ["STATS201-255", "MATHS208", "MATHS250"]
       },
       {
         "type": 0,
         "required": 15,
-        "papers": ["STATS310", "STATS325", "STATS330", "STATS380"],
-        "flags": {}
+        "papers": ["STATS310", "STATS325", "STATS330", "STATS380"]
       },
       {
         "type": 0,
         "required": 45,
-        "papers": ["STATS301-389", "ENGSCI391"],
-        "flags": {}
+        "papers": ["STATS301-389", "ENGSCI391"]
       }
     ],
     "conjointRequirements": [

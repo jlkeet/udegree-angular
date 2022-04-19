@@ -11,7 +11,6 @@ export class DepartmentService {
 
   public departmentsInFaculty(faculty) {
     this.departments.filter((department) => {faculty.majors.includes(department.name)})
-    
     return (this.departments.filter((department) => faculty.name.includes(department.faculties[0])));
   }
 

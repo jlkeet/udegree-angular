@@ -520,6 +520,27 @@
         "required": 480
       },
       {
+        "type": 1,
+        "required": 1,
+        "papers": [
+          "ENGGEN199"
+        ]
+      },
+      {
+        "type": 0,
+        "required": 105,
+        "papers": [
+          "CHEMMAT121",
+          "ELECTENG101",
+          "ENGGEN115",
+          "ENGGEN121",
+          "ENGGEN131",
+          "ENGGEN140",
+          "ENGSCI111",
+          "STATS108"
+        ]
+      },
+      {
         "type": 0,
         "required": 30,
         "faculties": [
@@ -581,8 +602,13 @@
         "aboveStage": 2
       },
       {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGGEN403"]
+      },
+      {
         "type": 0,
-        "required": 195,
+        "required": 90,
         "faculties": ["Engineering"],
         "aboveStage": 4
       }
