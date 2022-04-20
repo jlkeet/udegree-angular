@@ -8290,7 +8290,8 @@
     "faculties": ["Arts"],
     "department": "Chinese",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 448,
@@ -27284,7 +27285,8 @@
     "faculties": ["Arts"],
     "department": "Japanese",
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1623,
@@ -27910,9 +27912,10 @@
     "title": "Korean Society and Culture",
     "desc": "An introduction to Korean society and culture, focusing on the development of the nation. The course covers the colonial legacy, national division, and cultural, social, economic and political changes in the two Koreas. No knowledge of Korean language required.",
     "faculties": ["Arts"],
-    "department": "Korean",
+    "department": ["Korean"],
     "points": 15,
-    "stage": 1
+    "stage": 1,
+    "isActive": true
   },
   {
     "id": 1655,

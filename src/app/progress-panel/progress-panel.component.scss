@@ -137,6 +137,7 @@
   background-color: #fff;
   font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
   display: relative;
+  margin-top: -15px;
 }
 
 .addmodule-major {
@@ -196,6 +197,10 @@
    .mat-select-arrow {
     border: none;
    }
+}
+
+.pg-bar.mat-expansion-panel-spacing {
+  margin: 0px !important;
 }
 
 // Collapse styling

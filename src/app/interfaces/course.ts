@@ -7,7 +7,7 @@ export interface ICourse {
   title?: string;
   desc: string;
   faculties: string[];
-  department: string;
+  department: any;
   status?: CourseStatus;
   period?: Period; // This is the period where the course is taken
   periods?: Period[]; // This is the periods where the course is offered
