@@ -27912,9 +27912,10 @@
     "title": "Korean Society and Culture",
     "desc": "An introduction to Korean society and culture, focusing on the development of the nation. The course covers the colonial legacy, national division, and cultural, social, economic and political changes in the two Koreas. No knowledge of Korean language required.",
     "faculties": ["Arts"],
-    "department": ["Korean"],
+    "department": "Korean, Asian Studies",
     "points": 15,
     "stage": 1,
+    "requirements": [],
     "isActive": true
   },
   {
@@ -67346,6 +67347,2608 @@
         "stage": 3,
         "department": "Geographic Information Science",
         "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3747,
+    "name": "CHEMMAT712",
+    "title": "Directed Study in Chemical Engineering",
+    "desc": "Directed Study in Chemical Engineering",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3748,
+    "name": "CHEMMAT713",
+    "title": "Advanced Chemical Engineering - Level 9",
+    "desc": "An independent study in advanced topics, current issues, new trends and developing technologies relevant to the field of chemical engineering, for example energy and environment, alternative fuels, process modeling and control. Topics are informed and supervised by leading researchers in the field and students develop critical assessment, report writing and oral communication skills through independent projects and seminars.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": false
+  },
+  {
+    "id": 3749,
+    "name": "CHEMMAT717",
+    "title": "Electrochemical Engineering",
+    "desc": "The thermodynamics of aluminium electrolysis; heat and mass balance; components of the cell voltage; anode effect and its mitigation, resistance and voltage tracking; cell magnetics and magnetic modelling.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 3,
+        "papers": ["CHEMMAT718", "CHEMMAT726", "CHEMMAT727"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3750,
+    "name": "CHEMMAT718",
+    "title": "Aluminium Reduction Process Operations",
+    "desc": "Monitoring overall aluminium cell performance – what are the appropriate parameters to measure, how are they measured and how are they used for process control? Optimising cell performance, scheduling of operations, dealing with process excursions, metal treatment and quality. Novel cell designs.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 3,
+        "papers": ["CHEMMAT718", "CHEMMAT726", "CHEMMAT727"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3751,
+    "name": "CHEMMAT720",
+    "title": "Materials Design and Processing",
+    "desc": "Materials processing of metals, ceramics and polymers. Phase transformation. Microstructural development during materials processing. Case studies of materials selection in product design.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3752,
+    "name": "CHEMMAT721",
+    "title": "Advanced Materials - Level 9",
+    "desc": "An advanced course with emphasis on new developments in materials science and engineering and their impact on technology and society, for example surface engineering, nanomaterials and composites, alloy development, high performance ceramics, powder processing, biomaterials. Students develop critical assessment, report writing and oral communication skills through independent projects and seminars.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": false
+  },
+  {
+    "id": 3753,
+    "name": "CHEMMAT722",
+    "title": "Directed Study in Materials",
+    "desc": "Directed study in materials science and engineering.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3754,
+    "name": "CHEMMAT723",
+    "title": "Industrial Materials Engineering",
+    "desc": "Exploration of materials in an industrial context, including industrial metals and alloys, high temperature corrosion, surface engineering, welding, powder metallurgy and additive manufacturing.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3755,
+    "name": "CHEMMAT724",
+    "title": "Advanced Materials Characterisation - Level 9",
+    "desc": "The underlying theory essential to understanding modern methods of advanced materials analysis including: electron microscopy, surface analysis, atomic force microscopy and nanoindentation. Teaching is highly research informed with examples drawn from the Research Centre for Surface and Materials Science (RCSMS) and involves principles, practical experience and independent project work related to the application of these techniques.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": [
+          "CHEMMAT305", "CHEMMAT322"
+        ],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3756,
+    "name": "CHEMMAT725",
+    "title": "Advanced Functional Materials",
+    "desc": "Electronic properties of materials. Functional properties. Materials applications for energy storage, environmental protection and resource recovery. Nanomaterials and nanotechnology.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3757,
+    "name": "CHEMMAT726",
+    "title": "The Light Metals Industry",
+    "desc": "An overview of the light metals, Ti, Al and Mg, their chemistry, metallurgy and processing. It also deals with trends in the global light metals production and uses and recent advances in extending applications for these materials; economics of feedstock and materials selection and availability; power supply and management; efficient use of equipment and resources; and environmental issues.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 3,
+        "papers": ["CHEMMAT717", "CHEMMAT718", "CHEMMAT727"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3758,
+    "name": "CHEMMAT727",
+    "title": "Materials Performance and Selection for Light Metals Processing",
+    "desc": "Performance requirements of anodes, cathodes, cell refractories and other aluminium cell construction materials are assessed. Techniques for monitoring materials performance in operation and post operation (autopsies) are discussed. This course also covers materials specifications, how well they predict performance in the aluminium cell as well as the relationship between the fabrication of the cell components and their performance. New materials.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 3,
+        "papers": ["CHEMMAT717", "CHEMMAT718", "CHEMMAT727"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3759,
+    "name": "CHEMMAT732A",
+    "title": "Advanced Design Project - Level 9",
+    "desc": "An advanced design project utilising the application of the specialised knowledge required for the design and manufacture of a sophisticated product based on multiple plastics materials. Detailed considerations will include material and process selection, mould design, costing and economics, and environmental impact.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT732B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3760,
+    "name": "CHEMMAT732B",
+    "title": "Advanced Design Project - Level 9",
+    "desc": "An advanced design project utilising the application of the specialised knowledge required for the design and manufacture of a sophisticated product based on multiple plastics materials. Detailed considerations will include material and process selection, mould design, costing and economics, and environmental impact.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT732A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3761,
+    "name": "CHEMMAT750A",
+    "title": "Design Project",
+    "desc": "Specification, planning and executing a specific process design project. The detailed considerations in the project to include environmental impact, safety and occupational health issues, material selection, process energy demand and efficiency, costing and economics, process start-up and operation.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT750B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT306", "CHEMMAT331"],
+        "flags": {
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3762,
+    "name": "CHEMMAT750B",
+    "title": "Design Project",
+    "desc": "Specification, planning and executing a specific process design project. The detailed considerations in the project to include environmental impact, safety and occupational health issues, material selection, process energy demand and efficiency, costing and economics, process start-up and operation.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT750A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT306", "CHEMMAT331"],
+        "flags": {
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3763,
+    "name": "CHEMMAT751A",
+    "title": "Research Project - Level 9",
+    "desc": "Students are required to submit a report on independent investigation carried out on a topic assigned by the Head of Department of Chemical and Materials Engineering. The work shall be supervised by a member of staff.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT751B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3764,
+    "name": "CHEMMAT751B",
+    "title": "Research Project - Level 9",
+    "desc": "Students are required to submit a report on independent investigation carried out on a topic assigned by the Head of Department of Chemical and Materials Engineering. The work shall be supervised by a member of staff.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT751A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3765,
+    "name": "CHEMMAT752",
+    "title": "Process Dynamics and Control - Level 9",
+    "desc": "Application of simulation for understanding industry 4.0 focusing on digital twin and process control. Includes rigorous treatment of modelling and control fundamentals, advanced classical control and multiple loop control. Individual research is undertaken to apply advanced concepts and methods in modern chemical processes.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI211"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3766,
+    "name": "CHEMMAT753",
+    "title": "Biological Materials and Biomaterials - Level 9",
+    "desc": "Fundamentals of biological materials from small-scale building blocks (genes, proteins) to large-scale biological entities (organs, joints). Biomaterial design, material selection and functionalisation and the interaction between biomaterials and the biological tissue. Critique and review recent research on selected topics. Individual and team research projects apply advanced concepts and methods to design and implement a scaffold or implant prototype.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 1,
+            "required": 2,
+            "flags": {},
+            "papers": ["CHEMMAT204", "CHEMMAT205"]
+          },
+          {
+            "type": 1,
+            "required": 2,
+            "flags": {},
+            "papers": ["CHEMMAT221", "CHEMMAT232"]
+          },
+          {
+            "type": 1,
+            "required": 1,
+            "flags": {},
+            "papers": ["BIOMENG221"]
+          }
+        ]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3767,
+    "name": "CHEMMAT754",
+    "title": "Materials Performance Enhancement - Level 9",
+    "desc": "Materials under extreme service conditions – surface engineering, high-temperature corrosion/oxidation. Nanomaterials and nanotechnology – special properties, synthesis and processing techniques, applications in sensing, catalysis and biomedical areas. Advanced manufacturing technology – additive manufacturing, powder metallurgy, and sustainable/green manufacturing. Selected advanced concepts in materials performance enhancement are taught through research based individual projects.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT121"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT305", "CHEMMAT322"],
+        "flags": {}
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3768,
+    "name": "CHEMMAT755",
+    "title": "Materials for Energy and Environmental Applications - Level 9",
+    "desc": "Electronic properties of materials. Applications in energy storage. Smart materials and devices – magnetic and dielectric materials, sensors and actuators, recording devices. Materials for environmental applications – photo-catalysis and environmental cleaning, membrane materials, and eco-materials. Core concepts related to energy and environmental applications are extended by individual research projects on selected topics.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT121"],
+        "flags": {}
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT305", "CHEMMAT322"],
+        "flags": {}
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3769,
+    "name": "CHEMMAT756",
+    "title": "Food Process Engineering",
+    "desc": "Application of engineering principles to food processing. Topics include: heating and thermal processing, cooling, freezing and thawing, evaporation, dehydration, the use of membranes and packaging. Innovative food processes: high pressure, pulsed electric, UV, ultrasounds and ohmic heating/cooking, and fundamental areas of engineering relevant for food processing such as heat and mass transfer. Process impact on food safety, quality and preservation.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT201", "CHEMMAT211"],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGGEN150", "ENGSCI111", "MATHS108", "MATHS110"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3770,
+    "name": "CHEMMAT757",
+    "title": "Engineering Biotechnology",
+    "desc": "Principles of biochemical engineering. Exploitation of bioreaction and bioprocess systems. Enzyme and microbial reaction kinetics, bioreactor design and downstream processing. Examples of biochemical process and food industry applications.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI111"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3771,
+    "name": "CHEMMAT758",
+    "title": "Resource Recovery Technologies - Level 9",
+    "desc": "Selection and application of resource recovery processes. Examination of a variety of resource recovery technologies. Critical evaluations of the latest research and development in innovative resource recovery techniques. Social and economic aspects as catalysts or obstacles to resource recovery. Includes an independent research project.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3772,
+    "name": "CHEMMAT759",
+    "title": "Industry 4.0 for Chemical Engineering",
+    "desc": "In-depth coverage of digitalisation and Industry 4.0 in the context of modern biological, chemical, food and materials processing industries. Topics include model building, digital models and digital twins using process simulators, scripting, open source software and data-driven analysis using machine learning concepts, and the application of these to modelling a virtual plant.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI311"],
+        "flags": {}
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3773,
+    "name": "CHEMMAT760",
+    "title": "Advanced Microbial Technology in Bioprocess Engineering",
+    "desc": "Microbiological, biochemical, and molecular approaches crucial for analysing, developing, and optimising engineering bioprocesses. Fundamentals of microbial growth and the effect of environmental factors, molecular tools for quantifying bacterial cells and activities, bioinformatics, and in vitro enzymatic reactions. Applications of microbiology in engineering processes for chemical production, food engineering, bioenergy, and waste treatment.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3774,
+    "name": "CHEMMAT761",
+    "title": "Special Topic",
+    "desc": "Special Topic",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3775,
+    "name": "CHEMMAT762",
+    "title": "Special Topic",
+    "desc": "Special Topic",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3776,
+    "name": "CHEMMAT763",
+    "title": "Waste Reduction and Recycling Technologies",
+    "desc": "Principles, concepts, and technologies in waste minimisation and recycling. Topics include implementation of waste management and recycling technologies, economic analysis of waste recycling and minimisation and the three pillars of sustainability.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3777,
+    "name": "CHEMMAT771",
+    "title": "Advanced Food Process Technology - Level 9",
+    "desc": "Advanced knowledge essential for the application of food process technology. Topics include advanced food processing technology in specific food sectors strategic to New Zealand including dairy processing, meat processing, fruit and vegetable processing, seafood processing, wine processing. Teaching is highly research informed and involves principles, practice and independent project work related to the application of these skills.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": false
+  },
+  {
+    "id": 3778,
+    "name": "CHEMMAT772",
+    "title": "Advanced Food Process Engineering - Level 9",
+    "desc": "Critical evaluation of the latest research and development in innovative thermal and non-thermal food processing technology. Open-ended application of these latest developments to different specific end-point food processing requirements. Teaching is highly research informed with principles, application examples and related individual research project work.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": false
+  },
+  {
+    "id": 3779,
+    "name": "CHEMMAT773",
+    "title": "Food Process Systems Engineering - Level 9",
+    "desc": "Advanced understanding of the theory and application of process systems engineering for the food industry. Includes advanced process analytical technology, real-time quality control, multivariate data analysis, advanced statistical process control, advanced control methods and strategies, and real-time optimisation. Teaching is highly research informed with examples from the Industrial Information and Control Centre (I2C2) and includes an independent laboratory based project.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": false
+  },
+  {
+    "id": 3780,
+    "name": "CHEMMAT774A",
+    "title": "Dissertation in Food Process Engineering - Level 9",
+    "desc": "A structured supervised research project addressing a topic relevant to the development and commercialisation of food process engineering technologies.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT774B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3781,
+    "name": "CHEMMAT774B",
+    "title": "Dissertation in Food Process Engineering - Level 9",
+    "desc": "A structured supervised research project addressing a topic relevant to the development and commercialisation of food process engineering technologies.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 45,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT774A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3782,
+    "name": "CHEMMAT775A",
+    "title": "Dissertation in Food Process Engineering - Level 9",
+    "desc": "A structured supervised research project addressing a topic relevant to the development and commercialisation of food process engineering technologies.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 30,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT775B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3783,
+    "name": "CHEMMAT775B",
+    "title": "Dissertation in Food Process Engineering - Level 9",
+    "desc": "A structured supervised research project addressing a topic relevant to the development and commercialisation of food process engineering technologies.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 30,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT775A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3784,
+    "name": "CHEMMAT776A",
+    "title": "Research Portfolio - Level 9",
+    "desc": "A structured supervised research portfolio addressing a topic relevant to the development and commercialisation of food process engineering technologies.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 30,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT776B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3784,
+    "name": "CHEMMAT776B",
+    "title": "Research Portfolio - Level 9",
+    "desc": "A structured supervised research portfolio addressing a topic relevant to the development and commercialisation of food process engineering technologies.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 60,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT776A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3784,
+    "name": "CHEMMAT777A",
+    "title": "Research Portfolio - Level 9",
+    "desc": "A structured supervised research portfolio addressing a topic relevant to the development and commercialisation of food process engineering technologies.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 45,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT777B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3785,
+    "name": "CHEMMAT777B",
+    "title": "Research Portfolio - Level 9",
+    "desc": "A structured supervised research portfolio addressing a topic relevant to the development and commercialisation of food process engineering technologies.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 45,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT777A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3786,
+    "name": "CHEMMAT778",
+    "title": "Dairy Process Engineering - Level 9",
+    "desc": "Industry-focused advanced topics in post-farm-gate processing of milk including liquid milk, powdered dairy and fermented products. Waste and high value product recovery from milk processing. Trends in global dairy industry including new development in food physics and chemistry, new products and processes, design and production of novel foods. Includes individual project-based work, laboratory work and completion of a group-based project. Includes independent research to create unique innovative solutions to an open-ended problem.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": false
+  },
+  {
+    "id": 3787,
+    "name": "CHEMMAT779A",
+    "title": "Food Engineering Research Project - Level 9",
+    "desc": "A structured supervised research project addressing a topic relevant to the development and commercialisation of food process engineering technologies.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT779B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3788,
+    "name": "CHEMMAT779B",
+    "title": "Food Engineering Research Project - Level 9",
+    "desc": "A structured supervised research project addressing a topic relevant to the development and commercialisation of food process engineering technologies.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT779A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3789,
+    "name": "CHEMMAT780A",
+    "title": "Research Project - Level 9",
+    "desc": "To complete this course students must enrol in CHEMMAT780A and CHEMMAT780B,",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT780B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3790,
+    "name": "CHEMMAT780B",
+    "title": "Research Project - Level 9",
+    "desc": "To complete this course students must enrol in CHEMMAT780A and CHEMMAT780B,",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT780A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3791,
+    "name": "CHEMMAT780B",
+    "title": "Research Project - Level 9",
+    "desc": "To complete this course students must enrol in CHEMMAT780A and CHEMMAT780B,",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Chemical and Materials Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CHEMMAT780A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": 3792,
+    "name": "CIVIL700",
+    "title": "Geotechnical Analysis",
+    "desc": "Shear strength of soil – triaxial testing, measurement of pore water pressures, and interpretation of test data for use in analysis. Introduction to numerical modelling in geotechnical engineering. The use of traditional methods versus numerical modelling in design.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CIVIL300"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3793,
+    "name": "CIVIL705A",
+    "title": "Research Project - Level 9",
+    "desc": "Research Project",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CIVIL705B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3794,
+    "name": "CIVIL705B",
+    "title": "Research Project - Level 9",
+    "desc": "Research Project",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CIVIL705A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3795,
+    "name": "CIVIL722",
+    "title": "Slope Engineering",
+    "desc": "Slope failure mechanisms, geological controls and classification. Shear strength of rock and soil materials. Laboratory testing of earth materials for slope stability. Limit equilibrium techniques, including analytical, numerical and graphical methods. Effects of water and earthquake on slope stability. Slope monitoring, stabilisation and remediation. Landslide risk management.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CIVIL322"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3796,
+    "name": "CIVIL726",
+    "title": "Engineering Geology",
+    "desc": "Introduction to fundamentals in soil and rock mechanics and their application to engineering projects. Discussion of natural hazards and their implications on infrastructure design. Practical exercises in field mapping, core logging, aerial photograph interpretation, and basic laboratory tests.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3797,
+    "name": "CIVIL729",
+    "title": "Humanitarian Engineering",
+    "desc": "Evaluate frameworks used in the humanitarian engineering field to assist with human crises, including shelter, standards, law, human rights, resilience, appropriate engineering. Rapid assessments, application of minimum international standards for engineering, engineered shelter solutions, water, sanitation and hygiene and the engineering management of humanitarian crises.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3798,
+    "name": "CIVIL731",
+    "title": "Water Resources Modelling",
+    "desc": "Risk and uncertainty in water resources systems; evaluation of alternatives in water resources; hydrologic modelling; hydraulic modelling; river basin modelling; water resources economics.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3799,
+    "name": "CIVIL733",
+    "title": "Coastal Engineering Dynamics",
+    "desc": "Waves, wave theories, surf zone processes, sediment transport, dynamics of coastal systems.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3800,
+    "name": "CIVIL735",
+    "title": "Transport Modelling and Design",
+    "desc": "The planning, modelling, design and operation of current and future transport systems. Topics include transport models and their applications, Intelligent Transport Systems and emerging technologies, transport planning process and travel demand modelling. Transport models are developed to plan, design and manage transport networks based on fundamental modelling concepts, New Zealand specifications and international best practices.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CIVIL303"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3801,
+    "name": "CIVIL736",
+    "title": "Transport Safety and Mobility",
+    "desc": "Develop a sound understanding of safety and mobility of transport systems. Transport safety topics include safe systems, crash reduction studies, road safety audits and at-grade intersection geometric design, economic appraisal methods and transport infrastructure funding. Planning for transport mobility and sustainable transport systems, public transport systems, active modes and travel behaviour.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CIVIL203"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3802,
+    "name": "CIVIL741",
+    "title": "Ground Improvements and Geosynthetics Engineering",
+    "desc": "Advanced ground improvement techniques including: densification, consolidation, preloading and surcharge, soil reinforcement, stabilisation and thermal ground improvement.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CIVIL322"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3803,
+    "name": "CIVIL750",
+    "title": "Timber Engineering",
+    "desc": "The practical understanding of timber and its use in the construction industry. Design and detailing techniques for connections in timber structures, plywood structures, pole structures, timber floor systems, bridges, multi-storey buildings, formwork and falsework, arches and cable stayed systems.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CIVIL312"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3804,
+    "name": "CIVIL756",
+    "title": "Capstone Project",
+    "desc": "Final year team exercise with students in multi-disciplinary civil and environmental roles integrating technical learning into realistic design outcomes. Comprehensive investigation of an open ended, complex, real or synthetic civil engineering problem with simulated professional design office constraints. Includes technical, economic and environmental impact components to complete a scheme assessment report.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 90,
+        "stage": 3,
+        "department": "Civil Engineering"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3805,
+    "name": "CIVIL782",
+    "title": "Water Resources Engineering",
+    "desc": "A selection from the following: reservoir design and optimisation, flood control and design of flood control structures, micro to large scale hydroelectric engineering, river engineering and sedimentation. A water resources engineering design project.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENVENG333"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3806,
+    "name": "CIVIL790",
+    "title": "Civil Engineering Administration",
+    "desc": "The application of legal principles to problems in civil engineering and environmental engineering management. Examines the administration of national and international engineering contracts. Discusses statutes affecting engineering business. Investigates the implications of resource management and natural resource allocation legislation on engineering projects. Analyses processes for resolving engineering disputes.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3807,
+    "name": "CIVIL791",
+    "title": "Construction Management",
+    "desc": "Understanding topics necessary for effective construction management. Using a generic construction project life cycle, essential aspects of construction projects including the tendering process, preparing tenders, tender evaluation, project planning, resource allocation, teamwork, site safety, and contract types are covered. Case studies are used to reinforce the application of theoretical ideas to the successful running of construction projects.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Civil Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3808,
+    "name": "ENVENG740",
+    "title": "Water and Wastewater Engineering",
+    "desc": "Chemistry and microbiology of water and wastewater treatment, flow models and reactors. Unit operations and process analysis and design. Treatment plant design and operation. Nutrient removal processes. Effluent and residues disposal.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Environmental Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3809,
+    "name": "ENVENG747",
+    "title": "Environmental Fate of Chemicals and Mitigation - Level 9",
+    "desc": "Focuses on modelling sorption, degradation kinetics, and leaching of chemicals in the soil environment. Topics include deriving sorption parameters, parent and metabolite fitting with statistical rigours, calculating degradation end-points, novel adsorbents for removing contaminants in soil and water. The core taught skills are extended by an individual project in which independent research is undertaken to solve an environmental issue.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Environmental Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENVENG341"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3810,
+    "name": "COMPSYS700A",
+    "title": "Research Project - Level 9",
+    "desc": "Students are required to submit a report on project work carried out on a Computer Systems Engineering topic assigned by the Head of Department. The work shall be supervised by a member of staff.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Computer Systems Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS301"]
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": ["COMPSCI313", "COMPSYS302", "COMPSYS303", "COMPSYS304", "COMPSYS305", "ELECTENG303", "ELECTENG331", "ELECTENG332"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS700B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3811,
+    "name": "COMPSYS700B",
+    "title": "Research Project - Level 9",
+    "desc": "Students are required to submit a report on project work carried out on a Computer Systems Engineering topic assigned by the Head of Department. The work shall be supervised by a member of staff.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Computer Systems Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS301"]
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": ["COMPSCI313", "COMPSYS302", "COMPSYS303", "COMPSYS304", "COMPSYS305", "ELECTENG303", "ELECTENG331", "ELECTENG332"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS700A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3812,
+    "name": "COMPSYS701",
+    "title": "Advanced Digital Systems Design - Level 9",
+    "desc": "Advanced concepts in digital design including: System-on-Chip (system level description, behavioural and register-transfer descriptions); advanced modelling techniques and design flows; design space exploration and optimisation; hardware-software partitioning and trade-offs; component reusability; reconfigurable systems; low-power systems; case studies (speech, image, video algorithms implementation, application specific processor design); individual research projects to analyse the problem, model and implement the required hardware-software components.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Computer Systems Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS305"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3813,
+    "name": "COMPSYS704",
+    "title": "Advanced Embedded Systems - Level 9",
+    "desc": "Selected advanced topics from current research in embedded systems such as: embedded systems based on formal models of computation; centralised and distributed architectures for embedded systems; static and dynamic embedded systems; languages and frameworks for distributed embedded systems; actor and agent systems; verification. Includes a significant individual research project.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Computer Systems Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS723"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS202", "SOFTENG281"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3814,
+    "name": "COMPSYS705",
+    "title": "Formal Methods for Safety Critical Software - Level 9",
+    "desc": "Formal methods for the validation/verification of safety critical software, including machine learning algorithms. Topics covered will include mathematical modelling for embedded, automation, and mechatronic systems; advanced techniques for validation and verification; techniques for formal specification; methods of verification such as Bisimulation and model checking; state space explosion problem and solutions such as BDDs, symbolic model checking, and modular verification; verification of HDL/C using model checking tools. Includes a significant individual research project.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Computer Systems Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS202", "ENGSCI233", "MECHENG270", "MECHENG313", "SOFTENG211", "SOFTENG281", "SOFTENG282"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3815,
+    "name": "COMPSYS723",
+    "title": "Embedded Systems Design",
+    "desc": "Concurrency and models of computation, task models and race conditions, real-time operating systems based approach, synchronous approach, safe state machines, key properties: determinism and reactivity, SoPC and MPSoC, cyber-physical embedded systems, static analysis techniques, case studies in smart grid, automotive, medical devices and the like.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Computer Systems Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS303", "COMPSYS304", "SOFTENG370"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3816,
+    "name": "COMPSYS725",
+    "title": "Distributed Cyber-Physical Systems Design",
+    "desc": "Network layers and protocols. Packet switching. Broadband network principles. Low versus high bandwidth services. Network interfaces and instrumentation. Wireless networks in embedded applications. Industrial networking.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Computer Systems Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS201", "COMPSYS202", "SOFTENG281"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3817,
+    "name": "COMPSYS726",
+    "title": "Robotics and Intelligent Systems - Level 9",
+    "desc": "Fundamentals of robotic and intelligent systems, including reactive and deliberative functionality, navigation techniques, planning and programming of robot actions, machine learning, artificial neural networks and may include topics in sensors and actuators, kinematic analysis, fuzzy systems, genetic algorithms. Core concepts are extended by an individual research project where a challenging robotics problem is analysed and a solution implemented and tested.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Computer Systems Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSYS302", "MECHENG313", "SOFTENG306"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3818,
+    "name": "COMPSYS770",
+    "title": "Capstone Project",
+    "desc": "Final year team exercise with students in multi-disciplinary roles, with focus on computer systems engineering and integrating technical learning into realistic design outcomes. Comprehensive investigation of an open ended, complex, real or synthetic computer, electrical and software engineering problem with simulated professional design office constraints. Includes technical, economic and environmental impact components to complete a scheme assessment report.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Computer Systems Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 75,
+        "stage": 3,
+        "department": "Computer Systems Engineering"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3819,
+    "name": "ELECTENG700A",
+    "title": "Research Project - Level 9",
+    "desc": "Students are required to submit a report on project work carried out on a topic assigned by the Head of Department. The work shall be supervised by a member of staff.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["ELECTENG310", "ELECTENG311"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["ELECTENG303", "ELECTENG305", "ELECTENG309", "ELECTENG331", "ELECTENG332"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG700B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3820,
+    "name": "ELECTENG700B",
+    "title": "Research Project - Level 9",
+    "desc": "Students are required to submit a report on project work carried out on a topic assigned by the Head of Department. The work shall be supervised by a member of staff.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["ELECTENG310", "ELECTENG311"]
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": ["ELECTENG303", "ELECTENG305", "ELECTENG309", "ELECTENG331", "ELECTENG332"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG700A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3821,
+    "name": "ELECTENG703",
+    "title": "Advanced Power Systems - Level 9",
+    "desc": "Electricity markets: structure, pricing, optimisation, ancillary services; power system protection practices; distribution network development: smart grid, demand side participation; HVDC and FACT devices theory and application; renewable energy grid integration. Includes a substantial individual research project.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG731"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3822,
+    "name": "ELECTENG704",
+    "title": "Advanced Control Systems - Level 9",
+    "desc": "Advanced theory of modern control systems with emphasis on optimisation techniques for both deterministic and stochastic processes. State-space modelling of dynamic systems and choice of suitable performance criteria. Adaptive, nonlinear and sliding mode control systems. Core concepts are extended by an individual research project in which a challenging control problem is analysed and solved.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG722"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3823,
+    "name": "ELECTENG721",
+    "title": "Radio Engineering",
+    "desc": "Matching networks, waveguides, transmitter/receiver design, noise, non-linear behaviour, antennas, applications in computational electromagnetics. Fundamentals of radio propagation, tropospheric effects, diffraction, link budgets, point-to-point link design, multipath propagation, introduction to area coverage (mobile radio) systems. Introduction to radar systems, the radio spectrum and exposure standards.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG307"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3824,
+    "name": "ELECTENG722",
+    "title": "Modern Control Systems",
+    "desc": "State space analysis, relationship to transfer function methods, controllability and observability, multivariable plant. Computer simulation. Stability considerations. State variable feedback. Digital control system, design and realisation of digital controllers, adaptive controllers. Nonlinear systems, phase-plane and describing function techniques, Lyapunov's method of stability analysis, design of controllers for non-linear systems. Variable structure systems.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG303", "ELECTENG331", "ELECTENG332"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3825,
+    "name": "ELECTENG726",
+    "title": "Digital Communications",
+    "desc": "Advanced principles and techniques in digital transmission systems: base-band and pass-band digital systems. Geometric representation of signals: theory of orthonormal signals, correlation demodulators, optimal detector. Digital phase (PSK) and frequency (FSK) modulation. Digital communication systems with noise. Information theory, capacity theorem and applications. Signal and information coding: data compression, digital transmission, error detection and correction, block and convolutional codes. Noise, thermal noise, noise figure. Traffic theory. Digital networks and OSI model.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG303", "ELECTENG331"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG732"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3826,
+    "name": "ELECTENG731",
+    "title": "Power Systems",
+    "desc": "Builds on the knowledge of three-phase power systems components to understand modelling, formulation and typical analysis carried out by electricity transmission, distribution and generation entities. Load flow, fault, stability and power quality. Supplemented by laboratories where students learn to use professional software to implement the theoretical aspects.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG309"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3827,
+    "name": "ELECTENG733",
+    "title": "Digital Signal Processing",
+    "desc": "Analysis and manipulation of discrete-time signals and systems. Spectral representations and analysis using the z-transform, discrete Fourier transform and fast Fourier transform. Introduction to stochastic processes. Hardware systems for processing digital signals.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG303", "ELECTENG331", "ENGSCI311", "ENGSCI313"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3828,
+    "name": "ELECTENG734",
+    "title": "Power Electronics - Level 9",
+    "desc": "Selected advanced concepts in power electronics are introduced through a practical and research based individual design project, utilising modern power converter topologies with supporting lectures that include: inductive power transfer and control, DC-DC converter design and control, high frequency magnetics design, semiconductor switches, practical design issues, controlled rectifiers and PWM converters with application to conventional and brushless DC motors.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG305", "ELECTENG310", "ELECTENG311"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3829,
+    "name": "ELECTENG736",
+    "title": "Analog and Digital Filter Synthesis",
+    "desc": "Filter concepts and network functions, a review of approximation techniques and frequency transformations, leading to a thorough treatment of passive, active and digital filter implementations.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG305", "ELECTENG331"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3830,
+    "name": "ELECTENG738",
+    "title": "Selected Topics in Advanced Power Systems - Level 9",
+    "desc": "Electricity markets: structure, pricing, optimisation, ancillary services; Power system protection practices; Distribution Network Development: Smart Grids, Demand Side Participation, Integration of DG/renewable sources and Electric Vehicles. Core concepts are extended by an individual research project, a self-guided protection laboratory and industry engagement in advanced power system practices.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ELECTENG731"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3831,
+    "name": "ELECTENG770",
+    "title": "Capstone Project",
+    "desc": "Final year team exercise with students in multi-disciplinary roles, with focus on electrical and electronic engineering, integrating technical learning into realistic design outcomes. Comprehensive investigation of an open-ended, complex, real or synthetic computer, electrical and software engineering problem with simulated professional design office constraints. Includes technical, economic and environmental impact components to complete a scheme assessment report.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Electrical and Electronic Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 75,
+        "stage": 3,
+        "department": "Electrical and Electronic Engineering"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3832,
+    "name": "ENGSCI700A",
+    "title": "Research Project - Level 9",
+    "desc": "An investigation carried out under the supervision of a member of staff on a topic assigned by the Head of Department of Engineering Science. A written report on the work must be submitted.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI700B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3833,
+    "name": "ENGSCI700B",
+    "title": "Research Project - Level 9",
+    "desc": "An investigation carried out under the supervision of a member of staff on a topic assigned by the Head of Department of Engineering Science. A written report on the work must be submitted.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI700A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3834,
+    "name": "ENGSCI711",
+    "title": "Advanced Mathematical Modelling",
+    "desc": "A selection of modules on mathematical modelling methods in engineering, including theory of partial differential equations, integral transforms, methods of characteristics, similarity solutions, asymptotic expressions, theory of waves, special functions, non-linear ordinary differential equations, calculus of variations, tensor analysis, complex variables, wavelet theory and other modules offered from year to year.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGSCI311", "ENGSCI313", "ENGSCI314"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3835,
+    "name": "ENGSCI712",
+    "title": "Computational Algorithms for Signal Processing",
+    "desc": "Advanced topics in mathematical modelling and computational techniques, including topics on singular value decomposition, Principle Component Analysis and Independent Component Analysis, eigen-problems, and signal processing (topics on neural network models such as the multi-layer perception and self organising map).",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENGSCI311", "ENGSCI313", "ENGSCI314"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3836,
+    "name": "ENGSCI721",
+    "title": "Data-centric Engineering for Physical Systems",
+    "desc": "Mathematical modelling of complex physical systems, including model development, parameterisation and evaluation, illustrated using examples from current research and industry. Inverse problems and uncertainty quantification for physical models in engineering and science, including principles of uncertainty propagation for linear and nonlinear physical models given real-world data, and connections to physics-informed machine learning.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3837,
+    "name": "ENGSCI740",
+    "title": "Computational Engineering for Physical Systems",
+    "desc": "Principles and practice for modelling complex physical systems. Applications in biomechanics, fluid mechanics and solid mechanics. Including topics such as large deformation elasticity theory applied to soft tissues, inviscid flow theory, compressible flows, viscous flows, meteorology, oceanography, coastal ocean modelling, mixing in rivers, fracture, composite materials and geomechanics. Underlying theories, computational techniques and industry applications explored using commercial software.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["BIOMENG321", "ENGSCI343"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3838,
+    "name": "ENGSCI755",
+    "title": "Decision Making in Engineering",
+    "desc": "Introduction to techniques for decision making in engineering systems including decision heuristics, simple prioritisation, outranking approaches, analytic hierarchy process, application to group decision making.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [],
+    "isActive": true
+  },
+  {
+    "id": 3838,
+    "name": "ENGSCI760",
+    "title": "Algorithms for Optimisation",
+    "desc": "Meta-heuristics and local search techniques such as Genetic Algorithms, Simulated Annealing, Tabu Search and Ant Colony Optimisation for practical optimisation. Introduction to optimisation under uncertainty, including discrete event simulation, decision analysis, Markov chains and Markov decision processes and dynamic programming.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSCI101", "ENGGEN131"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3839,
+    "name": "ENGSCI761",
+    "title": "Integer and Multi-objective Optimisation",
+    "desc": "Computational methods for solving optimisation problems. Algorithms for integer programming including branching, bounding, cutting and pricing strategies. Algorithms for linear and integer programmes with multiple objective functions.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI391", "ENGGEN765"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3840,
+    "name": "ENGSCI763",
+    "title": "Advanced Simulation and Stochastic Optimisation",
+    "desc": "Advanced simulation topics with an emphasis on optimisation under uncertainty. Uniform and non-uniform random variate generation, input distribution selection, output analysis, variance reduction. Simulation-based optimisation and stochastic programming. Two-stage and multi-stage programs with recourse. Modelling risk. Decomposition algorithms. Scenario construction and solution validation.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI391", "ENGGEN765"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3841,
+    "name": "ENGSCI768",
+    "title": "Advanced Operations Research and Analytics",
+    "desc": "Advanced Operations Research and Analytics topics including selected theory, algorithms and applications for non-linear programming, smooth and non-smooth optimisation, equilibrium programming and game theory.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Engineering Science",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGSCI391", "ENGGEN765"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3842,
+    "name": "MECHENG700A",
+    "title": "Research Project - Level 9",
+    "desc": "Supervised research on a topic in engineering culminating in an independent written project report that includes a literature review, a description of the research and its findings, and a statement of research contribution. Further supporting technical material will be provided as a compendium.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 75,
+        "stage": 3,
+        "department": "Mechanical Engineering"
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG700B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3843,
+    "name": "MECHENG700B",
+    "title": "Research Project - Level 9",
+    "desc": "Supervised research on a topic in engineering culminating in an independent written project report that includes a literature review, a description of the research and its findings, and a statement of research contribution. Further supporting technical material will be provided as a compendium.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 75,
+        "stage": 3,
+        "department": "Mechanical Engineering"
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG700A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3844,
+    "name": "MECHENG712",
+    "title": "Aerohydrodynamics",
+    "desc": "The study of fluid mechanics relevant to external flows, e.g., wind turbines, yachts, aircraft or wind loadings on buildings, boundary layers, computational fluid dynamics",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG325"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3845,
+    "name": "MECHENG713",
+    "title": "Energy Technology",
+    "desc": "Industrial thermodynamics and energy conversion/efficiency, power cycles, availability and irreversibility, simple combustion analysis, mass transfer, energy studies, boiling and condensation.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG311"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3846,
+    "name": "MECHENG715",
+    "title": "Building Services",
+    "desc": "Principles and practice of heating, ventilation, air-conditioning and refrigeration (HVAC&R), psychrometry, heating/cooling loads, mass transfer and air quality, refrigeration/heat pump systems, cooling towers, pumps, fans, valves, pipes and ducts.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG325"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3846,
+    "name": "MECHENG718",
+    "title": "Computational Fluid Dynamics",
+    "desc": "Application of computational methods to fluid dynamics and heat transfer. Finite volume and finite difference methods. Convergence and stability. Mesh generation and post-processing. Application of commercial computer programs to industrial problems.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG711"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3847,
+    "name": "MECHENG722",
+    "title": "Engineering Vibrations",
+    "desc": "Selected topics in vibration engineering: Multiple degree of freedom and continuous systems; Spectral analysis; analytical, approximate and numerical methods, including FEA; vibration instrumentation, measurement and testing; modal analysis; vibration treatment.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG325"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3848,
+    "name": "MECHENG724",
+    "title": "Multivariable Control Systems",
+    "desc": "Advanced control of mechanical and mechatronic systems. Topics include: state-space representations, linearisation, discretisation, stability, state feedback control design, optimal control, state estimation and Kalman filters. Applications in MATLAB/Simulink and with physical systems.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG322"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3849,
+    "name": "MECHENG726",
+    "title": "Acoustics for Engineers",
+    "desc": "Wave equations, sources, directionality; behaviour of sound waves. Principles of active control for sound. The ear and hearing system. Measurement of sound fields and acoustic properties of rooms. Philosophy of annoyance. Legal and Standards requirements. Sound fields in enclosures. Mass Law. General insulation equation. Materials as absorbers and reflectors, room acoustics, requirements in auditoria, sound system design principles and transducer performance. Electro-acoustics and audio signal processing.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG325"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3850,
+    "name": "MECHENG731",
+    "title": "Mechanical Design Projects",
+    "desc": "A variety of engineering projects requiring the development and communication of design solutions to a professional standard, and using a wide range of advanced engineering methods.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG334"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3851,
+    "name": "MECHENG743",
+    "title": "Composite Materials",
+    "desc": "Applications and manufacturing of composite materials. Mechanics of composite lamina/laminate. Failure prediction, design and finite element analysis of composite laminates and structures. Analysis and design of sandwich structures.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG340"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3852,
+    "name": "MECHENG747",
+    "title": "Manufacturing and Industrial Processes",
+    "desc": "Theory of plasticity; material characterisation; process analyses; extrusion, wiredrawing, forging, rolling; metal cutting: thin shear model and Merchant's diagram, tool wear and tool life; sheet forming; forming limit diagram; thermal analyses of industrial operations including polymer processing; basic polymer science: thermosets and thermoplastics, profile extrusion, sheet extrusion; blown-film extrusion, filament extrusion, blow moulding.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG340"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3853,
+    "name": "MECHENG752",
+    "title": "Technology Management",
+    "desc": "An appreciation of the strategic systems and technology management aspects of manufacturing systems. Industry based projects that explore the design and optimisation of manufacturing operations form a major part of the course.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ENGGEN303"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3854,
+    "name": "MECHENG754",
+    "title": "Industry 4.0 Smart Manufacturing",
+    "desc": "New information technologies and their applications in manufacturing enterprises, including introduction to Industry 4.0, product modelling technologies, smart manufacturing systems, industrial IoT sensing and data analysis technologies, digital twins and applications of RFID in a modern manufacturing setting.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG709", "MECHENG710", "MECHENG753"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3855,
+    "name": "MECHENG754",
+    "title": "Industry 4.0 Smart Manufacturing",
+    "desc": "New information technologies and their applications in manufacturing enterprises, including introduction to Industry 4.0, product modelling technologies, smart manufacturing systems, industrial IoT sensing and data analysis technologies, digital twins and applications of RFID in a modern manufacturing setting.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Mechanical Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MECHENG709", "MECHENG710", "MECHENG753"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3856,
+    "name": "SOFTENG700A",
+    "title": "Research Project - Level 9",
+    "desc": "Students are required to submit a report on project work carried out on a Software Engineering topic assigned by the Head of Department.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Software Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG306"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG700B"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3857,
+    "name": "SOFTENG700B",
+    "title": "Research Project - Level 9",
+    "desc": "Students are required to submit a report on project work carried out on a Software Engineering topic assigned by the Head of Department.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Software Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG306"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG700A"],
+        "flags": {
+          "isCorequesite": true
+        }
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3858,
+    "name": "SOFTENG701",
+    "title": "Advanced Software Engineering Development Methods - Level 9",
+    "desc": "Advanced studies in methods and techniques for developing complex software systems including topics in software engineering environments, advanced software design, tool construction and software architectures. The core taught skills are extended by individual projects in which independent research is undertaken to address challenging software system problems.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Software Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG306", "COMPSYS302"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3859,
+    "name": "SOFTENG750",
+    "title": "Software Development Methodologies",
+    "desc": "Software lifecycle; software process models; examples of software processes; software process improvement; project management; tool support for software development; issues in software engineering.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Software Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG306"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3860,
+    "name": "SOFTENG751",
+    "title": "High Performance Computing - Level 9",
+    "desc": "Advanced parallel and high performance computing concepts and techniques such as parallel system architecture; parallelisation concepts, algorithms and methodology; parallel programming paradigms and technologies. Core concepts and skills are deepened by a hands-on research project in which a challenging parallel computing problem is analysed and solved.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Software Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG306", "COMPSYS302"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3861,
+    "name": "SOFTENG752",
+    "title": "Formal Specification and Design - Level 9",
+    "desc": "Formal specification, design, and (automatic) analysis of software systems. Quality assurance through precise description and rigorous verification on the design. Introduction to the Z, OCL and CSP notations. Comparison of approaches, with emphasis on their practical application. Includes a substantial individual research project.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Software Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG306"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3862,
+    "name": "SOFTENG754",
+    "title": "Advanced Software Requirements Engineering - Level 9",
+    "desc": "Advanced software engineering concepts focusing on techniques for requirements analysis and requirements engineering (RE) of software systems. Topics will include: requirements elicitation, analysis, specification, validation, verification, user experience design, test-driven development and continuous integration. Includes a substantial individual research project.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Software Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG306", "COMPSYS302"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3863,
+    "name": "SOFTENG761",
+    "title": "Advanced Agile and Lean Software Development - Level 9",
+    "desc": "Advanced software engineering concepts focussing on Agile and Lean software development; including hands-on iterative and incremental software development, self-organising teamwork, project management, and an individual research component to explore challenging issues in this discipline.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Software Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG306"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3864,
+    "name": "SOFTENG762",
+    "title": "Robotics Process Automation",
+    "desc": "Covers the fundamentals of Robotic Process Automation (RPA) systems. Students explore what RPA is and where it is useful, how RPA fits into current information technology setups, extracting and manipulating data from both external and internal sources, generating reports and statistics, and orchestrating multi-robot installations.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Software Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOFTENG306"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3865,
+    "name": "SOFTENG770",
+    "title": "Capstone Project",
+    "desc": "Final year team exercise with students in multi-disciplinary roles, with focus on software engineering, integrating technical learning into realistic design outcomes. Comprehensive investigation of an open ended, complex, real or synthetic computer, electrical and software engineering problem with simulated professional design office constraints. Includes technical, economic and environmental impact components to complete a scheme assessment report.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Software Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 0,
+        "required": 75,
+        "stage": 3,
+        "department": "Software Engineering"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3866,
+    "name": "STRCTENG710",
+    "title": "Low Rise Structures Design",
+    "desc": "Structural systems for low-rise buildings, including seismic design and analysis techniques. Design and detailing of low-rise structures in structural steel, reinforced concrete, reinforced masonry, and timber. Strut and tie design for reinforced concrete. Introduction to fire engineering. Techniques in the checking of existing structures and lessons learnt from failures.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Structural Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["STRCTENG302"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CIVIL313", "STRCTENG303"]
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": 3867,
+    "name": "STRCTENG711",
+    "title": "Multistorey Structures Design",
+    "desc": "Techniques for the design of multistorey structures to resist seismic loading. Derivation of design actions, alternative structural systems for resisting these loads, design of structural components subject to cyclic inelastic action, detailing of members and joints to enhance earthquake resistance. Techniques of seismic isolation.",
+    "faculties": [
+      "Engineering"
+    ],
+    "department": "Structural Engineering",
+    "points": 15,
+    "stage": 4,
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["STRCTENG302"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["CIVIL313", "STRCTENG303"]
       }
     ],
     "isActive": true
