@@ -6,7 +6,8 @@ import {
   OnChanges,
   Output,
   Renderer,
-  SimpleChange
+  SimpleChange,
+  ViewEncapsulation
 } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -23,8 +24,8 @@ import { StoreHelper } from '../services';
     style: 'margin: 5px 2.5px;'
   },
   selector: 'course',
-  styles: [require('./course.component.scss')],
-  templateUrl: './course.template.html'
+  templateUrl: './course.template.html',
+  styleUrls: ['./course.component.scss'],
 })
 
 export class Course {
