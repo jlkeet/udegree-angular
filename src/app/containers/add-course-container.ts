@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   ActivatedRoute,
   Router
@@ -10,20 +10,15 @@ import { AppHeader } from '../app.header.component';
 import { Store } from '../app.store';
 import { ICourse } from '../interfaces';
 import {
-  CourseModel,
-  CourseStatus,
   DepartmentCoursesModel,
   Message,
-  Period,
-  SemesterModel
+  Period
 } from '../models';
 import {
   CourseEventService,
   CourseService,
   IRequirement,
   ModuleService,
-  MovedEvent,
-  RemovedEvent,
   RequirementService,
   StoreHelper
 } from '../services';

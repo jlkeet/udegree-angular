@@ -14,7 +14,6 @@ import {
   FacultyService,
   ConjointService,
   PathwayService,
-  StatusEvent,
   ModuleService,
   StoreHelper,
 } from "../services";

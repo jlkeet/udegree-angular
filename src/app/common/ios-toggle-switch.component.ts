@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Message, MessageStatus } from '../models';
 
 /*
     A component for displaying an iOS style toggle.

@@ -1,31 +1,19 @@
-import { ValueTransformer } from "@angular/compiler/src/util";
 import { UserContainer } from "../user/user-status.component";
 import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
-  Output,
-  SimpleChange,
+  Output
 } from "@angular/core";
-import { query } from "@angular/core/src/render3";
 import { AngularFireDatabase } from "@angular/fire/database";
 import { AngularFirestore } from "@angular/fire/firestore";
-import * as firebase from "firebase";
-import { auth } from "firebase";
-import { subscribeToPromise } from "rxjs/internal-compatibility";
 import "rxjs/Rx";
-import { isUndefined } from "util";
 import { Store } from "../app.store";
 import { AuthService } from "../core/auth.service";
 import { ICourse } from "../interfaces";
 import {
-  CourseModel,
-  CourseStatus,
   Message,
-  MessageStatus,
   Period,
-  SemesterModel,
 } from "../models";
 import {
   ClickedEvent,
@@ -35,12 +23,8 @@ import {
   RemovedEvent,
   StoreHelper,
 } from "../services";
-import { UserComponent } from "../user/user.component";
-import { MatFormFieldControl, MatListOption } from "@angular/material";
 import { DegreeSelection } from "../select-major";
-import request from 'request';
 import { FirebaseDbService } from "../core/firebase.db.service";
-import { analyzeAndValidateNgModules } from "@angular/compiler";
 
 
 /*

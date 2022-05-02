@@ -1,16 +1,12 @@
 import { RouterModule, Routes } from '@angular/router';
 import { AddCourseContainer, PlannerContainer, SelectDegreeContainer, SelectMajorContainer } from './containers';
 import { NoContent } from './no-content';
-
-import { DataResolver } from './app.resolver';
-
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './register/register.component';
 import { UserResolver } from './user/user.resolver';
 import { AuthGuard } from './core/auth.guard';
 import { PrivacyContainer } from './privacy-policy/privacy-policy.component';
-import { SemesterPanel } from './courses-panel';
 
 
 

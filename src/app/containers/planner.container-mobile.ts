@@ -3,20 +3,12 @@ import 'rxjs/Rx';
 import { Store } from '../app.store';
 import { ICourse } from '../interfaces';
 import {
-  CourseModel,
-  CourseStatus,
-  Message,
-  SemesterModel
-} from '../models';
-import {
   ClickedEvent,
-  CourseEventService,
   CourseService,
   IRequirement,
   MovedEvent,
   RemovedEvent,
   RequirementService,
-  StatusEvent,
   StoreHelper
 } from '../services';
 

@@ -1,15 +1,11 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   ActivatedRoute,
-  NavigationExtras,
-  Params,
   Router,
-  RouterModule
 } from '@angular/router';
 import 'rxjs/Rx';
 import { Store } from '../app.store';
 import { ICourse } from '../interfaces';
-import { CourseStatus } from '../models';
 import { DepartmentService, FacultyService, ConjointService, PathwayService, ModuleService, StoreHelper } from '../services';
 
 /*

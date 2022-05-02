@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Store } from '../app.store';
 import { ICourse } from '../interfaces';
 import {
-  CourseModel,
   CourseStatus,
   Message,
   MessageStatus,

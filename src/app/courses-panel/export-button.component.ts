@@ -1,27 +1,13 @@
-import { UserContainer } from "../user/user-status.component";
 import {
   Component,
   EventEmitter,
 } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
-import * as firebase from "firebase";
 import "rxjs/Rx";
-import { Store } from "../app.store";
 import { AuthService } from "../core/auth.service";
 import { UserService } from "../core/user.service";
-import {
-  Message,
-} from "../models";
-import {
-  CourseEventService,
-  CourseService,
-  StoreHelper,
-} from "../services";
-import html2canvas from 'html2canvas';
-
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { CourseDialogComponent } from "./course-dialog.component";
-import { updateHeritageClause } from "typescript";
 
 @Component({
     host: {

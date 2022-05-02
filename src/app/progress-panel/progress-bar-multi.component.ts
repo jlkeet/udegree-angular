@@ -1,9 +1,5 @@
 import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material';
-import { request } from 'https';
-import { ProgressBarModule } from 'primeng/primeng';
-import { ICourse } from '../interfaces';
-import { CourseStatus } from '../models';
 import { RequirementService } from '../services';
 import { ProgressBarMultiContainer } from './progress-bar-multi.container';
 

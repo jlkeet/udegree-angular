@@ -1,13 +1,11 @@
 import { Component, EventEmitter, Inject, OnInit } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
-import { EmailValidator, FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup } from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef, MatDialog} from "@angular/material";
 import { AuthService } from "../core/auth.service";
 import { UserService } from "../core/user.service";
-import { ExportButton } from "./export-button.component";
 import html2canvas from 'html2canvas';
 import * as firebase from "firebase";
-import { updateHeritageClause } from "typescript";
 
 @Component({
     selector: 'course-dialog',

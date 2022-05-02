@@ -1,11 +1,9 @@
 import { EventEmitter, Injectable, Output } from "@angular/core";
 import "rxjs/add/operator/toPromise";
 import { AngularFireAuth } from "@angular/fire/auth";
-import * as firebase from "firebase/app";
 import { FirebaseUserModel } from "./user.model";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { UserService } from "./user.service";
-import { Store } from "../app.store";
 import { StoreHelper } from "../services";
 
 @Injectable()

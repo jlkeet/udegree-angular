@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { NgxLongClickDirective } from 'ngx-long-click';
 import { Subject } from 'rxjs/Subject';
 import { ICourse } from '../interfaces';
 import { CourseStatus, Period } from '../models';

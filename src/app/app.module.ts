@@ -116,7 +116,6 @@ import { ExportButton } from './courses-panel/export-button.component';
 import { FirebaseDbService } from './core/firebase.db.service';
 import { ProgressPanel } from './progress-panel';
 import { ProgressBarMulti } from './progress-panel';
-import { ProgressBarMultiContainer } from './progress-bar-multi.container';
 import { CourseDialogComponent } from './courses-panel/course-dialog.component';
 import { ProgressDialogComponent } from './progress-panel/progress-dialog.component'
 import { UserDialogComponent } from './user/user-dialog-component';

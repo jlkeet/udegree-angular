@@ -1,7 +1,6 @@
 import { OnChanges, SimpleChange, Component, Input } from '@angular/core';
 import { CourseEventService } from '../services';
 import { Message, MessageStatus } from '../models';
-import { Store } from '../app.store';
 
 /*
     A component for displaying a list of notification messages

@@ -9,8 +9,6 @@ import {
   StoreHelper,
   ModuleService,
 } from "../services";
-import { MatFormFieldControl, MatListOption } from "@angular/material";
-import { ProgressPanel } from "../progress-panel";
 import { FirebaseDbService } from "../core/firebase.db.service";
 import { UserContainer } from "../common";
 

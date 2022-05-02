@@ -7,7 +7,6 @@ import {
   Renderer,
   // Renderer2
 } from '@angular/core';
-import * as dragula from 'dragula';
 import { DragulaService } from 'ng2-dragula';
 import { ICourse } from '../interfaces';
 import { CourseStatus, Period } from '../models';

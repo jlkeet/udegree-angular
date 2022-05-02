@@ -9,7 +9,6 @@ import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
 import { DepartmentService, FacultyService, RequirementService, ConjointService } from '../services';
 import { AppHeader } from '../app.header.component';
-import { MatExpansionModule } from '@angular/material/expansion';
 
 /*
     Component for filtering a list of courses by eligibility / search term
@@ -23,23 +22,23 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 @Injectable()
 export class CourseFilter {
-  @Output() public toggleChange = new EventEmitter();
-  @Output() public searchChange = new EventEmitter();
+  @Output() private toggleChange = new EventEmitter();
+  @Output() private searchChange = new EventEmitter();
 
-  @Input() public courses: ICourse[];
-  @Input() public planned: ICourse[];
-  @Input() public filterParams: any;
+  @Input() private courses: ICourse[];
+  @Input() private planned: ICourse[];
+  @Input() private filterParams: any;
 
-  public panelOpenStateFaculty = false;
-  public panelOpenStateDepartment = false;
-  public panelOpenStateCampus = false;
-  public panelOpenStateStage = false;
-  public loading = false;
+  private panelOpenStateFaculty = false;
+  private panelOpenStateDepartment = false;
+  private panelOpenStateCampus = false;
+  private panelOpenStateStage = false;
+  private loading = false;
 
-  public facultyChoices;
-  public conjointChoices;
-  public departmentChoices;
-  public campusChoices = [
+  private facultyChoices;
+  private conjointChoices;
+  private departmentChoices;
+  private campusChoices = [
     {value: 'City', label: 'City'},
     {value: 'Tamaki', label: 'Tamaki'},
     {value: 'Grafton', label: 'Grafton'},
@@ -47,8 +46,8 @@ export class CourseFilter {
     {value: 'Epsom', label: 'Epsom'},
   ];
 
-  public plannedNames;
-  public stageChoices = [
+  private plannedNames;
+  private stageChoices = [
     {value: 1, label: '100'},
     {value: 2, label: '200'},
     {value: 3, label: '300'},
@@ -56,11 +55,11 @@ export class CourseFilter {
   ];
 
   constructor(
-    public departmentService: DepartmentService,
-    public facultyService: FacultyService,
-    public requirementService: RequirementService,
-    public conjointService: ConjointService,
-    public appHeader: AppHeader
+    private departmentService: DepartmentService,
+    private facultyService: FacultyService,
+    private requirementService: RequirementService,
+    private conjointService: ConjointService,
+    private appHeader: AppHeader
   ) { }
 
   public ngOnInit() {
@@ -176,7 +175,7 @@ export class CourseFilter {
     });
   }
 
-  public toArray(arg) {
+  private toArray(arg) {
     if (!arg) {
       return [];
     }
@@ -186,7 +185,7 @@ export class CourseFilter {
     return arg.split(',');
   }
 
-  public clearAll() {
+  private clearAll() {
     this.loading = true;
     this.ngOnInit();
     this.filterParams.corequesite = null;
@@ -203,7 +202,7 @@ export class CourseFilter {
   
   }
 
-  public collapseAll() {
+  private collapseAll() {
     this.panelOpenStateFaculty = false;
     this.panelOpenStateDepartment = false;
     this.panelOpenStateCampus = false;

@@ -2,7 +2,6 @@ import { Component } from "@angular/core";
 import { StoreHelper } from "../services";
 
 import { HostListener } from "@angular/core";
-import { MatTabsModule } from "@angular/material";
 import { AddCourseContainer } from "./add-course-container";
 
 @Component({

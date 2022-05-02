@@ -1,24 +1,13 @@
 import { Component, Input, EventEmitter, Output, ViewEncapsulation, ElementRef, ViewChild } from "@angular/core";
-import { snapshotChanges } from "@angular/fire/database";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { DragulaService } from "ng2-dragula";
 import { DragulaModule } from "ng2-dragula";
-import { type } from "os";
-import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 import { ICourse } from "../interfaces";
 import { CourseStatus } from "../models";
 import { CourseEventService, CourseService, StoreHelper } from "../services";
-import { MatExpansionModule } from '@angular/material/expansion';
-import { forEach } from "@angular/router/src/utils/collection";
-import { NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
 import { CoursesPanel } from "./courses-panel.component";
-import { HighlightSpanKind } from "typescript";
 import { Router } from "@angular/router";
-import { BoundPlayerFactory } from "@angular/core/src/render3/styling/player_factory";
 import { UserContainer } from "../common";
-import autoScroll from 'dom-autoscroller';
-import { catchError } from "rxjs/operators";
-import * as dragula from "dragula";
 
 @Component({
   selector: "semester-panel",

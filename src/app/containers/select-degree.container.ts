@@ -1,18 +1,11 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { Component } from '@angular/core';
 import {
   ActivatedRoute,
-  NavigationExtras,
-  Params,
   Router,
-  RouterModule
 } from '@angular/router';
-import { LocalStorageService } from 'angular-2-local-storage';
 import 'rxjs/Rx';
 import { Store } from '../app.store';
-import { AuthService } from '../core/auth.service';
 import { ICourse } from '../interfaces';
-import { CourseStatus } from '../models';
 import { FacultyService, ConjointService, StoreHelper } from '../services';
 
 /*

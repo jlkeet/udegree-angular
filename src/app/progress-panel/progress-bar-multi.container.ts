@@ -1,5 +1,4 @@
-import { NumberFormatStyle } from "@angular/common";
-import { Component, Input, OnChanges, SimpleChange, EventEmitter, ChangeDetectionStrategy } from "@angular/core";
+import { Component, Input, EventEmitter, ChangeDetectionStrategy } from "@angular/core";
 import { Store } from "../app.store";
 import { ICourse } from "../interfaces";
 import { CourseStatus } from "../models";

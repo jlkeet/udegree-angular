@@ -1,12 +1,9 @@
-import { AnimationStyleMetadata } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { ICourse } from './interfaces';
 import {
-  CourseModel,
-  CourseStatus,
   Message,
   SemesterModel
 } from './models';

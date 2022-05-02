@@ -2,10 +2,6 @@
  * Angular 2 decorators and services
  */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AddCourseService } from './add-course';
-import * as services from './services';
 import { AppHeader } from './app.header.component';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -46,8 +42,6 @@ export class App implements OnInit {
   data : any = [];
 
   constructor(
-    private db_courses: AngularFireDatabase,
-    private db: AngularFirestore,
     private appHeader: AppHeader,
     private router: Router
 

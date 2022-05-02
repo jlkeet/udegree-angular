@@ -1,30 +1,21 @@
 import {
   Component,
   EventEmitter,
-  Input,
-  OnChanges,
   Output,
-  SimpleChange,
   ViewEncapsulation,
 } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
 import {
   ActivatedRoute,
   NavigationExtras,
-  Params,
   Router,
 } from "@angular/router";
 import { Store } from "../app.store";
 import { ICourse } from "../interfaces";
 import {
-  CourseModel,
-  CourseStatus,
-  RequirementType,
-  SemesterModel,
+  CourseStatus
 } from "../models";
 import {
-  CourseEventService,
-  CourseService,
   DepartmentService,
   IRequirement,
   LocationRef,
@@ -34,11 +25,7 @@ import {
 } from "../services";
 import { DegreeSelection } from "../select-major";
 import { FirebaseDbService } from "../core/firebase.db.service";
-import { UserService } from "../core/user.service";
 import { UserContainer } from "../common";
-import { DebugRenderer2 } from "@angular/core/src/view/services";
-import { ValueConverter } from "@angular/compiler/src/render3/view/template";
-import { ProgressBarModule } from "primeng/primeng";
 import { ProgressBarMulti } from "./progress-bar-multi.component";
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ProgressDialogComponent } from "./progress-dialog.component";
