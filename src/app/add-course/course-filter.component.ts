@@ -59,7 +59,7 @@ export class CourseFilter {
     private facultyService: FacultyService,
     private requirementService: RequirementService,
     private conjointService: ConjointService,
-    private appHeader: AppHeader
+    public appHeader: AppHeader
   ) { }
 
   public ngOnInit() {

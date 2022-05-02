@@ -807,33 +807,7 @@ export class ProgressPanel {
       courseGrades.reduce((gradeTotal, grade) => gradeTotal + grade, 0) /
       (courseGrades.length + failed);
   }
-
-  public degreeClicked() {
-    this.addingDegree = true;
-    this.faculties = this.degreeSelect.faculties;
-  }
-
-  public majorClicked() {
-    setTimeout(() => {     
-      this.addingMajor = true;
-      this.majorsList = this.degreeSelect.majors; }, 4000 )
-  }
-
-  public conjointClicked() {
-    this.addingConjoint = true;
-    this.conjoints = this.degreeSelect.conjoints;
-  }
-
-  public secondMajorClicked() {
-    this.addingSecondMajor = true;
-    this.secondMajorsList = this.degreeSelect.secondMajors;
-  }
-
-  public thirdMajorClicked() {
-    this.addingThirdMajor = true;
-    this.thirdMajorsList = this.degreeSelect.thirdMajors;
-  }
-
+  
   public pathwayCheck(value) {
 
     for (let i = 0; i < this.degreeSelect.pathways.length; i++) {
