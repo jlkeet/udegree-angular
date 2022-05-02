@@ -307,58 +307,58 @@ export class CoursesPanel {
   }
 
 
-  public findSemsFromDb() {
-    if (this.email !== undefined) {
-      this.db
-        .collection("users")
-        .doc(this.email)
-        .get()
-        .toPromise()
-        .then((doc) => {
-          if (doc.exists) {
-            this.db
-              .collection("users")
-              .doc(this.email)
-              .collection("semesters")
-              .get()
-              .toPromise()
-              .then((sub) => {
-                if (sub.docs.length > 0) {
-                  // Check to see if documents exist in the courses collection
-                  sub.forEach((element) => {
-                    // Loop to get all the ids of the docs
-                    this.loadSemsFromDb(element.id); // Call to loading the courses on the screen, by id
-                  });
-                }
-              });
-            }
-        });
-    }
-  }
+  // public findSemsFromDb() {
+  //   if (this.email !== undefined) {
+  //     this.db
+  //       .collection("users")
+  //       .doc(this.email)
+  //       .get()
+  //       .toPromise()
+  //       .then((doc) => {
+  //         if (doc.exists) {
+  //           this.db
+  //             .collection("users")
+  //             .doc(this.email)
+  //             .collection("semesters")
+  //             .get()
+  //             .toPromise()
+  //             .then((sub) => {
+  //               if (sub.docs.length > 0) {
+  //                 // Check to see if documents exist in the courses collection
+  //                 sub.forEach((element) => {
+  //                   // Loop to get all the ids of the docs
+  //                   this.loadSemsFromDb(element.id); // Call to loading the courses on the screen, by id
+  //                 });
+  //               }
+  //             });
+  //           }
+  //       });
+  //   }
+  // }
 
 
 
-  private getSemsFromDb(semsDbId: string) {
-    return new Promise<any>((resolve) => {
-      const semesterFromDb = {
-        course: 
-          this.dbCourses.getCollection("users", "semesters", semsDbId).then( (res) => {resolve((res))} )
-      };
-    });
-  }
+  // private getSemsFromDb(semsDbId: string) {
+  //   return new Promise<any>((resolve) => {
+  //     const semesterFromDb = {
+  //       course: 
+  //         this.dbCourses.getCollection("users", "semesters", semsDbId).then( (res) => {resolve((res))} )
+  //     };
+  //   });
+  // }
 
-  private loadSemsFromDb(semsDbId) {
-    const courseDb = this.getSemsFromDb(semsDbId).then((copy) => {
-      Object.assign({
-        period: copy[0],
-        year: copy[1],
-        both: copy[2],
-      });
-      this.getSemsFromDb(semsDbId).then((res) => {
-          this.storeHelper.add("semesters", res);
-      });
-    });
-  }
+  // private loadSemsFromDb(semsDbId) {
+  //   const courseDb = this.getSemsFromDb(semsDbId).then((copy) => {
+  //     Object.assign({
+  //       period: copy[0],
+  //       year: copy[1],
+  //       both: copy[2],
+  //     });
+  //     this.getSemsFromDb(semsDbId).then((res) => {
+  //         this.storeHelper.add("semesters", res);
+  //     });
+  //   });
+  // }
 
 
   public loadPlanFromDbAfterDel() {

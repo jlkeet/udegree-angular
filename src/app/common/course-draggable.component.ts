@@ -197,28 +197,4 @@ export class CourseDraggable {
     
   }
   
-
-// private scroll_disable() {
-
-// console.log('scroll_disable()');
-// scrollPosition = window.pageYOffset;
-// body_el.style.overflow = 'hidden';
-// body_el.style.position = 'fixed';
-// body_el.style.top = `-${scrollPosition}px`;
-// body_el.style.width = '100%';
-
-// }
-
-// private scroll_enable() {
-
-// console.log('scroll_enable()');
-// body_el.style.removeProperty('overflow');
-// body_el.style.removeProperty('position');
-// body_el.style.removeProperty('top');
-// body_el.style.removeProperty('width');
-// window.scrollTo(0, scrollPosition);
-// }
-
-
-
 }

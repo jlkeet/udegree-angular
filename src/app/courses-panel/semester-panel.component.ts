@@ -132,7 +132,6 @@ export class SemesterPanel {
 
     this.dragulaService.drop().subscribe((value: any) => {
       // need to handle event for this bag only! TODO and semester too?
-      console.log(value)
       if (value.name === this.bagName) {
         this.onDropModel(value);
       }
@@ -545,6 +544,8 @@ export class SemesterPanel {
     })
 
   }
+
+  // This is fucked - can be optimized
 
   private checkIfArrayIsUnique(myArray) 
   {

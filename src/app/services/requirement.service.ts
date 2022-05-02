@@ -81,7 +81,6 @@ export class RequirementService {
 
         const codeTerminals = codes.split('-'); // splits into start and end numbers
         if (dept === dept2 && code2 >= parseInt(codeTerminals[0], 10) && code2 <= parseInt(codeTerminals[1], 10)) {
-          console.log(true, ' 1')
           return true;
         }
       } else if (range === checkIncluded) {

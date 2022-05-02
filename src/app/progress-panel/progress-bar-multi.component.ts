@@ -125,10 +125,6 @@ export class ProgressBarMulti implements OnChanges {
     }`;
   }
 
-  private complexRuleBarHide() {
-
-  }
-
   private onMouseOver() {
     this.showText = true;
   }
