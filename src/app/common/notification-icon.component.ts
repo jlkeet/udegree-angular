@@ -70,7 +70,7 @@ export class NotificationIconComponent {
   @Output() clicked = new EventEmitter();
   @Input() messages: Message[] = [];
 
-    private messageCount: number = 0;
+    public messageCount: number = 0;
 
     onClicked() {
     if (this.messageCount > 0) {

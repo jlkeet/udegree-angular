@@ -32,49 +32,49 @@ import {
 })
 @Injectable()
 export class CourseDetails {
-  @Output() private addClicked = new EventEmitter();
-  @Output() private deleteClicked = new EventEmitter();
-  @Output() private cancelClicked = new EventEmitter();
-  @Output() private changeStatus = new EventEmitter();
-  @Output() private changeGrade = new EventEmitter();
-  @Input() private course: ICourse;
-  @Input() private showSemesterFullMessage: boolean;
-  @Input() private showAddCourse: boolean;
-  @Input() private messages: string[];
-  @Input() private custom: boolean = false;
-  @Input() private period: Period;
-  @Input() private year: number;
+  @Output() public addClicked = new EventEmitter();
+  @Output() public deleteClicked = new EventEmitter();
+  @Output() public cancelClicked = new EventEmitter();
+  @Output() public changeStatus = new EventEmitter();
+  @Output() public changeGrade = new EventEmitter();
+  @Input() public course: ICourse;
+  @Input() public showSemesterFullMessage: boolean;
+  @Input() public showAddCourse: boolean;
+  @Input() public messages: string[];
+  @Input() public custom: boolean = false;
+  @Input() public period: Period;
+  @Input() public year: number;
 
-  private prerequisitesRequiredMessage: string = null;
-  private alreadyPlannedMessage: string = null;
-  private opened = false;
-  private courseStatus;
-  private courseGrade;
+  public prerequisitesRequiredMessage: string = null;
+  public alreadyPlannedMessage: string = null;
+  public opened = false;
+  public courseStatus;
+  public courseGrade;
 
-  private departments;
-  private departmentOptions;
-  private faculties;
-  private facultyOptions;
-  private conjoints;
-  private conjointOptions;
-  private pathways;
-  private pathwayOptions;
-  private modules;
-  private moduleOptions;
+  public departments;
+  public departmentOptions;
+  public faculties;
+  public facultyOptions;
+  public conjoints;
+  public conjointOptions;
+  public pathways;
+  public pathwayOptions;
+  public modules;
+  public moduleOptions;
 
-  private customTitle;
-  private customPoints;
-  private customCode;
-  private customFaculty;
-  private customDepartment;
+  public customTitle;
+  public customPoints;
+  public customCode;
+  public customFaculty;
+  public customDepartment;
 
-  private statuses = [
+  public statuses = [
     { label: "Planned", value: CourseStatus.Planned },
     { label: "In Progress", value: CourseStatus.Enrolled },
     { label: "Completed", value: CourseStatus.Completed },
     { label: "Failed", value: CourseStatus.Failed },
   ];
-  private grades = [
+  public grades = [
     { label: "A+", value: 9 },
     { label: "A", value: 8 },
     { label: "A-", value: 7 },
@@ -91,13 +91,13 @@ export class CourseDetails {
   ];
 
   constructor(
-    private courseService: CourseService,
-    private departmentService: DepartmentService,
-    private facultyService: FacultyService,
-    private conjointService: ConjointService,
-    private pathwayService: PathwayService,
-    private moduleService: ModuleService,
-    private storeHelper: StoreHelper,
+    public courseService: CourseService,
+    public departmentService: DepartmentService,
+    public facultyService: FacultyService,
+    public conjointService: ConjointService,
+    public pathwayService: PathwayService,
+    public moduleService: ModuleService,
+    public storeHelper: StoreHelper,
   ) {
     this.departments = this.departmentService.getDepartments();
     this.faculties = this.facultyService.getFaculties();
@@ -252,7 +252,7 @@ export class CourseDetails {
    * So this uses that to set 'opened'.
    * But this might mess up if we opened the dialog without clicking
    */
-  @HostListener("document:click", ["$event"]) private clickedOutside($event) {
+  @HostListener("document:click", ["$event"]) public clickedOutside($event) {
     if (this.opened) {
       this.closeDetails();
     } else {
@@ -260,7 +260,7 @@ export class CourseDetails {
     }
   }
 
-  private alreadyPlanned() {
+  public alreadyPlanned() {
 
   for (let i = 0; i < this.storeHelper.current("courses").length; i++) {  
   if (this.course) {
@@ -274,7 +274,7 @@ export class CourseDetails {
   
 }
 
-  private setAlreadyPlannedMessage() {
+  public setAlreadyPlannedMessage() {
     if (!this.custom) {
 
       const year = this.course.year;

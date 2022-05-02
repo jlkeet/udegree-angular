@@ -44,7 +44,7 @@ let _decorateModuleRef = function identity<T>(value: T): T { return value; };
 
 // if ('production' === ENV) {
   if (environment.production) {
-    ENV = 'production';
+  let  ENV = 'production';
   // Production
   disableDebugTools();
   enableProdMode();
@@ -80,3 +80,4 @@ export const decorateModuleRef = _decorateModuleRef;
 export const ENV_PROVIDERS = [
   ...PROVIDERS
 ];
+

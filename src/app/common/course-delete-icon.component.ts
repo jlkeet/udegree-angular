@@ -27,10 +27,10 @@ import { Component, EventEmitter, Input, Output} from '@angular/core';
 
 export class CourseDeleteIcon  {
 
-    @Input() private showDelete: boolean = true;
-    @Output() private deleteCourseClicked = new EventEmitter();
+    @Input() public showDelete: boolean = true;
+    @Output() public deleteCourseClicked = new EventEmitter();
 
-    private deleteCourse(event) {
+    public deleteCourse(event) {
         if (!this.showDelete) {
           return;
         }

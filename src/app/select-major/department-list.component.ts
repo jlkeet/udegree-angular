@@ -25,10 +25,10 @@ export class DepartmentList {
   @Input() public allowsDoubleMajor: boolean;
 
   // current major
-  private cur = 0;
-  private minor: string = null;
+  public cur = 0;
+  public minor: string = null;
 
-  private deleteDept(which) {
+  public deleteDept(which) {
     if (which === 0) {
       this.majors[0] = this.majors[1];
       this.majors[1] = null;
@@ -47,7 +47,7 @@ export class DepartmentList {
   }
 
   // would be nice to split this up, but it's slightly awkward
-  private clicked(dept) {
+  public clicked(dept) {
     if ((this.cur === 0 && this.majors[1] !== dept ||
       this.cur === 1 && this.majors[0] !== dept) && this.minor !== dept) {
       this.majors[this.cur] = dept;

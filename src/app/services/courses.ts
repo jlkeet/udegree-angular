@@ -23,22 +23,22 @@ import { AuthService } from '../core/auth.service';
 @Injectable()
 export class CourseService {
 
-  private allCourses: ICourse[];
-  private planned: ICourse[];
+  public allCourses: ICourse[];
+  public planned: ICourse[];
   public courseCounter = 0; // need to store this
-  private errors: Message[];
+  public errors: Message[];
   public email: string = "";
-  private findIfCorequesite = false;
+  public findIfCorequesite = false;
 
   constructor(
-    private errorsChanged: ErrorsChangedEvent,
-    private requirementService: RequirementService,
-    private store: Store,
-    private storeHelper: StoreHelper,
-    private db_courses: AngularFireDatabase,
-    private db: AngularFirestore,
+    public errorsChanged: ErrorsChangedEvent,
+    public requirementService: RequirementService,
+    public store: Store,
+    public storeHelper: StoreHelper,
+    public db_courses: AngularFireDatabase,
+    public db: AngularFirestore,
     public authService: AuthService,
-    //private userContainer: UserContainer,
+    //public userContainer: UserContainer,
     ) {
 
     this.authService.afAuth.authState.subscribe( async (auth) => { if (auth) this.email = auth.email })
@@ -108,7 +108,7 @@ export class CourseService {
     this.setCourseDb(copy ,courseId, period, year, status)
   }
 
-private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseStatus, grade?: null){
+public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseStatus, grade?: null){
   let result = course;
   this.db
   .collection("users") 
@@ -243,7 +243,7 @@ private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseS
     //this.errorsChanged.raiseErrorsChanged(this.errors);
   }
 
-  private beforeSemester(beforeCourse) {
+  public beforeSemester(beforeCourse) {
     return this.planned.filter((course: ICourse) =>
       course.period < beforeCourse.period &&
       course.year === beforeCourse.year ||
@@ -251,7 +251,7 @@ private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseS
     );
   }
 
-  private currentSemester(currentCourse) {
+  public currentSemester(currentCourse) {
     return this.planned.filter((course: ICourse) =>
       course.period === currentCourse.period &&
       course.year === currentCourse.year
@@ -265,13 +265,13 @@ private setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseS
     return completed ? completed : this.completed(generalToggle); //check general version as well
   }
 
-  private completed(courseName: string): ICourse {
+  public completed(courseName: string): ICourse {
     const courses = this.storeHelper.current('courses');
     return courses.filter((course: ICourse) => course.status !== CourseStatus.Failed)
       .find((course: ICourse) => course.name === courseName);
   }
 
-  private generalToggle(courseName: string): string {
+  public generalToggle(courseName: string): string {
     if (this.isGeneral(courseName)) {
       return courseName.substring(0, courseName.length - 1);
     } else {

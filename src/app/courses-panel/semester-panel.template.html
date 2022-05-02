@@ -2,7 +2,7 @@
   <mat-expansion-panel-header (click)="expansionOnClick()">
     <span class="gpa-sem" *ngIf="gpa">Semester GPA {{ gpa.toFixed(2) }} </span>
     <mat-panel-title class="title">
-      <div class="title-text" (click)="newSemesterDD();addingSemesters=true;noExpansionOnClick()">
+      <div class="title-text" (click)="newSemesterDD();addingSemester=true;noExpansionOnClick()">
         <div ngbDropdown>
           <button class="semester-select-button" ngbDropdownToggle (click)="yearList()">
             {{ semester.year}}

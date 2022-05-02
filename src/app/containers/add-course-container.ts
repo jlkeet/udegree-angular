@@ -42,48 +42,48 @@ import {
 
 export class AddCourseContainer {
 
-  private majorSelected: boolean;
-  private semesterText: string;
-  private semesterCourses: ICourse[];
-  private lastSelection: number = null;
+  public majorSelected: boolean;
+  public semesterText: string;
+  public semesterCourses: ICourse[];
+  public lastSelection: number = null;
   public selected: ICourse = null;
-  private searchTerm: string = '';
-  private planned: ICourse[] = [];
-  private beforeSemester: ICourse[];
-  private currentSemester: ICourse[];
-  private shown: ICourse[] = [];
-  private filterParams;
-  private modules;
+  public searchTerm: string = '';
+  public planned: ICourse[] = [];
+  public beforeSemester: ICourse[];
+  public currentSemester: ICourse[];
+  public shown: ICourse[] = [];
+  public filterParams;
+  public modules;
   public tabIndex = 0;
 
   // list of departments and their courses for a faculty
-  private departmentCourses: DepartmentCoursesModel[];
-  private messages: Message[] = [];
-  private browseTitle: string = '';
-  private showSemesterFullMessage: boolean = false;
+  public departmentCourses: DepartmentCoursesModel[];
+  public messages: Message[] = [];
+  public browseTitle: string = '';
+  public showSemesterFullMessage: boolean = false;
 
-  private period: Period;
-  private year: number;
-  private allCourses;
-  private semesters;
-  private facultyChoices;
-  private departmentChoices;
-  private subscriptions = [];
+  public period: Period;
+  public year: number;
+  public allCourses;
+  public semesters;
+  public facultyChoices;
+  public departmentChoices;
+  public subscriptions = [];
 
-  private custom;
+  public custom;
 
   constructor(
 
-    private addCourseService: AddCourseService,
-    private moduleService: ModuleService,
-    private storeHelper: StoreHelper,
-    private route: ActivatedRoute,
-    private router: Router,
-    private store: Store,
-    private coursesService: CourseService,
-    private courseEventService: CourseEventService,
-    private requirementService: RequirementService,
-    private appHeader: AppHeader,
+    public addCourseService: AddCourseService,
+    public moduleService: ModuleService,
+    public storeHelper: StoreHelper,
+    public route: ActivatedRoute,
+    public router: Router,
+    public store: Store,
+    public coursesService: CourseService,
+    public courseEventService: CourseEventService,
+    public requirementService: RequirementService,
+    public appHeader: AppHeader,
 
   ) {
 
@@ -128,9 +128,10 @@ export class AddCourseContainer {
        this.router.navigate(['/add'], {queryParams});
     }*/
     this.updateView();
+
   }
 
-  private intersection<T>(array1: T[], array2: T[]): T[] {
+  public intersection<T>(array1: T[], array2: T[]): T[] {
     if (array1 && array2) {
       return array1.filter((str: T) => array2.includes(str));
     } else {
@@ -139,7 +140,7 @@ export class AddCourseContainer {
   }
 
 
-  private mapToModuleModel(shown: ICourse[]): any[] {
+  public mapToModuleModel(shown: ICourse[]): any[] {
     return this.modules.map((mod) => {
       return {
         title: mod.name,
@@ -148,7 +149,7 @@ export class AddCourseContainer {
       }}).filter((mod) => mod.courses.length !== 0);
   }
 
-  private nullIfEmpty(array: any[]) {
+  public nullIfEmpty(array: any[]) {
     return array.length === 0 ? null : array;
   }
 
@@ -187,7 +188,7 @@ export class AddCourseContainer {
     this.selected = event.value;
   }
 
-  private reset(): void {
+  public reset(): void {
 
     this.semesterText = `${this.year} ${this.getSemesterNameInWords(this.period)}`;
     this.sameTime = this.sameTime.bind(this);
@@ -229,17 +230,17 @@ export class AddCourseContainer {
     ];
   }
 
-  private sameTime(course: ICourse): boolean {
+  public sameTime(course: ICourse): boolean {
     return course.period === this.period && course.year === this.year;
   }
 
-  private updateView() {
+  public updateView() {
     this.semesterCourses = this.cloneArray(this.planned.filter(this.sameTime));
     this.showSemesterFullMessage = this.semesterCourses.length >= 6;
     this.flagIneligible();
   }
 
-  private checkRequirements(course: ICourse): string[] | any[] {
+  public checkRequirements(course: ICourse): string[] | any[] {
     if (course && course.requirements !== undefined) {
       if (this.currentSemester.length > 0) {
         return course.requirements.filter((requirement: IRequirement) =>
@@ -255,11 +256,11 @@ export class AddCourseContainer {
     }
   }
 
-  private coursePlanned(courseToCheck: ICourse): boolean {
+  public coursePlanned(courseToCheck: ICourse): boolean {
     return this.planned.map((course: ICourse) => course.id).includes(courseToCheck.id);
   }
 
-  private removeInactive(course): void {
+  public removeInactive(course): void {
         if (course.isActive !== undefined) {
           if (course.isActive !== false) {
           course.canAdd = true;
@@ -269,7 +270,7 @@ export class AddCourseContainer {
         }
   }
 
-  private flagIneligible(): void {
+  public flagIneligible(): void {
     this.allCourses.forEach(
       (course: ICourse) => {
         if (course.requirements !== undefined && course.requirements !== null) {
@@ -284,7 +285,7 @@ export class AddCourseContainer {
       });
   }
 
-  private groupByDepartment(courses: ICourse[]) {
+  public groupByDepartment(courses: ICourse[]) {
     const grouped = courses.reduce((groups, course) => {
       const key = course.department;
       (groups[key] = groups[key] || []).push(course);
@@ -293,7 +294,7 @@ export class AddCourseContainer {
     return grouped;
   }
 
-  private mapToDeptModel(grouped: any) {
+  public mapToDeptModel(grouped: any) {
     const departmentCourses: DepartmentCoursesModel[] = [];
     for (const property in grouped) {
       if (grouped.hasOwnProperty(property)) {
@@ -316,7 +317,7 @@ export class AddCourseContainer {
     return departmentCourses;
   }
 
-  private getSemesterNameInWords(period: Period) {
+  public getSemesterNameInWords(period: Period) {
     switch (period) {
       case Period.Summer:
         return 'Summer School';
@@ -329,11 +330,11 @@ export class AddCourseContainer {
     }
   }
 
-  private cloneArray<T>(originalArray: T[]) {
+  public cloneArray<T>(originalArray: T[]) {
     return originalArray.map((obj: T) => Object.assign({}, obj));
   }
 
-  private prevSemester(): void {
+  public prevSemester(): void {
     const index = this.currentSemesterIndex() - 1;
     if (index >= 0) {
       const queryParams = this.getQueryParams();
@@ -347,7 +348,7 @@ export class AddCourseContainer {
     }
   }
 
-  private currentSemesterIndex(): number {
+  public currentSemesterIndex(): number {
     for (let i = 0; i < this.semesters.length; i++) {
       if (this.semesters[i].year === this.year && this.semesters[i].period === this.period) {
         return i;
@@ -355,12 +356,12 @@ export class AddCourseContainer {
     }
   }
 
-  private addCustom(): void {
+  public addCustom(): void {
     this.custom = true;
     this.selected = null;
   }
 
-  private nextSemester(): void {
+  public nextSemester(): void {
     const index = this.currentSemesterIndex() + 1;
     if (index < this.semesters.length) {
       const queryParams = this.getQueryParams();
@@ -375,7 +376,7 @@ export class AddCourseContainer {
 
   }
 
-  private getQueryParams(): any {
+  public getQueryParams(): any {
     return {
       departments: this.filterParams.departments.length !== 0 ? this.filterParams.departments.toString() : null,
       faculties: this.filterParams.faculties.length !== 0 ? this.filterParams.faculties.toString() : null,
@@ -390,12 +391,12 @@ export class AddCourseContainer {
     };
   }
 
-  private orNull(arg): any {
+  public orNull(arg): any {
     return arg ? arg : null;
   }
 
   // maps a string to an array
-  private mapToArray(arg): any[] {
+  public mapToArray(arg): any[] {
     if (!arg) {
       return [];
     } else if (arg.constructor === Array) {
@@ -404,7 +405,7 @@ export class AddCourseContainer {
     return arg.split(',');
   }
 
-  private orEmpty(arg): any[] {
+  public orEmpty(arg): any[] {
     return arg ? arg : [];
   }
 }

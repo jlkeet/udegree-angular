@@ -33,43 +33,43 @@ export class SemesterPanel {
   @Input() public courses: ICourse[];
 
   public addingSemester = false;
-  private MAX_POINTS = 80;
-  private toggled = true;
-  private bagName;
-  private atMaxPoints;
+  public MAX_POINTS = 80;
+  public toggled = true;
+  public bagName;
+  public atMaxPoints;
   public gpa;
-  private courseCounter: number;
-  private email: string;
-  private collapsed = false;
+  public courseCounter: number;
+  public email: string;
+  public collapsed = false;
   public yearListArray = [];
   public periodListArray = [];
   public isDisabled = false;
-  private savedNewSem;
-  private savedNewYear;
-  private previousYear;
-  private previousPeriod;
-  private semcheck = {};
-  private boolCheck = true;
-  private onPageChange = new EventEmitter<null>();
+  public savedNewSem;
+  public savedNewYear;
+  public previousYear;
+  public previousPeriod;
+  public semcheck = {};
+  public boolCheck = true;
+  public onPageChange = new EventEmitter<null>();
 
-  private course;
+  public course;
 
   constructor(
-    private courseService: CourseService,
-    private courseEventService: CourseEventService,
-    private dragulaService: DragulaService,
-    private dragulaModule: DragulaModule,
-    private storeHelper: StoreHelper,
-    private db: AngularFirestore,
-    private coursePanelService: CoursesPanel,
-    private router: Router,
-    private userContainer: UserContainer,
+    public courseService: CourseService,
+    public courseEventService: CourseEventService,
+    public dragulaService: DragulaService,
+    public dragulaModule: DragulaModule,
+    public storeHelper: StoreHelper,
+    public db: AngularFirestore,
+    public coursePanelService: CoursesPanel,
+    public router: Router,
+    public userContainer: UserContainer,
   ) {
     this.email = this.courseService.email;
     
   }
 
-  private ngOnInit() {
+  public ngOnInit() {
 
         // // AutoScroll
         // setTimeout(() => {
@@ -150,7 +150,7 @@ export class SemesterPanel {
     this.courseCounter = this.courseService.courseCounter;
   }
 
-  private onDropModel(args) {
+  public onDropModel(args) {
     const [el, target, source] = args;
 
     // Extract all the info form the course and set it. The newPeriod and newYear are set from the target destination of the bag
@@ -188,7 +188,7 @@ export class SemesterPanel {
     }
   }
 
-  private ngOnChanges() {
+  public ngOnChanges() {
     const courseGrades = this.courses
       .filter(
         (course: ICourse) =>
@@ -205,14 +205,14 @@ export class SemesterPanel {
       (courseGrades.length + failed);
   }
 
-  private sameTime(course: any) {
+  public sameTime(course: any) {
     return (
       this.semester.year === Number(course.year) &&
       this.semester.period === Number(course.period)
     );
   }
 
-  private onRemoveModel(args) {
+  public onRemoveModel(args) {
     const [el, source] = args;
     el.dataset.id = Number(el.dataset.id);
     el.dataset.period = Number(el.dataset.period);
@@ -227,20 +227,20 @@ export class SemesterPanel {
     }
   }
 
-  private collapse() {
+  public collapse() {
     const collapsed = this.storeHelper.update("collapsed", !this.collapsed);
     this.collapsed = !this.collapsed;
   }
 
-  private toggle() {
+  public toggle() {
     this.toggled = !this.toggled;
   }
 
-  private courseClicked(course: ICourse) {
+  public courseClicked(course: ICourse) {
     this.courseEventService.raiseCourseClicked({ course });
   }
 
-  private longCourseClicked(course: ICourse) {
+  public longCourseClicked(course: ICourse) {
     this.courseEventService.raiseLongCourseClicked({ course })
     this.course = course
 
@@ -267,7 +267,7 @@ export class SemesterPanel {
     // }
   }
 
-  private droppedCourseSaveDB(course) {
+  public droppedCourseSaveDB(course) {
     this.db
       .collection("users")
       .doc(this.email)
@@ -291,7 +291,7 @@ export class SemesterPanel {
       });
   }
 
-  private deleteCourse(course: ICourse) {
+  public deleteCourse(course: ICourse) {
     this.courseService.courseCounterOnDelete();
     if (this.sameTime(course)) {
       this.courseEventService.raiseCourseRemoved({
@@ -319,7 +319,7 @@ export class SemesterPanel {
       });
   }
 
-  private deleteSemester() {
+  public deleteSemester() {
     this.coursePanelService.updateSemesterCheck();
     this.courses.forEach((course: ICourse) =>
       this.courseService.deselectCourseByName(course.name)
@@ -348,7 +348,7 @@ export class SemesterPanel {
     }
   }
 
-  private smallCourseStatusBarHover(course) {
+  public smallCourseStatusBarHover(course) {
     return course.name;
   }
 
@@ -425,15 +425,15 @@ export class SemesterPanel {
     this.saveChangedSemCourse(k);
   }
 
-  private updatePeriodsInCourse(period) {
+  public updatePeriodsInCourse(period) {
     return period;
   }
 
-  private updateYearsInCourse(year) {
+  public updateYearsInCourse(year) {
     return year;
   }
 
-  private saveChangedSemCourse(i) {
+  public saveChangedSemCourse(i) {
    // console.log(this.storeHelper.current("semesters"))
 
 
@@ -493,7 +493,7 @@ export class SemesterPanel {
     }
   }
 
-  private semesterSort() {
+  public semesterSort() {
     this.storeHelper
       .current("semesters")
       .sort((s1, s2) =>
@@ -503,7 +503,7 @@ export class SemesterPanel {
     return this.storeHelper.update("courses", this.coursePanelService.courses);
   }
 
-  private delSemDB() {
+  public delSemDB() {
     this.db.collection("users").doc(this.email).collection("semesters", ref => {
       const query = ref.where('both', '==', this.semester.year + " " + this.semester.period);
       query.get().then( snapshot => {
@@ -521,7 +521,7 @@ export class SemesterPanel {
     })
   }
 
-  private changeSemDB() {
+  public changeSemDB() {
 
     this.db.collection("users").doc(this.email).collection("semesters", ref => {
       const query = ref.where('both', '==', this.previousYear + " " + this.previousPeriod);
@@ -547,7 +547,7 @@ export class SemesterPanel {
 
   // This is fucked - can be optimized
 
-  private checkIfArrayIsUnique(myArray) 
+  public checkIfArrayIsUnique(myArray) 
   {
       for (var i = 0; i < myArray.length; i++) 
       {

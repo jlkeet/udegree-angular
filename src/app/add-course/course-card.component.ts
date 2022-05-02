@@ -13,13 +13,13 @@ export class CourseCard {
   @Input() public course;
   @Input() public id;
 
-  constructor(private addCourseService: AddCourseService, private db_courses: AngularFireDatabase,) { }
+  constructor(public addCourseService: AddCourseService, public db_courses: AngularFireDatabase,) { }
 
-  private toggleDetails(course) {
+  public toggleDetails(course) {
     this.addCourseService.raiseDetailsToggled(course);    
   }
 
-  private check(event, course) {
+  public check(event, course) {
     event.stopPropagation();
     this.addCourseService.raiseCourseToggle(course);
   }

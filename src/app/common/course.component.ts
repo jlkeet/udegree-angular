@@ -37,16 +37,16 @@ export class Course {
   // true to enable detais view on click
   @Input() public enableDetails: boolean;
   @Input() public largeCard: boolean = false; // if true, increase card size
-  private showDelete: boolean;
-  private backgroundColor: string;
+  public showDelete: boolean;
+  public backgroundColor: string;
 
   /// PUBLIC METHODS
   constructor(
-    private el: ElementRef,
-    private renderer: Renderer,
-    private storeHelper: StoreHelper,
-    private db_courses: AngularFireDatabase,
-    private db: AngularFirestore,
+    public el: ElementRef,
+    public renderer: Renderer,
+    public storeHelper: StoreHelper,
+    public db_courses: AngularFireDatabase,
+    public db: AngularFirestore,
   ) {}
 
   public addCourse() {

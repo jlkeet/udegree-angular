@@ -38,21 +38,21 @@ export class CourseDraggable {
   @Input() public year: number;
   @Input() public period: Period;
 
-  private showDelete: boolean = false;
+  public showDelete: boolean = false;
   public backgroundColor: string;
   public displayGrade: string;
-  // private isDragging: boolean = false;
+  // public isDragging: boolean = false;
   public status: boolean = false;
-  private group;
+  public group;
   public canDrag;
-  private bagName;
+  public bagName;
   
 
   constructor(
-    private el: ElementRef,
-    private renderer: Renderer,
-    private storeHelper: StoreHelper,
-    private dragulaService: DragulaService
+    public el: ElementRef,
+    public renderer: Renderer,
+    public storeHelper: StoreHelper,
+    public dragulaService: DragulaService
   ) {
     /*const self = this;
     dragulaService.drag.subscribe((value) => self.isDragging = true);
@@ -115,7 +115,7 @@ export class CourseDraggable {
     this.displayGradeConvert()
   }
 
-  private setBackgroundColour() {
+  public setBackgroundColour() {
     switch (this.course.status) {
       case CourseStatus.Completed:
         this.backgroundColor = '#66cc00';
@@ -145,7 +145,7 @@ export class CourseDraggable {
     }
   }
 
-  private initialiseDrag(status: CourseStatus) {
+  public initialiseDrag(status: CourseStatus) {
     switch (status) {
       default:
         this.setDragStatus(true);
@@ -153,7 +153,7 @@ export class CourseDraggable {
     }
   }
 
-  private setDragStatus(enableDrag: boolean) {
+  public setDragStatus(enableDrag: boolean) {
     this.renderer.setElementClass(
       this.el.nativeElement,
       'no-drag',
@@ -161,7 +161,7 @@ export class CourseDraggable {
     );
   }
 
-  private displayGradeConvert() {
+  public displayGradeConvert() {
     switch (this.course.grade) {
       case 9:
         this.displayGrade = "A+";

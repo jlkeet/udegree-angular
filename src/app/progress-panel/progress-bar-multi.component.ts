@@ -14,12 +14,8 @@ export interface IBarState {
 
 @Component({
   selector: 'progress-bar-multi',
-  // Our list of styles in our component. We may add more to compose many styles together
   styles: [require('./progress-bar-multi.component.scss')],
-  // Every Angular template is first compiled by the browser before Angular runs it's compiler
-  // need to use rquire syntax to work with tests
-  template: require('./progress-bar-multi.template.html'),
-
+  templateUrl: './progress-bar-multi.template.html',
   viewProviders: [MatExpansionPanel]
 })
 export class ProgressBarMulti implements OnChanges {

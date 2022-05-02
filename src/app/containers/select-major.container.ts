@@ -34,30 +34,30 @@ import { DepartmentService, FacultyService, ConjointService, PathwayService, Mod
 })
 
 export class SelectMajorContainer {
-  private planned: ICourse[] = []; // required for the progress panel
-  private majorSelected: boolean = false;
-  private selected: ICourse = null;
-  private departments: any[] = [];
-  private faculty;
-  private conjoint;
-  private majors;
-  private secondMajors;
-  private thirdMajors;
-  private pathways;
-  private modules;
-  private secondModules;
-  private allowsMinor: boolean = false;
-  private allowsDoubleMajor: boolean = false;
-  private sub;
+  public planned: ICourse[] = []; // required for the progress panel
+  public majorSelected: boolean = false;
+  public selected: ICourse = null;
+  public departments: any[] = [];
+  public faculty;
+  public conjoint;
+  public majors;
+  public secondMajors;
+  public thirdMajors;
+  public pathways;
+  public modules;
+  public secondModules;
+  public allowsMinor: boolean = false;
+  public allowsDoubleMajor: boolean = false;
+  public sub;
 
   constructor(
-    private facultyService: FacultyService,
-    private conjointService: ConjointService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private storeHelper: StoreHelper,
-    private store: Store,
-    private departmentService: DepartmentService
+    public facultyService: FacultyService,
+    public conjointService: ConjointService,
+    public router: Router,
+    public route: ActivatedRoute,
+    public storeHelper: StoreHelper,
+    public store: Store,
+    public departmentService: DepartmentService
   ) {
     this.faculty = this.storeHelper.current('faculty');
     this.majors = this.storeHelper.current('majors');
@@ -80,11 +80,11 @@ export class SelectMajorContainer {
     this.storeHelper.update('minor', event.minor);
   }
 
-  private ngOnInit() {
+  public ngOnInit() {
     this.sub = this.store.changes.pluck('courses').subscribe((courses: ICourse[]) => this.planned = courses);
   }
 
-  private ngOnDestroy() {
+  public ngOnDestroy() {
     this.sub.unsubscribe();
   }
 

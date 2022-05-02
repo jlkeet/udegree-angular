@@ -15,12 +15,12 @@ import { FacultyService, ConjointService, StoreHelper } from '../services';
 // <div><a class="faculty-icon">i</a></div>
 export class FacultyList {
   @Output() public facultyClicked = new EventEmitter();
-  private faculties: any[] = [];
+  public faculties: any[] = [];
 
   constructor(
-    private facultyService: FacultyService,
-    private storeHelper: StoreHelper,
-    private router: Router
+    public facultyService: FacultyService,
+    public storeHelper: StoreHelper,
+    public router: Router
   ) { }
 
   public clicked(faculty) {

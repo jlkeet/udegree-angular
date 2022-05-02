@@ -2,7 +2,7 @@
     infiniteScroll
     [scrollWindow]="false"
     (scrolled)="onScroll()"
-    class="courses-panel" [class.details-overlay]="selected">
+    class="courses-panel">
       
       <div *ngIf="curScroll.length !== 0">
         <div *ngFor="let department of curScroll; let i = index">

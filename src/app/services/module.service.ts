@@ -5,7 +5,7 @@ import { ICourse } from '../interfaces';
 @Injectable()
 export class ModuleService {
 
-// 	private allModules;
+// 	public allModules;
 
 // 	constructor(courseService: CourseService) {
 // 		const modules = require('../../assets/data/modules.json');
@@ -26,7 +26,7 @@ export class ModuleService {
 // 	courses: ICourse[]
 // }
 
-    private modules;
+    public modules;
   
     constructor() {
       this.modules = require('../../assets/data/modules.json');
@@ -40,7 +40,7 @@ export class ModuleService {
       return;
     }
   
-    private checkFlag(modules, flag: string): boolean {
+    public checkFlag(modules, flag: string): boolean {
       return modules.flags.map((str: string) => str.toLowerCase()).includes(flag);
     }
   

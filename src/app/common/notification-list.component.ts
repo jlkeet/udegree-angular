@@ -60,7 +60,7 @@ export class NotificationListComponent {
     @Input() messages: Message[] = [];
     @Input() show: boolean = false;
 
-    private borderClass: string;
+    public borderClass: string;
 
     ngOnInit() {
         this.configureColours();
@@ -75,9 +75,9 @@ export class NotificationListComponent {
         }
     }
 
-    constructor(private courseEventService: CourseEventService) { }
+    constructor(public courseEventService: CourseEventService) { }
 
-    private configureColours() {
+    public configureColours() {
 
         var errorMessageCount = this.messages.filter((message) => {
             return message.status === MessageStatus.Error;

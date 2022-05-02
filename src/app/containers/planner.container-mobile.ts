@@ -65,19 +65,19 @@ import { AppHeader } from '../app.header.component';
   `
 })
 export class PlannerContainerMobile {
-  private planned: ICourse[] = [];
-  private messages: string[] | any[] = []; 
-  private majorSelected: boolean = false;
-  private selected: ICourse = null;
-  private sub;
+  public planned: ICourse[] = [];
+  public messages: string[] | any[] = []; 
+  public majorSelected: boolean = false;
+  public selected: ICourse = null;
+  public sub;
   public isMobile;
 
   constructor(
-    private requirementService: RequirementService,
-    private storeHelper: StoreHelper,
-    private store: Store,
-    private courseService: CourseService,
-    private appHeader: AppHeader,
+    public requirementService: RequirementService,
+    public storeHelper: StoreHelper,
+    public store: Store,
+    public courseService: CourseService,
+    public appHeader: AppHeader,
   ) {
     this.isMobile = appHeader.mobile;
   }

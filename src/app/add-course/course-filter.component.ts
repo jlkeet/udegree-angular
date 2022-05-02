@@ -23,23 +23,23 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 @Injectable()
 export class CourseFilter {
-  @Output() private toggleChange = new EventEmitter();
-  @Output() private searchChange = new EventEmitter();
+  @Output() public toggleChange = new EventEmitter();
+  @Output() public searchChange = new EventEmitter();
 
-  @Input() private courses: ICourse[];
-  @Input() private planned: ICourse[];
-  @Input() private filterParams: any;
+  @Input() public courses: ICourse[];
+  @Input() public planned: ICourse[];
+  @Input() public filterParams: any;
 
-  private panelOpenStateFaculty = false;
-  private panelOpenStateDepartment = false;
-  private panelOpenStateCampus = false;
-  private panelOpenStateStage = false;
-  private loading = false;
+  public panelOpenStateFaculty = false;
+  public panelOpenStateDepartment = false;
+  public panelOpenStateCampus = false;
+  public panelOpenStateStage = false;
+  public loading = false;
 
-  private facultyChoices;
-  private conjointChoices;
-  private departmentChoices;
-  private campusChoices = [
+  public facultyChoices;
+  public conjointChoices;
+  public departmentChoices;
+  public campusChoices = [
     {value: 'City', label: 'City'},
     {value: 'Tamaki', label: 'Tamaki'},
     {value: 'Grafton', label: 'Grafton'},
@@ -47,8 +47,8 @@ export class CourseFilter {
     {value: 'Epsom', label: 'Epsom'},
   ];
 
-  private plannedNames;
-  private stageChoices = [
+  public plannedNames;
+  public stageChoices = [
     {value: 1, label: '100'},
     {value: 2, label: '200'},
     {value: 3, label: '300'},
@@ -56,11 +56,11 @@ export class CourseFilter {
   ];
 
   constructor(
-    private departmentService: DepartmentService,
-    private facultyService: FacultyService,
-    private requirementService: RequirementService,
-    private conjointService: ConjointService,
-    private appHeader: AppHeader
+    public departmentService: DepartmentService,
+    public facultyService: FacultyService,
+    public requirementService: RequirementService,
+    public conjointService: ConjointService,
+    public appHeader: AppHeader
   ) { }
 
   public ngOnInit() {
@@ -97,9 +97,6 @@ export class CourseFilter {
       flags['General'] = true;
       shown = shown.filter((course: ICourse) => course.general);
 
-    }
-    if (this.filterParams.modules) {
-      flags['modules'] = true;
     }
     if (this.filterParams.hidePlanned) {
       shown = shown.filter((course: ICourse) => !this.plannedNames.includes(course.name));
@@ -179,7 +176,7 @@ export class CourseFilter {
     });
   }
 
-  private toArray(arg) {
+  public toArray(arg) {
     if (!arg) {
       return [];
     }
@@ -189,7 +186,7 @@ export class CourseFilter {
     return arg.split(',');
   }
 
-  private clearAll() {
+  public clearAll() {
     this.loading = true;
     this.ngOnInit();
     this.filterParams.corequesite = null;
@@ -206,7 +203,7 @@ export class CourseFilter {
   
   }
 
-  private collapseAll() {
+  public collapseAll() {
     this.panelOpenStateFaculty = false;
     this.panelOpenStateDepartment = false;
     this.panelOpenStateCampus = false;

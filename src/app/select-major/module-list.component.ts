@@ -16,7 +16,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: 'module-list.component.html',
 })
 
-export class PathwayList {
+export class ModuleList {
   @Output() public deptClicked = new EventEmitter();
   @Input() public majors;
   @Input() public departments: any[] = [];
@@ -27,10 +27,10 @@ export class PathwayList {
 
 
   // current major
-  private cur = 0;
-  private minor: string = null;
+  public cur = 0;
+  public minor: string = null;
 
-  private deleteDept(which) {
+  public deleteDept(which) {
     if (which === 0) {
       this.modules[0] = this.modules[1];
       this.modules[1] = null;
@@ -48,7 +48,7 @@ export class PathwayList {
   }
 
   // would be nice to split this up, but it's slightly awkward
-  private clicked(module) {
+  public clicked(module) {
     if ((this.cur === 0 && this.modules[1] !== module ||
       this.cur === 1 && this.modules[0] !== module)) {
       this.modules[this.cur] = module;

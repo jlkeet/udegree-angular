@@ -12,12 +12,14 @@ import { filter } from 'rxjs/operators';
 
 declare let gtag: Function;
 
-const mapValuesToArray = obj => Object.keys(obj).map(key => obj[key]);
+// const mapValuesToArray = obj => Object.keys(obj).map(key => obj[key]);
 
 //create providers for all services exported from ./services
-export const providers = [ AddCourseService, ...mapValuesToArray(services)];
+// export const providers = [ AddCourseService, ...mapValuesToArray(services)];
 // this puts the global styles into the head, but any variables defined in this file
 // are only used in this file.
+
+
 
 require('./app.component.global.scss');
 

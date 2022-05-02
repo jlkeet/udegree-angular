@@ -37,23 +37,23 @@ import { updateHeritageClause } from "typescript";
     }
   
     public email: string;
-    private name: string;
-    private facultyEmail: string;
-    private url;
-    private toggle = false;
-    private status = "Export Plan"
-    private onPageChange = new EventEmitter<null>();
+    public name: string;
+    public facultyEmail: string;
+    public url;
+    public toggle = false;
+    public status = "Export Plan"
+    public onPageChange = new EventEmitter<null>();
   
     constructor(
-      private db: AngularFirestore,
+      public db: AngularFirestore,
       public authService: AuthService,
-      private userService: UserService,
+      public userService: UserService,
       public dialog: MatDialog,
     ) {
      this.userService.getCurrentUser().then( (user) => {this.name = user.displayName, this.email = user.email}) 
     }
 
-   private openDialog() {
+   public openDialog() {
 
       const dialogConfig = new MatDialogConfig();
 
@@ -72,7 +72,7 @@ import { updateHeritageClause } from "typescript";
       );    
   }
 
-    private changeColor() {
+    public changeColor() {
       this.toggle = !this.toggle;
       this.status = this.toggle ? 'Plan Sent ✓' : 'Export Plan';
     }

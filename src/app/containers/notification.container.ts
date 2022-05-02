@@ -57,11 +57,11 @@ import { AppHeader } from '../app.header.component';
   `
 })
 export class NotificationContainer {
-  private messages: Message[] = [];
-  private showMessages: boolean = false;
-  private isMobile;
+  public messages: Message[] = [];
+  public showMessages: boolean = false;
+  public isMobile;
 
-  constructor(private store: Store, private appHeader: AppHeader) {
+  constructor(public store: Store, public appHeader: AppHeader) {
     this.isMobile = appHeader.mobile;
   }
 

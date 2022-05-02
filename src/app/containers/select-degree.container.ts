@@ -34,20 +34,20 @@ import { FacultyService, ConjointService, StoreHelper } from '../services';
 })
 
 export class SelectDegreeContainer {
-  private planned: ICourse[] = []; // required for the progress panel
-  private majorSelected: boolean = false;
-  private selected: ICourse = null;
-  private departments: any[] = [];
-  private sub;
-  private email: string = "";
+  public planned: ICourse[] = []; // required for the progress panel
+  public majorSelected: boolean = false;
+  public selected: ICourse = null;
+  public departments: any[] = [];
+  public sub;
+  public email: string = "";
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private storeHelper: StoreHelper,
-    private store: Store,
-    private facultyService: FacultyService,
-    private conjointService: ConjointService
+    public router: Router,
+    public route: ActivatedRoute,
+    public storeHelper: StoreHelper,
+    public store: Store,
+    public facultyService: FacultyService,
+    public conjointService: ConjointService
   ) { }
 
   public facultyClicked(event) {
@@ -68,11 +68,11 @@ export class SelectDegreeContainer {
 
   }
 
-  private ngOnInit() {
+  public ngOnInit() {
     this.sub = this.store.changes.pluck('courses').subscribe((courses: ICourse[]) => this.planned = courses);
   }
 
-  private ngOnDestroy() {
+  public ngOnDestroy() {
     this.sub.unsubscribe();
   }
 

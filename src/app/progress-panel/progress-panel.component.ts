@@ -58,21 +58,21 @@ import { CoursesPanel } from "../courses-panel";
   encapsulation: ViewEncapsulation.None,
 })
 export class ProgressPanel {
-  @Output() private onPageChange = new EventEmitter<null>();
+  @Output() public onPageChange = new EventEmitter<null>();
 
-  private courses: ICourse[] = [];
-  private majorIsSelected: boolean = false;
-  private secondMajorIsSelected: boolean = false;
-  private thirdMajorIsSelected: boolean = false;
-  private requirements: IRequirement[];
-  private conjointRequirements: IRequirement[];
-  private majorRequirements: IRequirement[];
-  private secondMajorRequirements: IRequirement[];
-  private thirdMajorRequirements: IRequirement[];
-  private pathwayRequirements: IRequirement[];
-  private moduleRequirements: IRequirement[];
-  private secondModuleRequirements: IRequirement[];
-  private gpa;
+  public courses: ICourse[] = [];
+  public majorIsSelected: boolean = false;
+  public secondMajorIsSelected: boolean = false;
+  public thirdMajorIsSelected: boolean = false;
+  public requirements: IRequirement[];
+  public conjointRequirements: IRequirement[];
+  public majorRequirements: IRequirement[];
+  public secondMajorRequirements: IRequirement[];
+  public thirdMajorRequirements: IRequirement[];
+  public pathwayRequirements: IRequirement[];
+  public moduleRequirements: IRequirement[];
+  public secondModuleRequirements: IRequirement[];
+  public gpa;
 
   public addingModule = false;
   public addedModule = false;
@@ -90,62 +90,62 @@ export class ProgressPanel {
   public addedSecondMajor = false;
   public addingThirdMajor = false;
   public addedThirdMajor = false;
-  private requiresPathway = false;
+  public requiresPathway = false;
   
 
-  private faculty;
-  private conjoint;
-  private majors;
-  private majorsList = [];
-  private secondMajors;
-  private secondMajorsList = [];
-  private thirdMajors;
-  private thirdMajorsList = [];
-  private pathways;
-  private pathwaysList = [];
-  private modules;
-  private faculties = [];
-  private conjoints = [];
-  private modulesList;
-  private secondModules;
-  private secondModulesList;
-  private minor: any;
-  private subs;
-  private currentFaculties;
-  private currentConjoints;
-  private currentMajors;
-  private currentSecondMajors;
-  private currentThirdMajors;
-  private currentPathways;
-  private currentModules;
-  private currentSecondModules;
+  public faculty;
+  public conjoint;
+  public majors;
+  public majorsList = [];
+  public secondMajors;
+  public secondMajorsList = [];
+  public thirdMajors;
+  public thirdMajorsList = [];
+  public pathways;
+  public pathwaysList = [];
+  public modules;
+  public faculties = [];
+  public conjoints = [];
+  public modulesList;
+  public secondModules;
+  public secondModulesList;
+  public minor: any;
+  public subs;
+  public currentFaculties;
+  public currentConjoints;
+  public currentMajors;
+  public currentSecondMajors;
+  public currentThirdMajors;
+  public currentPathways;
+  public currentModules;
+  public currentSecondModules;
 
-  private firstSemester = null;
+  public firstSemester = null;
 
-  private deleteId;
-  private email;
+  public deleteId;
+  public email;
 
-  private collectionList = ["module", "secondModule"];
-  private storeList = ["modules", "secondModules"];
-  private isDisabled = false;
-  private isComplex: boolean;
+  public collectionList = ["module", "secondModule"];
+  public storeList = ["modules", "secondModules"];
+  public isDisabled = false;
+  public isComplex: boolean;
 
   constructor(
-    private location: LocationRef,
-    private route: ActivatedRoute,
-    private router: Router,
-    private store: Store,
-    private storeHelper: StoreHelper,
-    private requirementService: RequirementService,
-    private db: AngularFirestore,
-    private degreeSelect: DegreeSelection,
-    private moduleService: ModuleService,
-    private dbCourses: FirebaseDbService,
-    private userService: UserContainer,
-    private departmentService: DepartmentService,
-    private progressMulti: ProgressBarMulti,
+    public location: LocationRef,
+    public route: ActivatedRoute,
+    public router: Router,
+    public store: Store,
+    public storeHelper: StoreHelper,
+    public requirementService: RequirementService,
+    public db: AngularFirestore,
+    public degreeSelect: DegreeSelection,
+    public moduleService: ModuleService,
+    public dbCourses: FirebaseDbService,
+    public userService: UserContainer,
+    public departmentService: DepartmentService,
+    public progressMulti: ProgressBarMulti,
     public dialog: MatDialog,
-    private coursesPanel: CoursesPanel
+    public coursesPanel: CoursesPanel
   ) {
     this.currentPathways = degreeSelect.currentPathways;
     this.pathwaysList = degreeSelect.pathways;
@@ -235,14 +235,14 @@ export class ProgressPanel {
     this.calculateGPA();
   }
 
-  private ngOnDestroy() {
+  public ngOnDestroy() {
     this.subs.forEach((sub) => sub.unsubscribe());
   }
 
   //TESTING: Am only attempting single Major at this time as array not working in degree select.
   // Have commented out the major[0] for now will but will come back for it later.
 
-  private updateRequirementList() {
+  public updateRequirementList() {
     this.requirements = [].concat(
       this.faculty
         ? this.majors
@@ -310,7 +310,7 @@ export class ProgressPanel {
     );
   }
 
-  private navigateToSelectMajor() {
+  public navigateToSelectMajor() {
     const navigationExtras: NavigationExtras = {
       fragment: this.location.location.hash.toString(),
     };
@@ -318,7 +318,7 @@ export class ProgressPanel {
     this.router.navigate(["/major"], navigationExtras);
   }
 
-  private isAlreadySelected(
+  public isAlreadySelected(
     alreadyCounted: ICourse[],
     course: ICourse
   ): boolean {
@@ -330,7 +330,7 @@ export class ProgressPanel {
     return found !== undefined;
   }
 
-  private deleteDegree() {
+  public deleteDegree() {
     this.email = this.degreeSelect.email;
 
     let collectionList = [
@@ -386,7 +386,7 @@ export class ProgressPanel {
     this.currentMajors[0] = null;
   }
 
-  private deleteMajor() {
+  public deleteMajor() {
     this.email = this.degreeSelect.email;
 
     let collectionList = [
@@ -436,7 +436,7 @@ export class ProgressPanel {
     this.currentMajors[0] = null;
   }
 
-  private deletePathway() {
+  public deletePathway() {
     this.email = this.degreeSelect.email;
 
     let collectionList = [
@@ -476,7 +476,7 @@ export class ProgressPanel {
     this.deleteMajor();
   }
 
-  private deleteConjoint() {
+  public deleteConjoint() {
     this.email = this.degreeSelect.email;
 
     let collectionList = [
@@ -518,7 +518,7 @@ export class ProgressPanel {
   }
 
 
-  private deleteSecondMajor() {
+  public deleteSecondMajor() {
     this.email = this.degreeSelect.email;
 
     let collectionList = [
@@ -557,7 +557,7 @@ export class ProgressPanel {
     this.currentSecondMajors[0] = null;
   }
 
-  private deleteThirdMajor() {
+  public deleteThirdMajor() {
     this.email = this.degreeSelect.email;
 
     let collectionList = [
@@ -596,7 +596,7 @@ export class ProgressPanel {
     this.currentThirdMajors[0] = null;
   }
 
-  private deleteModule() {
+  public deleteModule() {
     this.email = this.degreeSelect.email;
 
     let collectionList = [
@@ -636,7 +636,7 @@ export class ProgressPanel {
     this.degreeSelect.getFilteredModules();
   }
 
-  private deleteSecondModule() {
+  public deleteSecondModule() {
     this.email = this.degreeSelect.email;
 
     let collectionList = [
@@ -676,7 +676,7 @@ export class ProgressPanel {
    this.degreeSelect.getFilteredSecondModules();
   }
 
-  private yearAndPeriod(): any {
+  public yearAndPeriod(): any {
     const period = Number(this.route.snapshot.queryParams.period);
     const year = Number(this.route.snapshot.queryParams.year);
     if (!period) {
@@ -693,7 +693,7 @@ export class ProgressPanel {
     }
   }
 
-  private selectRequirements(requirement: IRequirement): void {
+  public selectRequirements(requirement: IRequirement): void {
     const stages = requirement.stage
       ? [requirement.stage]
       : requirement.aboveStage
@@ -764,7 +764,7 @@ export class ProgressPanel {
   }
 }
 
-  private orNull(arg) {
+  public orNull(arg) {
     if (arg) {
       return arg;
     } else {
@@ -772,39 +772,39 @@ export class ProgressPanel {
     }
   }
 
-  private changeFaculty(which, event) {
+  public changeFaculty(which, event) {
     this.degreeSelect.changeFaculty(which, event);
   }
 
-  private changeMajor(which, event) {
+  public changeMajor(which, event) {
     this.degreeSelect.changeMajor(which, event);
   }
 
-  private changePathway(which, event) {
+  public changePathway(which, event) {
     this.degreeSelect.changePathway(which, event);
   }
 
-  private changeConjoint(which, event) {
+  public changeConjoint(which, event) {
     this.degreeSelect.changeConjoint(which, event);
   }
 
-  private changeSecondMajor(which, event) {
+  public changeSecondMajor(which, event) {
     this.degreeSelect.changeSecondMajor(which, event);
   }
 
-  private changeThirdMajor(which, event) {
+  public changeThirdMajor(which, event) {
     this.degreeSelect.changeThirdMajor(which, event);
   }
 
-  private changeModule(which, event) {
+  public changeModule(which, event) {
     this.degreeSelect.changeModule(which, event);
   }
 
-  private changeSecondModule(which, event) {
+  public changeSecondModule(which, event) {
     this.degreeSelect.changeSecondModule(which, event);
   }
 
-  private calculateGPA() {
+  public calculateGPA() {
     const courseGrades = this.courses
       .filter(
         (course: ICourse) =>
@@ -821,33 +821,33 @@ export class ProgressPanel {
       (courseGrades.length + failed);
   }
 
-  private degreeClicked() {
+  public degreeClicked() {
     this.addingDegree = true;
     this.faculties = this.degreeSelect.faculties;
   }
 
-  private majorClicked() {
+  public majorClicked() {
     setTimeout(() => {     
       this.addingMajor = true;
       this.majorsList = this.degreeSelect.majors; }, 4000 )
   }
 
-  private conjointClicked() {
+  public conjointClicked() {
     this.addingConjoint = true;
     this.conjoints = this.degreeSelect.conjoints;
   }
 
-  private secondMajorClicked() {
+  public secondMajorClicked() {
     this.addingSecondMajor = true;
     this.secondMajorsList = this.degreeSelect.secondMajors;
   }
 
-  private thirdMajorClicked() {
+  public thirdMajorClicked() {
     this.addingThirdMajor = true;
     this.thirdMajorsList = this.degreeSelect.thirdMajors;
   }
 
-  private pathwayCheck(value) {
+  public pathwayCheck(value) {
 
     for (let i = 0; i < this.degreeSelect.pathways.length; i++) {
       if (this.degreeSelect.pathways[0][i].value.faculties.includes(value.name)) {
@@ -857,11 +857,11 @@ export class ProgressPanel {
     }
   }
 
-  private pathwayClicked(value) {
+  public pathwayClicked(value) {
     this.addingPathway = true;
   }
 
-  private moduleClicked() {
+  public moduleClicked() {
    this.addingModule = true;
     this.modulesList = this.degreeSelect.modules;
     for (let i = this.modulesList[0].length - 1; i > 0; i--) {
@@ -877,7 +877,7 @@ export class ProgressPanel {
     }
   }
 
-  private secondModuleClicked() {
+  public secondModuleClicked() {
     this.addingSecondModule = true;
      this.secondModulesList = this.degreeSelect.secondModules;
      for (let i = this.secondModulesList[0].length - 1; i > 0; i--) {
@@ -893,7 +893,7 @@ export class ProgressPanel {
      }
    }
 
-  private pathwayFilter() {
+  public pathwayFilter() {
     for (let i = this.degreeSelect.pathways.length[0] - 1; i >= 0; i--) {
       if (!this.degreeSelect.pathways[0][i].value.faculties.includes(this.currentMajors[0].name)) 
       {
@@ -903,17 +903,17 @@ export class ProgressPanel {
     }
   }
 
-  private expansionOnClick() {
+  public expansionOnClick() {
     this.isDisabled = false;
     return this.isDisabled;
   }
 
-  private noExpansionOnClick() {
+  public noExpansionOnClick() {
     this.isDisabled = true;
     return this.isDisabled;
   }
 
-  private openDialog(degSelectId) {
+  public openDialog(degSelectId) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;

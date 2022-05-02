@@ -3,7 +3,7 @@
 // Polyfills
 import 'core-js/es7/reflect'
 import { environment } from './environments/environment';
-import 'hammerjs/hammer';
+// import 'hammerjs/hammer';
 
 // import 'ie-shim'; // Internet Explorer 9 support
 

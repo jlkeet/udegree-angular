@@ -1,5 +1,5 @@
 export class DepartmentService {
-  private departments;
+  public departments;
 
   constructor() {
     this.departments = require('../../assets/data/departments.json');
@@ -18,7 +18,7 @@ export class DepartmentService {
     return;
   }
 
-  private checkFlag(department, flag: string): boolean {
+  public checkFlag(department, flag: string): boolean {
     return department.flags.map((str: string) => str.toLowerCase()).includes(flag);
   }
 

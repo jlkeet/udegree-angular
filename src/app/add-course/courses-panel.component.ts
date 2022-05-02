@@ -17,12 +17,12 @@ export class AddCoursePanel {
   @Output() public addCourseClicked = new EventEmitter();
   @Output() public cancelClicked = new EventEmitter();
 
-  private courseStatus;
-  private curScroll;
-  private scrollTo;
+  public courseStatus;
+  public curScroll;
+  public scrollTo;
   
 
-  constructor(private courseService: CourseService, private storeHelper: StoreHelper, private db_courses: AngularFireDatabase, private db: AngularFirestore) { }
+  constructor(public courseService: CourseService, public storeHelper: StoreHelper, public db_courses: AngularFireDatabase, public db: AngularFirestore) { }
 
   ngOnChanges(changes: SimpleChanges){
     this.scrollTo = 10;
@@ -30,12 +30,12 @@ export class AddCoursePanel {
   }
 
   // should change to appending to curScroll
-  private onScroll() {
+  public onScroll() {
     this.scrollTo = Math.min(this.scrollTo + 2, this.departmentCourses.length);
     this.curScroll = this.departmentCourses.slice(0, this.scrollTo);
   }
 
-  private mapCourse(course: ICourse) {
+  public mapCourse(course: ICourse) {
     const mappedCourse = {
       checked: null,
       desc: course.desc,

@@ -79,11 +79,11 @@ import { Message, MessageStatus } from '../models';
 })
 
 export class ToggleSwitchComponent {
-  @Output() private checkChange = new EventEmitter();
-  @Input() private checked: boolean;
-  @Input() private id: string;
+  @Output() public checkChange = new EventEmitter();
+  @Input() public checked: boolean;
+  @Input() public id: string;
 
-  private onCheckChange() {
+  public onCheckChange() {
     this.checkChange.emit({
       value: this.checked
     });

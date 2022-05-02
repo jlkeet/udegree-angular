@@ -11,7 +11,7 @@ export class ProgressDialogComponent implements OnInit {
 
     form: FormGroup;
     description:string;
-    degSelectId:string;
+    degSelectId:number;
 
     constructor(
         private fb: FormBuilder,

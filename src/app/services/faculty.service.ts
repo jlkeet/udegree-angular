@@ -1,5 +1,5 @@
 export class FacultyService {
-  private faculties;
+  public faculties;
 
   constructor() {
     this.faculties = require('../../assets/data/facultiesNew.json');
@@ -21,7 +21,7 @@ export class FacultyService {
     return this.checkFlag(faculty, 'dbl mjr');
   }
 
-  private checkFlag(faculty, flag: string): boolean {
+  public checkFlag(faculty, flag: string): boolean {
     return faculty.flags.map((str: string) => str.toLowerCase()).includes(flag);
   }
 

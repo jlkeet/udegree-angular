@@ -78,7 +78,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
  */
 
 import { ROUTES } from './app.routes';
-import { ENV_PROVIDERS } from '../environments/environment';
+import { ENV_PROVIDERS } from '../environments/environment.prod'
 
 /* App */
 import {
@@ -87,7 +87,7 @@ import {
   CourseCard,
   CourseFilter
 } from './add-course';
-import { App, providers } from './app.component';
+import { App } from './app.component';
 import { AppHeader } from './app.header.component';
 import { AppReadyEvent } from './app.ready.event';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
@@ -109,8 +109,8 @@ import {
 } from './courses-panel';
 import { NoContent } from './no-content';
 import * as progress from './progress-panel';
-import { DegreeSelection, DepartmentList, FacultyList } from './select-major';
-import { CourseService, WindowRef } from './services';
+import { DegreeSelection, DepartmentList, FacultyList, PathwayList, ModuleList } from './select-major';
+import { ClickedEvent, ConjointService, CourseEventService, CourseService, DepartmentService, ErrorsChangedEvent, FacultyService, IRequirement, LocationRef, ModuleService, MovedEvent, PathwayService, RemovedEvent, RequirementService, StatusEvent, StoreHelper, WindowRef } from './services';
 import { UserContainer } from './user/user-status.component';
 import { ExportButton } from './courses-panel/export-button.component';
 import { FirebaseDbService } from './core/firebase.db.service';
@@ -187,6 +187,8 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     DegreeSelection,
     FacultyList,
     DepartmentList,
+    PathwayList,
+    ModuleList,
     NoContent,
     ExportButton,
 
@@ -273,8 +275,24 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     AddCourseContainer,
     CourseDraggable,
     progress.ProgressBarMultiContainer,
-
-    ...providers
+    StoreHelper,
+    RequirementService,
+    AddCourseService,
+    DepartmentService,
+    ModuleService,
+    FacultyService,
+    CourseService,
+    ErrorsChangedEvent,
+    CourseEventService,
+    RemovedEvent,
+    MovedEvent,
+    ClickedEvent,
+    StatusEvent,
+    WindowRef,
+    PathwayService,
+    ConjointService,
+    LocationRef,
+    
   ],
    entryComponents: [CourseDialogComponent, ProgressDialogComponent, UserDialogComponent],
 })

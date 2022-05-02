@@ -1,5 +1,5 @@
 export class PathwayService {
-    private pathways;
+    public pathways;
   
     constructor() {
       this.pathways = require('../../assets/data/pathways.json');
@@ -17,7 +17,7 @@ export class PathwayService {
       return;
     }
   
-    private checkFlag(pathway, flag: string): boolean {
+    public checkFlag(pathway, flag: string): boolean {
       return pathway.flags.map((str: string) => str.toLowerCase()).includes(flag);
     }
   

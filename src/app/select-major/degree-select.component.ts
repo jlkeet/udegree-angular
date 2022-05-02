@@ -20,14 +20,14 @@ import { UserContainer } from "../common";
   styleUrls: ["degree-select.component.scss"],
 })
 export class DegreeSelection {
-  @Output() private onPageChange = new EventEmitter<null>();
+  @Output() public onPageChange = new EventEmitter<null>();
 
-  private degreeTypes = [
+  public degreeTypes = [
     { value: "regular", view: "Regular" },
     { value: "conjoint", view: "Conjoint" },
   ];
 
-  private degreeType;
+  public degreeType;
   public faculties = [];
   public conjoints = [];
   public currentFaculties = [];
@@ -38,14 +38,14 @@ export class DegreeSelection {
   public thirdMajors = [];
   public modules = [];
   public secondModules = [];
-  private degree = null;
+  public degree = null;
   public currentMajors = [];
   public currentPathways = [];
   public currentModules = [];
   public currentSecondModules = [];
   public currentSecondMajors = [];
   public currentThirdMajors = [];
-  private doubleMajorAllowed;
+  public doubleMajorAllowed;
   public email: string = "";
   public degreeId: string = "";
   public majorId: string = "";
@@ -57,21 +57,21 @@ export class DegreeSelection {
   public secondModuleId: string = "";
   public facultyForEmail: string = "";
 
-  private defaultBlurb =
+  public defaultBlurb =
     "An undergraduate degree (e.g. Bachelor) is the award you recieve once you have completed your course of study. It is where most first-time university students commence their tertiary studies. To obtain your degree you must complete a specified number and combination of units. Most undergraduate degrees can be completed in 3-5 years of full-time study or 6-10 years part-time.";
-  private blurb;
+  public blurb;
 
   constructor(
-    private facultyService: FacultyService,
-    private conjointService: ConjointService,
-    private storeHelper: StoreHelper,
-    private db: AngularFirestore,
-    private authService: AuthService,
-    private departmentService: DepartmentService,
-    private pathwayService: PathwayService,
-    private moduleService: ModuleService,
-    private dbCourses: FirebaseDbService,
-    private userContainer: UserContainer,
+    public facultyService: FacultyService,
+    public conjointService: ConjointService,
+    public storeHelper: StoreHelper,
+    public db: AngularFirestore,
+    public authService: AuthService,
+    public departmentService: DepartmentService,
+    public pathwayService: PathwayService,
+    public moduleService: ModuleService,
+    public dbCourses: FirebaseDbService,
+    public userContainer: UserContainer,
   ) {
 
     this.authService.afAuth.authState.subscribe(async (auth) => { if (auth) {
@@ -86,7 +86,7 @@ export class DegreeSelection {
     });
   }
 
-  private initiateCurrentPlanFromDb() {
+  public initiateCurrentPlanFromDb() {
     return new Promise<void>((resolve, reject) => {
       let collectionList = [
         "degree",
@@ -152,7 +152,7 @@ export class DegreeSelection {
     });
   }
 
-  private initiateCurrentPlan() {
+  public initiateCurrentPlan() {
     this.degreeType = this.storeHelper.current("degreeType");
 
     if (this.degreeType === undefined) {
@@ -213,7 +213,7 @@ export class DegreeSelection {
     this.populateMajors();
   }
 
-  private checkFlags() {
+  public checkFlags() {
     if (this.currentFaculties[0] !== null) {
       const flags = this.currentFaculties[0].flags;
       this.doubleMajorAllowed = flags.includes("Dbl Mjr");
@@ -222,7 +222,7 @@ export class DegreeSelection {
 
   // switches between conjoint and regular
   // some degrees can't be double majors or conjoint
-  private changeDegree() {
+  public changeDegree() {
     if (this.degreeType === "regular") {
       this.currentFaculties[0] = null; // Gotta keep this in here for conjoint reasons.
       this.currentConjoint[0] = null;
@@ -453,7 +453,7 @@ export class DegreeSelection {
   }
 
   // this is repeated in the html, should consolidate
-  private changePage() {
+  public changePage() {
     this.facultyForEmail = this.storeHelper.current("faculty").name;
     if (
       this.currentMajors[0] &&
@@ -466,7 +466,7 @@ export class DegreeSelection {
     }
   }
 
-  private pathwayFilter() {
+  public pathwayFilter() {
     for (let i = this.pathways[0].length -1; i >= 0; i--) {
       if (!this.pathways[0][i].value.faculties.includes(this.currentMajors[0].name)) {
         this.pathways[0].splice([i], 1);

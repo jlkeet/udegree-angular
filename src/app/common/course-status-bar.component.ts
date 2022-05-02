@@ -39,7 +39,7 @@ import { CourseStatus } from '../models';
 })
 export class CourseStatusBar {
   @Input() public course: ICourse;
-  private indicatorClass: string;
+  public indicatorClass: string;
 
   public ngOnInit() {
     switch (this.course.status) {

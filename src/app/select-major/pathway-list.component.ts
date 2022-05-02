@@ -27,10 +27,10 @@ export class PathwayList {
 
 
   // current major
-  private cur = 0;
-  private minor: string = null;
+  public cur = 0;
+  public minor: string = null;
 
-  private deleteDept(which) {
+  public deleteDept(which) {
     if (which === 0) {
       this.pathways[0] = this.pathways[1];
       this.pathways[1] = null;
@@ -49,7 +49,7 @@ export class PathwayList {
   }
 
   // would be nice to split this up, but it's slightly awkward
-  private clicked(path) {
+  public clicked(path) {
     if ((this.cur === 0 && this.pathways[1] !== path ||
       this.cur === 1 && this.pathways[0] !== path)) {
       this.pathways[this.cur] = path;
