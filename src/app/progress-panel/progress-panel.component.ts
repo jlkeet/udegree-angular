@@ -681,6 +681,7 @@ export class ProgressPanel {
   }
 
   public selectRequirements(requirement: IRequirement): void {
+    console.log(requirement)
     const stages = requirement.stage
       ? [requirement.stage]
       : requirement.aboveStage
@@ -747,6 +748,7 @@ export class ProgressPanel {
     
     if (requirement.complex !== undefined) {
   } else {
+  //  console.log(queryParams)
     this.router.navigate(["/add"], { queryParams });
   }
 }

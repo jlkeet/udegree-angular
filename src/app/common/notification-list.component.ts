@@ -2,6 +2,7 @@ import { OnChanges, SimpleChange, Component, Input } from '@angular/core';
 import { CourseEventService } from '../services';
 import { Message, MessageStatus } from '../models';
 
+
 /*
     A component for displaying a list of notification messages
 */
@@ -60,6 +61,7 @@ export class NotificationListComponent {
     @Input() show: boolean = false;
 
     public borderClass: string;
+
 
     ngOnInit() {
         this.configureColours();

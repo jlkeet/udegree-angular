@@ -110,7 +110,7 @@ import {
 import { NoContent } from './no-content';
 import * as progress from './progress-panel';
 import { DegreeSelection, DepartmentList, FacultyList, PathwayList, ModuleList } from './select-major';
-import { ClickedEvent, ConjointService, CourseEventService, CourseService, DepartmentService, ErrorsChangedEvent, FacultyService, IRequirement, LocationRef, ModuleService, MovedEvent, PathwayService, RemovedEvent, RequirementService, StatusEvent, StoreHelper, WindowRef } from './services';
+import { ClickedEvent, ConjointService, CourseEventService, CourseService, DepartmentService, ErrorsChangedEvent, FacultyService, IRequirement, LocationRef, ModuleService, MovedEvent, PathwayService, RemovedEvent, RequirementService, StatusEvent, StoreHelper, WindowRef, ErrorRequirementService } from './services';
 import { UserContainer } from './user/user-status.component';
 import { ExportButton } from './courses-panel/export-button.component';
 import { FirebaseDbService } from './core/firebase.db.service';
@@ -290,6 +290,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     WindowRef,
     PathwayService,
     ConjointService,
+    ErrorRequirementService,
     LocationRef,
     
   ],

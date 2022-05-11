@@ -1,3 +1,4 @@
+import { IRequirement } from '../services';
 import { MessageStatus } from './message-status.enum';
 
 /* an error message */
