@@ -282,8 +282,11 @@ export class AddCourseContainer {
 
   public groupByDepartment(courses: ICourse[]) {
     const grouped = courses.reduce((groups, course) => {
-      const key = course.department;
+      console.log(course)
+    for (let i = 0; i < course.department.length; i++) {  
+      const key = course.department[i];
       (groups[key] = groups[key] || []).push(course);
+    }
       return groups;
     }, {});
     return grouped;

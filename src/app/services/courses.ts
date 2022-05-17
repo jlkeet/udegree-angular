@@ -58,7 +58,7 @@ export class CourseService {
 
     const customCourse: ICourse = {
       canDelete: true,
-      department,
+      department: [department],
       desc: '',
       faculties: [faculty],
       id: -this.courseCounter,

@@ -15,7 +15,7 @@ export class CourseModel implements ICourse {
   public name: string;
   public status: CourseStatus;
   public faculties: string[];
-  public department: string;
+  public department: string[];
   public desc: string;
   public moreInfo?: string;
   public isError: boolean = false;
@@ -25,7 +25,7 @@ export class CourseModel implements ICourse {
     name: string,
     desc: string,
     faculties: string[],
-    department: string,
+    department: string[],
     status: CourseStatus = CourseStatus.None,
     period?: Period,
     year?: number,

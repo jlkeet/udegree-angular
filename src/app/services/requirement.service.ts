@@ -104,7 +104,8 @@ export class RequirementService {
       {check: requirement.facultiesExcluded,
         filter: (course: ICourse) => this.intersection(requirement.faculties, course.faculties).length === 0},
       {check: requirement.departments,
-        filter: (course: ICourse) => requirement.departments.includes(course.department)},
+        // filter: (course: ICourse) => requirement.departments.includes(course.department)},
+        filter: (course: ICourse) => this.intersection(requirement.departments, course.department).length > 0},
       {check: requirement.departmentsExcluded,
         filter: (course: ICourse) => course.faculties.toString() !== requirement.faculties[0] },
       {check: this.checkFlag(requirement, 'General'),
@@ -146,10 +147,12 @@ export class RequirementService {
         planned.filter((course: ICourse) => course.status !== CourseStatus.Failed));
       const depts = new Set<string>();
 
-      if (this.checkFlag(requirement, 'DifferentDepts')) {
-        filtered.forEach((course: ICourse) => depts.add(course.department));
-        return depts.size;
-      }
+      // Come back to fix this
+
+      // if (this.checkFlag(requirement, 'DifferentDepts')) {
+      //   filtered.forEach((course: ICourse) => depts.add(course.department));
+      //   return depts.size;
+      // }
 
       // if (this.checkFlag(requirement, 'Further')) {
       //   filtered.forEach((course: ICourse) => depts.add(course.department));
@@ -205,7 +208,6 @@ export class RequirementService {
 
      return filled >= requirement.required;
     }  else {
-
       return this.requirementCheck(requirement, planned) === requirement.required;
     }
   }
