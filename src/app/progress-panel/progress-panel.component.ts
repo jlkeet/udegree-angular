@@ -914,6 +914,14 @@ newConjointEvent(){
   .eventEmitter("add_con", "progress-panel", "conjoint", "click", 10);
 } 
 
+newSecondMajorEvent(){ 
+  this
+  .googleAnalyticsService
+  .eventEmitter("add_secondMaj", "progress-panel", "second_major", "click", 10);
+} 
+
+
+
 newPGDegreeEvent(){ 
   this
   .googleAnalyticsService
