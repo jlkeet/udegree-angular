@@ -43,7 +43,7 @@
       <div *ngIf="faculty?.name" class="progress-panel-bar-container flex flex-col flex-start">
         <div class="progress-bar-group">
           <progress-bar-multi-container *ngFor="let requirement of requirements" [requirement]="requirement"
-            (click)="selectRequirements(requirement)" [courses]="courses">
+            (click)="selectRequirements(requirement);newPGDegreeEvent()" [courses]="courses">
           </progress-bar-multi-container>
         </div>
       </div>
@@ -53,7 +53,7 @@
       <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(1);" />
 
       <mat-form-field class="without-arrow addmodule-degree">
-        <div style="text-align: center; margin-top: 20px;"> Add Degree</div>
+        <div style="text-align: center; margin-top: 20px;" (click)="newDegreeEvent()"> Add Degree</div>
 
         <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentFaculties[0]"
           (selectionChange)="changeFaculty(0, $event)">
@@ -93,7 +93,7 @@
       <div *ngIf="majors?.name && !pathways?.name" class="progress-panel-bar-container flex flex-col flex-start">
         <div class="progress-bar-group">
           <progress-bar-multi-container *ngFor="let requirement of majorRequirements" [requirement]="requirement"
-            (click)="selectRequirements(requirement)" [courses]="courses">
+            (click)="selectRequirements(requirement);newPGMajorEvent()" [courses]="courses">
           </progress-bar-multi-container>
         </div>
       </div>
@@ -130,7 +130,7 @@
 
       <mat-form-field class="without-arrow addmodule-major">
 
-        <div style="text-align: center; margin-top: 20px;">Add Major</div>
+        <div style="text-align: center; margin-top: 20px;" (click)="newMajorEvent()">Add Major</div>
         <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentMajors[0]"
           (selectionChange)="changeMajor(0, $event)">
 
@@ -193,10 +193,10 @@
         <!-- <div *ngIf="faculty.name !== 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major</div>
     <div *ngIf="faculty.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major <BR> (Compulsary for Bachelor of Arts)</div> -->
 
-        <div *ngIf="faculty?.name === 'Arts'" style="text-align: center; margin-top: 20px;">Add Second Major (For Arts)
+        <div *ngIf="faculty?.name === 'Arts'" style="text-align: center; margin-top: 20px;" (click)="newSecondMajorEvent()">Add Second Major (For Arts)
         </div>
 
-        <div *ngIf="faculty?.name === 'Science'" style="text-align: center; margin-top: 20px;">Add Second Major (For Science)
+        <div *ngIf="faculty?.name === 'Science'" style="text-align: center; margin-top: 20px;" (click)="newSecondMajorEvent()">Add Second Major (For Science)
         </div>
 
         <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentSecondMajors[0]"
@@ -236,7 +236,7 @@
       <div *ngIf="majors?.name && secondMajors?.name" class="progress-panel-bar-container flex flex-col flex-start">
         <div class="progress-bar-group">
           <progress-bar-multi-container *ngFor="let requirement of secondMajorRequirements" [requirement]="requirement"
-            [courses]="courses" (click)="selectRequirements(requirement)">
+            [courses]="courses" (click)="selectRequirements(requirement);newPGSecondMajorEvent()">
           </progress-bar-multi-container>
         </div>
       </div>
@@ -261,7 +261,7 @@
       <div *ngIf="conjoint?.name" class="progress-panel-bar-container flex flex-col flex-start">
         <div class="progress-bar-group">
           <progress-bar-multi-container *ngFor="let i of conjointRequirements | slice:1:conjointRequirements.length-1"
-            [requirement]="i" (click)="selectRequirements(i)" [courses]="courses">
+            [requirement]="i" (click)="selectRequirements(i);newPGConjointEvent()" [courses]="courses">
           </progress-bar-multi-container>
         </div>
       </div>
@@ -349,7 +349,7 @@
 
       <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(2);" />
       <mat-form-field class="without-arrow addmodule-major">
-        <div style="text-align: center; margin-top: 20px;">Add Conjoint (Optional)</div>
+        <div style="text-align: center; margin-top: 20px;" (click)="newConjointEvent()">Add Conjoint (Optional)</div>
 
         <mat-select *ngIf="!userService.isMobile" panelClass="my-panel-class" [(value)]="currentConjoints[0]"
           (selectionChange)="changeConjoint(0, $event)">

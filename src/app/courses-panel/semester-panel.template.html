@@ -53,7 +53,7 @@
           [attr.data-period]="semester.period" [attr.data-year]="semester.year"></course-draggable>
         <div fake *ngIf="!atMaxPoints && boolCheck" class="fakecourse" [routerLink]="['/add']"
           [queryParams]="{ period: semester.period, year: semester.year }">
-          <div class="position-text">Add course</div>
+          <div class="position-text" (click)="newCourseEvent()">Add course</div>
         </div>
       </div>
     </div>

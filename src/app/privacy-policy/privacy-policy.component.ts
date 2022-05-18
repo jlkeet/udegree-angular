@@ -10,6 +10,5 @@ export class PrivacyContainer {
 
   constructor(
     private router: Router,
-  ) {}
-
+  ) { }
 }

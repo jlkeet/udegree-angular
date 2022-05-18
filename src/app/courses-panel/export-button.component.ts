@@ -8,6 +8,7 @@ import { AuthService } from "../core/auth.service";
 import { UserService } from "../core/user.service";
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { CourseDialogComponent } from "./course-dialog.component";
+import { GoogleAnalyticsService } from "../services/google-analytics.service";
 
 @Component({
     host: {
@@ -35,6 +36,7 @@ import { CourseDialogComponent } from "./course-dialog.component";
       public authService: AuthService,
       public userService: UserService,
       public dialog: MatDialog,
+      public googleAnalyticsService: GoogleAnalyticsService,
     ) {
      this.userService.getCurrentUser().then( (user) => {this.name = user.displayName, this.email = user.email}) 
     }
@@ -62,4 +64,12 @@ import { CourseDialogComponent } from "./course-dialog.component";
       this.toggle = !this.toggle;
       this.status = this.toggle ? 'Plan Sent ✓' : 'Export Plan';
     }
+
+
+    newExportEvent(){ 
+      this
+      .googleAnalyticsService
+      .eventEmitter("export_button", "export-panel", "export", "click", 10);
+    } 
+
 }

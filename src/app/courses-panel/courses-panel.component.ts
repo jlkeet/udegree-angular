@@ -25,6 +25,7 @@ import {
 } from "../services";
 import { DegreeSelection } from "../select-major";
 import { FirebaseDbService } from "../core/firebase.db.service";
+import{ GoogleAnalyticsService } from '../services/google-analytics.service';
 
 
 /*
@@ -74,6 +75,7 @@ export class CoursesPanel {
     private userContainer: UserContainer,
     private degreeSelection: DegreeSelection,
     private dbCourses: FirebaseDbService,
+    public googleAnalyticsService: GoogleAnalyticsService
   ) {
 
     this.courseMoved = new EventEmitter<MovedEvent>();
@@ -490,5 +492,11 @@ public updateSemesterCheck() {
     }
     }
 }
+
+newSemEvent(){ 
+  this
+  .googleAnalyticsService
+  .eventEmitter("add_sem", "course-panel", "semester", "click", 10);
+} 
 
 }

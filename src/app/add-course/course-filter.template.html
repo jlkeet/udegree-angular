@@ -3,7 +3,7 @@
   <div class="pad">
     <div class="remove-pad flex-justify">
       <div>
-        <mat-form-field class="space">
+        <mat-form-field class="space" (click)="newFacultyFilterEvent()">
           <mat-select multiple placeholder="Faculties"
                                [(ngModel)]="filterParams.faculties"
                                (selectionChange)="onChange()"
@@ -19,7 +19,7 @@
       </div>
 
       <div>
-        <mat-form-field class="space">
+        <mat-form-field class="space" (click)="newDepartmentFilterEvent()">
           <mat-select multiple placeholder="Departments"
                                [(ngModel)]="filterParams.departments"
                                (selectionChange)="onChange()"
@@ -34,7 +34,7 @@
       </div>
 
       <div>
-        <mat-form-field class="space">
+        <mat-form-field class="space" (click)="newCampusFilterEvent()">
           <mat-select multiple placeholder="Campus"
                                [(ngModel)]="filterParams.campus"
                                (selectionChange)="onChange()"
@@ -50,7 +50,7 @@
 
 
       <div>
-        <mat-form-field class="space">
+        <mat-form-field class="space" (click)="newStageFilterEvent()">
           <mat-select multiple placeholder="Stages"
                       [(ngModel)]="filterParams.stage"
                       (selectionChange)="onChange()"
@@ -65,11 +65,11 @@
     </div>
 
     <div class="remove-pad flex-justify">
-      <mat-slide-toggle [(ngModel)]="filterParams.ineligible" labelPosition="before" (change)="onChange()">
+      <mat-slide-toggle [(ngModel)]="filterParams.ineligible" labelPosition="before" (change)="onChange()" (click)="newEligibleFilterEvent()">
         Only show eligible
       </mat-slide-toggle>
 
-      <mat-slide-toggle [(ngModel)]="filterParams.general" labelPosition="before" (change)="onChange($event, 'General')">
+      <mat-slide-toggle [(ngModel)]="filterParams.general" labelPosition="before" (change)="onChange($event, 'General')" (click)="newGeneralFilterEvent()">
         General Education
       </mat-slide-toggle>
 
@@ -77,10 +77,10 @@
         Modules
       </mat-slide-toggle> -->
 
-      <mat-slide-toggle [(ngModel)]="filterParams.hidePlanned" labelPosition="before" (change)="onChange()">
+      <mat-slide-toggle [(ngModel)]="filterParams.hidePlanned" labelPosition="before" (change)="onChange()" (click)="newPlannedFilterEvent()">
         Hide planned
       </mat-slide-toggle>
-      <mat-form-field>
+      <mat-form-field (click)="newSearchFilterEvent()">
         <input
                         matInput
                         type="search"

@@ -123,6 +123,9 @@ import { PrivacyContainer } from './privacy-policy/privacy-policy.component';
 import { FooterComponent } from './footer/footer.component';
 import { CourseDraggable } from './common';
 
+import { GoogleAnalyticsService } from './services/google-analytics.service';
+
+
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -292,6 +295,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     ConjointService,
     ErrorRequirementService,
     LocationRef,
+    GoogleAnalyticsService,
     
   ],
    entryComponents: [CourseDialogComponent, ProgressDialogComponent, UserDialogComponent],

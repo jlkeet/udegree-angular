@@ -23,14 +23,14 @@
       <span>
         {{semesterText}}
       </span>
-      <button class="plain-button" (click)="prevSemester()">
+      <button class="plain-button" (click)="prevSemester();newPrevSemEvent()">
         &lt;
       </button> 
-      <button class="plain-button" (click)="nextSemester()">
+      <button class="plain-button" (click)="nextSemester();newNextSemEvent()">
         &gt;
       </button> 
       <span class="spacer"></span>
-      <button class="btn btn--custom" (click)="addCustom()">
+      <button class="btn btn--custom" (click)="addCustom();newCustomCourseEvent()">
         CUSTOM COURSE
       </button> 
       <button class="btn btn--next" routerLink="/planner">

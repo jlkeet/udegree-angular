@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { GoogleAnalyticsService } from '../services/google-analytics.service';
 
 @Component({
   selector: 'footer',
@@ -20,10 +21,24 @@ export class FooterComponent implements OnInit {
   public zip: string;
   public country: string;
 
-  constructor() {
+  constructor(public googleAnalyticsService: GoogleAnalyticsService) {
   }
 
   ngOnInit() {
   }
+
+  newPrivacyEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("privacy_policy", "planner", "privacy", "click", 10);
+  } 
+
+  newContactEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("contact_us", "planner", "contact", "click", 10);
+  } 
+
+
 
 }

@@ -30,6 +30,8 @@ import { ProgressBarMulti } from "./progress-bar-multi.component";
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ProgressDialogComponent } from "./progress-dialog.component";
 import { CoursesPanel } from "../courses-panel";
+import { GoogleAnalyticsService } from "../services/google-analytics.service";
+
 
 /*
   Component for displaying a group of progress bars
@@ -132,7 +134,8 @@ export class ProgressPanel {
     public departmentService: DepartmentService,
     public progressMulti: ProgressBarMulti,
     public dialog: MatDialog,
-    public coursesPanel: CoursesPanel
+    public coursesPanel: CoursesPanel,
+    public googleAnalyticsService: GoogleAnalyticsService
   ) {
     this.currentPathways = degreeSelect.currentPathways;
     this.pathwaysList = degreeSelect.pathways;
@@ -892,5 +895,50 @@ export class ProgressPanel {
         data => console.log("Dialog output:", data)
     );    
 }
+
+newDegreeEvent(){ 
+  this
+  .googleAnalyticsService
+  .eventEmitter("add_deg", "progress-panel", "degree", "click", 10);
+} 
+
+newMajorEvent(){ 
+  this
+  .googleAnalyticsService
+  .eventEmitter("add_maj", "progress-panel", "major", "click", 10);
+} 
+
+newConjointEvent(){ 
+  this
+  .googleAnalyticsService
+  .eventEmitter("add_con", "progress-panel", "conjoint", "click", 10);
+} 
+
+newPGDegreeEvent(){ 
+  this
+  .googleAnalyticsService
+  .eventEmitter("pg_deg", "progress-panel", "degree", "click", 10);
+} 
+
+
+newPGMajorEvent(){ 
+  this
+  .googleAnalyticsService
+  .eventEmitter("pg_majpr", "progress-panel", "major", "click", 10);
+} 
+
+
+newPGSecondMajorEvent(){ 
+  this
+  .googleAnalyticsService
+  .eventEmitter("pg_secondMaj", "progress-panel", "secondMajor", "click", 10);
+} 
+
+
+newPGConjointEvent(){ 
+  this
+  .googleAnalyticsService
+  .eventEmitter("pg_conjoint", "progress-panel", "conjoint", "click", 10);
+} 
 
 }

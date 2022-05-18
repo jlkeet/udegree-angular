@@ -8,6 +8,7 @@ import { CourseEventService, CourseService, StoreHelper } from "../services";
 import { CoursesPanel } from "./courses-panel.component";
 import { Router } from "@angular/router";
 import { UserContainer } from "../common";
+import{ GoogleAnalyticsService } from '../services/google-analytics.service';
 
 @Component({
   selector: "semester-panel",
@@ -53,6 +54,7 @@ export class SemesterPanel {
     public coursePanelService: CoursesPanel,
     public router: Router,
     public userContainer: UserContainer,
+    public googleAnalyticsService: GoogleAnalyticsService,
   ) {
     this.email = this.courseService.email;
     
@@ -553,5 +555,11 @@ export class SemesterPanel {
       }
       return this.boolCheck = true; // means there are no duplicate values.
   }
+
+  newCourseEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("new_course", "semester-panel", "course", "click", 10);
+  } 
 
 }

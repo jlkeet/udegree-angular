@@ -9,6 +9,7 @@ import { ICourse } from '../interfaces';
 import { CourseStatus } from '../models';
 import { DepartmentService, FacultyService, RequirementService, ConjointService } from '../services';
 import { AppHeader } from '../app.header.component';
+import { GoogleAnalyticsService } from '../services/google-analytics.service';
 
 /*
     Component for filtering a list of courses by eligibility / search term
@@ -59,7 +60,8 @@ export class CourseFilter {
     private facultyService: FacultyService,
     private requirementService: RequirementService,
     private conjointService: ConjointService,
-    public appHeader: AppHeader
+    public appHeader: AppHeader,
+    public googleAnalyticsService: GoogleAnalyticsService
   ) { }
 
   public ngOnInit() {
@@ -209,4 +211,54 @@ export class CourseFilter {
     this.panelOpenStateStage = false;
   }
 
+
+  newFacultyFilterEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("faculty_filter", "course-filter", "filter", "click", 10);
+  } 
+
+  newDepartmentFilterEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("department_filter", "course-filter", "filter", "click", 10);
+  } 
+
+  newCampusFilterEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("campus_filter", "course-filter", "filter", "click", 10);
+  } 
+
+  newStageFilterEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("stage", "course-filter", "filter", "click", 10);
+  } 
+
+  newEligibleFilterEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("eligible_filter", "course-filter", "filter", "click", 10);
+  } 
+
+  newGeneralFilterEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("general_filter", "course-filter", "filter", "click", 10);
+  } 
+
+  newPlannedFilterEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("planned_filter", "course-filter", "filter", "click", 10);
+  } 
+
+  newSearchFilterEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("search_filter", "course-filter", "filter", "click", 10);
+  } 
+
+  
 }

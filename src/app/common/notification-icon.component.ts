@@ -1,5 +1,6 @@
 import { OnChanges, SimpleChange, Component, Input, Output, EventEmitter } from '@angular/core';
 import { Message, MessageStatus }from '../models';
+import { GoogleAnalyticsService } from '../services/google-analytics.service';
 
 /*
     A component for displaying a notification icon.
@@ -53,7 +54,7 @@ import { Message, MessageStatus }from '../models';
      
   `],  
   template: ` 
-            <div (click)="onClicked()" class="notification-icon">
+            <div (click)="onClicked();newNotificationEvent()" class="notification-icon">
             <span class="imgWrap">
                 <img src="../../assets/img/file.svg" class="icon" alt="errors"/>
             </span>    
@@ -92,7 +93,13 @@ export class NotificationIconComponent {
             this.messageCount = errorMessageCount + warningMessageCount;
         }
     }
-    constructor() { }
+    constructor(public googleAnalyticsService: GoogleAnalyticsService) { }
+
+    newNotificationEvent(){ 
+        this
+        .googleAnalyticsService
+        .eventEmitter("check_notification", "notification-icon", "notification", "click", 10);
+      } 
 }
 
 

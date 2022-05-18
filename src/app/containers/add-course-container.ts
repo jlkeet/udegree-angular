@@ -22,6 +22,7 @@ import {
   RequirementService,
   StoreHelper
 } from '../services';
+import { GoogleAnalyticsService } from '../services/google-analytics.service';
 
 
 /*
@@ -79,7 +80,7 @@ export class AddCourseContainer {
     public courseEventService: CourseEventService,
     public requirementService: RequirementService,
     public appHeader: AppHeader,
-
+    public googleAnalyticsService: GoogleAnalyticsService
   ) {
 
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -282,7 +283,6 @@ export class AddCourseContainer {
 
   public groupByDepartment(courses: ICourse[]) {
     const grouped = courses.reduce((groups, course) => {
-      console.log(course)
     for (let i = 0; i < course.department.length; i++) {  
       const key = course.department[i];
       (groups[key] = groups[key] || []).push(course);
@@ -406,4 +406,24 @@ export class AddCourseContainer {
   public orEmpty(arg): any[] {
     return arg ? arg : [];
   }
+
+
+  newCustomCourseEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("add_custom", "add-course", "custom_course", "click", 10);
+  } 
+
+  newPrevSemEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("prev_sem", "add-course", "semester", "click", 10);
+  } 
+
+  newNextSemEvent(){ 
+    this
+    .googleAnalyticsService
+    .eventEmitter("next_sem", "add-course", "semester", "click", 10);
+  } 
+
 }

@@ -4,7 +4,7 @@
     </semester-panel>
     <div class="add-semester">
       <mat-toolbar class="plain">
-        <span class="new-semester" (click)="newSemester()" *ngIf="addingSemester === false">
+        <span class="new-semester" (click)="newSemester();newSemEvent()" *ngIf="addingSemester === false">
           Add semester
         </span>
       </mat-toolbar>
