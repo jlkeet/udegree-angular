@@ -13,6 +13,7 @@ import { ErrorsChangedEvent } from './course.event';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from '../core/auth.service';
+import { async } from '@angular/core/testing';
 //import { UserContainer } from '../user/user-status.component';
 
 /*
@@ -43,11 +44,16 @@ export class CourseService {
     this.authService.afAuth.authState.subscribe( async (auth) => { if (auth) this.email = auth.email })
 
     //this.email = userContainer.email
-    this.allCourses = require('../../assets/data/newCourses.json');
-    this.allCourses.sort((a,b) => a.name.localeCompare(b.name))
+    // this.db_courses
+    // .list("/", (ref) => ref.orderByChild("name"))
+    // .valueChanges()
+    // .subscribe((result: any) => {this.allCourses = result[0].courses_admin});
+      //  .subscribe((result: any) => {console.log(result[0]), this.allCourses = result[0].courses_admin});
+  // this.allCourses = require('../../assets/data/newCourses.json');
+   // this.allCourses.sort((a,b) => a.name.localeCompare(b.name))
 
     // By default, all courses are deletable
-    this.allCourses.map((course: ICourse) => course.canDelete = true);
+   // this.allCourses.map((course: ICourse) => course.canDelete = true);
     this.store.changes.pluck('courses').subscribe((courses: ICourse[]) => this.planned = courses);
 
   }
@@ -75,8 +81,17 @@ export class CourseService {
     this.updateErrors();
   }
 
-  public getAllCourses() {
-    return this.allCourses;
+  async getAllCourses() {
+
+    this.db_courses
+    .list("/", (ref) => ref.orderByChild("name"))
+    .valueChanges()
+    .subscribe((result: any) => {this.allCourses = result[0].courses_admin, this.allCourses.sort((a,b) => a.name.localeCompare(b.name)), this.allCourses.map((course: ICourse) => course.canDelete = true)})
+
+    // this.allCourses.sort((a,b) => a.name.localeCompare(b.name))
+    // this.allCourses.map((course: ICourse) => course.canDelete = true)
+   // console.log(this.allCourses)
+   return this.allCourses; 
   }
 
   // rename this to coursesbyyear

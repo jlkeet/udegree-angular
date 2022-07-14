@@ -102,7 +102,9 @@ export class AddCourseContainer {
       stage: this.mapToArray(this.route.snapshot.queryParams.stage).map((n) => Number(n))
     };
     this.semesters = this.storeHelper.current('semesters');
-    this.reset();
+
+      this.reset();
+
   }
 
   public ngOnDestroy() {
@@ -184,12 +186,12 @@ export class AddCourseContainer {
     this.selected = event.value;
   }
 
-  public reset(): void {
+  public async reset(): Promise<void> {
 
     this.semesterText = `${this.year} ${this.getSemesterNameInWords(this.period)}`;
     this.sameTime = this.sameTime.bind(this);
 
-    this.allCourses = this.coursesService.getAllCourses()
+    this.allCourses = (await this.coursesService.getAllCourses().then())
     .filter((course: ICourse) =>
       course.periods ? course.periods.includes(this.period) : true);
       this.allCourses = this.allCourses.filter((course: ICourse) => 
@@ -200,7 +202,6 @@ export class AddCourseContainer {
     this.departmentCourses = this.mapToDeptModel(
       this.groupByDepartment(this.shown)
     );
-
     this.subscriptions.forEach((subscription) => subscription.unsubscribe());
 
     // the id of the semester to add the course to

@@ -93,7 +93,7 @@ export class ProgressPanel {
   public pathways;
   public pathwaysList = [];
   public modules;
-  public faculties = [];
+  public faculties;
   public conjoints = [];
   public modulesList;
   public secondModules;
@@ -141,7 +141,7 @@ export class ProgressPanel {
     this.pathwaysList = degreeSelect.pathways;
     this.currentMajors = degreeSelect.currentMajors;
     this.majorsList = degreeSelect.majors;
-    this.faculties = degreeSelect.faculties;
+    // this.faculties = degreeSelect.faculties;
     this.currentFaculties = degreeSelect.currentFaculties;
     this.conjoints = degreeSelect.conjoints;
     this.currentConjoints = degreeSelect.currentConjoint;

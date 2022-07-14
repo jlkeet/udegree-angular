@@ -64,14 +64,14 @@ export class CourseFilter {
     public googleAnalyticsService: GoogleAnalyticsService
   ) { }
 
-  public ngOnInit() {
-    this.departmentChoices = this.departmentService.getDepartments()
-      .map((department) => {
+  public async ngOnInit() {
+    this.departmentChoices = await this.departmentService.getDepartments()
+    this.departmentChoices.map((department) => {
         return { value: department.name, label: department.name };
       });
 
-    this.facultyChoices = this.facultyService.getFaculties()
-      .map((faculty) => {
+    this.facultyChoices = await this.facultyService.getFaculties()
+    this.facultyChoices.map((faculty) => {
         return { value: faculty.name, label: faculty.name };
       });
 

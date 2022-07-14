@@ -26,14 +26,14 @@ export class DegreeSelection {
   ];
 
   public degreeType;
-  public faculties = [];
+  public faculties;
   public conjoints = [];
   public currentFaculties = [];
   public currentConjoint = [];
-  public majors = [];
+  public majors;
   public pathways = [];
-  public secondMajors = [];
-  public thirdMajors = [];
+  public secondMajors;
+  public thirdMajors;
   public modules = [];
   public secondModules = [];
   public degree = null;
@@ -204,8 +204,8 @@ export class DegreeSelection {
         null,
       ];
     }
-
     
+
     this.getFilteredLists();
     this.checkFlags();
     this.populateMajors();
@@ -472,12 +472,15 @@ export class DegreeSelection {
     }
   }
 
-  public getFilteredLists() {
-    this.faculties = this.facultyService.getFaculties().map((faculty) => {
+  public async getFilteredLists() {
+    this.faculties = await this.facultyService.getFaculties()
+   this.faculties =  this.faculties.map((faculty) => {
+      // console.log(faculty)
       return { value: faculty, view: faculty.name };
     });
 
-    this.majors = this.departmentService.getDepartments().map((majors) => {
+    this.majors = await this.departmentService.getDepartments()
+   this.majors = this.majors.map((majors) => {
       return { value: majors, view: majors.name };
     });
 
@@ -513,14 +516,14 @@ export class DegreeSelection {
   //     });
   // }
 
-    this.secondMajors = this.departmentService
-      .getDepartments().filter(v => v.name !== this.currentMajors[0].name)
+    this.secondMajors = await this.departmentService.getDepartments()
+    this.secondMajors.filter(v => v.name !== this.currentMajors[0].name)
       .map((secondMajors) => {
         return { value: secondMajors, view: secondMajors.name };
       })
 
-  this.thirdMajors = this.departmentService
-  .getDepartments().filter(v => v.name !== this.currentMajors[0].name)
+  this.thirdMajors = await this.departmentService.getDepartments()
+  this.thirdMajors.filter(v => v.name !== this.currentMajors[0].name)
   .map((thirdMajors) => {
     return { value: thirdMajors, view: thirdMajors.name };
   })
@@ -541,8 +544,8 @@ export class DegreeSelection {
     }
 
     public getFilteredThirdMajors() {
-      this.thirdMajors = this.departmentService
-        .getDepartments().filter(v => v.name !== this.currentMajors[0].name)
+      this.thirdMajors = this.departmentService.getDepartments()
+        this.thirdMajors.filter(v => v.name !== this.currentMajors[0].name)
         .map((thirdMajors) => {
           return { value: thirdMajors, view: thirdMajors.name };
         })

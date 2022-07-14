@@ -1,12 +1,24 @@
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Injectable } from '@angular/core';
+
+@Injectable()
 export class DepartmentService {
   public departments;
 
-  constructor() {
-    this.departments = require('../../assets/data/departments.json');
+  constructor(
+    public db_depts: AngularFireDatabase,
+  ) {
+    // this.departments = require('../../assets/data/departments.json');
   }
 
-  public getDepartments() {
-    return this.departments;
+  public async getDepartments() {
+
+    this.db_depts
+    .list("/", (ref) => ref.orderByChild("name"))
+    .valueChanges()
+    .subscribe((result: any) => {this.departments = result[2].departments_admin, this.departments.sort((a,b) => a.name.localeCompare(b.name)), this.departments.map((depts) => depts.canDelete = true)})
+
+    return new Promise((resolve) => { setTimeout(() => {resolve(this.departments)}, 1000)})
   }
 
   public departmentsInFaculty(faculty) {
