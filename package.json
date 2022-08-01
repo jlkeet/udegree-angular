@@ -31,6 +31,7 @@
     "@angularclass/hmr": "1.2.0",
     "@ng-bootstrap/ng-bootstrap": "^3.0.0",
     "bootstrap-sass": "^3.4.1",
+    "canvas-confetti": "^1.5.1",
     "core-js": "^2.4.1",
     "dom-autoscroller": "^2.3.4",
     "dragula": "3.7.3",

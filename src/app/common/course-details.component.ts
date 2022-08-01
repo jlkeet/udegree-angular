@@ -17,7 +17,7 @@ import {
   ModuleService,
   StoreHelper,
 } from "../services";
-
+import * as confetti from 'canvas-confetti';
 /*
     A component for a displaying the details or adding course
     Should break up custom card part
@@ -181,7 +181,10 @@ export class CourseDetails {
   //   }
   // }
 
+  
+
   public newStatus(number) {
+    let myCanvas = document.createElement('canvas');
     this.courseGrade = null;
     this.courseStatus = number;
     if (!this.showAddCourse) {
@@ -189,6 +192,21 @@ export class CourseDetails {
         course: this.course,
         status: this.courseStatus,
       });
+    }
+    if (this.courseStatus === 2) {
+      myCanvas.setAttribute("style", "width: 1500px !important; height: 600px; position: absolute; top: 0px; left: 0px;")
+      document.body.appendChild(myCanvas)
+      var myConfetti = confetti.create(myCanvas, {
+        resize: true,
+        useWorker: true
+      });
+      myConfetti({
+        particleCount: 100,
+        spread: 160
+        // any other options from the global
+        // confetti function
+      });
+      setTimeout( () => {document.body.removeChild(myCanvas)}, 3000)
     }
   }
 

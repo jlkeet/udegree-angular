@@ -13,6 +13,8 @@ import {
 } from '../services';
 
 import { AppHeader } from '../app.header.component';
+import * as confetti from 'canvas-confetti';
+
 
 /*
   Container for the planning page.

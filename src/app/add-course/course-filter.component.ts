@@ -66,12 +66,12 @@ export class CourseFilter {
 
   public async ngOnInit() {
     this.departmentChoices = await this.departmentService.getDepartments()
-    this.departmentChoices.map((department) => {
+    this.departmentChoices = this.departmentChoices.map((department) => {
         return { value: department.name, label: department.name };
       });
 
     this.facultyChoices = await this.facultyService.getFaculties()
-    this.facultyChoices.map((faculty) => {
+    this.facultyChoices = this.facultyChoices.map((faculty) => {
         return { value: faculty.name, label: faculty.name };
       });
 
@@ -79,6 +79,7 @@ export class CourseFilter {
   .map((conjoint) => {
     return { value: conjoint.name, label: conjoint.name };
   });
+  
 }
 
   public ngOnChanges() {
