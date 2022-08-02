@@ -20,9 +20,9 @@
           </div>
         <!-- <div class="bar-percentage">{{total}}/{{item.complexMax}}</div> -->
         <div class="bar-container">
-            <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth title="{{barOneHoverText}}"></div>
-            <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth title="{{barTwoHoverText}}"></div>
-            <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth title="{{barTwoHoverText}}"></div>
+            <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth [uProgressHeight]=barOneHeight title="{{barOneHoverText}}"></div>
+            <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth [uProgressHeight]=barTwoHeight title="{{barTwoHoverText}}"></div>
+            <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth [uProgressHeight]=barThreeHeight title="{{barTwoHoverText}}"></div>
         </div>
            <!-- <div *ngIf="i < combinedRule.length - 1">
           <P>OR</P>
@@ -38,12 +38,12 @@
       {{title}}
     </div>
     
-    <div class="wrap">
+    <div *ngIf="!isComplex" class="wrap">
       <!-- <div class="bar-percentage">{{total}}/{{max}}</div> -->
-        <div *ngIf="!isComplex" class="bar-container">
-            <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth title="{{barOneHoverText}}"></div>
-            <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth title="{{barTwoHoverText}}"></div>
-            <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth title="{{barTwoHoverText}}"></div>
+        <div class="bar-container">
+            <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth [uProgressHeight]=barOneHeight title="{{barOneHoverText}}"></div>
+            <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth [uProgressHeight]=barTwoHeight title="{{barTwoHoverText}}"></div>
+            <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth [uProgressHeight]=barThreeHeight title="{{barTwoHoverText}}"></div>
         </div>
     </div> 
 

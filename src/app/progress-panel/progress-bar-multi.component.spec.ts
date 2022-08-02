@@ -12,6 +12,7 @@ import { By } from '@angular/platform-browser/src/dom/debug/by';
 // Load the implementations that should be tested
 import { ProgressBarMulti } from './progress-bar-multi.component';
 import { ProgressWidthDirective } from './progress-bar-width.directive'
+import { ProgressHeightDirective } from './progress-bar-height.directive'
 
 describe('ProgressBarMulti component', () => {
 
@@ -19,7 +20,7 @@ describe('ProgressBarMulti component', () => {
     // async call in the beforeEach, made necessary by the asynchronous TestBed.compileComponents method.
     beforeEach( async(() => {
         TestBed.configureTestingModule({
-        declarations: [ ProgressBarMulti, ProgressWidthDirective ],
+        declarations: [ ProgressBarMulti, ProgressWidthDirective, ProgressHeightDirective ],
         })
         //The TestBed.compileComponents method asynchronously compiles all the components configured in its current testing module. 
         //After it completes, external templates and css files, have been "inlined" and TestBed.createComponent can do its job synchronously.
@@ -204,15 +205,22 @@ describe('ProgressBarMulti component', () => {
  }); 
 
   it('should set correct width for bar three', () => {
-
     const fixture = TestBed.createComponent(ProgressBarMulti);
     let comp = fixture.componentInstance;
-    
     initialiseComponent(comp);
     comp.title='should calculate and display total';
     fixture.detectChanges();
-    
     const bar  = fixture.debugElement.query(By.css('#bar_2'));
     expect(bar.styles['width']).toEqual(comp.states[0].value + comp.states[1].value + comp.states[2].value +'%');
- });      
+ });
+
+ it('should set correct height for bar three', () => {
+   const fixture = TestBed.createComponent(ProgressBarMulti);
+   let comp = fixture.componentInstance;
+   initialiseComponent(comp);
+   comp.title='should calculate and display total';
+   fixture.detectChanges();
+   const bar  = fixture.debugElement.query(By.css('#bar_2'));
+   expect(bar.styles['height']).toEqual("20px");
+});
 });

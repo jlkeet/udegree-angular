@@ -32,6 +32,7 @@ export class ProgressBarMulti implements OnChanges {
   private barOneWidth: number;
   private barTwoWidth: number;
   private barThreeWidth: number;
+  private barThreeHeight: number;
   private showText: boolean = false;
   private barOneHoverText: string;
   private barTwoHoverText: string;
@@ -102,6 +103,7 @@ export class ProgressBarMulti implements OnChanges {
     this.barThreeWidth = this.calculatePercentage(
       this.barOne.value + this.barTwo.value + this.barThree.value
     ); // eslint-disable-line
+
   }
 
   private updateTotal() {
