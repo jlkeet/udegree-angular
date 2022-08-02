@@ -40,10 +40,13 @@
     
     <div *ngIf="!isComplex" class="wrap">
       <!-- <div class="bar-percentage">{{total}}/{{max}}</div> -->
+
+
         <div class="bar-container">
-            <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth [uProgressHeight]=barOneHeight title="{{barOneHoverText}}"></div>
+            <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth [uProgressHeight]=barOneHeight title="{{barOneHoverText}}"><div *ngIf="barOne.full" class="completed-fully"><div *ngIf="barOne.full" class="planned-fully-check"></div></div></div>
             <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth [uProgressHeight]=barTwoHeight title="{{barTwoHoverText}}"></div>
-            <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth [uProgressHeight]=barThreeHeight title="{{barTwoHoverText}}"></div>
+            <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth [uProgressHeight]=barThreeHeight title="{{barTwoHoverText}}"><div *ngIf="barThree.full" class="planned-fully"><div *ngIf="barThree.full" class="planned-fully-check"></div></div></div>
+
         </div>
     </div> 
 

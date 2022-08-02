@@ -10,7 +10,9 @@ export class ProgressWidthDirective implements OnChanges  {
     
     private defaultWidth: number = 0;
 
-    ngOnChanges(changes: {[value: number]: SimpleChange}) {
+    ngOnChanges(changes: {
+        progressWidth: any;[value: number]: SimpleChange
+}) {
         this.setWidth(this.progressWidth || this.defaultWidth);
         if (changes.progressWidth.previousValue !== undefined) {
             this.setHeight();

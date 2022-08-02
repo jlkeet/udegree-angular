@@ -6,6 +6,7 @@ import { ProgressBarMultiContainer } from './progress-bar-multi.container';
 export interface IBarState {
   color: string;
   value: number;
+  full: boolean;
 }
 
 @Component({
@@ -56,7 +57,12 @@ export class ProgressBarMulti implements OnChanges {
   }
 
   public ngOnChanges(changes: { [value: string]: SimpleChange }) {
-
+    if (this.barThree.value === this.max) {
+      this.barThree.full = true;
+    }
+    if (this.barOne.value === this.max) {
+      this.barOne.full = true;
+    }
     if (this.title === "Complex rule") {
       this.isComplex = true;
     } else {

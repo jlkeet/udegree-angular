@@ -102,7 +102,7 @@ padding-bottom: 10px !important;
   background: #f9fbfc;
   width: 100%;
   margin: 12px 0px;
-  overflow: hidden;
+  // overflow: hidden;
   transition: height 0.6s cubic-bezier(.4,2.08,.55,.44);
 }
 
@@ -151,4 +151,43 @@ padding-bottom: 10px !important;
 .file-icon {
   width:15px;
   height:15px;
+}
+
+.planned-fully {
+  background-color: #25a0ed;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  left: 45%;
+  position: absolute;
+  top: 0px;
+  width: 25px;
+  margin-top: -8px;
+  max-width: unset;
+}
+
+.completed-fully {
+  background-color: #5bb801;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  left: 45%;
+  position: absolute;
+  top: 0px;
+  width: 25px;
+  margin-top: -8px;
+  max-width: unset;
+}
+
+.planned-fully-check {
+    border: 2px solid #eee;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 7px;
+    position: absolute;
+    top: 8px;
+    transform: rotate(-45deg);
+    width: 12px;
 }

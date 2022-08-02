@@ -107,10 +107,10 @@ export class RequirementService {
         // filter: (course: ICourse) => requirement.departments.includes(course.department)},
         filter: (course: ICourse) => this.intersection(requirement.departments, course.department).length > 0},
       {check: requirement.departmentsExcluded,
-        filter: (course: ICourse) => course.faculties.toString() !== requirement.faculties[0] },
+        filter: (course: ICourse) => course.faculties.toString() !== requirement.faculties[0]},
       {check: this.checkFlag(requirement, 'General'),
-      //   filter: (course: ICourse) => course.name.toUpperCase().substring(-1) === 'G'}, // -1 takes the last character
-      //  {check: requirement.stage,
+        // filter: (course: ICourse) => course.name.toUpperCase().substring(-1) === 'G'}, // -1 takes the last character
+
       filter: (course: ICourse) => course.name.toUpperCase().lastIndexOf("G") === course.name.length - 1}, // -1 takes the last character
       {check: requirement.stage,
         filter: (course: ICourse) => requirement.stage === course.stage},
@@ -177,21 +177,23 @@ export class RequirementService {
        // Ugly code here, but essentially this first checks to see if the requirement is gen ed.
        // Then it filteres the gen ed paper(s) and checks to see if there's already another paper taken from
        // the same dept, if it does then it doesnt count toward the progress bar otherwise it does.
-       if (this.checkFlag(requirement, "General")) {
-         let j = 0;
-        mapped = filtered.map((course: ICourse) => {
-          for (let i = 0; i < planned.length; i++) {
-            if (planned[i].department === course.department) {
-              j++;
-            }
-          }
-          if (j > 1) {
-           return 0;
-          } else {
-           return 15;
-          }
-        });
-      }
+
+
+      //  if (this.checkFlag(requirement, "General")) {
+      //    let j = 0;
+      //   mapped = filtered.map((course: ICourse) => {
+      //     for (let i = 0; i < planned.length; i++) {
+      //       if (planned[i].department === course.department) {
+      //         j++;
+      //       }
+      //     }
+      //     if (j > 1) {
+      //      return 0;
+      //     } else {
+      //      return 15;
+      //     }
+      //   });
+      // }
 
       if (mapped != undefined || null) { // Make sure not undefined before assigning
       const total = mapped.reduce((num1: number, num2: number) => num1 + num2, 0);
@@ -238,7 +240,7 @@ export class RequirementService {
 
     // This kind of looks insane, but it's a reasonably obvious pattern
     const str = requirement.required +
-      (this.checkFlag(requirement, 'General') ? ' General Education Points'  : '') +
+      (this.checkFlag(requirement, "General") ? ' General Education Points'  : '') +
       (requirement.type === RequirementType.Points && this.checkFlag(requirement, 'General') === false ? ' Points' : '') +
       (requirement.type === RequirementType.Papers && this.checkFlag(requirement, 'General') === false ? ' Courses' : '') +
       (requirement.stage !== undefined ? ' ' + requirement.stage + '00-level' : '') +
@@ -332,7 +334,7 @@ export class RequirementService {
       (this.checkFlag(requirement, 'total') ? ' Total' : '') +
       (requirement.faculties !== undefined ? ' from ' + requirement.faculties.join(', ') : '') +
       (requirement.facultiesExcluded !== undefined ? ' outside ' + requirement.facultiesExcluded.join(', ') : '') +
-      (this.checkFlag(requirement, 'General') ? ' General schedule' : '') + '';
+      (this.checkFlag(requirement, "General") ? ' General schedule' : '') + '';
     return str;
   }
 

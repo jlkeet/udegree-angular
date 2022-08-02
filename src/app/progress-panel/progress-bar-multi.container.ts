@@ -43,9 +43,9 @@ export class ProgressBarMultiContainer {
   public max = 0;
   private title;
   private inactive: boolean = false;
-  private barOneState: IBarState = { value: 0, color: "#66cc00" };
-  private barTwoState: IBarState = { value: 0, color: "#f2d600" };
-  private barThreeState: IBarState = { value: 0, color: "#66bbff" };
+  private barOneState: IBarState = { value: 0, color: "#66cc00" , full: false};
+  private barTwoState: IBarState = { value: 0, color: "#f2d600" , full: false};
+  private barThreeState: IBarState = { value: 0, color: "#66bbff" , full: false};
   private onPageChange = new EventEmitter<null>();
   private complexBool: boolean;
   public complexRule;
