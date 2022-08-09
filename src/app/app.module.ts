@@ -124,6 +124,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CourseDraggable } from './common';
 
 import { GoogleAnalyticsService } from './services/google-analytics.service';
+import { ProgressPanelService } from './services/progress-panel.service';
 
 
 
@@ -181,7 +182,6 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     // Progress panel
     progress.ProgressPanel,
     progress.ProgressWidthDirective,
-    progress.ProgressHeightDirective,
     progress.ProgressBarMulti,
     progress.ProgressBarMultiContainer,
     CoursesPanel,
@@ -285,6 +285,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     ModuleService,
     FacultyService,
     CourseService,
+    ProgressPanelService,
     ErrorsChangedEvent,
     CourseEventService,
     RemovedEvent,

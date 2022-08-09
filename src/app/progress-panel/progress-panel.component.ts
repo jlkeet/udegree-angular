@@ -17,6 +17,7 @@ import {
 } from "../models";
 import {
   DepartmentService,
+  FacultyService,
   IRequirement,
   LocationRef,
   ModuleService,
@@ -26,11 +27,12 @@ import {
 import { DegreeSelection } from "../select-major";
 import { FirebaseDbService } from "../core/firebase.db.service";
 import { UserContainer } from "../common";
-import { ProgressBarMulti } from "./progress-bar-multi.component";
+// import { ProgressBarMulti } from "./progress-bar-multi.component";
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ProgressDialogComponent } from "./progress-dialog.component";
 import { CoursesPanel } from "../courses-panel";
 import { GoogleAnalyticsService } from "../services/google-analytics.service";
+import { ProgressPanelService } from "../services/progress-panel.service";
 
 
 /*
@@ -118,6 +120,8 @@ export class ProgressPanel {
   public storeList = ["modules", "secondModules"];
   public isDisabled = false;
   public isComplex: boolean;
+  
+  public fullyPlanned;
 
   constructor(
     public location: LocationRef,
@@ -132,10 +136,11 @@ export class ProgressPanel {
     public dbCourses: FirebaseDbService,
     public userService: UserContainer,
     public departmentService: DepartmentService,
-    public progressMulti: ProgressBarMulti,
+    public facultyService: FacultyService,
     public dialog: MatDialog,
     public coursesPanel: CoursesPanel,
-    public googleAnalyticsService: GoogleAnalyticsService
+    public googleAnalyticsService: GoogleAnalyticsService,
+    public progressPanelService: ProgressPanelService,
   ) {
     this.currentPathways = degreeSelect.currentPathways;
     this.pathwaysList = degreeSelect.pathways;
@@ -153,7 +158,7 @@ export class ProgressPanel {
     this.modulesList = degreeSelect.modules;
     this.currentSecondModules = degreeSelect.currentSecondModules;
     this.secondModulesList = degreeSelect.secondModules;
-    this.isComplex = progressMulti.isComplex
+    // this.isComplex = progressMulti.isComplex
   }
 
   public ngOnInit() {
@@ -224,6 +229,7 @@ export class ProgressPanel {
   public ngOnChanges() {
     this.calculateGPA();
   }
+  
 
   public ngOnDestroy() {
     this.subs.forEach((sub) => sub.unsubscribe());
@@ -283,6 +289,7 @@ export class ProgressPanel {
       this.thirdMajors.conjointRequirements
     );
      }
+
   }
 
     // this.thirdMajorRequirements = [].concat(
@@ -298,6 +305,9 @@ export class ProgressPanel {
     this.secondModuleRequirements = [].concat(
       this.secondModules ? this.secondModules.requirements : []
     );
+
+    this.progressPanelService.setReqs(this.requirements)
+
   }
 
   public navigateToSelectMajor() {
@@ -684,7 +694,7 @@ export class ProgressPanel {
   }
 
   public selectRequirements(requirement: IRequirement): void {
-    console.log(requirement)
+
     const stages = requirement.stage
       ? [requirement.stage]
       : requirement.aboveStage
@@ -947,6 +957,6 @@ newPGConjointEvent(){
   this
   .googleAnalyticsService
   .eventEmitter("pg_conjoint", "progress-panel", "conjoint", "click", 10);
-} 
+}
 
 }

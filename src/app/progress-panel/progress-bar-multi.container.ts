@@ -8,17 +8,6 @@ import { IBarState } from "./progress-bar-multi.component";
 @Component({
   selector: "progress-bar-multi-container",
   styles: [require('./progress-bar-multi.component.scss')],
-  // template: `
-  // <progress-bar-multi
-  //   [title]="title"
-  //   [max]="max"
-  //   [barOne]="barOneState"
-  //   [barTwo]="barTwoState"
-  //   [barThree]="barThreeState"
-  //   [isTotal]="isTotal"
-  //   [hoverText]="hoverText"
-  // ></progress-bar-multi>
-  // `,
   templateUrl: "progress-bar-multi.container.template.html",
   changeDetection: ChangeDetectionStrategy.OnPush // Needed to suppress after change error for now
 })
@@ -37,15 +26,16 @@ export class ProgressBarMultiContainer {
   @Input() public requirement;
   @Input() public courses;
   @Input() public isComplex: boolean;
+  @Input() public index: number;
 
   private hoverText: string | any[];
   private hoverTextComplex;
   public max = 0;
   private title;
   private inactive: boolean = false;
-  private barOneState: IBarState = { value: 0, color: "#66cc00" , full: false};
-  private barTwoState: IBarState = { value: 0, color: "#f2d600" , full: false};
-  private barThreeState: IBarState = { value: 0, color: "#66bbff" , full: false};
+  private barOneState: IBarState = { value: 0, color: "#66cc00" , full: false, index: undefined};
+  private barTwoState: IBarState = { value: 0, color: "#f2d600" , full: false, index: undefined};
+  private barThreeState: IBarState = { value: 0, color: "#66bbff" , full: false, index: undefined};
   private onPageChange = new EventEmitter<null>();
   private complexBool: boolean;
   public complexRule;
@@ -68,7 +58,6 @@ export class ProgressBarMultiContainer {
   }
 
   public ngOnInit() {
-
     this.title = this.requirementService.shortTitle(this.requirement);
     this.hoverText = this.requirementService.toString(this.requirement, false);
     

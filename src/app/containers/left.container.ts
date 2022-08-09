@@ -10,7 +10,6 @@ import { AddCourseContainer } from "./add-course-container";
     `
       .panel {
         width: 360px;
-        margin-right: 35px;
         background: white;
         border: 1px solid #f4f7f8;
         border-radius: 10px;

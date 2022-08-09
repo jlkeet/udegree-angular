@@ -1,12 +1,15 @@
 import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material';
 import { RequirementService } from '../services';
+import { ProgressPanelService } from '../services/progress-panel.service';
 import { ProgressBarMultiContainer } from './progress-bar-multi.container';
+// import { ProgressPanel } from './progress-panel.component';
 
 export interface IBarState {
   color: string;
   value: number;
   full: boolean;
+  index: number;
 }
 
 @Component({
@@ -26,6 +29,7 @@ export class ProgressBarMulti implements OnChanges {
   @Input() public barTwo: IBarState;
   @Input() public barThree: IBarState;
   @Input() public rule: string;
+  @Input() public index: number
 
   public states: any[];
   private total: number = 0;
@@ -42,26 +46,36 @@ export class ProgressBarMulti implements OnChanges {
   private combinedRule = [];
 
   private isDisabled = false;
+  public degreeFullyPlanned = false;
 
   constructor(
 
     private requirementService: RequirementService,
     private progressBarMultiContainer: ProgressBarMultiContainer,
-
+    // private progressPanel: ProgressPanel,
+    private progressPanelService: ProgressPanelService
   ) {}
 
   public ngOnInit() {
+
     this.updatePercentage();
     this.updateProgress();
     this.updateTotal();
+    this.barThree.index = this.index;
   }
 
   public ngOnChanges(changes: { [value: string]: SimpleChange }) {
+
+
     if (this.barThree.value === this.max) {
-      this.barThree.full = true;
+      this.barThree.full = true; 
+    } else {
+      this.barThree.full = false;
     }
     if (this.barOne.value === this.max) {
       this.barOne.full = true;
+    } else {
+      this.barOne.full = false;
     }
     if (this.title === "Complex rule") {
       this.isComplex = true;
@@ -85,6 +99,9 @@ export class ProgressBarMulti implements OnChanges {
       this.updateTotal();
       this.updateHelpText();
     }
+
+    this.degreeCheck()
+
   }
 
   private updatePercentage(max?: number) {
@@ -164,4 +181,35 @@ export class ProgressBarMulti implements OnChanges {
   //  this.progressBarMultiContainer.
   }
 
-}
+  private degreeCheck() {
+
+    // let degreeCheckArray = this.progressPanelService.requirements.map(obj => ({...obj}));
+
+    let degreeCheckArray = this.progressPanelService.requirements
+    let count = 0;
+    for (let i = 0; i < this.progressPanelService.requirements.length; i++ ) {
+
+      if (i === this.barThree.index) {
+        if (degreeCheckArray[i].required === this.barThree.value) {
+          degreeCheckArray[i].full = true;
+            } else {
+              degreeCheckArray[i].full = false;
+            }
+          }
+    }
+    for (let j = 0; j < degreeCheckArray.length; j++) {
+      if (degreeCheckArray[j].full === true) {
+        count++;
+      } 
+      if (count === this.progressPanelService.requirements.length) {
+        this.progressPanelService.setFullyPlanned(true)
+      } else {
+        this.progressPanelService.setFullyPlanned(false)
+        }
+      }
+    }
+  }
+
+
+  
+

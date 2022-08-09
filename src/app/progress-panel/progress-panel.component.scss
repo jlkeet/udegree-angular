@@ -8,7 +8,7 @@
   // border: 1px solid #eee;
   border-radius: 7px;
   width: 100%;
-  overflow: hidden !important;
+  // overflow: hidden !important;
 }
 
 .progress-panel-bar-container {
@@ -200,6 +200,11 @@
 
 .pg-bar.mat-expansion-panel-spacing {
   margin: 0px !important;
+}
+
+.completed-section {
+  box-shadow: 0px 0px 20px 5px #65cc01 !important;
+  z-index: 9;
 }
 
 // Collapse styling

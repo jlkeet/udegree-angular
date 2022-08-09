@@ -26,7 +26,11 @@
     </mat-expansion-panel>
 
     <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
-      <mat-expansion-panel-header *ngIf="faculty?.name" style="margin-top: 0px; margin-bottom: 0px"
+
+
+      <div [ngStyle]="{'box-shadow': progressPanelService?.degreeFullyPlanned ? '0px 0px 20px 5px #65cc01' : '0px 0px 20px 5px #fff'}">
+
+        <mat-expansion-panel-header *ngIf="faculty?.name" style="margin-top: 0px; margin-bottom: 0px"
         (click)="expansionOnClick()">
         <mat-toolbar class="plain">
           <span> Degree: Bachelor of {{faculty? faculty.name: ''}} </span>
@@ -42,12 +46,14 @@
 
       <div *ngIf="faculty?.name" class="progress-panel-bar-container flex flex-col flex-start">
         <div class="progress-bar-group">
-          <progress-bar-multi-container *ngFor="let requirement of requirements" [requirement]="requirement"
+          <progress-bar-multi-container *ngFor="let requirement of requirements; let i = index" [requirement]="requirement" [index]="i"
             (click)="selectRequirements(requirement);newPGDegreeEvent()" [courses]="courses">
           </progress-bar-multi-container>
         </div>
       </div>
+    </div>
     </mat-expansion-panel>
+
 
     <div *ngIf="!faculty?.name">
       <img class="info-button" src="https://img.icons8.com/windows/32/000000/info.png" (click)="openDialog(1);" />
@@ -78,6 +84,7 @@
     <p></p>
 
     <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
+      <div class="">
       <mat-expansion-panel-header style="margin-top: 0px; margin-bottom: 0px" (click)="expansionOnClick()"
         *ngIf="majors?.name && !pathways?.name">
 
@@ -97,6 +104,7 @@
           </progress-bar-multi-container>
         </div>
       </div>
+    </div>
     </mat-expansion-panel>
 
     <P></P>
