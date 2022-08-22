@@ -307,6 +307,7 @@ export class ProgressPanel {
     );
 
     this.progressPanelService.setReqs(this.requirements)
+    this.progressPanelService.setMajReqs(this.majorRequirements)
 
   }
 

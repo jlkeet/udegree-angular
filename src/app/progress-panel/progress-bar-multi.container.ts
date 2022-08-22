@@ -27,15 +27,16 @@ export class ProgressBarMultiContainer {
   @Input() public courses;
   @Input() public isComplex: boolean;
   @Input() public index: number;
+  @Input() public majIndex: number;
 
   private hoverText: string | any[];
   private hoverTextComplex;
   public max = 0;
   private title;
   private inactive: boolean = false;
-  private barOneState: IBarState = { value: 0, color: "#66cc00" , full: false, index: undefined};
-  private barTwoState: IBarState = { value: 0, color: "#f2d600" , full: false, index: undefined};
-  private barThreeState: IBarState = { value: 0, color: "#66bbff" , full: false, index: undefined};
+  private barOneState: IBarState = { value: 0, color: "#66cc00" , full: false, index: undefined, majIndex: undefined};
+  private barTwoState: IBarState = { value: 0, color: "#f2d600" , full: false, index: undefined, majIndex: undefined};
+  private barThreeState: IBarState = { value: 0, color: "#66bbff" , full: false, index: undefined, majIndex: undefined};
   private onPageChange = new EventEmitter<null>();
   private complexBool: boolean;
   public complexRule;

@@ -82,7 +82,7 @@
     </div>
 
     <p></p>
-
+  <div [ngStyle]="{'box-shadow': progressPanelService?.majorFullyPlanned ? '0px 0px 20px 5px #65cc01' : '0px 0px 20px 5px #fff'}">
     <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>
       <div class="">
       <mat-expansion-panel-header style="margin-top: 0px; margin-bottom: 0px" (click)="expansionOnClick()"
@@ -99,13 +99,14 @@
       </mat-expansion-panel-header>
       <div *ngIf="majors?.name && !pathways?.name" class="progress-panel-bar-container flex flex-col flex-start">
         <div class="progress-bar-group">
-          <progress-bar-multi-container *ngFor="let requirement of majorRequirements" [requirement]="requirement"
+          <progress-bar-multi-container *ngFor="let requirement of majorRequirements; let i = index" [requirement]="requirement" [majIndex]="i"
             (click)="selectRequirements(requirement);newPGMajorEvent()" [courses]="courses">
           </progress-bar-multi-container>
         </div>
       </div>
     </div>
     </mat-expansion-panel>
+  </div>
 
     <P></P>
 

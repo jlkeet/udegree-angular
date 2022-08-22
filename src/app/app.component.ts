@@ -5,6 +5,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppHeader } from './app.header.component';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { DepartmentService } from 'src/app/services/department.service'
 
 declare let gtag: Function;
 
@@ -43,7 +44,9 @@ export class App implements OnInit {
 
   constructor(
     private appHeader: AppHeader,
-    private router: Router
+    private router: Router,
+    private departmentService: DepartmentService,
+
 
     
     ) {
@@ -52,6 +55,7 @@ export class App implements OnInit {
 
     ngOnInit() {
       this.setUpAnalytics();
+      this.departmentService.getDepartments();
     }
 
     setUpAnalytics() {

@@ -10,13 +10,14 @@ export interface IBarState {
   value: number;
   full: boolean;
   index: number;
+  majIndex: number;
 }
 
 @Component({
-  selector: 'progress-bar-multi',
-  styles: [require('./progress-bar-multi.component.scss')],
-  templateUrl: './progress-bar-multi.template.html',
-  viewProviders: [MatExpansionPanel]
+  selector: "progress-bar-multi",
+  styles: [require("./progress-bar-multi.component.scss")],
+  templateUrl: "./progress-bar-multi.template.html",
+  viewProviders: [MatExpansionPanel],
 })
 export class ProgressBarMulti implements OnChanges {
   @Input() public isTotal: boolean; // true if this is the total progress bar
@@ -29,7 +30,8 @@ export class ProgressBarMulti implements OnChanges {
   @Input() public barTwo: IBarState;
   @Input() public barThree: IBarState;
   @Input() public rule: string;
-  @Input() public index: number
+  @Input() public index: number;
+  @Input() public majIndex: number;
 
   public states: any[];
   private total: number = 0;
@@ -47,9 +49,9 @@ export class ProgressBarMulti implements OnChanges {
 
   private isDisabled = false;
   public degreeFullyPlanned = false;
+  public majorFullyPlanned = false;
 
   constructor(
-
     private requirementService: RequirementService,
     private progressBarMultiContainer: ProgressBarMultiContainer,
     // private progressPanel: ProgressPanel,
@@ -57,18 +59,17 @@ export class ProgressBarMulti implements OnChanges {
   ) {}
 
   public ngOnInit() {
-
     this.updatePercentage();
     this.updateProgress();
     this.updateTotal();
     this.barThree.index = this.index;
+    this.barThree.majIndex = this.majIndex;
+
   }
 
   public ngOnChanges(changes: { [value: string]: SimpleChange }) {
-
-
     if (this.barThree.value === this.max) {
-      this.barThree.full = true; 
+      this.barThree.full = true;
     } else {
       this.barThree.full = false;
     }
@@ -82,7 +83,7 @@ export class ProgressBarMulti implements OnChanges {
     } else {
       this.isComplex = false;
     }
-    
+
     if (this.inactive) {
       return;
     }
@@ -100,15 +101,14 @@ export class ProgressBarMulti implements OnChanges {
       this.updateHelpText();
     }
 
-    this.degreeCheck()
-
+    this.degreeCheck();
+    this.majorCheck();
   }
 
   private updatePercentage(max?: number) {
     if (max !== undefined) {
       this.percentage = Math.floor(
-        (this.barOne.value + this.barTwo.value + this.barThree.value) /
-          max *
+        ((this.barOne.value + this.barTwo.value + this.barThree.value) / max) *
           100
       ); // eslint-disable-line
     } else {
@@ -126,7 +126,6 @@ export class ProgressBarMulti implements OnChanges {
     this.barThreeWidth = this.calculatePercentage(
       this.barOne.value + this.barTwo.value + this.barThree.value
     ); // eslint-disable-line
-
   }
 
   private updateTotal() {
@@ -137,9 +136,7 @@ export class ProgressBarMulti implements OnChanges {
   private updateHelpText() {
     this.barOneHoverText = `${this.barOne.value} completed out of ${this.max}`;
     this.barTwoHoverText = `${this.barTwo.value} enrolled out of ${this.max}`;
-    this.barThreeHoverText = `${this.barThree.value} planned out of ${
-      this.max
-    }`;
+    this.barThreeHoverText = `${this.barThree.value} planned out of ${this.max}`;
   }
 
   private onMouseOver() {
@@ -151,14 +148,12 @@ export class ProgressBarMulti implements OnChanges {
   }
 
   private calculatePercentage(value: number) {
-
-    const width = Math.floor(value / this.max * 100);
+    const width = Math.floor((value / this.max) * 100);
     return width > 100 ? 100 : width;
   }
 
   private expansionOnClick() {
-
-    this.requirements = this.requirementService.requirements
+    this.requirements = this.requirementService.requirements;
     this.isDisabled = false;
     return this.isDisabled;
   }
@@ -171,44 +166,78 @@ export class ProgressBarMulti implements OnChanges {
   private populateCombined() {
     this.combinedRule = this.progressBarMultiContainer.combinedRule;
     for (let i = 0; i < this.combinedRule.length; i++) {
-    //  this.max = this.combinedRule[i].complexMax;
+      //  this.max = this.combinedRule[i].complexMax;
     }
   }
 
   private newMax(newMax) {
-   this.progressBarMultiContainer.max = newMax;
-   this.max = newMax;
-  //  this.progressBarMultiContainer.
+    this.progressBarMultiContainer.max = newMax;
+    this.max = newMax;
+    //  this.progressBarMultiContainer.
   }
 
   private degreeCheck() {
-
     // let degreeCheckArray = this.progressPanelService.requirements.map(obj => ({...obj}));
 
-    let degreeCheckArray = this.progressPanelService.requirements
+    let degreeCheckArray = this.progressPanelService.requirements;
     let count = 0;
-    for (let i = 0; i < this.progressPanelService.requirements.length; i++ ) {
-
+    for (let i = 0; i < this.progressPanelService.requirements.length; i++) {
       if (i === this.barThree.index) {
         if (degreeCheckArray[i].required === this.barThree.value) {
           degreeCheckArray[i].full = true;
-            } else {
-              degreeCheckArray[i].full = false;
-            }
-          }
+        } else {
+          degreeCheckArray[i].full = false;
+        }
+      }
     }
     for (let j = 0; j < degreeCheckArray.length; j++) {
       if (degreeCheckArray[j].full === true) {
         count++;
-      } 
+        // console.log(count)
+      }
       if (count === this.progressPanelService.requirements.length) {
-        this.progressPanelService.setFullyPlanned(true)
+        this.progressPanelService.setFullyPlanned(true);
       } else {
-        this.progressPanelService.setFullyPlanned(false)
+        this.progressPanelService.setFullyPlanned(false);
+      }
+    }
+  }
+
+  private majorCheck() {
+    let majorCheckArray = this.progressPanelService.majorRequirements;
+    let majCount = 0;
+    for (
+      let i = 0;
+      i < this.progressPanelService.majorRequirements.length;
+      i++
+    ) {
+      // console.log(i , ' ', this.barThree.majIndex)
+      if (i === this.barThree.majIndex) {
+        if (majorCheckArray[i].required === this.barThree.value) {
+          // console.log(majorCheckArray[i].required , ' ', this.barThree.value)
+          majorCheckArray[i].full = true;
+        } else {
+          majorCheckArray[i].full = false;
+        }
+      }
+    }
+
+    for (let j = 0; j < majorCheckArray.length; j++) {
+      // console.log(majorCheckArray[j])
+      if (majorCheckArray[j] !== undefined) {
+        if (majorCheckArray[j].full === true) {
+          majCount++;
+        }
+        if (majCount === this.progressPanelService.majorRequirements.length) {
+          this.progressPanelService.setMajorPlanned(true);
+        } else {
+          this.progressPanelService.setMajorPlanned(false);
         }
       }
     }
   }
+}
+
 
 
   

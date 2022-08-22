@@ -59,7 +59,7 @@ export class AuthService {
         this.db
         .collection("users") // Here is where we set the docID to the email so its accessible in the database.
         .doc(res.user.email)
-        .set({email: res.user.email, name: res.user.displayName})
+        .set({email: res.user.email, name: res.user.displayName, role: "user"})
         resolve(res);
       }, err => {
         console.log(err);

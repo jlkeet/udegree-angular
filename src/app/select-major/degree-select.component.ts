@@ -73,6 +73,7 @@ export class DegreeSelection {
   ) {
 
     this.authService.afAuth.authState.subscribe(async (auth) => { if (auth) {
+
       this.email = auth.email;
       this.email = userContainer.email
       this.initiateCurrentPlanFromDb();
@@ -479,10 +480,14 @@ export class DegreeSelection {
       return { value: faculty, view: faculty.name };
     });
 
-    this.majors = await this.departmentService.getDepartments()
-   this.majors = this.majors.map((majors) => {
-      return { value: majors, view: majors.name };
-    });
+  //   this.majors = await this.departmentService.getDepartments()
+  //  this.majors = this.majors.map((majors) => {
+  //     return { value: majors, view: majors.name };
+  //   });
+
+  this.majors.map((majors) => {
+     return { value: majors, view: majors.name };
+   });
 
     this.pathways = this.pathwayService.getPathways().map((pathways) => {
       return { value: pathways, view: pathways.name };

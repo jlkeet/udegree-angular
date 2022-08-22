@@ -7,9 +7,28 @@ export class ProgressPanelService {
     public requirements;
     public degreeFullyPlanned;
 
+    public majorRequirements;
+    public majorFullyPlanned;
+
 
     constructor() {
 
+    }
+
+    public setMajReqs(reqs) {
+        this.majorRequirements = reqs;
+    }
+
+    public getMajReqs() {
+        return this.majorRequirements;
+    }
+
+    public setMajorPlanned(majorFullyPlanned) {
+        this.majorFullyPlanned = majorFullyPlanned
+    }
+
+    public getMajorFullyPlanned() {
+        return this.majorFullyPlanned;
     }
 
     public setFullyPlanned(fullyPlanned) {
