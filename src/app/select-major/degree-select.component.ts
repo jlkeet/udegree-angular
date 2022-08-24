@@ -215,7 +215,6 @@ export class DegreeSelection {
   public checkFlags() {
     if (this.currentFaculties[0] !== null) {
       const flags = this.currentFaculties[0].flags;
-      this.doubleMajorAllowed = flags.includes("Dbl Mjr");
     }
   }
 

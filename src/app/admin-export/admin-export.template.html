@@ -1,0 +1,18 @@
+<button *ngIf="adminService.getStatus() === 0" class="export-advisor-zero">
+    Select degree to submit plan to Advisor
+</button>
+
+
+<button *ngIf="adminService.getStatus() === 1" class="export-advisor-one" (click)="adminService.setExportStatus(2)">
+    Submit Plan to Advisor
+</button>
+
+
+<button *ngIf="adminService.getStatus() === 2" class="export-advisor-two">
+    Pending Advisor Approval
+</button>
+
+
+<button *ngIf="adminService.getStatus() === 3" class="export-advisor-three">
+    Advisor Approved
+</button>

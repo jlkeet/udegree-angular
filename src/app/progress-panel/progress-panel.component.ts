@@ -33,6 +33,8 @@ import { ProgressDialogComponent } from "./progress-dialog.component";
 import { CoursesPanel } from "../courses-panel";
 import { GoogleAnalyticsService } from "../services/google-analytics.service";
 import { ProgressPanelService } from "../services/progress-panel.service";
+import { AdminExportService } from "../services/admin-export.service";
+
 
 
 /*
@@ -141,6 +143,7 @@ export class ProgressPanel {
     public coursesPanel: CoursesPanel,
     public googleAnalyticsService: GoogleAnalyticsService,
     public progressPanelService: ProgressPanelService,
+    public adminService: AdminExportService,
   ) {
     this.currentPathways = degreeSelect.currentPathways;
     this.pathwaysList = degreeSelect.pathways;
@@ -385,6 +388,7 @@ export class ProgressPanel {
     this.addedMajor = false;
     this.currentFaculties[0] = null;
     this.currentMajors[0] = null;
+    this.adminService.setExportStatus(0)
   }
 
   public deleteMajor() {
@@ -777,6 +781,7 @@ export class ProgressPanel {
 
   public changeFaculty(which, event) {
     this.degreeSelect.changeFaculty(which, event);
+    this.adminService.setExportStatus(1)
   }
 
   public changeMajor(which, event) {

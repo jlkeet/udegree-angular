@@ -1,7 +1,7 @@
 /* Angular */
 import 'reflect-metadata'
 import { HttpClientModule } from '@angular/common/http';
-import { ApplicationRef, NgModule } from '@angular/core';
+import { ApplicationRef, ChangeDetectorRef, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   MatButtonModule,
@@ -125,6 +125,8 @@ import { CourseDraggable } from './common';
 
 import { GoogleAnalyticsService } from './services/google-analytics.service';
 import { ProgressPanelService } from './services/progress-panel.service';
+import { AdminExport } from './admin-export/admin-export.component';
+import { AdminExportService } from './services/admin-export.service';
 
 
 
@@ -194,6 +196,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     ModuleList,
     NoContent,
     ExportButton,
+    AdminExport,
 
     // Authentication
     LoginComponent,
@@ -205,7 +208,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     // Pop-up components
     ProgressDialogComponent,
     CourseDialogComponent,
-    UserDialogComponent
+    UserDialogComponent,
     
   ],
   imports: [
@@ -251,6 +254,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
       sourcePriorityOrder: avatarSourcesOrder
     }), // Avatar or Profile Pic
     MatExpansionModule,
+
   ],
   providers: [
     // expose our Services and Providers into Angular's dependency injection
@@ -298,7 +302,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     // ErrorRequirementService,
     LocationRef,
     GoogleAnalyticsService,
-    
+    AdminExportService,
   ],
    entryComponents: [CourseDialogComponent, ProgressDialogComponent, UserDialogComponent],
 })
