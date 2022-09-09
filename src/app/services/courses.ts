@@ -14,6 +14,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from '../core/auth.service';
 import { async } from '@angular/core/testing';
+import {Observable} from "rxjs";
 //import { UserContainer } from '../user/user-status.component';
 
 /*
@@ -81,7 +82,7 @@ export class CourseService {
     this.updateErrors();
   }
 
-  async getAllCourses() {
+  public getAllCourses(): Observable<ICourse[]> {
 
     this.db_courses
     .list("/", (ref) => ref.orderByChild("name"))
@@ -91,7 +92,7 @@ export class CourseService {
     // this.allCourses.sort((a,b) => a.name.localeCompare(b.name))
     // this.allCourses.map((course: ICourse) => course.canDelete = true)
    // console.log(this.allCourses)
-   return this.allCourses; 
+   return Observable.of(this.allCourses); 
   }
 
   // rename this to coursesbyyear

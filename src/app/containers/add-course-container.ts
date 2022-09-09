@@ -191,18 +191,31 @@ export class AddCourseContainer {
     this.semesterText = `${this.year} ${this.getSemesterNameInWords(this.period)}`;
     this.sameTime = this.sameTime.bind(this);
 
-    this.allCourses = (await this.coursesService.getAllCourses().then())
-    .filter((course: ICourse) =>
-      course.periods ? course.periods.includes(this.period) : true);
+    this.coursesService.getAllCourses().subscribe( (res) => { if (res) { this.allCourses = res.filter((course: ICourse) =>
+      course.periods ? course.periods.includes(this.period) : true)
       this.allCourses = this.allCourses.filter((course: ICourse) => 
       course.isActive !== false // Remove inactive courses from the course selection
-    );    
+    )
     this.shown = this.allCourses;
     this.modules = this.moduleService.getModules();
     this.departmentCourses = this.mapToDeptModel(
-      this.groupByDepartment(this.shown)
+      this.groupByDepartment(this.allCourses)
     );
     this.subscriptions.forEach((subscription) => subscription.unsubscribe());
+
+
+    // this.allCourses = (await this.coursesService.getAllCourses().then())
+    // .filter((course: ICourse) =>
+    //   course.periods ? course.periods.includes(this.period) : true);
+    //   this.allCourses = this.allCourses.filter((course: ICourse) => 
+    //   course.isActive !== false // Remove inactive courses from the course selection
+    // );    
+    // this.shown = this.allCourses;
+    // this.modules = this.moduleService.getModules();
+    // this.departmentCourses = this.mapToDeptModel(
+    //   this.groupByDepartment(this.shown)
+    // );
+    // this.subscriptions.forEach((subscription) => subscription.unsubscribe());
 
     // the id of the semester to add the course to
 
@@ -225,6 +238,7 @@ export class AddCourseContainer {
       this.courseEventService.courseRemoved
       .subscribe((event) => this.coursesService.deselectCourse(event.courseId)),
     ];
+  }} )
   }
 
   public sameTime(course: ICourse): boolean {

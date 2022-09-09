@@ -107,7 +107,7 @@ export class PlannerContainer {
   public handleCourseClicked(event: ClickedEvent) {
     // remove course from semester
     const course = event.course;
-    if (course.requirements !== undefined) {
+    if (course.requirements) {
       const beforeSemester = this.planned.filter((plannedCourse: ICourse) =>
         plannedCourse.period < course.period &&
         plannedCourse.year === course.year || plannedCourse.year < course.year);
