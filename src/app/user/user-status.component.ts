@@ -20,7 +20,6 @@ export class UserContainer {
   private photoURL: String = "";
   public email: string = "";
   private uid: String;
-  public logInCounter = 0;
   public isMobile;
 
 
@@ -55,7 +54,7 @@ export class UserContainer {
         }
         this.router.navigate(["planner"]);
         this.isLoggedIn = true; // User is logged in
-        this.logInCounter++;
+
         if (auth.displayName != null) {
           this.displayName = auth.displayName; // If there is a useranme from authentication then its from third party and can pull it
         } else {

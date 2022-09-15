@@ -32,7 +32,6 @@ export class ProgressPanelService {
     }
 
     public setFullyPlanned(fullyPlanned) {
-        // console.log(fullyPlanned)
         this.degreeFullyPlanned = fullyPlanned;
     }
 

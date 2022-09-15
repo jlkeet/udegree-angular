@@ -55,7 +55,7 @@ export class ProgressBarMulti implements OnChanges {
     private requirementService: RequirementService,
     private progressBarMultiContainer: ProgressBarMultiContainer,
     // private progressPanel: ProgressPanel,
-    private progressPanelService: ProgressPanelService
+    private progressPanelService: ProgressPanelService,
   ) {}
 
   public ngOnInit() {

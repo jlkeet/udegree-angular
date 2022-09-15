@@ -26,6 +26,7 @@ import {
 import { DegreeSelection } from "../select-major";
 import { FirebaseDbService } from "../core/firebase.db.service";
 import{ GoogleAnalyticsService } from '../services/google-analytics.service';
+import { ProgressPanelService } from "../services/progress-panel.service";
 
 
 /*
@@ -56,7 +57,6 @@ export class CoursesPanel {
   public selectedPeriod;
   public addingSemester = false;
   private semDbCount: number;
-  private logInCounter;
   private courseDbCounter: number = 0;
   public email: string;
   private delCount = 0;
@@ -75,7 +75,8 @@ export class CoursesPanel {
     private userContainer: UserContainer,
     private degreeSelection: DegreeSelection,
     private dbCourses: FirebaseDbService,
-    public googleAnalyticsService: GoogleAnalyticsService
+    public googleAnalyticsService: GoogleAnalyticsService,
+    public progressPanelService: ProgressPanelService,
   ) {
 
     this.courseMoved = new EventEmitter<MovedEvent>();
@@ -119,12 +120,13 @@ export class CoursesPanel {
       } else {
         //this.email = auth.email;
         this.email = userContainer.email
-        if (this.userContainer.logInCounter > 1) {
+      
+        if (this.authService.logInCounter >= 1) {
           // This is necessary to stop the duplicate course loading
         } else {
           this.loadPlanFromDb();
           //this.findSemsFromDb();
-          this.userContainer.logInCounter++; // This is necessary to stop the duplicate course loading
+          this.authService.logInCounter++; // This is necessary to stop the duplicate course loading
         }
       }
     });
@@ -260,8 +262,6 @@ export class CoursesPanel {
   }
 
 
-
-
   public loadPlanFromDb() {
     if (this.email !== undefined) {
       this.db
@@ -286,8 +286,13 @@ export class CoursesPanel {
                     this.loadCourseFromDb(element.id); // Call to loading the courses on the screen, by id
                   });
                 }
+                else {
+                  this.storeHelper.deleteAll();
+                  this.storeHelper.update("semesters", []);
+                  this.progressPanelService.setFullyPlanned(false);
+                }
               });
-            }
+            } 
         });
     }
   }

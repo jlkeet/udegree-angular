@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Component, Input } from "@angular/core";
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from "@angular/fire/firestore";
 import { AuthService } from "../core/auth.service";
 
@@ -8,7 +9,7 @@ export class AdminExportService {
 
     public adminStatus;
 
-    constructor(public authService: AuthService, public db: AngularFirestore) {
+    constructor(public authService: AuthService, public db: AngularFirestore, public afAuth: AngularFireAuth,) {
     }
 
     public setExportStatus(adminStatus) {    

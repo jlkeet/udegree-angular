@@ -303,6 +303,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     LocationRef,
     GoogleAnalyticsService,
     AdminExportService,
+    
   ],
    entryComponents: [CourseDialogComponent, ProgressDialogComponent, UserDialogComponent],
 })

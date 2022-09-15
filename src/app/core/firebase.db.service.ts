@@ -10,7 +10,6 @@ import { StoreHelper } from "../services";
 export class FirebaseDbService {
   @Output() private onPageChange = new EventEmitter<null>();
   uid: string;
-  public email;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -19,16 +18,14 @@ export class FirebaseDbService {
     private userService: UserService,
     private storeHelper: StoreHelper,
   ) {
-    this.userService.getCurrentUser().then((user) => {
-      this.email = user.email;
-    });
   }
 
   public getCollection(firstCollection?: string, secondCollection?: string, courseDbId?: string) {
     return new Promise<any>((resolve) => {
+      // console.log(this.afAuth.auth.currentUser.email)
       this.db
         .collection(firstCollection)
-        .doc(this.email)
+        .doc(this.afAuth.auth.currentUser.email)
         .collection(secondCollection)
         .doc(courseDbId)
         .get()
@@ -78,7 +75,7 @@ export class FirebaseDbService {
     return new Promise<any>(async (resolve) => {
       this.db
         .collection("users")
-        .doc(this.email)
+        .doc(this.afAuth.auth.currentUser.email)
         .collection(collectionName)
         .doc(degId)
         .get()

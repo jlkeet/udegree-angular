@@ -8,12 +8,15 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Injectable()
 export class AuthService {
 
+  public logInCounter = 0;
+
   uid: string;
 
   constructor(
    public afAuth: AngularFireAuth,
    private db: AngularFirestore,
    public userdata: FirebaseUserModel,
+
  ) { }
 
   doFacebookLogin(){

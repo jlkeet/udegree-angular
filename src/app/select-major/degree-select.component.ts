@@ -11,6 +11,7 @@ import {
 } from "../services";
 import { FirebaseDbService } from "../core/firebase.db.service";
 import { UserContainer } from "../common";
+import { AngularFireAuth } from "@angular/fire/auth";
 
 @Component({
   selector: "degree-select",
@@ -70,6 +71,7 @@ export class DegreeSelection {
     public moduleService: ModuleService,
     public dbCourses: FirebaseDbService,
     public userContainer: UserContainer,
+    public afAuth: AngularFireAuth,
   ) {
 
     this.authService.afAuth.authState.subscribe(async (auth) => { if (auth) {
@@ -111,14 +113,14 @@ export class DegreeSelection {
       for (let i = 0; i < collectionList.length; i++) {
         this.db
           .collection("users")
-          .doc(this.email)
+          .doc(this.afAuth.auth.currentUser.email)
           .collection(collectionList[i])
           .get()
           .toPromise()
           .then((isItSaved) => {
             if (isItSaved.size > 0) {
               this.onPageChange.emit() // Loads the progress bars if there is something in the user database
-              this.dbCourses.getID(this.email, collectionList[i], storeList[i]);
+              this.dbCourses.getID(this.afAuth.auth.currentUser.email, collectionList[i], storeList[i]);
             } else {
             }
           });
@@ -313,7 +315,7 @@ export class DegreeSelection {
     }
     this.storeHelper.update("faculty", event.value);
     this.dbCourses.setSelection(
-      this.email,
+      this.afAuth.auth.currentUser.email,
       "faculty",
       event.value,
       "degree"
@@ -330,7 +332,7 @@ export class DegreeSelection {
     );
     this.storeHelper.update("conjoint", event.value);
     this.dbCourses.setSelection(
-      this.email,
+      this.afAuth.auth.currentUser.email,
       "conjoint",
       event.value,
       "conjoint"
@@ -348,7 +350,7 @@ export class DegreeSelection {
    // this.changeBlurb(this.currentMajors[which].blurb);
     this.storeHelper.update("majors", event.value);
     this.dbCourses.setSelection(
-      this.email,
+      this.afAuth.auth.currentUser.email,
       "firstMajor",
       event.value,
       "major"
@@ -365,7 +367,7 @@ export class DegreeSelection {
 
     this.storeHelper.update("pathways", event.value);
     this.dbCourses.setSelection(
-      this.email,
+      this.afAuth.auth.currentUser.email,
       "pathway",
       event.value,
       "pathway"
@@ -382,7 +384,7 @@ export class DegreeSelection {
 
     this.storeHelper.update("modules", event.value);
     this.dbCourses.setSelection(
-      this.email,
+      this.afAuth.auth.currentUser.email,
       "modules",
       event.value,
       "module"
@@ -398,7 +400,7 @@ export class DegreeSelection {
     );
     this.storeHelper.update("secondModules", event.value);
     this.dbCourses.setSelection(
-      this.email,
+      this.afAuth.auth.currentUser.email,
       "secondModule",
       event.value,
       "secondModule"
@@ -416,7 +418,7 @@ export class DegreeSelection {
    // this.changeBlurb(this.currentSecondMajors[which].blurb);
     this.storeHelper.update("secondMajors", this.currentSecondMajors[0]);
     this.dbCourses.setSelection(
-      this.email,
+      this.afAuth.auth.currentUser.email,
       "secondMajor",
       this.currentSecondMajors[0],
       "secondMajor"
@@ -433,7 +435,7 @@ export class DegreeSelection {
    // this.changeBlurb(this.currentSecondMajors[which].blurb);
     this.storeHelper.update("thirdMajors", this.currentThirdMajors[0]);
     this.dbCourses.setSelection(
-      this.email,
+      this.afAuth.auth.currentUser.email,
       "thirdMajor",
       this.currentThirdMajors[0],
       "thirdMajor"
@@ -479,14 +481,14 @@ export class DegreeSelection {
       return { value: faculty, view: faculty.name };
     });
 
-  //   this.majors = await this.departmentService.getDepartments()
-  //  this.majors = this.majors.map((majors) => {
-  //     return { value: majors, view: majors.name };
-  //   });
+    this.majors = await this.departmentService.getDepartments()
+   this.majors = this.majors.map((majors) => {
+      return { value: majors, view: majors.name };
+    });
 
-  this.majors.map((majors) => {
-     return { value: majors, view: majors.name };
-   });
+  // this.majors.map((majors) => {
+  //    return { value: majors, view: majors.name };
+  //  });
 
     this.pathways = this.pathwayService.getPathways().map((pathways) => {
       return { value: pathways, view: pathways.name };

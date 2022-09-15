@@ -75,4 +75,8 @@ export class StoreHelper {
     );
   }
 
+  public deleteAll() {
+    this.store.purge()
+  }
+
 }
