@@ -3,7 +3,7 @@
 </button>
 
 
-<button *ngIf="adminService.getStatus() === 1" class="export-advisor-one" (click)="adminService.setExportStatus(2)">
+<button *ngIf="adminService.getStatus() === 1" class="export-advisor-one" (click)="adminService.setExportStatus(2);adminService.setExportStatusTimestamp()">
     Submit Plan to Advisor
 </button>
 
