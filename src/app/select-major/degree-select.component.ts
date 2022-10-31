@@ -501,6 +501,7 @@ export class DegreeSelection {
   }
     this.getFilteredModules();
     this.getFilteredSecondModules();
+    this.getFilteredSecondMajors();
 
   //   this.modules = this.moduleService.getModules().filter(v => v.name !== this.currentSecondModules[0].name).map((modules) => {
   //     return { value: modules, view: modules.name };
@@ -522,11 +523,11 @@ export class DegreeSelection {
   //     });
   // }
 
-    this.secondMajors = await this.departmentService.getDepartments()
-    this.secondMajors.filter(v => v.name !== this.currentMajors[0].name)
-      .map((secondMajors) => {
-        return { value: secondMajors, view: secondMajors.name };
-      })
+    // this.secondMajors = await this.departmentService.getDepartments()
+    // this.secondMajors.filter(v => v.name !== this.currentMajors[0].name)
+    //   .map((secondMajors) => {
+    //     return { value: secondMajors, view: secondMajors.name };
+    //   })
 
   this.thirdMajors = await this.departmentService.getDepartments()
   this.thirdMajors.filter(v => v.name !== this.currentMajors[0].name)
@@ -545,6 +546,7 @@ export class DegreeSelection {
     this.secondMajors = this.departmentService
     .departmentsInFaculty(this.currentFaculties[0]).filter(v => v.name !== this.currentMajors[0].name)
       .map((secondMajors) => {
+        console.log(secondMajors)
         return { value: secondMajors, view: secondMajors.name };
       })
     }
