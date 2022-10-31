@@ -14,13 +14,16 @@ import { AdminExportService } from "../services/admin-export.service"
 })
 export class AdminExport {
   public adminStatus;
+  public isAdmin;
 
   constructor(public adminService: AdminExportService) {
 
   }
 
   public ngOnInit() {
-    this.adminService.getExportStatus();
+    // this.adminService.getExportStatus();
+    // this.adminService.getAdmin();
+
   }
 
 }

@@ -388,7 +388,8 @@ export class ProgressPanel {
     this.addedMajor = false;
     this.currentFaculties[0] = null;
     this.currentMajors[0] = null;
-    this.adminService.setExportStatus(0)
+    this.adminService.setExportStatus(0,this.email)
+    this.dbCourses.setAuditLogDeleteDegree()
   }
 
   public deleteMajor() {
@@ -439,6 +440,7 @@ export class ProgressPanel {
     this.addingMajor = false;
     this.addedMajor = false;
     this.currentMajors[0] = null;
+    this.dbCourses.setAuditLogDeleteMajor()
   }
 
   public deletePathway() {
@@ -520,6 +522,7 @@ export class ProgressPanel {
     this.currentConjoints[0] = null;
     this.deleteSecondMajor();
     this.deleteThirdMajor();
+    this.dbCourses.setAuditLogDeleteConjoint()
   }
 
 
@@ -781,35 +784,43 @@ export class ProgressPanel {
 
   public changeFaculty(which, event) {
     this.degreeSelect.changeFaculty(which, event);
-    this.adminService.setExportStatus(1)
+    this.adminService.setExportStatus(1,this.email)
+    this.dbCourses.setAuditLogDegree(event.value.name)
   }
 
   public changeMajor(which, event) {
     this.degreeSelect.changeMajor(which, event);
+    this.dbCourses.setAuditLogMajor(event.value.name)
   }
 
   public changePathway(which, event) {
     this.degreeSelect.changePathway(which, event);
+    this.dbCourses.setAuditLogPathway(event.value.name)
   }
 
   public changeConjoint(which, event) {
     this.degreeSelect.changeConjoint(which, event);
+    this.dbCourses.setAuditLogConjoint(event.value.name)
   }
 
   public changeSecondMajor(which, event) {
     this.degreeSelect.changeSecondMajor(which, event);
+    this.dbCourses.setAuditLogSecondMajor(event.value.name)
   }
 
   public changeThirdMajor(which, event) {
     this.degreeSelect.changeThirdMajor(which, event);
+    this.dbCourses.setAuditLogThirdMajor(event.value.name)
   }
 
   public changeModule(which, event) {
     this.degreeSelect.changeModule(which, event);
+    this.dbCourses.setAuditLogModule(event.value.name)
   }
 
   public changeSecondModule(which, event) {
     this.degreeSelect.changeSecondModule(which, event);
+    this.dbCourses.setAuditLogSecondModule(event.value.name)
   }
 
   public calculateGPA() {

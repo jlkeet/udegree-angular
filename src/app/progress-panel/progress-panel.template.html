@@ -1,4 +1,7 @@
 <div class="progress-panel-content">
+  <div *ngIf="!this.adminService.isAdmin">
+    <button (click)="this.dbCourses.setAuditLogAction()">Edit Students Plan</button>
+  </div>
   <mat-accordion multi>
 
     <mat-expansion-panel class="pg-bar" [disabled]="isDisabled" [expanded]="true" hideToggle>

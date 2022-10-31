@@ -62,6 +62,7 @@ export class MovedEvent {
   public year: number;
 }
 export class RemovedEvent {
+  public course: ICourse;
   public courseId: number;
   public period: Period;
   public year: number;

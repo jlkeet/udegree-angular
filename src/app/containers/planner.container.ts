@@ -14,6 +14,7 @@ import {
 
 import { AppHeader } from '../app.header.component';
 import * as confetti from 'canvas-confetti';
+import { FirebaseDbService } from '../core/firebase.db.service';
 
 
 /*
@@ -82,6 +83,7 @@ export class PlannerContainer {
     private store: Store,
     private courseService: CourseService,
     private appHeader: AppHeader,
+    public dbCourses: FirebaseDbService,
   ) {
     this.isMobile = appHeader.mobile;
   }
@@ -100,6 +102,10 @@ export class PlannerContainer {
     this.courseService.moveCourse(event.courseId, event.period, event.year);
   }
   public handleCourseRemoved(event: RemovedEvent) {
+    
+    // This calls the Firebase audit-log previous value on course deletion
+    this.dbCourses.setAuditLogDeleteCourse(event.course.name);
+
     // remove course from semester
     this.courseService.deselectCourse(event.courseId);
   }

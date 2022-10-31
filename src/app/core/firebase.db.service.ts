@@ -5,11 +5,15 @@ import { FirebaseUserModel } from "./user.model";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { UserService } from "./user.service";
 import { StoreHelper } from "../services";
+import { formatDate } from "@angular/common";
 
 @Injectable()
 export class FirebaseDbService {
   @Output() private onPageChange = new EventEmitter<null>();
   uid: string;
+
+  public auditDocRef;
+  public previousValue;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -108,4 +112,312 @@ export class FirebaseDbService {
       });
     });
   }
+
+  public getStudentEmailForAudit() {
+    return new Promise<any>(async (resolve) => {
+    this.db
+    .collection("users")
+    .doc(this.afAuth.auth.currentUser.email)
+    .get()
+    .toPromise()
+    .then( res => {  resolve(res.data()); } )
+  })
+}
+
+
+  public setAuditLogAction() {
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+    this.getStudentEmailForAudit().then( (res) => 
+
+    this.db
+    .collection("audit-log")
+    .add({ admin: this.afAuth.auth.currentUser.email, student: res.student, timestamp: timestampString , actions: [] })
+    .then( (docRef) => this.auditDocRef = docRef.id))
+  }
+
+  public setAuditLogDegree(degree) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("degree")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Degree", new: degree, previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogDeleteDegree() {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("degree")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Removed Degree", new: "", previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogMajor(major) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("major")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Major", new: major, previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogDeleteMajor() {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("major")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Removed Major", new: "", previous: this.previousValue || "" })
+
+  }
+
+
+  public setAuditLogSecondMajor(secondMajor) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("secondMajor")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Second Major", new: secondMajor, previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogDeleteSecondMajor() {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("secondMajor")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Removed Second Major", new: "", previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogThirdMajor(thirdMajor) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("thirdMajor")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Third Major", new: thirdMajor, previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogDeleteThirdMajor() {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("thirdMajor")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Removed Third Major", new: "", previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogModule(module) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("module")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Module", new: module, previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogDeleteModule() {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("module")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Module", new: "", previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogSecondModule(secondModule) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("secondModule")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Second Module", new: module, previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogDeleteSecondModule() {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("secondModule")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Removed Second Module", new: "", previous: this.previousValue || "" })
+
+  }
+
+
+  public setAuditLogConjoint(conjoint) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("conjoint")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Conjoint", new: conjoint, previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogDeleteConjoint() {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("conjoint")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Removed Conjoint", new: "", previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogPathway(pathway) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("pathway")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Pathway", new: pathway, previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogDeletePathway() {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = this.storeHelper.current("pathway")
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Removed pathway", new: "", previous: this.previousValue || "" })
+
+  }
+
+
+  public setAuditLogCourse(course) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Course", new: course, previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogDeleteCourse(course) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    console.log(course)
+
+    this.previousValue = course
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Removed Course", new: "", previous: this.previousValue || "" })
+
+  }
+
+
+  public setAuditLogSemester(semester) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Added Semester", new: semester, previous: this.previousValue || "" })
+
+  }
+
+  public setAuditLogDeleteSemester(semester) {
+
+    let timestamp = Date.now();
+    let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
+
+    this.previousValue = semester
+    this.db
+    .collection("audit-log")
+    .doc(this.auditDocRef)
+    .collection("actions")
+    .add({ timestamp: timestampString ,action: "Removed Semester", new: "", previous: this.previousValue || "" })
+
+  }
+
 }

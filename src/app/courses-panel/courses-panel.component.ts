@@ -27,6 +27,7 @@ import { DegreeSelection } from "../select-major";
 import { FirebaseDbService } from "../core/firebase.db.service";
 import{ GoogleAnalyticsService } from '../services/google-analytics.service';
 import { ProgressPanelService } from "../services/progress-panel.service";
+import { AdminExportService } from "../services/admin-export.service";
 
 
 /*
@@ -77,6 +78,7 @@ export class CoursesPanel {
     private dbCourses: FirebaseDbService,
     public googleAnalyticsService: GoogleAnalyticsService,
     public progressPanelService: ProgressPanelService,
+    public adminService: AdminExportService,
   ) {
 
     this.courseMoved = new EventEmitter<MovedEvent>();
@@ -187,7 +189,10 @@ export class CoursesPanel {
         s1.year === s2.year ? s1.period - s2.period : s1.year - s2.year
       );
       this.storeHelper.update("semesters", this.semesters);
+
       // this.dbCourses.addSelection(this.email, "semester", newSemester, "semesters")
+      this.dbCourses.setAuditLogSemester(newSemester);
+
       this.addingSemester = false;
     }
   }
@@ -264,6 +269,8 @@ export class CoursesPanel {
 
   public loadPlanFromDb() {
     if (this.email !== undefined) {
+      this.adminService.getAdmin(this.email)
+      this.adminService.getExportStatus(this.email);
       this.db
         .collection("users")
         .doc(this.email)

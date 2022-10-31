@@ -8,6 +8,7 @@ import {
 } from '../add-course';
 import { AppHeader } from '../app.header.component';
 import { Store } from '../app.store';
+import { FirebaseDbService } from '../core/firebase.db.service';
 import { ICourse } from '../interfaces';
 import {
   DepartmentCoursesModel,
@@ -80,7 +81,8 @@ export class AddCourseContainer {
     public courseEventService: CourseEventService,
     public requirementService: RequirementService,
     public appHeader: AppHeader,
-    public googleAnalyticsService: GoogleAnalyticsService
+    public googleAnalyticsService: GoogleAnalyticsService,
+    public dbCourses: FirebaseDbService,
   ) {
 
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -176,10 +178,12 @@ export class AddCourseContainer {
   public addCourse(event) {
     this.coursesService.selectCourse(event.course.id, this.period, this.year, event.status);
     this.selected = null;
+    this.dbCourses.setAuditLogCourse(event.course.name)
   }
 
   public deleteCourse(event) {
     this.coursesService.deselectCourse(event.course);
+    this.dbCourses.setAuditLogDeleteCourse(event.course.name)
   }
 
   public courseSelected(event) {

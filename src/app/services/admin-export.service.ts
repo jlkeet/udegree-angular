@@ -8,6 +8,7 @@ import { AuthService } from "../core/auth.service";
 @Injectable()
 export class AdminExportService {
   public adminStatus;
+  public isAdmin;
 
   constructor(
     public authService: AuthService,
@@ -15,10 +16,19 @@ export class AdminExportService {
     public afAuth: AngularFireAuth
   ) {}
 
-  public setExportStatus(adminStatus) {
+  public getAdmin(userEmail) {
+      this.db
+      .collection("users")
+      .doc(userEmail)
+      .get()
+      .toPromise()
+      .then( (result) => {return this.isAdmin = result.data().role === "user"})
+  }
+
+  public setExportStatus(adminStatus, userEmail) {
     this.db
       .collection("users")
-      .doc("jackson.keet1989@gmail.com")
+      .doc(userEmail)
       .update({ status: adminStatus });
     this.adminStatus = adminStatus;
   }
@@ -27,11 +37,11 @@ export class AdminExportService {
     return this.adminStatus;
   }
 
-  public getExportStatus() {
+  public getExportStatus(userEmail) {
     return new Promise<any>((resolve) => {
       var data = this.db
         .collection("users")
-        .doc("jackson.keet1989@gmail.com")
+        .doc(userEmail)
         .get()
         .toPromise()
         .then((result) => {
@@ -40,12 +50,12 @@ export class AdminExportService {
     });
   }
 
-  public setExportStatusTimestamp() {
+  public setExportStatusTimestamp(userEmail) {
     let timestamp = Date.now();
     let timestampString = formatDate(timestamp, "dd/MM/yyyy, h:mm a", "en");
       this.db
       .collection("users")
-      .doc("jackson.keet1989@gmail.com")
+      .doc(userEmail)
       .update({timestamp: timestampString})
   }
 }

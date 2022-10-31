@@ -9,6 +9,7 @@ import { CoursesPanel } from "./courses-panel.component";
 import { Router } from "@angular/router";
 import { UserContainer } from "../common";
 import{ GoogleAnalyticsService } from '../services/google-analytics.service';
+import { FirebaseDbService } from "../core/firebase.db.service";
 
 @Component({
   selector: "semester-panel",
@@ -55,6 +56,7 @@ export class SemesterPanel {
     public router: Router,
     public userContainer: UserContainer,
     public googleAnalyticsService: GoogleAnalyticsService,
+    public dbCourses: FirebaseDbService,
   ) {
     this.email = this.courseService.email;
     
@@ -211,6 +213,7 @@ export class SemesterPanel {
 
     if (this.sameTime(el.dataset)) {
       this.courseEventService.raiseCourseRemoved({
+        course: el.dataset.name,
         courseId: el.dataset.id,
         period: el.dataset.semester,
         year: el.dataset.year,
@@ -286,6 +289,7 @@ export class SemesterPanel {
     this.courseService.courseCounterOnDelete();
     if (this.sameTime(course)) {
       this.courseEventService.raiseCourseRemoved({
+        course: course,
         courseId: course.id,
         period: course.period,
         year: course.year,
@@ -324,6 +328,7 @@ export class SemesterPanel {
     this.storeHelper.update("semesters", semesters);
     this.delSemDB();
     this.semesterSort();
+    this.dbCourses.setAuditLogDeleteSemester(semesters);
   }
 
   public smallCourseStatusBar(course) {

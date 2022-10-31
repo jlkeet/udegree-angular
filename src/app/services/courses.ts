@@ -15,7 +15,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from '../core/auth.service';
 import { async } from '@angular/core/testing';
 import {Observable} from "rxjs";
-//import { UserContainer } from '../user/user-status.component';
 
 /*
     Helper service for courses
@@ -158,6 +157,9 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
 
   public deselectCourseByName(courseName: string) {
     let course = this.findPlanned(courseName);
+
+    // this.dbCourses.setAuditLogDeleteCourse(courseName)
+
     this.storeHelper.findAndDelete('courses', course.id);
     this.updateErrors();
     this.courseCounter--;

@@ -165,6 +165,7 @@ export class CourseDetails {
 
   public deleteCourse() {
     this.courseService.deselectCourseByName(this.course.name);
+
     // this.deleteClicked.emit({
     //   course: this.course,
     // });
