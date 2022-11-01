@@ -546,7 +546,6 @@ export class DegreeSelection {
     this.secondMajors = this.departmentService
     .departmentsInFaculty(this.currentFaculties[0]).filter(v => v.name !== this.currentMajors[0].name)
       .map((secondMajors) => {
-        console.log(secondMajors)
         return { value: secondMajors, view: secondMajors.name };
       })
     }

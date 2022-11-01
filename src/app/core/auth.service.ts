@@ -9,6 +9,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class AuthService {
 
   public logInCounter = 0;
+  public isLoggedIn = false;
 
   uid: string;
 
@@ -30,6 +31,7 @@ export class AuthService {
         .doc(res.user.email)
         .set({email: res.user.email, name: res.user.displayName})
         resolve(res);
+        this.isLoggedIn = true;
       }, err => {
         console.log(err);
         reject(err);
@@ -62,8 +64,9 @@ export class AuthService {
         this.db
         .collection("users") // Here is where we set the docID to the email so its accessible in the database.
         .doc(res.user.email)
-        .set({email: res.user.email, name: res.user.displayName, role: "user"})
+        .update({email: res.user.email, name: res.user.displayName, role: "user"})
         resolve(res);
+        this.isLoggedIn = true;
       }, err => {
         console.log(err);
         reject(err);
@@ -89,6 +92,7 @@ export class AuthService {
     return new Promise<any>((resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(value.email, value.password)
       .then(res => {
+        this.isLoggedIn = true;
         resolve(res);
       }, err => reject(err))
     })
@@ -97,6 +101,7 @@ export class AuthService {
   doLogout(){
     return new Promise<void>((resolve, reject) => {
       if(firebase.auth().currentUser){
+        this.isLoggedIn = false;
         this.afAuth.auth.signOut();
         resolve();
       }

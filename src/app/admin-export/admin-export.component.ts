@@ -16,7 +16,7 @@ export class AdminExport {
   public adminStatus;
   public isAdmin;
 
-  constructor(public adminService: AdminExportService) {
+  constructor(public adminService: AdminExportService, public authService: AuthService) {
 
   }
 

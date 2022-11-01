@@ -1,5 +1,5 @@
-<div *ngIf="this.adminService.isAdmin">
-<button *ngIf="adminService.getStatus() === 0" class="export-advisor-zero">
+<div *ngIf="this.adminService.isAdmin && authService.isLoggedIn">
+<button *ngIf="adminService.getStatus() === 0 || adminService.getStatus() === undefined" class="export-advisor-zero">
     Select degree to submit plan to Advisor
 </button>
 

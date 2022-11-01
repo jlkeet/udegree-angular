@@ -13,7 +13,7 @@ export class AdminExportService {
   constructor(
     public authService: AuthService,
     public db: AngularFirestore,
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
   ) {}
 
   public getAdmin(userEmail) {
@@ -34,6 +34,7 @@ export class AdminExportService {
   }
 
   public getStatus() {
+    console.log(this.adminStatus)
     return this.adminStatus;
   }
 
