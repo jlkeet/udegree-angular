@@ -82,7 +82,12 @@ export class AuthService {
       .doc(value.email)
       .set(value)
       .then(res => {
+        this.db
+        .collection("users") // Here is where we set the docID to the email so its accessible in the database.
+        .doc(value.email)
+        .update({email: value.email, role: "user", status: 0})
         resolve(res);
+        this.isLoggedIn = true;
       }, err => reject(err))
     })
   }
@@ -92,8 +97,8 @@ export class AuthService {
     return new Promise<any>((resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(value.email, value.password)
       .then(res => {
-        this.isLoggedIn = true;
         resolve(res);
+        this.isLoggedIn = true;
       }, err => reject(err))
     })
   }
