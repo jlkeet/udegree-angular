@@ -34,7 +34,6 @@ export class AdminExportService {
   }
 
   public getStatus() {
-    console.log(this.adminStatus)
     return this.adminStatus;
   }
 
