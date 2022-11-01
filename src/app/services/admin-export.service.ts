@@ -28,7 +28,7 @@ export class AdminExportService {
   public setExportStatus(adminStatus, userEmail) {
     this.db
       .collection("users")
-      .doc(userEmail)
+      .doc(this.afAuth.auth.currentUser.email)
       .update({ status: adminStatus });
     this.adminStatus = adminStatus;
   }
@@ -55,7 +55,7 @@ export class AdminExportService {
     let timestampString = formatDate(timestamp, "dd/MM/yyyy, h:mm a", "en");
       this.db
       .collection("users")
-      .doc(userEmail)
+      .doc(this.afAuth.auth.currentUser.email)
       .update({timestamp: timestampString})
   }
 }
