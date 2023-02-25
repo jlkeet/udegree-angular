@@ -127,6 +127,7 @@ import { GoogleAnalyticsService } from './services/google-analytics.service';
 import { ProgressPanelService } from './services/progress-panel.service';
 import { AdminExport } from './admin-export/admin-export.component';
 import { AdminExportService } from './services/admin-export.service';
+import { ErrorRequirementService } from './services/error.requirement.service';
 
 
 
@@ -299,7 +300,7 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     WindowRef,
     PathwayService,
     ConjointService,
-    // ErrorRequirementService,
+    ErrorRequirementService,
     LocationRef,
     GoogleAnalyticsService,
     AdminExportService,

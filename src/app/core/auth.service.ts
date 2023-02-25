@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { FirebaseUserModel } from './user.model';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AdminExportService } from "../services/admin-export.service";
 
 @Injectable()
 export class AuthService {
@@ -17,6 +18,7 @@ export class AuthService {
    public afAuth: AngularFireAuth,
    private db: AngularFirestore,
    public userdata: FirebaseUserModel,
+   public adminService: AdminExportService,
 
  ) { }
 

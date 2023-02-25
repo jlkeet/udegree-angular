@@ -3,18 +3,23 @@ import { Injectable } from "@angular/core";
 import { Component, Input } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore } from "@angular/fire/firestore";
-import { AuthService } from "../core/auth.service";
+// import { AuthService } from "../core/auth.service";
 
 @Injectable()
 export class AdminExportService {
   public adminStatus;
   public isAdmin;
+  public user: any;
 
   constructor(
-    public authService: AuthService,
+    // public authService: AuthService,
     public db: AngularFirestore,
     public afAuth: AngularFireAuth,
-  ) {}
+  ) {
+
+    this.user = this.afAuth.authState;
+
+  }
 
   public getAdmin(userEmail) {
       this.db
@@ -57,5 +62,9 @@ export class AdminExportService {
       .collection("users")
       .doc(this.afAuth.auth.currentUser.email)
       .update({timestamp: timestampString})
+  }
+
+  public getAuthState() {
+    return(this.user !== null)
   }
 }

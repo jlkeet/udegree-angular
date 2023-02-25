@@ -165,6 +165,7 @@ export class ProgressPanel {
   }
 
   public ngOnInit() {
+    this.adminService.getAuthState();
     this.email = this.userService.email;
 
     this.subs = [

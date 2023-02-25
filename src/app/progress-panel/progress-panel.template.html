@@ -36,7 +36,7 @@
         <mat-expansion-panel-header *ngIf="faculty?.name" style="margin-top: 0px; margin-bottom: 0px"
         (click)="expansionOnClick()">
         <mat-toolbar class="plain">
-          <span> Degree: Bachelor of {{faculty? faculty.name: ''}} </span>
+          <span> Degree: Bachelor of {{faculty? faculty?.name: ''}} </span>
           <span class="spacer"></span>
           <span class="delete-pg" (click)="noExpansionOnClick(); deleteDegree();">
             <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
@@ -45,7 +45,7 @@
         </mat-toolbar>
       </mat-expansion-panel-header>
 
-      <div *ngIf="gpa && !conjoint.name" class="gpa">Total GPA {{gpa.toFixed(2)}}</div>
+      <div *ngIf="gpa && !conjoint?.name" class="gpa">Total GPA {{gpa?.toFixed(2)}}</div>
 
       <div *ngIf="faculty?.name" class="progress-panel-bar-container flex flex-col flex-start">
         <div class="progress-bar-group">
@@ -92,7 +92,7 @@
         *ngIf="majors?.name && !pathways?.name">
 
         <mat-toolbar *ngIf="majors?.name && !pathways?.name" class="plain">
-          <span>Major: {{majors.name}} </span>
+          <span>Major: {{majors?.name}} </span>
           <span class="spacer"></span>
           <span class="delete-pg" (click)="noExpansionOnClick(); deleteMajor();">
             <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
@@ -118,7 +118,7 @@
         *ngIf="pathways?.name">
 
         <mat-toolbar *ngIf="pathways?.name" class="plain">
-          <span> {{majors.name}} Pathway: {{pathways.name}} </span>
+          <span> {{majors?.name}} Pathway: {{pathways?.name}} </span>
           <span class="spacer"></span>
           <span class="delete-pg" (click)="noExpansionOnClick(); deletePathway();">
             <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
@@ -236,7 +236,7 @@
         (click)="expansionOnClick()">
 
         <mat-toolbar *ngIf="majors?.name && secondMajors?.name" class="plain">
-          <span>Second Major: {{secondMajors.name}} </span>
+          <span>Second Major: {{secondMajors?.name}} </span>
           <span class="spacer"></span>
           <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondMajor();">
             <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
@@ -261,7 +261,7 @@
         (click)="expansionOnClick()">
 
         <mat-toolbar *ngIf="conjoint" class="plain">
-          <span>Conjoint: Bachelor of {{conjoint.name}} </span>
+          <span>Conjoint: Bachelor of {{conjoint?.name}} </span>
           <span class="spacer"></span>
           <span class="delete-pg" (click)="noExpansionOnClick(); deleteConjoint();">
             <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
@@ -287,7 +287,7 @@
         (click)="expansionOnClick()">
 
         <mat-toolbar *ngIf="majors?.name && thirdMajors?.name" class="plain">
-          <span>Conjoint Major: {{thirdMajors.name}} </span>
+          <span>Conjoint Major: {{thirdMajors?.name}} </span>
           <span class="spacer"></span>
           <span class="delete-pg" (click)="noExpansionOnClick(); deleteThirdMajor();">
             <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
@@ -313,7 +313,7 @@
         (click)="expansionOnClick()">
 
         <mat-toolbar *ngIf="modules?.name" class="plain">
-          <span>Module: {{modules.name}} </span>
+          <span>Module: {{modules?.name}} </span>
           <span class="spacer"></span>
           <span class="delete-pg" (click)="noExpansionOnClick(); deleteModule();">
             <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
@@ -338,7 +338,7 @@
         (click)="expansionOnClick()">
 
         <mat-toolbar *ngIf="secondModules?.name" class="plain">
-          <span>Module: {{secondModules.name}} </span>
+          <span>Module: {{secondModules?.name}} </span>
           <span class="spacer"></span>
           <span class="delete-pg" (click)="noExpansionOnClick(); deleteSecondModule();">
             <span *ngIf="!userService.isMobile" class="cross-pg">&times;</span>
