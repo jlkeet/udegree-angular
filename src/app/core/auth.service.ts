@@ -108,7 +108,6 @@ export class AuthService {
 
   doLogout(){
     this.adminService.storeHelper.update("courses", []);
-    console.log(this.adminService.storeHelper.current("courses"))
     return new Promise<void>((resolve, reject) => {
       if(firebase.auth().currentUser){
         this.isLoggedIn = false;
