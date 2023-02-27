@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Component, Input } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore } from "@angular/fire/firestore";
+import { StoreHelper } from "./store-helper";
 // import { AuthService } from "../core/auth.service";
 
 @Injectable()
@@ -15,6 +16,7 @@ export class AdminExportService {
     // public authService: AuthService,
     public db: AngularFirestore,
     public afAuth: AngularFireAuth,
+    public storeHelper: StoreHelper,
   ) {
 
     this.user = this.afAuth.authState;

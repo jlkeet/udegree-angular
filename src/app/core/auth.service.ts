@@ -12,6 +12,7 @@ export class AuthService {
   public logInCounter = 0;
   public isLoggedIn = false;
 
+
   uid: string;
 
   constructor(
@@ -106,6 +107,8 @@ export class AuthService {
   }
 
   doLogout(){
+    this.adminService.storeHelper.update("courses", []);
+    console.log(this.adminService.storeHelper.current("courses"))
     return new Promise<void>((resolve, reject) => {
       if(firebase.auth().currentUser){
         this.isLoggedIn = false;
@@ -117,4 +120,9 @@ export class AuthService {
       }
     });
   }
+
+  public getLoggedIn() {
+    return this.afAuth.auth.currentUser;
+  }
+
 }

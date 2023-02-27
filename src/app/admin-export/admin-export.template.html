@@ -1,10 +1,9 @@
-<div *ngIf="this.adminService.isAdmin && authService.isLoggedIn || this.adminService.getAuthState()">
+<div *ngIf="this.authService.getLoggedIn() != null">
 <button *ngIf="adminService.getStatus() === 0 || adminService.getStatus() === undefined" class="export-advisor-zero">
     Select degree to submit plan to Advisor
 </button>
 
-
-<button *ngIf="adminService.getStatus() === 1" class="export-advisor-one" (click)="adminService.setExportStatus(2,this.adminService.authService.userdata.email);adminService.setExportStatusTimestamp(this.adminService.authService.userdata.email)">
+<button *ngIf="adminService.getStatus() === 1" class="export-advisor-one" (click)="adminService.setExportStatus(2,this.authService.userdata.email);adminService.setExportStatusTimestamp(this.authService.userdata.email)">
     Submit Plan to Advisor
 </button>
 
