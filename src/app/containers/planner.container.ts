@@ -15,6 +15,7 @@ import {
 import { AppHeader } from '../app.header.component';
 import * as confetti from 'canvas-confetti';
 import { FirebaseDbService } from '../core/firebase.db.service';
+import { SamplePlanService } from '../services/sample-plan.service';
 
 
 /*
@@ -44,13 +45,24 @@ import { FirebaseDbService } from '../core/firebase.db.service';
     width: 100%;
   }
 
+  .do-it-button {
+    width: 25%;
+    display: flex;
+    margin-top: -27px;
+    padding-left: 36px;
+  }
+
   `
   ],
   template: `
         <div *ngIf="!isMobile" class='planner-container'>
+
           <left-panel></left-panel>
 
           <div class='flex flex-col relative fullwidth'>
+            <div class="do-it-button">
+              <button (click)="samplePlan()">DO IT FOR ME</button>
+            </div>
               <course-details *ngIf='selected' [showAddCourse]='false' [course]='selected'
               (cancelClicked)='cancelCourse($event)'
               (changeStatus)='changeStatus($event)' (changeGrade)='changeGrade($event)'
@@ -70,6 +82,7 @@ import { FirebaseDbService } from '../core/firebase.db.service';
   `
 })
 export class PlannerContainer {
+
   private planned: ICourse[] = [];
   private messages: string[] | any[] = []; 
   private majorSelected: boolean = false;
@@ -84,6 +97,7 @@ export class PlannerContainer {
     private courseService: CourseService,
     private appHeader: AppHeader,
     public dbCourses: FirebaseDbService,
+    public samplePlanService: SamplePlanService,
   ) {
     this.isMobile = appHeader.mobile;
   }
@@ -140,6 +154,10 @@ export class PlannerContainer {
 
   public deleteCourse(event) {
     this.courseService.deselectCourse(event.course.id);
+  }
+
+  public samplePlan() {
+    this.samplePlanService.setCourse();
   }
 
 }
