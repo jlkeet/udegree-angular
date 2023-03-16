@@ -61,6 +61,7 @@ export class SamplePlanService {
   public setCourse() {
 
     this.getEssentialCourses();
+    this.complexCourses();
 
 //    for (let i = 0; i < 24; i++)  {
 //     if (this.storeHelper.current("courses").length > 0) { 
@@ -82,6 +83,7 @@ export class SamplePlanService {
   }
 
   public loadPlanFromDb() {
+    this.yearPeriodChecker();
     this.db
         .collection("users")
         .doc("jackson.keet1989@gmail.com")
@@ -221,7 +223,7 @@ export class SamplePlanService {
   }
 
   public getRandomCourse(max) {
-    console.log(Math.floor(Math.random() * max))
+    // console.log(Math.floor(Math.random() * max))
     return Math.floor(Math.random() * max);
   }
 
@@ -242,8 +244,36 @@ export class SamplePlanService {
     this.majReqs.push(this.progressPanelService.getMajReqs())
     // console.log(this.majReqs[0][2].papers[0])
 
-    let shown = this.courseService.allCourses;
-    let terms = this.majReqs[0][2].papers[0].split(" ");
+    // for (let i = 0; i < this.courseService.allCourses.length; i++) {
+    //     if (this.courseService.allCourses[i].name == this.majReqs[0][2].papers[0]) {
+    //     console.log(this.courseService.allCourses[i])
+    // }}
+    for (let x = 0; x < this.majReqs[0].length; x++) {
+        if (!this.majReqs[0][x].papers[0].includes("-")) {
+            for (let i = 0; i < this.courseService.allCourses.length; i++) {
+                for (let j = 0; j < this.majReqs[0][x].papers.length; j++) {
+                    if (this.courseService.allCourses[i].name == this.majReqs[0][x].papers[j]) {
+                        this.courseService.setCourseDb(this.courseService.allCourses[i], 315, this.period, this.year)
+                        }
+                  }       
+             }
+
+            }
+            this.loadPlanFromDb();
+        }
+
+  }
+
+
+  public complexCourses() {
+    this.majReqs.push(this.progressPanelService.getMajReqs())
+
+    for (let i = 0; i < this.majReqs[0].length; i++) {
+        let shown = this.courseService.allCourses;
+        let terms;
+        if (this.majReqs[0][i].papers[0].includes("-")) {
+            terms = this.majReqs[0][i].papers[0].split(" ");
+
     shown = shown.filter((course: any) =>
     terms.filter((term: string) => {
       const index = term.indexOf('-');
@@ -251,17 +281,13 @@ export class SamplePlanService {
         const lower = Number(term.substring(index - 3, index));
         const num = Number(course.name.substring(index - 3, index));
         const upper = Number(term.substring(index + 1, index + 4));
-        // console.log("lower: ", lower, "num: ", num, "upper: ", upper)
+
+        // console.log("lower: ", lower,"num: " , num, "upper: " ,upper)
+
         return num <= upper && num >= lower &&
         course.name.substring(0, index - 4).toLowerCase() ===
         term.substring(0, index - 4).toLowerCase();
-        // console.log(num <= upper && num >= lower &&
-        // course.name.substring(0, index - 4).toLowerCase() ===
-        //   term.substring(0, index - 4).toLowerCase());
       }
-    //   } else {
-    //     return course.name.toLowerCase().includes(term.toLowerCase());
-    //   }
     })
     .length > 0);
     let complexCourseArray = [];
@@ -273,24 +299,43 @@ export class SamplePlanService {
     }}}
     for (let i = 0; i < 3; i++) {
         let random = this.getRandomCourse(complexCourseArray.length)
-        this.courseService.setCourseDb(complexCourseArray[random], 315, this.period, this.year)
-    }
-    this.loadPlanFromDb();
-    // for (let i = 0; i < this.courseService.allCourses.length; i++) {
-    //     if (this.courseService.allCourses[i].name == this.majReqs[0][2].papers[0]) {
-    //     console.log(this.courseService.allCourses[i])
-    // }}
+        this.yearPeriodChecker();
+        if (!this.duplicateChecker(complexCourseArray[random])) {
+            this.courseService.setCourseDb(complexCourseArray[random], 315, this.period, this.year)
+            complexCourseArray.splice(random, 1)
+            console.log(complexCourseArray)
+    }}
 
-// for (let i = 0; i < this.courseService.allCourses.length; i++) {
-//     for (let j = 0; j < this.majReqs[0][0].papers.length; j++) {
-//    if (this.courseService.allCourses[i].name == this.majReqs[0][0].papers[j]) {
-//     console.log(this.courseService.allCourses[i])
-//     this.courseService.setCourseDb(this.courseService.allCourses[i], 315, this.period, this.year)
-//             }
-//         }
-//     }
-//     this.loadPlanFromDb();
-//   }
-}
+        }
+        this.loadPlanFromDb();
+    }
+  }
+
+
+  public yearPeriodChecker() {
+
+        if (this.storeHelper.current("courses").length > 0) { 
+            if (this.storeHelper.current("courses").length % 8 == 0) {
+                this.newYear();
+                }
+    
+       if (this.storeHelper.current("courses").length > 0) { 
+        if (this.storeHelper.current("courses").length % 4 == 0) {
+            this.periodSwitcheroo();
+            }
+        }
+
+  }
+
+
+  }
+
+  public duplicateChecker(course) {
+
+    if (this.storeHelper.current("courses").includes(course)) {
+        return true;
+    }
+
+  }
 
 }
