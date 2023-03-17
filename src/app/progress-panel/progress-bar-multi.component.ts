@@ -47,6 +47,8 @@ export class ProgressBarMulti implements OnChanges {
   private requirements = [];
   private combinedRule = [];
 
+  public fullyPlannedEnrolledCompleted = false;
+
   private isDisabled = false;
   public degreeFullyPlanned = false;
   public majorFullyPlanned = false;
@@ -68,12 +70,24 @@ export class ProgressBarMulti implements OnChanges {
   }
 
   public ngOnChanges(changes: { [value: string]: SimpleChange }) {
-    if (this.barThree.value === this.max) {
+
+    if (this.barThree.value + this.barTwo.value + this.barOne.value >= this.max) {
+      this.fullyPlannedEnrolledCompleted = true;
+    } else {
+      this.fullyPlannedEnrolledCompleted = false;
+    }
+
+    if (this.barThree.value >= this.max) {
       this.barThree.full = true;
     } else {
       this.barThree.full = false;
     }
-    if (this.barOne.value === this.max) {
+    if (this.barTwo.value >= this.max) {
+      this.barTwo.full = true;
+    } else {
+      this.barTwo.full = false;
+    }
+    if (this.barOne.value >= this.max) {
       this.barOne.full = true;
     } else {
       this.barOne.full = false;

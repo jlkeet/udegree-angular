@@ -42,9 +42,9 @@
 
 
         <div class="bar-container">
-            <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth  title="{{barOneHoverText}}"><div *ngIf="barOne.full" class="completed-fully"><div *ngIf="barOne.full" class="planned-fully-check"></div></div></div>
-            <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth  title="{{barTwoHoverText}}"></div>
-            <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth  title="{{barTwoHoverText}}"><div *ngIf="barThree.full" class="planned-fully"><div *ngIf="barThree.full" class="planned-fully-check"></div></div></div>
+            <div class="bar bar--one" [style.backgroundColor]="barOne.color" [uProgressWidth]=barOneWidth  title="{{barOneHoverText}}"><div *ngIf="barOne.full" class="completed-fully"><div *ngIf="barOne.full" class="planned-fully-check"></div></div><div *ngIf="fullyPlannedEnrolledCompleted && !barOne.full" class="planned-mixed"><div *ngIf="fullyPlannedEnrolledCompleted && !barOne.full" class="planned-mixed-check"></div></div></div>
+            <div class="bar bar--two" [style.backgroundColor]="barTwo.color" [uProgressWidth]=barTwoWidth  title="{{barTwoHoverText}}"><div *ngIf="barTwo.full" class="enrolled-fully"><div *ngIf="barTwo.full" class="planned-fully-check"></div></div><div *ngIf="fullyPlannedEnrolledCompleted && !barTwo.full" class="planned-mixed"><div *ngIf="fullyPlannedEnrolledCompleted && !barTwo.full" class="planned-mixed-check"></div></div></div>
+            <div class="bar bar--three" [style.backgroundColor]="barThree.color" [uProgressWidth]=barThreeWidth  title="{{barThreeHoverText}}"><div *ngIf="barThree.full" class="planned-fully"><div *ngIf="barThree.full" class="planned-fully-check"></div></div></div>
 
         </div>
     </div> 

@@ -166,6 +166,19 @@ padding-bottom: 10px !important;
   max-width: unset;
 }
 
+.enrolled-fully {
+  background-color: #f2d600;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  left: 45%;
+  position: absolute;
+  top: 0px;
+  width: 25px;
+  margin-top: -8px;
+  max-width: unset;
+}
+
 .completed-fully {
   background-color: #5bb801;
   border-radius: 50%;
@@ -195,4 +208,31 @@ padding-bottom: 10px !important;
 .planned-section {
   box-shadow: 0px 0px 20px 5px #ffcc01 !important;
   z-index: 9;
+}
+
+
+.planned-mixed {
+  background-color: #25a0ed;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  left: 147px;
+  position: absolute;
+  top: 0px;
+  width: 25px;
+  margin-top: -8px;
+  max-width: unset;
+}
+
+.planned-mixed-check {
+  border: 2px solid #eee;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
 }

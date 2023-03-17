@@ -113,7 +113,7 @@ export class CoursesPanel {
       );
 
     this.courseCounter = this.coursesService.courseCounter;
-    this.selectedYear = 2022;
+    this.selectedYear = 2024;
     this.selectedPeriod = Period.One;
 
     this.authService.afAuth.authState.subscribe(async (auth) => {
