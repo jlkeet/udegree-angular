@@ -169,7 +169,7 @@ export class AddCourseContainer {
     const alreadyPlanned = this.coursesService.findPlanned(courseToToggle.name);
     if (alreadyPlanned) {
       // this doesn't make sense if there's multiple of one course
-      this.coursesService.deselectCourseByName(courseToToggle.name);
+      this.coursesService.deselectCourseByName(courseToToggle);
     } else {
       this.coursesService.selectCourse(courseToToggle.id, this.period, this.year);
     }
@@ -182,7 +182,7 @@ export class AddCourseContainer {
   }
 
   public deleteCourse(event) {
-    this.coursesService.deselectCourse(event.course);
+    this.coursesService.deselectCourseByName(event.course);
     this.dbCourses.setAuditLogDeleteCourse(event.course.name)
   }
 
@@ -240,7 +240,7 @@ export class AddCourseContainer {
       }),
       this.store.changes.pluck('messages').subscribe((messages: Message[]) => { this.messages = messages; }),
       this.courseEventService.courseRemoved
-      .subscribe((event) => this.coursesService.deselectCourse(event.courseId)),
+      .subscribe((event) => this.coursesService.deselectCourseByName(event.course)),
     ];
   }} )
   }

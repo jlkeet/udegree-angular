@@ -299,9 +299,10 @@ export class SemesterPanel {
       .collection("users")
       .doc(this.email)
       .collection("courses", (ref) => {
-        const query = ref.where("id", "==", course.id);
+        const query = ref.where("id", "==", course.id) && ref.where('status', '==', course.status);
         query.get().then((snapshot) => {
           snapshot.forEach((doc) => {
+            console.log(doc)
             this.db
               .collection("users")
               .doc(this.email)
@@ -317,7 +318,7 @@ export class SemesterPanel {
   public deleteSemester() {
     this.coursePanelService.updateSemesterCheck();
     this.courses.forEach((course: ICourse) =>
-      this.courseService.deselectCourseByName(course.name)
+      this.courseService.deselectCourseByName(course)
     );
     let semesters = this.storeHelper.current("semesters");
     semesters = semesters.filter(
@@ -327,7 +328,10 @@ export class SemesterPanel {
     );
     this.storeHelper.update("semesters", semesters);
     this.delSemDB();
-    this.semesterSort();
+    setTimeout(() => {
+      this.semesterSort();
+    }, 1000);
+
     this.dbCourses.setAuditLogDeleteSemester(semesters);
   }
 

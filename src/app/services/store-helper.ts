@@ -58,19 +58,23 @@ export class StoreHelper {
           if (item.id !== state.id) {
             return item;
           }
+          if (item.generatedId !== state.generatedId) {
+            return item;
+          }
           // if it is, update it
+          // console.log("firing")
           return Object.assign({}, item, state);
         })
       })
     );
   }
 
-  public findAndDelete(prop, id) {
+  public findAndDelete(prop, id, course?) {
     const currentState = this.store.getState();
     const collection = currentState[prop];
     this.store.setState(
       Object.assign({}, currentState, {
-        [prop]: collection.filter((item) => item.id !== id)
+        [prop]: collection.filter((item) => item.id === id && item.status !== course.status || item.id !== id)
       })
     );
   }

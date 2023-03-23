@@ -89,7 +89,7 @@ export class PlannerContainerMobile {
   }
   public handleCourseRemoved(event: RemovedEvent) {
     // remove course from semester
-    this.courseService.deselectCourse(event.courseId);
+    this.courseService.deselectCourseByName(event.course);
   }
 
   public handleCourseClicked(event: ClickedEvent) {
@@ -121,7 +121,7 @@ export class PlannerContainerMobile {
   }
 
   public deleteCourse(event) {
-    this.courseService.deselectCourse(event.course.id);
+    this.courseService.deselectCourseByName(event.course);
   }
 
 }

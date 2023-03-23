@@ -75,6 +75,7 @@ export class CourseService {
       status,
       title,
       year,
+      generatedId: Math.random() * 100000
     };
     this.courseCounter++;
     this.storeHelper.add('courses', customCourse);
@@ -116,6 +117,7 @@ export class CourseService {
     copy.period = period;
     copy.year = year;
     copy.id = courseId;  //this.courseCounter++;     I'm not exactly sure why we were making the course id linked to the course counter but have commented this out for now so we can match the index to the db.
+    copy.generatedId = Math.floor(Math.random() * 100000);
     this.storeHelper.add('courses', copy);
     this.updateErrors();
     this.courseCounter++;
@@ -143,30 +145,42 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
     status: status ? status : CourseStatus.Planned,
     grade: grade ? grade : null,
     canDelete: true,
+    generatedId: course.generatedId,
     }))
   }
 
 
 
   public deselectCourse(courseId: number) { // Is this redundant now?
+    console.log(courseId)
     this.storeHelper.findAndDelete('courses', courseId);
     this.updateErrors();
   }
 
   // Note that this is also linked to semester-panel.component, called there to remove all courses when exiting semester.
 
-  public deselectCourseByName(courseName: string) {
-    let course = this.findPlanned(courseName);
+  public deselectCourseByName(courseObject) {
+    let course;
+
+  if (courseObject.status !== 3) {
+    course = this.findPlanned(courseObject.name);
+  } else {
+    course = this.findFailed(courseObject.name)
+  }
+
+  console.log(course)
 
     // this.dbCourses.setAuditLogDeleteCourse(courseName)
 
-    this.storeHelper.findAndDelete('courses', course.id);
+    this.storeHelper.findAndDelete('courses', course.id, course);
+    
     this.updateErrors();
     this.courseCounter--;
     this.db.collection("users").doc(this.email).collection("courses", ref => {
-      const query = ref.where('id', '==', course.id);
+      const query = ref.where('id', '==', course.id) && ref.where('status', '==', course.status);
       query.get().then( snapshot => {
         snapshot.forEach(doc => {
+          // console.log(doc.id)
           this.db
           .collection("users")
           .doc(this.email)
@@ -187,7 +201,7 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
     this.storeHelper.findAndUpdate('courses', copy);
     let course = courseToChange;
     this.db.collection("users").doc(this.email).collection("courses", ref => {
-      const query = ref.where('id', '==', course.id);
+      const query = ref.where('id', '==', course.id) && ref.where('status', '==', course.status);
       query.get().then( snapshot => {
         snapshot.forEach(doc => {
           this.db
@@ -286,6 +300,12 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
     const courses = this.storeHelper.current('courses');
     return courses.filter((course: ICourse) => course.status !== CourseStatus.Failed)
       .find((course: ICourse) => course.name === courseName);
+  }
+
+  public findFailed(courseName: string): ICourse {
+    const courses = this.storeHelper.current('courses');
+    return courses.filter((course: ICourse) => course.status === CourseStatus.Failed)
+    .find((course: ICourse) => course.name === courseName);
   }
 
   public generalToggle(courseName: string): string {

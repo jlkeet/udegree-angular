@@ -3,6 +3,7 @@ import { IRequirement } from '../services';
 
 export interface ICourse {
   id: number;
+  generatedId?: number;
   name: string;
   title?: string;
   desc: string;

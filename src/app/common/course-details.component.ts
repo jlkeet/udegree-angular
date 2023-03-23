@@ -164,7 +164,7 @@ export class CourseDetails {
   }
 
   public deleteCourse() {
-    this.courseService.deselectCourseByName(this.course.name);
+    this.courseService.deselectCourseByName(this.course);
 
     // this.deleteClicked.emit({
     //   course: this.course,
@@ -243,7 +243,6 @@ export class CourseDetails {
     if (!this.custom && !this.showAddCourse) {
       this.courseGrade = this.course.grade;
     }
-
     if (!this.custom) {
       if (this.course.status === undefined) {
        // this.courseStatus = CourseStatus.Planned;
@@ -282,7 +281,7 @@ export class CourseDetails {
 
   for (let i = 0; i < this.storeHelper.current("courses").length; i++) {  
   if (this.course) {
-    if (this.storeHelper.current("courses")[i].name === this.course.name) {
+    if (this.storeHelper.current("courses")[i].name === this.course.name && this.storeHelper.current("courses")[i].status !== 3) {
       return true;
       }
     } else {

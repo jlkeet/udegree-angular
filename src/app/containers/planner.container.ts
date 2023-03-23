@@ -107,7 +107,7 @@ export class PlannerContainer {
     this.dbCourses.setAuditLogDeleteCourse(event.course.name);
 
     // remove course from semester
-    this.courseService.deselectCourse(event.courseId);
+    this.courseService.deselectCourseByName(event.course);
   }
 
   public handleCourseClicked(event: ClickedEvent) {
@@ -139,7 +139,7 @@ export class PlannerContainer {
   }
 
   public deleteCourse(event) {
-    this.courseService.deselectCourse(event.course.id);
+    this.courseService.deselectCourseByName(event.course);
   }
 
 }
