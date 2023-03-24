@@ -257,15 +257,18 @@ export class AddCourseContainer {
 
   public checkRequirements(course: ICourse): string[] | any[] {
     if (course && course.requirements !== undefined) {
-      if (this.currentSemester.length > 0) {
-        return course.requirements.filter((requirement: IRequirement) => 
-        !this.requirementService.requirementFilled(requirement, this.currentSemester))
-          .map((requirement: IRequirement) => this.requirementService.toString(requirement, false));
-      } else {
+      // if (this.currentSemester.length > 0) {
+      //   return course.requirements.filter((requirement: IRequirement) => 
+      //   !this.requirementService.requirementFilled(requirement, this.currentSemester))
+      //     .map((requirement: IRequirement) => this.requirementService.toString(requirement, false));
+      // } else {
       return course.requirements.filter((requirement: IRequirement) =>
         !this.requirementService.requirementFilled(requirement, this.beforeSemester))
           .map((requirement: IRequirement) => this.requirementService.toString(requirement, false));
-      }
+      // }
+
+
+
     } else {
       return [];
     }

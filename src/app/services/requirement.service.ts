@@ -162,7 +162,7 @@ export class RequirementService {
       if (requirement.type === RequirementType.Points) {
         mapped = filtered.map((course: ICourse) => course.points);
       } else if (requirement.type === RequirementType.Papers) {
-        mapped = filtered.map((course: ICourse) => 1);
+        mapped = filtered.map(() => 1);
       } else {
       }
 
