@@ -16,6 +16,8 @@ import { AddCourseContainer } from "./add-course-container";
         margin-top: 10px;
         float: left;
         display: inline;
+        overflow-y: scroll;
+        max-height: 80vh;
       }
 
       .panel-mobile {
