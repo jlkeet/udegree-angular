@@ -177,7 +177,7 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
     this.updateErrors();
     this.courseCounter--;
     this.db.collection("users").doc(this.email).collection("courses", ref => {
-      const query = ref.where('id', '==', course.id) && ref.where('status', '==', course.status);
+      const query = ref.where('generatedId', '==', course.generatedId);
       query.get().then( snapshot => {
         snapshot.forEach(doc => {
           // console.log(doc.id)

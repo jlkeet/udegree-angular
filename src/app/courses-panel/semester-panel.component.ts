@@ -299,10 +299,9 @@ export class SemesterPanel {
       .collection("users")
       .doc(this.email)
       .collection("courses", (ref) => {
-        const query = ref.where("id", "==", course.id) && ref.where('status', '==', course.status);
+        const query = ref.where("generatedId", "==", course.generatedId);
         query.get().then((snapshot) => {
           snapshot.forEach((doc) => {
-            console.log(doc)
             this.db
               .collection("users")
               .doc(this.email)
