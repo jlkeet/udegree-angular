@@ -1,0 +1,418 @@
+[
+  {
+    "name": "Coding and Logic",
+    "blurb": "Learn basic skills in logical reasoning as well as simple computer programming",
+    "faculties": ["Arts"],
+    "courses": ["COMPSCI101", "PHIL101", "COMPSCI225", "PHIL216", "PHIL222"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSCI101"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["PHIL101"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["COMPSCI225", "PHIL216", "PHIL222"]
+      }
+    ]
+  },
+  {
+    "name": "Citizenship of Aotearoa New Zealand",
+    "blurb": "Become a more informed citizen by learning more about the history, society and culture of Aotearoa New Zealand",
+    "faculties": ["Arts"],
+    "courses": [
+      "HISTORY107",
+      "POLITICS107",
+      "SOCIOL101",
+      "POLITICS229",
+      "HISTORY 227",
+      "MĀORI230"
+    ],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["HISTORY107", "POLITICS107", "SOCIOL101"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["POLITICS229", "HISTORY 227", "MĀORI230"]
+      }
+    ]
+  },
+  {
+    "name": "Critical Thinking",
+    "blurb": "Equip yourself with the analytic, reflexive and critical thinking skills required for effective problem solving",
+    "faculties": ["Arts"],
+    "courses": ["PHIL105", "PHIL225", "POLITICS209", "SOCIOL200"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["PHIL105"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["PHIL225", "POLITICS209", "SOCIOL200"]
+      }
+    ]
+  },
+  {
+    "name": "Community Service in Youth Development",
+    "blurb": "Work directly with a young person as a youth mentor and develop your understanding of youth theory",
+    "faculties": ["Arts"],
+    "courses": [
+      "YOUTHWRK152",
+      "EDUC200",
+      "PACIFIC206",
+      "SOCYOUTH300",
+      "EDUC352"
+    ],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["YOUTHWRK152"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["EDUC200", "SOCYOUTH300"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["PACIFIC206", "EDUC352"]
+      }
+    ]
+  },
+  {
+    "name": "Innovation and Entrepreneurship",
+    "blurb": "Understand the process of identifying and creating opportunities for new approaches, products and enterprises",
+    "faculties": ["Arts"],
+    "courses": ["INNOVATE100", "INNOVATE100G", "INNOVENT204", "INNOVENT308"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["INNOVATE100", "INNOVATE100G"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["INNOVENT204"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["INNOVENT308"]
+      }
+    ]
+  },
+  {
+    "name": "Māori, Pacific and Indigenous Knowledges",
+    "blurb": "This module offers you an opportunity to deepen your insight into Māori, Pacific and Indigenous worlds and world views.",
+    "faculties": ["Arts"],
+    "courses": [
+      "MĀORI130",
+      "PACIFIC100",
+      "MĀORI230",
+      "MĀORI202",
+      "PACIFIC200",
+      "MĀORI396"
+    ],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MĀORI130"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["PACIFIC100"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["MĀORI230", "MĀORI202", "PACIFIC200", "MĀORI396"]
+      }
+    ]
+  },
+  {
+    "name": "Public Policy",
+    "blurb": "Enhance your leadership skills and grow your knowledge of the public sector.",
+    "faculties": ["Arts"],
+    "courses": ["ECON151", "ECON152", "POLITICS107", "ECON242", "POLITICS 222"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["POLITICS 222"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["ECON151", "ECON152", "POLITICS107", "ECON242"]
+      }
+    ]
+  },
+  {
+    "name": "Spatial Information and Analysis",
+    "blurb": "Spatial data collection and awareness is crucial for understanding and engaging with economic, political and cultural developments.",
+    "faculties": ["Arts", "Science"],
+    "courses": ["GEOG103", "GISCI241", "GISCI242", "GISCI341", "GISCI343"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 3,
+        "papers": ["GEOG103", "GISCI241", "GISCI242", "GISCI341", "GISCI343"]
+      }
+    ]
+  },
+  {
+    "name": "Sustainability",
+    "blurb": "Develop your understanding of sustainability to make an informed and positive contribution",
+    "faculties": ["Arts", "Science"],
+    "courses": ["SUSTAIN100", "SUSTAIN200", "SUSTAIN300"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SUSTAIN100"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SUSTAIN200"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SUSTAIN300"]
+      }
+    ]
+  },
+  {
+    "name": "Teaching in Society",
+    "blurb": "Develop an understanding of teaching that goes beyond classrooms to spaces such as museums and galleries",
+    "faculties": ["Arts"],
+    "courses": ["EDUC105", "EDUC209", "EDUC300", "EDUC308"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["EDUC105"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["EDUC209"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["EDUC300", "EDUC308"]
+      }
+    ]
+  },
+  {
+    "name": "Science in Society",
+    "blurb": "Communicate Science ideas to the masses",
+    "faculties": ["Science", "Arts"],
+    "courses": ["SCIGEN101", "SCIGEN201", "SCIGEN301"],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "papers": ["SCIGEN101", "SCIGEN201", "SCIGEN301"]
+      }
+    ]
+  },
+  {
+    "name": "Data Analysis",
+    "blurb": "Practical use of statistics with data",
+    "faculties": ["Science"],
+    "courses": [
+      "STATS101",
+      "STATS108",
+      "STATS201",
+      "STATS208",
+      "STATS301",
+      "STATS330",
+      "STATS340"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["STATS101", "STATS108"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["STATS201", "STATS208"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["STATS301", "STATS330", "STATS340"]
+      }
+    ]
+  },
+  {
+    "name": "Exercising the Body and Mind",
+    "blurb": "Learn about the science behind exercise and fitness",
+    "faculties": ["Science"],
+    "courses": ["EXERSCI105", "EXERSCI202", "EXERSCI204", "EXERSCI304"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["EXERSCI105"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["EXERSCI202", "EXERSCI204"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["EXERSCI304"]
+      }
+    ]
+  },
+  {
+    "name": "Quantitative Critical Thinking and Communication",
+    "blurb": "Develop the ability to interpret and critically evaluate statistical-based reports",
+    "faculties": ["Science"],
+    "courses": ["SCIGEN101", "STATS150", "STATS201", "STATS208"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SCIGEN101"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["STATS150"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["STATS201", "STATS208"]
+      }
+    ]
+  },
+  {
+    "name": "Science Scholars",
+    "blurb": "This module is only available to students who are part of the Science Scholars programme",
+    "faculties": ["Science"],
+    "courses": [
+      "SCIGEN101",
+      "SCISCHOL100",
+      "MĀORI130",
+      "PHIL100",
+      "SCISCHOL202",
+      "SCISCHOL302"
+    ],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SCIGEN101", "SCISCHOL100", "MĀORI130", "PHIL100"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SCISCHOL202"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SCISCHOL302"]
+      }
+    ]
+  },
+  {
+    "name": "Software Development",
+    "blurb": "Gain the skills required to plan, design and write computer programs using standard computer programming languages.",
+    "faculties": ["Science"],
+    "courses": [
+      "COMPSCI101",
+      "COMPSCI130",
+      "COMPSCI230",
+      "COMPSCI235",
+      "COMPSCI331"
+    ],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 3,
+        "papers": [
+          "COMPSCI101",
+          "COMPSCI130",
+          "COMPSCI230",
+          "COMPSCI235",
+          "COMPSCI331"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Studies in Food and Health",
+    "blurb": "Providing critical skills and insights to enhance understanding of experiences with food and nutrition",
+    "faculties": ["Science"],
+    "courses": ["FOODSCI100", "FOODSCI200", "FOODSCI301", "EXERSCI206"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["FOODSCI100"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["FOODSCI200"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["FOODSCI301", "EXERSCI206"]
+      }
+    ]
+  },
+  {
+    "name": "Studies in Urban Wellbeing",
+    "blurb": "Gain an interdisciplinary overview of the status and dynamics of contemporary urbanism, including key challenges to wellbeing such as food politics and achieving sustainable settlements",
+    "faculties": ["Science"],
+    "courses": ["GEOG104", "SOCSCIPH200", "GEOG305", "GEOG307", "SOCSCIPH300"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["GEOG104"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["SOCSCIPH200"]
+      },
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["GEOG305", "GEOG307", "SOCSCIPH300"]
+      }
+    ]
+  }
+]
