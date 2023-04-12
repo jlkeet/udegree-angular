@@ -90,6 +90,8 @@ but it should not impede your ability to run it locally.
 
 This will start the local server on your machine, and if you go to localhost:3000 then Udegree will load.
 
+Node version 10.13.0 currently.
+
 All done!
 
 

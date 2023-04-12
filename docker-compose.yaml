@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    image: udegree-angular-image
+    ports:
+      - "4200:4200"
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    command: ng serve --host 0.0.0.0 --poll 100
+    volumes:
+      - .:/udegree-angular
+      - /udegree-angular/node_modules
+
+

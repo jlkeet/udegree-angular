@@ -21,4 +21,5 @@ export class ProgressHeightDirective implements OnChanges  {
     }
 
     constructor(private el: ElementRef, private renderer: Renderer) { }
+
 }
