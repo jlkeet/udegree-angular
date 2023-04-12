@@ -19,8 +19,8 @@ export class ErrorRequirementService {
     public getCourse(course) {
        let errorCourse = this.courseService.findPlanned(course.id);
        console.log(errorCourse)
-       // errorCourse.requirements.forEach(element => this.selectErrorRequirements(element))
-       this.selectErrorRequirements(errorCourse.requirements[0])
+       errorCourse.requirements.forEach(element => this.selectErrorRequirements(element))
+      //  this.selectErrorRequirements(errorCourse.requirements[0])
     }
 
  public selectErrorRequirements(requirement: IRequirement): void {

@@ -118,13 +118,14 @@ export class CourseService {
     copy.year = year;
     copy.id = courseId;  //this.courseCounter++;     I'm not exactly sure why we were making the course id linked to the course counter but have commented this out for now so we can match the index to the db.
     copy.generatedId = Math.floor(Math.random() * 100000);
-    this.storeHelper.add('courses', copy);
+    // this.storeHelper.add('courses', copy);
     this.updateErrors();
     this.courseCounter++;
     this.setCourseDb(copy ,courseId, period, year, status)
   }
 
 public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseStatus, grade?: null){
+  this.storeHelper.add('courses', course);
   let result = course;
   this.db
   .collection("users") 
@@ -145,15 +146,13 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
     status: status ? status : CourseStatus.Planned,
     grade: grade ? grade : null,
     canDelete: true,
-    generatedId: course.generatedId,
+    generatedId: course.generatedId || Math.floor(Math.random() * 100000),
     }))
-    this.storeHelper.add('courses', course);
   }
 
 
 
   public deselectCourse(courseId: number) { // Is this redundant now?
-    console.log(courseId)
     this.storeHelper.findAndDelete('courses', courseId);
     this.updateErrors();
   }
@@ -169,8 +168,6 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
     course = this.findFailed(courseObject.name)
   }
 
-  console.log(course)
-
     // this.dbCourses.setAuditLogDeleteCourse(courseName)
 
     this.storeHelper.findAndDelete('courses', course.id, course);
@@ -181,7 +178,6 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
       const query = ref.where('generatedId', '==', course.generatedId);
       query.get().then( snapshot => {
         snapshot.forEach(doc => {
-          // console.log(doc.id)
           this.db
           .collection("users")
           .doc(this.email)
@@ -196,13 +192,13 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
   }
 
   public changeStatus(courseToChange: ICourse, status: CourseStatus) {
-    const lookupCourse = this.planned.find((course: ICourse) => course.id === courseToChange.id);
+    const lookupCourse = this.planned.find((course: ICourse) => course.generatedId === courseToChange.generatedId);
     const copy = Object.assign({}, lookupCourse);
     copy.status = status;
     this.storeHelper.findAndUpdate('courses', copy);
     let course = courseToChange;
     this.db.collection("users").doc(this.email).collection("courses", ref => {
-      const query = ref.where('id', '==', course.id) && ref.where('status', '==', course.status);
+      const query = ref.where('generatedId', '==', course.generatedId);
       query.get().then( snapshot => {
         snapshot.forEach(doc => {
           this.db

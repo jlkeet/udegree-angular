@@ -62,7 +62,6 @@ export class StoreHelper {
             return item;
           }
           // if it is, update it
-          // console.log("firing")
           return Object.assign({}, item, state);
         })
       })
@@ -74,7 +73,8 @@ export class StoreHelper {
     const collection = currentState[prop];
     this.store.setState(
       Object.assign({}, currentState, {
-        [prop]: collection.filter((item) => item.id === id && item.status !== course.status || item.id !== id)
+        [prop]: collection.filter((item) => item.generatedId !== course.generatedId)
+        // [prop]: collection.filter((item) => item.id === id && item.status !== course.status || item.id !== id)
       })
     );
   }

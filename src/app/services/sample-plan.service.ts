@@ -113,7 +113,6 @@ export class SamplePlanService {
     }
 
   public loadCourseFromDb(courseDbId) {
-    // console.log(courseDbId)
     const courseDb = this.getCourseFromDb(courseDbId).then((copy) => {
       Object.assign({
         department: copy[0],
@@ -131,7 +130,7 @@ export class SamplePlanService {
         canDelete: true,
       });
       this.getCourseFromDb(courseDbId).then((res) => {
-          this.storeHelper.findAndDelete('courses', res.id);
+          this.storeHelper.findAndDelete('courses', res.id, res);
           this.storeHelper.add("courses", res);
           this.courseService.updateErrors();
       });
@@ -223,7 +222,6 @@ export class SamplePlanService {
   }
 
   public getRandomCourse(max) {
-    // console.log(Math.floor(Math.random() * max))
     return Math.floor(Math.random() * max);
   }
 
@@ -303,7 +301,6 @@ export class SamplePlanService {
         if (!this.duplicateChecker(complexCourseArray[random])) {
             this.courseService.setCourseDb(complexCourseArray[random], 315, this.period, this.year)
             complexCourseArray.splice(random, 1)
-            console.log(complexCourseArray)
     }}
 
         }
