@@ -152,8 +152,8 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
 
 
 
-  public deselectCourse(courseId: number) { // Is this redundant now?
-    this.storeHelper.findAndDelete('courses', courseId);
+  public deselectCourse(course: number) { // Is this redundant now?
+    this.storeHelper.findAndDelete('courses', course);
     this.updateErrors();
   }
 
@@ -170,7 +170,7 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
 
     // this.dbCourses.setAuditLogDeleteCourse(courseName)
 
-    this.storeHelper.findAndDelete('courses', course.id, course);
+    this.storeHelper.findAndDelete('courses', course);
     
     this.updateErrors();
     this.courseCounter--;

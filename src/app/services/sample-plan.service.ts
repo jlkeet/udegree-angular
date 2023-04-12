@@ -119,18 +119,20 @@ export class SamplePlanService {
         desc: copy[1],
         faculties: copy[2],
         id: copy[3],
-        name: copy[4],
-        period: copy[5],
-        points: copy[6],
-        requirements: copy[7],
-        stage: copy[8],
-        status: copy[9],
-        title: copy[10],
-        year: copy[11],
+        generatedId: copy[4],
+        name: copy[5],
+        period: copy[6],
+        points: copy[7],
+        requirements: copy[8],
+        stage: copy[9],
+        status: copy[10],
+        title: copy[11],
+        year: copy[12],
         canDelete: true,
+
       });
       this.getCourseFromDb(courseDbId).then((res) => {
-          this.storeHelper.findAndDelete('courses', res.id, res);
+          this.storeHelper.findAndDelete('courses', res);
           this.storeHelper.add("courses", res);
           this.courseService.updateErrors();
       });

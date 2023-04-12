@@ -68,7 +68,7 @@ export class StoreHelper {
     );
   }
 
-  public findAndDelete(prop, id, course?) {
+  public findAndDelete(prop, course) {
     const currentState = this.store.getState();
     const collection = currentState[prop];
     this.store.setState(
