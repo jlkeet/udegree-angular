@@ -162,6 +162,7 @@ export class CourseFilter {
             const lower = Number(term.substring(index - 3, index));
             const num = Number(course.name.substring(index - 3, index));
             const upper = Number(term.substring(index + 1, index + 4));
+            // console.log("lower: ", lower, "num: ", num, "upper: ", upper)
             return num <= upper && num >= lower &&
             course.name.substring(0, index - 4).toLowerCase() ===
               term.substring(0, index - 4).toLowerCase();

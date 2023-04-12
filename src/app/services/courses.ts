@@ -147,6 +147,7 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
     canDelete: true,
     generatedId: course.generatedId,
     }))
+    this.storeHelper.add('courses', course);
   }
 
 
