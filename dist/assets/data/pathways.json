@@ -1,0 +1,1263 @@
+[
+  {
+    "name": "Ecology",
+    "blurb": "Tree Huggers",
+    "faculties": ["Biological Sciences"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 4,
+        "papers": ["BIOSCI101", "BIOSCI108", "BIOSCI109", "STATS101"]
+      },
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["BIOSCI206", "BIOSCI220"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["BIOSCI204-208"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": ["ENVSCI201", "MARINE202", "STATS201"]
+      },
+      {
+        "type": 1,
+        "required": 2,
+        "papers": ["BIOSCI333", "BIOSCI394"]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "BIOSCI325",
+          "BIOSCI334",
+          "BIOSCI338",
+          "BIOSCI347",
+          "MARINE303"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marine Biology",
+    "faculties": [
+      "Biological Sciences"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 60,
+        "papers": [
+          "BIOSCI101",
+          "BIOSCI108",
+          "BIOSCI109",
+          "STATS101"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "BIOSCI206",
+          "BIOSCI220"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "BIOSCI207",
+          "BIOSCI208"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "BIOSCI328",
+          "BIOSCI333",
+          "BIOSCI334"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Microbiology",
+    "faculties": [
+      "Biological Sciences"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 75,
+        "papers": [
+          "BIOSCI101",
+          "BIOSCI106",
+          "BIOSCI108",
+          "BIOSCI109",
+          "STATS101"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "CHEM110",
+          "CHEM120",
+          "CHEM150"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "BIOSCI201",
+          "BIOSCI202",
+          "BIOSCI203"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": [
+          "BIOSCI204",
+          "BIOSCI220",
+          "BIOSCI347",
+          "BIOSCI348"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "BIOSCI324",
+          "BIOSCI349"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Plant Biology",
+    "faculties": [
+      "Biological Sciences"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 60,
+        "papers": [
+          "BIOSCI101",
+          "BIOSCI108",
+          "BIOSCI109",
+          "STATS101"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "BIOSCI205",
+          "BIOSCI220"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "BIOSCI202",
+          "BIOSCI203",
+          "BIOSCI204",
+          "BIOSCI206"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "BIOSCI324",
+          "BIOSCI325",
+          "BIOSCI326"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Zoology",
+    "faculties": [
+      "Biological Sciences"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 60,
+        "papers": [
+          "BIOSCI101",
+          "BIOSCI108",
+          "BIOSCI109",
+          "STATS101"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": [
+          "BIOSCI207",
+          "BIOSCI208",
+          "BIOSCI210",
+          "BIOSCI220"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "BIOSCI335",
+          "BIOSCI337"
+        ],
+        "flags": {}
+      },
+      {
+        "name": "Biochemistry and Cell Biology",
+        "faculties": [
+          "Biological Sciences"
+        ],
+        "requirements": [
+          {
+            "type": 0,
+            "required": 75,
+            "papers": [
+              "BIOSCI101",
+              "BIOSCI106",
+              "BIOSCI108",
+              "BIOSCI09",
+              "STATS101"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "CHEM110",
+              "CHEM120"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 45,
+            "papers": [
+              "BIOSCI201",
+              "BIOSCI203",
+              "BIOSCI220"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 30,
+            "papers": [
+              "BIOSCI350",
+              "BIOSCI353"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "BIOSCI326",
+              "BIOSCI349",
+              "BIOSCI351",
+              "BIOSCI355",
+              "BIOSCI356"
+            ],
+            "flags": {}
+          }
+        ]
+      },
+      {
+        "name": "Biotechnology",
+        "faculties": [
+          "Biological Sciences"
+        ],
+        "requirements": [
+          {
+            "type": 0,
+            "required": 75,
+            "papers": [
+              "BIOSCI101",
+              "BIOSCI106",
+              "BIOSCI108",
+              "BIOSCI09",
+              "STATS101"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "CHEM110",
+              "CHEM120",
+              "CHEM150"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 75,
+            "papers": [
+              "BIOSCI203",
+              "BIOSCI204",
+              "BIOSCI220",
+              "INNOVENT203",
+              "SCIGEN201"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "INNOVENT307"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 45,
+            "papers": [
+              "BIOSCI324",
+              "BIOSCI326",
+              "BIOSCI347",
+              "BIOSCI348"
+            ],
+            "flags": {}
+          }
+        ]
+      },
+      {
+        "name": "Ecology",
+        "faculties": [
+          "Biological Sciences"
+        ],
+        "requirements": [
+          {
+            "type": 0,
+            "required": 60,
+            "papers": [
+              "BIOSCI101",
+              "BIOSCI108",
+              "BIOSCI109",
+              "STATS101"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 1,
+            "required": 4,
+            "papers": [
+              "BIOSCI206",
+              "BIOSCI220",
+              "BIOSCI 333",
+              "BIOSCI 394"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "BIOSCI204",
+              "BIOSCI205",
+              "BIOSCI207",
+              "BIOSCI208"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "ENVSCI201",
+              "MARINE202",
+              "STATS201"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "BIOSCI325",
+              "BIOSCI334",
+              "BIOSCI338",
+              "BIOSCI347",
+              "MARINE303"
+            ],
+            "flags": {}
+          }
+        ]
+      },
+      {
+        "name": "Evolution",
+        "faculties": [
+          "Biological Sciences"
+        ],
+        "requirements": [
+          {
+            "type": 0,
+            "required": 60,
+            "papers": [
+              "BIOSCI101",
+              "BIOSCI108",
+              "BIOSCI109",
+              "STATS101"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 45,
+            "papers": [
+              "BIOSCI202",
+              "BIOSCI210",
+              "BIOSCI220"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 45,
+            "papers": [
+              "BIOSCI322",
+              "BIOSCI355",
+              "BIOSCI395"
+            ],
+            "flags": {}
+          }
+        ]
+      },
+      {
+        "name": "Genetics",
+        "faculties": [
+          "Biological Sciences"
+        ],
+        "requirements": [
+          {
+            "type": 0,
+            "required": 60,
+            "papers": [
+              "BIOSCI101",
+              "BIOSCI108",
+              "BIOSCI109",
+              "STATS101"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "CHEM110",
+              "CHEM120",
+              "CHEM150"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 45,
+            "papers": [
+              "BIOSCI201",
+              "BIOSCI202",
+              "BIOSCI220"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 30,
+            "papers": [
+              "BIOSCI351",
+              "BIOSCI355"
+            ],
+            "flags": {}
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": [
+              "BIOSCI322",
+              "BIOSCI324",
+              "BIOSCI326",
+              "BIOSCI347",
+              "BIOSCI349",
+              "BIOSCI353",
+              "BIOSCI356"
+            ],
+            "flags": {}
+          }
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "BIOSCI334",
+          "BIOSCI338"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Biological Sciences",
+    "faculties": ["Science"],
+    "requirements": [
+      {
+        "type": 1,
+        "required": 1,
+        "papers": ["BIOSCI101"]
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": ["BIOSCI100", "BIOSCI102-107"]
+      },
+      {
+        "type": 0,
+        "required": 60,
+        "papers": ["BIOINF301", "BIOSCI320-396"]
+      },
+      {
+        "type": 0,
+        "required": 2,
+        "complex": [
+          {
+            "type": 0,
+            "required": 15,
+            "papers": ["BIOSCI201-203"]
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": ["BIOSCI204", "BIOSCI205", "BIOSCI208"]
+          },
+          {
+            "type": 0,
+            "required": 15,
+            "papers": ["BIOSCI206", "BIOSCI207", "BIOSCI210"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Exercise Sciences",
+    "faculties": [
+      "Science"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "EXERSCI101",
+          "EXERSCI103",
+          "EXERSCI105"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "EXERSCI201",
+          "EXERSCI203",
+          "EXERSCI205",
+          "EXERSCI207"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "EXERSCI301",
+          "EXERSCI303",
+          "EXERSCI304",
+          "EXERSCI305",
+          "EXERSCI307"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Applied Exercise and Sport Sciences",
+    "faculties": [
+      "Exercise Sciences"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "EXERSCI101",
+          "EXERSCI103",
+          "EXERSCI105"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": [
+          "EXERSCI201",
+          "EXERSCI203",
+          "EXERSCI205",
+          "EXERSCI206",
+          "EXERSCI207",
+          "EXERSCI271"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": [
+          "EXERSCI301",
+          "EXERSCI303",
+          "EXERSCI305",
+          "EXERSCI307",
+          "EXERSCI371",
+          "EXERSCI399"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Mathematics",
+    "faculties": [
+      "Science"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "MATHS120",
+          "MATHS130",
+          "MATHS162",
+          "MATHS199"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "MATHS250"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "MATHS253",
+          "MATHS254",
+          "MATHS255",
+          "MATHS260",
+          "MATHS270"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "MATHS302-363"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Applied Mathematics",
+    "faculties": [
+      "Mathematics"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "MATHS120",
+          "MATHS130",
+          "MATHS162",
+          "MATHS199"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "MATHS250",
+          "MATHS260",
+          "MATHS270"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "MATHS340",
+          "MATHS361"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "MATHS362",
+          "MATHS363"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Pure Mathematics",
+    "faculties": [
+      "Mathematics"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "MATHS120",
+          "MATHS130",
+          "MATHS162",
+          "MATHS199"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "MATHS250",
+          "MATHS253",
+          "MATHS254",
+          "MATHS255"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "MATHS320",
+          "MATHS332"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "MATHS315",
+          "MATHS326",
+          "MATHS328",
+          "MATHS333",
+          "MATHS340"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Medical Physics and Imaging Technology",
+    "faculties": [
+      "Physics"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "PHYSICS120",
+          "PHYSICS160"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "BIOSCI107",
+          "MEDSCI142"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 90,
+        "papers": [
+          "MEDSCI205",
+          "MEDSCI206",
+          "PHYSICS121",
+          "PHYSICS201",
+          "PHYSICS202",
+          "PHYSICS244"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "papers": "MATHS108, MATHS110, MATHS208"
+          },
+          {
+            "type": 0,
+            "required": 45,
+            "flags": {},
+            "papers": "MATHS120, MATHS130, MATHS250"
+          }
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "MATHS253",
+          "MATHS260"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 75,
+        "papers": [
+          "MEDSCI309",
+          "PHYSICS203",
+          "PHYSICS333",
+          "PHYSICS340",
+          "PHYSICS390"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Photonics",
+    "faculties": [
+      "Physics"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "PHYSICS120",
+          "PHYSICS160"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "PHYSICS121"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 1,
+        "flags": {},
+        "complex": [
+          {
+            "type": 0,
+            "required": 30,
+            "flags": {},
+            "papers": "MATHS108, MATHS110, MATHS208"
+          },
+          {
+            "type": 0,
+            "required": 45,
+            "flags": {},
+            "papers": "MATHS120, MATHS130, MATHS250"
+          }
+        ]
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "MATHS253",
+          "MATHS260"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 75,
+        "papers": [
+          "ELECTENG210",
+          "ELECTENG292",
+          "PHYSICS201-203",
+          "PHYSICS244"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 75,
+        "papers": [
+          "ELECTENG209",
+          "ELECTENG331",
+          "ELECTENG303",
+          "PHYSICS333",
+          "PHYSICS340",
+          "PHYSICS390"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Psychology",
+    "faculties": [
+      "Science"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "PSYCH108",
+          "PSYCH109"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS100-125"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "PSYCH200-209"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "EDUC323",
+          "EXERSCI307",
+          "PSYCH300-326"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Cognitive Neuroscience",
+    "faculties": [
+      "Psychology"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "PSYCH108",
+          "PSYCH109"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS100-125"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "PSYCH201",
+          "PSYCH202",
+          "PSYCH203"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "PSYCH303",
+          "PSYCH305",
+          "PSYCH306"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Statistics",
+    "faculties": [
+      "Science"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS101-125"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "DATASCI100",
+          "STATS101-150"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS201",
+          "STATS208",
+          "STATS210",
+          "STATS225"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "STATS201-255",
+          "MATHS208",
+          "MATHS250"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS310",
+          "STATS325",
+          "STATS330",
+          "STATS380"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "STATS301-389",
+          "ENGSCI391"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Applied Statistics",
+    "faculties": [
+      "Statistics"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS101",
+          "STATS108"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "DATASCI100",
+          "STATS125",
+          "STATS150"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS201",
+          "STATS208"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "STATS220",
+          "STATS240",
+          "STATS255"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS330",
+          "STATS380"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "STATS302",
+          "STATS326",
+          "STATS330",
+          "STATS331",
+          "STATS380",
+          "STATS383",
+          "MATHS302"
+        ],
+        "flags": {}
+      }
+    ]
+  },
+  {
+    "name": "Statistics and Probability",
+    "faculties": [
+      "Statistics"
+    ],
+    "requirements": [
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS101",
+          "STATS108"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS125"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "MATHS108-153"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS210",
+          "STATS225"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 30,
+        "papers": [
+          "MATHS208",
+          "MATHS250",
+          "STATS201",
+          "STATS208",
+          "STATS210",
+          "STATS220",
+          "STATS225",
+          "STATS240",
+          "STATS255"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 15,
+        "papers": [
+          "STATS310",
+          "STATS325",
+          "STATS330",
+          "STATS380"
+        ],
+        "flags": {}
+      },
+      {
+        "type": 0,
+        "required": 45,
+        "papers": [
+          "STATS301-389",
+          "ENGSCI391"
+        ],
+        "flags": {}
+      }
+    ]
+  }
+]
