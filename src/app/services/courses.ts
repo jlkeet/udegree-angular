@@ -258,7 +258,7 @@ public setCourseDb(course, courseId, coursePeriod, courseYear, status?: CourseSt
       });
       this.errors = this.errors.concat(courseErrors
         .map((unfilled: IRequirement) => this.requirementService.toString(unfilled, false))
-        .map((unfilled: string) => new Message(course.name, course.name + ": " + unfilled, MessageStatus.Error)));
+        .map((unfilled: string) => new Message(course.name, course.name + ": " + unfilled, MessageStatus.Error, courseErrors)));
         course.isError = courseErrors.length > 0;
   
 
