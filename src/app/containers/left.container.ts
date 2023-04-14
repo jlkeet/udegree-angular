@@ -111,7 +111,6 @@ export class LeftPanelContainer {
 
   private swipe(e: TouchEvent, when: string): void {
   if (this.addCourse.selected) {
-   // console.log("firing")
   }  
     const coord: [number, number] = [
       e.changedTouches[0].clientX,
@@ -134,7 +133,6 @@ export class LeftPanelContainer {
       ) {
         // Horizontal enough
         const swipe = direction[0] < 0 ? "next" : "previous";
-       // console.log(swipe)
         if (swipe === "next") {
           const isFirst = this.addCourse.tabIndex === 0;
           if (this.addCourse.tabIndex <= 3) {

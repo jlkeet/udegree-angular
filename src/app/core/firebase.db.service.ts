@@ -28,7 +28,6 @@ export class FirebaseDbService {
 
   public getCollection(firstCollection?: string, secondCollection?: string, courseDbId?: string) {
     return new Promise<any>((resolve) => {
-      // console.log(this.afAuth.auth.currentUser.email)
       this.db
         .collection(firstCollection)
         .doc(this.afAuth.auth.currentUser.email)
@@ -371,7 +370,6 @@ export class FirebaseDbService {
     if (!this.adminExportService.isAdmin) {
     let timestamp = Date.now();
     let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
-    console.log(this.auditDocRef)
     this.db
     .collection("audit-log")
     .doc(this.auditDocRef)
@@ -384,9 +382,6 @@ export class FirebaseDbService {
     if (!this.adminExportService.isAdmin) {
     let timestamp = Date.now();
     let timestampString = formatDate(timestamp, 'dd/MM/yyyy, h:mm a', 'en')
-
-    console.log(course)
-
     this.previousValue = course
     this.db
     .collection("audit-log")

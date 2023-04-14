@@ -477,7 +477,6 @@ export class DegreeSelection {
   public async getFilteredLists() {
     this.faculties = await this.facultyService.getFaculties()
    this.faculties =  this.faculties.map((faculty) => {
-      // console.log(faculty)
       return { value: faculty, view: faculty.name };
     });
 

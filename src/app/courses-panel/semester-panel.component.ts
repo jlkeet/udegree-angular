@@ -113,16 +113,6 @@ export class SemesterPanel {
       });
     }
 
-    // if (bag === undefined) {
-    //   console.log("firing")
-    //   this.dragulaService.createGroup(this.bagName, {
-    //     isContainer: (el) => el!.classList.contains("dragula-container"),
-    //     moves: (el, source, handle, sibling) => {
-    //       return !el!.hasAttribute("fake");
-    //     },
-    //   });
-    // }
-
     this.dragulaService.drop().subscribe((value: any) => {
       // need to handle event for this bag only! TODO and semester too?
       if (value.name === this.bagName) {
@@ -168,8 +158,6 @@ export class SemesterPanel {
           `could not move course id: ${droppedCourse.id} to semester ${this.semester.id} `
         );
       } else {
-        // this.semester.id =
-       // console.log(`onDropModel: moving to semester ${this.semester.period}`);
         this.droppedCourseSaveDB(droppedCourse);
         this.courseEventService.raiseCourseMoved({
           courseId: droppedCourse.id,
@@ -389,11 +377,9 @@ export class SemesterPanel {
         i++;
       }
     }
-    //this.periodListArray.splice(this.semester.period)
     this.periodListArray.forEach( (item, index) => {
       if(item === "Semester " + this.semester.period || item === "Summer School" && this.semester.period === 0)  this.periodListArray.splice(index,1);
     });
-    //console.log(this.periodListArray)
     return this.periodListArray[0 - 2];
   }
 
@@ -433,8 +419,6 @@ export class SemesterPanel {
   }
 
   public saveChangedSemCourse(i) {
-   // console.log(this.storeHelper.current("semesters"))
-
 
     this.boolCheck = true;
     let courses = this.storeHelper.current("courses");

@@ -88,10 +88,6 @@ export class CourseService {
     .list("/", (ref) => ref.orderByChild("name"))
     .valueChanges()
     .subscribe((result: any) => {this.allCourses = result[0].courses_admin, this.allCourses.sort((a,b) => a.name.localeCompare(b.name)), this.allCourses.map((course: ICourse) => course.canDelete = true)})
-
-    // this.allCourses.sort((a,b) => a.name.localeCompare(b.name))
-    // this.allCourses.map((course: ICourse) => course.canDelete = true)
-   // console.log(this.allCourses)
    return Observable.of(this.allCourses); 
   }
 

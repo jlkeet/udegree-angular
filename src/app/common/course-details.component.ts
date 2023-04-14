@@ -16,9 +16,9 @@ import {
   PathwayService,
   ModuleService,
   StoreHelper,
-  ErrorRequirementService
 } from "../services";
 import * as confetti from 'canvas-confetti';
+import { ErrorRequirementService } from "../services/error.requirement.service";
 /*
     A component for a displaying the details or adding course
     Should break up custom card part

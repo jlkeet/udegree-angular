@@ -207,7 +207,6 @@ export class ProgressBarMulti implements OnChanges {
     for (let j = 0; j < degreeCheckArray.length; j++) {
       if (degreeCheckArray[j].full === true) {
         count++;
-        // console.log(count)
       }
       if (count === this.progressPanelService.requirements.length) {
         this.progressPanelService.setFullyPlanned(true);
@@ -225,10 +224,8 @@ export class ProgressBarMulti implements OnChanges {
       i < this.progressPanelService.majorRequirements.length;
       i++
     ) {
-      // console.log(i , ' ', this.barThree.majIndex)
       if (i === this.barThree.majIndex) {
         if (majorCheckArray[i].required === this.barThree.value) {
-          // console.log(majorCheckArray[i].required , ' ', this.barThree.value)
           majorCheckArray[i].full = true;
         } else {
           majorCheckArray[i].full = false;
@@ -237,7 +234,6 @@ export class ProgressBarMulti implements OnChanges {
     }
 
     for (let j = 0; j < majorCheckArray.length; j++) {
-      // console.log(majorCheckArray[j])
       if (majorCheckArray[j] !== undefined) {
         if (majorCheckArray[j].full === true) {
           majCount++;

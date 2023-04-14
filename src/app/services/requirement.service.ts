@@ -229,11 +229,9 @@ export class RequirementService {
     if (requirement.papers !== undefined) {
       if (requirement.papers.length <= 4 &&
         requirement.papers.filter((paper: string) => paper.includes('-')).length === 0) {
-      //    console.log(requirement.papers.join(', '))
          return requirement.required + (requirement.type === RequirementType.Points ? ' Points' : ' Courses') + ' From ' + requirement.papers.join(', ');
       } else {
         // Change this to reflect the hyphenated rule
-      //  console.log(requirement)
         return requirement.required + (requirement.type === RequirementType.Points ? ' Points' : ' Courses') + ' From List (Click to see list)';
       }
     }

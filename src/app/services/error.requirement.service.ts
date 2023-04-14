@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { forEach } from "@angular/router/src/utils/collection";
-import { CourseService, IRequirement } from ".";
+import { IRequirement } from ".";
 import { ICourse } from "../interfaces";
 import { StoreHelper } from "./store-helper";
 
@@ -11,22 +11,16 @@ export class ErrorRequirementService {
     constructor(
         public storeHelper: StoreHelper,
         public router: Router,
-        public courseService: CourseService
     ) {
 
     }
 
     public getCourse(course) {
-      // console.log(course)
-      //  let errorCourse = this.courseService.findPlanned(course.name);
-      //  console.log(errorCourse)
       let errorCourse = course.requirement[0]
       this.selectErrorRequirements(errorCourse)
-      //  errorCourse.requirements.forEach(element => this.selectErrorRequirements(element))
     }
 
  public selectErrorRequirements(requirement: IRequirement): void {
-  console.log(requirement)
     const stages = requirement.stage
     ? [requirement.stage]
     : requirement.aboveStage
@@ -82,7 +76,6 @@ export class ErrorRequirementService {
   
   if (requirement.complex !== undefined) {
 } else {
-  // console.log(queryParams)
   this.router.navigate(["/add"], { queryParams });
 }
 }

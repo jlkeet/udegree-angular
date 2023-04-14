@@ -770,7 +770,6 @@ export class ProgressPanel {
     
     if (requirement.complex !== undefined) {
   } else {
-  //  console.log(queryParams)
     this.router.navigate(["/add"], { queryParams });
   }
 }

@@ -62,24 +62,6 @@ export class SamplePlanService {
 
     this.getEssentialCourses();
     this.complexCourses();
-
-//    for (let i = 0; i < 24; i++)  {
-//     if (this.storeHelper.current("courses").length > 0) { 
-//         if (this.storeHelper.current("courses").length % 8 == 0) {
-//             this.newYear();
-//             }
-//         }
-
-//    if (this.storeHelper.current("courses").length > 0) { 
-//     if (this.storeHelper.current("courses").length % 4 == 0) {
-//         this.periodSwitcheroo();
-//         }
-//     }
-//     this.courseService.setCourseDb(this.courseService.allCourses[this.getRandomCourse(3655)], 315, this.period, this.year)
-//     // console.log(this.storeHelper.current('courses'))
-
-//     }
-//     this.loadPlanFromDb();
   }
 
   public loadPlanFromDb() {
@@ -242,12 +224,7 @@ export class SamplePlanService {
 
   public getEssentialCourses() {
     this.majReqs.push(this.progressPanelService.getMajReqs())
-    // console.log(this.majReqs[0][2].papers[0])
 
-    // for (let i = 0; i < this.courseService.allCourses.length; i++) {
-    //     if (this.courseService.allCourses[i].name == this.majReqs[0][2].papers[0]) {
-    //     console.log(this.courseService.allCourses[i])
-    // }}
     for (let x = 0; x < this.majReqs[0].length; x++) {
         if (!this.majReqs[0][x].papers[0].includes("-")) {
             for (let i = 0; i < this.courseService.allCourses.length; i++) {
@@ -281,8 +258,6 @@ export class SamplePlanService {
         const lower = Number(term.substring(index - 3, index));
         const num = Number(course.name.substring(index - 3, index));
         const upper = Number(term.substring(index + 1, index + 4));
-
-        // console.log("lower: ", lower,"num: " , num, "upper: " ,upper)
 
         return num <= upper && num >= lower &&
         course.name.substring(0, index - 4).toLowerCase() ===
