@@ -17,14 +17,11 @@ export class ErrorRequirementService {
     }
 
     public getCourse(course) {
-       let errorCourse = this.courseService.findPlanned(course.id);
-       console.log(errorCourse)
+       let errorCourse = this.courseService.findPlanned(course.name);
        errorCourse.requirements.forEach(element => this.selectErrorRequirements(element))
-      //  this.selectErrorRequirements(errorCourse.requirements[0])
     }
 
  public selectErrorRequirements(requirement: IRequirement): void {
-     console.log(requirement)
     const stages = requirement.stage
     ? [requirement.stage]
     : requirement.aboveStage

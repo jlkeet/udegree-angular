@@ -9,4 +9,4 @@ export { DepartmentService } from './department.service';
 export { FacultyService } from './faculty.service';
 export { ConjointService } from './conjoint.service';
 export { PathwayService } from './pathway.service';
-// export { ErrorRequirementService } from './error.requirement.service'
+export { ErrorRequirementService } from './error.requirement.service'

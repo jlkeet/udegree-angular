@@ -60,7 +60,7 @@
         <P></P>
       </div>
 
-      <div *ngFor="let message of messages" class="course-error-message">
+      <div *ngFor="let message of messages; let i = index" class="course-error-message"  (click)="this.errorService.selectErrorRequirements(course.requirements[i])">
         {{message}}
       </div>
 

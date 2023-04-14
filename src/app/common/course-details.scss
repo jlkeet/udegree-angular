@@ -29,7 +29,17 @@
   font-size: 15px;
   background: red;
   padding:2px;
+  cursor: pointer;
 }
+
+.course-error-message:hover {
+  color: white;
+  font-size: 15px;
+  background: rgb(152, 2, 2);
+  padding:2px;
+  cursor: pointer;
+}
+
 .course-planned-message {
   color: white;
   font-size: 12px;

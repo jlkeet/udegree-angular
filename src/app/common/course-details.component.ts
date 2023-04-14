@@ -7,7 +7,7 @@ import {
   Output,
 } from "@angular/core";
 import { ICourse } from "../interfaces";
-import { CourseStatus, Period } from "../models";
+import { CourseStatus, Message, Period } from "../models";
 import {
   CourseService,
   DepartmentService,
@@ -16,6 +16,7 @@ import {
   PathwayService,
   ModuleService,
   StoreHelper,
+  ErrorRequirementService
 } from "../services";
 import * as confetti from 'canvas-confetti';
 /*
@@ -97,6 +98,7 @@ export class CourseDetails {
     public pathwayService: PathwayService,
     public moduleService: ModuleService,
     public storeHelper: StoreHelper,
+    public errorService: ErrorRequirementService,
   ) {
     // this.departments = this.departmentService.getDepartments();
     // this.faculties = this.facultyService.getFaculties();
