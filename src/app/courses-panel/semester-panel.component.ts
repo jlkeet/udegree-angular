@@ -123,14 +123,6 @@ export class SemesterPanel {
     this.dragulaService.remove().subscribe((value: any) => {
       this.onRemoveModel(value.slice(1));
     });
-
-    const totalPoints = this.courses.reduce(
-      (points, course) => points + course.points,
-      0
-    );
-    this.atMaxPoints = totalPoints >= this.MAX_POINTS;
-
-    this.courseCounter = this.courseService.courseCounter;
   }
 
   public onDropModel(args) {
@@ -184,6 +176,15 @@ export class SemesterPanel {
     this.gpa =
       courseGrades.reduce((gradeTotal, grade) => gradeTotal + grade, 0) /
       (courseGrades.length + failed);
+
+      const totalPoints = this.courses.reduce(
+        (points, course) => points + course.points,
+        0
+      );
+      this.atMaxPoints = totalPoints >= this.MAX_POINTS;
+  
+      this.courseCounter = this.courseService.courseCounter;
+      console.log(totalPoints)
   }
 
   public sameTime(course: any) {
