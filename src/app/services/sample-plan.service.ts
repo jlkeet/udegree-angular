@@ -68,14 +68,14 @@ export class SamplePlanService {
     this.yearPeriodChecker();
     this.db
         .collection("users")
-        .doc("jackson.keet1989@gmail.com")
+        .doc(this.authService.afAuth.auth.currentUser.email)
         .get()
         .toPromise()
         .then((doc) => {
           if (doc.exists) {
             this.db
               .collection("users")
-              .doc("jackson.keet1989@gmail.com")
+              .doc(this.authService.afAuth.auth.currentUser.email)
               .collection("courses")
               .get()
               .toPromise()

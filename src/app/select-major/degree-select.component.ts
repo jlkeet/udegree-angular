@@ -542,6 +542,10 @@ export class DegreeSelection {
   }
 
   public getFilteredSecondMajors() {
+    if (!this.currentFaculties || !this.currentFaculties[0] || !this.currentMajors || !this.currentMajors[0]) {
+      this.secondMajors = [];
+      return;
+    }
     this.secondMajors = this.departmentService
     .departmentsInFaculty(this.currentFaculties[0]).filter(v => v.name !== this.currentMajors[0].name)
       .map((secondMajors) => {

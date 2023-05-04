@@ -12,19 +12,41 @@ export class DepartmentService {
     // this.departments = require('../../assets/data/departments.json');
   }
 
-  public async getDepartments() {
-    this.db_depts
-    .list("/", (ref) => ref.orderByChild("name"))
-    .valueChanges()
-    .subscribe((result: any) => {this.departments = result[2].departments_admin, this.departments.sort((a,b) => a.name.localeCompare(b.name)), this.departments.map((depts) => depts.canDelete = true)})
 
-    return new Promise((resolve) => { setTimeout(() => {resolve(this.departments)}, 50)})
+  public async getDepartments(): Promise<any[]> {
+    return new Promise((resolve) => {
+      this.db_depts
+        .list("/", (ref) => ref.orderByChild("name"))
+        .valueChanges()
+        .subscribe((result: any) => {
+          this.departments = result[2].departments_admin;
+          this.departments.sort((a, b) => a.name.localeCompare(b.name));
+          this.departments.map((depts) => (depts.canDelete = true));
+          resolve(this.departments);
+        });
+    });
   }
+
+
+  // public async getDepartments() {
+  //   this.db_depts
+  //   .list("/", (ref) => ref.orderByChild("name"))
+  //   .valueChanges()
+  //   .subscribe((result: any) => {this.departments = result[2].departments_admin, this.departments.sort((a,b) => a.name.localeCompare(b.name)), this.departments.map((depts) => depts.canDelete = true)})
+
+  //   return new Promise((resolve) => { setTimeout(() => {resolve(this.departments)}, 50)})
+  // }
 
   public departmentsInFaculty(faculty) {
-    this.departments.filter((department) => {faculty.majors.includes(department.name)})
-    return this.departments.filter((department) => faculty.name.includes(department.faculties[0]))
+    return this.departments.filter((department) => {
+      return department.faculties.includes(faculty.name);
+    });
   }
+
+  // public departmentsInFaculty(faculty) {
+  //   this.departments.filter((department) => {faculty.majors.includes(department.name)})
+  //   return this.departments.filter((department) => faculty.name.includes(department.faculties[0]))
+  // }
 
   public allowedPaper() {
     return;
