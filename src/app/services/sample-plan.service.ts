@@ -10,9 +10,6 @@ import { FirebaseDbService } from "../core/firebase.db.service";
 import { Period } from "../models";
 import { RequirementService } from "./requirement.service";
 import { ProgressPanelService } from "./progress-panel.service";
-
-// import { FirebaseDbService } from "../core/firebase.db.service";
-
 @Injectable()
 export class SamplePlanService {
 
@@ -60,7 +57,7 @@ export class SamplePlanService {
 
   public setCourse() {
 
-    // this.getEssentialCourses();
+    this.getEssentialCourses();
     this.complexCourses();
   }
 
@@ -221,31 +218,6 @@ export class SamplePlanService {
   public newYear() {
     this.year += 1;
   }
-
-  // public getEssentialCourses() {
-  //   this.majReqs.push(this.progressPanelService.getMajReqs())
-
-  //   for (let x = 0; x < this.majReqs[0].length; x++) {
-  //       if (!this.majReqs[0][x].papers[0].includes("-")) {
-  //           for (let i = 0; i < this.courseService.allCourses.length; i++) {
-  //               for (let j = 0; j < this.majReqs[0][x].papers.length; j++) {
-  //                   if (this.courseService.allCourses[i].name == this.majReqs[0][x].papers[j]) {
-
-  //                     if (!this.storeHelper.current("courses").some((course) => course.name === this.majReqs[0][x].papers[j])) {
-  //                       this.courseService.setCourseDb(this.courseService.allCourses[i], 315, this.period, this.year)
-  //                         } else {
-  //                           console.log(this.majReqs[0][x].papers[j])
-  //                         }
-  //                       }
-                        
-  //                 }       
-  //            }
-
-  //           }
-  //           this.loadPlanFromDb();
-  //       }
-
-  // }
 
   public getEssentialCourses() {
     this.majReqs.push(this.progressPanelService.getMajReqs());
