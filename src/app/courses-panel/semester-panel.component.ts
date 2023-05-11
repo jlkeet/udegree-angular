@@ -184,7 +184,6 @@ export class SemesterPanel {
       this.atMaxPoints = totalPoints >= this.MAX_POINTS;
   
       this.courseCounter = this.courseService.courseCounter;
-      console.log(totalPoints)
   }
 
   public sameTime(course: any) {

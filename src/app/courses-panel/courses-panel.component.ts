@@ -425,18 +425,18 @@ export class CoursesPanel {
   private loadCourseFromDbAfterDel(courseDbId) {
     const courseDb = this.getCourseFromDb(courseDbId).then((copy) => {
       Object.assign({
-        department: copy[0],
-        desc: copy[1],
-        faculties: copy[2],
-        id: copy[3],
-        name: copy[4],
-        period: copy[5],
-        points: copy[6],
-        requirements: copy[7],
-        stage: copy[8],
-        status: copy[9],
-        title: copy[10],
-        year: copy[11],
+        department: copy[0] || null,
+        desc: copy[1] || null,
+        faculties: copy[2] || null,
+        id: copy[3] || null,
+        name: copy[4] || null,
+        period: copy[5] || null,
+        points: copy[6] || null,
+        requirements: copy[7] || null,
+        stage: copy[8] || null,
+        status: copy[9] || null,
+        title: copy[10] || null,
+        year: copy[11] || null,
         canDelete: true,
       })
       this.getCourseFromDb(courseDbId).then((res) => {
