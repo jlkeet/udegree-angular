@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+
+    <div class="row">
+      <div *ngFor="let list of lists; index as i"  class="col-sm-2 list">
+        <h3>
+          {{list.title}}
+        </h3>
+        <app-item
+          *ngFor="let item of list.items"
+          id="{{i + item.title}}"
+          [item]="item"
+          [front]="item.front"
+          [back]="item.back"
+          (click)="select(item, i)" >
+        </app-item>
+      </div>
+      <div *ngIf="current" class="col-sm-3 infobox">
+        <h3 class="center">
+          {{current.title}}
+        </h3>
+        <div class="info">
+          {{current.info}}
+        </div>
+      </div>
+    </div>
+  
+    <svg class="line" class="svg">
+      <line *ngFor="let line of lines" [attr.x1]="line.x1" [attr.y1]="line.y1" [attr.x2]="line.x2" [attr.y2]="line.y2" stroke="blue"/>
+    </svg>
+    
+  </div>
+  

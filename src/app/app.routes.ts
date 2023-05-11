@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserResolver } from './user/user.resolver';
 import { AuthGuard } from './core/auth.guard';
 import { PrivacyContainer } from './privacy-policy/privacy-policy.component';
+import { ExplorerComponent } from './explorer/explorer.component';
 
 
 
@@ -19,6 +20,7 @@ export const ROUTES: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
   { path: 'user', component: UserComponent,  resolve: { data: UserResolver}},
+  { path: 'explorer', component: ExplorerComponent },
   { path: '',      redirectTo: '/planner',  pathMatch: 'full' },
   { path: '**',    component: NoContent },
 ];

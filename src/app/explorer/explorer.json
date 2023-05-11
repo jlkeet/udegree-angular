@@ -1,0 +1,1188 @@
+[
+    {
+    "title": "Themes",
+    "items": [{
+        "title": "Advance Human Health",
+        "info": "unknown",
+        "forward": ["Nurse Educators and Researchers", "Midwives", "Occupational and Environmental Health Professionals", "Nurse Managers", "Medical Imaging Professionals", "Anaesthetists", "Medical Laboratory Scientists", "Surgeons", "Dental Practitioners", "Pharmacists", "Other Medical Practitioners", "Podiatrists", "Physiotherapists", "General Practitioners and Resident Medical Officers", "Optometrists and Orthoptists", "Veterinarians", "Other Health Diagnostic and Promotion Professionals", "Psychiatrists", "Occupational Therapists", "Specialist Physicians", "Registered Nurses", "Chiropractors and Osteopaths", "Nutrition Professionals"],
+        "backward": []
+    }, {
+        "title": "Solve, Construct, Build",
+        "info": "unknown",
+        "forward": ["Aquaculture Farmers", "Chemical and Materials Engineers", "Production Managers", "Electronics Engineers", "Geologists, Geophysicists and Hydrogeologists", "Mining Engineers", "Other Engineering Professionals", "Industrial, Mechanical and Production Engineers", "Engineering Managers", "Mixed Crop and Livestock Farmers", "Livestock Farmers", "Construction Managers", "Surveyors and Spatial Scientists", "Manufacturers", "Software and Applications Programmers", "Telecommunications Engineering Professionals", "Civil Engineering Professionals", "ICT Support and Test Engineers", "Interior Designers", "Electrical Engineers", "Crop Farmers", "Architects and Landscape Architects"],
+        "backward": []
+    }, {
+        "title": "Open Minds, Change Lives",
+        "info": "unknown",
+        "forward": ["Other Education Managers", "Child Care Centre Managers", "Counsellors", "Primary School Teachers", "Audiologists and Speech Pathologists/Therapists", "Early Childhood (Pre-primary School) Teachers", "Teachers of English to Speakers of Other Languages", "Private Tutors and Teachers", "Training and Development Professionals", "Education Advisers and Reviewers", "Middle School Teachers", "University Lecturers and Tutors", "School Principals", "Special Education Teachers", "Secondary School Teachers", "Vocational Education Teachers", "Ministers of Religion", "Librarians"],
+        "backward": []
+    }, {
+        "title": "Build A Better Society",
+        "info": "unknown",
+        "forward": ["Policy and Planning Manager Intelligence and Policy Analysts", "Archivists, Curators and Records Managers", "Welfare, Recreation and Community Arts Workers", "Health and Welfare Services Managers", "Social Workers", "Legislators", "Social Professionals", "Economists", "Urban and Regional Planners"],
+        "backward": []
+    }, {
+        "title": "Lead, Market, Innovate",
+        "info": "unknown",
+        "forward": ["Land Economists and Valuers", "ICT Sales Professionals", "Human Resource Professionals", "Other Specialist Managers", "Public Relations Professionals", "Chief Executives and Managing Directors", "Advertising, Public Relations and Sales Managers", "Supply, Distribution and Procurement Managers", "General Managers", "Commissioned Officers (Management)", "Finance Managers", "Other Information and Organisation Professionals", "Management and Organisation Analysts", "Financial Dealers", "Financial Investment Advisers and Managers", "Corporate Service Managers", "Auditors, Company Secretaries and Corporate Treasurers", "Advertising and Marketing Professionals", "Accountants", "Human Resource Managers", "Technical Sales Representatives", "Importers, Exporters and Wholesalers"],
+        "backward": []
+    }, {
+        "title": "Create, Imagine, Make",
+        "info": "unknown",
+        "forward": ["Photographers", "Fashion, Industrial and Jewellery Designers", "Journalists and Other Writers", "Visual Arts and Crafts Professionals", "Artistic Directors, and Media Producers and Presenters", "Authors, and Book and Script Editors", "Music Professionals", "Actors, Dancers and Other Entertainers", "Film, Television, Radio and Stage Directors"],
+        "backward": []
+    }, {
+        "title": "Discover the World",
+        "info": "unknown",
+        "forward": ["Life Scientists", "Environmental Scientists", "Actuaries, Mathematicians and Statisticians", "Chemists, and Food and Wine Scientists", "Agricultural and Forestry Scientists", "Research and Development Managers", "Other Natural and Physical Science Professionals"],
+        "backward": []
+    }, {
+        "title": "Investigate the Mind",
+        "info": "unknown",
+        "forward": ["Psychologists"],
+        "backward": []
+    }, {
+        "title": "Defend Justice, Protect Our Community",
+        "info": "unknown",
+        "forward": ["Barristers", "Solicitors", "Judicial and Other Legal Professionals", "Senior Non-commissioned Defence Force Members"],
+        "backward": []
+    }, {
+        "title": "Explore the Digital Future",
+        "info": "unknown",
+        "forward": ["ICT Business and Systems analysts", "Database and Systems Administrators, and ICT Security Specialists", "Multimedia Specialists and Web Developers", "ICT Trainers", "ICT Managers", "Computer Network Professionals", "Graphic and Web Designers, and Illustrators"],
+        "backward": []
+    }]
+}, {
+    "title": "Careers",
+    "items": [{
+        "title": "Aquaculture Farmers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Natural Science (Environment and Health)", "Bachelor of Science (Biological Sciences)", "Bachelor of Science (Nutrition and Food Sciences)", "Bachelor of Sustainable Agriculture and Food Security"]
+    }, {
+        "title": "Chemical and Materials Engineers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Engineering (Honours)", "Bachelor of Engineering Science", "Bachelor of Engineering Advanced (Honours)", "Bachelor of Science (Chemistry)"]
+    }, {
+        "title": "Production Managers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Design and Technology", "Bachelor of Industrial Design", "Bachelor of Engineering (Honours)", "Bachelor of Industrial Design (Honours)"]
+    }, {
+        "title": "Electronics Engineers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Construction Technology", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Geologists, Geophysicists and Hydrogeologists",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Science", "Bachelor of Science (Environmental Science)", "Bachelor of Natural Science (Advanced)"]
+    }, {
+        "title": "Mining Engineers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Construction Technology", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Other Engineering Professionals",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Construction Management", "Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Construction Technology", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Industrial, Mechanical and Production Engineers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Construction Management", "Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Construction Technology"]
+    }, {
+        "title": "Engineering Managers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Mixed Crop and Livestock Farmers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Sustainable Agriculture and Food Security"]
+    }, {
+        "title": "Livestock Farmers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Sustainable Agriculture and Food Security"]
+    }, {
+        "title": "Construction Managers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Construction Technology", "Bachelor of Construction Management"]
+    }, {
+        "title": "Surveyors and Spatial Scientists",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Construction Management", "Bachelor of Planning (Pathway to Master of Urban Management and Planning)", "Bachelor of Building Design Management", "Bachelor of Industrial Design", "Bachelor of Industrial Design (Honours)"]
+    }, {
+        "title": "Manufacturers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Information Systems", "Bachelor of Construction Technology", "Bachelor of Design and Technology", "Bachelor of Industrial Design"]
+    }, {
+        "title": "Software and Applications Programmers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Information and Communications Technology (Advanced)", "Bachelor of Information Systems", "Bachelor of Design and Technology", "Bachelor of Entrepreneurship (Games Design and Simulation)", "Bachelor of Entrepreneurship", "Bachelor of Computer Science", "Bachelor of Computer Science (Advanced)", "Bachelor of Information and Communications Technology, Computer Network Professionals"]
+    }, {
+        "title": "Telecommunications Engineering Professionals",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Cyber Security and Behaviour", "Bachelor of Computer Science", "Bachelor of Information and Communications Technology, Computer Network Professionals", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Civil Engineering Professionals",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Construction Technology", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "ICT Support and Test Engineers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Computer Science"]
+    }, {
+        "title": "Interior Designers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Planning (Pathway to Master of Urban Management and Planning)", "Bachelor of Design and Technology", "Bachelor of Architectural Design"]
+    }, {
+        "title": "Electrical Engineers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Crop Farmers",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Sustainable Agriculture and Food Security"]
+    }, {
+        "title": "Architects and Landscape Architects",
+        "backward": ["Solve, Construct, Build"],
+        "forward": ["Bachelor of Design and Technology", "Bachelor of Industrial Design", "Bachelor of Industrial Design (Honours)", "Bachelor of Architectural Design"]
+    }, {
+        "title": "Other Education Managers",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Education (Primary) Aboriginal and Torres Strait Islander Education"]
+    }, {
+        "title": "Child Care Centre Managers",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Counsellors",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Community Welfare", "Bachelor of Social Work", "Bachelor of Community and Social Development", "Bachelor of Criminal and Community Justice", "Bachelor of Social Science (Psychology)", "Bachelor of Science, Criminology and Psychological Studies"]
+    }, {
+        "title": "Primary School Teachers",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Pathway to Teaching Primary)"]
+    }, {
+        "title": "Audiologists and Speech Pathologists/Therapists",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Interpreting and Translation)"]
+    }, {
+        "title": "Early Childhood (Pre-primary School) Teachers",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Teachers of English to Speakers of Other Languages",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Interpreting and Translation)", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)", "Bachelor of Education (Primary) Aboriginal and Torres Strait Islander Education", "Bachelor of Languages and Linguistics"]
+    }, {
+        "title": "Private Tutors and Teachers",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Education (Primary) Aboriginal and Torres Strait Islander Education", "Bachelor of Graphic Design (Pathway to Teaching Secondary)", "Bachelor of Business (Pathway to Teaching Secondary)", "Bachelor of Science - Pathway to Teaching (Primary/Secondary)", "Bachelor of Health Science (Health and Physical Education)-Pathway to Teaching (Secondary)"]
+    }, {
+        "title": "Training and Development Professionals",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Social Science", "Bachelor of Communication", "Bachelor of Arts", "Bachelor of Psychology (Honours)", "Bachelor of Applied Leadership and Critical Thinking"]
+    }, {
+        "title": "Education Advisers and Reviewers",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Arts"]
+    }, {
+        "title": "Middle School Teachers",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Graphic Design (Pathway to Teaching Secondary)", "Bachelor of Science - Pathway to Teaching (Primary/Secondary)"]
+    }, {
+        "title": "University Lecturers and Tutors",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Social Science (Advanced)", "Bachelor of Anthropology", "Bachelor of Science, Criminology and Psychological Studies", "Bachelor of Science", "Bachelor of Applied Leadership and Critical Thinking"]
+    }, {
+        "title": "School Principals",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Pathway to Teaching Secondary)"]
+    }, {
+        "title": "Special Education Teachers",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Social Work", "Bachelor of Community and Social Development"]
+    }, {
+        "title": "Secondary School Teachers",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Graphic Design (Pathway to Teaching Secondary)", "Bachelor of Business (Pathway to Teaching Secondary)", "Bachelor of Science - Pathway to Teaching (Primary/Secondary)", "Bachelor of Health Science (Health and Physical Education)-Pathway to Teaching (Secondary)"]
+    }, {
+        "title": "Librarians",
+        "backward": ["Open Minds, Change Lives"],
+        "forward": ["Bachelor of Arts"]
+    }, {
+        "title": "Land Economists and Valuers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Business"]
+    }, {
+        "title": "ICT Sales Professionals",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Business", "Bachelor of Arts"]
+    }, {
+        "title": "Human Resource Professionals",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Arts", "Bachelor of Business"]
+    }, {
+        "title": "Public Relations Professionals",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Arts", "Bachelor of Business"]
+    }, {
+        "title": "Chief Executives and Managing Directors",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Advertising, Public Relations and Sales Managers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Supply, Distribution and Procurement Managers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Arts", "Bachelor of Business"]
+    }, {
+        "title": "General Managers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Business"]
+    }, {
+        "title": "Commissioned Officers (Management)",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Finance Managers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Accounting", "Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Other Information and Organisation Professionals",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Communication", "Bachelor of Arts", "Bachelor of Business", "Bachelor of Information and Communications Technology, Computer Network Professionals"]
+    }, {
+        "title": "Management and Organisation Analysts",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Business"]
+    }, {
+        "title": "Financial Dealers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Accounting", "Bachelor of Business"]
+    }, {
+        "title": "Financial Investment Advisers and Managers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Accounting", "Bachelor of Business"]
+    }, {
+        "title": "Corporate Service Managers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Business", "Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Auditors, Company Secretaries and Corporate Treasurers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Accounting"]
+    }, {
+        "title": "Advertising and Marketing Professionals",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Communication", "Bachelor of Arts", "Bachelor of Business"]
+    }, {
+        "title": "Accountants",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Accounting"]
+    }, {
+        "title": "Human Resource Managers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Communication", "Bachelor of Business", "Bachelor of Arts"]
+    }, {
+        "title": "Technical Sales Representatives",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Communication", "Bachelor of Arts", "Bachelor of Business"]
+    }, {
+        "title": "Importers, Exporters and Wholesalers",
+        "backward": ["Lead, Market, Innovate"],
+        "forward": ["Bachelor of Business", "Bachelor of Entrepreneurship"]
+    }, {
+        "title": "Psychologists",
+        "backward": ["Investigate The Mind"],
+        "forward": ["Bachelor of Social Science (Psychology)", "Bachelor of Psychological Studies (Honours)", "Bachelor of Psychology (Honours)"]
+    }, {
+        "title": "ICT Business and Systems analysts",
+        "backward": ["Explore the Digital Future"],
+        "forward": ["Bachelor of Cyber Security and Behaviour", "Bachelor of Computer Science", "Bachelor of Computer Science (Advanced)", "Bachelor of Information and Communications Technology, Computer Network Professionals", "Bachelor of Information and Communications Technology (Advanced)", "Bachelor of Information Systems", "Bachelor of Information Systems Advanced", "Bachelor of Information and Communications Technology (Health Information Management)"]
+    }, {
+        "title": "Database and Systems Administrators, and ICT Security Specialists",
+        "backward": ["Explore the Digital Future"],
+        "forward": ["Bachelor of Cyber Security and Behaviour", "Bachelor of Computer Science", "Bachelor of Computer Science (Advanced)", "Bachelor of Information and Communications Technology, Computer Network Professionals", "Bachelor of Information and Communications Technology (Advanced)", "Bachelor of Information Systems"]
+    }, {
+        "title": "Multimedia Specialists and Web Developers",
+        "backward": ["Explore the Digital Future"],
+        "forward": ["Bachelor of Screen Media (Arts and Production)", "Bachelor of Creative Industries", "Bachelor of Graphic Design (Pathway to Teaching Secondary)", "Bachelor of Information and Communications Technology (Advanced)", "Bachelor of Design and Technology"]
+    }, {
+        "title": "ICT Trainers",
+        "backward": ["Explore the Digital Future"],
+        "forward": ["Bachelor of Information and Communications Technology, Computer Network Professionals", "Bachelor of Information and Communications Technology (Advanced)"]
+    }, {
+        "title": "ICT Managers",
+        "backward": ["Explore the Digital Future"],
+        "forward": ["Bachelor of Computer Science (Advanced)", "Bachelor of Information and Communications Technology, Computer Network Professionals", "Bachelor of Information and Communications Technology (Advanced)"]
+    }, {
+        "title": "Computer Network Professionals",
+        "backward": ["Explore the Digital Future"],
+        "forward": ["Bachelor of Cyber Security and Behaviour", "Bachelor of Computer Science", "Bachelor of Information and Communications Technology", "Bachelor of Information Systems Advanced"]
+    }, {
+        "title": "Graphic and Web Designers, and Illustrators",
+        "backward": ["Explore the Digital Future"],
+        "forward": ["Bachelor of Screen Media (Arts and Production)", "Bachelor of Creative Industries", "Bachelor of Graphic Design (Pathway to Teaching Secondary)"]
+    }, {
+        "title": "Life Scientists",
+        "backward": ["Discover The World"],
+        "forward": ["Bachelor of Natural Science (Animal Science)", "Bachelor of Natural Science (Environmental Management)", "Bachelor of Natural Science (Environment and Health)", "Bachelor of Science", "Bachelor of Science (Chemistry)", "Bachelor of Science (Biological Sciences)", "Bachelor of Science (Environmental Science)", "Bachelor of Science (Zoology)"]
+    }, {
+        "title": "Environmental Scientists",
+        "backward": ["Discover The World"],
+        "forward": ["Bachelor of Natural Science (Environmental Management)", "Bachelor of Natural Science (Environment and Health)", "Bachelor of Science (Environmental Science)", "Bachelor of Sustainable Agriculture and Food Security", "Bachelor of Science - Pathway to Teaching (Primary/Secondary)"]
+    }, {
+        "title": "Actuaries, Mathematicians and Statisticians",
+        "backward": ["Discover The World"],
+        "forward": ["Bachelor of Accounting", "Bachelor of Science", "Bachelor of Science (Mathematical Science)"]
+    }, {
+        "title": "Chemists, and Food and Wine Scientists",
+        "backward": ["Discover The World"],
+        "forward": ["Bachelor of Science (Biological Sciences)", "Bachelor of Science (Nutrition and Food Sciences)"]
+    }, {
+        "title": "Agricultural and Forestry Scientists",
+        "backward": ["Discover The World"],
+        "forward": ["Bachelor of Science (Environmental Science)", "Bachelor of Sustainable Agriculture and Food Security"]
+    }, {
+        "title": "Research and Development Managers",
+        "backward": ["Discover The World"],
+        "forward": ["Bachelor of Design and Technology"]
+    }, {
+        "title": "Other Natural and Physical Science Professionals",
+        "backward": ["Discover The World"],
+        "forward": ["Bachelor of Natural Science (Advanced)"]
+    }, {
+        "title": "Barristers",
+        "backward": ["Defend Justice, Protect Our Community"],
+        "forward": ["Bachelor of Laws (Graduate Entry)"]
+    }, {
+        "title": "Solicitors",
+        "backward": ["Defend Justice, Protect Our Community"],
+        "forward": ["Bachelor of Laws (Graduate Entry)"]
+    }, {
+        "title": "Judicial and Other Legal Professionals",
+        "backward": ["Defend Justice, Protect Our Community"],
+        "forward": ["Bachelor of Criminal and Community Justice", "Bachelor of Criminology", "Bachelor of Laws (Graduate Entry)"]
+    }, {
+        "title": "Photographers",
+        "backward": ["Create, Imagine, Make"],
+        "forward": ["Bachelor of Design (Visual Communication)", "Bachelor of Creative Industries", "Bachelor of Graphic Design (Pathway to Teaching Secondary)"]
+    }, {
+        "title": "Fashion, Industrial and Jewellery Designers",
+        "backward": ["Create, Imagine, Make"],
+        "forward": ["Bachelor of Creative Industries", "Bachelor of Entrepreneurship (Games Design and Simulation)"]
+    }, {
+        "title": "Journalists and Other Writers",
+        "backward": ["Create, Imagine, Make"],
+        "forward": ["Bachelor of Social Science", "Bachelor of Communication", "Bachelor of Arts"]
+    }, {
+        "title": "Visual Arts and Crafts Professionals",
+        "backward": ["Create, Imagine, Make"],
+        "forward": ["Bachelor of Screen Media (Arts and Production)", "Bachelor of Design (Visual Communication)"]
+    }, {
+        "title": "Artistic Directors, and Media Producers and Presenters",
+        "backward": ["Create, Imagine, Make"],
+        "forward": ["Bachelor of Communication"]
+    }, {
+        "title": "Authors, and Book and Script Editors",
+        "backward": ["Create, Imagine, Make"],
+        "forward": ["Bachelor of Arts", "Bachelor of Social Science"]
+    }, {
+        "title": "Music Professionals",
+        "backward": ["Create, Imagine, Make"],
+        "forward": ["Bachelor of Music"]
+    }, {
+        "title": "Actors, Dancers and Other Entertainers",
+        "backward": ["Create, Imagine, Make"],
+        "forward": ["Bachelor of Arts", "Bachelor of Screen Media (Arts and Production)"]
+    }, {
+        "title": "Film, Television, Radio and Stage Directors",
+        "backward": ["Create, Imagine, Make"],
+        "forward": ["Bachelor of Screen Media (Arts and Production)", "Bachelor of Design (Visual Communication)"]
+    }, {
+        "title": "Intelligence and Policy Analysts",
+        "backward": ["Build A Better Society"],
+        "forward": ["Bachelor of Social Science", "Bachelor of Planning (Pathway to Master of Urban Management and Planning)", "Bachelor of Arts"]
+    }, {
+        "title": "Policy and Planning Manager",
+        "backward": ["Build A Better Society"],
+        "forward": ["Bachelor of Social Science", "Bachelor of Arts", "Bachelor of Planning (Pathway to Master of Urban Management and Planning)"]
+    }, {
+        "title": "Archivists, Curators and Records Managers",
+        "backward": ["Build A Better Society"],
+        "forward": ["Bachelor of Arts"]
+    }, {
+        "title": "Welfare, Recreation and Community Arts Workers",
+        "backward": ["Build A Better Society"],
+        "forward": ["Bachelor of Community Welfare"]
+    }, {
+        "title": "Health and Welfare Services Managers",
+        "backward": ["Build A Better Society"],
+        "forward": ["Bachelor of Community Welfare", "Bachelor of Social Work", "Bachelor of Community and Social Development", "Bachelor of Health Science"]
+    }, {
+        "title": "Social Workers",
+        "backward": ["Build A Better Society"],
+        "forward": ["Bachelor of Social Work"]
+    }, {
+        "title": "Legislators",
+        "backward": ["Build A Better Society"],
+        "forward": ["Bachelor of Social Science", "Bachelor of Laws (Graduate Entry)"]
+    }, {
+        "title": "Economists",
+        "backward": ["Build A Better Society"],
+        "forward": ["Bachelor of Business"]
+    }, {
+        "title": "Urban and Regional Planners",
+        "backward": ["Build A Better Society"],
+        "forward": ["Bachelor of Planning (Pathway to Master of Urban Management and Planning)"]
+    }, {
+        "title": "Nurse Educators and Researchers",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Nursing (Honours)", "Bachelor of Nursing", "Bachelor of Nursing (Advanced)"]
+    }, {
+        "title": "Midwives",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Midwifery"]
+    }, {
+        "title": "Occupational and Environmental Health Professionals",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Health Science"]
+    }, {
+        "title": "Nurse Managers",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Nursing (Honours)", "Bachelor of Nursing", "Bachelor of Nursing (Advanced)"]
+    }, {
+        "title": "Medical Imaging Professionals",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Health Science"]
+    }, {
+        "title": "Anaesthetists",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Medical Laboratory Scientists",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Surgeons",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Dental Practitioners",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Pharmacists",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science"]
+    }, {
+        "title": "Other Medical Practitioners",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science", "Bachelor of Physiotherapy", "Bachelor of Health Science (Health and Physical Education)"]
+    }, {
+        "title": "Podiatrists",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Podiatric Medicine", "Bachelor of Podiatric Medicine (Honours)"]
+    }, {
+        "title": "Physiotherapists",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Physiotherapy", "Bachelor of Physiotherapy (Honours)"]
+    }, {
+        "title": "General Practitioners and Resident Medical Officers",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Optometrists and Orthoptists",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Veterinarians",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Other Health DIagnostic and Promotion Professionals",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science (Forensic Mortuary Practice)", "Bachelor of Health Science (Sport and Exercise Science)", "Bachelor of Traditional Chinese Medicine", "Bachelor of Sport Development", "Bachelor of Health Science (Health and Physical Education)"]
+    }, {
+        "title": "Psychiatrists",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science"]
+    }, {
+        "title": "Occupational Therapists",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Occupational Therapy", "Bachelor of Occupational Therapy (Honours)"]
+    }, {
+        "title": "Specialist Physicians",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Registered Nurses",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Nursing", "Bachelor of Nursing (Advanced)"]
+    }, {
+        "title": "Chiropractors and Osteopaths",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Health Science", "Bachelor of Health Science (Sport and Exercise Science)", "Bachelor of Physiotherapy"]
+    }, {
+        "title": "Nutrition Professionals",
+        "backward": ["Advance Human Health"],
+        "forward": ["Bachelor of Health Science", "Bachelor of Health Science (Health and Physical Education)", "Bachelor of Science (Nutrition and Food Sciences)"]
+    }]
+}, {
+    "title": "Courses",
+    "items": [{
+        "title": "Bachelor of Arts (Interpreting and Translation)",
+        "forward": [],
+        "backward": ["Audiologists and Speech Pathologists/Therapists", "Teachers of English to Speakers of Other Languages"]
+    }, {
+        "title": "Bachelor of Design (Visual Communication)",
+        "forward": [],
+        "backward": ["Actors Dancers and Other Entertainers", "Graphic and Web Designers and Illustrators", "Photographers", "Film, Television, Radio and Stage Directors", "Visual Arts and Crafts Professionals"]
+    }, {
+        "title": "Bachelor of Arts (Pathway to Teaching Primary)",
+        "forward": ["Anthropology", "Arabic", "Chinese", "Creative Writing", "Cultural and Social Analysis", "English", "Geography and Urban Studies", "History and Political Thought", "Indigenous Australian Studies", "Indonesian", "International English", "International Relations and Asian Studies", "Islamic Studies", "Japanese", "Linguistics", "Musicology", "Music Performance", "Organisations and Work", "Psychological Studies", "Philosophy", "Sociology"],
+        "backward": ["Primary School Teachers", "Other Education Managers", "Special Education Teachers", "Private Tutors and Teachers", "Secondary School Teachers"]
+    }, {
+        "title": "Bachelor of Arts (Pathway to Teaching Secondary)",
+        "forward": ["Arabic", "Chinese", "English", "Geography and Urban Studies", "Indonesian", "Japanese", "Mathematics", "Modern History"],
+        "backward": ["Middle School Teachers", "Other Education Managers", "Special Education Teachers", "Secondary School Teachers", "School Principals", "Private Tutors and Teachers", "Education Advisers and Reviewers"]
+    }, {
+        "title": "Bachelor of International Studies",
+        "forward": [],
+        "backward": ["Business advisor", "Cultural and public policy analyst", "Researcher/academic", "Executive in an international organisation"]
+    }, {
+        "title": "Bachelor of Music",
+        "forward": [],
+        "backward": ["Music Professionals"]
+    }, {
+        "title": "Bachelor of Tourism Management",
+        "forward": ["Anthropology", "Geography and Urban Studies", "Heritage and Tourism", "Humanitarian Preparedness and Response", "Human Rights, Protection and Development", "Peace and Development Studies", "Sociology"],
+        "backward": ["Cultural, tourism, and leisure industry development", "National Park conservation and management", "Tourism policy development", "Destination and event marketing", "Visitor attractions management"]
+    }, {
+        "title": "Bachelor of Community Welfare",
+        "forward": [],
+        "backward": ["Welfare, Recreation and Community Arts Workers", "Counsellors", "Health and Welfare Services Managers"]
+    }, {
+        "title": "Bachelor of Social Work",
+        "forward": [],
+        "backward": ["Social Workers", "Counsellors", "Special Education Teachers", "Health and Welfare Services Managers"]
+    }, {
+        "title": "Bachelor of Social Science",
+        "forward": ["Anthropology", "Child and Community", "Criminology and Criminal Justice", "Geography and Urban Studies", "Heritage and Tourism", "Peace and Development Studies", "Sociology"],
+        "backward": ["Training and Development Professionals", "Journalists and Other Writers", "Authors, and Book and Script Editors", "Policy and Planning Manager", "Legislators", "Intelligence and Policy Analysts"]
+    }, {
+        "title": "Bachelor of Community and Social Development",
+        "forward": [],
+        "backward": ["Welfare Recreation and Community Arts Workers", "Counsellors", "Special Education Teachers", "Health and Welfare Services Managers"]
+    }, {
+        "title": "Bachelor of Communication",
+        "forward": ["Advertising", "Journalism", "Media Arts Production", "Public Relations"],
+        "backward": ["Training and Development Professionals", "Other Information and Organisation Professionals", "Human Resource Managers", "Journalists and Other Writers", "Artistic Directors, and Media Producers and Presenters", "Advertising and Marketing Professionals", "Technical Sales Representatives"]
+    }, {
+        "title": "Bachelor of Arts",
+        "forward": ["Anthropology", "Arabic", "Chinese", "Creative Writing", "Criminology and Criminal Justice", "Cultural and Social Analysis", "Economy and Markets", "English", "Geography and Urban Studies", "Global Business", "Heritage and Tourism", "History and Political Thought", "Indigenous Australian Studies", "Indonesian", "Innovation and Change", "International English", "International Relations and Asian Studies", "Islamic Studies", "Japanese", "Linguistics", "Musicology", "Music Performance", "Organisations and Work", "Peace and Development Studies", "Philosophy", "Psychological Studies", "Sociology"],
+        "backward": ["Training and Development Professionals", "Education Advisers and Reviewers", "Librarians", "Journalists and Other Writers", "Policy and Planning Manager", "Other Information and Organisation Professionals", "Human Resource Professionals", "ICT Sales Professionals", "Technical Sales Representatives", "Supply, Distribution and Procurement Managers", "Human Resource Managers", "Advertising and Marketing Professionals", "Public Relations Professionals", "Actors, Dancers and Other Entertainers", "Authors, and Book and Script Editors", "Archivists, Curators and Records Managers", "Intelligence and Policy Analysts"]
+    }, {
+        "title": "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)",
+        "forward": ["Anthropology", "Arabic", "Chinese", "Creative Writing", "Cultural and Social Analysis", "English", "Geography and Urban Studies", "History and Political Thought", "Indigenous Australian Studies", "Indonesian", "International English", "International Relations and Asian Studies", "Islamic Studies", "Japanese", "Linguistics", "Musicology", "Music Performance", "Organisations and Work", "Psychological Studies", "Philosophy", "Sociology"],
+        "backward": ["Child Care Centre Managers", "Early Childhood (Pre-primary School) Teachers", "Teachers of English to Speakers of Other Languages"]
+    }, {
+        "title": "Bachelor of Criminal and Community Justice",
+        "forward": [],
+        "backward": ["Counsellors", "Judicial and Other Legal Professionals"]
+    }, {
+        "title": "Bachelor of Criminology",
+        "forward": [],
+        "backward": ["Judicial and Other Legal Professionals"]
+    }, {
+        "title": "Bachelor of Social Science (Psychology)",
+        "forward": [],
+        "backward": ["Psychologists", "Counsellors"]
+    }, {
+        "title": "Bachelor of Education (Primary) Aboriginal and Torres Strait Islander Education",
+        "forward": [],
+        "backward": ["Other Education Managers", "Teachers of English to Speakers of Other Languages", "Private Tutors and Teachers"]
+    }, {
+        "title": "Bachelor of Planning (Pathway to Master of Urban Management and Planning)",
+        "forward": [],
+        "backward": ["Surveyors and Spatial Scientists", "Interior Designers", "Urban and Regional Planners", "Intelligence and Policy Analysts", "Policy and Planning Manager"]
+    }, {
+        "title": "Bachelor of Social Science (Advanced)",
+        "forward": ["Anthropology", "Child and Community", "Criminology and Criminal Justice", "Geography and Urban Studies", "Heritage and Tourism", "Peace and Development Studies", "Sociology"],
+        "backward": ["University Lecturers and Tutors"]
+    }, {
+        "title": "Bachelor of Policing (Leadership Program)",
+        "forward": [],
+        "backward": ["Police Force", "Other State and Federal Police Agencies", "Juvenile Justice, Corrections", "Customs"]
+    }, {
+        "title": "Bachelor of Humanitarian and Development Studies",
+        "forward": ["Humanitarian Preparedness and Response", "Human Rights, Protection and Development"],
+        "backward": ["Humanitarian Relief", "Aid Development Programming", "Project Managing", "Disaster Relief Work", "Policy Development", "National Intelligence Agencies"]
+    }, {
+        "title": "Bachelor of Anthropology",
+        "forward": [],
+        "backward": ["University Lecturers and Tutors"]
+    }, {
+        "title": "Bachelor of Screen Media (Arts and Production)",
+        "forward": [],
+        "backward": ["Multimedia Specialists and Web Developers", "Graphic and Web Designers, and Illustrators", "Actors, Dancers and Other Entertainers", "Visual Arts and Crafts Professionals", "Film, Television, Radio and Stage Directors"]
+    }, {
+        "title": "Bachelor of Science, Criminology and Psychological Studies",
+        "forward": [],
+        "backward": ["Counsellors", "University Lecturers and Tutors"]
+    }, {
+        "title": "Bachelor of Languages and Linguistics",
+        "forward": [],
+        "backward": ["Audiologists and Speech Pathologists/Therapists", "Teachers of English to Speakers of Other Languages"]
+    }, {
+        "title": "Bachelor of Cyber Security and Behaviour",
+        "forward": [],
+        "backward": ["Telecommunications Engineering Professionals", "ICT Business and Systems analysts", "Database and Systems Administrators, and ICT Security Specialists", "Computer Network Professionals"]
+    }, {
+        "title": "Bachelor of Creative Industries",
+        "forward": ["Advertising", "Creative Writing", "Cultural and Social Analysis", "Digital Cultures", "English", "Enterprise Innovation", "Graphic Design", "Journalism", "Law and the Creative Industries", "Media Arts Production", "Music", "Public Relations"],
+        "backward": ["Multimedia Specialists and Web Developers", "Graphic and Web Designers, and Illustrators", "Photographers", "Fashion, Industrial and Jewellery Designers"]
+    }, {
+        "title": "Bachelor of Graphic Design (Pathway to Teaching Secondary)",
+        "forward": [],
+        "backward": ["Private Tutors and Teachers", "Secondary School Teachers", "Multimedia Specialists and Web Developers", "Photographers", "Middle School Teachers", "Graphic and Web Designers, and Illustrators"]
+    }, {
+        "title": "Bachelor of Policing",
+        "forward": [],
+        "backward": ["Police Force", "Other State and Federal Police Agencies", "Corrections", "Juvenile Justice", "Customs", "National Intelligence Agencies"]
+    }, {
+        "title": "Bachelor of Psychological Studies (Honours)",
+        "forward": [],
+        "backward": ["Psychologists"]
+    }, {
+        "title": "Bachelor of Psychology (Honours)",
+        "forward": [],
+        "backward": ["Training and Development Professionals", "Psychologists"]
+    }, {
+        "title": "Bachelor of Laws (Graduate Entry)",
+        "forward": [],
+        "backward": ["Barristers", "Judicial and Other Legal Professionals", "Legislators", "Solicitors"]
+    }, {
+        "title": "Bachelor of Construction Management",
+        "forward": [],
+        "backward": ["Construction Managers", "Industrial, Mechanical and Production Engineers", "Surveyors and Spatial Scientists", "Other Engineering Professionals"]
+    }, {
+        "title": "Bachelor of Accounting",
+        "forward": ["Financial Planning", "Taxation", "Financial Planning and Taxation"],
+        "backward": ["Finance Managers", "Financial Dealers", "Actuaries, Mathematicians and Statisticians", "Company Secretaries and Corporate Treasurers", "Auditors", "Accountants", "Financial Investment Advisers and Managers"]
+    }, {
+        "title": "Bachelor of Business",
+        "forward": ["Accounting", "Applied Finance", "Economics", "Property", "Hospitality Management", "International Business", "Marketing", "Sport Management", "Human Resource Management"],
+        "backward": ["Land Economists and Valuers", "ICT Sales Professionals", "Supply, Distribution and Procurement Managers", "Human Resource Managers", "Economists", "Importers, Exporters and Wholesalers", "Technical Sales Representatives", "Advertising and Marketing Professionals", "Management and Organisation Analysts", "Corporate Service Managers", "Other Information and Organisation Professionals", "Human Resource Professionals", "Financial Investment Advisers and Managers", "Financial Dealers", "General Managers", "Public Relations Professionals"]
+    }, {
+        "title": "Bachelor of Business (Advanced Business Leadership)",
+        "forward": ["Accounting", "Applied Finance", "Economics", "Property", "Hospitality Management", "International Business", "Marketing", "Sport Management", "Human Resource Management"],
+        "backward": ["Chief Executives and Managing Directors", "Advertising, Public Relations and Sales Managers", "Corporate Service Managers", "Finance Managers", "Commissioned Officers (Management)"]
+    }, {
+        "title": "Bachelor of Business (Pathway to Teaching Secondary)",
+        "forward": ["Business Studies", "Secondary Teaching"],
+        "backward": ["Private Tutors and Teachers,", "Secondary School Teachers"]
+    }, {
+        "title": "Bachelor of Computer Science",
+        "forward": ["Systems Programming", "Networked Systems", "Cyber Security"],
+        "backward": ["Software and Applications Programmers", "Telecommunications Engineering Professionals", "Database and Systems Administrators, and ICT Security Specialists", "ICT Business and Systems analysts", "Computer Network Professionals", "ICT Support and Test Engineers"]
+    }, {
+        "title": "Bachelor of Computer Science (Advanced)",
+        "forward": ["Systems Programming", "Networked Systems", "Cyber Security"],
+        "backward": ["Software and Applications Programmers", "Database and Systems Administrators, and ICT Security Specialists", "ICT Managers", "ICT Business and Systems analysts"]
+    }, {
+        "title": "Bachelor of Information and Communications Technology",
+        "forward": ["Cyber Security", "Entertainment Computing", "Health Informatics", "Mathematics", "Mobile Computing", "Networking"],
+        "backward": ["Software and Applications Programmers", "Telecommunications Engineering Professionals", "Other Information and Organisation Professionals", "ICT Managers", "ICT Trainers", "ICT Business and Systems analysts", "Database and Systems Administrators, and ICT Security Specialists"]
+    }, {
+        "title": "Bachelor of Natural Science (Animal Science)",
+        "forward": ["Conservation Biology", "Zoology"],
+        "backward": ["Life Scientists"]
+    }, {
+        "title": "Bachelor of Natural Science (Environmental Management)",
+        "forward": ["Aquatic Biology", "Conservation Biology", "Environmental Consulting"],
+        "backward": ["Life Scientists", "Environmental Scientists"]
+    }, {
+        "title": "Bachelor of Natural Science (Environment and Health)",
+        "forward": [],
+        "backward": ["Aquaculture Farmers", "Environmental Scientists", "Life Scientists"]
+    }, {
+        "title": "Bachelor of Medical Science",
+        "forward": ["Biomedical Science", "Medicinal Chemistry", "Anatomy and Physiology"],
+        "backward": ["Anaesthetists", "Medical Laboratory Scientists", "Other Medical Practitioners", "Optometrists and Orthoptists", "Psychiatrists", "Pharmacists", "Surgeons", "Dental Practitioners", "General Practitioners and Resident Medical Officers", "Specialist Physicians", "Veterinarians"]
+    }, {
+        "title": "Bachelor of Science",
+        "forward": ["Marine Biology", "Biochemistry and Molecular Biology", "Chemistry", "Climate Change", "Conservation Biology", "General Biology", "Forensic Chemistry", "Mathematics", "Microbiology", "Nutrition and Physiology", "Zoology", "Environmental Consulting"],
+        "backward": ["Geologists, Geophysicists and Hydrogeologists", "University Lecturers and Tutors", "Actuaries, Mathematicians and Statisticians", "Life Scientists"]
+    }, {
+        "title": "Bachelor of Science (Chemistry)",
+        "forward": ["Biochemistry and Molecular Biology", "General Biology", "Microbiology"],
+        "backward": ["Chemical and Materials Engineers", "Life Scientists"]
+    }, {
+        "title": "Bachelor of Science (Biological Sciences)",
+        "forward": ["Marine Biology", "General Biology", "Conservation Biology", "Biochemistry and Molecular Biology", "Microbiology", "Zoology", "Environmental Consulting"],
+        "backward": ["Aquaculture Farmers", "Life Scientists", "Chemists, and Food and Wine Scientists"]
+    }, {
+        "title": "Bachelor of Science (Nutrition and Food Sciences)",
+        "forward": ["Biochemistry and Molecular Biology", "Food Science & Technology", "General Biology", "Human Nutrition", "Microbiology", "Nutrition and Physiology"],
+        "backward": ["Aquaculture Farmers", "Chemists, and Food and Wine Scientists", "Nutrition Professionals"]
+    }, {
+        "title": "Bachelor of Science (Mathematical Science)",
+        "forward": [],
+        "backward": ["Actuaries, Mathematicians and Statisticians"]
+    }, {
+        "title": "Bachelor of Science (Environmental Science)",
+        "forward": ["Marine Biology", "Climate Change", "Conservation Biology", "General Biology", "Zoology", "Environmental Consulting"],
+        "backward": ["Geologists, Geophysicists and Hydrogeologists", "Life Scientists", "Environmental Scientists", "Agricultural and Forestry Scientists"]
+    }, {
+        "title": "Bachelor of Science (Zoology)",
+        "forward": ["Marine Biology", "Biochemistry and Molecular Biology", "Climate Change", "Conservation Biology", "General Biology", "Environmental Consulting"],
+        "backward": ["Life Scientists"]
+    }, {
+        "title": "Bachelor of Medical Science (Advanced)",
+        "forward": ["Biomedical Science", "Anatomy and Physiology", "Medicinal Chemistry"],
+        "backward": ["Anaesthetists", "Medical Laboratory Scientists", "General Practitioners and Resident Medical Officers", "Optometrists and Orthoptists", "Veterinarians", "Surgeons", "Dental Practitioners", "Specialist Physicians"]
+    }, {
+        "title": "Bachelor of Natural Science (Advanced)",
+        "forward": ["Aquatic Biology", "Zoology", "Conservation Biology", "Environmental Consulting"],
+        "backward": ["Geologists, Geophysicists and Hydrogeologists", "Other Natural and Physical Science Professionals"]
+    }, {
+        "title": "Bachelor of Information and Communications Technology (Advanced)",
+        "forward": ["Cyber Security", "Entertainment Computing", "Health Informatics", "Mathematics", "Mobile Computing", "Networking"],
+        "backward": ["Software and Applications Programmers", "ICT Business and Systems analysts", "Database and Systems Administrators, and ICT Security Specialists", "ICT Trainers", "Multimedia Specialists and Web Developers", "ICT Managers"]
+    }, {
+        "title": "Bachelor of Information Systems",
+        "forward": ["Big Data", "Entertainment Computing", "Health Informatics", "Mathematics", "Mobile Computing", "Interactive Analytics", "Networking"],
+        "backward": ["Manufacturers", "Software and Applications Programmers", "Database and Systems Administrators, and ICT Security Specialists", "ICT Business and Systems analysts"]
+    }, {
+        "title": "Bachelor of Information Systems Advanced",
+        "forward": ["Big Data", "Entertainment Computing", "Health Informatics", "Mathematics", "Mobile Computing", "Interactive Analytics", "Networking"],
+        "backward": ["ICT Business and Systems analysts", "Computer Network Professionals"]
+    }, {
+        "title": "Bachelor of Engineering Advanced (Honours)",
+        "forward": ["Civil", "Construction", "Electrical", "Mechanical", "Robotics and Mechatronics"],
+        "backward": ["Chemical and Materials Engineers", "Other Engineering Professionals", "Industrial, Mechanical and Production Engineers", "Civil Engineering Professionals", "Electrical Engineers", "Engineering Managers", "Mining Engineers", "Electronics Engineers"]
+    }, {
+        "title": "Bachelor of Engineering Science",
+        "forward": ["Civil", "Construction", "Electrical", "Mechanical", "Robotics and Mechatronics"],
+        "backward": ["Chemical and Materials Engineers", "Other Engineering Professionals", "Electronics Engineers", "Engineering Managers", "Electrical Engineers", "Industrial, Mechanical and Production Engineers", "Civil Engineering Professionals", "Mining Engineers"]
+    }, {
+        "title": "Bachelor of Construction Technology",
+        "forward": [],
+        "backward": ["Electronics Engineers", "Other Engineering Professionals", "Construction Managers", "Civil Engineering Professionals", "Mining Engineers", "Industrial, Mechanical and Production Engineers", "Manufacturers"]
+    }, {
+        "title": "Bachelor of Information and Communications Technology (Health Information Management)",
+        "forward": [],
+        "backward": ["ICT Business and Systems analysts"]
+    }, {
+        "title": "Bachelor of Applied Leadership and Critical Thinking",
+        "forward": [],
+        "backward": ["Training and Development Professionals", "University Lecturers and Tutors"]
+    }, {
+        "title": "Bachelor of Sustainable Agriculture and Food Security",
+        "forward": ["Natural Science", "Social Sciences", "Business"],
+        "backward": ["Aquaculture Farmers", "Mixed Crop and Livestock Farmers", "Environmental Scientists", "Agricultural and Forestry Scientists", "Livestock Farmers", "Crop Farmers"]
+    }, {
+        "title": "Bachelor of Building Design Management",
+        "forward": [],
+        "backward": ["Surveyors and Spatial Scientists"]
+    }, {
+        "title": "Bachelor of Design and Technology",
+        "forward": ["Visualisation and Graphics", "Design Management and Entrepreneurship", "Design-led Innovation and Management"],
+        "backward": ["Production Managers", "Manufacturers", "Interior Designers", "Multimedia Specialists and Web Developers", "Research and Development Managers", "Software and Applications Programmers", "Architects and Landscape Architects"]
+    }, {
+        "title": "Bachelor of Industrial Design",
+        "forward": ["Visualisation and Graphics", "Design Management and Entrepreneurship", "Design-led Innovation and Management"],
+        "backward": ["Production Managers", "Surveyors and Spatial Scientists", "Manufacturers", "Architects and Landscape Architects"]
+    }, {
+        "title": "Bachelor of Industrial Design (Honours)",
+        "forward": ["Visualisation and Graphics", "Design Management and Entrepreneurship", "Design-led Innovation and Management"],
+        "backward": ["Surveyors and Spatial Scientists", "Production Managers", "Architects and Landscape Architects"]
+    }, {
+        "title": "Bachelor of Medical Science (Forensic Mortuary Practice)",
+        "forward": [],
+        "backward": ["Other Health Diagnostic and Promotion Professionals"]
+    }, {
+        "title": "Bachelor of Data Science",
+        "forward": [],
+        "backward": ["Actuaries, Mathematicians and Statisticians"]
+    }, {
+        "title": "Bachelor of Science - Pathway to Teaching (Primary/Secondary)",
+        "forward": [],
+        "backward": ["Secondary School Teachers", "Private Tutors and Teachers", "Environmental Scientists", "Middle School Teachers"]
+    }, {
+        "title": "Bachelor of Engineering (Honours)",
+        "forward": ["Civil", "Construction", "Electrical", "Mechanical", "Robotics and Mechatronics"],
+        "backward": ["Electrical Engineers", "Production Managers", "Electronics Engineers", "Mining Engineers", "Telecommunications Engineering Professionals", "Engineering Managers", "Civil Engineering Professionals", "Chemical and Materials Engineers", "Other Engineering Professionals"]
+    }, {
+        "title": "Bachelor of Entrepreneurship (Games Design and Simulation)",
+        "forward": ["Game Programming", "Game Design"],
+        "backward": ["Software and Applications Programmers", "Fashion, Industrial and Jewellery Designers"]
+    }, {
+        "title": "Bachelor of Entrepreneurship",
+        "forward": [],
+        "backward": ["Software and Applications Programmers", "Multimedia Specialists and Web Developers", "Graphic and Web Designers, and Illustrators", "Importers, Exporters and Wholesalers"]
+    }, {
+        "title": "Bachelor of Architectural Design",
+        "forward": [],
+        "backward": ["Interior Designers", "Architects and Landscape Architects"]
+    }, {
+        "title": "Bachelor of Nursing (Honours)",
+        "forward": [],
+        "backward": ["Nurse Educators and Researchers", "Nurse Managers"]
+    }, {
+        "title": "Bachelor of Health Science",
+        "forward": ["Health Promotion", "Health Services Management", "Therapeutic Recreation", "Public Health"],
+        "backward": ["Health and Welfare Services Managers", "Occupational and Environmental Health Professionals", "Medical Imaging Professionals", "Chiropractors and Osteopaths", "Nutrition Professionals"]
+    }, {
+        "title": "Bachelor of Health Science (Sport and Exercise Science)",
+        "forward": [],
+        "backward": ["Other Health Diagnostic and Promotion Professionals", "Chiropractors and Osteopaths"]
+    }, {
+        "title": "Bachelor of Health Science (Paramedicine)",
+        "forward": [],
+        "backward": ["Paramedic"]
+    }, {
+        "title": "Bachelor of Midwifery",
+        "forward": [],
+        "backward": ["Midwives"]
+    }, {
+        "title": "Bachelor of Nursing",
+        "forward": [],
+        "backward": ["Nurse Educators and Researchers", "Nurse Managers", "Registered Nurses"]
+    }, {
+        "title": "Bachelor of Nursing (Advanced)",
+        "forward": [],
+        "backward": ["Nurse Educators and Researchers", "Nurse Managers", "Registered Nurses"]
+    }, {
+        "title": "Bachelor of Physiotherapy",
+        "forward": [],
+        "backward": ["Other Medical Practitioners", "Chiropractors and Osteopaths", "Physiotherapists"]
+    }, {
+        "title": "Bachelor of Podiatric Medicine",
+        "forward": [],
+        "backward": ["Podiatrists"]
+    }, {
+        "title": "Bachelor of Podiatric Medicine (Honours)",
+        "forward": [],
+        "backward": ["Podiatrists"]
+    }, {
+        "title": "Bachelor of Traditional Chinese Medicine",
+        "forward": [],
+        "backward": ["Other Health Diagnostic and Promotion Professionals"]
+    }, {
+        "title": "Bachelor of Occupational Therapy",
+        "forward": [],
+        "backward": ["Occupational Therapists"]
+    }, {
+        "title": "Bachelor of Occupational Therapy (Honours)",
+        "forward": [],
+        "backward": ["Occupational Therapists"]
+    }, {
+        "title": "Bachelor of Physiotherapy (Honours)",
+        "forward": [],
+        "backward": ["Physiotherapists"]
+    }, {
+        "title": "Bachelor of Sport Development",
+        "forward": [],
+        "backward": ["Other Health Diagnostic and Promotion Professionals"]
+    }, {
+        "title": "Bachelor of Health Science (Health and Physical Education)-Pathway to Teaching (Secondary)",
+        "forward": [],
+        "backward": ["Private Tutors and Teachers", "Secondary School Teachers"]
+    }, {
+        "title": "Bachelor of Health Science (Health and Physical Education)",
+        "forward": [],
+        "backward": ["Other Medical Practitioners", "Other Health Diagnostic and Promotion Professionals", "Nutrition Professionals"]
+    }]
+}, {
+    "title": "Majors",
+    "items": [{
+        "title": "Anthropology",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Tourism Management", "Bachelor of Social Science", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)", "Bachelor of Social Science (Advanced)"]
+    }, {
+        "title": "Arabic",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Chinese",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Creative Writing",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)", "Bachelor of Creative Industries"]
+    }, {
+        "title": "Cultural and Social Analysis",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)", "Bachelor of Creative Industries"]
+    }, {
+        "title": "English",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)", "Bachelor of Creative Industries"]
+    }, {
+        "title": "Geography and Urban Studies",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Tourism Management", "Bachelor of Social Science", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)", "Bachelor of Social Science (Advanced)"]
+    }, {
+        "title": "History and Political Thought",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)", "Bachelor of Arts"]
+    }, {
+        "title": "Indigenous Australian Studies",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Indonesian",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "International English",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)", "Bachelor of Arts"]
+    }, {
+        "title": "International Relations and Asian Studies",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Islamic Studies",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Japanese",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Linguistics",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Musicology",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Music Performance",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Organisations and Work",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Psychological Studies",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Philosophy",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Primary)", "Bachelor of Arts", "Bachelor of Arts (Pathway to Teaching Birth - 5/Birth - 12)"]
+    }, {
+        "title": "Sociology",
+        "backward": ["Bachelor of Tourism Management", "Bachelor of Social Science", "Bachelor of Social Science (Advanced)"]
+    }, {
+        "title": "Heritage and Tourism",
+        "backward": ["Bachelor of Tourism Management", "Bachelor of Social Science", "Bachelor of Arts", "Bachelor of Social Science (Advanced)"]
+    }, {
+        "title": "Humanitarian Preparedness and Response",
+        "backward": ["Bachelor of Tourism Management", "Bachelor of Humanitarian and Development Studies"]
+    }, {
+        "title": "Human Rights, Protection and Development",
+        "backward": ["Bachelor of Tourism Management", "Bachelor of Humanitarian and Development Studies"]
+    }, {
+        "title": "Peace and Development Studies",
+        "backward": ["Bachelor of Tourism Management", "Bachelor of Social Science", "Bachelor of Arts", "Bachelor of Social Science (Advanced)"]
+    }, {
+        "title": "Child and Community",
+        "backward": ["Bachelor of Social Science", "Bachelor of Social Science (Advanced)"]
+    }, {
+        "title": "Criminology and Criminal Justice",
+        "backward": ["Bachelor of Social Science", "Bachelor of Arts", "Bachelor of Social Science (Advanced)"]
+    }, {
+        "title": "Mathematics",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Secondary)", "Bachelor of Information and Communications Technology", "Bachelor of Science", "Bachelor of Information and Communications Technology (Advanced)", "Bachelor of Information Systems", "Bachelor of Information Systems Advanced"]
+    }, {
+        "title": "Modern History",
+        "backward": ["Bachelor of Arts (Pathway to Teaching Secondary)"]
+    }, {
+        "title": "Advertising",
+        "backward": ["Bachelor of Communication", "Bachelor of Creative Industries"]
+    }, {
+        "title": "Journalism",
+        "backward": ["Bachelor of Communication", "Bachelor of Creative Industries"]
+    }, {
+        "title": "Media Arts Production",
+        "backward": ["Bachelor of Communication", "Bachelor of Creative Industries"]
+    }, {
+        "title": "Public Relations",
+        "backward": ["Bachelor of Communication", "Bachelor of Creative Industries"]
+    }, {
+        "title": "Economy and Markets",
+        "backward": ["Bachelor of Arts"]
+    }, {
+        "title": "Global Business",
+        "backward": ["Bachelor of Arts"]
+    }, {
+        "title": "Innovation and Change",
+        "backward": ["Bachelor of Arts"]
+    }, {
+        "title": "Digital Cultures",
+        "backward": ["Bachelor of Creative Industries"]
+    }, {
+        "title": "Graphic Design",
+        "backward": ["Bachelor of Creative Industries"]
+    }, {
+        "title": "Enterprise Innovation",
+        "backward": ["Bachelor of Creative Industries"]
+    }, {
+        "title": "Law and the Creative Industries",
+        "backward": ["Bachelor of Creative Industries"]
+    }, {
+        "title": "Music",
+        "backward": ["Bachelor of Creative Industries"]
+    }, {
+        "title": "Financial Planning",
+        "backward": ["Bachelor of Accounting"]
+    }, {
+        "title": "Taxation",
+        "backward": ["Bachelor of Accounting"]
+    }, {
+        "title": "Financial Planning and Taxation",
+        "backward": ["Bachelor of Accounting"]
+    }, {
+        "title": "Accounting",
+        "backward": ["Bachelor of Business", "Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Applied Finance",
+        "backward": ["Bachelor of Business (Advanced Business Leadership)", "Bachelor of Business"]
+    }, {
+        "title": "Economics",
+        "backward": ["Bachelor of Business", "Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Property",
+        "backward": ["Bachelor of Business", "Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Hospitality Management",
+        "backward": ["Bachelor of Business", "Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "International Business",
+        "backward": ["Bachelor of Business", "Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Marketing",
+        "backward": ["Bachelor of Business", "Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Sport Management",
+        "backward": ["Bachelor of Business", "Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Human Resource Management",
+        "backward": ["Bachelor of Business", "Bachelor of Business (Advanced Business Leadership)"]
+    }, {
+        "title": "Business Studies",
+        "backward": ["Bachelor of Business (Pathway to Teaching Secondary)"]
+    }, {
+        "title": "Secondary Teaching",
+        "backward": ["Bachelor of Business (Pathway to Teaching Secondary)"]
+    }, {
+        "title": "Systems Programming",
+        "backward": ["Bachelor of Computer Science", "Bachelor of Computer Science (Advanced)"]
+    }, {
+        "title": "Networked Systems",
+        "backward": ["Bachelor of Computer Science", "Bachelor of Computer Science (Advanced)"]
+    }, {
+        "title": "Cyber Security",
+        "backward": ["Bachelor of Computer Science", "Bachelor of Computer Science (Advanced)", "Bachelor of Information and Communications Technology", "Bachelor of Information and Communications Technology (Advanced)"]
+    }, {
+        "title": "Entertainment Computing",
+        "backward": ["Bachelor of Information and Communications Technology", "Bachelor of Information and Communications Technology (Advanced)", "Bachelor of Information Systems", "Bachelor of Information Systems Advanced"]
+    }, {
+        "title": "Health Informatics",
+        "backward": ["Bachelor of Information and Communications Technology", "Bachelor of Information and Communications Technology (Advanced)", "Bachelor of Information Systems", "Bachelor of Information Systems Advanced"]
+    }, {
+        "title": "Mobile Computing",
+        "backward": ["Bachelor of Information and Communications Technology", "Bachelor of Information and Communications Technology (Advanced)", "Bachelor of Information Systems", "Bachelor of Information Systems Advanced"]
+    }, {
+        "title": "Networking",
+        "backward": ["Bachelor of Information and Communications Technology", "Bachelor of Information and Communications Technology (Advanced)", "Bachelor of Information Systems", "Bachelor of Information Systems Advanced"]
+    }, {
+        "title": "Conservation Biology",
+        "backward": ["Bachelor of Natural Science (Animal Science)", "Bachelor of Natural Science (Environmental Management)", "Bachelor of Science", "Bachelor of Science (Biological Sciences)", "Bachelor of Science (Environmental Science)", "Bachelor of Science (Zoology)", "Bachelor of Natural Science (Advanced)"]
+    }, {
+        "title": "Zoology",
+        "backward": ["Bachelor of Natural Science (Animal Science)", "Bachelor of Science", "Bachelor of Science (Biological Sciences)", "Bachelor of Science (Environmental Science)", "Bachelor of Natural Science (Advanced)"]
+    }, {
+        "title": "Aquatic Biology",
+        "backward": ["Bachelor of Natural Science (Advanced)", "Bachelor of Natural Science (Environmental Management)"]
+    }, {
+        "title": "Environmental Consulting",
+        "backward": ["Bachelor of Natural Science (Environmental Management)", "Bachelor of Science", "Bachelor of Science (Biological Sciences)", "Bachelor of Science (Environmental Science)", "Bachelor of Science (Zoology)", "Bachelor of Natural Science (Advanced)"]
+    }, {
+        "title": "Biomedical Science",
+        "backward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Medicinal Chemistry",
+        "backward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Anatomy and Physiology",
+        "backward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Marine Biology",
+        "backward": ["Bachelor of Science", "Bachelor of Science (Biological Sciences)", "Bachelor of Science (Environmental Science)", "Bachelor of Science (Zoology)"]
+    }, {
+        "title": "Biochemistry and Molecular Biology",
+        "backward": ["Bachelor of Science", "Bachelor of Science (Chemistry)", "Bachelor of Science (Biological Sciences)", "Bachelor of Science (Nutrition and Food Sciences)", "Bachelor of Science (Zoology)"]
+    }, {
+        "title": "Chemistry",
+        "backward": ["Bachelor of Science"]
+    }, {
+        "title": "Climate Change",
+        "backward": ["Bachelor of Science", "Bachelor of Science (Environmental Science)", "Bachelor of Science (Zoology)"]
+    }, {
+        "title": "General Biology",
+        "backward": ["Bachelor of Science", "Bachelor of Science (Chemistry)", "Bachelor of Science (Biological Sciences)", "Bachelor of Science (Nutrition and Food Sciences)", "Bachelor of Science (Environmental Science)", "Bachelor of Science (Zoology)"]
+    }, {
+        "title": "Forensic Chemistry",
+        "backward": ["Bachelor of Science"]
+    }, {
+        "title": "Microbiology",
+        "backward": ["Bachelor of Science", "Bachelor of Science (Chemistry)", "Bachelor of Science (Biological Sciences)", "Bachelor of Science (Nutrition and Food Sciences)"]
+    }, {
+        "title": "Nutrition and Physiology",
+        "backward": ["Bachelor of Science", "Bachelor of Science (Nutrition and Food Sciences)"]
+    }, {
+        "title": "Food Science & Technology",
+        "backward": ["Bachelor of Science (Nutrition and Food Sciences)"]
+    }, {
+        "title": "Human Nutrition",
+        "backward": ["Bachelor of Science (Nutrition and Food Sciences)"]
+    }, {
+        "title": "Medicinal Chemistry",
+        "backward": ["Bachelor of Medical Science", "Bachelor of Medical Science (Advanced)"]
+    }, {
+        "title": "Interactive Analytics",
+        "backward": ["Bachelor of Information Systems", "Bachelor of Information Systems Advanced"]
+    }, {
+        "title": "Civil",
+        "backward": ["Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Construction",
+        "backward": ["Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Electrical",
+        "backward": ["Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Mechanical",
+        "backward": ["Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Robotics and Mechatronics",
+        "backward": ["Bachelor of Engineering Advanced (Honours)", "Bachelor of Engineering Science", "Bachelor of Engineering (Honours)"]
+    }, {
+        "title": "Natural Science",
+        "backward": ["Bachelor of Sustainable Agriculture and Food Security"]
+    }, {
+        "title": "Social Sciences",
+        "backward": ["Bachelor of Sustainable Agriculture and Food Security"]
+    }, {
+        "title": "Business",
+        "backward": ["Bachelor of Sustainable Agriculture and Food Security"]
+    }, {
+        "title": "Visualisation and Graphics",
+        "backward": ["Bachelor of Design and Technology", "Bachelor of Industrial Design", "Bachelor of Industrial Design (Honours)"]
+    }, {
+        "title": "Design Management and Entrepreneurship",
+        "backward": ["Bachelor of Design and Technology", "Bachelor of Industrial Design", "Bachelor of Industrial Design (Honours)"]
+    }, {
+        "title": "Design-led Innovation and Management",
+        "backward": ["Bachelor of Design and Technology", "Bachelor of Industrial Design", "Bachelor of Industrial Design (Honours)"]
+    }, {
+        "title": "Health Promotion",
+        "backward": ["Bachelor of Health Science"]
+    }, {
+        "title": "Health Services Management",
+        "backward": ["Bachelor of Health Science"]
+    }, {
+        "title": "Therapeutic Recreation",
+        "backward": ["Bachelor of Health Science"]
+    }, {
+        "title": "Public Health",
+        "backward": ["Bachelor of Health Science"]
+    }]
+}]

@@ -122,6 +122,7 @@ import { UserDialogComponent } from './user/user-dialog-component';
 import { PrivacyContainer } from './privacy-policy/privacy-policy.component';
 import { FooterComponent } from './footer/footer.component';
 import { Course, CourseDraggable } from './common';
+import { ExplorerComponent } from './explorer/explorer.component';
 
 import { GoogleAnalyticsService } from './services/google-analytics.service';
 import { ProgressPanelService } from './services/progress-panel.service';
@@ -129,6 +130,8 @@ import { AdminExport } from './admin-export/admin-export.component';
 import { AdminExportService } from './services/admin-export.service';
 import { ErrorRequirementService } from './services/error.requirement.service';
 import { SamplePlanService } from './services/sample-plan.service';
+import { ItemComponent } from './explorer/item.component';
+
 
 
 
@@ -211,6 +214,10 @@ const avatarSourcesOrder = [AvatarSource.FACEBOOK, AvatarSource.GOOGLE, AvatarSo
     ProgressDialogComponent,
     CourseDialogComponent,
     UserDialogComponent,
+
+    // Explorer
+    ExplorerComponent,
+    ItemComponent,
     
   ],
   imports: [

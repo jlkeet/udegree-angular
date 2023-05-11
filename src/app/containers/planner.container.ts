@@ -16,7 +16,7 @@ import { AppHeader } from '../app.header.component';
 import * as confetti from 'canvas-confetti';
 import { FirebaseDbService } from '../core/firebase.db.service';
 import { SamplePlanService } from '../services/sample-plan.service';
-
+import { Router, Params } from '@angular/router';
 
 /*
   Container for the planning page.
@@ -61,7 +61,7 @@ import { SamplePlanService } from '../services/sample-plan.service';
 
           <div class='flex flex-col relative fullwidth'>
             <div class="do-it-button">
-              <button (click)="samplePlan()">DO IT FOR ME</button>
+              <button (click)="samplePlan()">DO IT FOR ME</button><button (click)="explorerClick()">EXPLORER</button>
             </div>
               <course-details *ngIf='selected' [showAddCourse]='false' [course]='selected'
               (cancelClicked)='cancelCourse($event)'
@@ -98,6 +98,7 @@ export class PlannerContainer {
     private appHeader: AppHeader,
     public dbCourses: FirebaseDbService,
     public samplePlanService: SamplePlanService,
+    private router: Router,
   ) {
     this.isMobile = appHeader.mobile;
   }
@@ -138,6 +139,11 @@ export class PlannerContainer {
       this.messages = [];
     }
     this.selected = course;
+  }
+
+  public explorerClick() {
+    this.router.navigate(["/explorer"]);
+    console.log("firing")
   }
 
   public cancelCourse(event) {
