@@ -277,10 +277,11 @@ export class ProgressPanel {
     this.majorRequirements = [].concat(
       this.majors ? this.majors.requirements : []
     );
-
+  if (this.storeHelper.current('pathway') !== undefined) {
     this.pathwayRequirements = [].concat(
       this.pathways ? this.pathways.requirements : []
     );
+  }
 
     this.secondMajorRequirements = [].concat(
       this.secondMajors ? this.secondMajors.requirements : []
@@ -312,6 +313,11 @@ export class ProgressPanel {
 
     this.progressPanelService.setReqs(this.requirements)
     this.progressPanelService.setMajReqs(this.majorRequirements)
+    this.progressPanelService.setSecondMajReqs(this.secondMajorRequirements)
+    this.progressPanelService.setThirdMajReqs(this.thirdMajorRequirements)
+    this.progressPanelService.setPathwayReqs(this.pathwayRequirements)
+    this.progressPanelService.setModuleReqs(this.moduleRequirements)
+    this.progressPanelService.setSecondModuleReqs(this.secondModuleRequirements)
 
   }
 

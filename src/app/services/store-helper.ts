@@ -69,15 +69,16 @@ export class StoreHelper {
   }
 
   public findAndDelete(prop, course) {
+  
     const currentState = this.store.getState();
     const collection = currentState[prop];
     this.store.setState(
       Object.assign({}, currentState, {
         [prop]: collection.filter((item) => item.generatedId !== course.generatedId)
-        // [prop]: collection.filter((item) => item.id === id && item.status !== course.status || item.id !== id)
       })
     );
   }
+  
 
   public deleteAll() {
     this.store.purge()

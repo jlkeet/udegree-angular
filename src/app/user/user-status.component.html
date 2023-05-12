@@ -2,7 +2,7 @@
 <div *ngIf="!isMobile" class="col">
   <div *ngIf="isLoggedIn">
   <div ngbDropdown>
-    <ngx-avatar [size]="40" facebookId={{photoURL}} googleId={{photoURL}} name={{displayName}}></ngx-avatar>
+    <ngx-avatar *ngIf="photoURL" [size]="40" [src]="photoURL" name={{displayName}}></ngx-avatar>
     <button class="user-status-button" ngbDropdownToggle>
       <div *ngIf="isLoggedIn" class="user" id="name">{{displayName}}</div>
       <div *ngIf="isLoggedIn" class="email">{{email}}</div>

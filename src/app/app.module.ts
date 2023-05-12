@@ -31,7 +31,6 @@ import {
 import { HammerGestureConfig , HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import {NgxLongClickModule} from 'ngx-long-click';
 
-
 /* Firebase */
 
 // import { AngularFireModule} from '@angular/fire/compat'

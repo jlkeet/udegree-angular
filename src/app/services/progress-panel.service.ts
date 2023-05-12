@@ -9,6 +9,11 @@ export class ProgressPanelService {
 
     public majorRequirements;
     public majorFullyPlanned;
+    public secondMajorRequirements;
+    public thirdMajorRequirements;
+    public pathwayRequirements;
+    public moduleRequirements;
+    public secondModuleRequirements;
 
 
     constructor() {
@@ -21,6 +26,46 @@ export class ProgressPanelService {
 
     public getMajReqs() {
         return this.majorRequirements;
+    }
+
+    public getSecondMajReqs() {
+        return this.secondMajorRequirements
+    }
+
+    public setSecondMajReqs(reqs) {
+        this.secondMajorRequirements = reqs;
+    }
+
+    public getThirdMajReqs() {
+        return this.thirdMajorRequirements;
+    }
+
+    public setThirdMajReqs(reqs) {
+        this.thirdMajorRequirements = reqs;
+    }
+
+    public getPathwayReqs() {
+        return this.pathwayRequirements;
+    }
+
+    public setPathwayReqs(reqs) {
+        this.pathwayRequirements = reqs;
+    }
+
+    public getModuleReqs() {
+        return this.moduleRequirements;
+    }
+
+    public setModuleReqs(reqs) {
+        this.moduleRequirements = reqs;
+    }
+
+    public getSecondModuleReqs() {
+        return this.secondModuleRequirements;
+    }
+
+    public setSecondModuleReqs(reqs) {
+        this.secondModuleRequirements = reqs;
     }
 
     public setMajorPlanned(majorFullyPlanned) {
